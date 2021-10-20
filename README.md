@@ -5,4 +5,4 @@ Team Members:
 * Kristen King (kk3154)
 * Harry Reyes (hr2479)
 * Lauren Richter (lr2854)
-* Matt Spotnitz (mes2165)
+* Matthew Spotnitz (mes2165)
