@@ -1,0 +1,10 @@
+---
+title: "Team Meeting Notes"
+date: "10/20/2021"
+output: html_document
+---
+
+* Brainstorm research questions and potential datasets
+* Identify team workflow and organization of resources
+* Discuss git branching
+* Set goals, member tasks, and timeline
