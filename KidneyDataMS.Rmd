@@ -1,0 +1,31 @@
+---
+title: "KidneyDataMS"
+author: "Matthew Spotnitz"
+date: "10/26/2021"
+output: github_document
+---
+
+---
+title: "KidneyData"
+author: "Matthew Spotnitz"
+date: "10/26/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(readxl)
+library(haven)
+```
+
+#Import and view.
+
+I will import the Kidney, clean its column names, and examine the structure, head, and tail of the data set. Then, I will view the data set.
+```{r, echo = TRUE}
+df_one = read_excel("data/csrs_final_tables_2006_KI.xls")
+df_one = janitor::clean_names(df_one)
+str(df_one)
+head(df_one)
+tail(df_one)
+view(df_one)
+```
