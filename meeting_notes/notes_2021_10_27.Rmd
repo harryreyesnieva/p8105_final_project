@@ -34,36 +34,40 @@ Current and historical data available.
 ### First Deliverable
 
 **Team registration and proposal**
+
 First, you will define your teams and propose a project. This proposal should be a **half-page to a page in length** and include:
 
 * The group members (names and UNIs) - Done
 * The tentative project title - Easy
 * The motivation for this project - Kristen 
-* The intended final products - Easy?
+* The intended final products - Easy?   
   - website with dashboard
 * The anticipated data sources - see above
-* The planned analyses / visualizations / coding challenges - all
-  -Descriptive statistics
-  -by site, by time, 
-  -Tables and plots based on questions
-  -Chloropleth maps
-  -what kind of plots?
+* The planned analyses / visualizations / coding challenges - all   
+  - Descriptive statistics   
+  - by site, by time, ...   
+  - Tables and plots based on questions   
+  - Chloropleth maps   
+  - what kind of plots?   
 * The planned timeline - Harry
   
-November 7 by 1:00 pm	Form a team and submit a proposal	Written proposal document
-November 10-13	Project review meeting	Zoom meeting – no “deliverable”
-December 5 by 4:00 pm	Report	Written report giving detailed project description
-December 5 by 4:00 pm	Webpage and screencast	Webpage overview of project, with short explanatory video (published online)
-December 5 by 8:00 pm	Peer assessment	Brief assessment of your teammates contributions (as a short document)
-December 10	“In class” discussion of projects	Enjoy hearing about projects! (Also get hex stickers…)
+### Final Project Deadlines
 
+* November 7 by 1:00 pm	Form a team and submit a proposal	Written proposal document
+* November 10-13	Project review meeting	Zoom meeting – no “deliverable”
+* December 5 by 4:00 pm	Report	Written report giving detailed project description
+* December 5 by 4:00 pm	Webpage and screencast	Webpage overview of project, with short explanatory video (published online)
+* December 5 by 8:00 pm	Peer assessment	Brief assessment of your teammates contributions (as a short document)
+* December 10	“In class” discussion of projects	Enjoy hearing about projects! (Also get hex stickers…)
 
 There should be one proposal per group, written collaboratively using .Rmd (rendering to a GH document) in a dedicated GitHub repo. Conceptually, this is intended to review a project that is 10% complete.
 
 ### To do
-* Team to edit [Google Doc for proposal](https://docs.google.com/document/d/1GPay1f_uq9Cp08fZPiQxeAjYNhL9D7ojNZE5lsB0K-Q/edit?usp=sharing) 
-* Team to brainstorm questions based on pursuing kidney transplant projects
-* Figure out variables
-* Figure out research questions
-* Harry to prepare a ppt and ref doc on branching
-* If anyone makes a change to the github repo, they will use branching
+* All team members to edit [Google Doc for proposal](https://docs.google.com/document/d/1GPay1f_uq9Cp08fZPiQxeAjYNhL9D7ojNZE5lsB0K-Q/edit?usp=sharing) 
+  - We will store final product as an Rmd/md file in repo 
+* Harry to prepare a ppt and ref doc on branching for team
+  - If anyone makes a change to the github repo, they will use branching
+* Team to further brainstorm questions based on pursuing kidney transplant project
+* Team to isolate specific research questions and analyses
+* Team to review potential variables to answer questions, incorporate into analyses
+
