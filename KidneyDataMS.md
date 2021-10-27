@@ -1,13 +1,13 @@
-KidneyData
+KidneyDataMS
 ================
 Matthew Spotnitz
 10/26/2021
 
 \#Import and view.
 
-I will import the Kidney, clean its column names, and examine the
-structure, head, and tail of the data set. Then, I will view the data
-set.
+I will import the kidney data set, clean its column names, and examine
+the structure, head, and tail of the data set. Then, I will view the
+data set.
 
 ``` r
 df_one = read_excel("data/csrs_final_tables_2006_KI.xls")
