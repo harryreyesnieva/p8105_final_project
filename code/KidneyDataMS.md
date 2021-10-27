@@ -10,7 +10,7 @@ structure, head, and tail of the data set. Then, I will view the data
 set.
 
 ``` r
-df_one = read_excel("data/csrs_final_tables_2006_KI.xls")
+df_one = read_excel("../data/csrs_final_tables_2006_KI.xls")
 df_one = janitor::clean_names(df_one)
 str(df_one)
 ```
