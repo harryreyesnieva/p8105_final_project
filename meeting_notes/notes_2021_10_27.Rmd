@@ -30,7 +30,7 @@ output: github_document
 * Have centers changed their practices over time? (big change in kidney allocation; change in other patterns)
   - pre-/post-COVID?
   - seasonality?
-  - 2012-2014 vs 2015-2017 
+  - 2012-2014 vs 2015-2017  
 * Combine with site zip code and merge with American Community Survey to evaluate differences based on demographics across sites
 * Examine based on DSA; assess donation trajectory if not accepted within a given area (DSA, some radius to higher level i.e., region or larger catchment area)
 * What center-related features are associated with higher/riskier offer acceptance ratios?
