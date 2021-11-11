@@ -295,7 +295,7 @@ str(df_one_dropna)
 ``` r
 df_one_plot = df_one_dropna %>% mutate(newlistings_percent_mortality = 100*died_center_all/newlistings_center_all)
 view(df_one_plot)
-df_one_plot %>% ggplot(aes(x=newlistings_center_all, y= newlistings_percent_mortality)) + geom_point()
+df_one_plot %>% group_by(ctr_cd) %>% ggplot(aes(x=ctr_cd, y = newlistings_percent_mortality)) + geom_point()
 ```
 
     ## Warning: Removed 1 rows containing missing values (geom_point).
