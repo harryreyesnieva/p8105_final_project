@@ -51,8 +51,13 @@ chances of getting a deceased donor transplant faster.
 **Planned analyses / visualizations / coding challenges:**
 
 -   Summaries
+    -   Tabulation of patient characteristics by transplantation center
 -   Exploratory statistical analyses
+    -   Subcharacterization by patient baseline covariates (age, gender,
+        etc.)
 -   Visualizations
+    -   Scatter plots of outcomes by transplantation center
+    -   Leaflet plots of covariates by transplantation center
 -   Potential challenges
 
 **Planned timeline**
