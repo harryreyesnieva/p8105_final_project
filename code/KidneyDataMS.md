@@ -122,3 +122,10 @@ tail(df_one)
 ``` r
 view(df_one)
 ```
+
+\#Change column names I will change the column names to more intuitive
+ones
+
+``` r
+df_one_names = df_one %>% rename(waitlist_cener_time1 = wla_addcen_nc1) %>% view() # I changed one column name for demonstration of principle.
+```
