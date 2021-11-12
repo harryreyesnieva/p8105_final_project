@@ -2,9 +2,10 @@ P8105 Final Project Proposal
 ================
 
 **Group members:** Kristen King (*kk3154*), Harry Reyes (*hr2479*),
-Lauren Richter (*lr2854*), Matthew Spotnitz (*mes2165*) **Tentative
-Project Title:** Variation in kidney transplantation center practices
-and patient characteristics
+Lauren Richter (*lr2854*), Matthew Spotnitz (*mes2165*)
+
+**Tentative Project Title:** Variation in kidney transplantation center
+practices and patient characteristics
 
 **Motivation for this project:** Kidney transplantation is the preferred
 treatment for End Stage Kidney Disease (ESKD). Nonetheless, due to a
@@ -51,14 +52,25 @@ chances of getting a deceased donor transplant faster.
 **Planned analyses / visualizations / coding challenges:**
 
 -   Summaries
-    -   Tabulation of patient characteristics by transplantation center
+    -   Tabulation of patient characteristics, offer acceptance
+        practices, and transplant activity over time by transplantation
+        center
+    -   Goal: compare directly between centers in close geographic
+        proximity
 -   Exploratory statistical analyses
     -   Subcharacterization by patient baseline covariates (age, gender,
-        etc.)
+        primary disease, PRA sensitization, BMI, etc.)
+    -   Is there a correlation between high-risk offer acceptance ratios
+        and transplant volume?
 -   Visualizations
-    -   Scatter plots of outcomes by transplantation center
-    -   Leaflet plots of covariates by transplantation center
+    -   Scatter plots of offer acceptance practices by transplantation
+        center for multiple risk categories
+    -   Leaflet plots showing transplant volume and outcomes by
+        transplantation center
 -   Potential challenges
+    -   Identifying and filtering centers that are close to each other
+        using zip codes =&gt; could start with just the 9 transplant
+        centers in the greater NYC area.
 
 **Planned timeline**
 
