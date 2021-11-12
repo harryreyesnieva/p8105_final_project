@@ -293,11 +293,13 @@ str(df_one_dropna)
     ##  $ start_waitlist_usa           : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
 
 ``` r
-df_one_plot = df_one_dropna %>% mutate(newlistings_percent_mortality = 100*died_center_all/newlistings_center_all)
-view(df_one_plot)
-df_one_plot %>% group_by(ctr_cd) %>% ggplot(aes(x=ctr_cd, y = newlistings_percent_mortality)) + geom_point()
+df_one_plot = df_one_dropna %>% mutate(newlistings_percent_mortality = 100*died_center_all/newlistings_center_all, newlistings_percent_deteriorated = 100*deteriorated_center_all/newlistings_center_all, newlistings_percent_transfer = 100* transfer_center_all/newlistings_center_all, newlistings_percent_living_donor = 100* living_donor_center_all/newlistings_center_all, newlistings_percent_deceased_donor = 100*deceased_donor_center_all/newlistings_center_all, newlistings_percent_recovered = 100* recovered_center_all/newlistings_center_all)
+#view(df_one_plot)
+df_one_plot %>% group_by(ctr_cd) %>% ggplot(aes(newlistings_percent_deteriorated)) + geom_histogram()
 ```
 
-    ## Warning: Removed 1 rows containing missing values (geom_point).
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+    ## Warning: Removed 3 rows containing non-finite values (stat_bin).
 
 ![](KidneyDataMS_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
