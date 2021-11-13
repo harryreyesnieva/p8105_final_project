@@ -23,13 +23,13 @@ output: github_document
   - Is there a correlation between high-risk offer acceptance ratios and transplant volume?
 * Visualizations
   - Scatter plots of offer acceptance practices by transplantation center for multiple risk categories
-  - Leaflet plots showing transplant volume and outcomes by transplantation center
+  - Interactive maps (Leaflet plots) showing transplant volume and outcomes by transplantation center
 * Potential challenges
   - Identifying and filtering centers that are close to each other using zip codes => could start with just the 9 transplant centers in the greater NYC area.
 
 **Planned timeline**
 
-
+![ ](../img/timeline.png)
 
 **References**   
 1. United States Renal Data System. 2020 USRDS Annual Data Report: Epidemiology of kidney disease in the United States. National Institutes of Health, National Institute of Diabetes and Digestive and Kidney Diseases, Bethesda, MD, 2020.
