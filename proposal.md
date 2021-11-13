@@ -27,9 +27,10 @@ choose where to waitlist, our aim is to analyze data comparing
 transplantation center practices and develop a dashboard to present
 these findings to the public.
 
-**Intended Final Products:** We will produce a webpage with a dashboard
-that presents data visualizations comparing kidney transplantation
-centers and examining organ offer practices over time.
+**Intended Final Products:** We will produce a written report and a
+webpage with a dashboard that presents data visualizations comparing
+kidney transplantation centers and examining organ offer practices over
+time.
 
 **Anticipated data sources:** The Scientific Registry of Transplant
 Recipients (SRTR) takes national registry data on all organ donors,
@@ -65,8 +66,8 @@ chances of getting a deceased donor transplant faster.
 -   Visualizations
     -   Scatter plots of offer acceptance practices by transplantation
         center for multiple risk categories
-    -   Interactive maps (Leaflet plots) showing transplant volume and
-        outcomes by transplantation center
+    -   Interactive maps illustrating transplant volume and outcomes by
+        transplantation center
 -   Potential challenges
     -   Identifying and filtering centers that are close to each other
         using zip codes =&gt; could start with just the 9 transplant
@@ -74,7 +75,7 @@ chances of getting a deceased donor transplant faster.
 
 **Planned timeline**
 
-![](../img/timeline.png)
+![](./img/timeline.png)
 
 **References**  
 1. United States Renal Data System. 2020 USRDS Annual Data Report:
