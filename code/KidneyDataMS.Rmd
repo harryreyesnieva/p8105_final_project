@@ -84,3 +84,7 @@ df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram() +
   ) + theme_minimal()
 png('txp_frequency.png')
 ```
+Now I will make a geocode plot
+```{r}
+
+```
