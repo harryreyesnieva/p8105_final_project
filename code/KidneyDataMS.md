@@ -363,9 +363,18 @@ df_one_merge %>% ggplot(aes(x = zipcode, y =living_deceased_graft_ratio )) + geo
 will plot zipcode histogram
 
 ``` r
-df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram()
+df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram() + 
+  labs(
+    title = "Transplant Center Frequency by Zipcode",
+    x = "Zipcode",
+    y = "Transplant Center Count"
+  ) + theme_minimal()
 ```
 
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](KidneyDataMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+``` r
+png('txp_frequency.png')
+```

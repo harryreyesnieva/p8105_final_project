@@ -62,5 +62,11 @@ df_one_merge %>% ggplot(aes(x = zipcode, y =living_deceased_graft_ratio )) + geo
 ```
 Now I will plot zipcode histogram
 ```{r}
-df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram()
+df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram() + 
+  labs(
+    title = "Transplant Center Frequency by Zipcode",
+    x = "Zipcode",
+    y = "Transplant Center Count"
+  ) + theme_minimal()
+png('txp_frequency.png')
 ```
