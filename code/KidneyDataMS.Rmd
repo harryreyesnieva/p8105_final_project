@@ -12,6 +12,7 @@ library(haven)
 library(ggplot2)
 library(zipcodeR)
 library(ggmap)
+library(leaflet)
 ```
 
 #Import and view.
@@ -85,6 +86,14 @@ df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram() +
 png('txp_frequency.png')
 ```
 Now I will make a geocode plot
-```{r}
+```{r, eval = FALSE}
+library(leaflet)
 
+leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
+#df = data.frame(Lat = 1:10, Long = rnorm(10))
+#leaflet(df) %>% addCircles()
+#view(df_one_merge)
+m = df_one_merge %>% leaflet() %>% addTiles() %>% addMarkers(lat = ~lat, lng = ~lng)
+m
 ```
+

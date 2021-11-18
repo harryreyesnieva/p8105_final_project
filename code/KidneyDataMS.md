@@ -394,3 +394,14 @@ png('txp_frequency.png')
 ```
 
 Now I will make a geocode plot
+
+``` r
+library(leaflet)
+
+leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
+#df = data.frame(Lat = 1:10, Long = rnorm(10))
+#leaflet(df) %>% addCircles()
+#view(df_one_merge)
+m = df_one_merge %>% leaflet() %>% addTiles() %>% addMarkers(lat = ~lat, lng = ~lng)
+m
+```
