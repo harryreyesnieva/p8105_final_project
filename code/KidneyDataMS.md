@@ -378,3 +378,5 @@ df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram() +
 ``` r
 png('txp_frequency.png')
 ```
+
+Now I will merge with zipcodeR

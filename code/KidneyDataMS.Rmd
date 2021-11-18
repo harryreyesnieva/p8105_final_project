@@ -10,6 +10,7 @@ library(tidyverse)
 library(readxl)
 library(haven)
 library(ggplot2)
+library(zipcodeR)
 ```
 
 #Import and view.
@@ -70,3 +71,4 @@ df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram() +
   ) + theme_minimal()
 png('txp_frequency.png')
 ```
+Now I will merge with zipcodeR
