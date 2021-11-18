@@ -354,9 +354,18 @@ view(df_one_merge)
 Now I will map by zipcode
 
 ``` r
-df_one_merge %>% ggplot(aes(x = newlistings_percent_deceased_donor, y = newlistings_percent_living_donor)) + geom_point()
+df_one_merge %>% ggplot(aes(x = zipcode, y =living_deceased_graft_ratio )) + geom_point()
 ```
 
     ## Warning: Removed 3 rows containing missing values (geom_point).
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-6-1.png)<!-- --> Now I
+will plot zipcode histogram
+
+``` r
+df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram()
+```
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->

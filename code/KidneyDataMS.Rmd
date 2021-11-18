@@ -58,5 +58,9 @@ view(df_one_merge)
 ```
 Now I will map by zipcode
 ```{r}
-df_one_merge %>% ggplot(aes(x = newlistings_percent_deceased_donor, y = newlistings_percent_living_donor)) + geom_point()
+df_one_merge %>% ggplot(aes(x = zipcode, y =living_deceased_graft_ratio )) + geom_point()
+```
+Now I will plot zipcode histogram
+```{r}
+df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram()
 ```
