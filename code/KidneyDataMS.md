@@ -347,8 +347,18 @@ tail(df_zipcodes)
 
 ``` r
 view(df_zipcodes)
+```
+
+Now I will cross reference the coordinates that correspond with each
+zipcode.
+
+``` r
+for (zipcode in df_zipcodes["zipcode"]){
+    df_zip_geo = tibble(geocode_zip(zipcode))
+}
+#view(df_zip_geo)
 df_one_merge = merge(df_one_plot, df_zipcodes)
-view(df_one_merge)
+#view(df_one_merge)
 ```
 
 Now I will map by zipcode
@@ -359,7 +369,7 @@ df_one_merge %>% ggplot(aes(x = zipcode, y =living_deceased_graft_ratio )) + geo
 
     ## Warning: Removed 3 rows containing missing values (geom_point).
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-6-1.png)<!-- --> Now I
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> Now I
 will plot zipcode histogram
 
 ``` r
@@ -373,10 +383,8 @@ df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram() +
 
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ``` r
 png('txp_frequency.png')
 ```
-
-Now I will merge with zipcodeR

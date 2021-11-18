@@ -11,6 +11,7 @@ library(readxl)
 library(haven)
 library(ggplot2)
 library(zipcodeR)
+library(ggmap)
 ```
 
 #Import and view.
@@ -54,9 +55,19 @@ str(df_zipcodes)
 head(df_zipcodes)
 tail(df_zipcodes)
 view(df_zipcodes)
-df_one_merge = merge(df_one_plot, df_zipcodes)
-view(df_one_merge)
 ```
+Now I will cross reference the coordinates that correspond with each zipcode. 
+```{r}
+for (zipcode in df_zipcodes["zipcode"]){
+    df_zip_geo = tibble(geocode_zip(zipcode))
+}
+#view(df_zip_geo)
+df_one_merge = merge(df_one_plot, df_zipcodes)
+#view(df_one_merge)
+```
+
+
+
 Now I will map by zipcode
 ```{r}
 df_one_merge %>% ggplot(aes(x = zipcode, y =living_deceased_graft_ratio )) + geom_point()
@@ -71,4 +82,3 @@ df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram() +
   ) + theme_minimal()
 png('txp_frequency.png')
 ```
-Now I will merge with zipcodeR
