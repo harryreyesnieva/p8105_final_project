@@ -85,7 +85,7 @@ df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram() +
   ) + theme_minimal()
 png('txp_frequency.png')
 ```
-Now I will make a geocode plot
+Now I will make a leaflet plot of transplant centers in the United States
 ```{r, eval = FALSE}
 library(leaflet)
 
@@ -96,4 +96,23 @@ leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
 m = df_one_merge %>% leaflet() %>% addTiles() %>% addMarkers(lat = ~lat, lng = ~lng)
 m
 ```
+Now I will make another leaflet plot of transplant centers in the United States
+```{r, eval = FALSE}
+library(leaflet)
 
+leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
+#df = data.frame(Lat = 1:10, Long = rnorm(10))
+#leaflet(df) %>% addCircles()
+#view(df_one_merge)
+m = df_one_merge %>% leaflet() %>% addTiles() %>% addCircleMarkers(lat = ~lat, lng = ~lng, color = ~newlistings_center_all)
+m
+```
+I will now import the data frame from another sheet
+```{r}
+df_two = read_excel("./data/csrs_final_tables_2006_KI.xls", sheet = "Table B2-B3 Center")
+df_two = janitor::clean_names(df_one)
+str(df_two)
+head(df_two)
+tail(df_two)
+view(df_two)
+```
