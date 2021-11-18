@@ -109,10 +109,30 @@ m
 ```
 I will now import the data frame from another sheet
 ```{r}
-df_two = read_excel("./data/csrs_final_tables_2006_KI.xls", sheet = "Table B2-B3 Center")
-df_two = janitor::clean_names(df_one)
+df_two = read_excel("../data/csrs_final_tables_2006_KI.xls", sheet = "Tables B2-B3 Center")
+df_two = janitor::clean_names(df_two)
 str(df_two)
 head(df_two)
 tail(df_two)
 view(df_two)
+colnames = colnames(df_two)
+print(colnames)
+```
+I will rename and clean the columns for dataframe two.
+```{r}
+df_two_names = read_excel("../data/B2 names.xlsx")
+df_two_names = janitor::clean_names(df_two_names)
+df_two_names = df_two_names %>% mutate(c = paste(a,b))
+setnames = df_two_names %>% pull(c)
+df_two = setNames(df_two, setnames)
+df_two = janitor::clean_names(df_two)
+df_two_clean = df_two[-c(1), ]
+df_two_clean = df_two_clean %>% rename (entire_name= center_name_na , ctr_cd = center_code_na)
+view(df_two_clean)
+```
+I will select and rearrange values in dataframe two
+```{r}
+df_two_select = df_two_clean %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2) 
+df_social = merge(df_one_merge, df_two_select)
+view(df_social)
 ```
