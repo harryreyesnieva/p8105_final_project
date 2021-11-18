@@ -43,3 +43,16 @@ df_one_plot = df_one_dropna %>% mutate(newlistings_percent_mortality = 100*died_
 #view(df_one_plot)
 df_one_plot %>% group_by(ctr_cd) %>% ggplot(aes(newlistings_percent_deteriorated)) + geom_histogram()
 ```
+Now, I will read in, tidy, and merge with the zipcode file.
+```{r}
+df_zipcodes = read_excel("../data/zipcodes.xlsx")
+df_zipcodes = df_zipcodes[-c(1), ]
+df_zipcodes[, c(2)] = sapply(df_zipcodes[, c(2)], as.numeric)
+df_zipcodes = janitor::clean_names(df_zipcodes)
+str(df_zipcodes)
+head(df_zipcodes)
+tail(df_zipcodes)
+view(df_zipcodes)
+df_one_merge = merge(df_one_plot, df_zipcodes)
+view(df_one_merge)
+```

@@ -302,4 +302,51 @@ df_one_plot %>% group_by(ctr_cd) %>% ggplot(aes(newlistings_percent_deteriorated
 
     ## Warning: Removed 3 rows containing non-finite values (stat_bin).
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-4-1.png)<!-- --> Now, I
+will read in, tidy, and merge with the zipcode file.
+
+``` r
+df_zipcodes = read_excel("../data/zipcodes.xlsx")
+df_zipcodes = df_zipcodes[-c(1), ]
+df_zipcodes[, c(2)] = sapply(df_zipcodes[, c(2)], as.numeric)
+df_zipcodes = janitor::clean_names(df_zipcodes)
+str(df_zipcodes)
+```
+
+    ## tibble [238 × 2] (S3: tbl_df/tbl/data.frame)
+    ##  $ entire_name: chr [1:238] "Children's of Alabama (ALCH)" "University of Alabama Hospital (ALUA)" "Birmingham VA Medical Center (ALVA)" "Arkansas Children's Hospital (ARCH)" ...
+    ##  $ zipcode    : num [1:238] 35233 35233 35233 72202 72205 ...
+
+``` r
+head(df_zipcodes)
+```
+
+    ## # A tibble: 6 × 2
+    ##   entire_name                           zipcode
+    ##   <chr>                                   <dbl>
+    ## 1 Children's of Alabama (ALCH)            35233
+    ## 2 University of Alabama Hospital (ALUA)   35233
+    ## 3 Birmingham VA Medical Center (ALVA)     35233
+    ## 4 Arkansas Children's Hospital (ARCH)     72202
+    ## 5 UAMS Medical Center (ARUA)              72205
+    ## 6 Phoenix Children's Hospital (AZCH)      85016
+
+``` r
+tail(df_zipcodes)
+```
+
+    ## # A tibble: 6 × 2
+    ##   entire_name                                         zipcode
+    ##   <chr>                                                 <dbl>
+    ## 1 Virginia Mason Medical Center (WAVM)                  98111
+    ## 2 Children's Hospital of Wisconsin (WICH)               53226
+    ## 3 Froedtert Memorial Lutheran Hospital (WISE)           53226
+    ## 4 Aurora St. Luke's Medical Center (WISL)               53215
+    ## 5 University of Wisconsin Hospital and Clinics (WIUW)   53792
+    ## 6 Charleston Area Medical Center (WVCA)                 25325
+
+``` r
+view(df_zipcodes)
+df_one_merge = merge(df_one_plot, df_zipcodes)
+view(df_one_merge)
+```
