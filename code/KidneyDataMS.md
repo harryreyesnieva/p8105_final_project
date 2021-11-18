@@ -357,8 +357,10 @@ for (zipcode in df_zipcodes["zipcode"]){
     df_zip_geo = tibble(geocode_zip(zipcode))
 }
 #view(df_zip_geo)
-df_one_merge = merge(df_one_plot, df_zipcodes)
-#view(df_one_merge)
+df_geo_merge = merge(df_zipcodes, df_zip_geo, all = TRUE)
+view(df_geo_merge)
+df_one_merge = merge(df_one_plot, df_geo_merge, all = TRUE)
+view(df_one_merge)
 ```
 
 Now I will map by zipcode
@@ -367,7 +369,7 @@ Now I will map by zipcode
 df_one_merge %>% ggplot(aes(x = zipcode, y =living_deceased_graft_ratio )) + geom_point()
 ```
 
-    ## Warning: Removed 3 rows containing missing values (geom_point).
+    ## Warning: Removed 5 rows containing missing values (geom_point).
 
 ![](KidneyDataMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> Now I
 will plot zipcode histogram
