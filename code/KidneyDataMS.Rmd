@@ -56,3 +56,8 @@ view(df_zipcodes)
 df_one_merge = merge(df_one_plot, df_zipcodes)
 view(df_one_merge)
 ```
+Now I will map by zipcode
+```{r}
+df_one_merge %>% ggplot(aes(x = newlistings_percent_deceased_donor, y = newlistings_percent_living_donor)) + geom_point()
+
+```

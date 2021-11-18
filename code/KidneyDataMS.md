@@ -350,3 +350,13 @@ view(df_zipcodes)
 df_one_merge = merge(df_one_plot, df_zipcodes)
 view(df_one_merge)
 ```
+
+Now I will map by zipcode
+
+``` r
+df_one_merge %>% ggplot(aes(x = newlistings_percent_deceased_donor, y = newlistings_percent_living_donor)) + geom_point()
+```
+
+    ## Warning: Removed 3 rows containing missing values (geom_point).
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
