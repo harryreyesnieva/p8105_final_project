@@ -145,13 +145,21 @@ df_two_gender = df_two_clean[, c(1,2,34,36)]
 df_gender = merge(df_one_merge, df_two_gender)
 df_gender = df_gender[, c(1,2,3, 68, 71:72)]
 
-view(df_gender)
-view(df_two_gender)
-view(df_social)
-view(df_demographics)
-view(df_age)
-#knitr::kable(df_demographics) %>% save_kable("draft_demographics.pdf")
-#knitr::kable(df_age) %>% save_kable("draft_age.pdf") 
-#knitr::kable(df_gender) %>% save_kable("draft_gender.pdf") 
+df_two_comorbidities = df_two_clean[, c(1,2,64,66,68,70,72,74,76,78,80,82,126,128,130,132,138,140,142,144,146,148,150, 162, 164, 166, 168, 170, 172, 190)]
+df_comorbidities = merge(df_one_merge, df_two_comorbidities)
+df_comorbidities = df_comorbidities[, c(1,2,3, 68, 71:81, 87:98)]
+df_comorbidities = df_comorbidities[, c(1:14, 18:20, 27)]
 
+view(df_two_clean)
+view(df_comorbidities)
+view(df_one_merge)
+#view(df_gender)
+#view(df_two_gender)
+#view(df_social)
+#view(df_demographics)
+#view(df_age)
+knitr::kable(df_demographics) %>% save_kable("draft_demographics.pdf")
+knitr::kable(df_age) %>% save_kable("draft_age.pdf") 
+knitr::kable(df_gender) %>% save_kable("draft_gender.pdf") 
+knitr::kable(df_comorbidities) %>% save_kable("draft_comorbidities.pdf") 
 ```
