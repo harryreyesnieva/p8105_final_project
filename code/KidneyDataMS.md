@@ -647,11 +647,22 @@ I will select and rearrange values in dataframe two
 ``` r
 df_two_select = df_two_clean %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
 df_social = merge(df_one_merge, df_two_select)
-df_social = df_social[, c(1,2, 68, 71:76)]
+df_demographics = df_social[, c(1,2,3, 68, 71:76)]
+
+df_two_age = df_two_clean[, c(1,2,6,8,10,12,14,16,18,20)]
+df_age = merge(df_one_merge, df_two_age)
+df_age = df_age[, c(1,2,3, 68, 71:76)]
+
+df_two_gender = df_two_clean[, c(1,2,34,36)]
+df_gender = merge(df_one_merge, df_two_gender)
+df_gender = df_gender[, c(1,2,3, 68, 71:72)]
+
+view(df_gender)
+view(df_two_gender)
 view(df_social)
-knitr::kable(df_social) %>% save_kable("draft_demographics.pdf") 
+view(df_demographics)
+view(df_age)
+#knitr::kable(df_demographics) %>% save_kable("draft_demographics.pdf")
+#knitr::kable(df_age) %>% save_kable("draft_age.pdf") 
+#knitr::kable(df_gender) %>% save_kable("draft_gender.pdf") 
 ```
-
-    ## Note that HTML color may not be displayed on PDF properly.
-
-    ## save_kable will have the best result with magick installed.
