@@ -645,7 +645,13 @@ view(df_two_clean)
 I will select and rearrange values in dataframe two
 
 ``` r
-df_two_select = df_two_clean %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2) 
+df_two_select = df_two_clean %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
 df_social = merge(df_one_merge, df_two_select)
+df_social = df_social[, c(1,2, 68, 71:76)]
 view(df_social)
+knitr::kable(df_social) %>% save_kable("draft_demographics.pdf") 
 ```
+
+    ## Note that HTML color may not be displayed on PDF properly.
+
+    ## save_kable will have the best result with magick installed.
