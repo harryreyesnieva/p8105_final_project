@@ -70,7 +70,14 @@ df_one_merge = merge(df_one_plot, df_geo_merge, all = TRUE)
 view(df_one_merge)
 ```
 
-
+```{r}
+df_outcomes = df_one_merge[, c(61:67)]
+view(df_outcomes)
+df_continuous = sapply(df_outcomes, as.numeric)
+str(df_outcomes)
+ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = 'free_x')
+```
+The percent deteriorated is the clinical outcome with the most variability. The percentages of living and deceased donors have some variability as well.
 
 Now I will map by zipcode
 ```{r}
@@ -175,7 +182,7 @@ df_gender_pivot =
     df_gender, 
     female_allc2:male_allc2,
     names_to = "gender_category", 
-    values_to = "gender_category_percent") %>% mutate (gender_category_percent = as.numeric(gender_category_percent))
+    values_to = "gender_category_percent") %>% mutate (gender_category_percent = as.numeric(gender_category_percent)) %>% mutate(gender_category = as.factor(gender_category))
 view(df_gender_pivot)
 plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()
 plot
@@ -192,7 +199,7 @@ df_comorbidities_pivot =
     df_comorbidities, 
     diabetes_allc2:congenital_familial_metabolic_allc2,
     names_to = "comorbidity_category", 
-    values_to = "comorbidity_category_percent") %>% mutate (comorbidity_category_percent = as.numeric(comorbidity_category_percent))
+    values_to = "comorbidity_category_percent") %>% mutate (comorbidity_category_percent = as.numeric(comorbidity_category_percent)) %>% mutate(comorbidity_category = as.factor(comorbidity_category))
 view(df_comorbidities_pivot)
 plot = df_comorbidities_pivot %>% ggplot(aes(x=zipcode, y =comorbidity_category_percent, color = comorbidity_category)) + geom_point()
 plot

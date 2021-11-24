@@ -365,6 +365,33 @@ df_one_merge = merge(df_one_plot, df_geo_merge, all = TRUE)
 view(df_one_merge)
 ```
 
+``` r
+df_outcomes = df_one_merge[, c(61:67)]
+view(df_outcomes)
+df_continuous = sapply(df_outcomes, as.numeric)
+str(df_outcomes)
+```
+
+    ## 'data.frame':    238 obs. of  7 variables:
+    ##  $ newlistings_percent_mortality     : num  11.54 9.52 5.15 17.28 0 ...
+    ##  $ newlistings_percent_deteriorated  : num  5.77 7.62 8.25 8.38 0 ...
+    ##  $ newlistings_percent_transfer      : num  15.38 4.76 7.22 1.05 0 ...
+    ##  $ newlistings_percent_living_donor  : num  17.31 8.57 7.22 2.62 16.67 ...
+    ##  $ newlistings_percent_deceased_donor: num  36.5 20 67 29.3 66.7 ...
+    ##  $ newlistings_percent_recovered     : num  0 0 0 0 0 ...
+    ##  $ living_deceased_graft_ratio       : num  0.4737 0.4286 0.1077 0.0893 0.25 ...
+
+``` r
+ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = 'free_x')
+```
+
+    ## Warning: Removed 35 rows containing non-finite values (stat_bin).
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> The
+percent deteriorated is the clinical outcome with the most variability.
+The percentages of living and deceased donors have some variability as
+well.
+
 Now I will map by zipcode
 
 ``` r
@@ -373,7 +400,7 @@ df_one_merge %>% ggplot(aes(x = zipcode, y =living_deceased_graft_ratio )) + geo
 
     ## Warning: Removed 5 rows containing missing values (geom_point).
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> Now I
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-8-1.png)<!-- --> Now I
 will plot zipcode histogram
 
 ``` r
@@ -387,7 +414,7 @@ df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram() +
 
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 ``` r
 png('txp_frequency.png')
@@ -660,7 +687,7 @@ plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent,
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-13-1.png)<!-- --> Now I
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-14-1.png)<!-- --> Now I
 will make an age dataframe
 
 ``` r
@@ -679,7 +706,7 @@ plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = a
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-14-1.png)<!-- --> Now I
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-15-1.png)<!-- --> Now I
 will make a gender dataframe
 
 ``` r
@@ -692,13 +719,13 @@ df_gender_pivot =
     df_gender, 
     female_allc2:male_allc2,
     names_to = "gender_category", 
-    values_to = "gender_category_percent") %>% mutate (gender_category_percent = as.numeric(gender_category_percent))
+    values_to = "gender_category_percent") %>% mutate (gender_category_percent = as.numeric(gender_category_percent)) %>% mutate(gender_category = as.factor(gender_category))
 view(df_gender_pivot)
 plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ``` r
 df_two_comorbidities = df_two_clean[, c(1,2,64,66,68,70,72,74,76,78,80,82,126,128,130,132,138,140,142,144,146,148,150, 162, 164, 166, 168, 170, 172, 190)]
@@ -711,13 +738,13 @@ df_comorbidities_pivot =
     df_comorbidities, 
     diabetes_allc2:congenital_familial_metabolic_allc2,
     names_to = "comorbidity_category", 
-    values_to = "comorbidity_category_percent") %>% mutate (comorbidity_category_percent = as.numeric(comorbidity_category_percent))
+    values_to = "comorbidity_category_percent") %>% mutate (comorbidity_category_percent = as.numeric(comorbidity_category_percent)) %>% mutate(comorbidity_category = as.factor(comorbidity_category))
 view(df_comorbidities_pivot)
 plot = df_comorbidities_pivot %>% ggplot(aes(x=zipcode, y =comorbidity_category_percent, color = comorbidity_category)) + geom_point()
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-16-1.png)<!-- --> Blood
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-17-1.png)<!-- --> Blood
 type dataframe
 
 ``` r
@@ -736,7 +763,7 @@ plot = df_blood_type_pivot %>% ggplot(aes(x=zipcode, y =blood_type_category_perc
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
 ``` r
 view(df_two_clean)
@@ -756,7 +783,7 @@ plot = df_pra_pivot %>% ggplot(aes(x=zipcode, y =pra_category_percent, color = p
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
 Now I will make tables
 
