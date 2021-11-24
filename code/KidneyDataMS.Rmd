@@ -33,6 +33,8 @@ I will change the column names to more intuitive ones
 ```{r}
 df_one_names = df_one %>% rename(newlistings_center_time1 = wla_addcen_nc1, newlistings_center_time2 = wla_addcen_nc2, newlistings_center_all = wla_addcen_pcz,newlistings_regional = wla_addcen_prz, newlistings_usa = wla_addcen_puz)  %>% rename( endlistings_center_time1 = wla_end_nc1, endlistings_center_time2 = wla_end_nc2, endlistings_center_all = wla_end_pcz, endlistings_regional = wla_end_prz, endlistings_usa = wla_end_puz) %>% rename(deteriorated_center_time1 = wla_remdet_nc1, deteriorated_center_time2 = wla_remdet_nc2, deteriorated_center_all = wla_remdet_pcz, deteriorated_regional = wla_remdet_prz, deteriorated_usa = wla_remdet_puz) %>% rename( died_center_time1 = wla_remdied_nc1, died_center_time2 = wla_remdied_nc2, died_center_all = wla_remdied_pcz, died_regional = wla_remdied_prz, died_usa = wla_remdied_puz) %>% rename(other_center_time1 = wla_remoth_nc1, other_center_time2 = wla_remoth_nc2, other_center_all = wla_remoth_pcz, other_regional = wla_remoth_prz, other_usa = wla_remoth_puz) %>% rename( recovered_center_time1 = wla_remrec_nc1, recovered_center_time2 = wla_remrec_nc2, recovered_center_all = wla_remrec_pcz, recovered_regional = wla_remrec_prz, recovered_usa = wla_remrec_puz) %>% rename(transfer_center_time1 = wla_remtfer_nc1, transfer_center_time2 = wla_remtfer_nc2, transfer_center_all = wla_remtfer_pcz, transfer_regional = wla_remtfer_prz, transfer_usa = wla_remtfer_puz) %>% rename(deceased_donor_center_time1 = wla_remtxc_nc1, deceased_donor_center_time2 = wla_remtxc_nc2, deceased_donor_center_all = wla_remtxc_pcz, deceased_donor_regional = wla_remtxc_prz, deceased_donor_usa = wla_remtxc_puz) %>% rename(living_donor_center_time1 = wla_remtxl_nc1, living_donor_center_time2 = wla_remtxl_nc2, living_donor_center_all = wla_remtxl_pcz, living_donor_regional = wla_remtxl_prz, living_donor_usa = wla_remtxl_puz) %>% rename(transplant_other_center_time1 = wla_remtxoc_nc1, transplant_other_center_time2 = wla_remtxoc_nc2, transplant_other_center_all = wla_remtxoc_pcz, transplant_other_regional = wla_remtxoc_prz, transplant_other_center_usa = wla_remtxoc_puz) %>% rename(start_waitlist_center_time1 = wla_st_nc1, start_waitlist_center_time2 = wla_st_nc2, start_waitlist_center_all = wla_st_pcz, start_waitlist_regional = wla_st_prz, start_waitlist_usa = wla_st_puz) %>% view() 
 ```
+#Tidy data.
+
 I will delete an extraneous row and drop missing values
 ```{r}
 df_one_names = df_one_names[-c(1), ]
@@ -45,7 +47,7 @@ I will drop missing values and create dervived values.
 ```{r}
 df_one_plot = df_one_dropna %>% mutate(newlistings_percent_mortality = 100*died_center_all/newlistings_center_all, newlistings_percent_deteriorated = 100*deteriorated_center_all/newlistings_center_all, newlistings_percent_transfer = 100* transfer_center_all/newlistings_center_all, newlistings_percent_living_donor = 100* living_donor_center_all/newlistings_center_all, newlistings_percent_deceased_donor = 100*deceased_donor_center_all/newlistings_center_all, newlistings_percent_recovered = 100* recovered_center_all/newlistings_center_all, living_deceased_graft_ratio = living_donor_center_all/deceased_donor_center_all)
 #view(df_one_plot)
-df_one_plot %>% group_by(ctr_cd) %>% ggplot(aes(newlistings_percent_deteriorated)) + geom_histogram()
+#df_one_plot %>% group_by(ctr_cd) %>% ggplot(aes(newlistings_percent_deteriorated)) + geom_histogram()
 ```
 Now, I will read in, tidy, and merge with the zipcode file.
 ```{r}
@@ -69,21 +71,22 @@ view(df_geo_merge)
 df_one_merge = merge(df_one_plot, df_geo_merge, all = TRUE)
 view(df_one_merge)
 ```
-
+#Plot outcome variables.
+I will plot the outcome variables to get a sense of which have the most variability.
 ```{r}
-df_outcomes = df_one_merge[, c(61:67)]
+df_outcomes = df_one_merge[, c(61:66)]
 view(df_outcomes)
 df_continuous = sapply(df_outcomes, as.numeric)
 str(df_outcomes)
-ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = 'free_x')
+ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = 'free_x') + labs(
+    title = "Outcome Frequency",
+    x = "Outcome (Percent)",
+    y = "Frequency"
+  ) + theme_minimal() ###Remove ratio from the list
 ```
 The percent deteriorated is the clinical outcome with the most variability. The percentages of living and deceased donors have some variability as well.
 
-Now I will map by zipcode
-```{r}
-df_one_merge %>% ggplot(aes(x = zipcode, y =living_deceased_graft_ratio )) + geom_point()
-```
-Now I will plot zipcode histogram
+Now I will plot the number of kidney transolant centers by zipcode.
 ```{r}
 df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram() + 
   labs(
@@ -93,7 +96,7 @@ df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram() +
   ) + theme_minimal()
 png('txp_frequency.png')
 ```
-Now I will make a leaflet plot of transplant centers in the United States
+Now I will make a leaflet plot of kidney transplant centers in the United States.
 ```{r, eval = FALSE}
 library(leaflet)
 
@@ -104,17 +107,7 @@ leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
 m = df_one_merge %>% leaflet() %>% addTiles() %>% addCircleMarkers(lat = ~lat, lng = ~lng)
 m
 ```
-Now I will make another leaflet plot of transplant centers in the United States
-```{r, eval = FALSE}
-library(leaflet)
-
-leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
-#df = data.frame(Lat = 1:10, Long = rnorm(10))
-#leaflet(df) %>% addCircles()
-#view(df_one_merge)
-m = df_one_merge %>% leaflet() %>% addTiles() %>% addCircleMarkers(lat = ~lat, lng = ~lng, color = ~newlistings_center_all)
-m
-```
+#Merging the outcome dataset with the patient characteristics data set.
 I will now import the data frame from another sheet
 ```{r}
 df_two = read_excel("../data/csrs_final_tables_2006_KI.xls", sheet = "Tables B2-B3 Center")
@@ -126,7 +119,7 @@ view(df_two)
 colnames = colnames(df_two)
 print(colnames)
 ```
-I will rename and clean the columns for dataframe two.
+I will rename and clean the columns for the patient characteristics data set.
 ```{r}
 df_two_names = read_excel("../data/B2 names.xlsx")
 df_two_names = janitor::clean_names(df_two_names)
@@ -138,7 +131,7 @@ df_two_clean = df_two[-c(1), ]
 df_two_clean = df_two_clean %>% rename (entire_name= center_name_na , ctr_cd = center_code_na)
 view(df_two_clean)
 ```
-I will select and rearrange values in dataframe two
+I will make a dataframe of patient demographics and plot the distributions by zipcode.
 ```{r}
 df_two_select = df_two_clean %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
 df_social = merge(df_one_merge, df_two_select)
@@ -151,11 +144,16 @@ df_demographics_pivot =
     names_to = "race_category", 
     values_to = "race_category_percent") %>% mutate(race_category_percent = as.numeric(race_category_percent)) %>% mutate(race_category = as.factor(race_category))
 
-plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point()
+plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point()+ 
+  labs(
+    title = "Patient Demographics by Zipcode",
+    x = "Zipcode",
+    y = "Race (Percent)"
+  ) + theme_minimal()
 plot
 
 ```
-Now I will make an age dataframe
+Now I will make an age dataframe and plot the age distributions by zipcode.
 ```{r}
 df_two_age = df_two_clean[, c(1,2,6,8,10,12,14,16,18,20,22)]
 df_age = merge(df_one_merge, df_two_age)
@@ -168,10 +166,15 @@ df_age_pivot =
     names_to = "age_category", 
     values_to = "age_category_percent") %>% mutate (age_category_percent = as.numeric(age_category_percent)) %>% mutate(age_category = factor(age_category, levels =c("age_2_allc2","age_2_11_allc2", "age_12_17_allc2", "age_18_34_allc2", "age_35_49_allc2", "age_50_64_allc2", "age_65_79_allc2", "age_70_allc2"))) %>% drop_na()
 view(df_age_pivot)
-plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point()
+plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point() + 
+  labs(
+    title = "Patient Age Groups by Zipcode",
+    x = "Zipcode",
+    y = "Age Group (Percent)"
+  ) + theme_minimal()
 plot
 ```
-Now I will make a gender dataframe
+Now I will make a gender dataframe and plot the gender distributions by zipcode.
 ```{r}
 df_two_gender = df_two_clean[, c(1,2,34,36)]
 df_gender = merge(df_one_merge, df_two_gender)
@@ -184,10 +187,15 @@ df_gender_pivot =
     names_to = "gender_category", 
     values_to = "gender_category_percent") %>% mutate (gender_category_percent = as.numeric(gender_category_percent)) %>% mutate(gender_category = as.factor(gender_category))
 view(df_gender_pivot)
-plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()
+plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()+ 
+  labs(
+    title = "Patient Gender Groups by Zipcode",
+    x = "Zipcode",
+    y = "Gender Group (Percent)"
+  ) + theme_minimal()
 plot
 ```
-
+Now I will make a comorbidities dataframe and plot the pra score distributions by zipcode.
 ```{r}
 df_two_comorbidities = df_two_clean[, c(1,2,64,66,68,70,72,74,76,78,80,82,126,128,130,132,138,140,142,144,146,148,150, 162, 164, 166, 168, 170, 172, 190)]
 df_comorbidities = merge(df_one_merge, df_two_comorbidities)
@@ -201,11 +209,16 @@ df_comorbidities_pivot =
     names_to = "comorbidity_category", 
     values_to = "comorbidity_category_percent") %>% mutate (comorbidity_category_percent = as.numeric(comorbidity_category_percent)) %>% mutate(comorbidity_category = as.factor(comorbidity_category))
 view(df_comorbidities_pivot)
-plot = df_comorbidities_pivot %>% ggplot(aes(x=zipcode, y =comorbidity_category_percent, color = comorbidity_category)) + geom_point()
+plot = df_comorbidities_pivot %>% ggplot(aes(x=zipcode, y =comorbidity_category_percent, color = comorbidity_category)) + geom_point()+ 
+  labs(
+    title = "Patient Comorbidity Groups by Zipcode",
+    x = "Zipcode",
+    y = "Comorbidity Group (Percent)"
+  ) + theme_minimal()
 plot
 
 ```
-Blood type dataframe
+Now, I will make a blood type dataframe and plot the blood type distributions by zipcode.
 ```{r}
 df_two_blood_type = df_two_clean[, c(1,2,24, 26, 28, 30, 32)]
 df_blood_type = merge(df_one_merge, df_two_blood_type)
@@ -218,11 +231,16 @@ df_blood_type_pivot =
     names_to = "blood_type_category", 
     values_to = "blood_type_category_percent") %>% mutate (blood_type_category_percent = as.numeric(blood_type_category_percent)) %>% mutate(blood_type_category = as.factor(blood_type_category))
 view(df_blood_type_pivot)
-plot = df_blood_type_pivot %>% ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + geom_point()
+plot = df_blood_type_pivot %>% ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + geom_point()+ 
+  labs(
+    title = "Patient Blood Type Groups by Zipcode",
+    x = "Zipcode",
+    y = "Blood Type Group (Percent)"
+  ) + theme_minimal()
 plot
 
 ```
-
+Now, I will amke a PRA score dataframe and plot the PRA score distributions by zipcode.
 ```{r}
 view(df_two_clean)
 df_two_pra = df_two_clean[, c(1,2, 138, 140, 142, 144)]
@@ -237,63 +255,73 @@ df_pra_pivot =
     names_to = "pra_category", 
     values_to = "pra_category_percent") %>% mutate (pra_category_percent = as.numeric(pra_category_percent)) %>% mutate(pra_category = factor(pra_category, c("pra_0_9_allc2", "pra_10_79_allc2", "pra_80_allc2", "pra_unknown_allc2")))
 view(df_pra_pivot)
-plot = df_pra_pivot %>% ggplot(aes(x=zipcode, y =pra_category_percent, color = pra_category)) + geom_point()
+plot = df_pra_pivot %>% ggplot(aes(x=zipcode, y =pra_category_percent, color = pra_category)) + geom_point()+ 
+  labs(
+    title = "Patient PRA Score Groups by Zipcode",
+    x = "Zipcode",
+    y = "PRA Score Group (Percent)"
+  ) + theme_minimal()
 plot
 ```
-Now I will merge the pra and comorbidities dataframes and examine for correlations.
+Now I will merge the pra and comorbidities dataframes and make scatter plots to investigate for correlations.
 ```{r}
 df_pra_comorbid = merge(df_pra_pivot, df_comorbidities_pivot)
 view(df_pra_comorbid)
-plot = df_pra_comorbid %>% ggplot(aes(x=comorbidity_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~comorbidity_category)
+plot = df_pra_comorbid %>% ggplot(aes(x=comorbidity_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + labs(
+    title = "PRA Scores vs. Comorbidities", x ="Comorbidities (Percent)", y = "PRA Score (Percent)") + theme_minimal() + facet_wrap(~comorbidity_category)
 plot
 #png('pra_comorbidity.png')
 
 ```
-Overall, there is no correlation with pra score and comorbidities.
+Overall, there is no strong correlation with pra score and comorbidities.
 
-Now I will merge the pra and age dataframes and examine for correlations.
+Now I will merge the pra and age dataframes and and make scatter plots to investigate for correlations.
 ```{r}
 df_pra_age = merge(df_pra_pivot, df_age_pivot)
 view(df_pra_age)
-plot = df_pra_age %>% ggplot(aes(x=age_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~age_category)
+plot = df_pra_age %>% ggplot(aes(x=age_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~age_category) + labs(
+    title = "PRA Scores vs. Age Groups", x ="Age Groups (Percent)", y = "PRA Score (Percent)") + theme_minimal() 
 plot
 #png('pra_comorbidity.png')
 
 ```
-Overall, there is no correlation with pra score and age.
+Overall, there is no strong correlation with pra score and age.
 
-Now I will merge the pra and gender dataframes and examine for correlations.
+Now I will merge the pra and gender dataframes and make scatter plots to investigate for correlations.
 ```{r}
 df_pra_gender = merge(df_pra_pivot, df_gender_pivot)
 view(df_pra_gender)
-plot = df_pra_gender %>% ggplot(aes(x=gender_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~gender_category)
+plot = df_pra_gender %>% ggplot(aes(x=gender_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~gender_category) + labs(
+    title = "PRA Scores vs. Gender Groups", x ="Gender Groups (Percent)", y = "PRA Score (Percent)") + theme_minimal()
 plot
 #png('pra_comorbidity.png')
 
 ```
-Overall, there is no correlation with pra score and gender.
+Overall, there is no strong correlation with pra score and gender.
 
-Now I will merge the pra and demographics dataframes and examine for correlations.
+Now I will merge the pra and demographics dataframes and make scatter plots to investigate for correlations.
 ```{r}
 df_pra_demographics = merge(df_pra_pivot, df_demographics_pivot)
 view(df_pra_demographics)
-plot = df_pra_demographics %>% ggplot(aes(x=race_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~race_category)
+plot = df_pra_demographics %>% ggplot(aes(x=race_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~race_category) + labs(
+    title = "PRA Scores vs. Race", x ="Race (Percent)", y = "PRA Score (Percent)") + theme_minimal()
 plot
 #png('pra_comorbidity.png')
 
 ```
-Overall, there is no correlation with pra score and race.
+Overall, there is no strong correlation with pra score and race.
 
-Now I will merge the pra and blood type dataframes and examine for correlations.
+Now I will merge the pra and blood type dataframes and make scatter plots to investigate for correlations.
 ```{r}
 df_pra_blood_type = merge(df_pra_pivot, df_blood_type_pivot)
 view(df_pra_blood_type)
-plot = df_pra_blood_type %>% ggplot(aes(x=blood_type_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~blood_type_category)
+plot = df_pra_blood_type %>% ggplot(aes(x=blood_type_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~blood_type_category)+ labs(
+    title = "PRA Scores vs. Blood Type", x ="Blood Type (Percent)", y = "PRA Score (Percent)") + theme_minimal()
 plot
 #png('pra_comorbidity.png')
 
 ```
-
+Overall, there is no strong correlation with pra score and blood type.
 
 Now I will make tables
 ```{r}
@@ -309,4 +337,16 @@ Now I will make tables
 #knitr::kable(df_age) %>% save_kable("draft_age.pdf") 
 #knitr::kable(df_gender) %>% save_kable("draft_gender.pdf") 
 #knitr::kable(df_comorbidities) %>% save_kable("draft_comorbidities.pdf") 
+```
+
+#Now I will make another leaflet plot of transplant centers in the United States
+```{r, eval = FALSE}
+#library(leaflet)
+
+#leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
+#df = data.frame(Lat = 1:10, Long = rnorm(10))
+#leaflet(df) %>% addCircles()
+#view(df_one_merge)
+#m = df_one_merge %>% leaflet() %>% addTiles() %>% addCircleMarkers(lat = ~lat, lng = ~lng, color = ~newlistings_center_all)
+#m
 ```
