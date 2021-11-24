@@ -700,7 +700,7 @@ df_age_pivot =
     df_age, 
     age_2_11_allc2:age_70_allc2,
     names_to = "age_category", 
-    values_to = "age_category_percent") %>% mutate (age_category_percent = as.numeric(age_category_percent)) %>% mutate(age_category = factor(age_category, levels =c("age_2_allc2","age_2_11_allc2", "age_12_17_allc2", "age_18_34_allc2", "age_35_49_allc2", "age_50_64_allc2", "age_65_79_allc2", "age_70_allc2")))
+    values_to = "age_category_percent") %>% mutate (age_category_percent = as.numeric(age_category_percent)) %>% mutate(age_category = factor(age_category, levels =c("age_2_allc2","age_2_11_allc2", "age_12_17_allc2", "age_18_34_allc2", "age_35_49_allc2", "age_50_64_allc2", "age_65_79_allc2", "age_70_allc2"))) %>% drop_na()
 view(df_age_pivot)
 plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point()
 plot
@@ -783,7 +783,94 @@ plot = df_pra_pivot %>% ggplot(aes(x=zipcode, y =pra_category_percent, color = p
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-19-1.png)<!-- --> Now I
+will merge the pra and comorbidities dataframes and examine for
+correlations.
+
+``` r
+df_pra_comorbid = merge(df_pra_pivot, df_comorbidities_pivot)
+view(df_pra_comorbid)
+plot = df_pra_comorbid %>% ggplot(aes(x=comorbidity_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~comorbidity_category)
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
+
+``` r
+#png('pra_comorbidity.png')
+```
+
+Overall, there is no correlation with pra score and comorbidities.
+
+Now I will merge the pra and age dataframes and examine for
+correlations.
+
+``` r
+df_pra_age = merge(df_pra_pivot, df_age_pivot)
+view(df_pra_age)
+plot = df_pra_age %>% ggplot(aes(x=age_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~age_category)
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+
+``` r
+#png('pra_comorbidity.png')
+```
+
+Overall, there is no correlation with pra score and age.
+
+Now I will merge the pra and gender dataframes and examine for
+correlations.
+
+``` r
+df_pra_gender = merge(df_pra_pivot, df_gender_pivot)
+view(df_pra_gender)
+plot = df_pra_gender %>% ggplot(aes(x=gender_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~gender_category)
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
+
+``` r
+#png('pra_comorbidity.png')
+```
+
+Overall, there is no correlation with pra score and gender.
+
+Now I will merge the pra and demographics dataframes and examine for
+correlations.
+
+``` r
+df_pra_demographics = merge(df_pra_pivot, df_demographics_pivot)
+view(df_pra_demographics)
+plot = df_pra_demographics %>% ggplot(aes(x=race_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~race_category)
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
+
+``` r
+#png('pra_comorbidity.png')
+```
+
+Overall, there is no correlation with pra score and race.
+
+Now I will merge the pra and blood type dataframes and examine for
+correlations.
+
+``` r
+df_pra_blood_type = merge(df_pra_pivot, df_blood_type_pivot)
+view(df_pra_blood_type)
+plot = df_pra_blood_type %>% ggplot(aes(x=blood_type_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~blood_type_category)
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
+
+``` r
+#png('pra_comorbidity.png')
+```
 
 Now I will make tables
 
