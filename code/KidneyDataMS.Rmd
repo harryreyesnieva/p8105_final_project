@@ -20,7 +20,7 @@ library(kableExtra)
 
 I will import the kidney data set, clean its column names, and examine the structure, head, and tail of the data set. Then, I will view the data set.
 ```{r, echo = TRUE}
-df_one = read_excel("../data/csrs_final_tables_2006_KI.xls", sheet = "Table B1")
+df_one = read_excel("./data/csrs_final_tables_2006_KI.xls", sheet = "Table B1")
 df_one = janitor::clean_names(df_one)
 str(df_one)
 head(df_one)
@@ -49,7 +49,7 @@ df_one_plot %>% group_by(ctr_cd) %>% ggplot(aes(newlistings_percent_deteriorated
 ```
 Now, I will read in, tidy, and merge with the zipcode file.
 ```{r}
-df_zipcodes = read_excel("../data/zipcodes.xlsx")
+df_zipcodes = read_excel("./data/zipcodes.xlsx")
 df_zipcodes = df_zipcodes[-c(1), ]
 df_zipcodes[, c(2)] = sapply(df_zipcodes[, c(2)], as.numeric)
 df_zipcodes = janitor::clean_names(df_zipcodes)
@@ -94,7 +94,7 @@ leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
 #df = data.frame(Lat = 1:10, Long = rnorm(10))
 #leaflet(df) %>% addCircles()
 #view(df_one_merge)
-m = df_one_merge %>% leaflet() %>% addTiles() %>% addMarkers(lat = ~lat, lng = ~lng)
+m = df_one_merge %>% leaflet() %>% addTiles() %>% addCircleMarkers(lat = ~lat, lng = ~lng)
 m
 ```
 Now I will make another leaflet plot of transplant centers in the United States
