@@ -403,7 +403,7 @@ leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
 #df = data.frame(Lat = 1:10, Long = rnorm(10))
 #leaflet(df) %>% addCircles()
 #view(df_one_merge)
-m = df_one_merge %>% leaflet() %>% addTiles() %>% addMarkers(lat = ~lat, lng = ~lng)
+m = df_one_merge %>% leaflet() %>% addTiles() %>% addCircleMarkers(lat = ~lat, lng = ~lng)
 m
 ```
 
@@ -648,52 +648,89 @@ I will select and rearrange values in dataframe two
 df_two_select = df_two_clean %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
 df_social = merge(df_one_merge, df_two_select)
 df_demographics = df_social[, c(1,2,3, 68, 71:76)]
+view(df_demographics)
+df_demographics_pivot =
+  pivot_longer(
+    df_demographics, 
+    asian_allc2:race_unknown_allc2,
+    names_to = "race_category", 
+    values_to = "race_category_percent") %>% mutate(race_category_percent = as.numeric(race_category_percent))
 
+plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point()
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-13-1.png)<!-- --> Now I
+will make an age dataframe
+
+``` r
 df_two_age = df_two_clean[, c(1,2,6,8,10,12,14,16,18,20)]
 df_age = merge(df_one_merge, df_two_age)
 df_age = df_age[, c(1,2,3, 68, 71:76)]
+#view(df_age)
+df_age_pivot =
+  pivot_longer(
+    df_age, 
+    age_2_11_allc2:age_50_64_allc2,
+    names_to = "age_category", 
+    values_to = "age_category_percent") %>% mutate (age_category_percent = as.numeric(age_category_percent))
+view(df_age_pivot)
+plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point()
+plot
+```
 
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-14-1.png)<!-- --> Now I
+will make a gender dataframe
+
+``` r
 df_two_gender = df_two_clean[, c(1,2,34,36)]
 df_gender = merge(df_one_merge, df_two_gender)
 df_gender = df_gender[, c(1,2,3, 68, 71:72)]
+view(df_gender)
+df_gender_pivot =
+  pivot_longer(
+    df_gender, 
+    female_allc2:male_allc2,
+    names_to = "gender_category", 
+    values_to = "gender_category_percent") %>% mutate (gender_category_percent = as.numeric(gender_category_percent))
+view(df_gender_pivot)
+plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()
+plot
+```
 
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+
+``` r
 df_two_comorbidities = df_two_clean[, c(1,2,64,66,68,70,72,74,76,78,80,82,126,128,130,132,138,140,142,144,146,148,150, 162, 164, 166, 168, 170, 172, 190)]
 df_comorbidities = merge(df_one_merge, df_two_comorbidities)
 df_comorbidities = df_comorbidities[, c(1,2,3, 68, 71:81, 87:98)]
 df_comorbidities = df_comorbidities[, c(1:14, 18:20, 27)]
-
-view(df_two_clean)
 view(df_comorbidities)
-view(df_one_merge)
+df_comorbidities_pivot =
+  pivot_longer(
+    df_comorbidities, 
+    diabetes_allc2:congenital_familial_metabolic_allc2,
+    names_to = "comorbidity_category", 
+    values_to = "comorbidity_category_percent") %>% mutate (comorbidity_category_percent = as.numeric(comorbidity_category_percent))
+view(df_comorbidities_pivot)
+plot = df_comorbidities_pivot %>% ggplot(aes(x=zipcode, y =comorbidity_category_percent, color = comorbidity_category)) + geom_point()
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-16-1.png)<!-- --> Now I
+will make tables
+
+``` r
+#view(df_two_clean)
+#view(df_comorbidities)
+#view(df_one_merge)
 #view(df_gender)
 #view(df_two_gender)
 #view(df_social)
 #view(df_demographics)
 #view(df_age)
-knitr::kable(df_demographics) %>% save_kable("draft_demographics.pdf")
+#knitr::kable(df_demographics) %>% save_kable("draft_demographics.pdf")
+#knitr::kable(df_age) %>% save_kable("draft_age.pdf") 
+#knitr::kable(df_gender) %>% save_kable("draft_gender.pdf") 
+#knitr::kable(df_comorbidities) %>% save_kable("draft_comorbidities.pdf") 
 ```
-
-    ## Note that HTML color may not be displayed on PDF properly.
-
-    ## save_kable will have the best result with magick installed.
-
-``` r
-knitr::kable(df_age) %>% save_kable("draft_age.pdf") 
-```
-
-    ## Note that HTML color may not be displayed on PDF properly.
-    ## save_kable will have the best result with magick installed.
-
-``` r
-knitr::kable(df_gender) %>% save_kable("draft_gender.pdf") 
-```
-
-    ## Note that HTML color may not be displayed on PDF properly.
-    ## save_kable will have the best result with magick installed.
-
-``` r
-knitr::kable(df_comorbidities) %>% save_kable("draft_comorbidities.pdf") 
-```
-
-    ## Note that HTML color may not be displayed on PDF properly.
-    ## save_kable will have the best result with magick installed.
