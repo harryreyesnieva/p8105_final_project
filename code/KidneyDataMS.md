@@ -78,53 +78,15 @@ str(df_one)
     ##  $ wla_st_puz     : chr [1:240] "On waitlist at start" "100" "100" "100" ...
 
 ``` r
-head(df_one)
+#head(df_one)
+#tail(df_one)
+#view(df_one)
 ```
 
-    ## # A tibble: 6 × 60
-    ##   entire_name    ctr_cd  ctr_ty release_date org   wla_addcen_nc1 wla_addcen_nc2
-    ##   <chr>          <chr>   <chr>  <chr>        <chr> <chr>          <chr>         
-    ## 1 Center Name    Center… Cente… Release Date Organ New Listings   New Listings  
-    ## 2 Children's of… ALCH    TX1    44046.79166… KI    13             7             
-    ## 3 University of… ALUA    TX1    44046.79166… KI    426            447           
-    ## 4 Birmingham VA… ALVA    TX1    44046.79166… KI    36             35            
-    ## 5 Arkansas Chil… ARCH    TX1    44046.79166… KI    14             5             
-    ## 6 UAMS Medical … ARUA    TX1    44046.79166… KI    145            188           
-    ## # … with 53 more variables: wla_addcen_pcz <chr>, wla_addcen_prz <chr>,
-    ## #   wla_addcen_puz <chr>, wla_end_nc1 <chr>, wla_end_nc2 <chr>,
-    ## #   wla_end_pcz <chr>, wla_end_prz <chr>, wla_end_puz <chr>,
-    ## #   wla_remdet_nc1 <chr>, wla_remdet_nc2 <chr>, wla_remdet_pcz <chr>,
-    ## #   wla_remdet_prz <chr>, wla_remdet_puz <chr>, wla_remdied_nc1 <chr>,
-    ## #   wla_remdied_nc2 <chr>, wla_remdied_pcz <chr>, wla_remdied_prz <chr>,
-    ## #   wla_remdied_puz <chr>, wla_remoth_nc1 <chr>, wla_remoth_nc2 <chr>, …
-
-``` r
-tail(df_one)
-```
-
-    ## # A tibble: 6 × 60
-    ##   entire_name     ctr_cd ctr_ty release_date org   wla_addcen_nc1 wla_addcen_nc2
-    ##   <chr>           <chr>  <chr>  <chr>        <chr> <chr>          <chr>         
-    ## 1 Virginia Mason… WAVM   TX1    44046.79166… KI    105            150           
-    ## 2 Children's Hos… WICH   TX1    44046.79166… KI    10             10            
-    ## 3 Froedtert Memo… WISE   TX1    44046.79166… KI    190            106           
-    ## 4 Aurora St. Luk… WISL   TX1    44046.79166… KI    82             79            
-    ## 5 University of … WIUW   TX1    44046.79166… KI    407            451           
-    ## 6 Charleston Are… WVCA   TX1    44046.79166… KI    65             83            
-    ## # … with 53 more variables: wla_addcen_pcz <chr>, wla_addcen_prz <chr>,
-    ## #   wla_addcen_puz <chr>, wla_end_nc1 <chr>, wla_end_nc2 <chr>,
-    ## #   wla_end_pcz <chr>, wla_end_prz <chr>, wla_end_puz <chr>,
-    ## #   wla_remdet_nc1 <chr>, wla_remdet_nc2 <chr>, wla_remdet_pcz <chr>,
-    ## #   wla_remdet_prz <chr>, wla_remdet_puz <chr>, wla_remdied_nc1 <chr>,
-    ## #   wla_remdied_nc2 <chr>, wla_remdied_pcz <chr>, wla_remdied_prz <chr>,
-    ## #   wla_remdied_puz <chr>, wla_remoth_nc1 <chr>, wla_remoth_nc2 <chr>, …
-
-``` r
-view(df_one)
-```
-
-\#Change column names I will change the column names to more intuitive
-ones
+There are 240 observations and 60 variables, which describe kidney
+transplant pateints on a waitlist and the transplant centers. Most of
+the variables are characters. \#Change column names I will change the
+column names to more intuitive ones
 
 ``` r
 df_one_names = df_one %>% rename(newlistings_center_time1 = wla_addcen_nc1, newlistings_center_time2 = wla_addcen_nc2, newlistings_center_all = wla_addcen_pcz,newlistings_regional = wla_addcen_prz, newlistings_usa = wla_addcen_puz)  %>% rename( endlistings_center_time1 = wla_end_nc1, endlistings_center_time2 = wla_end_nc2, endlistings_center_all = wla_end_pcz, endlistings_regional = wla_end_prz, endlistings_usa = wla_end_puz) %>% rename(deteriorated_center_time1 = wla_remdet_nc1, deteriorated_center_time2 = wla_remdet_nc2, deteriorated_center_all = wla_remdet_pcz, deteriorated_regional = wla_remdet_prz, deteriorated_usa = wla_remdet_puz) %>% rename( died_center_time1 = wla_remdied_nc1, died_center_time2 = wla_remdied_nc2, died_center_all = wla_remdied_pcz, died_regional = wla_remdied_prz, died_usa = wla_remdied_puz) %>% rename(other_center_time1 = wla_remoth_nc1, other_center_time2 = wla_remoth_nc2, other_center_all = wla_remoth_pcz, other_regional = wla_remoth_prz, other_usa = wla_remoth_puz) %>% rename( recovered_center_time1 = wla_remrec_nc1, recovered_center_time2 = wla_remrec_nc2, recovered_center_all = wla_remrec_pcz, recovered_regional = wla_remrec_prz, recovered_usa = wla_remrec_puz) %>% rename(transfer_center_time1 = wla_remtfer_nc1, transfer_center_time2 = wla_remtfer_nc2, transfer_center_all = wla_remtfer_pcz, transfer_regional = wla_remtfer_prz, transfer_usa = wla_remtfer_puz) %>% rename(deceased_donor_center_time1 = wla_remtxc_nc1, deceased_donor_center_time2 = wla_remtxc_nc2, deceased_donor_center_all = wla_remtxc_pcz, deceased_donor_regional = wla_remtxc_prz, deceased_donor_usa = wla_remtxc_puz) %>% rename(living_donor_center_time1 = wla_remtxl_nc1, living_donor_center_time2 = wla_remtxl_nc2, living_donor_center_all = wla_remtxl_pcz, living_donor_regional = wla_remtxl_prz, living_donor_usa = wla_remtxl_puz) %>% rename(transplant_other_center_time1 = wla_remtxoc_nc1, transplant_other_center_time2 = wla_remtxoc_nc2, transplant_other_center_all = wla_remtxoc_pcz, transplant_other_regional = wla_remtxoc_prz, transplant_other_center_usa = wla_remtxoc_puz) %>% rename(start_waitlist_center_time1 = wla_st_nc1, start_waitlist_center_time2 = wla_st_nc2, start_waitlist_center_all = wla_st_pcz, start_waitlist_regional = wla_st_prz, start_waitlist_usa = wla_st_puz) %>% view() 
@@ -132,7 +94,8 @@ df_one_names = df_one %>% rename(newlistings_center_time1 = wla_addcen_nc1, newl
 
 \#Tidy data.
 
-I will delete an extraneous row and drop missing values
+I will delete an extraneous row, drop missing values, and convert the
+appropriate columns from character to numeric.
 
 ``` r
 df_one_names = df_one_names[-c(1), ]
@@ -317,35 +280,9 @@ str(df_zipcodes)
     ##  $ zipcode    : num [1:238] 35233 35233 35233 72202 72205 ...
 
 ``` r
-head(df_zipcodes)
-```
-
-    ## # A tibble: 6 × 2
-    ##   entire_name                           zipcode
-    ##   <chr>                                   <dbl>
-    ## 1 Children's of Alabama (ALCH)            35233
-    ## 2 University of Alabama Hospital (ALUA)   35233
-    ## 3 Birmingham VA Medical Center (ALVA)     35233
-    ## 4 Arkansas Children's Hospital (ARCH)     72202
-    ## 5 UAMS Medical Center (ARUA)              72205
-    ## 6 Phoenix Children's Hospital (AZCH)      85016
-
-``` r
-tail(df_zipcodes)
-```
-
-    ## # A tibble: 6 × 2
-    ##   entire_name                                         zipcode
-    ##   <chr>                                                 <dbl>
-    ## 1 Virginia Mason Medical Center (WAVM)                  98111
-    ## 2 Children's Hospital of Wisconsin (WICH)               53226
-    ## 3 Froedtert Memorial Lutheran Hospital (WISE)           53226
-    ## 4 Aurora St. Luke's Medical Center (WISL)               53215
-    ## 5 University of Wisconsin Hospital and Clinics (WIUW)   53792
-    ## 6 Charleston Area Medical Center (WVCA)                 25325
-
-``` r
-view(df_zipcodes)
+#head(df_zipcodes)
+#tail(df_zipcodes)
+#view(df_zipcodes)
 ```
 
 Now I will cross reference the coordinates that correspond with each
@@ -357,22 +294,20 @@ for (zipcode in df_zipcodes["zipcode"]){
 }
 #view(df_zip_geo)
 df_geo_merge = merge(df_zipcodes, df_zip_geo, all = TRUE)
-view(df_geo_merge)
+#view(df_geo_merge)
 df_one_merge = merge(df_one_plot, df_geo_merge, all = TRUE)
-view(df_one_merge)
+#view(df_one_merge)
 ```
 
 \#Plot outcome variables. I will plot the outcome variables to get a
 sense of which have the most variability.
 
 ``` r
-df_outcomes = df_one_merge[, c(61:66)]
-view(df_outcomes)
-df_continuous = sapply(df_outcomes, as.numeric)
+df_outcomes = df_one_merge[, c(61:66)] %>% filter(newlistings_percent_transfer <= 100)
 str(df_outcomes)
 ```
 
-    ## 'data.frame':    238 obs. of  6 variables:
+    ## 'data.frame':    229 obs. of  6 variables:
     ##  $ newlistings_percent_mortality     : num  11.54 9.52 5.15 17.28 0 ...
     ##  $ newlistings_percent_deteriorated  : num  5.77 7.62 8.25 8.38 0 ...
     ##  $ newlistings_percent_transfer      : num  15.38 4.76 7.22 1.05 0 ...
@@ -381,19 +316,24 @@ str(df_outcomes)
     ##  $ newlistings_percent_recovered     : num  0 0 0 0 0 ...
 
 ``` r
-ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = 'free_x') + labs(
-    title = "Outcome Frequency",
-    x = "Outcome (Percent)",
-    y = "Frequency"
-  ) + theme_minimal() ###Remove ratio from the list
+ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = "STTR Kidney Transplant Data", x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
 ```
 
-    ## Warning: Removed 30 rows containing non-finite values (stat_bin).
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> The
-percent deteriorated is the clinical outcome with the most variability.
-The percentages of living and deceased donors have some variability as
-well.
+``` r
+df_continuous = sapply(df_outcomes, as.numeric)
+str(df_continuous)
+```
+
+    ##  num [1:229, 1:6] 11.54 9.52 5.15 17.28 0 ...
+    ##  - attr(*, "dimnames")=List of 2
+    ##   ..$ : NULL
+    ##   ..$ : chr [1:6] "newlistings_percent_mortality" "newlistings_percent_deteriorated" "newlistings_percent_transfer" "newlistings_percent_living_donor" ...
+
+The percent deteriorated is the clinical outcome with the most
+variability. The percentages of living and deceased donors have some
+variability as well.
 
 Now I will plot the number of kidney transolant centers by zipcode.
 
