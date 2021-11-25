@@ -316,7 +316,7 @@ str(df_outcomes)
     ##  $ newlistings_percent_recovered     : num  0 0 0 0 0 ...
 
 ``` r
-ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = "STTR Kidney Transplant Data", x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
+ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
 ```
 
 ![](KidneyDataMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
@@ -338,28 +338,24 @@ variability as well.
 Now I will plot the number of kidney transolant centers by zipcode.
 
 ``` r
-df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram() + 
+df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram(bins = 50) + 
   labs(
-    title = "Transplant Center Frequency by Zipcode",
+    title = "Transplant Center Frequency by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "Transplant Center Count"
   ) + theme_minimal()
 ```
 
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
 ![](KidneyDataMS_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ``` r
-png('txp_frequency.png')
+#png('txp_frequency.png')
 ```
 
 Now I will make a leaflet plot of kidney transplant centers in the
 United States.
 
 ``` r
-library(leaflet)
-
 leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
 #df = data.frame(Lat = 1:10, Long = rnorm(10))
 #leaflet(df) %>% addCircles()
@@ -369,7 +365,8 @@ m
 ```
 
 \#Merging the outcome dataset with the patient characteristics data set.
-I will now import the data frame from another sheet
+I will now import the data frame from another sheet that contains center
+names and zipcodes only.
 
 ``` r
 df_two = read_excel("../data/csrs_final_tables_2006_KI.xls", sheet = "Tables B2-B3 Center")
@@ -480,49 +477,9 @@ str(df_two)
     ##   [list output truncated]
 
 ``` r
-head(df_two)
-```
-
-    ## # A tibble: 6 × 191
-    ##   entire_name     ctr_cd  ctr_ty  release_date org   wlc_a10_allc2 wlc_a10_newc2
-    ##   <chr>           <chr>   <chr>   <chr>        <chr> <chr>         <chr>        
-    ## 1 Center Name     Center… Center… Release Date Organ Age 2-11      Age 2-11     
-    ## 2 Hartford Hospi… CTHH    TX1     44046.79166… KI    0.2857142857  0            
-    ## 3 Yale New Haven… CTYN    TX1     44046.79166… KI    0.3053435115  0.4255319149 
-    ## 4 Beth Israel De… MABI    TX1     44046.79166… KI    0             0            
-    ## 5 Baystate Medic… MABS    TX1     44046.79166… KI    0             0            
-    ## 6 Boston Medical… MABU    TX1     44046.79166… KI    0             0            
-    ## # … with 184 more variables: wlc_a17_allc2 <chr>, wlc_a17_newc2 <chr>,
-    ## #   wlc_a2_allc2 <chr>, wlc_a2_newc2 <chr>, wlc_a34_allc2 <chr>,
-    ## #   wlc_a34_newc2 <chr>, wlc_a49_allc2 <chr>, wlc_a49_newc2 <chr>,
-    ## #   wlc_a64_allc2 <chr>, wlc_a64_newc2 <chr>, wlc_a69_allc2 <chr>,
-    ## #   wlc_a69_newc2 <chr>, wlc_a70p_allc2 <chr>, wlc_a70p_newc2 <chr>,
-    ## #   wlc_all_allc2 <chr>, wlc_all_newc2 <chr>, wlc_bab_allc2 <chr>,
-    ## #   wlc_bab_newc2 <chr>, wlc_ba_allc2 <chr>, wlc_ba_newc2 <chr>, …
-
-``` r
-tail(df_two)
-```
-
-    ## # A tibble: 6 × 191
-    ##   entire_name       ctr_cd ctr_ty release_date org   wlc_a10_allc2 wlc_a10_newc2
-    ##   <chr>             <chr>  <chr>  <chr>        <chr> <chr>         <chr>        
-    ## 1 Children's Hospi… VACH   TX1    44046.79166… KI    22.222222222  46.153846154 
-    ## 2 Henrico Doctors'… VAHD   TX1    44046.79166… KI    0             0            
-    ## 3 Medical College … VAMC   TX1    44046.79166… KI    1.8556701031  0.7299270073 
-    ## 4 Sentara Norfolk … VANG   TX1    44046.79166… KI    0             0            
-    ## 5 University of Vi… VAUV   TX1    44046.79166… KI    1.6245487365  3.9285714286 
-    ## 6 <NA>              TNVA   TX1    44046.79166… KI    0             0            
-    ## # … with 184 more variables: wlc_a17_allc2 <chr>, wlc_a17_newc2 <chr>,
-    ## #   wlc_a2_allc2 <chr>, wlc_a2_newc2 <chr>, wlc_a34_allc2 <chr>,
-    ## #   wlc_a34_newc2 <chr>, wlc_a49_allc2 <chr>, wlc_a49_newc2 <chr>,
-    ## #   wlc_a64_allc2 <chr>, wlc_a64_newc2 <chr>, wlc_a69_allc2 <chr>,
-    ## #   wlc_a69_newc2 <chr>, wlc_a70p_allc2 <chr>, wlc_a70p_newc2 <chr>,
-    ## #   wlc_all_allc2 <chr>, wlc_all_newc2 <chr>, wlc_bab_allc2 <chr>,
-    ## #   wlc_bab_newc2 <chr>, wlc_ba_allc2 <chr>, wlc_ba_newc2 <chr>, …
-
-``` r
-view(df_two)
+#head(df_two)
+#tail(df_two)
+#view(df_two)
 colnames = colnames(df_two)
 print(colnames)
 ```
@@ -588,7 +545,7 @@ df_two = setNames(df_two, setnames)
 df_two = janitor::clean_names(df_two)
 df_two_clean = df_two[-c(1), ]
 df_two_clean = df_two_clean %>% rename (entire_name= center_name_na , ctr_cd = center_code_na)
-view(df_two_clean)
+#view(df_two_clean)
 ```
 
 I will make a dataframe of patient demographics and plot the
@@ -598,7 +555,7 @@ distributions by zipcode.
 df_two_select = df_two_clean %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
 df_social = merge(df_one_merge, df_two_select)
 df_demographics = df_social[, c(1,2,3, 68, 71:76)]
-view(df_demographics)
+#view(df_demographics)
 df_demographics_pivot =
   pivot_longer(
     df_demographics, 
@@ -608,7 +565,7 @@ df_demographics_pivot =
 
 plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point()+ 
   labs(
-    title = "Patient Demographics by Zipcode",
+    title = "Patient Demographics by Zipcode",subtitle = "STTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "Race (Percent)"
   ) + theme_minimal()
@@ -622,17 +579,17 @@ will make an age dataframe and plot the age distributions by zipcode.
 df_two_age = df_two_clean[, c(1,2,6,8,10,12,14,16,18,20,22)]
 df_age = merge(df_one_merge, df_two_age)
 df_age = df_age[, c(1,2,3, 68, 71:78)]
-view(df_age)
+#view(df_age)
 df_age_pivot =
   pivot_longer(
     df_age, 
     age_2_11_allc2:age_70_allc2,
     names_to = "age_category", 
     values_to = "age_category_percent") %>% mutate (age_category_percent = as.numeric(age_category_percent)) %>% mutate(age_category = factor(age_category, levels =c("age_2_allc2","age_2_11_allc2", "age_12_17_allc2", "age_18_34_allc2", "age_35_49_allc2", "age_50_64_allc2", "age_65_79_allc2", "age_70_allc2"))) %>% drop_na()
-view(df_age_pivot)
+#view(df_age_pivot)
 plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point() + 
   labs(
-    title = "Patient Age Groups by Zipcode",
+    title = "Patient Age Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "Age Group (Percent)"
   ) + theme_minimal()
@@ -647,17 +604,17 @@ zipcode.
 df_two_gender = df_two_clean[, c(1,2,34,36)]
 df_gender = merge(df_one_merge, df_two_gender)
 df_gender = df_gender[, c(1,2,3, 68, 71:72)]
-view(df_gender)
+#view(df_gender)
 df_gender_pivot =
   pivot_longer(
     df_gender, 
     female_allc2:male_allc2,
     names_to = "gender_category", 
     values_to = "gender_category_percent") %>% mutate (gender_category_percent = as.numeric(gender_category_percent)) %>% mutate(gender_category = as.factor(gender_category))
-view(df_gender_pivot)
+#view(df_gender_pivot)
 plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()+ 
   labs(
-    title = "Patient Gender Groups by Zipcode",
+    title = "Patient Gender Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "Gender Group (Percent)"
   ) + theme_minimal()
@@ -673,17 +630,17 @@ df_two_comorbidities = df_two_clean[, c(1,2,64,66,68,70,72,74,76,78,80,82,126,12
 df_comorbidities = merge(df_one_merge, df_two_comorbidities)
 df_comorbidities = df_comorbidities[, c(1,2,3, 68, 71:81, 87:98)]
 df_comorbidities = df_comorbidities[, c(1:14, 18:20, 27)]
-view(df_comorbidities)
+#view(df_comorbidities)
 df_comorbidities_pivot =
   pivot_longer(
     df_comorbidities, 
     diabetes_allc2:congenital_familial_metabolic_allc2,
     names_to = "comorbidity_category", 
     values_to = "comorbidity_category_percent") %>% mutate (comorbidity_category_percent = as.numeric(comorbidity_category_percent)) %>% mutate(comorbidity_category = as.factor(comorbidity_category))
-view(df_comorbidities_pivot)
+#view(df_comorbidities_pivot)
 plot = df_comorbidities_pivot %>% ggplot(aes(x=zipcode, y =comorbidity_category_percent, color = comorbidity_category)) + geom_point()+ 
   labs(
-    title = "Patient Comorbidity Groups by Zipcode",
+    title = "Patient Comorbidity Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "Comorbidity Group (Percent)"
   ) + theme_minimal()
@@ -698,17 +655,17 @@ by zipcode.
 df_two_blood_type = df_two_clean[, c(1,2,24, 26, 28, 30, 32)]
 df_blood_type = merge(df_one_merge, df_two_blood_type)
 df_blood_type = df_blood_type[, c(1,2,3, 68, 71:75)]
-view(df_blood_type)
+#view(df_blood_type)
 df_blood_type_pivot =
   pivot_longer(
     df_blood_type, 
     blood_type_ab_allc2:blood_type_unknown_allc2,
     names_to = "blood_type_category", 
     values_to = "blood_type_category_percent") %>% mutate (blood_type_category_percent = as.numeric(blood_type_category_percent)) %>% mutate(blood_type_category = as.factor(blood_type_category))
-view(df_blood_type_pivot)
+#view(df_blood_type_pivot)
 plot = df_blood_type_pivot %>% ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + geom_point()+ 
   labs(
-    title = "Patient Blood Type Groups by Zipcode",
+    title = "Patient Blood Type Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "Blood Type Group (Percent)"
   ) + theme_minimal()
@@ -720,22 +677,22 @@ will amke a PRA score dataframe and plot the PRA score distributions by
 zipcode.
 
 ``` r
-view(df_two_clean)
+#view(df_two_clean)
 df_two_pra = df_two_clean[, c(1,2, 138, 140, 142, 144)]
-view(df_two_pra)
+#view(df_two_pra)
 df_pra = merge(df_one_merge, df_two_pra)
 df_pra = df_pra[, c(1,2,3, 68, 71:74)]
-view(df_pra)
+#view(df_pra)
 df_pra_pivot =
   pivot_longer(
     df_pra, 
     pra_10_79_allc2:pra_unknown_allc2,
     names_to = "pra_category", 
     values_to = "pra_category_percent") %>% mutate (pra_category_percent = as.numeric(pra_category_percent)) %>% mutate(pra_category = factor(pra_category, c("pra_0_9_allc2", "pra_10_79_allc2", "pra_80_allc2", "pra_unknown_allc2")))
-view(df_pra_pivot)
+#view(df_pra_pivot)
 plot = df_pra_pivot %>% ggplot(aes(x=zipcode, y =pra_category_percent, color = pra_category)) + geom_point()+ 
   labs(
-    title = "Patient PRA Score Groups by Zipcode",
+    title = "Patient PRA Score Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "PRA Score Group (Percent)"
   ) + theme_minimal()
@@ -748,9 +705,9 @@ to investigate for correlations.
 
 ``` r
 df_pra_comorbid = merge(df_pra_pivot, df_comorbidities_pivot)
-view(df_pra_comorbid)
+#view(df_pra_comorbid)
 plot = df_pra_comorbid %>% ggplot(aes(x=comorbidity_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + labs(
-    title = "PRA Scores vs. Comorbidities", x ="Comorbidities (Percent)", y = "PRA Score (Percent)") + theme_minimal() + facet_wrap(~comorbidity_category)
+    title = "PRA Scores vs. Comorbidities", x ="Comorbidities (Percent)",subtitle = "STTR Kidney Transplant Data, August 2020 Release", y = "PRA Score (Percent)") + theme_minimal() + facet_wrap(~comorbidity_category)
 plot
 ```
 
@@ -768,9 +725,9 @@ to investigate for correlations.
 
 ``` r
 df_pra_age = merge(df_pra_pivot, df_age_pivot)
-view(df_pra_age)
+#view(df_pra_age)
 plot = df_pra_age %>% ggplot(aes(x=age_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~age_category) + labs(
-    title = "PRA Scores vs. Age Groups", x ="Age Groups (Percent)", y = "PRA Score (Percent)") + theme_minimal() 
+    title = "PRA Scores vs. Age Groups", subtitle = "STTR Kidney Transplant Data, August 2020 Release",x ="Age Groups (Percent)", y = "PRA Score (Percent)") + theme_minimal() 
 plot
 ```
 
@@ -787,9 +744,9 @@ investigate for correlations.
 
 ``` r
 df_pra_gender = merge(df_pra_pivot, df_gender_pivot)
-view(df_pra_gender)
+#view(df_pra_gender)
 plot = df_pra_gender %>% ggplot(aes(x=gender_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~gender_category) + labs(
-    title = "PRA Scores vs. Gender Groups", x ="Gender Groups (Percent)", y = "PRA Score (Percent)") + theme_minimal()
+    title = "PRA Scores vs. Gender Groups", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x ="Gender Groups (Percent)", y = "PRA Score (Percent)") + theme_minimal()
 plot
 ```
 
@@ -806,9 +763,9 @@ plots to investigate for correlations.
 
 ``` r
 df_pra_demographics = merge(df_pra_pivot, df_demographics_pivot)
-view(df_pra_demographics)
+#view(df_pra_demographics)
 plot = df_pra_demographics %>% ggplot(aes(x=race_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~race_category) + labs(
-    title = "PRA Scores vs. Race", x ="Race (Percent)", y = "PRA Score (Percent)") + theme_minimal()
+    title = "PRA Scores vs. Race", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x ="Race (Percent)", y = "PRA Score (Percent)") + theme_minimal()
 plot
 ```
 
@@ -825,9 +782,9 @@ plots to investigate for correlations.
 
 ``` r
 df_pra_blood_type = merge(df_pra_pivot, df_blood_type_pivot)
-view(df_pra_blood_type)
+#view(df_pra_blood_type)
 plot = df_pra_blood_type %>% ggplot(aes(x=blood_type_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~blood_type_category)+ labs(
-    title = "PRA Scores vs. Blood Type", x ="Blood Type (Percent)", y = "PRA Score (Percent)") + theme_minimal()
+    title = "PRA Scores vs. Blood Type", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x ="Blood Type (Percent)", y = "PRA Score (Percent)") + theme_minimal()
 plot
 ```
 
