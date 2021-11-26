@@ -759,7 +759,7 @@ to investigate for correlations.
 df_pra_comorbid = merge(df_pra_pivot, df_comorbidities_pivot)
 #view(df_pra_comorbid)
 plot = df_pra_comorbid %>% ggplot(aes(x=comorbidity_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + labs(
-    title = "PRA Scores vs. Comorbidities", x ="Comorbidities (Percent)",subtitle = "STTR Kidney Transplant Data, August 2020 Release", y = "PRA Score (Percent)") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown")) + facet_wrap(~comorbidity_category)
+    title = "PRA Scores vs. Comorbidities", x ="Comorbidities (Percent)",subtitle = "STTR Kidney Transplant Data, August 2020 Release", y = "PRA Score (Percent)", color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown")) + facet_wrap(~comorbidity_category)
 plot
 ```
 
@@ -779,7 +779,7 @@ to investigate for correlations.
 df_pra_age = merge(df_pra_pivot, df_age_pivot)
 #view(df_pra_age)
 plot = df_pra_age %>% ggplot(aes(x=age_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~age_category) + labs(
-    title = "PRA Scores vs. Age Groups", subtitle = "STTR Kidney Transplant Data, August 2020 Release",x ="Age Groups (Percent)", y = "PRA Score (Percent)") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
+    title = "PRA Scores vs. Age Groups", subtitle = "STTR Kidney Transplant Data, August 2020 Release",x ="Age Groups (Percent)", y = "PRA Score (Percent)", color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
 plot
 ```
 
@@ -798,7 +798,7 @@ investigate for correlations.
 df_pra_gender = merge(df_pra_pivot, df_gender_pivot)
 #view(df_pra_gender)
 plot = df_pra_gender %>% ggplot(aes(x=gender_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~gender_category) + labs(
-    title = "PRA Scores vs. Gender Groups", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x ="Gender Groups (Percent)", y = "PRA Score (Percent)") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
+    title = "PRA Scores vs. Gender Groups", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x ="Gender Groups (Percent)", y = "PRA Score (Percent)" , color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
 plot
 ```
 
@@ -817,7 +817,7 @@ plots to investigate for correlations.
 df_pra_demographics = merge(df_pra_pivot, df_demographics_pivot)
 #view(df_pra_demographics)
 plot = df_pra_demographics %>% ggplot(aes(x=race_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~race_category) + labs(
-    title = "PRA Scores vs. Race", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x ="Race (Percent)", y = "PRA Score (Percent)") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
+    title = "PRA Scores vs. Race", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x ="Race (Percent)", y = "PRA Score (Percent)" , color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
 plot
 ```
 
@@ -836,7 +836,7 @@ plots to investigate for correlations.
 df_pra_blood_type = merge(df_pra_pivot, df_blood_type_pivot)
 #view(df_pra_blood_type)
 plot = df_pra_blood_type %>% ggplot(aes(x=blood_type_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~blood_type_category)+ labs(
-    title = "PRA Scores vs. Blood Type", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x ="Blood Type (Percent)", y = "PRA Score (Percent)") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
+    title = "PRA Scores vs. Blood Type", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x ="Blood Type (Percent)", y = "PRA Score (Percent)", color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
 plot
 ```
 
