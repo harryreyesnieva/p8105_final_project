@@ -99,10 +99,6 @@ x5 = df_one_merge[, c(52:60)]
 ggplot(gather(x5), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part5", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
 ```
 
-
-
-
-
 #Plot outcome variables.
 I will plot the outcome variables to get a sense of which have the most variability.
 ```{r}

@@ -148,7 +148,7 @@ ggplot(gather(x), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, sca
 }
 ```
 
-Zipcode Histogram and Leaflet
+Zipcode Histogram
 
 ``` r
 zipcode_histogram = function(x){
@@ -182,7 +182,33 @@ df_two = setNames(df_two, setnames)
 df_two = janitor::clean_names(df_two)
 df_two_clean = df_two[-c(1), ]
 df_two_clean = df_two_clean %>% rename (entire_name= center_name_na , ctr_cd = center_code_na)
-return (df_two_names)
+return (df_two_clean)
+}
+```
+
+Plot Demographics
+
+``` r
+plot_demographics = function(x,y){
+
+df_two_select = y %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
+df_social = merge(x, df_two_select)
+df_demographics = df_social[, c(1,2,3, 68, 71:76)]
+#view(df_demographics)
+df_demographics_pivot =
+  pivot_longer(
+    df_demographics, 
+    asian_allc2:race_unknown_allc2,
+    names_to = "race_category", 
+    values_to = "race_category_percent") %>% mutate(race_category_percent = as.numeric(race_category_percent)) %>% mutate(race_category = as.factor(race_category))
+
+plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point()+ 
+  labs(
+    title = "Patient Demographics by Zipcode",subtitle = phrase,
+    x = "Zipcode",
+    y = "Race (Percent)"
+  ) + theme_minimal() + scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", "Other", "Unknown", "White"))
+plot
 }
 ```
 
@@ -376,7 +402,7 @@ plot_exposures_one(df_one)
 
     ## Warning: Removed 30 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 ``` r
 plot_exposures_two(df_one)
@@ -384,7 +410,7 @@ plot_exposures_two(df_one)
 
     ## Warning: Removed 30 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-16-2.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-17-2.png)<!-- -->
 
 ``` r
 plot_exposures_three(df_one)
@@ -392,7 +418,7 @@ plot_exposures_three(df_one)
 
     ## Warning: Removed 16 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-16-3.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-17-3.png)<!-- -->
 
 ``` r
 plot_exposures_four(df_one)
@@ -400,7 +426,7 @@ plot_exposures_four(df_one)
 
     ## Warning: Removed 16 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-16-4.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-17-4.png)<!-- -->
 
 ``` r
 plot_exposures_five(df_one)
@@ -408,19 +434,19 @@ plot_exposures_five(df_one)
 
     ## Warning: Removed 18 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-16-5.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-17-5.png)<!-- -->
 
 ``` r
 plot_outcomes(df_one)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-16-6.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-17-6.png)<!-- -->
 
 ``` r
 zipcode_histogram(df_one)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-16-7.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-17-7.png)<!-- -->
 
 ``` r
 df_two_clean = second_data_frame(path) 
@@ -527,6 +553,12 @@ df_two_clean = second_data_frame(path)
     ##  $ wlc_lioth_allc2: chr [1:239] "Primary Disease Other" "-" "-" "-" ...
     ##  $ wlc_lioth_newc2: chr [1:239] "Primary Disease Other" "-" "-" "-" ...
     ##   [list output truncated]
+
+``` r
+plot_demographics(df_one, df_two_clean)
+```
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-17-8.png)<!-- -->
 
 ``` r
 #leaflet(df_one)
@@ -684,4 +716,4 @@ automate_eda(path)
     ##  $ start_waitlist_regional      : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
     ##  $ start_waitlist_usa           : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->

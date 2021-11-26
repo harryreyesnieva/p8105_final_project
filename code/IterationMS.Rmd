@@ -141,7 +141,7 @@ return (df_two_clean)
 }
 ```
 Plot Demographics
-```{r, eval=FALSE}
+```{r}
 plot_demographics = function(x,y){
 
 df_two_select = y %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
@@ -157,7 +157,7 @@ df_demographics_pivot =
 
 plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point()+ 
   labs(
-    title = "Patient Demographics by Zipcode",subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    title = "Patient Demographics by Zipcode",subtitle = phrase,
     x = "Zipcode",
     y = "Race (Percent)"
   ) + theme_minimal() + scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", "Other", "Unknown", "White"))
