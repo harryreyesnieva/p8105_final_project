@@ -113,7 +113,7 @@ Zipcode Histogram and Leaflet
 zipcode_histogram = function(x){
 z = x %>% ggplot(aes(zipcode)) + geom_histogram(bins = 50) + 
   labs(
-    title = "Transplant Center Frequency by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    title = "Transplant Center Frequency by Zipcode", subtitle = phrase,
     x = "Zipcode",
     y = "Transplant Center Count"
   ) + theme_minimal()
