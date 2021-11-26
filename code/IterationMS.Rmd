@@ -45,4 +45,5 @@ Test the function
 ```{r}
 df_one = read_file(path)
 df_one = clean_data_frame(df_one)
+###make a function to plot all exposure variables
 ```
