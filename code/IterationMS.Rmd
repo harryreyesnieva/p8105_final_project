@@ -19,7 +19,7 @@ I will define the iterators
 ```{r}
 path = "../data/csrs_final_tables_2006_KI.xls"
 phrase = "STTR Kidney Transplant Data, August 2020 Release"
-df_paths = tibble(paths = c("../data/csrs_final_tables_2006_KI.xls", "../data/csrs_final_tables_2006_KP.xls"), phrases = c("STTR Kidney Transplant Data, August 2020 Release", "STTR Kidney Pancreas Transplant Data, August 2020 Release"))
+df_paths = tibble(paths = c("../data/csrs_final_tables_2006_HL.xls", "../data/csrs_final_tables_2006_HR.xls", "../data/csrs_final_tables_2006_IN.xls", "../data/csrs_final_tables_2006_KI.xls", "../data/csrs_final_tables_2006_KP.xls", "../data/csrs_final_tables_2006_LI.xls", "../data/csrs_final_tables_2006_LU.xls", "../data/csrs_final_tables_2006_PA.xls"), phrases = c("STTR Heart Lung Transplant Data, August 2020 Release", "STTR Heart Transplant Data, August 2020", "STTR Intestine Transplant Data, August 2020 Release", "STTR Kidney Transplant Data, August 2020 Release", "STTR Kidney Pancreas Transplant Data, August 2020 Release", "STTR Liver Transplant Data, August 2020 Release", "STTR Lung Transplant Data, August 2020", "STTR Pancreas Transplant Data, August 2020 Release"))
 ```
 
 
