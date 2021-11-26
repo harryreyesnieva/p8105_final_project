@@ -212,6 +212,60 @@ plot
 }
 ```
 
+Plot Age
+
+``` r
+plot_age = function(x,y){
+
+df_two_age = y[, c(1,2,6,8,10,12,14,16,18,20,22)]
+df_age = merge(x, df_two_age)
+df_age = df_age[, c(1,2,3, 68, 71:78)]
+#view(df_age)
+df_age_pivot =
+  pivot_longer(
+    df_age, 
+    age_2_11_allc2:age_70_allc2,
+    names_to = "age_category", 
+    values_to = "age_category_percent") %>% mutate (age_category_percent = as.numeric(age_category_percent)) %>% mutate(age_category = factor(age_category, levels =c("age_2_allc2","age_2_11_allc2", "age_12_17_allc2", "age_18_34_allc2", "age_35_49_allc2", "age_50_64_allc2", "age_65_69_allc2", "age_70_allc2"))) %>% drop_na()
+#view(df_age_pivot)
+plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point() + 
+  labs(
+    title = "Patient Age Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "Age Group (Percent)"
+  ) + theme_minimal()  + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years"))
+plot
+}
+```
+
+Now I will make a gender dataframe and plot the gender distributions by
+zipcode.
+
+``` r
+plot_gender = function(x,y){
+
+df_two_gender = y[, c(1,2,34,36)]
+df_gender = merge(x, df_two_gender)
+df_gender = df_gender[, c(1,2,3, 68, 71:72)]
+#view(df_gender)
+df_gender_pivot =
+  pivot_longer(
+    df_gender, 
+    female_allc2:male_allc2,
+    names_to = "gender_category", 
+    values_to = "gender_category_percent") %>% mutate (gender_category_percent = as.numeric(gender_category_percent)) %>% mutate(gender_category = as.factor(gender_category))
+#view(df_gender_pivot)
+plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()+ 
+  labs(
+    title = "Patient Gender Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "Gender Group (Percent)"
+  ) + theme_minimal() + scale_color_hue(labels = c("Female", "Male"))
+plot
+
+}
+```
+
 Leaflet
 
 ``` r
@@ -396,13 +450,12 @@ df_one = clean_data_frame(df_one)
 
 ``` r
 df_one = outcomes_and_zipcodes(df_one)
-#write a save dataframe function
 plot_exposures_one(df_one)
 ```
 
     ## Warning: Removed 30 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
 ``` r
 plot_exposures_two(df_one)
@@ -410,7 +463,7 @@ plot_exposures_two(df_one)
 
     ## Warning: Removed 30 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-17-2.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-19-2.png)<!-- -->
 
 ``` r
 plot_exposures_three(df_one)
@@ -418,7 +471,7 @@ plot_exposures_three(df_one)
 
     ## Warning: Removed 16 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-17-3.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-19-3.png)<!-- -->
 
 ``` r
 plot_exposures_four(df_one)
@@ -426,7 +479,7 @@ plot_exposures_four(df_one)
 
     ## Warning: Removed 16 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-17-4.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-19-4.png)<!-- -->
 
 ``` r
 plot_exposures_five(df_one)
@@ -434,19 +487,19 @@ plot_exposures_five(df_one)
 
     ## Warning: Removed 18 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-17-5.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-19-5.png)<!-- -->
 
 ``` r
 plot_outcomes(df_one)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-17-6.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-19-6.png)<!-- -->
 
 ``` r
 zipcode_histogram(df_one)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-17-7.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-19-7.png)<!-- -->
 
 ``` r
 df_two_clean = second_data_frame(path) 
@@ -558,9 +611,22 @@ df_two_clean = second_data_frame(path)
 plot_demographics(df_one, df_two_clean)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-17-8.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-19-8.png)<!-- -->
 
 ``` r
+plot_age(df_one, df_two_clean)
+```
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-19-9.png)<!-- -->
+
+``` r
+plot_gender(df_one, df_two_clean)
+```
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-19-10.png)<!-- -->
+
+``` r
+#write a merge and save dataframe function
 #leaflet(df_one)
 ```
 
@@ -716,4 +782,4 @@ automate_eda(path)
     ##  $ start_waitlist_regional      : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
     ##  $ start_waitlist_usa           : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
