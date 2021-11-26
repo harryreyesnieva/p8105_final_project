@@ -233,8 +233,8 @@ print(m)
 ```
 
 Merge and Write Dataframe
-```{r, eval=FALSE}
-merge_and_write = function(x,y){
+```{r}
+merge_and_write = function(x,y) {
 df = merge(x, y)
 path = sub('.xls', '_clean.csv', path)
 write.csv(df, path)
