@@ -19,6 +19,7 @@ I will define the iterators
 ```{r}
 path = "../data/csrs_final_tables_2006_KI.xls"
 phrase = "STTR Kidney Transplant Data, August 2020 Release"
+df_paths = tibble(paths = c("../data/csrs_final_tables_2006_KI.xls", "../data/csrs_final_tables_2006_KP.xls"), phrases = c("STTR Kidney Transplant Data, August 2020 Release", "STTR Kidney Pancreas Transplant Data, August 2020 Release"))
 ```
 
 
@@ -227,7 +228,7 @@ m
 Master function
 ```{r}
 automate_eda = function(x){
-df_one = read_file(path)
+df_one = read_file(x)
 df_one = clean_data_frame(df_one)
 df_one = outcomes_and_zipcodes(df_one)
 plot_exposures_one(df_one)
@@ -271,5 +272,10 @@ plot_gender(df_one, df_two_clean)
 ```
 Test master  function
 ```{r}
-automate_eda(path)
+for(i in seq_len(nrow(df_paths))) {
+ path = toString(df_paths[i, 1])
+ phrase = toString(df_paths[i,2])
+ automate_eda(path)
+ 
+}
 ```
