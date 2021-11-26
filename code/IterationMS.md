@@ -94,16 +94,25 @@ return(x)
 }
 ```
 
+Exposures
+
+``` r
+plot_exposures = function(x){
+  x1 = x[, c(6:20)]
+  x2 = x[, c(21:40)]
+  x3 = x[, c(41:60)]
+ggplot(gather(x1), aes(value)) + geom_histogram(bins = 50) + facet_wrap(~key, scales = "free_y") + labs(title = "Exposure Frequency Part1", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+ggplot(gather(x2), aes(value)) + geom_histogram(bins = 50) + facet_wrap(~key, scales = "free_y") + labs(title = "Exposure Frequency Part2", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+ggplot(gather(x3), aes(value)) + geom_histogram(bins = 50) + facet_wrap(~key, scales = "free_y")  + labs(title = "Exposure Frequency Part3", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+}
+```
+
 Outcomes and zipcodes
 
 ``` r
 plot_outcomes = function(x){
   x = x[, c(61:66)] %>% filter(newlistings_percent_transfer <= 100)
 ggplot(gather(x), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = phrase, x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
-#y
-#x = sapply(x, as.numeric)
-#return (x)
-
 }
 ```
 
@@ -304,18 +313,25 @@ df_one = clean_data_frame(df_one)
     ##  $ start_waitlist_usa           : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
 
 ``` r
-###make a function to plot all exposure variables
 df_one = outcomes_and_zipcodes(df_one)
+plot_exposures(df_one)
+```
+
+    ## Warning: Removed 40 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+
+``` r
 plot_outcomes(df_one)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-11-2.png)<!-- -->
 
 ``` r
 zipcode_histogram(df_one)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-10-2.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-11-3.png)<!-- -->
 
 ``` r
 #leaflet(df_one)
@@ -473,4 +489,4 @@ automate_eda(path)
     ##  $ start_waitlist_regional      : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
     ##  $ start_waitlist_usa           : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->

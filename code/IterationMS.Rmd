@@ -59,15 +59,23 @@ x = merge(x, df_geo_merge, all = TRUE)
 return(x)
 }
 ```
+Exposures
+```{r}
+plot_exposures = function(x){
+  x1 = x[, c(6:20)]
+  x2 = x[, c(21:40)]
+  x3 = x[, c(41:60)]
+ggplot(gather(x1), aes(value)) + geom_histogram(bins = 50) + facet_wrap(~key, scales = "free_y") + labs(title = "Exposure Frequency Part1", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+ggplot(gather(x2), aes(value)) + geom_histogram(bins = 50) + facet_wrap(~key, scales = "free_y") + labs(title = "Exposure Frequency Part2", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+ggplot(gather(x3), aes(value)) + geom_histogram(bins = 50) + facet_wrap(~key, scales = "free_y")  + labs(title = "Exposure Frequency Part3", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+}
+```
+
 Outcomes and zipcodes
 ```{r}
 plot_outcomes = function(x){
   x = x[, c(61:66)] %>% filter(newlistings_percent_transfer <= 100)
 ggplot(gather(x), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = phrase, x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
-#y
-#x = sapply(x, as.numeric)
-#return (x)
-
 }
 ```
 Zipcode Histogram and Leaflet
@@ -111,8 +119,8 @@ Test the functions
 ```{r}
 df_one = read_file(path)
 df_one = clean_data_frame(df_one)
-###make a function to plot all exposure variables
 df_one = outcomes_and_zipcodes(df_one)
+plot_exposures(df_one)
 plot_outcomes(df_one)
 zipcode_histogram(df_one)
 #leaflet(df_one)
