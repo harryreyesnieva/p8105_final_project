@@ -59,15 +59,40 @@ x = merge(x, df_geo_merge, all = TRUE)
 return(x)
 }
 ```
-Exposures
+Exposures One
 ```{r}
-plot_exposures = function(x){
+plot_exposures_one = function(x){
   x1 = x[, c(6:20)]
-  x2 = x[, c(21:40)]
-  x3 = x[, c(41:60)]
-ggplot(gather(x1), aes(value)) + geom_histogram(bins = 50) + facet_wrap(~key, scales = "free_y") + labs(title = "Exposure Frequency Part1", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
-ggplot(gather(x2), aes(value)) + geom_histogram(bins = 50) + facet_wrap(~key, scales = "free_y") + labs(title = "Exposure Frequency Part2", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
-ggplot(gather(x3), aes(value)) + geom_histogram(bins = 50) + facet_wrap(~key, scales = "free_y")  + labs(title = "Exposure Frequency Part3", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+ggplot(gather(x1), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y")  +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part1", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+}
+```
+Exposures Part Two
+```{r}
+plot_exposures_two = function(x){
+  x2 = x[, c(21:35)]
+ggplot(gather(x2), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 100)) + labs(title = "Exposure Frequency Part2", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+}
+```
+Exposures Part Three
+```{r}
+plot_exposures_three = function(x){
+x3 = x[, c(36:43)]
+ggplot(gather(x3), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 500)) + labs(title = "Exposure Frequency Part3", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+}
+```
+Exposures Part Four
+```{r}
+plot_exposures_four = function(x){
+x4 = x[, c(44:51)]
+ggplot(gather(x4), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 200)) + labs(title = "Exposure Frequency Part4", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+}
+```
+
+Exposures Part Five
+```{r}
+plot_exposures_five = function(x){
+x5 = x[, c(52:60)]
+ggplot(gather(x5), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part5", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
 }
 ```
 
@@ -120,7 +145,11 @@ Test the functions
 df_one = read_file(path)
 df_one = clean_data_frame(df_one)
 df_one = outcomes_and_zipcodes(df_one)
-plot_exposures(df_one) #subdivide into 3 functions
+plot_exposures_one(df_one)
+plot_exposures_two(df_one)
+plot_exposures_three(df_one)
+plot_exposures_four(df_one)
+plot_exposures_five(df_one)
 plot_outcomes(df_one)
 zipcode_histogram(df_one)
 #leaflet(df_one)

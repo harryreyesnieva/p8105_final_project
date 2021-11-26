@@ -94,16 +94,48 @@ return(x)
 }
 ```
 
-Exposures
+Exposures One
 
 ``` r
-plot_exposures = function(x){
+plot_exposures_one = function(x){
   x1 = x[, c(6:20)]
-  x2 = x[, c(21:40)]
-  x3 = x[, c(41:60)]
-ggplot(gather(x1), aes(value)) + geom_histogram(bins = 50) + facet_wrap(~key, scales = "free_y") + labs(title = "Exposure Frequency Part1", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
-ggplot(gather(x2), aes(value)) + geom_histogram(bins = 50) + facet_wrap(~key, scales = "free_y") + labs(title = "Exposure Frequency Part2", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
-ggplot(gather(x3), aes(value)) + geom_histogram(bins = 50) + facet_wrap(~key, scales = "free_y")  + labs(title = "Exposure Frequency Part3", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+ggplot(gather(x1), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y")  +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part1", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+}
+```
+
+Exposures Part Two
+
+``` r
+plot_exposures_two = function(x){
+  x2 = x[, c(21:35)]
+ggplot(gather(x2), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 100)) + labs(title = "Exposure Frequency Part2", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+}
+```
+
+Exposures Part Three
+
+``` r
+plot_exposures_three = function(x){
+x3 = x[, c(36:43)]
+ggplot(gather(x3), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 500)) + labs(title = "Exposure Frequency Part3", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+}
+```
+
+Exposures Part Four
+
+``` r
+plot_exposures_four = function(x){
+x4 = x[, c(44:51)]
+ggplot(gather(x4), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 200)) + labs(title = "Exposure Frequency Part4", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+}
+```
+
+Exposures Part Five
+
+``` r
+plot_exposures_five = function(x){
+x5 = x[, c(52:60)]
+ggplot(gather(x5), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part5", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
 }
 ```
 
@@ -314,24 +346,56 @@ df_one = clean_data_frame(df_one)
 
 ``` r
 df_one = outcomes_and_zipcodes(df_one)
-plot_exposures(df_one)
+plot_exposures_one(df_one)
 ```
 
-    ## Warning: Removed 40 rows containing non-finite values (stat_bin).
+    ## Warning: Removed 30 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+
+``` r
+plot_exposures_two(df_one)
+```
+
+    ## Warning: Removed 30 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-15-2.png)<!-- -->
+
+``` r
+plot_exposures_three(df_one)
+```
+
+    ## Warning: Removed 16 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-15-3.png)<!-- -->
+
+``` r
+plot_exposures_four(df_one)
+```
+
+    ## Warning: Removed 16 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-15-4.png)<!-- -->
+
+``` r
+plot_exposures_five(df_one)
+```
+
+    ## Warning: Removed 18 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-15-5.png)<!-- -->
 
 ``` r
 plot_outcomes(df_one)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-11-2.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-15-6.png)<!-- -->
 
 ``` r
 zipcode_histogram(df_one)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-11-3.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-15-7.png)<!-- -->
 
 ``` r
 #leaflet(df_one)
@@ -489,4 +553,4 @@ automate_eda(path)
     ##  $ start_waitlist_regional      : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
     ##  $ start_waitlist_usa           : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
