@@ -227,12 +227,22 @@ m
 Master function
 ```{r}
 automate_eda = function(x){
-df_one = read_file(x)
+df_one = read_file(path)
 df_one = clean_data_frame(df_one)
-###make a function to plot all exposure variables
 df_one = outcomes_and_zipcodes(df_one)
+plot_exposures_one(df_one)
+plot_exposures_two(df_one)
+plot_exposures_three(df_one)
+plot_exposures_four(df_one)
+plot_exposures_five(df_one)
 plot_outcomes(df_one)
 zipcode_histogram(df_one)
+df_two_clean = second_data_frame(path) 
+plot_demographics(df_one, df_two_clean)
+plot_age(df_one, df_two_clean)
+plot_gender(df_one, df_two_clean)
+
+#write a merge and save dataframe function
 #leaflet(df_one)
 }
 ```
