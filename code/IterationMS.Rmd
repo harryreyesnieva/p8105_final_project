@@ -236,8 +236,8 @@ Merge and Write Dataframe
 ```{r, eval=FALSE}
 merge_and_write = function(x,y){
 df = merge(x, y)
-name = toString(df[1,5])
-write.csv(df, "../data/",name)
+path = sub('.xls', '_clean.csv', path)
+write.csv(df, path)
 }
 ```
 
@@ -259,8 +259,7 @@ df_two_clean = second_data_frame(path)
 plot_demographics(df_one, df_two_clean)
 plot_age(df_one, df_two_clean)
 plot_gender(df_one, df_two_clean)
-
-#write a merge and save dataframe function
+merge_and_write(df_one, df_two_clean)
 }
 ```
 
