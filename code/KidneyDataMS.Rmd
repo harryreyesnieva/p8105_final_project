@@ -84,7 +84,7 @@ str(df_continuous)
 ```
 The percent deteriorated is the clinical outcome with the most variability. The percentages of living and deceased donors have some variability as well.
 
-Now I will plot the number of kidney transolant centers by zipcode.
+Now I will plot the number of kidney transplant centers by zipcode.
 ```{r}
 df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram(bins = 50) + 
   labs(

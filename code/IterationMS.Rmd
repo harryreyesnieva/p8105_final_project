@@ -41,9 +41,64 @@ str(x)
 return (x)
 }
 ```
-Test the function
+Outcomes and zipcodes
+```{r}
+outcomes_and_zipcodes = function(x){
+  x = x %>% mutate(newlistings_percent_mortality = 100*died_center_all/newlistings_center_all, newlistings_percent_deteriorated = 100*deteriorated_center_all/newlistings_center_all, newlistings_percent_transfer = 100* transfer_center_all/newlistings_center_all, newlistings_percent_living_donor = 100* living_donor_center_all/newlistings_center_all, newlistings_percent_deceased_donor = 100*deceased_donor_center_all/newlistings_center_all, newlistings_percent_recovered = 100* recovered_center_all/newlistings_center_all, living_deceased_graft_ratio = living_donor_center_all/deceased_donor_center_all)
+  
+df_zipcodes = read_excel("../data/zipcodes.xlsx")
+df_zipcodes = df_zipcodes[-c(1), ]
+df_zipcodes[, c(2)] = sapply(df_zipcodes[, c(2)], as.numeric)
+df_zipcodes = janitor::clean_names(df_zipcodes)
+
+for (zipcode in df_zipcodes["zipcode"]){
+    df_zip_geo = tibble(geocode_zip(zipcode))
+}
+df_geo_merge = merge(df_zipcodes, df_zip_geo, all = TRUE)
+x = merge(x, df_geo_merge, all = TRUE)
+return(x)
+}
+```
+Outcomes and zipcodes
+```{r}
+plot_outcomes = function(x){
+  x = x[, c(61:66)] %>% filter(newlistings_percent_transfer <= 100)
+ggplot(gather(x), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = phrase, x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
+#y
+#x = sapply(x, as.numeric)
+#return (x)
+
+}
+```
+Zipcode Histogram and Leaflet
+```{r}
+zipcode_histogram = function(x){
+z = x %>% ggplot(aes(zipcode)) + geom_histogram(bins = 50) + 
+  labs(
+    title = "Transplant Center Frequency by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "Transplant Center Count"
+  ) + theme_minimal()
+z
+}
+```
+Leaflet
+```{r, eval=FALSE}
+leaflet = function(x){
+library(leaflet)
+leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
+m = x %>% leaflet() %>% addTiles() %>% addCircleMarkers(lat = ~lat, lng = ~lng)
+m
+
+}
+```
+Test the functions
 ```{r}
 df_one = read_file(path)
 df_one = clean_data_frame(df_one)
 ###make a function to plot all exposure variables
+df_one = outcomes_and_zipcodes(df_one)
+plot_outcomes(df_one)
+zipcode_histogram(df_one)
+#leaflet(df_one)
 ```
