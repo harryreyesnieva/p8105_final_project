@@ -20,6 +20,9 @@ I will define the iterators
 path = "../data/csrs_final_tables_2006_KI.xls"
 phrase = "STTR Kidney Transplant Data, August 2020 Release"
 ```
+
+
+
 Function to read csv file
 ```{r}
 read_file = function(x){
@@ -103,7 +106,7 @@ plot_outcomes = function(x){
 ggplot(gather(x), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = phrase, x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
 }
 ```
-Zipcode Histogram and Leaflet
+Zipcode Histogram
 ```{r}
 zipcode_histogram = function(x){
 z = x %>% ggplot(aes(zipcode)) + geom_histogram(bins = 50) + 
@@ -115,6 +118,53 @@ z = x %>% ggplot(aes(zipcode)) + geom_histogram(bins = 50) +
 z
 }
 ```
+Make Second Dataframe
+```{r}
+second_data_frame = function(x){
+df_two = read_excel(x, sheet = "Tables B2-B3 Center")
+df_two = janitor::clean_names(df_two)
+str(df_two)
+#head(df_two)
+#tail(df_two)
+#view(df_two)
+colnames = colnames(df_two)
+
+df_two_names = read_excel("../data/B2 names.xlsx")
+df_two_names = janitor::clean_names(df_two_names)
+df_two_names = df_two_names %>% mutate(c = paste(a,b))
+setnames = df_two_names %>% pull(c)
+df_two = setNames(df_two, setnames)
+df_two = janitor::clean_names(df_two)
+df_two_clean = df_two[-c(1), ]
+df_two_clean = df_two_clean %>% rename (entire_name= center_name_na , ctr_cd = center_code_na)
+return (df_two_clean)
+}
+```
+Plot Demographics
+```{r, eval=FALSE}
+plot_demographics = function(x,y){
+
+df_two_select = y %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
+df_social = merge(x, df_two_select)
+df_demographics = df_social[, c(1,2,3, 68, 71:76)]
+#view(df_demographics)
+df_demographics_pivot =
+  pivot_longer(
+    df_demographics, 
+    asian_allc2:race_unknown_allc2,
+    names_to = "race_category", 
+    values_to = "race_category_percent") %>% mutate(race_category_percent = as.numeric(race_category_percent)) %>% mutate(race_category = as.factor(race_category))
+
+plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point()+ 
+  labs(
+    title = "Patient Demographics by Zipcode",subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "Race (Percent)"
+  ) + theme_minimal() + scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", "Other", "Unknown", "White"))
+plot
+}
+```
+
 Leaflet
 ```{r, eval=FALSE}
 leaflet = function(x){
@@ -153,6 +203,8 @@ plot_exposures_four(df_one)
 plot_exposures_five(df_one)
 plot_outcomes(df_one)
 zipcode_histogram(df_one)
+df_two_clean = second_data_frame(path) 
+plot_demographics(df_one, df_two_clean)
 #leaflet(df_one)
 ```
 Test master  function
