@@ -120,7 +120,7 @@ Test the functions
 df_one = read_file(path)
 df_one = clean_data_frame(df_one)
 df_one = outcomes_and_zipcodes(df_one)
-plot_exposures(df_one)
+plot_exposures(df_one) #subdivide into 3 functions
 plot_outcomes(df_one)
 zipcode_histogram(df_one)
 #leaflet(df_one)

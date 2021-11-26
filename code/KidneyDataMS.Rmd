@@ -69,7 +69,7 @@ for (zipcode in df_zipcodes["zipcode"]){
 df_geo_merge = merge(df_zipcodes, df_zip_geo, all = TRUE)
 #view(df_geo_merge)
 df_one_merge = merge(df_one_plot, df_geo_merge, all = TRUE)
-#view(df_one_merge)
+view(df_one_merge)
 ```
 #Plot outcome variables.
 I will plot the outcome variables to get a sense of which have the most variability.
