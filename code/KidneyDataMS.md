@@ -299,6 +299,58 @@ df_one_merge = merge(df_one_plot, df_geo_merge, all = TRUE)
 view(df_one_merge)
 ```
 
+I will plot the first set of exposure variables
+
+``` r
+x1 = df_one_merge[, c(6:20)]
+ggplot(gather(x1), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y")  +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part1", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+```
+
+    ## Warning: Removed 30 rows containing non-finite values (stat_bin).
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> I will
+plot the second set of exposure variables
+
+``` r
+  x2 = df_one_merge[, c(21:35)]
+ggplot(gather(x2), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 100)) + labs(title = "Exposure Frequency Part2", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+```
+
+    ## Warning: Removed 30 rows containing non-finite values (stat_bin).
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-8-1.png)<!-- --> I will
+plot the third set of exposure variables
+
+``` r
+x3 = df_one_merge[, c(36:43)]
+ggplot(gather(x3), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 500)) + labs(title = "Exposure Frequency Part3", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+```
+
+    ## Warning: Removed 16 rows containing non-finite values (stat_bin).
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-9-1.png)<!-- --> I will
+plot the fourth set of exposure variables
+
+``` r
+x4 = df_one_merge[, c(44:51)]
+ggplot(gather(x4), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 200)) + labs(title = "Exposure Frequency Part4", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+```
+
+    ## Warning: Removed 16 rows containing non-finite values (stat_bin).
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+
+I will plot the fifth set of exposure variables
+
+``` r
+x5 = df_one_merge[, c(52:60)]
+ggplot(gather(x5), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part5", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+```
+
+    ## Warning: Removed 18 rows containing non-finite values (stat_bin).
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+
 \#Plot outcome variables. I will plot the outcome variables to get a
 sense of which have the most variability.
 
@@ -319,7 +371,7 @@ str(df_outcomes)
 ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 ``` r
 df_continuous = sapply(df_outcomes, as.numeric)
@@ -346,7 +398,7 @@ df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram(bins = 50) +
   ) + theme_minimal()
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 ``` r
 #png('txp_frequency.png')
@@ -572,7 +624,7 @@ plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent,
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-12-1.png)<!-- --> Now I
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-17-1.png)<!-- --> Now I
 will make an age dataframe and plot the age distributions by zipcode.
 
 ``` r
@@ -596,7 +648,7 @@ plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = a
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-13-1.png)<!-- --> Now I
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-18-1.png)<!-- --> Now I
 will make a gender dataframe and plot the gender distributions by
 zipcode.
 
@@ -621,7 +673,7 @@ plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, col
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-14-1.png)<!-- --> Now I
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-19-1.png)<!-- --> Now I
 will make a comorbidities dataframe and plot the pra score distributions
 by zipcode.
 
@@ -647,7 +699,7 @@ plot = df_comorbidities_pivot %>% ggplot(aes(x=zipcode, y =comorbidity_category_
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-15-1.png)<!-- --> Now, I
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-20-1.png)<!-- --> Now, I
 will make a blood type dataframe and plot the blood type distributions
 by zipcode.
 
@@ -672,7 +724,7 @@ plot = df_blood_type_pivot %>% ggplot(aes(x=zipcode, y =blood_type_category_perc
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-16-1.png)<!-- --> Now, I
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-21-1.png)<!-- --> Now, I
 will amke a PRA score dataframe and plot the PRA score distributions by
 zipcode.
 
@@ -699,7 +751,7 @@ plot = df_pra_pivot %>% ggplot(aes(x=zipcode, y =pra_category_percent, color = p
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-17-1.png)<!-- --> Now I
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-22-1.png)<!-- --> Now I
 will merge the pra and comorbidities dataframes and make scatter plots
 to investigate for correlations.
 
@@ -711,7 +763,7 @@ plot = df_pra_comorbid %>% ggplot(aes(x=comorbidity_category_percent, y =pra_cat
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
 
 ``` r
 #png('pra_comorbidity.png')
@@ -731,7 +783,7 @@ plot = df_pra_age %>% ggplot(aes(x=age_category_percent, y =pra_category_percent
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
 
 ``` r
 #png('pra_comorbidity.png')
@@ -750,7 +802,7 @@ plot = df_pra_gender %>% ggplot(aes(x=gender_category_percent, y =pra_category_p
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
 ``` r
 #png('pra_comorbidity.png')
@@ -769,7 +821,7 @@ plot = df_pra_demographics %>% ggplot(aes(x=race_category_percent, y =pra_catego
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
 
 ``` r
 #png('pra_comorbidity.png')
@@ -788,7 +840,7 @@ plot = df_pra_blood_type %>% ggplot(aes(x=blood_type_category_percent, y =pra_ca
 plot
 ```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
 
 ``` r
 #png('pra_comorbidity.png')
