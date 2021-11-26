@@ -227,10 +227,21 @@ leaflet = function(x){
 library(leaflet)
 leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
 m = x %>% leaflet() %>% addTiles() %>% addCircleMarkers(lat = ~lat, lng = ~lng)
-m
+print(m)
 
 }
 ```
+
+Merge and Write Dataframe
+```{r, eval=FALSE}
+merge_and_write = function(x,y){
+df = merge(x, y)
+name = toString(df[1,5])
+write.csv(df, "../data/",name)
+}
+```
+
+
 Master function
 ```{r}
 automate_eda = function(x){
@@ -250,7 +261,6 @@ plot_age(df_one, df_two_clean)
 plot_gender(df_one, df_two_clean)
 
 #write a merge and save dataframe function
-#leaflet(df_one)
 }
 ```
 
@@ -274,7 +284,8 @@ plot_age(df_one, df_two_clean)
 plot_gender(df_one, df_two_clean)
 
 #write a merge and save dataframe function
-#leaflet(df_one)
+leaflet(df_one)
+merge_and_write(df_one, df_two_clean)
 ```
 Test master  function
 ```{r}

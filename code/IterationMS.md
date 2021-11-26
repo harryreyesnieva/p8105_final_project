@@ -280,7 +280,7 @@ leaflet = function(x){
 library(leaflet)
 leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
 m = x %>% leaflet() %>% addTiles() %>% addCircleMarkers(lat = ~lat, lng = ~lng)
-m
+print(m)
 
 }
 ```
@@ -644,10 +644,11 @@ plot_gender(df_one, df_two_clean)
 
 ``` r
 #write a merge and save dataframe function
-#leaflet(df_one)
+leaflet(df_one)
 ```
 
-Test master function
+![](IterationMS_files/figure-gfm/unnamed-chunk-19-11.png)<!-- --> Test
+master function
 
 ``` r
 for(i in seq_len(nrow(df_paths))) {
