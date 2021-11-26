@@ -648,7 +648,6 @@ for(i in seq_len(nrow(df_paths))) {
  path = toString(df_paths[i, 1])
  phrase = toString(df_paths[i,2])
  automate_eda(path)
- 
 }
 ```
 
