@@ -282,7 +282,6 @@ plot_demographics(df_one, df_two_clean)
 plot_age(df_one, df_two_clean)
 plot_gender(df_one, df_two_clean)
 
-#write a merge and save dataframe function
 leaflet(df_one)
 merge_and_write(df_one, df_two_clean)
 ```
@@ -294,3 +293,4 @@ for(i in seq_len(nrow(df_paths))) {
   automate_eda(path)
 }
 ```
+
