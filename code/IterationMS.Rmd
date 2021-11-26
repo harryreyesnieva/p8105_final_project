@@ -1,0 +1,35 @@
+---
+title: "IterationMS"
+author: "Matthew Spotnitz"
+date: "11/24/2021"
+output: github_document
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(haven)
+library(ggplot2)
+library(zipcodeR)
+library(ggmap)
+library(leaflet)
+library(kableExtra)
+```
+I will define the iterators
+```{r}
+path = "../data/csrs_final_tables_2006_KI.xls"
+phrase = "STTR Kidney Transplant Data, August 2020 Release"
+```
+Function to read csv file
+```{r}
+read_file = function(x){
+  x = read_excel(path, sheet = "Table B1")
+x = janitor::clean_names(x)
+str(x)
+return(x) 
+}
+```
+Test the function
+```{r}
+df_one = read_file(path)
+```
