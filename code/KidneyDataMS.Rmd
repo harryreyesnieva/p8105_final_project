@@ -173,7 +173,7 @@ plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent,
   labs(
     title = "Patient Demographics by Zipcode",subtitle = "STTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
-    y = "Race (Percent)"
+    y = "Race (Percent)", color = "Race"
   ) + theme_minimal() + scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", "Other", "Unknown", "White"))
 plot
 
@@ -195,7 +195,7 @@ plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = a
   labs(
     title = "Patient Age Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
-    y = "Age Group (Percent)"
+    y = "Age Group (Percent)", color = "Age Group"
   ) + theme_minimal()  + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years"))
 plot
 ```
@@ -216,7 +216,7 @@ plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, col
   labs(
     title = "Patient Gender Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
-    y = "Gender Group (Percent)"
+    y = "Gender Group (Percent)", , color = "Gender"
   ) + theme_minimal() + scale_color_hue(labels = c("Female", "Male"))
 plot
 ```
@@ -238,7 +238,7 @@ plot = df_comorbidities_pivot %>% ggplot(aes(x=zipcode, y =comorbidity_category_
   labs(
     title = "Patient Comorbidity Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
-    y = "Comorbidity Group (Percent)"
+    y = "Comorbidity Group (Percent)", , color = "Comorbidity"
   ) + theme_minimal() + scale_color_hue(labels = c("Congenital, Familial or Metabolic", "Diabetes", "Golmerular Disease", "Hypertensive Nephrosclerosis", "Neoplasms", "Polycystic Kidneys", "No Prior Transplant", "Prior Transplant Unknown", "Prior Transplant", "Missing Primary Disease", "Other Primary Disease", "Renovascular or Vascular Disease", "Retransplant Graft Failure", "Tubular and Interstitial Diseases"))
 plot
 
@@ -260,7 +260,7 @@ plot = df_blood_type_pivot %>% ggplot(aes(x=zipcode, y =blood_type_category_perc
   labs(
     title = "Patient Blood Type Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
-    y = "Blood Type Group (Percent)"
+    y = "Blood Type Group (Percent)", , color = "Blood Type"
   ) + theme_minimal() + scale_color_hue(labels = c("Blood Type A", "Blood Type AB", "Blood Type B", "Blood Type O", "Blood Type Unknown"))
 plot
 
@@ -284,7 +284,7 @@ plot = df_pra_pivot %>% ggplot(aes(x=zipcode, y =pra_category_percent, color = p
   labs(
     title = "Patient PRA Score Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
-    y = "PRA Score Group (Percent)"
+    y = "PRA Score Group (Percent)", color = "PRA Score Group"
   ) + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
 plot
 ```
