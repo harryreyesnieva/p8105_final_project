@@ -92,6 +92,21 @@ m
 
 }
 ```
+Master function
+```{r}
+automate_eda = function(x){
+df_one = read_file(x)
+df_one = clean_data_frame(df_one)
+###make a function to plot all exposure variables
+df_one = outcomes_and_zipcodes(df_one)
+plot_outcomes(df_one)
+zipcode_histogram(df_one)
+#leaflet(df_one)
+}
+```
+
+
+
 Test the functions
 ```{r}
 df_one = read_file(path)
@@ -101,4 +116,8 @@ df_one = outcomes_and_zipcodes(df_one)
 plot_outcomes(df_one)
 zipcode_histogram(df_one)
 #leaflet(df_one)
+```
+Test master  function
+```{r}
+automate_eda(path)
 ```
