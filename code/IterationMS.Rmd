@@ -67,28 +67,32 @@ Exposures One
 ```{r}
 plot_exposures_one = function(x){
   x1 = x[, c(6:20)]
-ggplot(gather(x1), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y")  +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part1", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x1), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y")  +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part1", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+print(plot)
 }
 ```
 Exposures Part Two
 ```{r}
 plot_exposures_two = function(x){
   x2 = x[, c(21:35)]
-ggplot(gather(x2), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 100)) + labs(title = "Exposure Frequency Part2", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x2), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 100)) + labs(title = "Exposure Frequency Part2", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+print(plot)
 }
 ```
 Exposures Part Three
 ```{r}
 plot_exposures_three = function(x){
 x3 = x[, c(36:43)]
-ggplot(gather(x3), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 500)) + labs(title = "Exposure Frequency Part3", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x3), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 500)) + labs(title = "Exposure Frequency Part3", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+print(plot)
 }
 ```
 Exposures Part Four
 ```{r}
 plot_exposures_four = function(x){
 x4 = x[, c(44:51)]
-ggplot(gather(x4), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 200)) + labs(title = "Exposure Frequency Part4", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x4), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 200)) + labs(title = "Exposure Frequency Part4", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+print(plot)
 }
 ```
 
@@ -96,7 +100,8 @@ Exposures Part Five
 ```{r}
 plot_exposures_five = function(x){
 x5 = x[, c(52:60)]
-ggplot(gather(x5), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part5", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x5), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part5", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+print(plot)
 }
 ```
 
@@ -104,7 +109,8 @@ Outcomes and zipcodes
 ```{r}
 plot_outcomes = function(x){
   x = x[, c(61:66)] %>% filter(newlistings_percent_transfer <= 100)
-ggplot(gather(x), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = phrase, x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = phrase, x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
+print(plot)
 }
 ```
 Zipcode Histogram
@@ -116,7 +122,7 @@ z = x %>% ggplot(aes(zipcode)) + geom_histogram(bins = 50) +
     x = "Zipcode",
     y = "Transplant Center Count"
   ) + theme_minimal()
-z
+print(z)
 }
 ```
 Make Second Dataframe
@@ -162,7 +168,7 @@ plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent,
     x = "Zipcode",
     y = "Race (Percent)"
   ) + theme_minimal() + scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", "Other", "Unknown", "White"))
-plot
+print(plot)
 }
 ```
 Plot Age
@@ -182,11 +188,11 @@ df_age_pivot =
 #view(df_age_pivot)
 plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point() + 
   labs(
-    title = "Patient Age Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    title = "Patient Age Groups by Zipcode", subtitle = phrase,
     x = "Zipcode",
     y = "Age Group (Percent)"
   ) + theme_minimal()  + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years"))
-plot
+print(plot)
 }
 ```
 Now I will make a gender dataframe and plot the gender distributions by zipcode.
@@ -206,11 +212,11 @@ df_gender_pivot =
 #view(df_gender_pivot)
 plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()+ 
   labs(
-    title = "Patient Gender Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    title = "Patient Gender Groups by Zipcode", subtitle = phrase,
     x = "Zipcode",
     y = "Gender Group (Percent)"
   ) + theme_minimal() + scale_color_hue(labels = c("Female", "Male"))
-plot
+print(plot)
 
 }
 ```
@@ -273,8 +279,8 @@ plot_gender(df_one, df_two_clean)
 Test master  function
 ```{r}
 for(i in seq_len(nrow(df_paths))) {
- path = toString(df_paths[i, 1])
- phrase = toString(df_paths[i,2])
- automate_eda(path)
+  path = toString(df_paths[i, 1])
+  phrase = toString(df_paths[i,2])
+  automate_eda(path)
 }
 ```

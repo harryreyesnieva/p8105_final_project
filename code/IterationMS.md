@@ -100,7 +100,8 @@ Exposures One
 ``` r
 plot_exposures_one = function(x){
   x1 = x[, c(6:20)]
-ggplot(gather(x1), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y")  +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part1", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x1), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y")  +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part1", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+print(plot)
 }
 ```
 
@@ -109,7 +110,8 @@ Exposures Part Two
 ``` r
 plot_exposures_two = function(x){
   x2 = x[, c(21:35)]
-ggplot(gather(x2), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 100)) + labs(title = "Exposure Frequency Part2", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x2), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 100)) + labs(title = "Exposure Frequency Part2", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+print(plot)
 }
 ```
 
@@ -118,7 +120,8 @@ Exposures Part Three
 ``` r
 plot_exposures_three = function(x){
 x3 = x[, c(36:43)]
-ggplot(gather(x3), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 500)) + labs(title = "Exposure Frequency Part3", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x3), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 500)) + labs(title = "Exposure Frequency Part3", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+print(plot)
 }
 ```
 
@@ -127,7 +130,8 @@ Exposures Part Four
 ``` r
 plot_exposures_four = function(x){
 x4 = x[, c(44:51)]
-ggplot(gather(x4), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 200)) + labs(title = "Exposure Frequency Part4", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x4), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 200)) + labs(title = "Exposure Frequency Part4", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+print(plot)
 }
 ```
 
@@ -136,7 +140,8 @@ Exposures Part Five
 ``` r
 plot_exposures_five = function(x){
 x5 = x[, c(52:60)]
-ggplot(gather(x5), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part5", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x5), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part5", subtitle = phrase, x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+print(plot)
 }
 ```
 
@@ -145,7 +150,8 @@ Outcomes and zipcodes
 ``` r
 plot_outcomes = function(x){
   x = x[, c(61:66)] %>% filter(newlistings_percent_transfer <= 100)
-ggplot(gather(x), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = phrase, x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = phrase, x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
+print(plot)
 }
 ```
 
@@ -159,7 +165,7 @@ z = x %>% ggplot(aes(zipcode)) + geom_histogram(bins = 50) +
     x = "Zipcode",
     y = "Transplant Center Count"
   ) + theme_minimal()
-z
+print(z)
 }
 ```
 
@@ -209,7 +215,7 @@ plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent,
     x = "Zipcode",
     y = "Race (Percent)"
   ) + theme_minimal() + scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", "Other", "Unknown", "White"))
-plot
+print(plot)
 }
 ```
 
@@ -231,11 +237,11 @@ df_age_pivot =
 #view(df_age_pivot)
 plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point() + 
   labs(
-    title = "Patient Age Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    title = "Patient Age Groups by Zipcode", subtitle = phrase,
     x = "Zipcode",
     y = "Age Group (Percent)"
   ) + theme_minimal()  + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years"))
-plot
+print(plot)
 }
 ```
 
@@ -258,11 +264,11 @@ df_gender_pivot =
 #view(df_gender_pivot)
 plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()+ 
   labs(
-    title = "Patient Gender Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    title = "Patient Gender Groups by Zipcode", subtitle = phrase,
     x = "Zipcode",
     y = "Gender Group (Percent)"
   ) + theme_minimal() + scale_color_hue(labels = c("Female", "Male"))
-plot
+print(plot)
 
 }
 ```
@@ -645,9 +651,9 @@ Test master function
 
 ``` r
 for(i in seq_len(nrow(df_paths))) {
- path = toString(df_paths[i, 1])
- phrase = toString(df_paths[i,2])
- automate_eda(path)
+  path = toString(df_paths[i, 1])
+  phrase = toString(df_paths[i,2])
+  automate_eda(path)
 }
 ```
 
@@ -796,6 +802,27 @@ for(i in seq_len(nrow(df_paths))) {
     ##  $ start_waitlist_center_all    : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
     ##  $ start_waitlist_regional      : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
     ##  $ start_waitlist_usa           : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
+
+    ## Warning: Removed 30 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
+
+    ## Warning: Removed 30 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-2.png)<!-- -->
+
+    ## Warning: Removed 16 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-3.png)<!-- -->
+
+    ## Warning: Removed 16 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-4.png)<!-- -->
+
+    ## Warning: Removed 18 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-5.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-20-6.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-20-7.png)<!-- -->
+
     ## tibble [239 × 191] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:239] "Center Name" "Hartford Hospital (CTHH)" "Yale New Haven Hospital (CTYN)" "Beth Israel Deaconess Medical Center (MABI)" ...
     ##  $ ctr_cd         : chr [1:239] "Center Code" "CTHH" "CTYN" "MABI" ...
@@ -897,6 +924,9 @@ for(i in seq_len(nrow(df_paths))) {
     ##  $ wlc_lioth_allc2: chr [1:239] "Primary Disease Other" "-" "-" "-" ...
     ##  $ wlc_lioth_newc2: chr [1:239] "Primary Disease Other" "-" "-" "-" ...
     ##   [list output truncated]
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-8.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-20-9.png)<!-- -->
+
     ## tibble [130 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:130] "Center Name" "University of Alabama Hospital (ALUA)" "Banner-University Medical Center Phoenix (AZGS)" "Mayo Clinic Hospital (AZMC)" ...
     ##  $ ctr_cd         : chr [1:130] "Center Code" "ALUA" "AZGS" "AZMC" ...
@@ -981,6 +1011,8 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning in lapply(X = X, FUN = FUN, ...): NAs introduced by coercion
 
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-10.png)<!-- -->
+
     ## tibble [123 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name                  : chr [1:123] "University of Alabama Hospital (ALUA)" "Banner-University Medical Center Phoenix (AZGS)" "Mayo Clinic Hospital (AZMC)" "Banner University Medical Center-Tucson (AZUA)" ...
     ##  $ ctr_cd                       : chr [1:123] "ALUA" "AZGS" "AZMC" "AZUA" ...
@@ -1042,6 +1074,27 @@ for(i in seq_len(nrow(df_paths))) {
     ##  $ start_waitlist_center_all    : num [1:123] 100 100 100 100 100 100 100 100 100 100 ...
     ##  $ start_waitlist_regional      : num [1:123] 100 100 100 100 100 100 100 100 100 100 ...
     ##  $ start_waitlist_usa           : num [1:123] 100 100 100 100 100 100 100 100 100 100 ...
+
+    ## Warning: Removed 1725 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-11.png)<!-- -->
+
+    ## Warning: Removed 1725 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-12.png)<!-- -->
+
+    ## Warning: Removed 920 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-13.png)<!-- -->
+
+    ## Warning: Removed 920 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-14.png)<!-- -->
+
+    ## Warning: Removed 1035 rows containing non-finite values (stat_bin).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-15.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-20-16.png)<!-- -->
+
     ## tibble [127 × 191] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:127] "Center Name" "Yale New Haven Hospital (CTYN)" "Beth Israel Deaconess Medical Center (MABI)" "Massachusetts General Hospital (MAMG)" ...
     ##  $ ctr_cd         : chr [1:127] "Center Code" "CTYN" "MABI" "MAMG" ...
@@ -1146,6 +1199,18 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-    ## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-17.png)<!-- -->
+
+    ## Warning: Removed 12 rows containing missing values (geom_point).
 
     ## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-18.png)<!-- -->
+
+    ## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-19.png)<!-- -->
+
+    ## Warning: Removed 4 rows containing missing values (geom_point).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-20-20.png)<!-- -->
