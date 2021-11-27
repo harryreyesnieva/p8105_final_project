@@ -337,9 +337,9 @@ Gender
 
 ``` r
 gender_merge_and_write = function(x,y) {
-df_two_gender = y[, c(1,2,34,36)]
+df_two_gender = y[, c(1,2,5, 34,36)]
 df_gender = merge(x, df_two_gender)
-df_gender = df_gender[, c(1,2,3, 68, 71:72)]
+df_gender = df_gender[, c(1,2,3, 5, 68, 72:73)]
 #view(df_gender)
 df_gender_pivot =
   pivot_longer(
