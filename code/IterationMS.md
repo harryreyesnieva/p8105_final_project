@@ -373,6 +373,7 @@ plot_age(df_one, df_two_clean)
 plot_gender(df_one, df_two_clean)
 merge_and_write(df_one, df_two_clean)
 age_merge_and_write(df_one, df_two_clean)
+gender_merge_and_write(df_one, df_two_clean)
 }
 ```
 
@@ -1037,6 +1038,8 @@ for(i in seq_len(nrow(df_paths))) {
 ![](IterationMS_files/figure-gfm/unnamed-chunk-24-9.png)<!-- -->
 
     ## Warning: Removed 6 rows containing missing values (geom_point).
+
+    ## Warning: NAs introduced by coercion
 
     ## Warning: NAs introduced by coercion
 
@@ -2152,6 +2155,8 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning: NAs introduced by coercion
 
+    ## Warning: NAs introduced by coercion
+
     ## tibble [145 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:145] "Center Name" "Children's of Alabama (ALCH)" "University of Alabama Hospital (ALUA)" "UAMS Medical Center (ARUA)" ...
     ##  $ ctr_cd         : chr [1:145] "Center Code" "ALCH" "ALUA" "ARUA" ...
@@ -2991,6 +2996,8 @@ for(i in seq_len(nrow(df_paths))) {
 ![](IterationMS_files/figure-gfm/unnamed-chunk-24-79.png)<!-- -->
 
     ## Warning: Removed 2 rows containing missing values (geom_point).
+
+    ## Warning: NAs introduced by coercion
 
     ## Warning: NAs introduced by coercion
 

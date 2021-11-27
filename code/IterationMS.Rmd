@@ -314,6 +314,7 @@ plot_age(df_one, df_two_clean)
 plot_gender(df_one, df_two_clean)
 merge_and_write(df_one, df_two_clean)
 age_merge_and_write(df_one, df_two_clean)
+gender_merge_and_write(df_one, df_two_clean)
 }
 ```
 
