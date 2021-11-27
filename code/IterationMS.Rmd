@@ -241,6 +241,59 @@ write.csv(df, path)
 }
 ```
 
+Age Merge and Write Dataframe
+```{r}
+age_merge_and_write = function(x,y) {
+df_two_age = y[, c(1,2,6,8,10,12,14,16,18,20,22)]
+df_age = merge(x, df_two_age)
+df_age = df_age[, c(1,2,3, 68, 71:78)]
+#view(df_age)
+df_age_pivot =
+  pivot_longer(
+    df_age, 
+    age_2_11_allc2:age_70_allc2,
+    names_to = "age_category", 
+    values_to = "age_category_percent") %>% mutate (age_category_percent = as.numeric(age_category_percent)) %>% mutate(age_category = factor(age_category, levels =c("age_2_allc2","age_2_11_allc2", "age_12_17_allc2", "age_18_34_allc2", "age_35_49_allc2", "age_50_64_allc2", "age_65_69_allc2", "age_70_allc2"))) %>% drop_na()
+path = sub('.xls', '_age.csv', path)
+write.csv(df_age_pivot, path)
+}
+```
+
+Demographics Merge and Write Dataframe
+```{r}
+demographics_merge_and_write = function(x,y) {
+df_two_select = y %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
+df_social = merge(x, df_two_select)
+df_demographics = df_social[, c(1,2,3, 68, 71:76)]
+#view(df_demographics)
+df_demographics_pivot =
+  pivot_longer(
+    df_demographics, 
+    asian_allc2:race_unknown_allc2,
+    names_to = "race_category", 
+    values_to = "race_category_percent") %>% mutate(race_category_percent = as.numeric(race_category_percent)) %>% mutate(race_category = as.factor(race_category))
+path = sub('.xls', '_demographics.csv', path)
+write.csv(df_demographics_pivot, path)
+}
+```
+Gender
+```{r}
+gender_merge_and_write = function(x,y) {
+df_two_gender = y[, c(1,2,34,36)]
+df_gender = merge(x, df_two_gender)
+df_gender = df_gender[, c(1,2,3, 68, 71:72)]
+#view(df_gender)
+df_gender_pivot =
+  pivot_longer(
+    df_gender, 
+    female_allc2:male_allc2,
+    names_to = "gender_category", 
+    values_to = "gender_category_percent") %>% mutate (gender_category_percent = as.numeric(gender_category_percent)) %>% mutate(gender_category = as.factor(gender_category))
+
+path = sub('.xls', '_gender.csv', path)
+write.csv(df_gender_pivot, path)
+}
+```
 
 Master function
 ```{r}
@@ -260,6 +313,7 @@ plot_demographics(df_one, df_two_clean)
 plot_age(df_one, df_two_clean)
 plot_gender(df_one, df_two_clean)
 merge_and_write(df_one, df_two_clean)
+age_merge_and_write(df_one, df_two_clean)
 }
 ```
 
@@ -284,8 +338,12 @@ plot_gender(df_one, df_two_clean)
 
 leaflet(df_one)
 merge_and_write(df_one, df_two_clean)
+age_merge_and_write(df_one, df_two_clean)
+demographics_merge_and_write(df_one, df_two_clean)
+gender_merge_and_write(df_one, df_two_clean)
+
 ```
-Test master  function
+Test master function
 ```{r}
 for(i in seq_len(nrow(df_paths))) {
   path = toString(df_paths[i, 1])

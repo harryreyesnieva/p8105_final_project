@@ -1,0 +1,1417 @@
+"","entire_name","ctr_cd","ctr_ty","zipcode","race_category","race_category_percent"
+"1","Abbott Northwestern Hospital (MNAN)","MNAN","TX1",55407,"asian_allc2",19.512195122
+"2","Abbott Northwestern Hospital (MNAN)","MNAN","TX1",55407,"african_american_allc2",14.024390244
+"3","Abbott Northwestern Hospital (MNAN)","MNAN","TX1",55407,"hispanic_latino_allc2",1.2195121951
+"4","Abbott Northwestern Hospital (MNAN)","MNAN","TX1",55407,"white_allc2",64.024390244
+"5","Abbott Northwestern Hospital (MNAN)","MNAN","TX1",55407,"race_other_allc2",1.2195121951
+"6","Abbott Northwestern Hospital (MNAN)","MNAN","TX1",55407,"race_unknown_allc2",0
+"7","Advocate Christ Medical Center (ILCH)","ILCH","TX1",60453,"asian_allc2",5.0847457627
+"8","Advocate Christ Medical Center (ILCH)","ILCH","TX1",60453,"african_american_allc2",47.457627119
+"9","Advocate Christ Medical Center (ILCH)","ILCH","TX1",60453,"hispanic_latino_allc2",18.644067797
+"10","Advocate Christ Medical Center (ILCH)","ILCH","TX1",60453,"white_allc2",28.813559322
+"11","Advocate Christ Medical Center (ILCH)","ILCH","TX1",60453,"race_other_allc2",0
+"12","Advocate Christ Medical Center (ILCH)","ILCH","TX1",60453,"race_unknown_allc2",0
+"13","Albany Medical Center Hospital (NYAM)","NYAM","TX1",12208,"asian_allc2",3.125
+"14","Albany Medical Center Hospital (NYAM)","NYAM","TX1",12208,"african_american_allc2",9.8958333333
+"15","Albany Medical Center Hospital (NYAM)","NYAM","TX1",12208,"hispanic_latino_allc2",2.6041666667
+"16","Albany Medical Center Hospital (NYAM)","NYAM","TX1",12208,"white_allc2",82.291666667
+"17","Albany Medical Center Hospital (NYAM)","NYAM","TX1",12208,"race_other_allc2",2.0833333333
+"18","Albany Medical Center Hospital (NYAM)","NYAM","TX1",12208,"race_unknown_allc2",0
+"19","Albert Einstein Medical Center (PAAE)","PAAE","TX1",19141,"asian_allc2",12.710280374
+"20","Albert Einstein Medical Center (PAAE)","PAAE","TX1",19141,"african_american_allc2",65.046728972
+"21","Albert Einstein Medical Center (PAAE)","PAAE","TX1",19141,"hispanic_latino_allc2",8.785046729
+"22","Albert Einstein Medical Center (PAAE)","PAAE","TX1",19141,"white_allc2",11.775700935
+"23","Albert Einstein Medical Center (PAAE)","PAAE","TX1",19141,"race_other_allc2",1.6822429907
+"24","Albert Einstein Medical Center (PAAE)","PAAE","TX1",19141,"race_unknown_allc2",0
+"25","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1",19803,"asian_allc2",0
+"26","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1",19803,"african_american_allc2",33.333333333
+"27","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1",19803,"hispanic_latino_allc2",33.333333333
+"28","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1",19803,"white_allc2",33.333333333
+"29","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1",19803,"race_other_allc2",0
+"30","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1",19803,"race_unknown_allc2",0
+"31","Allegheny General Hospital (PAAG)","PAAG","TX1",15212,"asian_allc2",1.9933554817
+"32","Allegheny General Hospital (PAAG)","PAAG","TX1",15212,"african_american_allc2",20.598006645
+"33","Allegheny General Hospital (PAAG)","PAAG","TX1",15212,"hispanic_latino_allc2",1.3289036545
+"34","Allegheny General Hospital (PAAG)","PAAG","TX1",15212,"white_allc2",75.747508306
+"35","Allegheny General Hospital (PAAG)","PAAG","TX1",15212,"race_other_allc2",0.3322259136
+"36","Allegheny General Hospital (PAAG)","PAAG","TX1",15212,"race_unknown_allc2",0
+"37","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1",60611,"asian_allc2",9.5238095238
+"38","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1",60611,"african_american_allc2",21.428571429
+"39","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1",60611,"hispanic_latino_allc2",42.857142857
+"40","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1",60611,"white_allc2",26.19047619
+"41","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1",60611,"race_other_allc2",0
+"42","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1",60611,"race_unknown_allc2",0
+"43","Arkansas Children's Hospital (ARCH)","ARCH","TX1",72202,"asian_allc2",0
+"44","Arkansas Children's Hospital (ARCH)","ARCH","TX1",72202,"african_american_allc2",0
+"45","Arkansas Children's Hospital (ARCH)","ARCH","TX1",72202,"hispanic_latino_allc2",0
+"46","Arkansas Children's Hospital (ARCH)","ARCH","TX1",72202,"white_allc2",75
+"47","Arkansas Children's Hospital (ARCH)","ARCH","TX1",72202,"race_other_allc2",25
+"48","Arkansas Children's Hospital (ARCH)","ARCH","TX1",72202,"race_unknown_allc2",0
+"49","AU Medical Center, Inc. (GAMC)","GAMC","TX1",30912,"asian_allc2",1.0856453559
+"50","AU Medical Center, Inc. (GAMC)","GAMC","TX1",30912,"african_american_allc2",70.687575392
+"51","AU Medical Center, Inc. (GAMC)","GAMC","TX1",30912,"hispanic_latino_allc2",3.015681544
+"52","AU Medical Center, Inc. (GAMC)","GAMC","TX1",30912,"white_allc2",24.487334138
+"53","AU Medical Center, Inc. (GAMC)","GAMC","TX1",30912,"race_other_allc2",0.7237635706
+"54","AU Medical Center, Inc. (GAMC)","GAMC","TX1",30912,"race_unknown_allc2",0
+"55","Aurora St. Luke's Medical Center (WISL)","WISL","TX1",53215,"asian_allc2",7.6086956522
+"56","Aurora St. Luke's Medical Center (WISL)","WISL","TX1",53215,"african_american_allc2",34.239130435
+"57","Aurora St. Luke's Medical Center (WISL)","WISL","TX1",53215,"hispanic_latino_allc2",17.934782609
+"58","Aurora St. Luke's Medical Center (WISL)","WISL","TX1",53215,"white_allc2",40.217391304
+"59","Aurora St. Luke's Medical Center (WISL)","WISL","TX1",53215,"race_other_allc2",0
+"60","Aurora St. Luke's Medical Center (WISL)","WISL","TX1",53215,"race_unknown_allc2",0
+"61","Auxilio Mutuo Hospital (PRSJ)","PRSJ","TX1",919,"asian_allc2",0
+"62","Auxilio Mutuo Hospital (PRSJ)","PRSJ","TX1",919,"african_american_allc2",0.3115264798
+"63","Auxilio Mutuo Hospital (PRSJ)","PRSJ","TX1",919,"hispanic_latino_allc2",99.37694704
+"64","Auxilio Mutuo Hospital (PRSJ)","PRSJ","TX1",919,"white_allc2",0.3115264798
+"65","Auxilio Mutuo Hospital (PRSJ)","PRSJ","TX1",919,"race_other_allc2",0
+"66","Auxilio Mutuo Hospital (PRSJ)","PRSJ","TX1",919,"race_unknown_allc2",0
+"67","Avera McKennan Hospital (SDMK)","SDMK","TX1",57105,"asian_allc2",3.056768559
+"68","Avera McKennan Hospital (SDMK)","SDMK","TX1",57105,"african_american_allc2",2.1834061135
+"69","Avera McKennan Hospital (SDMK)","SDMK","TX1",57105,"hispanic_latino_allc2",6.5502183406
+"70","Avera McKennan Hospital (SDMK)","SDMK","TX1",57105,"white_allc2",56.331877729
+"71","Avera McKennan Hospital (SDMK)","SDMK","TX1",57105,"race_other_allc2",31.877729258
+"72","Avera McKennan Hospital (SDMK)","SDMK","TX1",57105,"race_unknown_allc2",0
+"73","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1",85719,"asian_allc2",11.382113821
+"74","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1",85719,"african_american_allc2",6.5040650407
+"75","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1",85719,"hispanic_latino_allc2",41.463414634
+"76","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1",85719,"white_allc2",34.959349593
+"77","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1",85719,"race_other_allc2",5.6910569106
+"78","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1",85719,"race_unknown_allc2",0
+"79","Banner-University Medical Center Phoenix (AZGS)","AZGS","TX1",85006,"asian_allc2",5.2
+"80","Banner-University Medical Center Phoenix (AZGS)","AZGS","TX1",85006,"african_american_allc2",9.8
+"81","Banner-University Medical Center Phoenix (AZGS)","AZGS","TX1",85006,"hispanic_latino_allc2",39.6
+"82","Banner-University Medical Center Phoenix (AZGS)","AZGS","TX1",85006,"white_allc2",26.8
+"83","Banner-University Medical Center Phoenix (AZGS)","AZGS","TX1",85006,"race_other_allc2",18.6
+"84","Banner-University Medical Center Phoenix (AZGS)","AZGS","TX1",85006,"race_unknown_allc2",0
+"85","Barnes-Jewish Hospital (MOBH)","MOBH","TX1",63110,"asian_allc2",3.0789825971
+"86","Barnes-Jewish Hospital (MOBH)","MOBH","TX1",63110,"african_american_allc2",32.797858099
+"87","Barnes-Jewish Hospital (MOBH)","MOBH","TX1",63110,"hispanic_latino_allc2",1.8741633199
+"88","Barnes-Jewish Hospital (MOBH)","MOBH","TX1",63110,"white_allc2",62.115127175
+"89","Barnes-Jewish Hospital (MOBH)","MOBH","TX1",63110,"race_other_allc2",0.1338688086
+"90","Barnes-Jewish Hospital (MOBH)","MOBH","TX1",63110,"race_unknown_allc2",0
+"91","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","TXAS","TX1",76104,"asian_allc2",7.5639599555
+"92","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","TXAS","TX1",76104,"african_american_allc2",33.259176863
+"93","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","TXAS","TX1",76104,"hispanic_latino_allc2",26.473859844
+"94","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","TXAS","TX1",76104,"white_allc2",31.70189099
+"95","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","TXAS","TX1",76104,"race_other_allc2",1.0011123471
+"96","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","TXAS","TX1",76104,"race_unknown_allc2",0
+"97","Baylor University Medical Center (TXTX)","TXTX","TX1",75246,"asian_allc2",7.0366699703
+"98","Baylor University Medical Center (TXTX)","TXTX","TX1",75246,"african_american_allc2",35.084241824
+"99","Baylor University Medical Center (TXTX)","TXTX","TX1",75246,"hispanic_latino_allc2",23.686818632
+"100","Baylor University Medical Center (TXTX)","TXTX","TX1",75246,"white_allc2",33.49851338
+"101","Baylor University Medical Center (TXTX)","TXTX","TX1",75246,"race_other_allc2",0.6937561943
+"102","Baylor University Medical Center (TXTX)","TXTX","TX1",75246,"race_unknown_allc2",0
+"103","Baystate Medical Center (MABS)","MABS","TX1",1199,"asian_allc2",2.8901734104
+"104","Baystate Medical Center (MABS)","MABS","TX1",1199,"african_american_allc2",19.075144509
+"105","Baystate Medical Center (MABS)","MABS","TX1",1199,"hispanic_latino_allc2",23.699421965
+"106","Baystate Medical Center (MABS)","MABS","TX1",1199,"white_allc2",54.335260116
+"107","Baystate Medical Center (MABS)","MABS","TX1",1199,"race_other_allc2",0
+"108","Baystate Medical Center (MABS)","MABS","TX1",1199,"race_unknown_allc2",0
+"109","Beth Israel Deaconess Medical Center (MABI)","MABI","TX1",2215,"asian_allc2",10.326086957
+"110","Beth Israel Deaconess Medical Center (MABI)","MABI","TX1",2215,"african_american_allc2",29.076086957
+"111","Beth Israel Deaconess Medical Center (MABI)","MABI","TX1",2215,"hispanic_latino_allc2",13.043478261
+"112","Beth Israel Deaconess Medical Center (MABI)","MABI","TX1",2215,"white_allc2",46.739130435
+"113","Beth Israel Deaconess Medical Center (MABI)","MABI","TX1",2215,"race_other_allc2",0.8152173913
+"114","Beth Israel Deaconess Medical Center (MABI)","MABI","TX1",2215,"race_unknown_allc2",0
+"115","Birmingham VA Medical Center (ALVA)","ALVA","TX1",35233,"asian_allc2",1.2345679012
+"116","Birmingham VA Medical Center (ALVA)","ALVA","TX1",35233,"african_american_allc2",71.604938272
+"117","Birmingham VA Medical Center (ALVA)","ALVA","TX1",35233,"hispanic_latino_allc2",4.9382716049
+"118","Birmingham VA Medical Center (ALVA)","ALVA","TX1",35233,"white_allc2",20.987654321
+"119","Birmingham VA Medical Center (ALVA)","ALVA","TX1",35233,"race_other_allc2",1.2345679012
+"120","Birmingham VA Medical Center (ALVA)","ALVA","TX1",35233,"race_unknown_allc2",0
+"121","Boston Children's Hospital (MACH)","MACH","TX1",2115,"asian_allc2",9.5238095238
+"122","Boston Children's Hospital (MACH)","MACH","TX1",2115,"african_american_allc2",14.285714286
+"123","Boston Children's Hospital (MACH)","MACH","TX1",2115,"hispanic_latino_allc2",23.80952381
+"124","Boston Children's Hospital (MACH)","MACH","TX1",2115,"white_allc2",47.619047619
+"125","Boston Children's Hospital (MACH)","MACH","TX1",2115,"race_other_allc2",4.7619047619
+"126","Boston Children's Hospital (MACH)","MACH","TX1",2115,"race_unknown_allc2",0
+"127","Boston Medical Center (MABU)","MABU","TX1",2118,"asian_allc2",7.8571428571
+"128","Boston Medical Center (MABU)","MABU","TX1",2118,"african_american_allc2",35.357142857
+"129","Boston Medical Center (MABU)","MABU","TX1",2118,"hispanic_latino_allc2",32.5
+"130","Boston Medical Center (MABU)","MABU","TX1",2118,"white_allc2",24.285714286
+"131","Boston Medical Center (MABU)","MABU","TX1",2118,"race_other_allc2",0
+"132","Boston Medical Center (MABU)","MABU","TX1",2118,"race_unknown_allc2",0
+"133","Brigham and Women's Hospital (MAPB)","MAPB","TX1",2115,"asian_allc2",6.6465256798
+"134","Brigham and Women's Hospital (MAPB)","MAPB","TX1",2115,"african_american_allc2",22.054380665
+"135","Brigham and Women's Hospital (MAPB)","MAPB","TX1",2115,"hispanic_latino_allc2",9.667673716
+"136","Brigham and Women's Hospital (MAPB)","MAPB","TX1",2115,"white_allc2",61.329305136
+"137","Brigham and Women's Hospital (MAPB)","MAPB","TX1",2115,"race_other_allc2",0.3021148036
+"138","Brigham and Women's Hospital (MAPB)","MAPB","TX1",2115,"race_unknown_allc2",0
+"139","California Pacific Medical Center (CAPM)","CAPM","TX1",94114,"asian_allc2",22.809917355
+"140","California Pacific Medical Center (CAPM)","CAPM","TX1",94114,"african_american_allc2",10.358126722
+"141","California Pacific Medical Center (CAPM)","CAPM","TX1",94114,"hispanic_latino_allc2",41.157024793
+"142","California Pacific Medical Center (CAPM)","CAPM","TX1",94114,"white_allc2",24.738292011
+"143","California Pacific Medical Center (CAPM)","CAPM","TX1",94114,"race_other_allc2",0.9366391185
+"144","California Pacific Medical Center (CAPM)","CAPM","TX1",94114,"race_unknown_allc2",0
+"145","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1",63104,"asian_allc2",0
+"146","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1",63104,"african_american_allc2",0
+"147","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1",63104,"hispanic_latino_allc2",0
+"148","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1",63104,"white_allc2",100
+"149","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1",63104,"race_other_allc2",0
+"150","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1",63104,"race_unknown_allc2",0
+"151","Carolinas Medical Center (NCCM)","NCCM","TX1",28203,"asian_allc2",3.4155597723
+"152","Carolinas Medical Center (NCCM)","NCCM","TX1",28203,"african_american_allc2",43.074003795
+"153","Carolinas Medical Center (NCCM)","NCCM","TX1",28203,"hispanic_latino_allc2",7.210626186
+"154","Carolinas Medical Center (NCCM)","NCCM","TX1",28203,"white_allc2",35.104364326
+"155","Carolinas Medical Center (NCCM)","NCCM","TX1",28203,"race_other_allc2",11.19544592
+"156","Carolinas Medical Center (NCCM)","NCCM","TX1",28203,"race_unknown_allc2",0
+"157","Cedars-Sinai Medical Center (CACS)","CACS","TX1",90211,"asian_allc2",16.583747927
+"158","Cedars-Sinai Medical Center (CACS)","CACS","TX1",90211,"african_american_allc2",16.334991708
+"159","Cedars-Sinai Medical Center (CACS)","CACS","TX1",90211,"hispanic_latino_allc2",43.781094527
+"160","Cedars-Sinai Medical Center (CACS)","CACS","TX1",90211,"white_allc2",22.056384743
+"161","Cedars-Sinai Medical Center (CACS)","CACS","TX1",90211,"race_other_allc2",1.2437810945
+"162","Cedars-Sinai Medical Center (CACS)","CACS","TX1",90211,"race_unknown_allc2",0
+"163","Centennial Medical Center (TNPV)","TNPV","TX1",37203,"asian_allc2",2.5641025641
+"164","Centennial Medical Center (TNPV)","TNPV","TX1",37203,"african_american_allc2",41.025641026
+"165","Centennial Medical Center (TNPV)","TNPV","TX1",37203,"hispanic_latino_allc2",0
+"166","Centennial Medical Center (TNPV)","TNPV","TX1",37203,"white_allc2",53.846153846
+"167","Centennial Medical Center (TNPV)","TNPV","TX1",37203,"race_other_allc2",2.5641025641
+"168","Centennial Medical Center (TNPV)","TNPV","TX1",37203,"race_unknown_allc2",0
+"169","Centura Porter Adventist Hospital (COPM)","COPM","TX1",80210,"asian_allc2",0
+"170","Centura Porter Adventist Hospital (COPM)","COPM","TX1",80210,"african_american_allc2",8.9552238806
+"171","Centura Porter Adventist Hospital (COPM)","COPM","TX1",80210,"hispanic_latino_allc2",19.402985075
+"172","Centura Porter Adventist Hospital (COPM)","COPM","TX1",80210,"white_allc2",58.208955224
+"173","Centura Porter Adventist Hospital (COPM)","COPM","TX1",80210,"race_other_allc2",13.432835821
+"174","Centura Porter Adventist Hospital (COPM)","COPM","TX1",80210,"race_unknown_allc2",0
+"175","Charleston Area Medical Center (WVCA)","WVCA","TX1",25325,"asian_allc2",0
+"176","Charleston Area Medical Center (WVCA)","WVCA","TX1",25325,"african_american_allc2",7.6086956522
+"177","Charleston Area Medical Center (WVCA)","WVCA","TX1",25325,"hispanic_latino_allc2",1.0869565217
+"178","Charleston Area Medical Center (WVCA)","WVCA","TX1",25325,"white_allc2",91.304347826
+"179","Charleston Area Medical Center (WVCA)","WVCA","TX1",25325,"race_other_allc2",0
+"180","Charleston Area Medical Center (WVCA)","WVCA","TX1",25325,"race_unknown_allc2",0
+"181","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1",77030,"asian_allc2",8.0225988701
+"182","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1",77030,"african_american_allc2",38.983050847
+"183","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1",77030,"hispanic_latino_allc2",33.446327684
+"184","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1",77030,"white_allc2",18.870056497
+"185","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1",77030,"race_other_allc2",0.6779661017
+"186","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1",77030,"race_unknown_allc2",0
+"187","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1",30322,"asian_allc2",0
+"188","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1",30322,"african_american_allc2",45.714285714
+"189","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1",30322,"hispanic_latino_allc2",14.285714286
+"190","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1",30322,"white_allc2",40
+"191","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1",30322,"race_other_allc2",0
+"192","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1",30322,"race_unknown_allc2",0
+"193","Children's Hospital (LACH)","LACH","TX1",70118,"asian_allc2",0
+"194","Children's Hospital (LACH)","LACH","TX1",70118,"african_american_allc2",45.454545455
+"195","Children's Hospital (LACH)","LACH","TX1",70118,"hispanic_latino_allc2",0
+"196","Children's Hospital (LACH)","LACH","TX1",70118,"white_allc2",54.545454545
+"197","Children's Hospital (LACH)","LACH","TX1",70118,"race_other_allc2",0
+"198","Children's Hospital (LACH)","LACH","TX1",70118,"race_unknown_allc2",0
+"199","Children's Hospital Colorado (COCH)","COCH","TX1",80045,"asian_allc2",0
+"200","Children's Hospital Colorado (COCH)","COCH","TX1",80045,"african_american_allc2",10.526315789
+"201","Children's Hospital Colorado (COCH)","COCH","TX1",80045,"hispanic_latino_allc2",21.052631579
+"202","Children's Hospital Colorado (COCH)","COCH","TX1",80045,"white_allc2",68.421052632
+"203","Children's Hospital Colorado (COCH)","COCH","TX1",80045,"race_other_allc2",0
+"204","Children's Hospital Colorado (COCH)","COCH","TX1",80045,"race_unknown_allc2",0
+"205","Children's Hospital Medical Center (OHCM)","OHCM","TX1",45229,"asian_allc2",3.5714285714
+"206","Children's Hospital Medical Center (OHCM)","OHCM","TX1",45229,"african_american_allc2",7.1428571429
+"207","Children's Hospital Medical Center (OHCM)","OHCM","TX1",45229,"hispanic_latino_allc2",3.5714285714
+"208","Children's Hospital Medical Center (OHCM)","OHCM","TX1",45229,"white_allc2",85.714285714
+"209","Children's Hospital Medical Center (OHCM)","OHCM","TX1",45229,"race_other_allc2",0
+"210","Children's Hospital Medical Center (OHCM)","OHCM","TX1",45229,"race_unknown_allc2",0
+"211","Children's Hospital of Michigan (MICH)","MICH","TX1",48201,"asian_allc2",0
+"212","Children's Hospital of Michigan (MICH)","MICH","TX1",48201,"african_american_allc2",44.444444444
+"213","Children's Hospital of Michigan (MICH)","MICH","TX1",48201,"hispanic_latino_allc2",0
+"214","Children's Hospital of Michigan (MICH)","MICH","TX1",48201,"white_allc2",55.555555556
+"215","Children's Hospital of Michigan (MICH)","MICH","TX1",48201,"race_other_allc2",0
+"216","Children's Hospital of Michigan (MICH)","MICH","TX1",48201,"race_unknown_allc2",0
+"217","Children's Hospital of Philadelphia (PACP)","PACP","TX1",19104,"asian_allc2",8.6956521739
+"218","Children's Hospital of Philadelphia (PACP)","PACP","TX1",19104,"african_american_allc2",36.956521739
+"219","Children's Hospital of Philadelphia (PACP)","PACP","TX1",19104,"hispanic_latino_allc2",8.6956521739
+"220","Children's Hospital of Philadelphia (PACP)","PACP","TX1",19104,"white_allc2",45.652173913
+"221","Children's Hospital of Philadelphia (PACP)","PACP","TX1",19104,"race_other_allc2",0
+"222","Children's Hospital of Philadelphia (PACP)","PACP","TX1",19104,"race_unknown_allc2",0
+"223","Children's Hospital of the King's Daughters (VACH)","VACH","TX1",23507,"asian_allc2",0
+"224","Children's Hospital of the King's Daughters (VACH)","VACH","TX1",23507,"african_american_allc2",77.777777778
+"225","Children's Hospital of the King's Daughters (VACH)","VACH","TX1",23507,"hispanic_latino_allc2",0
+"226","Children's Hospital of the King's Daughters (VACH)","VACH","TX1",23507,"white_allc2",22.222222222
+"227","Children's Hospital of the King's Daughters (VACH)","VACH","TX1",23507,"race_other_allc2",0
+"228","Children's Hospital of the King's Daughters (VACH)","VACH","TX1",23507,"race_unknown_allc2",0
+"229","Children's Hospital of Wisconsin (WICH)","WICH","TX1",53226,"asian_allc2",0
+"230","Children's Hospital of Wisconsin (WICH)","WICH","TX1",53226,"african_american_allc2",0
+"231","Children's Hospital of Wisconsin (WICH)","WICH","TX1",53226,"hispanic_latino_allc2",36.363636364
+"232","Children's Hospital of Wisconsin (WICH)","WICH","TX1",53226,"white_allc2",54.545454545
+"233","Children's Hospital of Wisconsin (WICH)","WICH","TX1",53226,"race_other_allc2",9.0909090909
+"234","Children's Hospital of Wisconsin (WICH)","WICH","TX1",53226,"race_unknown_allc2",0
+"235","Children's Medical Center of Dallas (TXCM)","TXCM","TX1",75235,"asian_allc2",0
+"236","Children's Medical Center of Dallas (TXCM)","TXCM","TX1",75235,"african_american_allc2",32.142857143
+"237","Children's Medical Center of Dallas (TXCM)","TXCM","TX1",75235,"hispanic_latino_allc2",39.285714286
+"238","Children's Medical Center of Dallas (TXCM)","TXCM","TX1",75235,"white_allc2",28.571428571
+"239","Children's Medical Center of Dallas (TXCM)","TXCM","TX1",75235,"race_other_allc2",0
+"240","Children's Medical Center of Dallas (TXCM)","TXCM","TX1",75235,"race_unknown_allc2",0
+"241","Children's Mercy Hospital (MOCM)","MOCM","TX1",64108,"asian_allc2",7.5
+"242","Children's Mercy Hospital (MOCM)","MOCM","TX1",64108,"african_american_allc2",17.5
+"243","Children's Mercy Hospital (MOCM)","MOCM","TX1",64108,"hispanic_latino_allc2",12.5
+"244","Children's Mercy Hospital (MOCM)","MOCM","TX1",64108,"white_allc2",50
+"245","Children's Mercy Hospital (MOCM)","MOCM","TX1",64108,"race_other_allc2",12.5
+"246","Children's Mercy Hospital (MOCM)","MOCM","TX1",64108,"race_unknown_allc2",0
+"247","Children's National Medical Center (DCCH)","DCCH","TX1",20010,"asian_allc2",4.5454545455
+"248","Children's National Medical Center (DCCH)","DCCH","TX1",20010,"african_american_allc2",36.363636364
+"249","Children's National Medical Center (DCCH)","DCCH","TX1",20010,"hispanic_latino_allc2",18.181818182
+"250","Children's National Medical Center (DCCH)","DCCH","TX1",20010,"white_allc2",36.363636364
+"251","Children's National Medical Center (DCCH)","DCCH","TX1",20010,"race_other_allc2",4.5454545455
+"252","Children's National Medical Center (DCCH)","DCCH","TX1",20010,"race_unknown_allc2",0
+"253","Children's of Alabama (ALCH)","ALCH","TX1",35233,"asian_allc2",0
+"254","Children's of Alabama (ALCH)","ALCH","TX1",35233,"african_american_allc2",75
+"255","Children's of Alabama (ALCH)","ALCH","TX1",35233,"hispanic_latino_allc2",0
+"256","Children's of Alabama (ALCH)","ALCH","TX1",35233,"white_allc2",25
+"257","Children's of Alabama (ALCH)","ALCH","TX1",35233,"race_other_allc2",0
+"258","Children's of Alabama (ALCH)","ALCH","TX1",35233,"race_unknown_allc2",0
+"259","Childrens Hospital Los Angeles (CACL)","CACL","TX1",90027,"asian_allc2",0
+"260","Childrens Hospital Los Angeles (CACL)","CACL","TX1",90027,"african_american_allc2",2.9411764706
+"261","Childrens Hospital Los Angeles (CACL)","CACL","TX1",90027,"hispanic_latino_allc2",70.588235294
+"262","Childrens Hospital Los Angeles (CACL)","CACL","TX1",90027,"white_allc2",26.470588235
+"263","Childrens Hospital Los Angeles (CACL)","CACL","TX1",90027,"race_other_allc2",0
+"264","Childrens Hospital Los Angeles (CACL)","CACL","TX1",90027,"race_unknown_allc2",0
+"265","Christiana Care Health Services (DECC)","DECC","TX1",19713,"asian_allc2",4.0268456376
+"266","Christiana Care Health Services (DECC)","DECC","TX1",19713,"african_american_allc2",51.006711409
+"267","Christiana Care Health Services (DECC)","DECC","TX1",19713,"hispanic_latino_allc2",5.3691275168
+"268","Christiana Care Health Services (DECC)","DECC","TX1",19713,"white_allc2",39.597315436
+"269","Christiana Care Health Services (DECC)","DECC","TX1",19713,"race_other_allc2",0
+"270","Christiana Care Health Services (DECC)","DECC","TX1",19713,"race_unknown_allc2",0
+"271","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1",33331,"asian_allc2",4.0201005025
+"272","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1",33331,"african_american_allc2",44.974874372
+"273","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1",33331,"hispanic_latino_allc2",21.231155779
+"274","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1",33331,"white_allc2",28.768844221
+"275","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1",33331,"race_other_allc2",1.0050251256
+"276","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1",33331,"race_unknown_allc2",0
+"277","Cook Children's Medical Center (TXCF)","TXCF","TX1",76104,"asian_allc2",0
+"278","Cook Children's Medical Center (TXCF)","TXCF","TX1",76104,"african_american_allc2",20
+"279","Cook Children's Medical Center (TXCF)","TXCF","TX1",76104,"hispanic_latino_allc2",20
+"280","Cook Children's Medical Center (TXCF)","TXCF","TX1",76104,"white_allc2",50
+"281","Cook Children's Medical Center (TXCF)","TXCF","TX1",76104,"race_other_allc2",10
+"282","Cook Children's Medical Center (TXCF)","TXCF","TX1",76104,"race_unknown_allc2",0
+"283","Crozer-Chester Medical Center (PACC)","PACC","TX1",19013,"asian_allc2",3.317535545
+"284","Crozer-Chester Medical Center (PACC)","PACC","TX1",19013,"african_american_allc2",60.18957346
+"285","Crozer-Chester Medical Center (PACC)","PACC","TX1",19013,"hispanic_latino_allc2",4.2654028436
+"286","Crozer-Chester Medical Center (PACC)","PACC","TX1",19013,"white_allc2",28.909952607
+"287","Crozer-Chester Medical Center (PACC)","PACC","TX1",19013,"race_other_allc2",3.317535545
+"288","Crozer-Chester Medical Center (PACC)","PACC","TX1",19013,"race_unknown_allc2",0
+"289","Doctor's Hospital at Renaissance (TXDR)","TXDR","TX1",78539,"asian_allc2",1.0204081633
+"290","Doctor's Hospital at Renaissance (TXDR)","TXDR","TX1",78539,"african_american_allc2",0.5102040816
+"291","Doctor's Hospital at Renaissance (TXDR)","TXDR","TX1",78539,"hispanic_latino_allc2",86.734693878
+"292","Doctor's Hospital at Renaissance (TXDR)","TXDR","TX1",78539,"white_allc2",9.693877551
+"293","Doctor's Hospital at Renaissance (TXDR)","TXDR","TX1",78539,"race_other_allc2",2.0408163265
+"294","Doctor's Hospital at Renaissance (TXDR)","TXDR","TX1",78539,"race_unknown_allc2",0
+"295","Driscoll Children's Hospital (TXDC)","TXDC","TX1",78411,"asian_allc2",0
+"296","Driscoll Children's Hospital (TXDC)","TXDC","TX1",78411,"african_american_allc2",0
+"297","Driscoll Children's Hospital (TXDC)","TXDC","TX1",78411,"hispanic_latino_allc2",83.333333333
+"298","Driscoll Children's Hospital (TXDC)","TXDC","TX1",78411,"white_allc2",16.666666667
+"299","Driscoll Children's Hospital (TXDC)","TXDC","TX1",78411,"race_other_allc2",0
+"300","Driscoll Children's Hospital (TXDC)","TXDC","TX1",78411,"race_unknown_allc2",0
+"301","Duke University Hospital (NCDU)","NCDU","TX1",27710,"asian_allc2",3.2679738562
+"302","Duke University Hospital (NCDU)","NCDU","TX1",27710,"african_american_allc2",55.22875817
+"303","Duke University Hospital (NCDU)","NCDU","TX1",27710,"hispanic_latino_allc2",2.7777777778
+"304","Duke University Hospital (NCDU)","NCDU","TX1",27710,"white_allc2",37.581699346
+"305","Duke University Hospital (NCDU)","NCDU","TX1",27710,"race_other_allc2",1.1437908497
+"306","Duke University Hospital (NCDU)","NCDU","TX1",27710,"race_unknown_allc2",0
+"307","East Texas Medical Center (TXTY)","TXTY","TX1",75701,"asian_allc2",1.7543859649
+"308","East Texas Medical Center (TXTY)","TXTY","TX1",75701,"african_american_allc2",54.385964912
+"309","East Texas Medical Center (TXTY)","TXTY","TX1",75701,"hispanic_latino_allc2",13.157894737
+"310","East Texas Medical Center (TXTY)","TXTY","TX1",75701,"white_allc2",30.701754386
+"311","East Texas Medical Center (TXTY)","TXTY","TX1",75701,"race_other_allc2",0
+"312","East Texas Medical Center (TXTY)","TXTY","TX1",75701,"race_unknown_allc2",0
+"313","Emory University Hospital (GAEM)","GAEM","TX1",30322,"asian_allc2",3.7916857012
+"314","Emory University Hospital (GAEM)","GAEM","TX1",30322,"african_american_allc2",66.05756053
+"315","Emory University Hospital (GAEM)","GAEM","TX1",30322,"hispanic_latino_allc2",4.9337597076
+"316","Emory University Hospital (GAEM)","GAEM","TX1",30322,"white_allc2",24.623115578
+"317","Emory University Hospital (GAEM)","GAEM","TX1",30322,"race_other_allc2",0.5938784833
+"318","Emory University Hospital (GAEM)","GAEM","TX1",30322,"race_unknown_allc2",0
+"319","Erie County Medical Center (NYEC)","NYEC","TX1",14215,"asian_allc2",4.9450549451
+"320","Erie County Medical Center (NYEC)","NYEC","TX1",14215,"african_american_allc2",32.417582418
+"321","Erie County Medical Center (NYEC)","NYEC","TX1",14215,"hispanic_latino_allc2",3.8461538462
+"322","Erie County Medical Center (NYEC)","NYEC","TX1",14215,"white_allc2",57.692307692
+"323","Erie County Medical Center (NYEC)","NYEC","TX1",14215,"race_other_allc2",1.0989010989
+"324","Erie County Medical Center (NYEC)","NYEC","TX1",14215,"race_unknown_allc2",0
+"325","Erlanger Medical Center (TNEM)","TNEM","TX1",37403,"asian_allc2",2.7472527473
+"326","Erlanger Medical Center (TNEM)","TNEM","TX1",37403,"african_american_allc2",38.461538462
+"327","Erlanger Medical Center (TNEM)","TNEM","TX1",37403,"hispanic_latino_allc2",4.9450549451
+"328","Erlanger Medical Center (TNEM)","TNEM","TX1",37403,"white_allc2",53.846153846
+"329","Erlanger Medical Center (TNEM)","TNEM","TX1",37403,"race_other_allc2",0
+"330","Erlanger Medical Center (TNEM)","TNEM","TX1",37403,"race_unknown_allc2",0
+"331","Florida Hospital Medical Center (FLFH)","FLFH","TX1",32803,"asian_allc2",5.7649667406
+"332","Florida Hospital Medical Center (FLFH)","FLFH","TX1",32803,"african_american_allc2",33.924611973
+"333","Florida Hospital Medical Center (FLFH)","FLFH","TX1",32803,"hispanic_latino_allc2",19.955654102
+"334","Florida Hospital Medical Center (FLFH)","FLFH","TX1",32803,"white_allc2",39.689578714
+"335","Florida Hospital Medical Center (FLFH)","FLFH","TX1",32803,"race_other_allc2",0.6651884701
+"336","Florida Hospital Medical Center (FLFH)","FLFH","TX1",32803,"race_unknown_allc2",0
+"337","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1",53226,"asian_allc2",9.2077087794
+"338","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1",53226,"african_american_allc2",32.334047109
+"339","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1",53226,"hispanic_latino_allc2",8.7794432548
+"340","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1",53226,"white_allc2",48.608137045
+"341","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1",53226,"race_other_allc2",1.0706638116
+"342","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1",53226,"race_unknown_allc2",0
+"343","Geisinger Medical Center (PAGM)","PAGM","TX1",17822,"asian_allc2",1.7857142857
+"344","Geisinger Medical Center (PAGM)","PAGM","TX1",17822,"african_american_allc2",8.9285714286
+"345","Geisinger Medical Center (PAGM)","PAGM","TX1",17822,"hispanic_latino_allc2",5.3571428571
+"346","Geisinger Medical Center (PAGM)","PAGM","TX1",17822,"white_allc2",83.928571429
+"347","Geisinger Medical Center (PAGM)","PAGM","TX1",17822,"race_other_allc2",0
+"348","Geisinger Medical Center (PAGM)","PAGM","TX1",17822,"race_unknown_allc2",0
+"349","George Washington University Hospital (DCGW)","DCGW","TX1",20037,"asian_allc2",4.7272727273
+"350","George Washington University Hospital (DCGW)","DCGW","TX1",20037,"african_american_allc2",74.909090909
+"351","George Washington University Hospital (DCGW)","DCGW","TX1",20037,"hispanic_latino_allc2",7.6363636364
+"352","George Washington University Hospital (DCGW)","DCGW","TX1",20037,"white_allc2",11.272727273
+"353","George Washington University Hospital (DCGW)","DCGW","TX1",20037,"race_other_allc2",1.4545454545
+"354","George Washington University Hospital (DCGW)","DCGW","TX1",20037,"race_unknown_allc2",0
+"355","Georgetown University Medical Center (DCGU)","DCGU","TX1",20007,"asian_allc2",9.0042372881
+"356","Georgetown University Medical Center (DCGU)","DCGU","TX1",20007,"african_american_allc2",61.652542373
+"357","Georgetown University Medical Center (DCGU)","DCGU","TX1",20007,"hispanic_latino_allc2",6.9915254237
+"358","Georgetown University Medical Center (DCGU)","DCGU","TX1",20007,"white_allc2",22.033898305
+"359","Georgetown University Medical Center (DCGU)","DCGU","TX1",20007,"race_other_allc2",0.3177966102
+"360","Georgetown University Medical Center (DCGU)","DCGU","TX1",20007,"race_unknown_allc2",0
+"361","Hackensack University Medical Center (NJHK)","NJHK","TX1",7601,"asian_allc2",12.5
+"362","Hackensack University Medical Center (NJHK)","NJHK","TX1",7601,"african_american_allc2",25.892857143
+"363","Hackensack University Medical Center (NJHK)","NJHK","TX1",7601,"hispanic_latino_allc2",22.321428571
+"364","Hackensack University Medical Center (NJHK)","NJHK","TX1",7601,"white_allc2",38.392857143
+"365","Hackensack University Medical Center (NJHK)","NJHK","TX1",7601,"race_other_allc2",0.8928571429
+"366","Hackensack University Medical Center (NJHK)","NJHK","TX1",7601,"race_unknown_allc2",0
+"367","Hahnemann University Hospital (PAHM)","PAHM","TX1",19102,"asian_allc2",2.9702970297
+"368","Hahnemann University Hospital (PAHM)","PAHM","TX1",19102,"african_american_allc2",65.346534653
+"369","Hahnemann University Hospital (PAHM)","PAHM","TX1",19102,"hispanic_latino_allc2",7.9207920792
+"370","Hahnemann University Hospital (PAHM)","PAHM","TX1",19102,"white_allc2",23.762376238
+"371","Hahnemann University Hospital (PAHM)","PAHM","TX1",19102,"race_other_allc2",0
+"372","Hahnemann University Hospital (PAHM)","PAHM","TX1",19102,"race_unknown_allc2",0
+"373","Halifax Medical Center (FLHM)","FLHM","TX1",32114,"asian_allc2",5.2631578947
+"374","Halifax Medical Center (FLHM)","FLHM","TX1",32114,"african_american_allc2",46.052631579
+"375","Halifax Medical Center (FLHM)","FLHM","TX1",32114,"hispanic_latino_allc2",13.157894737
+"376","Halifax Medical Center (FLHM)","FLHM","TX1",32114,"white_allc2",35.526315789
+"377","Halifax Medical Center (FLHM)","FLHM","TX1",32114,"race_other_allc2",0
+"378","Halifax Medical Center (FLHM)","FLHM","TX1",32114,"race_unknown_allc2",0
+"379","Harbor UCLA Medical Center (CALA)","CALA","TX1",90509,"asian_allc2",13.318777293
+"380","Harbor UCLA Medical Center (CALA)","CALA","TX1",90509,"african_american_allc2",5.6768558952
+"381","Harbor UCLA Medical Center (CALA)","CALA","TX1",90509,"hispanic_latino_allc2",78.820960699
+"382","Harbor UCLA Medical Center (CALA)","CALA","TX1",90509,"white_allc2",1.9650655022
+"383","Harbor UCLA Medical Center (CALA)","CALA","TX1",90509,"race_other_allc2",0.2183406114
+"384","Harbor UCLA Medical Center (CALA)","CALA","TX1",90509,"race_unknown_allc2",0
+"385","Harper University Hospital Detroit Medical Center (MIHH)","MIHH","TX1",48201,"asian_allc2",1.9704433498
+"386","Harper University Hospital Detroit Medical Center (MIHH)","MIHH","TX1",48201,"african_american_allc2",82.75862069
+"387","Harper University Hospital Detroit Medical Center (MIHH)","MIHH","TX1",48201,"hispanic_latino_allc2",1.4778325123
+"388","Harper University Hospital Detroit Medical Center (MIHH)","MIHH","TX1",48201,"white_allc2",7.881773399
+"389","Harper University Hospital Detroit Medical Center (MIHH)","MIHH","TX1",48201,"race_other_allc2",5.9113300493
+"390","Harper University Hospital Detroit Medical Center (MIHH)","MIHH","TX1",48201,"race_unknown_allc2",0
+"391","Hartford Hospital (CTHH)","CTHH","TX1",6102,"asian_allc2",7.7142857143
+"392","Hartford Hospital (CTHH)","CTHH","TX1",6102,"african_american_allc2",33.714285714
+"393","Hartford Hospital (CTHH)","CTHH","TX1",6102,"hispanic_latino_allc2",18
+"394","Hartford Hospital (CTHH)","CTHH","TX1",6102,"white_allc2",36.571428571
+"395","Hartford Hospital (CTHH)","CTHH","TX1",6102,"race_other_allc2",4
+"396","Hartford Hospital (CTHH)","CTHH","TX1",6102,"race_unknown_allc2",0
+"397","Helen DeVos Children's Hospital (MIDV)","MIDV","TX1",49503,"asian_allc2",14.285714286
+"398","Helen DeVos Children's Hospital (MIDV)","MIDV","TX1",49503,"african_american_allc2",14.285714286
+"399","Helen DeVos Children's Hospital (MIDV)","MIDV","TX1",49503,"hispanic_latino_allc2",0
+"400","Helen DeVos Children's Hospital (MIDV)","MIDV","TX1",49503,"white_allc2",71.428571429
+"401","Helen DeVos Children's Hospital (MIDV)","MIDV","TX1",49503,"race_other_allc2",0
+"402","Helen DeVos Children's Hospital (MIDV)","MIDV","TX1",49503,"race_unknown_allc2",0
+"403","Hennepin County Medical Center (MNHC)","MNHC","TX1",55415,"asian_allc2",15.3125
+"404","Hennepin County Medical Center (MNHC)","MNHC","TX1",55415,"african_american_allc2",27.1875
+"405","Hennepin County Medical Center (MNHC)","MNHC","TX1",55415,"hispanic_latino_allc2",11.25
+"406","Hennepin County Medical Center (MNHC)","MNHC","TX1",55415,"white_allc2",40.625
+"407","Hennepin County Medical Center (MNHC)","MNHC","TX1",55415,"race_other_allc2",5.625
+"408","Hennepin County Medical Center (MNHC)","MNHC","TX1",55415,"race_unknown_allc2",0
+"409","Henrico Doctors' Hospital (VAHD)","VAHD","TX1",23229,"asian_allc2",4.9450549451
+"410","Henrico Doctors' Hospital (VAHD)","VAHD","TX1",23229,"african_american_allc2",55.494505495
+"411","Henrico Doctors' Hospital (VAHD)","VAHD","TX1",23229,"hispanic_latino_allc2",1.6483516484
+"412","Henrico Doctors' Hospital (VAHD)","VAHD","TX1",23229,"white_allc2",37.362637363
+"413","Henrico Doctors' Hospital (VAHD)","VAHD","TX1",23229,"race_other_allc2",0.5494505495
+"414","Henrico Doctors' Hospital (VAHD)","VAHD","TX1",23229,"race_unknown_allc2",0
+"415","Henry Ford Hospital (MIHF)","MIHF","TX1",48202,"asian_allc2",3.233256351
+"416","Henry Ford Hospital (MIHF)","MIHF","TX1",48202,"african_american_allc2",49.422632794
+"417","Henry Ford Hospital (MIHF)","MIHF","TX1",48202,"hispanic_latino_allc2",3.233256351
+"418","Henry Ford Hospital (MIHF)","MIHF","TX1",48202,"white_allc2",43.187066975
+"419","Henry Ford Hospital (MIHF)","MIHF","TX1",48202,"race_other_allc2",0.9237875289
+"420","Henry Ford Hospital (MIHF)","MIHF","TX1",48202,"race_unknown_allc2",0
+"421","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1",19104,"asian_allc2",7.7256944444
+"422","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1",19104,"african_american_allc2",44.010416667
+"423","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1",19104,"hispanic_latino_allc2",5.7291666667
+"424","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1",19104,"white_allc2",42.534722222
+"425","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1",19104,"race_other_allc2",0
+"426","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1",19104,"race_unknown_allc2",0
+"427","Houston Methodist Hospital (TXMH)","TXMH","TX1",77030,"asian_allc2",7.8431372549
+"428","Houston Methodist Hospital (TXMH)","TXMH","TX1",77030,"african_american_allc2",35.574229692
+"429","Houston Methodist Hospital (TXMH)","TXMH","TX1",77030,"hispanic_latino_allc2",30.112044818
+"430","Houston Methodist Hospital (TXMH)","TXMH","TX1",77030,"white_allc2",25.980392157
+"431","Houston Methodist Hospital (TXMH)","TXMH","TX1",77030,"race_other_allc2",0.4901960784
+"432","Houston Methodist Hospital (TXMH)","TXMH","TX1",77030,"race_unknown_allc2",0
+"433","Indiana University Health (INIM)","INIM","TX1",46202,"asian_allc2",3.6388140162
+"434","Indiana University Health (INIM)","INIM","TX1",46202,"african_american_allc2",28.032345013
+"435","Indiana University Health (INIM)","INIM","TX1",46202,"hispanic_latino_allc2",5.1212938005
+"436","Indiana University Health (INIM)","INIM","TX1",46202,"white_allc2",62.938005391
+"437","Indiana University Health (INIM)","INIM","TX1",46202,"race_other_allc2",0.269541779
+"438","Indiana University Health (INIM)","INIM","TX1",46202,"race_unknown_allc2",0
+"439","Inova Fairfax Hospital (VAFH)","VAFH","TX1",22042,"asian_allc2",14.788732394
+"440","Inova Fairfax Hospital (VAFH)","VAFH","TX1",22042,"african_american_allc2",34.741784038
+"441","Inova Fairfax Hospital (VAFH)","VAFH","TX1",22042,"hispanic_latino_allc2",17.136150235
+"442","Inova Fairfax Hospital (VAFH)","VAFH","TX1",22042,"white_allc2",30.751173709
+"443","Inova Fairfax Hospital (VAFH)","VAFH","TX1",22042,"race_other_allc2",2.5821596244
+"444","Inova Fairfax Hospital (VAFH)","VAFH","TX1",22042,"race_unknown_allc2",0
+"445","Integris Baptist Medical Center (OKBC)","OKBC","TX1",73112,"asian_allc2",5.1792828685
+"446","Integris Baptist Medical Center (OKBC)","OKBC","TX1",73112,"african_american_allc2",23.90438247
+"447","Integris Baptist Medical Center (OKBC)","OKBC","TX1",73112,"hispanic_latino_allc2",7.5697211155
+"448","Integris Baptist Medical Center (OKBC)","OKBC","TX1",73112,"white_allc2",58.167330677
+"449","Integris Baptist Medical Center (OKBC)","OKBC","TX1",73112,"race_other_allc2",5.1792828685
+"450","Integris Baptist Medical Center (OKBC)","OKBC","TX1",73112,"race_unknown_allc2",0
+"451","Intermountain Medical Center (UTLD)","UTLD","TX1",84107,"asian_allc2",8.8803088803
+"452","Intermountain Medical Center (UTLD)","UTLD","TX1",84107,"african_american_allc2",2.3166023166
+"453","Intermountain Medical Center (UTLD)","UTLD","TX1",84107,"hispanic_latino_allc2",15.444015444
+"454","Intermountain Medical Center (UTLD)","UTLD","TX1",84107,"white_allc2",69.111969112
+"455","Intermountain Medical Center (UTLD)","UTLD","TX1",84107,"race_other_allc2",4.2471042471
+"456","Intermountain Medical Center (UTLD)","UTLD","TX1",84107,"race_unknown_allc2",0
+"457","Iowa Methodist Medical Center (IAIM)","IAIM","TX1",50309,"asian_allc2",9.219858156
+"458","Iowa Methodist Medical Center (IAIM)","IAIM","TX1",50309,"african_american_allc2",7.8014184397
+"459","Iowa Methodist Medical Center (IAIM)","IAIM","TX1",50309,"hispanic_latino_allc2",7.8014184397
+"460","Iowa Methodist Medical Center (IAIM)","IAIM","TX1",50309,"white_allc2",73.758865248
+"461","Iowa Methodist Medical Center (IAIM)","IAIM","TX1",50309,"race_other_allc2",1.4184397163
+"462","Iowa Methodist Medical Center (IAIM)","IAIM","TX1",50309,"race_unknown_allc2",0
+"463","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1",33136,"asian_allc2",3.1221303949
+"464","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1",33136,"african_american_allc2",43.526170799
+"465","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1",33136,"hispanic_latino_allc2",37.373737374
+"466","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1",33136,"white_allc2",15.610651974
+"467","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1",33136,"race_other_allc2",0.3673094582
+"468","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1",33136,"race_unknown_allc2",0
+"469","James J. Peters VA Medical Center (NYVA)","NYVA","TX1",10468,"asian_allc2",0.8547008547
+"470","James J. Peters VA Medical Center (NYVA)","NYVA","TX1",10468,"african_american_allc2",64.102564103
+"471","James J. Peters VA Medical Center (NYVA)","NYVA","TX1",10468,"hispanic_latino_allc2",10.256410256
+"472","James J. Peters VA Medical Center (NYVA)","NYVA","TX1",10468,"white_allc2",23.931623932
+"473","James J. Peters VA Medical Center (NYVA)","NYVA","TX1",10468,"race_other_allc2",0.8547008547
+"474","James J. Peters VA Medical Center (NYVA)","NYVA","TX1",10468,"race_unknown_allc2",0
+"475","Jewish Hospital (KYJH)","KYJH","TX1",40202,"asian_allc2",2.8776978417
+"476","Jewish Hospital (KYJH)","KYJH","TX1",40202,"african_american_allc2",33.45323741
+"477","Jewish Hospital (KYJH)","KYJH","TX1",40202,"hispanic_latino_allc2",2.1582733813
+"478","Jewish Hospital (KYJH)","KYJH","TX1",40202,"white_allc2",61.151079137
+"479","Jewish Hospital (KYJH)","KYJH","TX1",40202,"race_other_allc2",0.3597122302
+"480","Jewish Hospital (KYJH)","KYJH","TX1",40202,"race_unknown_allc2",0
+"481","Johns Hopkins Hospital (MDJH)","MDJH","TX1",21287,"asian_allc2",8.649035025
+"482","Johns Hopkins Hospital (MDJH)","MDJH","TX1",21287,"african_american_allc2",48.892065761
+"483","Johns Hopkins Hospital (MDJH)","MDJH","TX1",21287,"hispanic_latino_allc2",4.2172980701
+"484","Johns Hopkins Hospital (MDJH)","MDJH","TX1",21287,"white_allc2",38.098641887
+"485","Johns Hopkins Hospital (MDJH)","MDJH","TX1",21287,"race_other_allc2",0.1429592566
+"486","Johns Hopkins Hospital (MDJH)","MDJH","TX1",21287,"race_unknown_allc2",0
+"487","Keck Hospital of USC (CAUH)","CAUH","TX1",90033,"asian_allc2",19.384615385
+"488","Keck Hospital of USC (CAUH)","CAUH","TX1",90033,"african_american_allc2",8.6153846154
+"489","Keck Hospital of USC (CAUH)","CAUH","TX1",90033,"hispanic_latino_allc2",60.230769231
+"490","Keck Hospital of USC (CAUH)","CAUH","TX1",90033,"white_allc2",10.923076923
+"491","Keck Hospital of USC (CAUH)","CAUH","TX1",90033,"race_other_allc2",0.8461538462
+"492","Keck Hospital of USC (CAUH)","CAUH","TX1",90033,"race_unknown_allc2",0
+"493","Lahey Clinic Medical Center (MALC)","MALC","TX1",1805,"asian_allc2",14.361702128
+"494","Lahey Clinic Medical Center (MALC)","MALC","TX1",1805,"african_american_allc2",6.914893617
+"495","Lahey Clinic Medical Center (MALC)","MALC","TX1",1805,"hispanic_latino_allc2",11.70212766
+"496","Lahey Clinic Medical Center (MALC)","MALC","TX1",1805,"white_allc2",64.361702128
+"497","Lahey Clinic Medical Center (MALC)","MALC","TX1",1805,"race_other_allc2",2.6595744681
+"498","Lahey Clinic Medical Center (MALC)","MALC","TX1",1805,"race_unknown_allc2",0
+"499","Largo Medical Center (FLLM)","FLLM","TX1",33770,"asian_allc2",9.4339622642
+"500","Largo Medical Center (FLLM)","FLLM","TX1",33770,"african_american_allc2",22.641509434
+"501","Largo Medical Center (FLLM)","FLLM","TX1",33770,"hispanic_latino_allc2",20.754716981
+"502","Largo Medical Center (FLLM)","FLLM","TX1",33770,"white_allc2",45.283018868
+"503","Largo Medical Center (FLLM)","FLLM","TX1",33770,"race_other_allc2",1.8867924528
+"504","Largo Medical Center (FLLM)","FLLM","TX1",33770,"race_unknown_allc2",0
+"505","Las Palmas Medical Center (TXLP)","TXLP","TX1",79902,"asian_allc2",2.4630541872
+"506","Las Palmas Medical Center (TXLP)","TXLP","TX1",79902,"african_american_allc2",5.4187192118
+"507","Las Palmas Medical Center (TXLP)","TXLP","TX1",79902,"hispanic_latino_allc2",87.192118227
+"508","Las Palmas Medical Center (TXLP)","TXLP","TX1",79902,"white_allc2",4.4334975369
+"509","Las Palmas Medical Center (TXLP)","TXLP","TX1",79902,"race_other_allc2",0.4926108374
+"510","Las Palmas Medical Center (TXLP)","TXLP","TX1",79902,"race_unknown_allc2",0
+"511","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1",38103,"asian_allc2",0
+"512","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1",38103,"african_american_allc2",75
+"513","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1",38103,"hispanic_latino_allc2",25
+"514","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1",38103,"white_allc2",0
+"515","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1",38103,"race_other_allc2",0
+"516","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1",38103,"race_unknown_allc2",0
+"517","Legacy Good Samaritan Hospital and Medical Center (ORGS)","ORGS","TX1",97210,"asian_allc2",8
+"518","Legacy Good Samaritan Hospital and Medical Center (ORGS)","ORGS","TX1",97210,"african_american_allc2",8
+"519","Legacy Good Samaritan Hospital and Medical Center (ORGS)","ORGS","TX1",97210,"hispanic_latino_allc2",22.545454545
+"520","Legacy Good Samaritan Hospital and Medical Center (ORGS)","ORGS","TX1",97210,"white_allc2",59.636363636
+"521","Legacy Good Samaritan Hospital and Medical Center (ORGS)","ORGS","TX1",97210,"race_other_allc2",1.8181818182
+"522","Legacy Good Samaritan Hospital and Medical Center (ORGS)","ORGS","TX1",97210,"race_unknown_allc2",0
+"523","Lehigh Valley Hospital (PALV)","PALV","TX1",18105,"asian_allc2",4.3918918919
+"524","Lehigh Valley Hospital (PALV)","PALV","TX1",18105,"african_american_allc2",12.162162162
+"525","Lehigh Valley Hospital (PALV)","PALV","TX1",18105,"hispanic_latino_allc2",15.540540541
+"526","Lehigh Valley Hospital (PALV)","PALV","TX1",18105,"white_allc2",67.22972973
+"527","Lehigh Valley Hospital (PALV)","PALV","TX1",18105,"race_other_allc2",0.6756756757
+"528","Lehigh Valley Hospital (PALV)","PALV","TX1",18105,"race_unknown_allc2",0
+"529","Loma Linda University Medical Center (CALL)","CALL","TX1",92354,"asian_allc2",9.3541202673
+"530","Loma Linda University Medical Center (CALL)","CALL","TX1",92354,"african_american_allc2",13.363028953
+"531","Loma Linda University Medical Center (CALL)","CALL","TX1",92354,"hispanic_latino_allc2",56.198960653
+"532","Loma Linda University Medical Center (CALL)","CALL","TX1",92354,"white_allc2",19.97030438
+"533","Loma Linda University Medical Center (CALL)","CALL","TX1",92354,"race_other_allc2",1.1135857461
+"534","Loma Linda University Medical Center (CALL)","CALL","TX1",92354,"race_unknown_allc2",0
+"535","Long Island Jewish Medical Center-Cohen Children's Medical Center (NYCC)","NYCC","TX1",11040,"asian_allc2",25
+"536","Long Island Jewish Medical Center-Cohen Children's Medical Center (NYCC)","NYCC","TX1",11040,"african_american_allc2",56.25
+"537","Long Island Jewish Medical Center-Cohen Children's Medical Center (NYCC)","NYCC","TX1",11040,"hispanic_latino_allc2",0
+"538","Long Island Jewish Medical Center-Cohen Children's Medical Center (NYCC)","NYCC","TX1",11040,"white_allc2",18.75
+"539","Long Island Jewish Medical Center-Cohen Children's Medical Center (NYCC)","NYCC","TX1",11040,"race_other_allc2",0
+"540","Long Island Jewish Medical Center-Cohen Children's Medical Center (NYCC)","NYCC","TX1",11040,"race_unknown_allc2",0
+"541","Loyola University Medical Center (ILLU)","ILLU","TX1",60153,"asian_allc2",8.9230769231
+"542","Loyola University Medical Center (ILLU)","ILLU","TX1",60153,"african_american_allc2",26.769230769
+"543","Loyola University Medical Center (ILLU)","ILLU","TX1",60153,"hispanic_latino_allc2",27.384615385
+"544","Loyola University Medical Center (ILLU)","ILLU","TX1",60153,"white_allc2",36.307692308
+"545","Loyola University Medical Center (ILLU)","ILLU","TX1",60153,"race_other_allc2",0.6153846154
+"546","Loyola University Medical Center (ILLU)","ILLU","TX1",60153,"race_unknown_allc2",0
+"547","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1",94304,"asian_allc2",12.195121951
+"548","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1",94304,"african_american_allc2",4.0650406504
+"549","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1",94304,"hispanic_latino_allc2",38.211382114
+"550","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1",94304,"white_allc2",39.837398374
+"551","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1",94304,"race_other_allc2",5.6910569106
+"552","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1",94304,"race_unknown_allc2",0
+"553","Lutheran Hospital of Fort Wayne (INLH)","INLH","TX1",46804,"asian_allc2",6.0606060606
+"554","Lutheran Hospital of Fort Wayne (INLH)","INLH","TX1",46804,"african_american_allc2",21.212121212
+"555","Lutheran Hospital of Fort Wayne (INLH)","INLH","TX1",46804,"hispanic_latino_allc2",10.606060606
+"556","Lutheran Hospital of Fort Wayne (INLH)","INLH","TX1",46804,"white_allc2",57.575757576
+"557","Lutheran Hospital of Fort Wayne (INLH)","INLH","TX1",46804,"race_other_allc2",4.5454545455
+"558","Lutheran Hospital of Fort Wayne (INLH)","INLH","TX1",46804,"race_unknown_allc2",0
+"559","Maine Medical Center (MEMC)","MEMC","TX1",4102,"asian_allc2",2.4
+"560","Maine Medical Center (MEMC)","MEMC","TX1",4102,"african_american_allc2",6.4
+"561","Maine Medical Center (MEMC)","MEMC","TX1",4102,"hispanic_latino_allc2",2.4
+"562","Maine Medical Center (MEMC)","MEMC","TX1",4102,"white_allc2",86.4
+"563","Maine Medical Center (MEMC)","MEMC","TX1",4102,"race_other_allc2",2.4
+"564","Maine Medical Center (MEMC)","MEMC","TX1",4102,"race_unknown_allc2",0
+"565","Mary Hitchcock Memorial Hospital (NHDH)","NHDH","TX1",3756,"asian_allc2",2.4691358025
+"566","Mary Hitchcock Memorial Hospital (NHDH)","NHDH","TX1",3756,"african_american_allc2",1.2345679012
+"567","Mary Hitchcock Memorial Hospital (NHDH)","NHDH","TX1",3756,"hispanic_latino_allc2",2.4691358025
+"568","Mary Hitchcock Memorial Hospital (NHDH)","NHDH","TX1",3756,"white_allc2",92.592592593
+"569","Mary Hitchcock Memorial Hospital (NHDH)","NHDH","TX1",3756,"race_other_allc2",1.2345679012
+"570","Mary Hitchcock Memorial Hospital (NHDH)","NHDH","TX1",3756,"race_unknown_allc2",0
+"571","Massachusetts General Hospital (MAMG)","MAMG","TX1",2114,"asian_allc2",5.7866184448
+"572","Massachusetts General Hospital (MAMG)","MAMG","TX1",2114,"african_american_allc2",13.110307414
+"573","Massachusetts General Hospital (MAMG)","MAMG","TX1",2114,"hispanic_latino_allc2",10.036166365
+"574","Massachusetts General Hospital (MAMG)","MAMG","TX1",2114,"white_allc2",70.976491863
+"575","Massachusetts General Hospital (MAMG)","MAMG","TX1",2114,"race_other_allc2",0.0904159132
+"576","Massachusetts General Hospital (MAMG)","MAMG","TX1",2114,"race_unknown_allc2",0
+"577","Mayo Clinic Florida (FLSL)","FLSL","TX1",32224,"asian_allc2",4.347826087
+"578","Mayo Clinic Florida (FLSL)","FLSL","TX1",32224,"african_american_allc2",48.06763285
+"579","Mayo Clinic Florida (FLSL)","FLSL","TX1",32224,"hispanic_latino_allc2",4.347826087
+"580","Mayo Clinic Florida (FLSL)","FLSL","TX1",32224,"white_allc2",42.995169082
+"581","Mayo Clinic Florida (FLSL)","FLSL","TX1",32224,"race_other_allc2",0.2415458937
+"582","Mayo Clinic Florida (FLSL)","FLSL","TX1",32224,"race_unknown_allc2",0
+"583","Mayo Clinic Hospital (AZMC)","AZMC","TX1",85054,"asian_allc2",6.4555420219
+"584","Mayo Clinic Hospital (AZMC)","AZMC","TX1",85054,"african_american_allc2",11.327649208
+"585","Mayo Clinic Hospital (AZMC)","AZMC","TX1",85054,"hispanic_latino_allc2",22.777101096
+"586","Mayo Clinic Hospital (AZMC)","AZMC","TX1",85054,"white_allc2",49.208282582
+"587","Mayo Clinic Hospital (AZMC)","AZMC","TX1",85054,"race_other_allc2",10.231425091
+"588","Mayo Clinic Hospital (AZMC)","AZMC","TX1",85054,"race_unknown_allc2",0
+"589","Medical City Dallas Hospital (TXHD)","TXHD","TX1",75230,"asian_allc2",8.3636363636
+"590","Medical City Dallas Hospital (TXHD)","TXHD","TX1",75230,"african_american_allc2",33.454545455
+"591","Medical City Dallas Hospital (TXHD)","TXHD","TX1",75230,"hispanic_latino_allc2",22.545454545
+"592","Medical City Dallas Hospital (TXHD)","TXHD","TX1",75230,"white_allc2",35.272727273
+"593","Medical City Dallas Hospital (TXHD)","TXHD","TX1",75230,"race_other_allc2",0.3636363636
+"594","Medical City Dallas Hospital (TXHD)","TXHD","TX1",75230,"race_unknown_allc2",0
+"595","Medical City Fort Worth (TXPL)","TXPL","TX1",76104,"asian_allc2",13.812154696
+"596","Medical City Fort Worth (TXPL)","TXPL","TX1",76104,"african_american_allc2",27.071823204
+"597","Medical City Fort Worth (TXPL)","TXPL","TX1",76104,"hispanic_latino_allc2",24.861878453
+"598","Medical City Fort Worth (TXPL)","TXPL","TX1",76104,"white_allc2",25.414364641
+"599","Medical City Fort Worth (TXPL)","TXPL","TX1",76104,"race_other_allc2",8.8397790055
+"600","Medical City Fort Worth (TXPL)","TXPL","TX1",76104,"race_unknown_allc2",0
+"601","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1",23219,"asian_allc2",4.3298969072
+"602","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1",23219,"african_american_allc2",64.742268041
+"603","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1",23219,"hispanic_latino_allc2",4.5360824742
+"604","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1",23219,"white_allc2",25.979381443
+"605","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1",23219,"race_other_allc2",0.412371134
+"606","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1",23219,"race_unknown_allc2",0
+"607","Medical University of South Carolina (SCMU)","SCMU","TX1",29425,"asian_allc2",2.6973026973
+"608","Medical University of South Carolina (SCMU)","SCMU","TX1",29425,"african_american_allc2",64.335664336
+"609","Medical University of South Carolina (SCMU)","SCMU","TX1",29425,"hispanic_latino_allc2",2.6973026973
+"610","Medical University of South Carolina (SCMU)","SCMU","TX1",29425,"white_allc2",29.470529471
+"611","Medical University of South Carolina (SCMU)","SCMU","TX1",29425,"race_other_allc2",0.7992007992
+"612","Medical University of South Carolina (SCMU)","SCMU","TX1",29425,"race_unknown_allc2",0
+"613","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1",77030,"asian_allc2",9.0579710145
+"614","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1",77030,"african_american_allc2",31.15942029
+"615","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1",77030,"hispanic_latino_allc2",43.84057971
+"616","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1",77030,"white_allc2",15.942028986
+"617","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1",77030,"race_other_allc2",0
+"618","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1",77030,"race_unknown_allc2",0
+"619","Memorial Medical Center (ILMM)","ILMM","TX1",62781,"asian_allc2",1.9607843137
+"620","Memorial Medical Center (ILMM)","ILMM","TX1",62781,"african_american_allc2",17.647058824
+"621","Memorial Medical Center (ILMM)","ILMM","TX1",62781,"hispanic_latino_allc2",2.9411764706
+"622","Memorial Medical Center (ILMM)","ILMM","TX1",62781,"white_allc2",77.450980392
+"623","Memorial Medical Center (ILMM)","ILMM","TX1",62781,"race_other_allc2",0
+"624","Memorial Medical Center (ILMM)","ILMM","TX1",62781,"race_unknown_allc2",0
+"625","Memorial Regional Hospital (FLMR)","FLMR","TX1",33021,"asian_allc2",8.7378640777
+"626","Memorial Regional Hospital (FLMR)","FLMR","TX1",33021,"african_american_allc2",56.310679612
+"627","Memorial Regional Hospital (FLMR)","FLMR","TX1",33021,"hispanic_latino_allc2",29.126213592
+"628","Memorial Regional Hospital (FLMR)","FLMR","TX1",33021,"white_allc2",5.8252427184
+"629","Memorial Regional Hospital (FLMR)","FLMR","TX1",33021,"race_other_allc2",0
+"630","Memorial Regional Hospital (FLMR)","FLMR","TX1",33021,"race_unknown_allc2",0
+"631","Mercy Health Saint Marys (MISM","MISM","TX1",49503,"asian_allc2",4.5307443366
+"632","Mercy Health Saint Marys (MISM","MISM","TX1",49503,"african_american_allc2",16.181229773
+"633","Mercy Health Saint Marys (MISM","MISM","TX1",49503,"hispanic_latino_allc2",11.003236246
+"634","Mercy Health Saint Marys (MISM","MISM","TX1",49503,"white_allc2",66.666666667
+"635","Mercy Health Saint Marys (MISM","MISM","TX1",49503,"race_other_allc2",1.6181229773
+"636","Mercy Health Saint Marys (MISM","MISM","TX1",49503,"race_unknown_allc2",0
+"637","Mercy Medical Center-Des Moines (IAMH)","IAMH","TX1",50314,"asian_allc2",3.4482758621
+"638","Mercy Medical Center-Des Moines (IAMH)","IAMH","TX1",50314,"african_american_allc2",10.344827586
+"639","Mercy Medical Center-Des Moines (IAMH)","IAMH","TX1",50314,"hispanic_latino_allc2",17.24137931
+"640","Mercy Medical Center-Des Moines (IAMH)","IAMH","TX1",50314,"white_allc2",68.965517241
+"641","Mercy Medical Center-Des Moines (IAMH)","IAMH","TX1",50314,"race_other_allc2",0
+"642","Mercy Medical Center-Des Moines (IAMH)","IAMH","TX1",50314,"race_unknown_allc2",0
+"643","Methodist Dallas Medical Center (TXMC)","TXMC","TX1",75203,"asian_allc2",2.8282828283
+"644","Methodist Dallas Medical Center (TXMC)","TXMC","TX1",75203,"african_american_allc2",29.696969697
+"645","Methodist Dallas Medical Center (TXMC)","TXMC","TX1",75203,"hispanic_latino_allc2",52.121212121
+"646","Methodist Dallas Medical Center (TXMC)","TXMC","TX1",75203,"white_allc2",15.151515152
+"647","Methodist Dallas Medical Center (TXMC)","TXMC","TX1",75203,"race_other_allc2",0.202020202
+"648","Methodist Dallas Medical Center (TXMC)","TXMC","TX1",75203,"race_unknown_allc2",0
+"649","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1",78229,"asian_allc2",2.4057217165
+"650","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1",78229,"african_american_allc2",10.208062419
+"651","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1",78229,"hispanic_latino_allc2",71.78153446
+"652","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1",78229,"white_allc2",15.279583875
+"653","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1",78229,"race_other_allc2",0.3250975293
+"654","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1",78229,"race_unknown_allc2",0
+"655","Methodist University Hospital (TNMH)","TNMH","TX1",38104,"asian_allc2",1.0593220339
+"656","Methodist University Hospital (TNMH)","TNMH","TX1",38104,"african_american_allc2",78.283898305
+"657","Methodist University Hospital (TNMH)","TNMH","TX1",38104,"hispanic_latino_allc2",1.4830508475
+"658","Methodist University Hospital (TNMH)","TNMH","TX1",38104,"white_allc2",18.326271186
+"659","Methodist University Hospital (TNMH)","TNMH","TX1",38104,"race_other_allc2",0.8474576271
+"660","Methodist University Hospital (TNMH)","TNMH","TX1",38104,"race_unknown_allc2",0
+"661","Michael E. DeBakey VA Medical Center (TXVA)","TXVA","TX1",77030,"asian_allc2",1.6304347826
+"662","Michael E. DeBakey VA Medical Center (TXVA)","TXVA","TX1",77030,"african_american_allc2",47.826086957
+"663","Michael E. DeBakey VA Medical Center (TXVA)","TXVA","TX1",77030,"hispanic_latino_allc2",23.369565217
+"664","Michael E. DeBakey VA Medical Center (TXVA)","TXVA","TX1",77030,"white_allc2",23.641304348
+"665","Michael E. DeBakey VA Medical Center (TXVA)","TXVA","TX1",77030,"race_other_allc2",3.5326086957
+"666","Michael E. DeBakey VA Medical Center (TXVA)","TXVA","TX1",77030,"race_unknown_allc2",0
+"667","Montefiore Medical Center (NYMA)","NYMA","TX1",10467,"asian_allc2",4.9618320611
+"668","Montefiore Medical Center (NYMA)","NYMA","TX1",10467,"african_american_allc2",42.938931298
+"669","Montefiore Medical Center (NYMA)","NYMA","TX1",10467,"hispanic_latino_allc2",38.835877863
+"670","Montefiore Medical Center (NYMA)","NYMA","TX1",10467,"white_allc2",12.977099237
+"671","Montefiore Medical Center (NYMA)","NYMA","TX1",10467,"race_other_allc2",0.286259542
+"672","Montefiore Medical Center (NYMA)","NYMA","TX1",10467,"race_unknown_allc2",0
+"673","Mount Sinai Medical Center (NYMS)","NYMS","TX1",10029,"asian_allc2",18.02739726
+"674","Mount Sinai Medical Center (NYMS)","NYMS","TX1",10029,"african_american_allc2",39.397260274
+"675","Mount Sinai Medical Center (NYMS)","NYMS","TX1",10029,"hispanic_latino_allc2",22.904109589
+"676","Mount Sinai Medical Center (NYMS)","NYMS","TX1",10029,"white_allc2",19.287671233
+"677","Mount Sinai Medical Center (NYMS)","NYMS","TX1",10029,"race_other_allc2",0.3835616438
+"678","Mount Sinai Medical Center (NYMS)","NYMS","TX1",10029,"race_unknown_allc2",0
+"679","Nationwide Children's Hospital (OHCH)","OHCH","TX1",43205,"asian_allc2",0
+"680","Nationwide Children's Hospital (OHCH)","OHCH","TX1",43205,"african_american_allc2",33.333333333
+"681","Nationwide Children's Hospital (OHCH)","OHCH","TX1",43205,"hispanic_latino_allc2",16.666666667
+"682","Nationwide Children's Hospital (OHCH)","OHCH","TX1",43205,"white_allc2",50
+"683","Nationwide Children's Hospital (OHCH)","OHCH","TX1",43205,"race_other_allc2",0
+"684","Nationwide Children's Hospital (OHCH)","OHCH","TX1",43205,"race_unknown_allc2",0
+"685","New York University Medical Center (NYUC)","NYUC","TX1",10016,"asian_allc2",20.041322314
+"686","New York University Medical Center (NYUC)","NYUC","TX1",10016,"african_american_allc2",30.371900826
+"687","New York University Medical Center (NYUC)","NYUC","TX1",10016,"hispanic_latino_allc2",21.280991736
+"688","New York University Medical Center (NYUC)","NYUC","TX1",10016,"white_allc2",28.305785124
+"689","New York University Medical Center (NYUC)","NYUC","TX1",10016,"race_other_allc2",0
+"690","New York University Medical Center (NYUC)","NYUC","TX1",10016,"race_unknown_allc2",0
+"691","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","NYNY","TX1",10065,"asian_allc2",17.417162277
+"692","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","NYNY","TX1",10065,"african_american_allc2",33.644859813
+"693","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","NYNY","TX1",10065,"hispanic_latino_allc2",16.227697536
+"694","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","NYNY","TX1",10065,"white_allc2",31.265930331
+"695","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","NYNY","TX1",10065,"race_other_allc2",1.4443500425
+"696","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","NYNY","TX1",10065,"race_unknown_allc2",0
+"697","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1",7112,"asian_allc2",0
+"698","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1",7112,"african_american_allc2",80
+"699","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1",7112,"hispanic_latino_allc2",0
+"700","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1",7112,"white_allc2",20
+"701","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1",7112,"race_other_allc2",0
+"702","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1",7112,"race_unknown_allc2",0
+"703","North Austin Medical Center (TXDM)","TXDM","TX1",78758,"asian_allc2",3.2467532468
+"704","North Austin Medical Center (TXDM)","TXDM","TX1",78758,"african_american_allc2",24.675324675
+"705","North Austin Medical Center (TXDM)","TXDM","TX1",78758,"hispanic_latino_allc2",43.506493506
+"706","North Austin Medical Center (TXDM)","TXDM","TX1",78758,"white_allc2",27.922077922
+"707","North Austin Medical Center (TXDM)","TXDM","TX1",78758,"race_other_allc2",0.6493506494
+"708","North Austin Medical Center (TXDM)","TXDM","TX1",78758,"race_unknown_allc2",0
+"709","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1",11030,"asian_allc2",22.248803828
+"710","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1",11030,"african_american_allc2",33.971291866
+"711","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1",11030,"hispanic_latino_allc2",16.267942584
+"712","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1",11030,"white_allc2",27.511961722
+"713","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1",11030,"race_other_allc2",0
+"714","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1",11030,"race_unknown_allc2",0
+"715","Northwestern Memorial Hospital (ILNM)","ILNM","TX1",60611,"asian_allc2",10.012674271
+"716","Northwestern Memorial Hospital (ILNM)","ILNM","TX1",60611,"african_american_allc2",33.333333333
+"717","Northwestern Memorial Hospital (ILNM)","ILNM","TX1",60611,"hispanic_latino_allc2",21.166032953
+"718","Northwestern Memorial Hospital (ILNM)","ILNM","TX1",60611,"white_allc2",34.854245881
+"719","Northwestern Memorial Hospital (ILNM)","ILNM","TX1",60611,"race_other_allc2",0.6337135615
+"720","Northwestern Memorial Hospital (ILNM)","ILNM","TX1",60611,"race_unknown_allc2",0
+"721","Norton Children's Hospital (KYKC)","KYKC","TX1",40202,"asian_allc2",0
+"722","Norton Children's Hospital (KYKC)","KYKC","TX1",40202,"african_american_allc2",0
+"723","Norton Children's Hospital (KYKC)","KYKC","TX1",40202,"hispanic_latino_allc2",0
+"724","Norton Children's Hospital (KYKC)","KYKC","TX1",40202,"white_allc2",100
+"725","Norton Children's Hospital (KYKC)","KYKC","TX1",40202,"race_other_allc2",0
+"726","Norton Children's Hospital (KYKC)","KYKC","TX1",40202,"race_unknown_allc2",0
+"727","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1",10032,"asian_allc2",10.651828299
+"728","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1",10032,"african_american_allc2",32.432432432
+"729","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1",10032,"hispanic_latino_allc2",27.980922099
+"730","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1",10032,"white_allc2",28.616852146
+"731","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1",10032,"race_other_allc2",0.3179650238
+"732","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1",10032,"race_unknown_allc2",0
+"733","Ochsner Foundation Hospital (LAOF)","LAOF","TX1",70121,"asian_allc2",2.3058252427
+"734","Ochsner Foundation Hospital (LAOF)","LAOF","TX1",70121,"african_american_allc2",62.378640777
+"735","Ochsner Foundation Hospital (LAOF)","LAOF","TX1",70121,"hispanic_latino_allc2",1.4563106796
+"736","Ochsner Foundation Hospital (LAOF)","LAOF","TX1",70121,"white_allc2",33.131067961
+"737","Ochsner Foundation Hospital (LAOF)","LAOF","TX1",70121,"race_other_allc2",0.7281553398
+"738","Ochsner Foundation Hospital (LAOF)","LAOF","TX1",70121,"race_unknown_allc2",0
+"739","Ohio State University Medical Center (OHOU)","OHOU","TX1",43210,"asian_allc2",2.6223776224
+"740","Ohio State University Medical Center (OHOU)","OHOU","TX1",43210,"african_american_allc2",28.321678322
+"741","Ohio State University Medical Center (OHOU)","OHOU","TX1",43210,"hispanic_latino_allc2",1.7482517483
+"742","Ohio State University Medical Center (OHOU)","OHOU","TX1",43210,"white_allc2",67.307692308
+"743","Ohio State University Medical Center (OHOU)","OHOU","TX1",43210,"race_other_allc2",0
+"744","Ohio State University Medical Center (OHOU)","OHOU","TX1",43210,"race_unknown_allc2",0
+"745","Oregon Health & Science University (ORUO)","ORUO","TX1",97239,"asian_allc2",9.8540145985
+"746","Oregon Health & Science University (ORUO)","ORUO","TX1",97239,"african_american_allc2",8.7591240876
+"747","Oregon Health & Science University (ORUO)","ORUO","TX1",97239,"hispanic_latino_allc2",17.518248175
+"748","Oregon Health & Science University (ORUO)","ORUO","TX1",97239,"white_allc2",62.408759124
+"749","Oregon Health & Science University (ORUO)","ORUO","TX1",97239,"race_other_allc2",1.4598540146
+"750","Oregon Health & Science University (ORUO)","ORUO","TX1",97239,"race_unknown_allc2",0
+"751","OSF Saint Francis Medical Center (ILSF)","ILSF","TX1",61637,"asian_allc2",2.3728813559
+"752","OSF Saint Francis Medical Center (ILSF)","ILSF","TX1",61637,"african_american_allc2",17.627118644
+"753","OSF Saint Francis Medical Center (ILSF)","ILSF","TX1",61637,"hispanic_latino_allc2",8.813559322
+"754","OSF Saint Francis Medical Center (ILSF)","ILSF","TX1",61637,"white_allc2",63.389830508
+"755","OSF Saint Francis Medical Center (ILSF)","ILSF","TX1",61637,"race_other_allc2",7.7966101695
+"756","OSF Saint Francis Medical Center (ILSF)","ILSF","TX1",61637,"race_unknown_allc2",0
+"757","OU Medical Center (OKMD)","OKMD","TX1",73104,"asian_allc2",4.8780487805
+"758","OU Medical Center (OKMD)","OKMD","TX1",73104,"african_american_allc2",25.609756098
+"759","OU Medical Center (OKMD)","OKMD","TX1",73104,"hispanic_latino_allc2",13.414634146
+"760","OU Medical Center (OKMD)","OKMD","TX1",73104,"white_allc2",40.243902439
+"761","OU Medical Center (OKMD)","OKMD","TX1",73104,"race_other_allc2",15.853658537
+"762","OU Medical Center (OKMD)","OKMD","TX1",73104,"race_unknown_allc2",0
+"763","Our Lady of Lourdes Medical Center (NJLL)","NJLL","TX1",8103,"asian_allc2",9.0604026846
+"764","Our Lady of Lourdes Medical Center (NJLL)","NJLL","TX1",8103,"african_american_allc2",45.973154362
+"765","Our Lady of Lourdes Medical Center (NJLL)","NJLL","TX1",8103,"hispanic_latino_allc2",15.436241611
+"766","Our Lady of Lourdes Medical Center (NJLL)","NJLL","TX1",8103,"white_allc2",29.530201342
+"767","Our Lady of Lourdes Medical Center (NJLL)","NJLL","TX1",8103,"race_other_allc2",0
+"768","Our Lady of Lourdes Medical Center (NJLL)","NJLL","TX1",8103,"race_unknown_allc2",0
+"769","Parkland Health and Hospital System (TXPM)","TXPM","TX1",75235,"asian_allc2",1.7341040462
+"770","Parkland Health and Hospital System (TXPM)","TXPM","TX1",75235,"african_american_allc2",37.572254335
+"771","Parkland Health and Hospital System (TXPM)","TXPM","TX1",75235,"hispanic_latino_allc2",53.757225434
+"772","Parkland Health and Hospital System (TXPM)","TXPM","TX1",75235,"white_allc2",6.3583815029
+"773","Parkland Health and Hospital System (TXPM)","TXPM","TX1",75235,"race_other_allc2",0.5780346821
+"774","Parkland Health and Hospital System (TXPM)","TXPM","TX1",75235,"race_unknown_allc2",0
+"775","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1",17033,"asian_allc2",5.376344086
+"776","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1",17033,"african_american_allc2",17.741935484
+"777","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1",17033,"hispanic_latino_allc2",11.827956989
+"778","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1",17033,"white_allc2",64.516129032
+"779","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1",17033,"race_other_allc2",0.5376344086
+"780","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1",17033,"race_unknown_allc2",0
+"781","Phoenix Children's Hospital (AZCH)","AZCH","TX1",85016,"asian_allc2",0
+"782","Phoenix Children's Hospital (AZCH)","AZCH","TX1",85016,"african_american_allc2",0
+"783","Phoenix Children's Hospital (AZCH)","AZCH","TX1",85016,"hispanic_latino_allc2",40
+"784","Phoenix Children's Hospital (AZCH)","AZCH","TX1",85016,"white_allc2",46.666666667
+"785","Phoenix Children's Hospital (AZCH)","AZCH","TX1",85016,"race_other_allc2",13.333333333
+"786","Phoenix Children's Hospital (AZCH)","AZCH","TX1",85016,"race_unknown_allc2",0
+"787","Piedmont Hospital (GAPH)","GAPH","TX1",30309,"asian_allc2",3.5364936042
+"788","Piedmont Hospital (GAPH)","GAPH","TX1",30309,"african_american_allc2",69.224981189
+"789","Piedmont Hospital (GAPH)","GAPH","TX1",30309,"hispanic_latino_allc2",4.8908954101
+"790","Piedmont Hospital (GAPH)","GAPH","TX1",30309,"white_allc2",22.347629797
+"791","Piedmont Hospital (GAPH)","GAPH","TX1",30309,"race_other_allc2",0
+"792","Piedmont Hospital (GAPH)","GAPH","TX1",30309,"race_unknown_allc2",0
+"793","Pinnacle Health System at Harrisburg Hospital (PAHH)","PAHH","TX1",17101,"asian_allc2",5.0209205021
+"794","Pinnacle Health System at Harrisburg Hospital (PAHH)","PAHH","TX1",17101,"african_american_allc2",17.991631799
+"795","Pinnacle Health System at Harrisburg Hospital (PAHH)","PAHH","TX1",17101,"hispanic_latino_allc2",9.2050209205
+"796","Pinnacle Health System at Harrisburg Hospital (PAHH)","PAHH","TX1",17101,"white_allc2",66.945606695
+"797","Pinnacle Health System at Harrisburg Hospital (PAHH)","PAHH","TX1",17101,"race_other_allc2",0.8368200837
+"798","Pinnacle Health System at Harrisburg Hospital (PAHH)","PAHH","TX1",17101,"race_unknown_allc2",0
+"799","Presbyterian Hospital (NMPH)","NMPH","TX1",87106,"asian_allc2",3.9393939394
+"800","Presbyterian Hospital (NMPH)","NMPH","TX1",87106,"african_american_allc2",5.4545454545
+"801","Presbyterian Hospital (NMPH)","NMPH","TX1",87106,"hispanic_latino_allc2",47.575757576
+"802","Presbyterian Hospital (NMPH)","NMPH","TX1",87106,"white_allc2",24.545454545
+"803","Presbyterian Hospital (NMPH)","NMPH","TX1",87106,"race_other_allc2",18.484848485
+"804","Presbyterian Hospital (NMPH)","NMPH","TX1",87106,"race_unknown_allc2",0
+"805","Presbyterian/St Luke's Medical Center (COSL)","COSL","TX1",80218,"asian_allc2",8.7071240106
+"806","Presbyterian/St Luke's Medical Center (COSL)","COSL","TX1",80218,"african_american_allc2",15.567282322
+"807","Presbyterian/St Luke's Medical Center (COSL)","COSL","TX1",80218,"hispanic_latino_allc2",23.482849604
+"808","Presbyterian/St Luke's Medical Center (COSL)","COSL","TX1",80218,"white_allc2",50.395778364
+"809","Presbyterian/St Luke's Medical Center (COSL)","COSL","TX1",80218,"race_other_allc2",1.8469656992
+"810","Presbyterian/St Luke's Medical Center (COSL)","COSL","TX1",80218,"race_unknown_allc2",0
+"811","Primary Children's Hospital (UTPC)","UTPC","TX1",84113,"asian_allc2",8.3333333333
+"812","Primary Children's Hospital (UTPC)","UTPC","TX1",84113,"african_american_allc2",0
+"813","Primary Children's Hospital (UTPC)","UTPC","TX1",84113,"hispanic_latino_allc2",41.666666667
+"814","Primary Children's Hospital (UTPC)","UTPC","TX1",84113,"white_allc2",50
+"815","Primary Children's Hospital (UTPC)","UTPC","TX1",84113,"race_other_allc2",0
+"816","Primary Children's Hospital (UTPC)","UTPC","TX1",84113,"race_unknown_allc2",0
+"817","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1",99204,"asian_allc2",4.2452830189
+"818","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1",99204,"african_american_allc2",0.4716981132
+"819","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1",99204,"hispanic_latino_allc2",11.320754717
+"820","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1",99204,"white_allc2",80.660377358
+"821","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1",99204,"race_other_allc2",3.3018867925
+"822","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1",99204,"race_unknown_allc2",0
+"823","Rady Children's Hospital and Health Center (CACH)","CACH","TX1",92024,"asian_allc2",0
+"824","Rady Children's Hospital and Health Center (CACH)","CACH","TX1",92024,"african_american_allc2",27.272727273
+"825","Rady Children's Hospital and Health Center (CACH)","CACH","TX1",92024,"hispanic_latino_allc2",40.909090909
+"826","Rady Children's Hospital and Health Center (CACH)","CACH","TX1",92024,"white_allc2",27.272727273
+"827","Rady Children's Hospital and Health Center (CACH)","CACH","TX1",92024,"race_other_allc2",4.5454545455
+"828","Rady Children's Hospital and Health Center (CACH)","CACH","TX1",92024,"race_unknown_allc2",0
+"829","Research Medical Center (MORH)","MORH","TX1",64132,"asian_allc2",2.5773195876
+"830","Research Medical Center (MORH)","MORH","TX1",64132,"african_american_allc2",39.175257732
+"831","Research Medical Center (MORH)","MORH","TX1",64132,"hispanic_latino_allc2",6.7010309278
+"832","Research Medical Center (MORH)","MORH","TX1",64132,"white_allc2",51.030927835
+"833","Research Medical Center (MORH)","MORH","TX1",64132,"race_other_allc2",0.5154639175
+"834","Research Medical Center (MORH)","MORH","TX1",64132,"race_unknown_allc2",0
+"835","Rhode Island Hospital (RIRH)","RIRH","TX1",2903,"asian_allc2",4.2307692308
+"836","Rhode Island Hospital (RIRH)","RIRH","TX1",2903,"african_american_allc2",15
+"837","Rhode Island Hospital (RIRH)","RIRH","TX1",2903,"hispanic_latino_allc2",17.692307692
+"838","Rhode Island Hospital (RIRH)","RIRH","TX1",2903,"white_allc2",62.307692308
+"839","Rhode Island Hospital (RIRH)","RIRH","TX1",2903,"race_other_allc2",0.7692307692
+"840","Rhode Island Hospital (RIRH)","RIRH","TX1",2903,"race_unknown_allc2",0
+"841","Riverside Community Hospital (CARC)","CARC","TX1",92501,"asian_allc2",3.9548022599
+"842","Riverside Community Hospital (CARC)","CARC","TX1",92501,"african_american_allc2",10.169491525
+"843","Riverside Community Hospital (CARC)","CARC","TX1",92501,"hispanic_latino_allc2",71.186440678
+"844","Riverside Community Hospital (CARC)","CARC","TX1",92501,"white_allc2",13.559322034
+"845","Riverside Community Hospital (CARC)","CARC","TX1",92501,"race_other_allc2",1.1299435028
+"846","Riverside Community Hospital (CARC)","CARC","TX1",92501,"race_unknown_allc2",0
+"847","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1",8901,"asian_allc2",12.195121951
+"848","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1",8901,"african_american_allc2",36.178861789
+"849","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1",8901,"hispanic_latino_allc2",15.040650407
+"850","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1",8901,"white_allc2",36.585365854
+"851","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1",8901,"race_other_allc2",0
+"852","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1",8901,"race_unknown_allc2",0
+"853","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1",55902,"asian_allc2",9.3943139679
+"854","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1",55902,"african_american_allc2",8.0346106304
+"855","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1",55902,"hispanic_latino_allc2",4.8207663782
+"856","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1",55902,"white_allc2",76.143386897
+"857","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1",55902,"race_other_allc2",1.6069221261
+"858","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1",55902,"race_unknown_allc2",0
+"859","Rush University Medical Center (ILPL)","ILPL","TX1",60612,"asian_allc2",9.3607305936
+"860","Rush University Medical Center (ILPL)","ILPL","TX1",60612,"african_american_allc2",46.347031963
+"861","Rush University Medical Center (ILPL)","ILPL","TX1",60612,"hispanic_latino_allc2",21.689497717
+"862","Rush University Medical Center (ILPL)","ILPL","TX1",60612,"white_allc2",22.374429224
+"863","Rush University Medical Center (ILPL)","ILPL","TX1",60612,"race_other_allc2",0.2283105023
+"864","Rush University Medical Center (ILPL)","ILPL","TX1",60612,"race_unknown_allc2",0
+"865","Sacred Heart Hospital Pensacola (FLSH)","FLSH","TX1",32504,"asian_allc2",5.7142857143
+"866","Sacred Heart Hospital Pensacola (FLSH)","FLSH","TX1",32504,"african_american_allc2",50.285714286
+"867","Sacred Heart Hospital Pensacola (FLSH)","FLSH","TX1",32504,"hispanic_latino_allc2",1.7142857143
+"868","Sacred Heart Hospital Pensacola (FLSH)","FLSH","TX1",32504,"white_allc2",39.428571429
+"869","Sacred Heart Hospital Pensacola (FLSH)","FLSH","TX1",32504,"race_other_allc2",2.8571428571
+"870","Sacred Heart Hospital Pensacola (FLSH)","FLSH","TX1",32504,"race_unknown_allc2",0
+"871","Saint Barnabas Medical Center (NJSB)","NJSB","TX1",7039,"asian_allc2",11.806914547
+"872","Saint Barnabas Medical Center (NJSB)","NJSB","TX1",7039,"african_american_allc2",39.204174821
+"873","Saint Barnabas Medical Center (NJSB)","NJSB","TX1",7039,"hispanic_latino_allc2",17.54729289
+"874","Saint Barnabas Medical Center (NJSB)","NJSB","TX1",7039,"white_allc2",31.376386171
+"875","Saint Barnabas Medical Center (NJSB)","NJSB","TX1",7039,"race_other_allc2",0.0652315721
+"876","Saint Barnabas Medical Center (NJSB)","NJSB","TX1",7039,"race_unknown_allc2",0
+"877","Saint Francis Hospital (OKSF)","OKSF","TX1",74136,"asian_allc2",0
+"878","Saint Francis Hospital (OKSF)","OKSF","TX1",74136,"african_american_allc2",26.086956522
+"879","Saint Francis Hospital (OKSF)","OKSF","TX1",74136,"hispanic_latino_allc2",13.043478261
+"880","Saint Francis Hospital (OKSF)","OKSF","TX1",74136,"white_allc2",39.130434783
+"881","Saint Francis Hospital (OKSF)","OKSF","TX1",74136,"race_other_allc2",21.739130435
+"882","Saint Francis Hospital (OKSF)","OKSF","TX1",74136,"race_unknown_allc2",0
+"883","Saint Joseph Hospital (CASJ)","CASJ","TX1",92868,"asian_allc2",21.686746988
+"884","Saint Joseph Hospital (CASJ)","CASJ","TX1",92868,"african_american_allc2",5.421686747
+"885","Saint Joseph Hospital (CASJ)","CASJ","TX1",92868,"hispanic_latino_allc2",41.56626506
+"886","Saint Joseph Hospital (CASJ)","CASJ","TX1",92868,"white_allc2",29.518072289
+"887","Saint Joseph Hospital (CASJ)","CASJ","TX1",92868,"race_other_allc2",1.8072289157
+"888","Saint Joseph Hospital (CASJ)","CASJ","TX1",92868,"race_unknown_allc2",0
+"889","Saint Thomas Hospital (TNST)","TNST","TX1",37205,"asian_allc2",2.2522522523
+"890","Saint Thomas Hospital (TNST)","TNST","TX1",37205,"african_american_allc2",40.990990991
+"891","Saint Thomas Hospital (TNST)","TNST","TX1",37205,"hispanic_latino_allc2",2.2522522523
+"892","Saint Thomas Hospital (TNST)","TNST","TX1",37205,"white_allc2",54.054054054
+"893","Saint Thomas Hospital (TNST)","TNST","TX1",37205,"race_other_allc2",0.4504504505
+"894","Saint Thomas Hospital (TNST)","TNST","TX1",37205,"race_unknown_allc2",0
+"895","Sanford Bismarck Medical Center (NDMC)","NDMC","TX1",58501,"asian_allc2",1.1235955056
+"896","Sanford Bismarck Medical Center (NDMC)","NDMC","TX1",58501,"african_american_allc2",4.4943820225
+"897","Sanford Bismarck Medical Center (NDMC)","NDMC","TX1",58501,"hispanic_latino_allc2",2.2471910112
+"898","Sanford Bismarck Medical Center (NDMC)","NDMC","TX1",58501,"white_allc2",60.674157303
+"899","Sanford Bismarck Medical Center (NDMC)","NDMC","TX1",58501,"race_other_allc2",31.460674157
+"900","Sanford Bismarck Medical Center (NDMC)","NDMC","TX1",58501,"race_unknown_allc2",0
+"901","Sanford Health/USD Medical Center (SDSV)","SDSV","TX1",57117,"asian_allc2",1.0309278351
+"902","Sanford Health/USD Medical Center (SDSV)","SDSV","TX1",57117,"african_american_allc2",6.1855670103
+"903","Sanford Health/USD Medical Center (SDSV)","SDSV","TX1",57117,"hispanic_latino_allc2",9.2783505155
+"904","Sanford Health/USD Medical Center (SDSV)","SDSV","TX1",57117,"white_allc2",72.164948454
+"905","Sanford Health/USD Medical Center (SDSV)","SDSV","TX1",57117,"race_other_allc2",11.340206186
+"906","Sanford Health/USD Medical Center (SDSV)","SDSV","TX1",57117,"race_unknown_allc2",0
+"907","Sanford Medical Center Fargo (NDSL)","NDSL","TX1",58104,"asian_allc2",5.0847457627
+"908","Sanford Medical Center Fargo (NDSL)","NDSL","TX1",58104,"african_american_allc2",6.7796610169
+"909","Sanford Medical Center Fargo (NDSL)","NDSL","TX1",58104,"hispanic_latino_allc2",3.3898305085
+"910","Sanford Medical Center Fargo (NDSL)","NDSL","TX1",58104,"white_allc2",71.186440678
+"911","Sanford Medical Center Fargo (NDSL)","NDSL","TX1",58104,"race_other_allc2",13.559322034
+"912","Sanford Medical Center Fargo (NDSL)","NDSL","TX1",58104,"race_unknown_allc2",0
+"913","Scott and White Memorial Hospital (TXSW)","TXSW","TX1",76508,"asian_allc2",9.3567251462
+"914","Scott and White Memorial Hospital (TXSW)","TXSW","TX1",76508,"african_american_allc2",35.67251462
+"915","Scott and White Memorial Hospital (TXSW)","TXSW","TX1",76508,"hispanic_latino_allc2",22.807017544
+"916","Scott and White Memorial Hospital (TXSW)","TXSW","TX1",76508,"white_allc2",31.578947368
+"917","Scott and White Memorial Hospital (TXSW)","TXSW","TX1",76508,"race_other_allc2",0.5847953216
+"918","Scott and White Memorial Hospital (TXSW)","TXSW","TX1",76508,"race_unknown_allc2",0
+"919","Scripps Green Hospital (CAGH)","CAGH","TX1",92037,"asian_allc2",18.303571429
+"920","Scripps Green Hospital (CAGH)","CAGH","TX1",92037,"african_american_allc2",10.044642857
+"921","Scripps Green Hospital (CAGH)","CAGH","TX1",92037,"hispanic_latino_allc2",29.241071429
+"922","Scripps Green Hospital (CAGH)","CAGH","TX1",92037,"white_allc2",41.964285714
+"923","Scripps Green Hospital (CAGH)","CAGH","TX1",92037,"race_other_allc2",0.4464285714
+"924","Scripps Green Hospital (CAGH)","CAGH","TX1",92037,"race_unknown_allc2",0
+"925","Seattle Children's Hospital (WACH)","WACH","TX1",98105,"asian_allc2",9.0909090909
+"926","Seattle Children's Hospital (WACH)","WACH","TX1",98105,"african_american_allc2",10.909090909
+"927","Seattle Children's Hospital (WACH)","WACH","TX1",98105,"hispanic_latino_allc2",16.363636364
+"928","Seattle Children's Hospital (WACH)","WACH","TX1",98105,"white_allc2",52.727272727
+"929","Seattle Children's Hospital (WACH)","WACH","TX1",98105,"race_other_allc2",10.909090909
+"930","Seattle Children's Hospital (WACH)","WACH","TX1",98105,"race_unknown_allc2",0
+"931","Sentara Norfolk General Hospital (VANG)","VANG","TX1",23507,"asian_allc2",6.4159292035
+"932","Sentara Norfolk General Hospital (VANG)","VANG","TX1",23507,"african_american_allc2",66.814159292
+"933","Sentara Norfolk General Hospital (VANG)","VANG","TX1",23507,"hispanic_latino_allc2",1.5486725664
+"934","Sentara Norfolk General Hospital (VANG)","VANG","TX1",23507,"white_allc2",25
+"935","Sentara Norfolk General Hospital (VANG)","VANG","TX1",23507,"race_other_allc2",0.2212389381
+"936","Sentara Norfolk General Hospital (VANG)","VANG","TX1",23507,"race_unknown_allc2",0
+"937","Sharp Memorial Hospital (CASH)","CASH","TX1",92123,"asian_allc2",20.119521912
+"938","Sharp Memorial Hospital (CASH)","CASH","TX1",92123,"african_american_allc2",7.96812749
+"939","Sharp Memorial Hospital (CASH)","CASH","TX1",92123,"hispanic_latino_allc2",51.593625498
+"940","Sharp Memorial Hospital (CASH)","CASH","TX1",92123,"white_allc2",17.729083665
+"941","Sharp Memorial Hospital (CASH)","CASH","TX1",92123,"race_other_allc2",2.5896414343
+"942","Sharp Memorial Hospital (CASH)","CASH","TX1",92123,"race_unknown_allc2",0
+"943","SSM Health Saint Louis University Hospital (MOSL)","MOSL","TX1",63104,"asian_allc2",2.380952381
+"944","SSM Health Saint Louis University Hospital (MOSL)","MOSL","TX1",63104,"african_american_allc2",50
+"945","SSM Health Saint Louis University Hospital (MOSL)","MOSL","TX1",63104,"hispanic_latino_allc2",1.1904761905
+"946","SSM Health Saint Louis University Hospital (MOSL)","MOSL","TX1",63104,"white_allc2",46.428571429
+"947","SSM Health Saint Louis University Hospital (MOSL)","MOSL","TX1",63104,"race_other_allc2",0
+"948","SSM Health Saint Louis University Hospital (MOSL)","MOSL","TX1",63104,"race_unknown_allc2",0
+"949","St John Hospital and Medical Center (MISJ)","MISJ","TX1",48236,"asian_allc2",1.0362694301
+"950","St John Hospital and Medical Center (MISJ)","MISJ","TX1",48236,"african_american_allc2",47.150259067
+"951","St John Hospital and Medical Center (MISJ)","MISJ","TX1",48236,"hispanic_latino_allc2",0.518134715
+"952","St John Hospital and Medical Center (MISJ)","MISJ","TX1",48236,"white_allc2",47.668393782
+"953","St John Hospital and Medical Center (MISJ)","MISJ","TX1",48236,"race_other_allc2",3.6269430052
+"954","St John Hospital and Medical Center (MISJ)","MISJ","TX1",48236,"race_unknown_allc2",0
+"955","St John Medical Center (OKSJ)","OKSJ","TX1",74104,"asian_allc2",6.5693430657
+"956","St John Medical Center (OKSJ)","OKSJ","TX1",74104,"african_american_allc2",18.248175182
+"957","St John Medical Center (OKSJ)","OKSJ","TX1",74104,"hispanic_latino_allc2",10.218978102
+"958","St John Medical Center (OKSJ)","OKSJ","TX1",74104,"white_allc2",51.094890511
+"959","St John Medical Center (OKSJ)","OKSJ","TX1",74104,"race_other_allc2",13.868613139
+"960","St John Medical Center (OKSJ)","OKSJ","TX1",74104,"race_unknown_allc2",0
+"961","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1",64111,"asian_allc2",4.128440367
+"962","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1",64111,"african_american_allc2",20.183486239
+"963","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1",64111,"hispanic_latino_allc2",7.7981651376
+"964","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1",64111,"white_allc2",57.339449541
+"965","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1",64111,"race_other_allc2",10.550458716
+"966","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1",64111,"race_unknown_allc2",0
+"967","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1",46260,"asian_allc2",4.6511627907
+"968","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1",46260,"african_american_allc2",34.108527132
+"969","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1",46260,"hispanic_latino_allc2",7.3643410853
+"970","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1",46260,"white_allc2",53.875968992
+"971","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1",46260,"race_other_allc2",0
+"972","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1",46260,"race_unknown_allc2",0
+"973","St. Christopher's Hospital for Children (PASC)","PASC","TX1",19134,"asian_allc2",0
+"974","St. Christopher's Hospital for Children (PASC)","PASC","TX1",19134,"african_american_allc2",0
+"975","St. Christopher's Hospital for Children (PASC)","PASC","TX1",19134,"hispanic_latino_allc2",66.666666667
+"976","St. Christopher's Hospital for Children (PASC)","PASC","TX1",19134,"white_allc2",33.333333333
+"977","St. Christopher's Hospital for Children (PASC)","PASC","TX1",19134,"race_other_allc2",0
+"978","St. Christopher's Hospital for Children (PASC)","PASC","TX1",19134,"race_unknown_allc2",0
+"979","St. Joseph's Hospital and Medical Center (AZSJ)","AZSJ","TX1",85013,"asian_allc2",5.8333333333
+"980","St. Joseph's Hospital and Medical Center (AZSJ)","AZSJ","TX1",85013,"african_american_allc2",19.166666667
+"981","St. Joseph's Hospital and Medical Center (AZSJ)","AZSJ","TX1",85013,"hispanic_latino_allc2",34.166666667
+"982","St. Joseph's Hospital and Medical Center (AZSJ)","AZSJ","TX1",85013,"white_allc2",33.333333333
+"983","St. Joseph's Hospital and Medical Center (AZSJ)","AZSJ","TX1",85013,"race_other_allc2",7.5
+"984","St. Joseph's Hospital and Medical Center (AZSJ)","AZSJ","TX1",85013,"race_unknown_allc2",0
+"985","St. Louis Children's Hospital (MOCH)","MOCH","TX1",63110,"asian_allc2",0
+"986","St. Louis Children's Hospital (MOCH)","MOCH","TX1",63110,"african_american_allc2",50
+"987","St. Louis Children's Hospital (MOCH)","MOCH","TX1",63110,"hispanic_latino_allc2",0
+"988","St. Louis Children's Hospital (MOCH)","MOCH","TX1",63110,"white_allc2",50
+"989","St. Louis Children's Hospital (MOCH)","MOCH","TX1",63110,"race_other_allc2",0
+"990","St. Louis Children's Hospital (MOCH)","MOCH","TX1",63110,"race_unknown_allc2",0
+"991","St. Vincent Medical Center (CASV)","CASV","TX1",90057,"asian_allc2",17.230769231
+"992","St. Vincent Medical Center (CASV)","CASV","TX1",90057,"african_american_allc2",7.0769230769
+"993","St. Vincent Medical Center (CASV)","CASV","TX1",90057,"hispanic_latino_allc2",72
+"994","St. Vincent Medical Center (CASV)","CASV","TX1",90057,"white_allc2",3.3846153846
+"995","St. Vincent Medical Center (CASV)","CASV","TX1",90057,"race_other_allc2",0.3076923077
+"996","St. Vincent Medical Center (CASV)","CASV","TX1",90057,"race_unknown_allc2",0
+"997","Stanford Health Care (CASU)","CASU","TX1",94305,"asian_allc2",30.026246719
+"998","Stanford Health Care (CASU)","CASU","TX1",94305,"african_american_allc2",5.9317585302
+"999","Stanford Health Care (CASU)","CASU","TX1",94305,"hispanic_latino_allc2",43.832020997
+"1000","Stanford Health Care (CASU)","CASU","TX1",94305,"white_allc2",16.745406824
+"1001","Stanford Health Care (CASU)","CASU","TX1",94305,"race_other_allc2",3.4645669291
+"1002","Stanford Health Care (CASU)","CASU","TX1",94305,"race_unknown_allc2",0
+"1003","State University of New York Upstate Medical University (NYUM)","NYUM","TX1",13210,"asian_allc2",3.7151702786
+"1004","State University of New York Upstate Medical University (NYUM)","NYUM","TX1",13210,"african_american_allc2",22.910216718
+"1005","State University of New York Upstate Medical University (NYUM)","NYUM","TX1",13210,"hispanic_latino_allc2",3.7151702786
+"1006","State University of New York Upstate Medical University (NYUM)","NYUM","TX1",13210,"white_allc2",67.801857585
+"1007","State University of New York Upstate Medical University (NYUM)","NYUM","TX1",13210,"race_other_allc2",1.8575851393
+"1008","State University of New York Upstate Medical University (NYUM)","NYUM","TX1",13210,"race_unknown_allc2",0
+"1009","State University of New York, Downstate Medical Center (NYDS)","NYDS","TX1",11203,"asian_allc2",1.9553072626
+"1010","State University of New York, Downstate Medical Center (NYDS)","NYDS","TX1",11203,"african_american_allc2",79.05027933
+"1011","State University of New York, Downstate Medical Center (NYDS)","NYDS","TX1",11203,"hispanic_latino_allc2",13.687150838
+"1012","State University of New York, Downstate Medical Center (NYDS)","NYDS","TX1",11203,"white_allc2",5.0279329609
+"1013","State University of New York, Downstate Medical Center (NYDS)","NYDS","TX1",11203,"race_other_allc2",0.2793296089
+"1014","State University of New York, Downstate Medical Center (NYDS)","NYDS","TX1",11203,"race_unknown_allc2",0
+"1015","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1",14642,"asian_allc2",3.5799522673
+"1016","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1",14642,"african_american_allc2",24.343675418
+"1017","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1",14642,"hispanic_latino_allc2",7.1599045346
+"1018","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1",14642,"white_allc2",62.529832936
+"1019","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1",14642,"race_other_allc2",2.3866348449
+"1020","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1",14642,"race_unknown_allc2",0
+"1021","Swedish Medical Center (WASM)","WASM","TX1",98122,"asian_allc2",26.422764228
+"1022","Swedish Medical Center (WASM)","WASM","TX1",98122,"african_american_allc2",12.804878049
+"1023","Swedish Medical Center (WASM)","WASM","TX1",98122,"hispanic_latino_allc2",7.9268292683
+"1024","Swedish Medical Center (WASM)","WASM","TX1",98122,"white_allc2",50.203252033
+"1025","Swedish Medical Center (WASM)","WASM","TX1",98122,"race_other_allc2",2.6422764228
+"1026","Swedish Medical Center (WASM)","WASM","TX1",98122,"race_unknown_allc2",0
+"1027","Tampa General Hospital (FLTG)","FLTG","TX1",33606,"asian_allc2",3.9007092199
+"1028","Tampa General Hospital (FLTG)","FLTG","TX1",33606,"african_american_allc2",29.905437352
+"1029","Tampa General Hospital (FLTG)","FLTG","TX1",33606,"hispanic_latino_allc2",20.094562648
+"1030","Tampa General Hospital (FLTG)","FLTG","TX1",33606,"white_allc2",45.744680851
+"1031","Tampa General Hospital (FLTG)","FLTG","TX1",33606,"race_other_allc2",0.3546099291
+"1032","Tampa General Hospital (FLTG)","FLTG","TX1",33606,"race_unknown_allc2",0
+"1033","Temple University Hospital (PATU)","PATU","TX1",19140,"asian_allc2",3.6414565826
+"1034","Temple University Hospital (PATU)","PATU","TX1",19140,"african_american_allc2",52.941176471
+"1035","Temple University Hospital (PATU)","PATU","TX1",19140,"hispanic_latino_allc2",17.366946779
+"1036","Temple University Hospital (PATU)","PATU","TX1",19140,"white_allc2",24.369747899
+"1037","Temple University Hospital (PATU)","PATU","TX1",19140,"race_other_allc2",1.6806722689
+"1038","Temple University Hospital (PATU)","PATU","TX1",19140,"race_unknown_allc2",0
+"1039","Texas Children's Hospital (TXTC)","TXTC","TX1",77030,"asian_allc2",2.5
+"1040","Texas Children's Hospital (TXTC)","TXTC","TX1",77030,"african_american_allc2",17.5
+"1041","Texas Children's Hospital (TXTC)","TXTC","TX1",77030,"hispanic_latino_allc2",57.5
+"1042","Texas Children's Hospital (TXTC)","TXTC","TX1",77030,"white_allc2",22.5
+"1043","Texas Children's Hospital (TXTC)","TXTC","TX1",77030,"race_other_allc2",0
+"1044","Texas Children's Hospital (TXTC)","TXTC","TX1",77030,"race_unknown_allc2",0
+"1045","Texas Health Harris Methodist Fort Worth Hospital (TXFW)","TXFW","TX1",76104,"asian_allc2",2.9411764706
+"1046","Texas Health Harris Methodist Fort Worth Hospital (TXFW)","TXFW","TX1",76104,"african_american_allc2",34.31372549
+"1047","Texas Health Harris Methodist Fort Worth Hospital (TXFW)","TXFW","TX1",76104,"hispanic_latino_allc2",30.392156863
+"1048","Texas Health Harris Methodist Fort Worth Hospital (TXFW)","TXFW","TX1",76104,"white_allc2",32.352941176
+"1049","Texas Health Harris Methodist Fort Worth Hospital (TXFW)","TXFW","TX1",76104,"race_other_allc2",0
+"1050","Texas Health Harris Methodist Fort Worth Hospital (TXFW)","TXFW","TX1",76104,"race_unknown_allc2",0
+"1051","The Christ Hospital (OHTC)","OHTC","TX1",45219,"asian_allc2",3.90625
+"1052","The Christ Hospital (OHTC)","OHTC","TX1",45219,"african_american_allc2",32.03125
+"1053","The Christ Hospital (OHTC)","OHTC","TX1",45219,"hispanic_latino_allc2",1.5625
+"1054","The Christ Hospital (OHTC)","OHTC","TX1",45219,"white_allc2",62.5
+"1055","The Christ Hospital (OHTC)","OHTC","TX1",45219,"race_other_allc2",0
+"1056","The Christ Hospital (OHTC)","OHTC","TX1",45219,"race_unknown_allc2",0
+"1057","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1",44195,"asian_allc2",2.7027027027
+"1058","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1",44195,"african_american_allc2",30.574324324
+"1059","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1",44195,"hispanic_latino_allc2",4.3918918919
+"1060","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1",44195,"white_allc2",61.993243243
+"1061","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1",44195,"race_other_allc2",0.3378378378
+"1062","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1",44195,"race_unknown_allc2",0
+"1063","The Iowa City VA Health Care System (IAVA)","IAVA","TX1",52246,"asian_allc2",0.7142857143
+"1064","The Iowa City VA Health Care System (IAVA)","IAVA","TX1",52246,"african_american_allc2",27.142857143
+"1065","The Iowa City VA Health Care System (IAVA)","IAVA","TX1",52246,"hispanic_latino_allc2",7.8571428571
+"1066","The Iowa City VA Health Care System (IAVA)","IAVA","TX1",52246,"white_allc2",62.142857143
+"1067","The Iowa City VA Health Care System (IAVA)","IAVA","TX1",52246,"race_other_allc2",2.1428571429
+"1068","The Iowa City VA Health Care System (IAVA)","IAVA","TX1",52246,"race_unknown_allc2",0
+"1069","The Lankenau Hospital (PALH)","PALH","TX1",19096,"asian_allc2",3.9603960396
+"1070","The Lankenau Hospital (PALH)","PALH","TX1",19096,"african_american_allc2",50.99009901
+"1071","The Lankenau Hospital (PALH)","PALH","TX1",19096,"hispanic_latino_allc2",1.4851485149
+"1072","The Lankenau Hospital (PALH)","PALH","TX1",19096,"white_allc2",43.564356436
+"1073","The Lankenau Hospital (PALH)","PALH","TX1",19096,"race_other_allc2",0
+"1074","The Lankenau Hospital (PALH)","PALH","TX1",19096,"race_unknown_allc2",0
+"1075","The Nebraska Medical Center (NEUN)","NEUN","TX1",68198,"asian_allc2",3.738317757
+"1076","The Nebraska Medical Center (NEUN)","NEUN","TX1",68198,"african_american_allc2",13.551401869
+"1077","The Nebraska Medical Center (NEUN)","NEUN","TX1",68198,"hispanic_latino_allc2",5.6074766355
+"1078","The Nebraska Medical Center (NEUN)","NEUN","TX1",68198,"white_allc2",74.76635514
+"1079","The Nebraska Medical Center (NEUN)","NEUN","TX1",68198,"race_other_allc2",2.3364485981
+"1080","The Nebraska Medical Center (NEUN)","NEUN","TX1",68198,"race_unknown_allc2",0
+"1081","The Queen's Medical Center (HIQM)","HIQM","TX1",96813,"asian_allc2",77.153558052
+"1082","The Queen's Medical Center (HIQM)","HIQM","TX1",96813,"african_american_allc2",1.4981273408
+"1083","The Queen's Medical Center (HIQM)","HIQM","TX1",96813,"hispanic_latino_allc2",0.3745318352
+"1084","The Queen's Medical Center (HIQM)","HIQM","TX1",96813,"white_allc2",3.7453183521
+"1085","The Queen's Medical Center (HIQM)","HIQM","TX1",96813,"race_other_allc2",17.228464419
+"1086","The Queen's Medical Center (HIQM)","HIQM","TX1",96813,"race_unknown_allc2",0
+"1087","The University of Vermont Medical Center (VTMC)","VTMC","TX1",5401,"asian_allc2",8.3333333333
+"1088","The University of Vermont Medical Center (VTMC)","VTMC","TX1",5401,"african_american_allc2",2.0833333333
+"1089","The University of Vermont Medical Center (VTMC)","VTMC","TX1",5401,"hispanic_latino_allc2",0
+"1090","The University of Vermont Medical Center (VTMC)","VTMC","TX1",5401,"white_allc2",89.583333333
+"1091","The University of Vermont Medical Center (VTMC)","VTMC","TX1",5401,"race_other_allc2",0
+"1092","The University of Vermont Medical Center (VTMC)","VTMC","TX1",5401,"race_unknown_allc2",0
+"1093","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1",19107,"asian_allc2",8.9285714286
+"1094","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1",19107,"african_american_allc2",46.753246753
+"1095","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1",19107,"hispanic_latino_allc2",5.1948051948
+"1096","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1",19107,"white_allc2",38.636363636
+"1097","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1",19107,"race_other_allc2",0.487012987
+"1098","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1",19107,"race_unknown_allc2",0
+"1099","Tufts Medical Center (MANM)","MANM","TX1",2111,"asian_allc2",15.873015873
+"1100","Tufts Medical Center (MANM)","MANM","TX1",2111,"african_american_allc2",21.693121693
+"1101","Tufts Medical Center (MANM)","MANM","TX1",2111,"hispanic_latino_allc2",7.4074074074
+"1102","Tufts Medical Center (MANM)","MANM","TX1",2111,"white_allc2",54.497354497
+"1103","Tufts Medical Center (MANM)","MANM","TX1",2111,"race_other_allc2",0.5291005291
+"1104","Tufts Medical Center (MANM)","MANM","TX1",2111,"race_unknown_allc2",0
+"1105","Tulane Medical Center (LATU)","LATU","TX1",70112,"asian_allc2",2.7826086957
+"1106","Tulane Medical Center (LATU)","LATU","TX1",70112,"african_american_allc2",70.434782609
+"1107","Tulane Medical Center (LATU)","LATU","TX1",70112,"hispanic_latino_allc2",2.2608695652
+"1108","Tulane Medical Center (LATU)","LATU","TX1",70112,"white_allc2",24.347826087
+"1109","Tulane Medical Center (LATU)","LATU","TX1",70112,"race_other_allc2",0.1739130435
+"1110","Tulane Medical Center (LATU)","LATU","TX1",70112,"race_unknown_allc2",0
+"1111","UAMS Medical Center (ARUA)","ARUA","TX1",72205,"asian_allc2",5.6818181818
+"1112","UAMS Medical Center (ARUA)","ARUA","TX1",72205,"african_american_allc2",40.340909091
+"1113","UAMS Medical Center (ARUA)","ARUA","TX1",72205,"hispanic_latino_allc2",4.5454545455
+"1114","UAMS Medical Center (ARUA)","ARUA","TX1",72205,"white_allc2",40.340909091
+"1115","UAMS Medical Center (ARUA)","ARUA","TX1",72205,"race_other_allc2",9.0909090909
+"1116","UAMS Medical Center (ARUA)","ARUA","TX1",72205,"race_unknown_allc2",0
+"1117","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1",94158,"asian_allc2",10.909090909
+"1118","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1",94158,"african_american_allc2",12.727272727
+"1119","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1",94158,"hispanic_latino_allc2",45.454545455
+"1120","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1",94158,"white_allc2",30.909090909
+"1121","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1",94158,"race_other_allc2",0
+"1122","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1",94158,"race_unknown_allc2",0
+"1123","UF Health Shands Hospital (FLUF)","FLUF","TX1",32608,"asian_allc2",3.5149384886
+"1124","UF Health Shands Hospital (FLUF)","FLUF","TX1",32608,"african_american_allc2",43.057996485
+"1125","UF Health Shands Hospital (FLUF)","FLUF","TX1",32608,"hispanic_latino_allc2",7.5571177504
+"1126","UF Health Shands Hospital (FLUF)","FLUF","TX1",32608,"white_allc2",45.342706503
+"1127","UF Health Shands Hospital (FLUF)","FLUF","TX1",32608,"race_other_allc2",0.5272407733
+"1128","UF Health Shands Hospital (FLUF)","FLUF","TX1",32608,"race_unknown_allc2",0
+"1129","UMass Memorial Medical Center (MAUM)","MAUM","TX1",1655,"asian_allc2",7.1078431373
+"1130","UMass Memorial Medical Center (MAUM)","MAUM","TX1",1655,"african_american_allc2",13.725490196
+"1131","UMass Memorial Medical Center (MAUM)","MAUM","TX1",1655,"hispanic_latino_allc2",18.382352941
+"1132","UMass Memorial Medical Center (MAUM)","MAUM","TX1",1655,"white_allc2",59.803921569
+"1133","UMass Memorial Medical Center (MAUM)","MAUM","TX1",1655,"race_other_allc2",0.9803921569
+"1134","UMass Memorial Medical Center (MAUM)","MAUM","TX1",1655,"race_unknown_allc2",0
+"1135","University Childrens Health (TXUC","TXUC","TX1",78229,"asian_allc2",0
+"1136","University Childrens Health (TXUC","TXUC","TX1",78229,"african_american_allc2",11.111111111
+"1137","University Childrens Health (TXUC","TXUC","TX1",78229,"hispanic_latino_allc2",66.666666667
+"1138","University Childrens Health (TXUC","TXUC","TX1",78229,"white_allc2",22.222222222
+"1139","University Childrens Health (TXUC","TXUC","TX1",78229,"race_other_allc2",0
+"1140","University Childrens Health (TXUC","TXUC","TX1",78229,"race_unknown_allc2",0
+"1141","University Hospital of State University of New York at Stony Brook (NYSB)","NYSB","TX1",11794,"asian_allc2",4.1095890411
+"1142","University Hospital of State University of New York at Stony Brook (NYSB)","NYSB","TX1",11794,"african_american_allc2",28.310502283
+"1143","University Hospital of State University of New York at Stony Brook (NYSB)","NYSB","TX1",11794,"hispanic_latino_allc2",22.374429224
+"1144","University Hospital of State University of New York at Stony Brook (NYSB)","NYSB","TX1",11794,"white_allc2",45.205479452
+"1145","University Hospital of State University of New York at Stony Brook (NYSB)","NYSB","TX1",11794,"race_other_allc2",0
+"1146","University Hospital of State University of New York at Stony Brook (NYSB)","NYSB","TX1",11794,"race_unknown_allc2",0
+"1147","University Hospital, University of New Mexico Health Sciences Center (NMAQ)","NMAQ","TX1",87106,"asian_allc2",1.7167381974
+"1148","University Hospital, University of New Mexico Health Sciences Center (NMAQ)","NMAQ","TX1",87106,"african_american_allc2",3.0042918455
+"1149","University Hospital, University of New Mexico Health Sciences Center (NMAQ)","NMAQ","TX1",87106,"hispanic_latino_allc2",46.78111588
+"1150","University Hospital, University of New Mexico Health Sciences Center (NMAQ)","NMAQ","TX1",87106,"white_allc2",14.592274678
+"1151","University Hospital, University of New Mexico Health Sciences Center (NMAQ)","NMAQ","TX1",87106,"race_other_allc2",33.905579399
+"1152","University Hospital, University of New Mexico Health Sciences Center (NMAQ)","NMAQ","TX1",87106,"race_unknown_allc2",0
+"1153","University Hospital, University of Texas Health Science Center (TXBC)","TXBC","TX1",78229,"asian_allc2",2.5295109612
+"1154","University Hospital, University of Texas Health Science Center (TXBC)","TXBC","TX1",78229,"african_american_allc2",8.26306914
+"1155","University Hospital, University of Texas Health Science Center (TXBC)","TXBC","TX1",78229,"hispanic_latino_allc2",79.932546374
+"1156","University Hospital, University of Texas Health Science Center (TXBC)","TXBC","TX1",78229,"white_allc2",9.2748735245
+"1157","University Hospital, University of Texas Health Science Center (TXBC)","TXBC","TX1",78229,"race_other_allc2",0
+"1158","University Hospital, University of Texas Health Science Center (TXBC)","TXBC","TX1",78229,"race_unknown_allc2",0
+"1159","University Hospitals of Cleveland (OHUH)","OHUH","TX1",44106,"asian_allc2",2.8192371476
+"1160","University Hospitals of Cleveland (OHUH)","OHUH","TX1",44106,"african_american_allc2",44.941956882
+"1161","University Hospitals of Cleveland (OHUH)","OHUH","TX1",44106,"hispanic_latino_allc2",3.3167495854
+"1162","University Hospitals of Cleveland (OHUH)","OHUH","TX1",44106,"white_allc2",48.756218905
+"1163","University Hospitals of Cleveland (OHUH)","OHUH","TX1",44106,"race_other_allc2",0.1658374793
+"1164","University Hospitals of Cleveland (OHUH)","OHUH","TX1",44106,"race_unknown_allc2",0
+"1165","University Medical Center of Southern Nevada (NVUM)","NVUM","TX1",89102,"asian_allc2",23.245614035
+"1166","University Medical Center of Southern Nevada (NVUM)","NVUM","TX1",89102,"african_american_allc2",20.614035088
+"1167","University Medical Center of Southern Nevada (NVUM)","NVUM","TX1",89102,"hispanic_latino_allc2",26.315789474
+"1168","University Medical Center of Southern Nevada (NVUM)","NVUM","TX1",89102,"white_allc2",27.192982456
+"1169","University Medical Center of Southern Nevada (NVUM)","NVUM","TX1",89102,"race_other_allc2",2.6315789474
+"1170","University Medical Center of Southern Nevada (NVUM)","NVUM","TX1",89102,"race_unknown_allc2",0
+"1171","University of Alabama Hospital (ALUA)","ALUA","TX1",35233,"asian_allc2",1.6295025729
+"1172","University of Alabama Hospital (ALUA)","ALUA","TX1",35233,"african_american_allc2",68.096054889
+"1173","University of Alabama Hospital (ALUA)","ALUA","TX1",35233,"hispanic_latino_allc2",1.2006861063
+"1174","University of Alabama Hospital (ALUA)","ALUA","TX1",35233,"white_allc2",28.559176672
+"1175","University of Alabama Hospital (ALUA)","ALUA","TX1",35233,"race_other_allc2",0.5145797599
+"1176","University of Alabama Hospital (ALUA)","ALUA","TX1",35233,"race_unknown_allc2",0
+"1177","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1",90095,"asian_allc2",20.25072324
+"1178","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1",90095,"african_american_allc2",13.596914176
+"1179","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1",90095,"hispanic_latino_allc2",46.769527483
+"1180","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1",90095,"white_allc2",17.30954677
+"1181","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1",90095,"race_other_allc2",2.0732883317
+"1182","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1",90095,"race_unknown_allc2",0
+"1183","University of California Davis Medical Center (CASM)","CASM","TX1",95817,"asian_allc2",32.016756433
+"1184","University of California Davis Medical Center (CASM)","CASM","TX1",95817,"african_american_allc2",11.909036505
+"1185","University of California Davis Medical Center (CASM)","CASM","TX1",95817,"hispanic_latino_allc2",28.605625374
+"1186","University of California Davis Medical Center (CASM)","CASM","TX1",95817,"white_allc2",24.596050269
+"1187","University of California Davis Medical Center (CASM)","CASM","TX1",95817,"race_other_allc2",2.8725314183
+"1188","University of California Davis Medical Center (CASM)","CASM","TX1",95817,"race_unknown_allc2",0
+"1189","University of California Irvine Medical Center (CAIM)","CAIM","TX1",92868,"asian_allc2",19.660537482
+"1190","University of California Irvine Medical Center (CAIM)","CAIM","TX1",92868,"african_american_allc2",2.828854314
+"1191","University of California Irvine Medical Center (CAIM)","CAIM","TX1",92868,"hispanic_latino_allc2",65.629420085
+"1192","University of California Irvine Medical Center (CAIM)","CAIM","TX1",92868,"white_allc2",11.598302687
+"1193","University of California Irvine Medical Center (CAIM)","CAIM","TX1",92868,"race_other_allc2",0.2828854314
+"1194","University of California Irvine Medical Center (CAIM)","CAIM","TX1",92868,"race_unknown_allc2",0
+"1195","University of California San Diego Medical Center (CASD)","CASD","TX1",92037,"asian_allc2",20.676202861
+"1196","University of California San Diego Medical Center (CASD)","CASD","TX1",92037,"african_american_allc2",9.4928478544
+"1197","University of California San Diego Medical Center (CASD)","CASD","TX1",92037,"hispanic_latino_allc2",42.00260078
+"1198","University of California San Diego Medical Center (CASD)","CASD","TX1",92037,"white_allc2",26.788036411
+"1199","University of California San Diego Medical Center (CASD)","CASD","TX1",92037,"race_other_allc2",1.0403120936
+"1200","University of California San Diego Medical Center (CASD)","CASD","TX1",92037,"race_unknown_allc2",0
+"1201","University of California San Francisco Medical Center (CASF)","CASF","TX1",94118,"asian_allc2",30.613961312
+"1202","University of California San Francisco Medical Center (CASF)","CASF","TX1",94118,"african_american_allc2",13.687973087
+"1203","University of California San Francisco Medical Center (CASF)","CASF","TX1",94118,"hispanic_latino_allc2",32.821698907
+"1204","University of California San Francisco Medical Center (CASF)","CASF","TX1",94118,"white_allc2",20.647603028
+"1205","University of California San Francisco Medical Center (CASF)","CASF","TX1",94118,"race_other_allc2",2.2287636669
+"1206","University of California San Francisco Medical Center (CASF)","CASF","TX1",94118,"race_unknown_allc2",0
+"1207","University of Chicago Medical Center (ILUC)","ILUC","TX1",60637,"asian_allc2",4.1666666667
+"1208","University of Chicago Medical Center (ILUC)","ILUC","TX1",60637,"african_american_allc2",61.507936508
+"1209","University of Chicago Medical Center (ILUC)","ILUC","TX1",60637,"hispanic_latino_allc2",11.706349206
+"1210","University of Chicago Medical Center (ILUC)","ILUC","TX1",60637,"white_allc2",22.222222222
+"1211","University of Chicago Medical Center (ILUC)","ILUC","TX1",60637,"race_other_allc2",0.3968253968
+"1212","University of Chicago Medical Center (ILUC)","ILUC","TX1",60637,"race_unknown_allc2",0
+"1213","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1",45229,"asian_allc2",3.2520325203
+"1214","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1",45229,"african_american_allc2",41.056910569
+"1215","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1",45229,"hispanic_latino_allc2",0.8130081301
+"1216","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1",45229,"white_allc2",54.87804878
+"1217","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1",45229,"race_other_allc2",0
+"1218","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1",45229,"race_unknown_allc2",0
+"1219","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1",80045,"asian_allc2",4.8511576626
+"1220","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1",80045,"african_american_allc2",11.466372657
+"1221","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1",80045,"hispanic_latino_allc2",27.89415656
+"1222","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1",80045,"white_allc2",51.70893054
+"1223","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1",80045,"race_other_allc2",4.0793825799
+"1224","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1",80045,"race_unknown_allc2",0
+"1225","University of Illinois Medical Center (ILUI)","ILUI","TX1",60612,"asian_allc2",3.690685413
+"1226","University of Illinois Medical Center (ILUI)","ILUI","TX1",60612,"african_american_allc2",50.439367311
+"1227","University of Illinois Medical Center (ILUI)","ILUI","TX1",60612,"hispanic_latino_allc2",28.119507909
+"1228","University of Illinois Medical Center (ILUI)","ILUI","TX1",60612,"white_allc2",17.223198594
+"1229","University of Illinois Medical Center (ILUI)","ILUI","TX1",60612,"race_other_allc2",0.5272407733
+"1230","University of Illinois Medical Center (ILUI)","ILUI","TX1",60612,"race_unknown_allc2",0
+"1231","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1",52242,"asian_allc2",6.3025210084
+"1232","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1",52242,"african_american_allc2",12.18487395
+"1233","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1",52242,"hispanic_latino_allc2",5.8823529412
+"1234","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1",52242,"white_allc2",74.369747899
+"1235","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1",52242,"race_other_allc2",1.2605042017
+"1236","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1",52242,"race_unknown_allc2",0
+"1237","University of Kansas Hospital (KSUK)","KSUK","TX1",66103,"asian_allc2",5.9375
+"1238","University of Kansas Hospital (KSUK)","KSUK","TX1",66103,"african_american_allc2",18.125
+"1239","University of Kansas Hospital (KSUK)","KSUK","TX1",66103,"hispanic_latino_allc2",6.875
+"1240","University of Kansas Hospital (KSUK)","KSUK","TX1",66103,"white_allc2",68.75
+"1241","University of Kansas Hospital (KSUK)","KSUK","TX1",66103,"race_other_allc2",0.3125
+"1242","University of Kansas Hospital (KSUK)","KSUK","TX1",66103,"race_unknown_allc2",0
+"1243","University of Kentucky Medical Center (KYUK)","KYUK","TX1",40536,"asian_allc2",1.7857142857
+"1244","University of Kentucky Medical Center (KYUK)","KYUK","TX1",40536,"african_american_allc2",20.089285714
+"1245","University of Kentucky Medical Center (KYUK)","KYUK","TX1",40536,"hispanic_latino_allc2",1.3392857143
+"1246","University of Kentucky Medical Center (KYUK)","KYUK","TX1",40536,"white_allc2",76.339285714
+"1247","University of Kentucky Medical Center (KYUK)","KYUK","TX1",40536,"race_other_allc2",0.4464285714
+"1248","University of Kentucky Medical Center (KYUK)","KYUK","TX1",40536,"race_unknown_allc2",0
+"1249","University of Maryland Medical System (MDUM)","MDUM","TX1",21201,"asian_allc2",5.1638530288
+"1250","University of Maryland Medical System (MDUM)","MDUM","TX1",21201,"african_american_allc2",58.987090367
+"1251","University of Maryland Medical System (MDUM)","MDUM","TX1",21201,"hispanic_latino_allc2",2.8798411122
+"1252","University of Maryland Medical System (MDUM)","MDUM","TX1",21201,"white_allc2",32.27408143
+"1253","University of Maryland Medical System (MDUM)","MDUM","TX1",21201,"race_other_allc2",0.6951340616
+"1254","University of Maryland Medical System (MDUM)","MDUM","TX1",21201,"race_unknown_allc2",0
+"1255","University of Michigan Medical Center (MIUM)","MIUM","TX1",48109,"asian_allc2",3.90625
+"1256","University of Michigan Medical Center (MIUM)","MIUM","TX1",48109,"african_american_allc2",24.348958333
+"1257","University of Michigan Medical Center (MIUM)","MIUM","TX1",48109,"hispanic_latino_allc2",3.90625
+"1258","University of Michigan Medical Center (MIUM)","MIUM","TX1",48109,"white_allc2",66.276041667
+"1259","University of Michigan Medical Center (MIUM)","MIUM","TX1",48109,"race_other_allc2",1.5625
+"1260","University of Michigan Medical Center (MIUM)","MIUM","TX1",48109,"race_unknown_allc2",0
+"1261","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1",55454,"asian_allc2",14.02266289
+"1262","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1",55454,"african_american_allc2",13.597733711
+"1263","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1",55454,"hispanic_latino_allc2",3.3994334278
+"1264","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1",55454,"white_allc2",66.855524079
+"1265","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1",55454,"race_other_allc2",2.1246458924
+"1266","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1",55454,"race_unknown_allc2",0
+"1267","University of Mississippi Medical Center (MSUM)","MSUM","TX1",39216,"asian_allc2",1.0075566751
+"1268","University of Mississippi Medical Center (MSUM)","MSUM","TX1",39216,"african_american_allc2",76.700251889
+"1269","University of Mississippi Medical Center (MSUM)","MSUM","TX1",39216,"hispanic_latino_allc2",0.7556675063
+"1270","University of Mississippi Medical Center (MSUM)","MSUM","TX1",39216,"white_allc2",20.528967254
+"1271","University of Mississippi Medical Center (MSUM)","MSUM","TX1",39216,"race_other_allc2",1.0075566751
+"1272","University of Mississippi Medical Center (MSUM)","MSUM","TX1",39216,"race_unknown_allc2",0
+"1273","University of Missouri Hospital and Clinics (MOUM)","MOUM","TX1",65201,"asian_allc2",1.9801980198
+"1274","University of Missouri Hospital and Clinics (MOUM)","MOUM","TX1",65201,"african_american_allc2",13.861386139
+"1275","University of Missouri Hospital and Clinics (MOUM)","MOUM","TX1",65201,"hispanic_latino_allc2",2.9702970297
+"1276","University of Missouri Hospital and Clinics (MOUM)","MOUM","TX1",65201,"white_allc2",81.188118812
+"1277","University of Missouri Hospital and Clinics (MOUM)","MOUM","TX1",65201,"race_other_allc2",0
+"1278","University of Missouri Hospital and Clinics (MOUM)","MOUM","TX1",65201,"race_unknown_allc2",0
+"1279","University of North Carolina Hospitals (NCMH)","NCMH","TX1",27514,"asian_allc2",2.9449423816
+"1280","University of North Carolina Hospitals (NCMH)","NCMH","TX1",27514,"african_american_allc2",49.551856594
+"1281","University of North Carolina Hospitals (NCMH)","NCMH","TX1",27514,"hispanic_latino_allc2",6.2740076825
+"1282","University of North Carolina Hospitals (NCMH)","NCMH","TX1",27514,"white_allc2",38.924455826
+"1283","University of North Carolina Hospitals (NCMH)","NCMH","TX1",27514,"race_other_allc2",2.304737516
+"1284","University of North Carolina Hospitals (NCMH)","NCMH","TX1",27514,"race_unknown_allc2",0
+"1285","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1",15213,"asian_allc2",2.2813688213
+"1286","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1",15213,"african_american_allc2",22.940430925
+"1287","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1",15213,"hispanic_latino_allc2",0.3802281369
+"1288","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1",15213,"white_allc2",74.271229404
+"1289","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1",15213,"race_other_allc2",0.1267427123
+"1290","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1",15213,"race_unknown_allc2",0
+"1291","University of Tennessee Medical Center at Knoxville (TNUK)","TNUK","TX1",37920,"asian_allc2",1.023890785
+"1292","University of Tennessee Medical Center at Knoxville (TNUK)","TNUK","TX1",37920,"african_american_allc2",14.33447099
+"1293","University of Tennessee Medical Center at Knoxville (TNUK)","TNUK","TX1",37920,"hispanic_latino_allc2",1.023890785
+"1294","University of Tennessee Medical Center at Knoxville (TNUK)","TNUK","TX1",37920,"white_allc2",75.42662116
+"1295","University of Tennessee Medical Center at Knoxville (TNUK)","TNUK","TX1",37920,"race_other_allc2",8.1911262799
+"1296","University of Tennessee Medical Center at Knoxville (TNUK)","TNUK","TX1",37920,"race_unknown_allc2",0
+"1297","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1",77555,"asian_allc2",7.8125
+"1298","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1",77555,"african_american_allc2",33.258928571
+"1299","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1",77555,"hispanic_latino_allc2",43.526785714
+"1300","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1",77555,"white_allc2",15.178571429
+"1301","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1",77555,"race_other_allc2",0.2232142857
+"1302","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1",77555,"race_unknown_allc2",0
+"1303","University of Toledo Medical Center (OHCO)","OHCO","TX1",43614,"asian_allc2",0.8403361345
+"1304","University of Toledo Medical Center (OHCO)","OHCO","TX1",43614,"african_american_allc2",27.731092437
+"1305","University of Toledo Medical Center (OHCO)","OHCO","TX1",43614,"hispanic_latino_allc2",5.0420168067
+"1306","University of Toledo Medical Center (OHCO)","OHCO","TX1",43614,"white_allc2",66.386554622
+"1307","University of Toledo Medical Center (OHCO)","OHCO","TX1",43614,"race_other_allc2",0
+"1308","University of Toledo Medical Center (OHCO)","OHCO","TX1",43614,"race_unknown_allc2",0
+"1309","University of Utah Medical Center (UTMC)","UTMC","TX1",84132,"asian_allc2",6.3909774436
+"1310","University of Utah Medical Center (UTMC)","UTMC","TX1",84132,"african_american_allc2",1.1278195489
+"1311","University of Utah Medical Center (UTMC)","UTMC","TX1",84132,"hispanic_latino_allc2",21.052631579
+"1312","University of Utah Medical Center (UTMC)","UTMC","TX1",84132,"white_allc2",67.669172932
+"1313","University of Utah Medical Center (UTMC)","UTMC","TX1",84132,"race_other_allc2",3.7593984962
+"1314","University of Utah Medical Center (UTMC)","UTMC","TX1",84132,"race_unknown_allc2",0
+"1315","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1",22908,"asian_allc2",1.8050541516
+"1316","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1",22908,"african_american_allc2",27.97833935
+"1317","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1",22908,"hispanic_latino_allc2",5.2346570397
+"1318","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1",22908,"white_allc2",64.981949458
+"1319","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1",22908,"race_other_allc2",0
+"1320","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1",22908,"race_unknown_allc2",0
+"1321","University of Washington Medical Center (WAUW)","WAUW","TX1",98195,"asian_allc2",23.059866962
+"1322","University of Washington Medical Center (WAUW)","WAUW","TX1",98195,"african_american_allc2",9.0909090909
+"1323","University of Washington Medical Center (WAUW)","WAUW","TX1",98195,"hispanic_latino_allc2",14.190687361
+"1324","University of Washington Medical Center (WAUW)","WAUW","TX1",98195,"white_allc2",51.441241685
+"1325","University of Washington Medical Center (WAUW)","WAUW","TX1",98195,"race_other_allc2",2.2172949002
+"1326","University of Washington Medical Center (WAUW)","WAUW","TX1",98195,"race_unknown_allc2",0
+"1327","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1",53792,"asian_allc2",9.7588978186
+"1328","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1",53792,"african_american_allc2",17.566016073
+"1329","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1",53792,"hispanic_latino_allc2",6.0849598163
+"1330","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1",53792,"white_allc2",64.29391504
+"1331","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1",53792,"race_other_allc2",2.2962112514
+"1332","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1",53792,"race_unknown_allc2",0
+"1333","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1",15224,"asian_allc2",9.0909090909
+"1334","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1",15224,"african_american_allc2",0
+"1335","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1",15224,"hispanic_latino_allc2",0
+"1336","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1",15224,"white_allc2",90.909090909
+"1337","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1",15224,"race_other_allc2",0
+"1338","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1",15224,"race_unknown_allc2",0
+"1339","UPMC Hamot (PAPH)","PAPH","TX1",16550,"asian_allc2",5.9701492537
+"1340","UPMC Hamot (PAPH)","PAPH","TX1",16550,"african_american_allc2",11.940298507
+"1341","UPMC Hamot (PAPH)","PAPH","TX1",16550,"hispanic_latino_allc2",4.4776119403
+"1342","UPMC Hamot (PAPH)","PAPH","TX1",16550,"white_allc2",77.611940299
+"1343","UPMC Hamot (PAPH)","PAPH","TX1",16550,"race_other_allc2",0
+"1344","UPMC Hamot (PAPH)","PAPH","TX1",16550,"race_unknown_allc2",0
+"1345","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1",75390,"asian_allc2",6.8285280728
+"1346","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1",75390,"african_american_allc2",31.411229135
+"1347","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1",75390,"hispanic_latino_allc2",24.430955994
+"1348","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1",75390,"white_allc2",36.26707132
+"1349","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1",75390,"race_other_allc2",1.062215478
+"1350","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1",75390,"race_unknown_allc2",0
+"1351","VA Pittsburgh Healthcare System (PAVA)","PAVA","TX1",15240,"asian_allc2",0.7949125596
+"1352","VA Pittsburgh Healthcare System (PAVA)","PAVA","TX1",15240,"african_american_allc2",51.669316375
+"1353","VA Pittsburgh Healthcare System (PAVA)","PAVA","TX1",15240,"hispanic_latino_allc2",4.4515103339
+"1354","VA Pittsburgh Healthcare System (PAVA)","PAVA","TX1",15240,"white_allc2",41.494435612
+"1355","VA Pittsburgh Healthcare System (PAVA)","PAVA","TX1",15240,"race_other_allc2",1.5898251192
+"1356","VA Pittsburgh Healthcare System (PAVA)","PAVA","TX1",15240,"race_unknown_allc2",0
+"1357","VA Portland Health Care System (ORVA)","ORVA","TX1",97239,"asian_allc2",15.254237288
+"1358","VA Portland Health Care System (ORVA)","ORVA","TX1",97239,"african_american_allc2",32.768361582
+"1359","VA Portland Health Care System (ORVA)","ORVA","TX1",97239,"hispanic_latino_allc2",5.0847457627
+"1360","VA Portland Health Care System (ORVA)","ORVA","TX1",97239,"white_allc2",45.762711864
+"1361","VA Portland Health Care System (ORVA)","ORVA","TX1",97239,"race_other_allc2",1.1299435028
+"1362","VA Portland Health Care System (ORVA)","ORVA","TX1",97239,"race_unknown_allc2",0
+"1363","Vanderbilt University Medical Center (TNVU)","TNVU","TX1",37232,"asian_allc2",1.5711645102
+"1364","Vanderbilt University Medical Center (TNVU)","TNVU","TX1",37232,"african_american_allc2",44.26987061
+"1365","Vanderbilt University Medical Center (TNVU)","TNVU","TX1",37232,"hispanic_latino_allc2",3.7892791128
+"1366","Vanderbilt University Medical Center (TNVU)","TNVU","TX1",37232,"white_allc2",49.630314233
+"1367","Vanderbilt University Medical Center (TNVU)","TNVU","TX1",37232,"race_other_allc2",0.7393715342
+"1368","Vanderbilt University Medical Center (TNVU)","TNVU","TX1",37232,"race_unknown_allc2",0
+"1369","Vidant Medical Center (NCEC)","NCEC","TX1",27834,"asian_allc2",0.5586592179
+"1370","Vidant Medical Center (NCEC)","NCEC","TX1",27834,"african_american_allc2",74.860335196
+"1371","Vidant Medical Center (NCEC)","NCEC","TX1",27834,"hispanic_latino_allc2",1.1173184358
+"1372","Vidant Medical Center (NCEC)","NCEC","TX1",27834,"white_allc2",22.905027933
+"1373","Vidant Medical Center (NCEC)","NCEC","TX1",27834,"race_other_allc2",0.5586592179
+"1374","Vidant Medical Center (NCEC)","NCEC","TX1",27834,"race_unknown_allc2",0
+"1375","Virginia Mason Medical Center (WAVM)","WAVM","TX1",98111,"asian_allc2",19.70260223
+"1376","Virginia Mason Medical Center (WAVM)","WAVM","TX1",98111,"african_american_allc2",10.037174721
+"1377","Virginia Mason Medical Center (WAVM)","WAVM","TX1",98111,"hispanic_latino_allc2",10.408921933
+"1378","Virginia Mason Medical Center (WAVM)","WAVM","TX1",98111,"white_allc2",53.159851301
+"1379","Virginia Mason Medical Center (WAVM)","WAVM","TX1",98111,"race_other_allc2",6.6914498141
+"1380","Virginia Mason Medical Center (WAVM)","WAVM","TX1",98111,"race_unknown_allc2",0
+"1381","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1",27157,"asian_allc2",4.4444444444
+"1382","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1",27157,"african_american_allc2",42.222222222
+"1383","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1",27157,"hispanic_latino_allc2",4.4444444444
+"1384","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1",27157,"white_allc2",42.777777778
+"1385","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1",27157,"race_other_allc2",6.1111111111
+"1386","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1",27157,"race_unknown_allc2",0
+"1387","Walter Reed National Military Medical Center at Bethesda (DCWR)","DCWR","TX1",20889,"asian_allc2",8.658008658
+"1388","Walter Reed National Military Medical Center at Bethesda (DCWR)","DCWR","TX1",20889,"african_american_allc2",51.948051948
+"1389","Walter Reed National Military Medical Center at Bethesda (DCWR)","DCWR","TX1",20889,"hispanic_latino_allc2",7.7922077922
+"1390","Walter Reed National Military Medical Center at Bethesda (DCWR)","DCWR","TX1",20889,"white_allc2",31.168831169
+"1391","Walter Reed National Military Medical Center at Bethesda (DCWR)","DCWR","TX1",20889,"race_other_allc2",0.4329004329
+"1392","Walter Reed National Military Medical Center at Bethesda (DCWR)","DCWR","TX1",20889,"race_unknown_allc2",0
+"1393","Westchester Medical Center (NYWC)","NYWC","TX1",10595,"asian_allc2",6.0185185185
+"1394","Westchester Medical Center (NYWC)","NYWC","TX1",10595,"african_american_allc2",33.796296296
+"1395","Westchester Medical Center (NYWC)","NYWC","TX1",10595,"hispanic_latino_allc2",24.305555556
+"1396","Westchester Medical Center (NYWC)","NYWC","TX1",10595,"white_allc2",35.416666667
+"1397","Westchester Medical Center (NYWC)","NYWC","TX1",10595,"race_other_allc2",0.462962963
+"1398","Westchester Medical Center (NYWC)","NYWC","TX1",10595,"race_unknown_allc2",0
+"1399","William Beaumont Hospital (MIBH)","MIBH","TX1",48073,"asian_allc2",6.1797752809
+"1400","William Beaumont Hospital (MIBH)","MIBH","TX1",48073,"african_american_allc2",37.359550562
+"1401","William Beaumont Hospital (MIBH)","MIBH","TX1",48073,"hispanic_latino_allc2",3.0898876404
+"1402","William Beaumont Hospital (MIBH)","MIBH","TX1",48073,"white_allc2",50
+"1403","William Beaumont Hospital (MIBH)","MIBH","TX1",48073,"race_other_allc2",3.3707865169
+"1404","William Beaumont Hospital (MIBH)","MIBH","TX1",48073,"race_unknown_allc2",0
+"1405","Willis-Knighton Medical Center (LAWK)","LAWK","TX1",71103,"asian_allc2",1.8229166667
+"1406","Willis-Knighton Medical Center (LAWK)","LAWK","TX1",71103,"african_american_allc2",64.84375
+"1407","Willis-Knighton Medical Center (LAWK)","LAWK","TX1",71103,"hispanic_latino_allc2",2.34375
+"1408","Willis-Knighton Medical Center (LAWK)","LAWK","TX1",71103,"white_allc2",30.729166667
+"1409","Willis-Knighton Medical Center (LAWK)","LAWK","TX1",71103,"race_other_allc2",0.2604166667
+"1410","Willis-Knighton Medical Center (LAWK)","LAWK","TX1",71103,"race_unknown_allc2",0
+"1411","Yale New Haven Hospital (CTYN)","CTYN","TX1",6510,"asian_allc2",5.8015267176
+"1412","Yale New Haven Hospital (CTYN)","CTYN","TX1",6510,"african_american_allc2",36.335877863
+"1413","Yale New Haven Hospital (CTYN)","CTYN","TX1",6510,"hispanic_latino_allc2",16.183206107
+"1414","Yale New Haven Hospital (CTYN)","CTYN","TX1",6510,"white_allc2",41.06870229
+"1415","Yale New Haven Hospital (CTYN)","CTYN","TX1",6510,"race_other_allc2",0.6106870229
+"1416","Yale New Haven Hospital (CTYN)","CTYN","TX1",6510,"race_unknown_allc2",0

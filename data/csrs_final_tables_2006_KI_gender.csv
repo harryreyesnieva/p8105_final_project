@@ -1,0 +1,473 @@
+"","entire_name","ctr_cd","ctr_ty","zipcode","gender_category","gender_category_percent"
+"1","Abbott Northwestern Hospital (MNAN)","MNAN","TX1",55407,"female_allc2",42.682926829
+"2","Abbott Northwestern Hospital (MNAN)","MNAN","TX1",55407,"male_allc2",57.317073171
+"3","Advocate Christ Medical Center (ILCH)","ILCH","TX1",60453,"female_allc2",30.084745763
+"4","Advocate Christ Medical Center (ILCH)","ILCH","TX1",60453,"male_allc2",69.915254237
+"5","Albany Medical Center Hospital (NYAM)","NYAM","TX1",12208,"female_allc2",34.895833333
+"6","Albany Medical Center Hospital (NYAM)","NYAM","TX1",12208,"male_allc2",65.104166667
+"7","Albert Einstein Medical Center (PAAE)","PAAE","TX1",19141,"female_allc2",39.626168224
+"8","Albert Einstein Medical Center (PAAE)","PAAE","TX1",19141,"male_allc2",60.373831776
+"9","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1",19803,"female_allc2",16.666666667
+"10","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1",19803,"male_allc2",83.333333333
+"11","Allegheny General Hospital (PAAG)","PAAG","TX1",15212,"female_allc2",33.554817276
+"12","Allegheny General Hospital (PAAG)","PAAG","TX1",15212,"male_allc2",66.445182724
+"13","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1",60611,"female_allc2",30.952380952
+"14","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1",60611,"male_allc2",69.047619048
+"15","Arkansas Children's Hospital (ARCH)","ARCH","TX1",72202,"female_allc2",0
+"16","Arkansas Children's Hospital (ARCH)","ARCH","TX1",72202,"male_allc2",100
+"17","AU Medical Center, Inc. (GAMC)","GAMC","TX1",30912,"female_allc2",45.838359469
+"18","AU Medical Center, Inc. (GAMC)","GAMC","TX1",30912,"male_allc2",54.161640531
+"19","Aurora St. Luke's Medical Center (WISL)","WISL","TX1",53215,"female_allc2",38.043478261
+"20","Aurora St. Luke's Medical Center (WISL)","WISL","TX1",53215,"male_allc2",61.956521739
+"21","Auxilio Mutuo Hospital (PRSJ)","PRSJ","TX1",919,"female_allc2",40.498442368
+"22","Auxilio Mutuo Hospital (PRSJ)","PRSJ","TX1",919,"male_allc2",59.501557632
+"23","Avera McKennan Hospital (SDMK)","SDMK","TX1",57105,"female_allc2",41.92139738
+"24","Avera McKennan Hospital (SDMK)","SDMK","TX1",57105,"male_allc2",58.07860262
+"25","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1",85719,"female_allc2",43.089430894
+"26","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1",85719,"male_allc2",56.910569106
+"27","Banner-University Medical Center Phoenix (AZGS)","AZGS","TX1",85006,"female_allc2",38.8
+"28","Banner-University Medical Center Phoenix (AZGS)","AZGS","TX1",85006,"male_allc2",61.2
+"29","Barnes-Jewish Hospital (MOBH)","MOBH","TX1",63110,"female_allc2",38.821954485
+"30","Barnes-Jewish Hospital (MOBH)","MOBH","TX1",63110,"male_allc2",61.178045515
+"31","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","TXAS","TX1",76104,"female_allc2",38.487208009
+"32","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","TXAS","TX1",76104,"male_allc2",61.512791991
+"33","Baylor University Medical Center (TXTX)","TXTX","TX1",75246,"female_allc2",38.453914767
+"34","Baylor University Medical Center (TXTX)","TXTX","TX1",75246,"male_allc2",61.546085233
+"35","Baystate Medical Center (MABS)","MABS","TX1",1199,"female_allc2",38.150289017
+"36","Baystate Medical Center (MABS)","MABS","TX1",1199,"male_allc2",61.849710983
+"37","Beth Israel Deaconess Medical Center (MABI)","MABI","TX1",2215,"female_allc2",37.5
+"38","Beth Israel Deaconess Medical Center (MABI)","MABI","TX1",2215,"male_allc2",62.5
+"39","Birmingham VA Medical Center (ALVA)","ALVA","TX1",35233,"female_allc2",7.4074074074
+"40","Birmingham VA Medical Center (ALVA)","ALVA","TX1",35233,"male_allc2",92.592592593
+"41","Boston Children's Hospital (MACH)","MACH","TX1",2115,"female_allc2",23.80952381
+"42","Boston Children's Hospital (MACH)","MACH","TX1",2115,"male_allc2",76.19047619
+"43","Boston Medical Center (MABU)","MABU","TX1",2118,"female_allc2",39.285714286
+"44","Boston Medical Center (MABU)","MABU","TX1",2118,"male_allc2",60.714285714
+"45","Brigham and Women's Hospital (MAPB)","MAPB","TX1",2115,"female_allc2",45.317220544
+"46","Brigham and Women's Hospital (MAPB)","MAPB","TX1",2115,"male_allc2",54.682779456
+"47","California Pacific Medical Center (CAPM)","CAPM","TX1",94114,"female_allc2",37.355371901
+"48","California Pacific Medical Center (CAPM)","CAPM","TX1",94114,"male_allc2",62.644628099
+"49","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1",63104,"female_allc2",25
+"50","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1",63104,"male_allc2",75
+"51","Carolinas Medical Center (NCCM)","NCCM","TX1",28203,"female_allc2",35.483870968
+"52","Carolinas Medical Center (NCCM)","NCCM","TX1",28203,"male_allc2",64.516129032
+"53","Cedars-Sinai Medical Center (CACS)","CACS","TX1",90211,"female_allc2",39.386401327
+"54","Cedars-Sinai Medical Center (CACS)","CACS","TX1",90211,"male_allc2",60.613598673
+"55","Centennial Medical Center (TNPV)","TNPV","TX1",37203,"female_allc2",30.769230769
+"56","Centennial Medical Center (TNPV)","TNPV","TX1",37203,"male_allc2",69.230769231
+"57","Centura Porter Adventist Hospital (COPM)","COPM","TX1",80210,"female_allc2",37.313432836
+"58","Centura Porter Adventist Hospital (COPM)","COPM","TX1",80210,"male_allc2",62.686567164
+"59","Charleston Area Medical Center (WVCA)","WVCA","TX1",25325,"female_allc2",35.869565217
+"60","Charleston Area Medical Center (WVCA)","WVCA","TX1",25325,"male_allc2",64.130434783
+"61","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1",77030,"female_allc2",37.175141243
+"62","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1",77030,"male_allc2",62.824858757
+"63","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1",30322,"female_allc2",54.285714286
+"64","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1",30322,"male_allc2",45.714285714
+"65","Children's Hospital (LACH)","LACH","TX1",70118,"female_allc2",36.363636364
+"66","Children's Hospital (LACH)","LACH","TX1",70118,"male_allc2",63.636363636
+"67","Children's Hospital Colorado (COCH)","COCH","TX1",80045,"female_allc2",47.368421053
+"68","Children's Hospital Colorado (COCH)","COCH","TX1",80045,"male_allc2",52.631578947
+"69","Children's Hospital Medical Center (OHCM)","OHCM","TX1",45229,"female_allc2",50
+"70","Children's Hospital Medical Center (OHCM)","OHCM","TX1",45229,"male_allc2",50
+"71","Children's Hospital of Michigan (MICH)","MICH","TX1",48201,"female_allc2",33.333333333
+"72","Children's Hospital of Michigan (MICH)","MICH","TX1",48201,"male_allc2",66.666666667
+"73","Children's Hospital of Philadelphia (PACP)","PACP","TX1",19104,"female_allc2",28.260869565
+"74","Children's Hospital of Philadelphia (PACP)","PACP","TX1",19104,"male_allc2",71.739130435
+"75","Children's Hospital of the King's Daughters (VACH)","VACH","TX1",23507,"female_allc2",77.777777778
+"76","Children's Hospital of the King's Daughters (VACH)","VACH","TX1",23507,"male_allc2",22.222222222
+"77","Children's Hospital of Wisconsin (WICH)","WICH","TX1",53226,"female_allc2",27.272727273
+"78","Children's Hospital of Wisconsin (WICH)","WICH","TX1",53226,"male_allc2",72.727272727
+"79","Children's Medical Center of Dallas (TXCM)","TXCM","TX1",75235,"female_allc2",28.571428571
+"80","Children's Medical Center of Dallas (TXCM)","TXCM","TX1",75235,"male_allc2",71.428571429
+"81","Children's Mercy Hospital (MOCM)","MOCM","TX1",64108,"female_allc2",27.5
+"82","Children's Mercy Hospital (MOCM)","MOCM","TX1",64108,"male_allc2",72.5
+"83","Children's National Medical Center (DCCH)","DCCH","TX1",20010,"female_allc2",22.727272727
+"84","Children's National Medical Center (DCCH)","DCCH","TX1",20010,"male_allc2",77.272727273
+"85","Children's of Alabama (ALCH)","ALCH","TX1",35233,"female_allc2",41.666666667
+"86","Children's of Alabama (ALCH)","ALCH","TX1",35233,"male_allc2",58.333333333
+"87","Childrens Hospital Los Angeles (CACL)","CACL","TX1",90027,"female_allc2",41.176470588
+"88","Childrens Hospital Los Angeles (CACL)","CACL","TX1",90027,"male_allc2",58.823529412
+"89","Christiana Care Health Services (DECC)","DECC","TX1",19713,"female_allc2",33.55704698
+"90","Christiana Care Health Services (DECC)","DECC","TX1",19713,"male_allc2",66.44295302
+"91","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1",33331,"female_allc2",37.060301508
+"92","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1",33331,"male_allc2",62.939698492
+"93","Cook Children's Medical Center (TXCF)","TXCF","TX1",76104,"female_allc2",40
+"94","Cook Children's Medical Center (TXCF)","TXCF","TX1",76104,"male_allc2",60
+"95","Crozer-Chester Medical Center (PACC)","PACC","TX1",19013,"female_allc2",36.966824645
+"96","Crozer-Chester Medical Center (PACC)","PACC","TX1",19013,"male_allc2",63.033175355
+"97","Doctor's Hospital at Renaissance (TXDR)","TXDR","TX1",78539,"female_allc2",35.204081633
+"98","Doctor's Hospital at Renaissance (TXDR)","TXDR","TX1",78539,"male_allc2",64.795918367
+"99","Driscoll Children's Hospital (TXDC)","TXDC","TX1",78411,"female_allc2",83.333333333
+"100","Driscoll Children's Hospital (TXDC)","TXDC","TX1",78411,"male_allc2",16.666666667
+"101","Duke University Hospital (NCDU)","NCDU","TX1",27710,"female_allc2",37.254901961
+"102","Duke University Hospital (NCDU)","NCDU","TX1",27710,"male_allc2",62.745098039
+"103","East Texas Medical Center (TXTY)","TXTY","TX1",75701,"female_allc2",41.228070175
+"104","East Texas Medical Center (TXTY)","TXTY","TX1",75701,"male_allc2",58.771929825
+"105","Emory University Hospital (GAEM)","GAEM","TX1",30322,"female_allc2",38.784833257
+"106","Emory University Hospital (GAEM)","GAEM","TX1",30322,"male_allc2",61.215166743
+"107","Erie County Medical Center (NYEC)","NYEC","TX1",14215,"female_allc2",46.153846154
+"108","Erie County Medical Center (NYEC)","NYEC","TX1",14215,"male_allc2",53.846153846
+"109","Erlanger Medical Center (TNEM)","TNEM","TX1",37403,"female_allc2",30.769230769
+"110","Erlanger Medical Center (TNEM)","TNEM","TX1",37403,"male_allc2",69.230769231
+"111","Florida Hospital Medical Center (FLFH)","FLFH","TX1",32803,"female_allc2",40.798226164
+"112","Florida Hospital Medical Center (FLFH)","FLFH","TX1",32803,"male_allc2",59.201773836
+"113","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1",53226,"female_allc2",42.398286938
+"114","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1",53226,"male_allc2",57.601713062
+"115","Geisinger Medical Center (PAGM)","PAGM","TX1",17822,"female_allc2",38.839285714
+"116","Geisinger Medical Center (PAGM)","PAGM","TX1",17822,"male_allc2",61.160714286
+"117","George Washington University Hospital (DCGW)","DCGW","TX1",20037,"female_allc2",35.636363636
+"118","George Washington University Hospital (DCGW)","DCGW","TX1",20037,"male_allc2",64.363636364
+"119","Georgetown University Medical Center (DCGU)","DCGU","TX1",20007,"female_allc2",38.347457627
+"120","Georgetown University Medical Center (DCGU)","DCGU","TX1",20007,"male_allc2",61.652542373
+"121","Hackensack University Medical Center (NJHK)","NJHK","TX1",7601,"female_allc2",32.142857143
+"122","Hackensack University Medical Center (NJHK)","NJHK","TX1",7601,"male_allc2",67.857142857
+"123","Hahnemann University Hospital (PAHM)","PAHM","TX1",19102,"female_allc2",40.594059406
+"124","Hahnemann University Hospital (PAHM)","PAHM","TX1",19102,"male_allc2",59.405940594
+"125","Halifax Medical Center (FLHM)","FLHM","TX1",32114,"female_allc2",39.473684211
+"126","Halifax Medical Center (FLHM)","FLHM","TX1",32114,"male_allc2",60.526315789
+"127","Harbor UCLA Medical Center (CALA)","CALA","TX1",90509,"female_allc2",35.807860262
+"128","Harbor UCLA Medical Center (CALA)","CALA","TX1",90509,"male_allc2",64.192139738
+"129","Harper University Hospital Detroit Medical Center (MIHH)","MIHH","TX1",48201,"female_allc2",39.408866995
+"130","Harper University Hospital Detroit Medical Center (MIHH)","MIHH","TX1",48201,"male_allc2",60.591133005
+"131","Hartford Hospital (CTHH)","CTHH","TX1",6102,"female_allc2",41.428571429
+"132","Hartford Hospital (CTHH)","CTHH","TX1",6102,"male_allc2",58.571428571
+"133","Helen DeVos Children's Hospital (MIDV)","MIDV","TX1",49503,"female_allc2",57.142857143
+"134","Helen DeVos Children's Hospital (MIDV)","MIDV","TX1",49503,"male_allc2",42.857142857
+"135","Hennepin County Medical Center (MNHC)","MNHC","TX1",55415,"female_allc2",41.5625
+"136","Hennepin County Medical Center (MNHC)","MNHC","TX1",55415,"male_allc2",58.4375
+"137","Henrico Doctors' Hospital (VAHD)","VAHD","TX1",23229,"female_allc2",40.659340659
+"138","Henrico Doctors' Hospital (VAHD)","VAHD","TX1",23229,"male_allc2",59.340659341
+"139","Henry Ford Hospital (MIHF)","MIHF","TX1",48202,"female_allc2",44.341801386
+"140","Henry Ford Hospital (MIHF)","MIHF","TX1",48202,"male_allc2",55.658198614
+"141","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1",19104,"female_allc2",38.715277778
+"142","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1",19104,"male_allc2",61.284722222
+"143","Houston Methodist Hospital (TXMH)","TXMH","TX1",77030,"female_allc2",40.546218487
+"144","Houston Methodist Hospital (TXMH)","TXMH","TX1",77030,"male_allc2",59.453781513
+"145","Indiana University Health (INIM)","INIM","TX1",46202,"female_allc2",38.005390836
+"146","Indiana University Health (INIM)","INIM","TX1",46202,"male_allc2",61.994609164
+"147","Inova Fairfax Hospital (VAFH)","VAFH","TX1",22042,"female_allc2",35.44600939
+"148","Inova Fairfax Hospital (VAFH)","VAFH","TX1",22042,"male_allc2",64.55399061
+"149","Integris Baptist Medical Center (OKBC)","OKBC","TX1",73112,"female_allc2",43.824701195
+"150","Integris Baptist Medical Center (OKBC)","OKBC","TX1",73112,"male_allc2",56.175298805
+"151","Intermountain Medical Center (UTLD)","UTLD","TX1",84107,"female_allc2",42.471042471
+"152","Intermountain Medical Center (UTLD)","UTLD","TX1",84107,"male_allc2",57.528957529
+"153","Iowa Methodist Medical Center (IAIM)","IAIM","TX1",50309,"female_allc2",34.042553191
+"154","Iowa Methodist Medical Center (IAIM)","IAIM","TX1",50309,"male_allc2",65.957446809
+"155","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1",33136,"female_allc2",36.363636364
+"156","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1",33136,"male_allc2",63.636363636
+"157","James J. Peters VA Medical Center (NYVA)","NYVA","TX1",10468,"female_allc2",8.547008547
+"158","James J. Peters VA Medical Center (NYVA)","NYVA","TX1",10468,"male_allc2",91.452991453
+"159","Jewish Hospital (KYJH)","KYJH","TX1",40202,"female_allc2",34.532374101
+"160","Jewish Hospital (KYJH)","KYJH","TX1",40202,"male_allc2",65.467625899
+"161","Johns Hopkins Hospital (MDJH)","MDJH","TX1",21287,"female_allc2",38.527519657
+"162","Johns Hopkins Hospital (MDJH)","MDJH","TX1",21287,"male_allc2",61.472480343
+"163","Keck Hospital of USC (CAUH)","CAUH","TX1",90033,"female_allc2",35.307692308
+"164","Keck Hospital of USC (CAUH)","CAUH","TX1",90033,"male_allc2",64.692307692
+"165","Lahey Clinic Medical Center (MALC)","MALC","TX1",1805,"female_allc2",33.510638298
+"166","Lahey Clinic Medical Center (MALC)","MALC","TX1",1805,"male_allc2",66.489361702
+"167","Largo Medical Center (FLLM)","FLLM","TX1",33770,"female_allc2",32.075471698
+"168","Largo Medical Center (FLLM)","FLLM","TX1",33770,"male_allc2",67.924528302
+"169","Las Palmas Medical Center (TXLP)","TXLP","TX1",79902,"female_allc2",38.42364532
+"170","Las Palmas Medical Center (TXLP)","TXLP","TX1",79902,"male_allc2",61.57635468
+"171","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1",38103,"female_allc2",100
+"172","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1",38103,"male_allc2",0
+"173","Legacy Good Samaritan Hospital and Medical Center (ORGS)","ORGS","TX1",97210,"female_allc2",41.818181818
+"174","Legacy Good Samaritan Hospital and Medical Center (ORGS)","ORGS","TX1",97210,"male_allc2",58.181818182
+"175","Lehigh Valley Hospital (PALV)","PALV","TX1",18105,"female_allc2",30.067567568
+"176","Lehigh Valley Hospital (PALV)","PALV","TX1",18105,"male_allc2",69.932432432
+"177","Loma Linda University Medical Center (CALL)","CALL","TX1",92354,"female_allc2",35.931700074
+"178","Loma Linda University Medical Center (CALL)","CALL","TX1",92354,"male_allc2",64.068299926
+"179","Long Island Jewish Medical Center-Cohen Children's Medical Center (NYCC)","NYCC","TX1",11040,"female_allc2",37.5
+"180","Long Island Jewish Medical Center-Cohen Children's Medical Center (NYCC)","NYCC","TX1",11040,"male_allc2",62.5
+"181","Loyola University Medical Center (ILLU)","ILLU","TX1",60153,"female_allc2",38.153846154
+"182","Loyola University Medical Center (ILLU)","ILLU","TX1",60153,"male_allc2",61.846153846
+"183","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1",94304,"female_allc2",39.024390244
+"184","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1",94304,"male_allc2",60.975609756
+"185","Lutheran Hospital of Fort Wayne (INLH)","INLH","TX1",46804,"female_allc2",25.757575758
+"186","Lutheran Hospital of Fort Wayne (INLH)","INLH","TX1",46804,"male_allc2",74.242424242
+"187","Maine Medical Center (MEMC)","MEMC","TX1",4102,"female_allc2",41.6
+"188","Maine Medical Center (MEMC)","MEMC","TX1",4102,"male_allc2",58.4
+"189","Mary Hitchcock Memorial Hospital (NHDH)","NHDH","TX1",3756,"female_allc2",32.098765432
+"190","Mary Hitchcock Memorial Hospital (NHDH)","NHDH","TX1",3756,"male_allc2",67.901234568
+"191","Massachusetts General Hospital (MAMG)","MAMG","TX1",2114,"female_allc2",38.788426763
+"192","Massachusetts General Hospital (MAMG)","MAMG","TX1",2114,"male_allc2",61.211573237
+"193","Mayo Clinic Florida (FLSL)","FLSL","TX1",32224,"female_allc2",37.439613527
+"194","Mayo Clinic Florida (FLSL)","FLSL","TX1",32224,"male_allc2",62.560386473
+"195","Mayo Clinic Hospital (AZMC)","AZMC","TX1",85054,"female_allc2",35.56638246
+"196","Mayo Clinic Hospital (AZMC)","AZMC","TX1",85054,"male_allc2",64.43361754
+"197","Medical City Dallas Hospital (TXHD)","TXHD","TX1",75230,"female_allc2",37.090909091
+"198","Medical City Dallas Hospital (TXHD)","TXHD","TX1",75230,"male_allc2",62.909090909
+"199","Medical City Fort Worth (TXPL)","TXPL","TX1",76104,"female_allc2",34.254143646
+"200","Medical City Fort Worth (TXPL)","TXPL","TX1",76104,"male_allc2",65.745856354
+"201","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1",23219,"female_allc2",41.855670103
+"202","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1",23219,"male_allc2",58.144329897
+"203","Medical University of South Carolina (SCMU)","SCMU","TX1",29425,"female_allc2",42.757242757
+"204","Medical University of South Carolina (SCMU)","SCMU","TX1",29425,"male_allc2",57.242757243
+"205","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1",77030,"female_allc2",38.405797101
+"206","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1",77030,"male_allc2",61.594202899
+"207","Memorial Medical Center (ILMM)","ILMM","TX1",62781,"female_allc2",37.254901961
+"208","Memorial Medical Center (ILMM)","ILMM","TX1",62781,"male_allc2",62.745098039
+"209","Memorial Regional Hospital (FLMR)","FLMR","TX1",33021,"female_allc2",29.126213592
+"210","Memorial Regional Hospital (FLMR)","FLMR","TX1",33021,"male_allc2",70.873786408
+"211","Mercy Health Saint Marys (MISM","MISM","TX1",49503,"female_allc2",42.394822006
+"212","Mercy Health Saint Marys (MISM","MISM","TX1",49503,"male_allc2",57.605177994
+"213","Mercy Medical Center-Des Moines (IAMH)","IAMH","TX1",50314,"female_allc2",41.379310345
+"214","Mercy Medical Center-Des Moines (IAMH)","IAMH","TX1",50314,"male_allc2",58.620689655
+"215","Methodist Dallas Medical Center (TXMC)","TXMC","TX1",75203,"female_allc2",37.171717172
+"216","Methodist Dallas Medical Center (TXMC)","TXMC","TX1",75203,"male_allc2",62.828282828
+"217","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1",78229,"female_allc2",35.760728218
+"218","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1",78229,"male_allc2",64.239271782
+"219","Methodist University Hospital (TNMH)","TNMH","TX1",38104,"female_allc2",38.665254237
+"220","Methodist University Hospital (TNMH)","TNMH","TX1",38104,"male_allc2",61.334745763
+"221","Michael E. DeBakey VA Medical Center (TXVA)","TXVA","TX1",77030,"female_allc2",6.5217391304
+"222","Michael E. DeBakey VA Medical Center (TXVA)","TXVA","TX1",77030,"male_allc2",93.47826087
+"223","Montefiore Medical Center (NYMA)","NYMA","TX1",10467,"female_allc2",37.690839695
+"224","Montefiore Medical Center (NYMA)","NYMA","TX1",10467,"male_allc2",62.309160305
+"225","Mount Sinai Medical Center (NYMS)","NYMS","TX1",10029,"female_allc2",39.232876712
+"226","Mount Sinai Medical Center (NYMS)","NYMS","TX1",10029,"male_allc2",60.767123288
+"227","Nationwide Children's Hospital (OHCH)","OHCH","TX1",43205,"female_allc2",33.333333333
+"228","Nationwide Children's Hospital (OHCH)","OHCH","TX1",43205,"male_allc2",66.666666667
+"229","New York University Medical Center (NYUC)","NYUC","TX1",10016,"female_allc2",36.776859504
+"230","New York University Medical Center (NYUC)","NYUC","TX1",10016,"male_allc2",63.223140496
+"231","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","NYNY","TX1",10065,"female_allc2",39.337298216
+"232","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","NYNY","TX1",10065,"male_allc2",60.662701784
+"233","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1",7112,"female_allc2",0
+"234","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1",7112,"male_allc2",100
+"235","North Austin Medical Center (TXDM)","TXDM","TX1",78758,"female_allc2",43.506493506
+"236","North Austin Medical Center (TXDM)","TXDM","TX1",78758,"male_allc2",56.493506494
+"237","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1",11030,"female_allc2",30.622009569
+"238","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1",11030,"male_allc2",69.377990431
+"239","Northwestern Memorial Hospital (ILNM)","ILNM","TX1",60611,"female_allc2",42.839036755
+"240","Northwestern Memorial Hospital (ILNM)","ILNM","TX1",60611,"male_allc2",57.160963245
+"241","Norton Children's Hospital (KYKC)","KYKC","TX1",40202,"female_allc2",50
+"242","Norton Children's Hospital (KYKC)","KYKC","TX1",40202,"male_allc2",50
+"243","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1",10032,"female_allc2",40.222575517
+"244","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1",10032,"male_allc2",59.777424483
+"245","Ochsner Foundation Hospital (LAOF)","LAOF","TX1",70121,"female_allc2",43.810679612
+"246","Ochsner Foundation Hospital (LAOF)","LAOF","TX1",70121,"male_allc2",56.189320388
+"247","Ohio State University Medical Center (OHOU)","OHOU","TX1",43210,"female_allc2",39.160839161
+"248","Ohio State University Medical Center (OHOU)","OHOU","TX1",43210,"male_allc2",60.839160839
+"249","Oregon Health & Science University (ORUO)","ORUO","TX1",97239,"female_allc2",44.160583942
+"250","Oregon Health & Science University (ORUO)","ORUO","TX1",97239,"male_allc2",55.839416058
+"251","OSF Saint Francis Medical Center (ILSF)","ILSF","TX1",61637,"female_allc2",41.694915254
+"252","OSF Saint Francis Medical Center (ILSF)","ILSF","TX1",61637,"male_allc2",58.305084746
+"253","OU Medical Center (OKMD)","OKMD","TX1",73104,"female_allc2",48.780487805
+"254","OU Medical Center (OKMD)","OKMD","TX1",73104,"male_allc2",51.219512195
+"255","Our Lady of Lourdes Medical Center (NJLL)","NJLL","TX1",8103,"female_allc2",37.583892617
+"256","Our Lady of Lourdes Medical Center (NJLL)","NJLL","TX1",8103,"male_allc2",62.416107383
+"257","Parkland Health and Hospital System (TXPM)","TXPM","TX1",75235,"female_allc2",34.682080925
+"258","Parkland Health and Hospital System (TXPM)","TXPM","TX1",75235,"male_allc2",65.317919075
+"259","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1",17033,"female_allc2",40.322580645
+"260","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1",17033,"male_allc2",59.677419355
+"261","Phoenix Children's Hospital (AZCH)","AZCH","TX1",85016,"female_allc2",60
+"262","Phoenix Children's Hospital (AZCH)","AZCH","TX1",85016,"male_allc2",40
+"263","Piedmont Hospital (GAPH)","GAPH","TX1",30309,"female_allc2",38.224228743
+"264","Piedmont Hospital (GAPH)","GAPH","TX1",30309,"male_allc2",61.775771257
+"265","Pinnacle Health System at Harrisburg Hospital (PAHH)","PAHH","TX1",17101,"female_allc2",38.912133891
+"266","Pinnacle Health System at Harrisburg Hospital (PAHH)","PAHH","TX1",17101,"male_allc2",61.087866109
+"267","Presbyterian Hospital (NMPH)","NMPH","TX1",87106,"female_allc2",37.272727273
+"268","Presbyterian Hospital (NMPH)","NMPH","TX1",87106,"male_allc2",62.727272727
+"269","Presbyterian/St Luke's Medical Center (COSL)","COSL","TX1",80218,"female_allc2",39.313984169
+"270","Presbyterian/St Luke's Medical Center (COSL)","COSL","TX1",80218,"male_allc2",60.686015831
+"271","Primary Children's Hospital (UTPC)","UTPC","TX1",84113,"female_allc2",58.333333333
+"272","Primary Children's Hospital (UTPC)","UTPC","TX1",84113,"male_allc2",41.666666667
+"273","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1",99204,"female_allc2",39.150943396
+"274","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1",99204,"male_allc2",60.849056604
+"275","Rady Children's Hospital and Health Center (CACH)","CACH","TX1",92024,"female_allc2",54.545454545
+"276","Rady Children's Hospital and Health Center (CACH)","CACH","TX1",92024,"male_allc2",45.454545455
+"277","Research Medical Center (MORH)","MORH","TX1",64132,"female_allc2",33.505154639
+"278","Research Medical Center (MORH)","MORH","TX1",64132,"male_allc2",66.494845361
+"279","Rhode Island Hospital (RIRH)","RIRH","TX1",2903,"female_allc2",38.846153846
+"280","Rhode Island Hospital (RIRH)","RIRH","TX1",2903,"male_allc2",61.153846154
+"281","Riverside Community Hospital (CARC)","CARC","TX1",92501,"female_allc2",29.378531073
+"282","Riverside Community Hospital (CARC)","CARC","TX1",92501,"male_allc2",70.621468927
+"283","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1",8901,"female_allc2",34.552845528
+"284","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1",8901,"male_allc2",65.447154472
+"285","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1",55902,"female_allc2",41.779975278
+"286","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1",55902,"male_allc2",58.220024722
+"287","Rush University Medical Center (ILPL)","ILPL","TX1",60612,"female_allc2",34.474885845
+"288","Rush University Medical Center (ILPL)","ILPL","TX1",60612,"male_allc2",65.525114155
+"289","Sacred Heart Hospital Pensacola (FLSH)","FLSH","TX1",32504,"female_allc2",45.142857143
+"290","Sacred Heart Hospital Pensacola (FLSH)","FLSH","TX1",32504,"male_allc2",54.857142857
+"291","Saint Barnabas Medical Center (NJSB)","NJSB","TX1",7039,"female_allc2",35.681669928
+"292","Saint Barnabas Medical Center (NJSB)","NJSB","TX1",7039,"male_allc2",64.318330072
+"293","Saint Francis Hospital (OKSF)","OKSF","TX1",74136,"female_allc2",34.782608696
+"294","Saint Francis Hospital (OKSF)","OKSF","TX1",74136,"male_allc2",65.217391304
+"295","Saint Joseph Hospital (CASJ)","CASJ","TX1",92868,"female_allc2",38.554216867
+"296","Saint Joseph Hospital (CASJ)","CASJ","TX1",92868,"male_allc2",61.445783133
+"297","Saint Thomas Hospital (TNST)","TNST","TX1",37205,"female_allc2",37.837837838
+"298","Saint Thomas Hospital (TNST)","TNST","TX1",37205,"male_allc2",62.162162162
+"299","Sanford Bismarck Medical Center (NDMC)","NDMC","TX1",58501,"female_allc2",34.831460674
+"300","Sanford Bismarck Medical Center (NDMC)","NDMC","TX1",58501,"male_allc2",65.168539326
+"301","Sanford Health/USD Medical Center (SDSV)","SDSV","TX1",57117,"female_allc2",40.206185567
+"302","Sanford Health/USD Medical Center (SDSV)","SDSV","TX1",57117,"male_allc2",59.793814433
+"303","Sanford Medical Center Fargo (NDSL)","NDSL","TX1",58104,"female_allc2",32.203389831
+"304","Sanford Medical Center Fargo (NDSL)","NDSL","TX1",58104,"male_allc2",67.796610169
+"305","Scott and White Memorial Hospital (TXSW)","TXSW","TX1",76508,"female_allc2",42.69005848
+"306","Scott and White Memorial Hospital (TXSW)","TXSW","TX1",76508,"male_allc2",57.30994152
+"307","Scripps Green Hospital (CAGH)","CAGH","TX1",92037,"female_allc2",40.848214286
+"308","Scripps Green Hospital (CAGH)","CAGH","TX1",92037,"male_allc2",59.151785714
+"309","Seattle Children's Hospital (WACH)","WACH","TX1",98105,"female_allc2",40
+"310","Seattle Children's Hospital (WACH)","WACH","TX1",98105,"male_allc2",60
+"311","Sentara Norfolk General Hospital (VANG)","VANG","TX1",23507,"female_allc2",46.681415929
+"312","Sentara Norfolk General Hospital (VANG)","VANG","TX1",23507,"male_allc2",53.318584071
+"313","Sharp Memorial Hospital (CASH)","CASH","TX1",92123,"female_allc2",38.047808765
+"314","Sharp Memorial Hospital (CASH)","CASH","TX1",92123,"male_allc2",61.952191235
+"315","SSM Health Saint Louis University Hospital (MOSL)","MOSL","TX1",63104,"female_allc2",46.428571429
+"316","SSM Health Saint Louis University Hospital (MOSL)","MOSL","TX1",63104,"male_allc2",53.571428571
+"317","St John Hospital and Medical Center (MISJ)","MISJ","TX1",48236,"female_allc2",43.005181347
+"318","St John Hospital and Medical Center (MISJ)","MISJ","TX1",48236,"male_allc2",56.994818653
+"319","St John Medical Center (OKSJ)","OKSJ","TX1",74104,"female_allc2",32.116788321
+"320","St John Medical Center (OKSJ)","OKSJ","TX1",74104,"male_allc2",67.883211679
+"321","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1",64111,"female_allc2",40.825688073
+"322","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1",64111,"male_allc2",59.174311927
+"323","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1",46260,"female_allc2",38.759689922
+"324","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1",46260,"male_allc2",61.240310078
+"325","St. Christopher's Hospital for Children (PASC)","PASC","TX1",19134,"female_allc2",50
+"326","St. Christopher's Hospital for Children (PASC)","PASC","TX1",19134,"male_allc2",50
+"327","St. Joseph's Hospital and Medical Center (AZSJ)","AZSJ","TX1",85013,"female_allc2",35.833333333
+"328","St. Joseph's Hospital and Medical Center (AZSJ)","AZSJ","TX1",85013,"male_allc2",64.166666667
+"329","St. Louis Children's Hospital (MOCH)","MOCH","TX1",63110,"female_allc2",25
+"330","St. Louis Children's Hospital (MOCH)","MOCH","TX1",63110,"male_allc2",75
+"331","St. Vincent Medical Center (CASV)","CASV","TX1",90057,"female_allc2",37.230769231
+"332","St. Vincent Medical Center (CASV)","CASV","TX1",90057,"male_allc2",62.769230769
+"333","Stanford Health Care (CASU)","CASU","TX1",94305,"female_allc2",36.587926509
+"334","Stanford Health Care (CASU)","CASU","TX1",94305,"male_allc2",63.412073491
+"335","State University of New York Upstate Medical University (NYUM)","NYUM","TX1",13210,"female_allc2",37.151702786
+"336","State University of New York Upstate Medical University (NYUM)","NYUM","TX1",13210,"male_allc2",62.848297214
+"337","State University of New York, Downstate Medical Center (NYDS)","NYDS","TX1",11203,"female_allc2",38.268156425
+"338","State University of New York, Downstate Medical Center (NYDS)","NYDS","TX1",11203,"male_allc2",61.731843575
+"339","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1",14642,"female_allc2",35.799522673
+"340","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1",14642,"male_allc2",64.200477327
+"341","Swedish Medical Center (WASM)","WASM","TX1",98122,"female_allc2",43.089430894
+"342","Swedish Medical Center (WASM)","WASM","TX1",98122,"male_allc2",56.910569106
+"343","Tampa General Hospital (FLTG)","FLTG","TX1",33606,"female_allc2",42.080378251
+"344","Tampa General Hospital (FLTG)","FLTG","TX1",33606,"male_allc2",57.919621749
+"345","Temple University Hospital (PATU)","PATU","TX1",19140,"female_allc2",36.414565826
+"346","Temple University Hospital (PATU)","PATU","TX1",19140,"male_allc2",63.585434174
+"347","Texas Children's Hospital (TXTC)","TXTC","TX1",77030,"female_allc2",50
+"348","Texas Children's Hospital (TXTC)","TXTC","TX1",77030,"male_allc2",50
+"349","Texas Health Harris Methodist Fort Worth Hospital (TXFW)","TXFW","TX1",76104,"female_allc2",27.450980392
+"350","Texas Health Harris Methodist Fort Worth Hospital (TXFW)","TXFW","TX1",76104,"male_allc2",72.549019608
+"351","The Christ Hospital (OHTC)","OHTC","TX1",45219,"female_allc2",42.96875
+"352","The Christ Hospital (OHTC)","OHTC","TX1",45219,"male_allc2",57.03125
+"353","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1",44195,"female_allc2",41.216216216
+"354","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1",44195,"male_allc2",58.783783784
+"355","The Iowa City VA Health Care System (IAVA)","IAVA","TX1",52246,"female_allc2",5
+"356","The Iowa City VA Health Care System (IAVA)","IAVA","TX1",52246,"male_allc2",95
+"357","The Lankenau Hospital (PALH)","PALH","TX1",19096,"female_allc2",38.613861386
+"358","The Lankenau Hospital (PALH)","PALH","TX1",19096,"male_allc2",61.386138614
+"359","The Nebraska Medical Center (NEUN)","NEUN","TX1",68198,"female_allc2",32.710280374
+"360","The Nebraska Medical Center (NEUN)","NEUN","TX1",68198,"male_allc2",67.289719626
+"361","The Queen's Medical Center (HIQM)","HIQM","TX1",96813,"female_allc2",40.449438202
+"362","The Queen's Medical Center (HIQM)","HIQM","TX1",96813,"male_allc2",59.550561798
+"363","The University of Vermont Medical Center (VTMC)","VTMC","TX1",5401,"female_allc2",54.166666667
+"364","The University of Vermont Medical Center (VTMC)","VTMC","TX1",5401,"male_allc2",45.833333333
+"365","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1",19107,"female_allc2",37.337662338
+"366","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1",19107,"male_allc2",62.662337662
+"367","Tufts Medical Center (MANM)","MANM","TX1",2111,"female_allc2",37.566137566
+"368","Tufts Medical Center (MANM)","MANM","TX1",2111,"male_allc2",62.433862434
+"369","Tulane Medical Center (LATU)","LATU","TX1",70112,"female_allc2",38.782608696
+"370","Tulane Medical Center (LATU)","LATU","TX1",70112,"male_allc2",61.217391304
+"371","UAMS Medical Center (ARUA)","ARUA","TX1",72205,"female_allc2",41.477272727
+"372","UAMS Medical Center (ARUA)","ARUA","TX1",72205,"male_allc2",58.522727273
+"373","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1",94158,"female_allc2",32.727272727
+"374","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1",94158,"male_allc2",67.272727273
+"375","UF Health Shands Hospital (FLUF)","FLUF","TX1",32608,"female_allc2",41.476274165
+"376","UF Health Shands Hospital (FLUF)","FLUF","TX1",32608,"male_allc2",58.523725835
+"377","UMass Memorial Medical Center (MAUM)","MAUM","TX1",1655,"female_allc2",39.950980392
+"378","UMass Memorial Medical Center (MAUM)","MAUM","TX1",1655,"male_allc2",60.049019608
+"379","University Childrens Health (TXUC","TXUC","TX1",78229,"female_allc2",33.333333333
+"380","University Childrens Health (TXUC","TXUC","TX1",78229,"male_allc2",66.666666667
+"381","University Hospital of State University of New York at Stony Brook (NYSB)","NYSB","TX1",11794,"female_allc2",33.333333333
+"382","University Hospital of State University of New York at Stony Brook (NYSB)","NYSB","TX1",11794,"male_allc2",66.666666667
+"383","University Hospital, University of New Mexico Health Sciences Center (NMAQ)","NMAQ","TX1",87106,"female_allc2",45.493562232
+"384","University Hospital, University of New Mexico Health Sciences Center (NMAQ)","NMAQ","TX1",87106,"male_allc2",54.506437768
+"385","University Hospital, University of Texas Health Science Center (TXBC)","TXBC","TX1",78229,"female_allc2",38.954468803
+"386","University Hospital, University of Texas Health Science Center (TXBC)","TXBC","TX1",78229,"male_allc2",61.045531197
+"387","University Hospitals of Cleveland (OHUH)","OHUH","TX1",44106,"female_allc2",37.313432836
+"388","University Hospitals of Cleveland (OHUH)","OHUH","TX1",44106,"male_allc2",62.686567164
+"389","University Medical Center of Southern Nevada (NVUM)","NVUM","TX1",89102,"female_allc2",37.280701754
+"390","University Medical Center of Southern Nevada (NVUM)","NVUM","TX1",89102,"male_allc2",62.719298246
+"391","University of Alabama Hospital (ALUA)","ALUA","TX1",35233,"female_allc2",40.137221269
+"392","University of Alabama Hospital (ALUA)","ALUA","TX1",35233,"male_allc2",59.862778731
+"393","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1",90095,"female_allc2",35.776277724
+"394","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1",90095,"male_allc2",64.223722276
+"395","University of California Davis Medical Center (CASM)","CASM","TX1",95817,"female_allc2",34.290843806
+"396","University of California Davis Medical Center (CASM)","CASM","TX1",95817,"male_allc2",65.709156194
+"397","University of California Irvine Medical Center (CAIM)","CAIM","TX1",92868,"female_allc2",38.896746818
+"398","University of California Irvine Medical Center (CAIM)","CAIM","TX1",92868,"male_allc2",61.103253182
+"399","University of California San Diego Medical Center (CASD)","CASD","TX1",92037,"female_allc2",41.482444733
+"400","University of California San Diego Medical Center (CASD)","CASD","TX1",92037,"male_allc2",58.517555267
+"401","University of California San Francisco Medical Center (CASF)","CASF","TX1",94118,"female_allc2",37.447434819
+"402","University of California San Francisco Medical Center (CASF)","CASF","TX1",94118,"male_allc2",62.552565181
+"403","University of Chicago Medical Center (ILUC)","ILUC","TX1",60637,"female_allc2",38.095238095
+"404","University of Chicago Medical Center (ILUC)","ILUC","TX1",60637,"male_allc2",61.904761905
+"405","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1",45229,"female_allc2",43.902439024
+"406","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1",45229,"male_allc2",56.097560976
+"407","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1",80045,"female_allc2",37.045203969
+"408","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1",80045,"male_allc2",62.954796031
+"409","University of Illinois Medical Center (ILUI)","ILUI","TX1",60612,"female_allc2",37.961335677
+"410","University of Illinois Medical Center (ILUI)","ILUI","TX1",60612,"male_allc2",62.038664323
+"411","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1",52242,"female_allc2",34.453781513
+"412","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1",52242,"male_allc2",65.546218487
+"413","University of Kansas Hospital (KSUK)","KSUK","TX1",66103,"female_allc2",42.1875
+"414","University of Kansas Hospital (KSUK)","KSUK","TX1",66103,"male_allc2",57.8125
+"415","University of Kentucky Medical Center (KYUK)","KYUK","TX1",40536,"female_allc2",36.607142857
+"416","University of Kentucky Medical Center (KYUK)","KYUK","TX1",40536,"male_allc2",63.392857143
+"417","University of Maryland Medical System (MDUM)","MDUM","TX1",21201,"female_allc2",41.608738828
+"418","University of Maryland Medical System (MDUM)","MDUM","TX1",21201,"male_allc2",58.391261172
+"419","University of Michigan Medical Center (MIUM)","MIUM","TX1",48109,"female_allc2",38.671875
+"420","University of Michigan Medical Center (MIUM)","MIUM","TX1",48109,"male_allc2",61.328125
+"421","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1",55454,"female_allc2",43.201133144
+"422","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1",55454,"male_allc2",56.798866856
+"423","University of Mississippi Medical Center (MSUM)","MSUM","TX1",39216,"female_allc2",44.080604534
+"424","University of Mississippi Medical Center (MSUM)","MSUM","TX1",39216,"male_allc2",55.919395466
+"425","University of Missouri Hospital and Clinics (MOUM)","MOUM","TX1",65201,"female_allc2",33.663366337
+"426","University of Missouri Hospital and Clinics (MOUM)","MOUM","TX1",65201,"male_allc2",66.336633663
+"427","University of North Carolina Hospitals (NCMH)","NCMH","TX1",27514,"female_allc2",45.326504481
+"428","University of North Carolina Hospitals (NCMH)","NCMH","TX1",27514,"male_allc2",54.673495519
+"429","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1",15213,"female_allc2",37.769328264
+"430","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1",15213,"male_allc2",62.230671736
+"431","University of Tennessee Medical Center at Knoxville (TNUK)","TNUK","TX1",37920,"female_allc2",34.812286689
+"432","University of Tennessee Medical Center at Knoxville (TNUK)","TNUK","TX1",37920,"male_allc2",65.187713311
+"433","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1",77555,"female_allc2",34.598214286
+"434","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1",77555,"male_allc2",65.401785714
+"435","University of Toledo Medical Center (OHCO)","OHCO","TX1",43614,"female_allc2",42.016806723
+"436","University of Toledo Medical Center (OHCO)","OHCO","TX1",43614,"male_allc2",57.983193277
+"437","University of Utah Medical Center (UTMC)","UTMC","TX1",84132,"female_allc2",39.097744361
+"438","University of Utah Medical Center (UTMC)","UTMC","TX1",84132,"male_allc2",60.902255639
+"439","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1",22908,"female_allc2",38.086642599
+"440","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1",22908,"male_allc2",61.913357401
+"441","University of Washington Medical Center (WAUW)","WAUW","TX1",98195,"female_allc2",41.685144124
+"442","University of Washington Medical Center (WAUW)","WAUW","TX1",98195,"male_allc2",58.314855876
+"443","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1",53792,"female_allc2",37.313432836
+"444","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1",53792,"male_allc2",62.686567164
+"445","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1",15224,"female_allc2",45.454545455
+"446","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1",15224,"male_allc2",54.545454545
+"447","UPMC Hamot (PAPH)","PAPH","TX1",16550,"female_allc2",32.835820896
+"448","UPMC Hamot (PAPH)","PAPH","TX1",16550,"male_allc2",67.164179104
+"449","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1",75390,"female_allc2",40.364188164
+"450","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1",75390,"male_allc2",59.635811836
+"451","VA Pittsburgh Healthcare System (PAVA)","PAVA","TX1",15240,"female_allc2",4.7694753577
+"452","VA Pittsburgh Healthcare System (PAVA)","PAVA","TX1",15240,"male_allc2",95.230524642
+"453","VA Portland Health Care System (ORVA)","ORVA","TX1",97239,"female_allc2",6.2146892655
+"454","VA Portland Health Care System (ORVA)","ORVA","TX1",97239,"male_allc2",93.785310734
+"455","Vanderbilt University Medical Center (TNVU)","TNVU","TX1",37232,"female_allc2",33.918669131
+"456","Vanderbilt University Medical Center (TNVU)","TNVU","TX1",37232,"male_allc2",66.081330869
+"457","Vidant Medical Center (NCEC)","NCEC","TX1",27834,"female_allc2",47.206703911
+"458","Vidant Medical Center (NCEC)","NCEC","TX1",27834,"male_allc2",52.793296089
+"459","Virginia Mason Medical Center (WAVM)","WAVM","TX1",98111,"female_allc2",40.148698885
+"460","Virginia Mason Medical Center (WAVM)","WAVM","TX1",98111,"male_allc2",59.851301115
+"461","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1",27157,"female_allc2",40
+"462","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1",27157,"male_allc2",60
+"463","Walter Reed National Military Medical Center at Bethesda (DCWR)","DCWR","TX1",20889,"female_allc2",35.064935065
+"464","Walter Reed National Military Medical Center at Bethesda (DCWR)","DCWR","TX1",20889,"male_allc2",64.935064935
+"465","Westchester Medical Center (NYWC)","NYWC","TX1",10595,"female_allc2",32.638888889
+"466","Westchester Medical Center (NYWC)","NYWC","TX1",10595,"male_allc2",67.361111111
+"467","William Beaumont Hospital (MIBH)","MIBH","TX1",48073,"female_allc2",38.483146067
+"468","William Beaumont Hospital (MIBH)","MIBH","TX1",48073,"male_allc2",61.516853933
+"469","Willis-Knighton Medical Center (LAWK)","LAWK","TX1",71103,"female_allc2",38.802083333
+"470","Willis-Knighton Medical Center (LAWK)","LAWK","TX1",71103,"male_allc2",61.197916667
+"471","Yale New Haven Hospital (CTYN)","CTYN","TX1",6510,"female_allc2",36.79389313
+"472","Yale New Haven Hospital (CTYN)","CTYN","TX1",6510,"male_allc2",63.20610687
