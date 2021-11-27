@@ -318,9 +318,9 @@ Demographics Merge and Write Dataframe
 
 ``` r
 demographics_merge_and_write = function(x,y) {
-df_two_select = y %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
+df_two_select = y %>% select(entire_name, ctr_cd, organ_na, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
 df_social = merge(x, df_two_select)
-df_demographics = df_social[, c(1,2,3, 68, 71:76)]
+df_demographics = df_social[, c(1,2,3, 5, 68, 72:77)]
 #view(df_demographics)
 df_demographics_pivot =
   pivot_longer(
@@ -333,7 +333,7 @@ write.csv(df_demographics_pivot, path)
 }
 ```
 
-Gender
+Gender Merge and Write Dataframe
 
 ``` r
 gender_merge_and_write = function(x,y) {
@@ -374,6 +374,8 @@ plot_gender(df_one, df_two_clean)
 merge_and_write(df_one, df_two_clean)
 age_merge_and_write(df_one, df_two_clean)
 gender_merge_and_write(df_one, df_two_clean)
+demographics_merge_and_write(df_one, df_two_clean)
+
 }
 ```
 
@@ -1038,6 +1040,8 @@ for(i in seq_len(nrow(df_paths))) {
 ![](IterationMS_files/figure-gfm/unnamed-chunk-24-9.png)<!-- -->
 
     ## Warning: Removed 6 rows containing missing values (geom_point).
+
+    ## Warning: NAs introduced by coercion
 
     ## Warning: NAs introduced by coercion
 
@@ -2157,6 +2161,8 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning: NAs introduced by coercion
 
+    ## Warning: NAs introduced by coercion
+
     ## tibble [145 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:145] "Center Name" "Children's of Alabama (ALCH)" "University of Alabama Hospital (ALUA)" "UAMS Medical Center (ARUA)" ...
     ##  $ ctr_cd         : chr [1:145] "Center Code" "ALCH" "ALUA" "ARUA" ...
@@ -2996,6 +3002,8 @@ for(i in seq_len(nrow(df_paths))) {
 ![](IterationMS_files/figure-gfm/unnamed-chunk-24-79.png)<!-- -->
 
     ## Warning: Removed 2 rows containing missing values (geom_point).
+
+    ## Warning: NAs introduced by coercion
 
     ## Warning: NAs introduced by coercion
 
