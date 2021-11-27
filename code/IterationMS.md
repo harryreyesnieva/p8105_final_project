@@ -224,9 +224,9 @@ Plot Age
 ``` r
 plot_age = function(x,y){
 
-df_two_age = y[, c(1,2,6,8,10,12,14,16,18,20,22)]
+df_two_age = y[, c(1,2,4,6,8,10,12,14,16,18,20,22)]
 df_age = merge(x, df_two_age)
-df_age = df_age[, c(1,2,3, 68, 71:78)]
+df_age = df_age[, c(1,2,3, 5,68, 72:79)]
 #view(df_age)
 df_age_pivot =
   pivot_longer(
