@@ -597,7 +597,7 @@ df_two = setNames(df_two, setnames)
 df_two = janitor::clean_names(df_two)
 df_two_clean = df_two[-c(1), ]
 df_two_clean = df_two_clean %>% rename (entire_name= center_name_na , ctr_cd = center_code_na)
-#view(df_two_clean)
+view(df_two_clean)
 ```
 
 I will make a dataframe of patient demographics and plot the
@@ -628,10 +628,11 @@ plot
 will make an age dataframe and plot the age distributions by zipcode.
 
 ``` r
-df_two_age = df_two_clean[, c(1,2,6,8,10,12,14,16,18,20,22)]
+df_two_age = df_two_clean[, c(1,2,5,6,8,10,12,14,16,18,20,22)]
 df_age = merge(df_one_merge, df_two_age)
-df_age = df_age[, c(1,2,3, 68, 71:78)]
-#view(df_age)
+view(df_age)
+df_age = df_age[, c(1,2,3,5, 68, 72:79)]
+view(df_age)
 df_age_pivot =
   pivot_longer(
     df_age, 
