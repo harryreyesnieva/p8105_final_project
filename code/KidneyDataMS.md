@@ -695,7 +695,7 @@ plot = df_comorbidities_pivot %>% ggplot(aes(x=zipcode, y =comorbidity_category_
     title = "Patient Comorbidity Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "Comorbidity Group (Percent)", color = "Comorbidity"
-  ) + theme_minimal() + scale_color_hue(labels = c("Congenital, Familial or Metabolic", "Diabetes", "Golmerular Disease", "Hypertensive Nephrosclerosis", "Neoplasms", "Polycystic Kidneys", "No Prior Transplant", "Prior Transplant Unknown", "Prior Transplant", "Missing Primary Disease", "Other Primary Disease", "Renovascular or Vascular Disease", "Retransplant Graft Failure", "Tubular and Interstitial Diseases"))
+  ) + theme_minimal() + scale_color_hue(labels = c("Congenital, Familial or Metabolic Disease", "Diabetes", "Golmerular Disease", "Hypertensive Nephrosclerosis", "Neoplasms", "Polycystic Kidneys", "No Prior Transplant", "Prior Transplant Unknown", "Prior Transplant", "Missing Primary Disease", "Other Primary Disease", "Renovascular or Vascular Disease", "Retransplant Graft Failure", "Tubular and Interstitial Diseases"))
 plot
 ```
 
@@ -720,7 +720,7 @@ plot = df_blood_type_pivot %>% ggplot(aes(x=zipcode, y =blood_type_category_perc
     title = "Patient Blood Type Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "Blood Type Group (Percent)", color = "Blood Type"
-  ) + theme_minimal() + scale_color_hue(labels = c("A", "AB", "B", " O", "Unknown"))
+  ) + theme_minimal() + scale_color_hue(labels = c("A", "AB", "B", "O", "Unknown"))
 plot
 ```
 
