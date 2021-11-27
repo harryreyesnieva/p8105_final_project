@@ -66,7 +66,7 @@ plot = df_all_age %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age
     title = "Patient Age Groups by Zipcode", subtitle = phrase,
     x = "Zipcode",
     y = "Age Group (Percent)",color = "Age Group"
-  ) + theme_minimal()  + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years")) + facet_wrap(~org)
+  ) + theme_minimal()  + theme(axis.text.x=element_text(angle=90,hjust=1)) + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years")) + facet_wrap(~org)
 print(plot)
 ```
 
@@ -94,7 +94,7 @@ plot = df_all_gender %>% ggplot(aes(x=zipcode, y =gender_category_percent, color
     title = "Patient Gender Groups by Zipcode", subtitle = phrase,
     x = "Zipcode",
     y = "Gender Group (Percent)", color = "Gender"
-  ) + theme_minimal() + scale_color_hue(labels = c("Female", "Male")) + facet_wrap(~org)
+  ) + theme_minimal() + theme(axis.text.x=element_text(angle=90,hjust=1)) + scale_color_hue(labels = c("Female", "Male")) + facet_wrap(~org)
 print(plot)
 ```
 
@@ -119,17 +119,12 @@ df_all_demographics = rbind(df_one_demographics, df_two_demographics, df_three_d
 I will plot the demographics dataframes
 
 ``` r
-plot = df_all_demographics %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point()+ theme_minimal() + facet_wrap(~org)
+plot = df_all_demographics %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point() + theme_minimal() + 
   labs(
-    title = "Patient Demographics by Zipcode",subtitle = phrase,
+    title = "Patient Demographics by Zipcode", subtitle = phrase,
     x = "Zipcode",
     y = "Race (Percent)", 
-    color = "Race") + scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", "Other", "Unknown", "White"))
-```
-
-    ## NULL
-
-``` r
+    color = "Race") + scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", "Other", "Unknown", "White")) + theme(axis.text.x=element_text(angle=90,hjust=1)) + facet_wrap(~org)
 print(plot)
 ```
 
