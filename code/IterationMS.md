@@ -46,8 +46,8 @@ I will define the iterators
 
 ``` r
 path = "../data/csrs_final_tables_2006_KI.xls"
-phrase = "STTR Kidney Transplant Data, August 2020 Release"
-df_paths = tibble(paths = c("../data/csrs_final_tables_2006_HL.xls", "../data/csrs_final_tables_2006_HR.xls", "../data/csrs_final_tables_2006_IN.xls", "../data/csrs_final_tables_2006_KI.xls", "../data/csrs_final_tables_2006_KP.xls", "../data/csrs_final_tables_2006_LI.xls", "../data/csrs_final_tables_2006_LU.xls", "../data/csrs_final_tables_2006_PA.xls"), phrases = c("STTR Heart Lung Transplant Data, August 2020 Release", "STTR Heart Transplant Data, August 2020", "STTR Intestine Transplant Data, August 2020 Release", "STTR Kidney Transplant Data, August 2020 Release", "STTR Kidney Pancreas Transplant Data, August 2020 Release", "STTR Liver Transplant Data, August 2020 Release", "STTR Lung Transplant Data, August 2020", "STTR Pancreas Transplant Data, August 2020 Release"))
+phrase = "SRTR Kidney Transplant Data, August 2020 Release"
+df_paths = tibble(paths = c("../data/csrs_final_tables_2006_HL.xls", "../data/csrs_final_tables_2006_HR.xls", "../data/csrs_final_tables_2006_IN.xls", "../data/csrs_final_tables_2006_KI.xls", "../data/csrs_final_tables_2006_KP.xls", "../data/csrs_final_tables_2006_LI.xls", "../data/csrs_final_tables_2006_LU.xls", "../data/csrs_final_tables_2006_PA.xls"), phrases = c("SRTR Heart Lung Transplant Data, August 2020 Release", "SRTR Heart Transplant Data, August 2020", "SRTR Intestine Transplant Data, August 2020 Release", "SRTR Kidney Transplant Data, August 2020 Release", "SRTR Kidney Pancreas Transplant Data, August 2020 Release", "SRTR Liver Transplant Data, August 2020 Release", "SRTR Lung Transplant Data, August 2020", "SRTR Pancreas Transplant Data, August 2020 Release"))
 ```
 
 Function to read csv file
@@ -213,7 +213,7 @@ plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent,
   labs(
     title = "Patient Demographics by Zipcode",subtitle = phrase,
     x = "Zipcode",
-    y = "Race (Percent)"
+    y = "Race (Percent)", color = "Race"
   ) + theme_minimal() + scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", "Other", "Unknown", "White"))
 print(plot)
 }
@@ -239,7 +239,7 @@ plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = a
   labs(
     title = "Patient Age Groups by Zipcode", subtitle = phrase,
     x = "Zipcode",
-    y = "Age Group (Percent)"
+    y = "Age Group (Percent)",color = "Age Group"
   ) + theme_minimal()  + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years"))
 print(plot)
 }
@@ -266,7 +266,7 @@ plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, col
   labs(
     title = "Patient Gender Groups by Zipcode", subtitle = phrase,
     x = "Zipcode",
-    y = "Gender Group (Percent)"
+    y = "Gender Group (Percent)", color = "Gender"
   ) + theme_minimal() + scale_color_hue(labels = c("Female", "Male"))
 print(plot)
 
@@ -651,7 +651,6 @@ plot_gender(df_one, df_two_clean)
 ![](IterationMS_files/figure-gfm/unnamed-chunk-20-10.png)<!-- -->
 
 ``` r
-#write a merge and save dataframe function
 leaflet(df_one)
 ```
 
