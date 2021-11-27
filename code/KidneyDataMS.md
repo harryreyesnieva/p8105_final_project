@@ -303,7 +303,7 @@ I will plot the first set of exposure variables
 
 ``` r
 x1 = df_one_merge[, c(6:20)]
-ggplot(gather(x1), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y")  +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part1", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+ggplot(gather(x1), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y")  +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part1", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
 ```
 
     ## Warning: Removed 30 rows containing non-finite values (stat_bin).
@@ -323,7 +323,7 @@ plot the third set of exposure variables
 
 ``` r
 x3 = df_one_merge[, c(36:43)]
-ggplot(gather(x3), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 500)) + labs(title = "Exposure Frequency Part3", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+ggplot(gather(x3), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 500)) + labs(title = "Exposure Frequency Part3", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
 ```
 
     ## Warning: Removed 16 rows containing non-finite values (stat_bin).
@@ -344,7 +344,7 @@ I will plot the fifth set of exposure variables
 
 ``` r
 x5 = df_one_merge[, c(52:60)]
-ggplot(gather(x5), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part5", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+ggplot(gather(x5), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part5", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
 ```
 
     ## Warning: Removed 18 rows containing non-finite values (stat_bin).
@@ -368,7 +368,7 @@ str(df_outcomes)
     ##  $ newlistings_percent_recovered     : num  0 0 0 0 0 ...
 
 ``` r
-ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
+ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
 ```
 
 ![](KidneyDataMS_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
@@ -392,7 +392,7 @@ Now I will plot the number of kidney transplant centers by zipcode.
 ``` r
 df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram(bins = 50) + 
   labs(
-    title = "Transplant Center Frequency by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    title = "Transplant Center Frequency by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "Transplant Center Count"
   ) + theme_minimal()
@@ -617,7 +617,7 @@ df_demographics_pivot =
 
 plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point()+ 
   labs(
-    title = "Patient Demographics by Zipcode",subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    title = "Patient Demographics by Zipcode",subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "Race (Percent)", color = "Race"
   ) + theme_minimal() + scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", "Other", "Unknown", "White"))
@@ -641,7 +641,7 @@ df_age_pivot =
 #view(df_age_pivot)
 plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point() + 
   labs(
-    title = "Patient Age Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    title = "Patient Age Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "Age Group (Percent)", color = "Age Group"
   ) + theme_minimal()  + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years"))
@@ -666,7 +666,7 @@ df_gender_pivot =
 #view(df_gender_pivot)
 plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()+ 
   labs(
-    title = "Patient Gender Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    title = "Patient Gender Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "Gender Group (Percent)", , color = "Gender"
   ) + theme_minimal() + scale_color_hue(labels = c("Female", "Male"))
@@ -692,9 +692,9 @@ df_comorbidities_pivot =
 #view(df_comorbidities_pivot)
 plot = df_comorbidities_pivot %>% ggplot(aes(x=zipcode, y =comorbidity_category_percent, color = comorbidity_category)) + geom_point()+ 
   labs(
-    title = "Patient Comorbidity Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    title = "Patient Comorbidity Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
-    y = "Comorbidity Group (Percent)", , color = "Comorbidity"
+    y = "Comorbidity Group (Percent)", color = "Comorbidity"
   ) + theme_minimal() + scale_color_hue(labels = c("Congenital, Familial or Metabolic", "Diabetes", "Golmerular Disease", "Hypertensive Nephrosclerosis", "Neoplasms", "Polycystic Kidneys", "No Prior Transplant", "Prior Transplant Unknown", "Prior Transplant", "Missing Primary Disease", "Other Primary Disease", "Renovascular or Vascular Disease", "Retransplant Graft Failure", "Tubular and Interstitial Diseases"))
 plot
 ```
@@ -717,10 +717,10 @@ df_blood_type_pivot =
 #view(df_blood_type_pivot)
 plot = df_blood_type_pivot %>% ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + geom_point()+ 
   labs(
-    title = "Patient Blood Type Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    title = "Patient Blood Type Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
-    y = "Blood Type Group (Percent)", , color = "Blood Type"
-  ) + theme_minimal() + scale_color_hue(labels = c("Blood Type A", "Blood Type AB", "Blood Type B", "Blood Type O", "Blood Type Unknown"))
+    y = "Blood Type Group (Percent)", color = "Blood Type"
+  ) + theme_minimal() + scale_color_hue(labels = c("A", "AB", "B", " O", "Unknown"))
 plot
 ```
 
@@ -744,10 +744,10 @@ df_pra_pivot =
 #view(df_pra_pivot)
 plot = df_pra_pivot %>% ggplot(aes(x=zipcode, y =pra_category_percent, color = pra_category)) + geom_point()+ 
   labs(
-    title = "Patient PRA Score Groups by Zipcode", subtitle = "STTR Kidney Transplant Data, August 2020 Release",
+    title = "Patient PRA Score Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
     y = "PRA Score Group (Percent)", color = "PRA Score Group"
-  ) + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
+  ) + theme_minimal() + scale_color_hue(labels = c("0 to 9", "10 to 79", "80 or Higher", "Unknown"))
 plot
 ```
 
@@ -759,7 +759,7 @@ to investigate for correlations.
 df_pra_comorbid = merge(df_pra_pivot, df_comorbidities_pivot)
 #view(df_pra_comorbid)
 plot = df_pra_comorbid %>% ggplot(aes(x=comorbidity_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + labs(
-    title = "PRA Scores vs. Comorbidities", x ="Comorbidities (Percent)",subtitle = "STTR Kidney Transplant Data, August 2020 Release", y = "PRA Score (Percent)", color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown")) + facet_wrap(~comorbidity_category)
+    title = "PRA Scores vs. Comorbidities", x ="Comorbidities (Percent)",subtitle = "SRTR Kidney Transplant Data, August 2020 Release", y = "PRA Score (Percent)", color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("0 to 9", "10 to 79", "80 or Higher", "Unknown")) + facet_wrap(~comorbidity_category)
 plot
 ```
 
@@ -779,7 +779,7 @@ to investigate for correlations.
 df_pra_age = merge(df_pra_pivot, df_age_pivot)
 #view(df_pra_age)
 plot = df_pra_age %>% ggplot(aes(x=age_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~age_category) + labs(
-    title = "PRA Scores vs. Age Groups", subtitle = "STTR Kidney Transplant Data, August 2020 Release",x ="Age Groups (Percent)", y = "PRA Score (Percent)", color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
+    title = "PRA Scores vs. Age Groups", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",x ="Age Groups (Percent)", y = "PRA Score (Percent)", color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("0 to 9", "10 to 79", "80 or Higher", "Unknown"))
 plot
 ```
 
@@ -798,7 +798,7 @@ investigate for correlations.
 df_pra_gender = merge(df_pra_pivot, df_gender_pivot)
 #view(df_pra_gender)
 plot = df_pra_gender %>% ggplot(aes(x=gender_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~gender_category) + labs(
-    title = "PRA Scores vs. Gender Groups", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x ="Gender Groups (Percent)", y = "PRA Score (Percent)" , color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
+    title = "PRA Scores vs. Gender Groups", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x ="Gender Groups (Percent)", y = "PRA Score (Percent)" , color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("0 to 9", "10 to 79", "80 or Higher", "Unknown"))
 plot
 ```
 
@@ -817,7 +817,7 @@ plots to investigate for correlations.
 df_pra_demographics = merge(df_pra_pivot, df_demographics_pivot)
 #view(df_pra_demographics)
 plot = df_pra_demographics %>% ggplot(aes(x=race_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~race_category) + labs(
-    title = "PRA Scores vs. Race", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x ="Race (Percent)", y = "PRA Score (Percent)" , color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
+    title = "PRA Scores vs. Race", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x ="Race (Percent)", y = "PRA Score (Percent)" , color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("0 to 9", "10 to 79", "80 or Higher", "Unknown"))
 plot
 ```
 
@@ -836,7 +836,7 @@ plots to investigate for correlations.
 df_pra_blood_type = merge(df_pra_pivot, df_blood_type_pivot)
 #view(df_pra_blood_type)
 plot = df_pra_blood_type %>% ggplot(aes(x=blood_type_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~blood_type_category)+ labs(
-    title = "PRA Scores vs. Blood Type", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x ="Blood Type (Percent)", y = "PRA Score (Percent)", color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("PRA Score 0 to 9", "PRA Score 10 to 79", "PRA Score 80 or Higher", "PRA Score Unknown"))
+    title = "PRA Scores vs. Blood Type", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x ="Blood Type (Percent)", y = "PRA Score (Percent)", color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("0 to 9", "10 to 79", "80 or Higher", "Unknown"))
 plot
 ```
 
