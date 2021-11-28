@@ -42,7 +42,7 @@ library(kableExtra)
     ## 
     ##     group_rows
 
-I will define the age dataframes
+I will define the age dataframes.
 
 ``` r
 phrase = "SRTR Multiorgan Transplant Data, August 2020 Release"
@@ -55,10 +55,10 @@ df_six_age = read.csv("./data/csrs_final_tables_2006_LI_age.csv")
 df_seven_age = read.csv("./data/csrs_final_tables_2006_LU_age.csv")
 df_eight_age = read.csv("./data/csrs_final_tables_2006_PA_age.csv")
 df_all_age = rbind(df_one_age, df_two_age, df_three_age, df_four_age, df_five_age, df_six_age, df_seven_age, df_eight_age)
-view(df_all_age)
+#view(df_all_age)
 ```
 
-I will plot the age dataframes
+I will plot the age dataframes.
 
 ``` r
 plot = df_all_age %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point() + 
@@ -71,7 +71,7 @@ print(plot)
 ```
 
 ![](SummaryPlotsMS_files/figure-gfm/unnamed-chunk-3-1.png)<!-- --> I
-will repeat for gender
+will repeat for gender.
 
 ``` r
 df_one_gender = read.csv("./data/csrs_final_tables_2006_HL_gender.csv") 
@@ -86,7 +86,7 @@ df_all_gender = rbind(df_one_gender, df_two_gender, df_three_gender, df_four_gen
 #view(df_all_gender)
 ```
 
-I will plot the gender dataframes
+I will plot the gender dataframes.
 
 ``` r
 plot = df_all_gender %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()+ 
@@ -102,7 +102,7 @@ print(plot)
 
 ![](SummaryPlotsMS_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
-I will repeat for demographics
+I will repeat for demographics.
 
 ``` r
 df_one_demographics = read.csv("./data/csrs_final_tables_2006_HL_demographics.csv") 
@@ -116,7 +116,7 @@ df_eight_demographics = read.csv("./data/csrs_final_tables_2006_PA_demographics.
 df_all_demographics = rbind(df_one_demographics, df_two_demographics, df_three_demographics, df_four_demographics, df_five_demographics, df_six_demographics, df_seven_demographics, df_eight_demographics)
 ```
 
-I will plot the demographics dataframes
+I will plot the demographics dataframes.
 
 ``` r
 plot = df_all_demographics %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point() + theme_minimal() + 
