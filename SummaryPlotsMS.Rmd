@@ -26,7 +26,8 @@ df_six_age = read.csv("./data/csrs_final_tables_2006_LI_age.csv")
 df_seven_age = read.csv("./data/csrs_final_tables_2006_LU_age.csv")
 df_eight_age = read.csv("./data/csrs_final_tables_2006_PA_age.csv")
 df_all_age = rbind(df_one_age, df_two_age, df_three_age, df_four_age, df_five_age, df_six_age, df_seven_age, df_eight_age)
-view(df_all_age)
+#view(df_all_age)
+facet_labels = c("Heart" = "HR", "Heart Lung" - "HL", "Intestine" = "IN", "Kidney" = "KI", "Kidney Pancreas" = "KP", "Liver" = "LI", "Lung" = "LU", "Pancreas" = "PA")
 ```
 I will plot the age dataframes
 ```{r}
@@ -35,7 +36,7 @@ plot = df_all_age %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age
     title = "Patient Age Groups by Zipcode", subtitle = phrase,
     x = "Zipcode",
     y = "Age Group (Percent)",color = "Age Group"
-  ) + theme_minimal()  + theme(axis.text.x=element_text(angle=90,hjust=1)) + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years")) + facet_wrap(~org)
+  ) + theme_minimal()  + theme(axis.text.x=element_text(angle=90,hjust=1)) + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years")) + facet_wrap(~org, labeller = as_labeller(facet_labels))
 print(plot)
 ```
 I will repeat for gender
