@@ -131,3 +131,33 @@ print(plot)
     ## Warning: Removed 126 rows containing missing values (geom_point).
 
 ![](SummaryPlotsMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+I will repeat for blood type
+
+``` r
+df_one_blood_type = read.csv("./data/csrs_final_tables_2006_HL_blood_type.csv") 
+df_two_blood_type = read.csv("./data/csrs_final_tables_2006_HR_blood_type.csv") 
+df_three_blood_type = read.csv("./data/csrs_final_tables_2006_IN_blood_type.csv")
+df_four_blood_type = read.csv("./data/csrs_final_tables_2006_KI_blood_type.csv")
+df_five_blood_type = read.csv("./data/csrs_final_tables_2006_KP_blood_type.csv")
+df_six_blood_type = read.csv("./data/csrs_final_tables_2006_LI_blood_type.csv")
+df_seven_blood_type = read.csv("./data/csrs_final_tables_2006_LU_blood_type.csv")
+df_eight_blood_type = read.csv("./data/csrs_final_tables_2006_PA_blood_type.csv")
+df_all_blood_type = rbind(df_one_blood_type, df_two_blood_type, df_three_blood_type, df_four_blood_type, df_five_blood_type, df_six_blood_type, df_seven_blood_type, df_eight_blood_type)
+```
+
+I will plot the demographics dataframes.
+
+``` r
+plot = df_all_blood_type %>% ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + geom_point()+ 
+  labs(
+    title = "Patient Blood Type Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "Blood Type Group (Percent)", color = "Blood Type"
+  ) + theme_minimal() + scale_color_hue(labels = c("A", "AB", "B", "O", "Unknown")) + theme(axis.text.x=element_text(angle=90,hjust=1)) + facet_wrap(~org)
+print(plot)
+```
+
+    ## Warning: Removed 105 rows containing missing values (geom_point).
+
+![](SummaryPlotsMS_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
