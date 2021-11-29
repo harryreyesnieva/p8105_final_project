@@ -110,6 +110,4 @@ plot = df_all_blood_type %>% ggplot(aes(x=zipcode, y =blood_type_category_percen
     y = "Blood Type Group (Percent)", color = "Blood Type"
   ) + theme_minimal() + scale_color_hue(labels = c("A", "AB", "B", "O", "Unknown")) + theme(axis.text.x=element_text(angle=90,hjust=1)) + facet_wrap(~org)
 print(plot)
-
-
 ```

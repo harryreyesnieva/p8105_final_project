@@ -146,7 +146,7 @@ df_eight_blood_type = read.csv("./data/csrs_final_tables_2006_PA_blood_type.csv"
 df_all_blood_type = rbind(df_one_blood_type, df_two_blood_type, df_three_blood_type, df_four_blood_type, df_five_blood_type, df_six_blood_type, df_seven_blood_type, df_eight_blood_type)
 ```
 
-I will plot the demographics dataframes.
+I will plot the blood type dataframes.
 
 ``` r
 plot = df_all_blood_type %>% ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + geom_point()+ 
