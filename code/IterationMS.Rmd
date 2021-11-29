@@ -294,6 +294,49 @@ path = sub('.xls', '_gender.csv', path)
 write.csv(df_gender_pivot, path)
 }
 ```
+Plot Blood type
+```{r}
+plot_blood_type = function(x,y){
+df_two_blood_type = y[, c(1,2,5,24, 26, 28, 30, 32)]
+df_blood_type = merge(x, df_two_blood_type)
+df_blood_type = df_blood_type[, c(1,2,3,5, 68, 72:76)]
+#view(df_blood_type)
+df_blood_type_pivot =
+  pivot_longer(
+    df_blood_type, 
+    blood_type_ab_allc2:blood_type_unknown_allc2,
+    names_to = "blood_type_category", 
+    values_to = "blood_type_category_percent") %>% mutate (blood_type_category_percent = as.numeric(blood_type_category_percent)) %>% mutate(blood_type_category = as.factor(blood_type_category))
+#view(df_blood_type_pivot)
+plot = df_blood_type_pivot %>% ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + geom_point()+ 
+  labs(
+    title = "Patient Blood Type Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "Blood Type Group (Percent)", color = "Blood Type"
+  ) + theme_minimal() + scale_color_hue(labels = c("A", "AB", "B", "O", "Unknown"))
+print(plot)
+
+}
+```
+Write and Merge Blood Type
+```{r}
+write_blood_type = function(x,y){
+df_two_blood_type = y[, c(1,2,5,24, 26, 28, 30, 32)]
+df_blood_type = merge(x, df_two_blood_type)
+df_blood_type = df_blood_type[, c(1,2,3,5, 68, 72:76)]
+#view(df_blood_type)
+df_blood_type_pivot =
+  pivot_longer(
+    df_blood_type, 
+    blood_type_ab_allc2:blood_type_unknown_allc2,
+    names_to = "blood_type_category", 
+    values_to = "blood_type_category_percent") %>% mutate (blood_type_category_percent = as.numeric(blood_type_category_percent)) %>% mutate(blood_type_category = as.factor(blood_type_category))
+#view(df_blood_type_pivot)
+
+path = sub('.xls', '_blood_type.csv', path)
+write.csv(df_blood_type_pivot, path)
+}
+```
 
 Master function
 ```{r}
@@ -312,11 +355,12 @@ df_two_clean = second_data_frame(path)
 plot_demographics(df_one, df_two_clean)
 plot_age(df_one, df_two_clean)
 plot_gender(df_one, df_two_clean)
+plot_blood_type(df_one, df_two_clean)
 merge_and_write(df_one, df_two_clean)
 age_merge_and_write(df_one, df_two_clean)
 gender_merge_and_write(df_one, df_two_clean)
 demographics_merge_and_write(df_one, df_two_clean)
-
+write_blood_type(df_one, df_two_clean)
 }
 ```
 
@@ -338,12 +382,14 @@ df_two_clean = second_data_frame(path)
 plot_demographics(df_one, df_two_clean)
 plot_age(df_one, df_two_clean)
 plot_gender(df_one, df_two_clean)
+plot_blood_type(df_one, df_two_clean)
 
 leaflet(df_one)
 merge_and_write(df_one, df_two_clean)
 age_merge_and_write(df_one, df_two_clean)
 demographics_merge_and_write(df_one, df_two_clean)
 gender_merge_and_write(df_one, df_two_clean)
+write_blood_type(df_one, df_two_clean)
 
 ```
 Test master function

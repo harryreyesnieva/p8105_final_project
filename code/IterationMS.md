@@ -353,6 +353,53 @@ write.csv(df_gender_pivot, path)
 }
 ```
 
+Plot Blood type
+
+``` r
+plot_blood_type = function(x,y){
+df_two_blood_type = y[, c(1,2,5,24, 26, 28, 30, 32)]
+df_blood_type = merge(x, df_two_blood_type)
+df_blood_type = df_blood_type[, c(1,2,3,5, 68, 72:76)]
+#view(df_blood_type)
+df_blood_type_pivot =
+  pivot_longer(
+    df_blood_type, 
+    blood_type_ab_allc2:blood_type_unknown_allc2,
+    names_to = "blood_type_category", 
+    values_to = "blood_type_category_percent") %>% mutate (blood_type_category_percent = as.numeric(blood_type_category_percent)) %>% mutate(blood_type_category = as.factor(blood_type_category))
+#view(df_blood_type_pivot)
+plot = df_blood_type_pivot %>% ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + geom_point()+ 
+  labs(
+    title = "Patient Blood Type Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "Blood Type Group (Percent)", color = "Blood Type"
+  ) + theme_minimal() + scale_color_hue(labels = c("A", "AB", "B", "O", "Unknown"))
+print(plot)
+
+}
+```
+
+Write and Merge Blood Type
+
+``` r
+write_blood_type = function(x,y){
+df_two_blood_type = y[, c(1,2,5,24, 26, 28, 30, 32)]
+df_blood_type = merge(x, df_two_blood_type)
+df_blood_type = df_blood_type[, c(1,2,3,5, 68, 72:76)]
+#view(df_blood_type)
+df_blood_type_pivot =
+  pivot_longer(
+    df_blood_type, 
+    blood_type_ab_allc2:blood_type_unknown_allc2,
+    names_to = "blood_type_category", 
+    values_to = "blood_type_category_percent") %>% mutate (blood_type_category_percent = as.numeric(blood_type_category_percent)) %>% mutate(blood_type_category = as.factor(blood_type_category))
+#view(df_blood_type_pivot)
+
+path = sub('.xls', '_blood_type.csv', path)
+write.csv(df_blood_type_pivot, path)
+}
+```
+
 Master function
 
 ``` r
@@ -371,11 +418,12 @@ df_two_clean = second_data_frame(path)
 plot_demographics(df_one, df_two_clean)
 plot_age(df_one, df_two_clean)
 plot_gender(df_one, df_two_clean)
+plot_blood_type(df_one, df_two_clean)
 merge_and_write(df_one, df_two_clean)
 age_merge_and_write(df_one, df_two_clean)
 gender_merge_and_write(df_one, df_two_clean)
 demographics_merge_and_write(df_one, df_two_clean)
-
+write_blood_type(df_one, df_two_clean)
 }
 ```
 
@@ -542,7 +590,7 @@ plot_exposures_one(df_one)
 
     ## Warning: Removed 30 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
 ``` r
 plot_exposures_two(df_one)
@@ -550,7 +598,7 @@ plot_exposures_two(df_one)
 
     ## Warning: Removed 30 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-23-2.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-25-2.png)<!-- -->
 
 ``` r
 plot_exposures_three(df_one)
@@ -558,7 +606,7 @@ plot_exposures_three(df_one)
 
     ## Warning: Removed 16 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-23-3.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-25-3.png)<!-- -->
 
 ``` r
 plot_exposures_four(df_one)
@@ -566,7 +614,7 @@ plot_exposures_four(df_one)
 
     ## Warning: Removed 16 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-23-4.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-25-4.png)<!-- -->
 
 ``` r
 plot_exposures_five(df_one)
@@ -574,19 +622,19 @@ plot_exposures_five(df_one)
 
     ## Warning: Removed 18 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-23-5.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-25-5.png)<!-- -->
 
 ``` r
 plot_outcomes(df_one)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-23-6.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-25-6.png)<!-- -->
 
 ``` r
 zipcode_histogram(df_one)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-23-7.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-25-7.png)<!-- -->
 
 ``` r
 df_two_clean = second_data_frame(path) 
@@ -698,31 +746,38 @@ df_two_clean = second_data_frame(path)
 plot_demographics(df_one, df_two_clean)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-23-8.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-25-8.png)<!-- -->
 
 ``` r
 plot_age(df_one, df_two_clean)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-23-9.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-25-9.png)<!-- -->
 
 ``` r
 plot_gender(df_one, df_two_clean)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-23-10.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-25-10.png)<!-- -->
+
+``` r
+plot_blood_type(df_one, df_two_clean)
+```
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-25-11.png)<!-- -->
 
 ``` r
 leaflet(df_one)
 ```
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-23-11.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-25-12.png)<!-- -->
 
 ``` r
 merge_and_write(df_one, df_two_clean)
 age_merge_and_write(df_one, df_two_clean)
 demographics_merge_and_write(df_one, df_two_clean)
 gender_merge_and_write(df_one, df_two_clean)
+write_blood_type(df_one, df_two_clean)
 ```
 
 Test master function
@@ -905,23 +960,23 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning: Removed 3315 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
 
     ## Warning: Removed 3315 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-2.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-2.png)<!-- -->
 
     ## Warning: Removed 1768 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-3.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-3.png)<!-- -->
 
     ## Warning: Removed 1768 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-4.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-4.png)<!-- -->
 
     ## Warning: Removed 1989 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-5.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-6.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-5.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-6.png)<!-- -->
 
     ## tibble [30 × 191] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:30] "Center Name" "Massachusetts General Hospital (MAMG)" "Brigham and Women's Hospital (MAPB)" "University of Maryland Medical System (MDUM)" ...
@@ -1027,19 +1082,27 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-7.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-7.png)<!-- -->
 
     ## Warning: Removed 18 rows containing missing values (geom_point).
 
     ## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-8.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-8.png)<!-- -->
 
     ## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-9.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-9.png)<!-- -->
 
     ## Warning: Removed 6 rows containing missing values (geom_point).
+
+    ## Warning: NAs introduced by coercion
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-10.png)<!-- -->
+
+    ## Warning: Removed 15 rows containing missing values (geom_point).
+
+    ## Warning: NAs introduced by coercion
 
     ## Warning: NAs introduced by coercion
 
@@ -1131,7 +1194,7 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning in lapply(X = X, FUN = FUN, ...): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-10.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-11.png)<!-- -->
 
     ## tibble [139 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name                  : chr [1:139] "Children's of Alabama (ALCH)" "University of Alabama Hospital (ALUA)" "Baptist Medical Center (ARBH)" "Arkansas Children's Hospital (ARCH)" ...
@@ -1197,27 +1260,27 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning: Removed 1680 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-11.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-12.png)<!-- -->
 
     ## Warning: Removed 1680 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-12.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-13.png)<!-- -->
 
     ## Warning: Removed 896 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-13.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-14.png)<!-- -->
 
     ## Warning: Removed 896 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-14.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-15.png)<!-- -->
 
     ## Warning: Removed 1008 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-15.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-16.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-16.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-17.png)<!-- -->
 
     ## Warning: Removed 13 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-17.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-18.png)<!-- -->
 
     ## tibble [139 × 203] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:139] "Center Name" "Hartford Hospital (CTHH)" "Yale New Haven Hospital (CTYN)" "Boston Children's Hospital (MACH)" ...
@@ -1323,9 +1386,13 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning: Removed 72 rows containing missing values (geom_point).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-18.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-19.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-19.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-20.png)<!-- -->
 
     ## Warning: Removed 24 rows containing missing values (geom_point).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-21.png)<!-- -->
+
+    ## Warning: Removed 60 rows containing missing values (geom_point).
 
     ## tibble [25 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:25] "Center Name" "University of Alabama Hospital (ALUA)" "Childrens Hospital Los Angeles (CACL)" "Lucile Salter Packard Children's Hospital at Stanford (CAPC)" ...
@@ -1411,7 +1478,7 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning in lapply(X = X, FUN = FUN, ...): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-20.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-22.png)<!-- -->
 
     ## tibble [18 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name                  : chr [1:18] "Lucile Salter Packard Children's Hospital at Stanford (CAPC)" "University of California at Los Angeles Medical Center (CAUC)" "Georgetown University Medical Center (DCGU)" "Jackson Memorial Hospital University of Miami School of Medicine (FLJM)" ...
@@ -1477,23 +1544,23 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning: Removed 3300 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-21.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-23.png)<!-- -->
 
     ## Warning: Removed 3300 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-22.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-24.png)<!-- -->
 
     ## Warning: Removed 1760 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-23.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-25.png)<!-- -->
 
     ## Warning: Removed 1760 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-24.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-26.png)<!-- -->
 
     ## Warning: Removed 1980 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-25.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-26.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-27.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-27.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-28.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-29.png)<!-- -->
 
     ## tibble [21 × 191] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:21] "Center Name" "Boston Children's Hospital (MACH)" "Georgetown University Medical Center (DCGU)" "UPMC Children's Hospital of Pittsburgh (PACH)" ...
@@ -1597,7 +1664,7 @@ for(i in seq_len(nrow(df_paths))) {
     ##  $ wlc_lioth_newc2: chr [1:21] "Primary Disease Other" "-" "-" "-" ...
     ##   [list output truncated]
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-28.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-29.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-30.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-31.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-32.png)<!-- -->
 
     ## tibble [240 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:240] "Center Name" "Children's of Alabama (ALCH)" "University of Alabama Hospital (ALUA)" "Birmingham VA Medical Center (ALVA)" ...
@@ -1683,7 +1750,7 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning in lapply(X = X, FUN = FUN, ...): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-30.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-33.png)<!-- -->
 
     ## tibble [236 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name                  : chr [1:236] "Children's of Alabama (ALCH)" "University of Alabama Hospital (ALUA)" "Birmingham VA Medical Center (ALVA)" "Arkansas Children's Hospital (ARCH)" ...
@@ -1749,23 +1816,23 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning: Removed 30 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-31.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-34.png)<!-- -->
 
     ## Warning: Removed 30 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-32.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-35.png)<!-- -->
 
     ## Warning: Removed 16 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-33.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-36.png)<!-- -->
 
     ## Warning: Removed 16 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-34.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-37.png)<!-- -->
 
     ## Warning: Removed 18 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-35.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-36.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-37.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-38.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-39.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-40.png)<!-- -->
 
     ## tibble [239 × 191] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:239] "Center Name" "Hartford Hospital (CTHH)" "Yale New Haven Hospital (CTYN)" "Beth Israel Deaconess Medical Center (MABI)" ...
@@ -1869,7 +1936,7 @@ for(i in seq_len(nrow(df_paths))) {
     ##  $ wlc_lioth_newc2: chr [1:239] "Primary Disease Other" "-" "-" "-" ...
     ##   [list output truncated]
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-38.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-39.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-41.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-42.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-43.png)<!-- -->
 
     ## tibble [130 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:130] "Center Name" "University of Alabama Hospital (ALUA)" "Banner-University Medical Center Phoenix (AZGS)" "Mayo Clinic Hospital (AZMC)" ...
@@ -1955,7 +2022,7 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning in lapply(X = X, FUN = FUN, ...): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-40.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-44.png)<!-- -->
 
     ## tibble [123 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name                  : chr [1:123] "University of Alabama Hospital (ALUA)" "Banner-University Medical Center Phoenix (AZGS)" "Mayo Clinic Hospital (AZMC)" "Banner University Medical Center-Tucson (AZUA)" ...
@@ -2021,23 +2088,23 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning: Removed 1725 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-41.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-45.png)<!-- -->
 
     ## Warning: Removed 1725 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-42.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-46.png)<!-- -->
 
     ## Warning: Removed 920 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-43.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-47.png)<!-- -->
 
     ## Warning: Removed 920 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-44.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-48.png)<!-- -->
 
     ## Warning: Removed 1035 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-45.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-46.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-49.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-50.png)<!-- -->
 
     ## tibble [127 × 191] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:127] "Center Name" "Yale New Haven Hospital (CTYN)" "Beth Israel Deaconess Medical Center (MABI)" "Massachusetts General Hospital (MAMG)" ...
@@ -2143,19 +2210,27 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-47.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-51.png)<!-- -->
 
     ## Warning: Removed 12 rows containing missing values (geom_point).
 
     ## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-48.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-52.png)<!-- -->
 
     ## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-49.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-53.png)<!-- -->
 
     ## Warning: Removed 4 rows containing missing values (geom_point).
+
+    ## Warning: NAs introduced by coercion
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-54.png)<!-- -->
+
+    ## Warning: Removed 10 rows containing missing values (geom_point).
+
+    ## Warning: NAs introduced by coercion
 
     ## Warning: NAs introduced by coercion
 
@@ -2247,7 +2322,7 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning in lapply(X = X, FUN = FUN, ...): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-50.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-55.png)<!-- -->
 
     ## tibble [140 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name                  : chr [1:140] "Children's of Alabama (ALCH)" "University of Alabama Hospital (ALUA)" "UAMS Medical Center (ARUA)" "Phoenix Children's Hospital (AZCH)" ...
@@ -2313,27 +2388,27 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning: Removed 1500 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-51.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-56.png)<!-- -->
 
     ## Warning: Removed 1500 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-52.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-57.png)<!-- -->
 
     ## Warning: Removed 800 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-53.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-58.png)<!-- -->
 
     ## Warning: Removed 800 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-54.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-59.png)<!-- -->
 
     ## Warning: Removed 900 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-55.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-56.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-60.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-61.png)<!-- -->
 
     ## Warning: Removed 2 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-57.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-62.png)<!-- -->
 
     ## tibble [144 × 191] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:144] "Center Name" "Hartford Hospital (CTHH)" "Yale New Haven Hospital (CTYN)" "Beth Israel Deaconess Medical Center (MABI)" ...
@@ -2439,9 +2514,13 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning: Removed 12 rows containing missing values (geom_point).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-58.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-59.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-63.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-64.png)<!-- -->
 
     ## Warning: Removed 4 rows containing missing values (geom_point).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-65.png)<!-- -->
+
+    ## Warning: Removed 10 rows containing missing values (geom_point).
 
     ## tibble [73 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:73] "Center Name" "University of Alabama Hospital (ALUA)" "St. Joseph's Hospital and Medical Center (AZSJ)" "Banner University Medical Center-Tucson (AZUA)" ...
@@ -2521,7 +2600,7 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning in lapply(X = X, FUN = FUN, ...): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-60.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-66.png)<!-- -->
 
     ## tibble [71 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name                  : chr [1:71] "University of Alabama Hospital (ALUA)" "St. Joseph's Hospital and Medical Center (AZSJ)" "Banner University Medical Center-Tucson (AZUA)" "Cedars-Sinai Medical Center (CACS)" ...
@@ -2587,27 +2666,27 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning: Removed 2520 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-61.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-67.png)<!-- -->
 
     ## Warning: Removed 2520 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-62.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-68.png)<!-- -->
 
     ## Warning: Removed 1344 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-63.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-69.png)<!-- -->
 
     ## Warning: Removed 1344 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-64.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-70.png)<!-- -->
 
     ## Warning: Removed 1512 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-65.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-66.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-71.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-72.png)<!-- -->
 
     ## Warning: Removed 1 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-67.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-73.png)<!-- -->
 
     ## tibble [73 × 191] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:73] "Center Name" "Boston Children's Hospital (MACH)" "Massachusetts General Hospital (MAMG)" "Brigham and Women's Hospital (MAPB)" ...
@@ -2713,9 +2792,13 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning: Removed 6 rows containing missing values (geom_point).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-68.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-69.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-74.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-75.png)<!-- -->
 
     ## Warning: Removed 2 rows containing missing values (geom_point).
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-76.png)<!-- -->
+
+    ## Warning: Removed 5 rows containing missing values (geom_point).
 
     ## tibble [112 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:112] "Center Name" "University of Alabama Hospital (ALUA)" "Banner-University Medical Center Phoenix (AZGS)" "Mayo Clinic Hospital (AZMC)" ...
@@ -2801,7 +2884,7 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning in lapply(X = X, FUN = FUN, ...): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-70.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-77.png)<!-- -->
 
     ## tibble [76 × 60] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name                  : chr [1:76] "University of Alabama Hospital (ALUA)" "Banner-University Medical Center Phoenix (AZGS)" "Mayo Clinic Hospital (AZMC)" "University of California Irvine Medical Center (CAIM)" ...
@@ -2867,23 +2950,23 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning: Removed 2430 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-71.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-78.png)<!-- -->
 
     ## Warning: Removed 2430 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-72.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-79.png)<!-- -->
 
     ## Warning: Removed 1296 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-73.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-80.png)<!-- -->
 
     ## Warning: Removed 1296 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-74.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-81.png)<!-- -->
 
     ## Warning: Removed 1458 rows containing non-finite values (stat_bin).
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-75.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-24-76.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-82.png)<!-- -->![](IterationMS_files/figure-gfm/unnamed-chunk-26-83.png)<!-- -->
 
     ## tibble [99 × 191] (S3: tbl_df/tbl/data.frame)
     ##  $ entire_name    : chr [1:99] "Center Name" "Yale New Haven Hospital (CTYN)" "Beth Israel Deaconess Medical Center (MABI)" "Boston Children's Hospital (MACH)" ...
@@ -2989,24 +3072,32 @@ for(i in seq_len(nrow(df_paths))) {
 
     ## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-77.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-84.png)<!-- -->
 
     ## Warning: Removed 6 rows containing missing values (geom_point).
 
     ## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-78.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-85.png)<!-- -->
 
     ## Warning in mask$eval_all_mutate(quo): NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-79.png)<!-- -->
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-86.png)<!-- -->
 
     ## Warning: Removed 2 rows containing missing values (geom_point).
 
     ## Warning: NAs introduced by coercion
 
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-87.png)<!-- -->
+
+    ## Warning: Removed 5 rows containing missing values (geom_point).
+
+    ## Warning: NAs introduced by coercion
+
     ## Warning: NAs introduced by coercion
 
     ## Warning: NAs introduced by coercion
 
-![](IterationMS_files/figure-gfm/unnamed-chunk-24-80.png)<!-- -->
+    ## Warning: NAs introduced by coercion
+
+![](IterationMS_files/figure-gfm/unnamed-chunk-26-88.png)<!-- -->
