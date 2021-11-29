@@ -4,9 +4,13 @@
 
 # Session Data files
 .RData
+.DS_Store
+data/.DS_Store
+./data/.DS_Store
 
 # User-specific files
 .Ruserdata
+
 
 # Example code in package build process
 *-Ex.R
