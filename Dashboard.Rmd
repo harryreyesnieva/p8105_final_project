@@ -87,16 +87,18 @@ selectInput(
   label = h3("Select gender organ"),
   choices = organ_gender, selected = "KI")
 
+labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years")
+
 ```
 
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Race by Zipcode
 
 ```{r}
 renderPlotly({ 
-  df_all_demographics %>%
+  df_all_demographics %>% 
     filter(
     organ_race == input$organ_race) %>% 
   plot_ly(
@@ -107,7 +109,7 @@ renderPlotly({
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Age by Zipcode
 
 ```{r}
 renderPlotly({ 
@@ -116,10 +118,10 @@ renderPlotly({
     organ_age == input$organ_age) %>% 
   plot_ly(
     x = ~zipcode, y = ~age_category_percent, type = "scatter", mode = "markers",
-    alpha = 0.9, color = ~age_category)})
+    alpha = 0.9, color = ~age_category, text = ~labels)})
 ```
 
-### Chart C
+### Gender by Zipcode
 
 ```{r}
 renderPlotly({ 
