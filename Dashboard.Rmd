@@ -1,5 +1,5 @@
 ---
-title: "Organ Transplant Dashboard"
+title: "SRTR Dashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -122,11 +122,11 @@ renderPlotly({
 
 ```{r}
 renderPlotly({ 
-  df_all_gender %>%
+  df_all_gender %>% rename(Gender = gender_category_percent, Zipcode = zipcode) %>% mutate(gender_category = str_replace(gender_category, "female_allc2", "Female"), gender_category = str_replace(gender_category, "male_allc2", "Male")) %>% 
     filter(
     organ_gender == input$organ_gender) %>% 
   plot_ly(
-    x = ~zipcode, y = ~gender_category_percent, type = "scatter", mode = "markers",
+    x = ~Zipcode, y = ~Gender, type = "scatter", mode = "markers",
     alpha = 0.9, color = ~gender_category)})
 
 ```
