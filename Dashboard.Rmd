@@ -110,7 +110,7 @@ Column {data-width=350}
 
 ```{r}
 renderPlotly({ 
-  df_all_age %>%
+  df_all_age %>% mutate(age_category = factor(age_category, levels =c("age_2_allc2","age_2_11_allc2", "age_12_17_allc2", "age_18_34_allc2", "age_35_49_allc2", "age_50_64_allc2", "age_65_69_allc2", "age_70_allc2"))) %>% 
     filter(
     organ_age == input$organ_age) %>% 
   plot_ly(
