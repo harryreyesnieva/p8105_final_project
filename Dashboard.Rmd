@@ -106,15 +106,15 @@ renderPlotly({
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Age (Percent) by Zipcode
+### Age Group (Percent) by Zipcode
 
 ```{r}
 renderPlotly({ 
-  df_all_age %>% mutate(age_category = factor(age_category, levels =c("age_2_allc2","age_2_11_allc2", "age_12_17_allc2", "age_18_34_allc2", "age_35_49_allc2", "age_50_64_allc2", "age_65_69_allc2", "age_70_allc2"))) %>% 
+  df_all_age %>% mutate(age_category = factor(age_category, levels =c("age_2_allc2","age_2_11_allc2", "age_12_17_allc2", "age_18_34_allc2", "age_35_49_allc2", "age_50_64_allc2", "age_65_69_allc2", "age_70_allc2"))) %>% rename(Age_Group = age_category_percent, Zipcode = zipcode) %>%
     filter(
     organ_age == input$organ_age) %>% 
   plot_ly(
-    x = ~zipcode, y = ~age_category_percent, type = "scatter", mode = "markers",
+    x = ~Zipcode, y = ~Age_Group, type = "scatter", mode = "markers",
     alpha = 0.9, color = ~age_category)})
 ```
 
