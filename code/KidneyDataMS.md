@@ -78,59 +78,24 @@ str(df_one)
     ##  $ wla_st_puz     : chr [1:240] "On waitlist at start" "100" "100" "100" ...
 
 ``` r
-head(df_one)
+#head(df_one)
+#tail(df_one)
+#view(df_one)
 ```
 
-    ## # A tibble: 6 × 60
-    ##   entire_name    ctr_cd  ctr_ty release_date org   wla_addcen_nc1 wla_addcen_nc2
-    ##   <chr>          <chr>   <chr>  <chr>        <chr> <chr>          <chr>         
-    ## 1 Center Name    Center… Cente… Release Date Organ New Listings   New Listings  
-    ## 2 Children's of… ALCH    TX1    44046.79166… KI    13             7             
-    ## 3 University of… ALUA    TX1    44046.79166… KI    426            447           
-    ## 4 Birmingham VA… ALVA    TX1    44046.79166… KI    36             35            
-    ## 5 Arkansas Chil… ARCH    TX1    44046.79166… KI    14             5             
-    ## 6 UAMS Medical … ARUA    TX1    44046.79166… KI    145            188           
-    ## # … with 53 more variables: wla_addcen_pcz <chr>, wla_addcen_prz <chr>,
-    ## #   wla_addcen_puz <chr>, wla_end_nc1 <chr>, wla_end_nc2 <chr>,
-    ## #   wla_end_pcz <chr>, wla_end_prz <chr>, wla_end_puz <chr>,
-    ## #   wla_remdet_nc1 <chr>, wla_remdet_nc2 <chr>, wla_remdet_pcz <chr>,
-    ## #   wla_remdet_prz <chr>, wla_remdet_puz <chr>, wla_remdied_nc1 <chr>,
-    ## #   wla_remdied_nc2 <chr>, wla_remdied_pcz <chr>, wla_remdied_prz <chr>,
-    ## #   wla_remdied_puz <chr>, wla_remoth_nc1 <chr>, wla_remoth_nc2 <chr>, …
-
-``` r
-tail(df_one)
-```
-
-    ## # A tibble: 6 × 60
-    ##   entire_name     ctr_cd ctr_ty release_date org   wla_addcen_nc1 wla_addcen_nc2
-    ##   <chr>           <chr>  <chr>  <chr>        <chr> <chr>          <chr>         
-    ## 1 Virginia Mason… WAVM   TX1    44046.79166… KI    105            150           
-    ## 2 Children's Hos… WICH   TX1    44046.79166… KI    10             10            
-    ## 3 Froedtert Memo… WISE   TX1    44046.79166… KI    190            106           
-    ## 4 Aurora St. Luk… WISL   TX1    44046.79166… KI    82             79            
-    ## 5 University of … WIUW   TX1    44046.79166… KI    407            451           
-    ## 6 Charleston Are… WVCA   TX1    44046.79166… KI    65             83            
-    ## # … with 53 more variables: wla_addcen_pcz <chr>, wla_addcen_prz <chr>,
-    ## #   wla_addcen_puz <chr>, wla_end_nc1 <chr>, wla_end_nc2 <chr>,
-    ## #   wla_end_pcz <chr>, wla_end_prz <chr>, wla_end_puz <chr>,
-    ## #   wla_remdet_nc1 <chr>, wla_remdet_nc2 <chr>, wla_remdet_pcz <chr>,
-    ## #   wla_remdet_prz <chr>, wla_remdet_puz <chr>, wla_remdied_nc1 <chr>,
-    ## #   wla_remdied_nc2 <chr>, wla_remdied_pcz <chr>, wla_remdied_prz <chr>,
-    ## #   wla_remdied_puz <chr>, wla_remoth_nc1 <chr>, wla_remoth_nc2 <chr>, …
-
-``` r
-view(df_one)
-```
-
-\#Change column names I will change the column names to more intuitive
-ones
+There are 240 observations and 60 variables, which describe kidney
+transplant pateints on a waitlist and the transplant centers. Most of
+the variables are characters. \#Change column names I will change the
+column names to more intuitive ones
 
 ``` r
 df_one_names = df_one %>% rename(newlistings_center_time1 = wla_addcen_nc1, newlistings_center_time2 = wla_addcen_nc2, newlistings_center_all = wla_addcen_pcz,newlistings_regional = wla_addcen_prz, newlistings_usa = wla_addcen_puz)  %>% rename( endlistings_center_time1 = wla_end_nc1, endlistings_center_time2 = wla_end_nc2, endlistings_center_all = wla_end_pcz, endlistings_regional = wla_end_prz, endlistings_usa = wla_end_puz) %>% rename(deteriorated_center_time1 = wla_remdet_nc1, deteriorated_center_time2 = wla_remdet_nc2, deteriorated_center_all = wla_remdet_pcz, deteriorated_regional = wla_remdet_prz, deteriorated_usa = wla_remdet_puz) %>% rename( died_center_time1 = wla_remdied_nc1, died_center_time2 = wla_remdied_nc2, died_center_all = wla_remdied_pcz, died_regional = wla_remdied_prz, died_usa = wla_remdied_puz) %>% rename(other_center_time1 = wla_remoth_nc1, other_center_time2 = wla_remoth_nc2, other_center_all = wla_remoth_pcz, other_regional = wla_remoth_prz, other_usa = wla_remoth_puz) %>% rename( recovered_center_time1 = wla_remrec_nc1, recovered_center_time2 = wla_remrec_nc2, recovered_center_all = wla_remrec_pcz, recovered_regional = wla_remrec_prz, recovered_usa = wla_remrec_puz) %>% rename(transfer_center_time1 = wla_remtfer_nc1, transfer_center_time2 = wla_remtfer_nc2, transfer_center_all = wla_remtfer_pcz, transfer_regional = wla_remtfer_prz, transfer_usa = wla_remtfer_puz) %>% rename(deceased_donor_center_time1 = wla_remtxc_nc1, deceased_donor_center_time2 = wla_remtxc_nc2, deceased_donor_center_all = wla_remtxc_pcz, deceased_donor_regional = wla_remtxc_prz, deceased_donor_usa = wla_remtxc_puz) %>% rename(living_donor_center_time1 = wla_remtxl_nc1, living_donor_center_time2 = wla_remtxl_nc2, living_donor_center_all = wla_remtxl_pcz, living_donor_regional = wla_remtxl_prz, living_donor_usa = wla_remtxl_puz) %>% rename(transplant_other_center_time1 = wla_remtxoc_nc1, transplant_other_center_time2 = wla_remtxoc_nc2, transplant_other_center_all = wla_remtxoc_pcz, transplant_other_regional = wla_remtxoc_prz, transplant_other_center_usa = wla_remtxoc_puz) %>% rename(start_waitlist_center_time1 = wla_st_nc1, start_waitlist_center_time2 = wla_st_nc2, start_waitlist_center_all = wla_st_pcz, start_waitlist_regional = wla_st_prz, start_waitlist_usa = wla_st_puz) %>% view() 
 ```
 
-I will delete an extraneous row and drop missing values
+\#Tidy data.
+
+I will delete an extraneous row, drop missing values, and convert the
+appropriate columns from character to numeric.
 
 ``` r
 df_one_names = df_one_names[-c(1), ]
@@ -292,14 +257,625 @@ str(df_one_dropna)
     ##  $ start_waitlist_regional      : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
     ##  $ start_waitlist_usa           : num [1:236] 100 100 100 100 100 100 100 100 100 100 ...
 
+I will drop missing values and create derived values.
+
 ``` r
-df_one_plot = df_one_dropna %>% mutate(newlistings_percent_mortality = 100*died_center_all/newlistings_center_all, newlistings_percent_deteriorated = 100*deteriorated_center_all/newlistings_center_all, newlistings_percent_transfer = 100* transfer_center_all/newlistings_center_all, newlistings_percent_living_donor = 100* living_donor_center_all/newlistings_center_all, newlistings_percent_deceased_donor = 100*deceased_donor_center_all/newlistings_center_all, newlistings_percent_recovered = 100* recovered_center_all/newlistings_center_all)
+df_one_plot = df_one_dropna %>% mutate(newlistings_percent_mortality = 100*died_center_all/newlistings_center_all, newlistings_percent_deteriorated = 100*deteriorated_center_all/newlistings_center_all, newlistings_percent_transfer = 100* transfer_center_all/newlistings_center_all, newlistings_percent_living_donor = 100* living_donor_center_all/newlistings_center_all, newlistings_percent_deceased_donor = 100*deceased_donor_center_all/newlistings_center_all, newlistings_percent_recovered = 100* recovered_center_all/newlistings_center_all, living_deceased_graft_ratio = living_donor_center_all/deceased_donor_center_all)
 #view(df_one_plot)
-df_one_plot %>% group_by(ctr_cd) %>% ggplot(aes(newlistings_percent_deteriorated)) + geom_histogram()
+#df_one_plot %>% group_by(ctr_cd) %>% ggplot(aes(newlistings_percent_deteriorated)) + geom_histogram()
 ```
 
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+Now, I will read in, tidy, and merge with the zipcode file.
 
-    ## Warning: Removed 3 rows containing non-finite values (stat_bin).
+``` r
+df_zipcodes = read_excel("../data/zipcodes.xlsx")
+df_zipcodes = df_zipcodes[-c(1), ]
+df_zipcodes[, c(2)] = sapply(df_zipcodes[, c(2)], as.numeric)
+df_zipcodes = janitor::clean_names(df_zipcodes)
+str(df_zipcodes)
+```
 
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+    ## tibble [238 × 2] (S3: tbl_df/tbl/data.frame)
+    ##  $ entire_name: chr [1:238] "Children's of Alabama (ALCH)" "University of Alabama Hospital (ALUA)" "Birmingham VA Medical Center (ALVA)" "Arkansas Children's Hospital (ARCH)" ...
+    ##  $ zipcode    : num [1:238] 35233 35233 35233 72202 72205 ...
+
+``` r
+#head(df_zipcodes)
+#tail(df_zipcodes)
+#view(df_zipcodes)
+```
+
+Now I will cross reference the coordinates that correspond with each
+zipcode.
+
+``` r
+for (zipcode in df_zipcodes["zipcode"]){
+    df_zip_geo = tibble(geocode_zip(zipcode))
+}
+#view(df_zip_geo)
+df_geo_merge = merge(df_zipcodes, df_zip_geo, all = TRUE)
+#view(df_geo_merge)
+df_one_merge = merge(df_one_plot, df_geo_merge, all = TRUE)
+view(df_one_merge)
+```
+
+I will plot the first set of exposure variables
+
+``` r
+x1 = df_one_merge[, c(6:20)]
+ggplot(gather(x1), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y")  +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part1", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+```
+
+    ## Warning: Removed 30 rows containing non-finite values (stat_bin).
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> I will
+plot the second set of exposure variables
+
+``` r
+  x2 = df_one_merge[, c(21:35)]
+ggplot(gather(x2), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 100)) + labs(title = "Exposure Frequency Part2", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+```
+
+    ## Warning: Removed 30 rows containing non-finite values (stat_bin).
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-8-1.png)<!-- --> I will
+plot the third set of exposure variables
+
+``` r
+x3 = df_one_merge[, c(36:43)]
+ggplot(gather(x3), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 500)) + labs(title = "Exposure Frequency Part3", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+```
+
+    ## Warning: Removed 16 rows containing non-finite values (stat_bin).
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-9-1.png)<!-- --> I will
+plot the fourth set of exposure variables
+
+``` r
+x4 = df_one_merge[, c(44:51)]
+ggplot(gather(x4), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 200)) + labs(title = "Exposure Frequency Part4", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+```
+
+    ## Warning: Removed 16 rows containing non-finite values (stat_bin).
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+
+I will plot the fifth set of exposure variables
+
+``` r
+x5 = df_one_merge[, c(52:60)]
+ggplot(gather(x5), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part5", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+```
+
+    ## Warning: Removed 18 rows containing non-finite values (stat_bin).
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+
+\#Plot outcome variables. I will plot the outcome variables to get a
+sense of which have the most variability.
+
+``` r
+df_outcomes = df_one_merge[, c(61:66)] %>% filter(newlistings_percent_transfer <= 100)
+str(df_outcomes)
+```
+
+    ## 'data.frame':    229 obs. of  6 variables:
+    ##  $ newlistings_percent_mortality     : num  11.54 9.52 5.15 17.28 0 ...
+    ##  $ newlistings_percent_deteriorated  : num  5.77 7.62 8.25 8.38 0 ...
+    ##  $ newlistings_percent_transfer      : num  15.38 4.76 7.22 1.05 0 ...
+    ##  $ newlistings_percent_living_donor  : num  17.31 8.57 7.22 2.62 16.67 ...
+    ##  $ newlistings_percent_deceased_donor: num  36.5 20 67 29.3 66.7 ...
+    ##  $ newlistings_percent_recovered     : num  0 0 0 0 0 ...
+
+``` r
+ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+
+``` r
+df_continuous = sapply(df_outcomes, as.numeric)
+str(df_continuous)
+```
+
+    ##  num [1:229, 1:6] 11.54 9.52 5.15 17.28 0 ...
+    ##  - attr(*, "dimnames")=List of 2
+    ##   ..$ : NULL
+    ##   ..$ : chr [1:6] "newlistings_percent_mortality" "newlistings_percent_deteriorated" "newlistings_percent_transfer" "newlistings_percent_living_donor" ...
+
+The percent deteriorated is the clinical outcome with the most
+variability. The percentages of living and deceased donors have some
+variability as well.
+
+Now I will plot the number of kidney transplant centers by zipcode.
+
+``` r
+df_one_merge %>% ggplot(aes(zipcode)) + geom_histogram(bins = 50) + 
+  labs(
+    title = "Transplant Center Frequency by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "Transplant Center Count"
+  ) + theme_minimal()
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+
+``` r
+#png('txp_frequency.png')
+```
+
+Now I will make a leaflet plot of kidney transplant centers in the
+United States.
+
+``` r
+leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
+#df = data.frame(Lat = 1:10, Long = rnorm(10))
+#leaflet(df) %>% addCircles()
+#view(df_one_merge)
+m = df_one_merge %>% leaflet() %>% addTiles() %>% addCircleMarkers(lat = ~lat, lng = ~lng)
+m
+```
+
+\#Merging the outcome dataset with the patient characteristics data set.
+I will now import the data frame from another sheet that contains center
+names and zipcodes only.
+
+``` r
+df_two = read_excel("../data/csrs_final_tables_2006_KI.xls", sheet = "Tables B2-B3 Center")
+df_two = janitor::clean_names(df_two)
+str(df_two)
+```
+
+    ## tibble [239 × 191] (S3: tbl_df/tbl/data.frame)
+    ##  $ entire_name    : chr [1:239] "Center Name" "Hartford Hospital (CTHH)" "Yale New Haven Hospital (CTYN)" "Beth Israel Deaconess Medical Center (MABI)" ...
+    ##  $ ctr_cd         : chr [1:239] "Center Code" "CTHH" "CTYN" "MABI" ...
+    ##  $ ctr_ty         : chr [1:239] "Center Type" "TX1" "TX1" "TX1" ...
+    ##  $ release_date   : chr [1:239] "Release Date" "44046.791666666664" "44046.791666666664" "44046.791666666664" ...
+    ##  $ org            : chr [1:239] "Organ" "KI" "KI" "KI" ...
+    ##  $ wlc_a10_allc2  : chr [1:239] "Age 2-11" "0.2857142857" "0.3053435115" "0" ...
+    ##  $ wlc_a10_newc2  : chr [1:239] "Age 2-11" "0" "0.4255319149" "0" ...
+    ##  $ wlc_a17_allc2  : chr [1:239] "Age 12-17" "1.7142857143" "0.9160305344" "0" ...
+    ##  $ wlc_a17_newc2  : chr [1:239] "Age 12-17" "0.5494505495" "0.4255319149" "0" ...
+    ##  $ wlc_a2_allc2   : chr [1:239] "Age < 2" "0" "0.1526717557" "0" ...
+    ##  $ wlc_a2_newc2   : chr [1:239] "Age < 2" "0" "0" "0" ...
+    ##  $ wlc_a34_allc2  : chr [1:239] "Age 18-34" "9.7142857143" "10.381679389" "7.0652173913" ...
+    ##  $ wlc_a34_newc2  : chr [1:239] "Age 18-34" "7.1428571429" "12.765957447" "11.214953271" ...
+    ##  $ wlc_a49_allc2  : chr [1:239] "Age 35-49" "23.714285714" "27.480916031" "26.358695652" ...
+    ##  $ wlc_a49_newc2  : chr [1:239] "Age 35-49" "26.373626374" "26.808510638" "20.560747664" ...
+    ##  $ wlc_a64_allc2  : chr [1:239] "Age 50-64" "43.428571429" "47.022900763" "52.717391304" ...
+    ##  $ wlc_a64_newc2  : chr [1:239] "Age 50-64" "41.758241758" "40" "52.336448598" ...
+    ##  $ wlc_a69_allc2  : chr [1:239] "Age 65-69" "14.857142857" "10.229007634" "13.315217391" ...
+    ##  $ wlc_a69_newc2  : chr [1:239] "Age 65-69" "17.582417582" "13.191489362" "14.953271028" ...
+    ##  $ wlc_a70p_allc2 : chr [1:239] "Age 70+" "6.2857142857" "3.5114503817" "0.5434782609" ...
+    ##  $ wlc_a70p_newc2 : chr [1:239] "Age 70+" "6.5934065934" "6.3829787234" "0.9345794393" ...
+    ##  $ wlc_all_allc2  : chr [1:239] "All" "100" "100" "100" ...
+    ##  $ wlc_all_newc2  : chr [1:239] "All" "100" "100" "100" ...
+    ##  $ wlc_bab_allc2  : chr [1:239] "Blood Type AB" "1.4285714286" "2.5954198473" "4.0760869565" ...
+    ##  $ wlc_bab_newc2  : chr [1:239] "Blood Type AB" "3.8461538462" "2.1276595745" "6.5420560748" ...
+    ##  $ wlc_ba_allc2   : chr [1:239] "Blood Type A" "29.714285714" "26.717557252" "29.619565217" ...
+    ##  $ wlc_ba_newc2   : chr [1:239] "Blood Type A" "31.868131868" "33.191489362" "37.38317757" ...
+    ##  $ wlc_bb_allc2   : chr [1:239] "Blood Type B" "18" "19.694656489" "16.847826087" ...
+    ##  $ wlc_bb_newc2   : chr [1:239] "Blood Type B" "16.483516484" "15.319148936" "13.08411215" ...
+    ##  $ wlc_bo_allc2   : chr [1:239] "Blood Type O" "50.857142857" "50.992366412" "49.456521739" ...
+    ##  $ wlc_bo_newc2   : chr [1:239] "Blood Type O" "47.802197802" "49.361702128" "42.990654206" ...
+    ##  $ wlc_bu_allc2   : chr [1:239] "Blood Type Unknown" "0" "0" "0" ...
+    ##  $ wlc_bu_newc2   : chr [1:239] "Blood Type Unknown" "0" "0" "0" ...
+    ##  $ wlc_gf_allc2   : chr [1:239] "Female" "41.428571429" "36.79389313" "37.5" ...
+    ##  $ wlc_gf_newc2   : chr [1:239] "Female" "32.417582418" "39.574468085" "33.644859813" ...
+    ##  $ wlc_gm_allc2   : chr [1:239] "Male" "58.571428571" "63.20610687" "62.5" ...
+    ##  $ wlc_gm_newc2   : chr [1:239] "Male" "67.582417582" "60.425531915" "66.355140187" ...
+    ##  $ wlc_gu_allc2   : chr [1:239] "Gender Unknown" "0" "0" "0" ...
+    ##  $ wlc_gu_newc2   : chr [1:239] "Gender Unknown" "0" "0" "0" ...
+    ##  $ wlc_hrcar_allc2: chr [1:239] "Cardiomyopathy" "-" "-" "-" ...
+    ##  $ wlc_hrcar_newc2: chr [1:239] "Cardiomyopathy" "-" "-" "-" ...
+    ##  $ wlc_hrcon_allc2: chr [1:239] "Congenital Heart Disease" "-" "-" "-" ...
+    ##  $ wlc_hrcon_newc2: chr [1:239] "Congenital Heart Disease" "-" "-" "-" ...
+    ##  $ wlc_hrcor_allc2: chr [1:239] "Coronary Artery Disease" "-" "-" "-" ...
+    ##  $ wlc_hrcor_newc2: chr [1:239] "Coronary Artery Disease" "-" "-" "-" ...
+    ##  $ wlc_hrmis_allc2: chr [1:239] "Primary Disease Missing" "-" "-" "-" ...
+    ##  $ wlc_hrmis_newc2: chr [1:239] "Primary Disease Missing" "-" "-" "-" ...
+    ##  $ wlc_hroth_allc2: chr [1:239] "Primary Disease Other" "-" "-" "-" ...
+    ##  $ wlc_hroth_newc2: chr [1:239] "Primary Disease Other" "-" "-" "-" ...
+    ##  $ wlc_hrrtr_allc2: chr [1:239] "Retransplant/Graft Failure" "-" "-" "-" ...
+    ##  $ wlc_hrrtr_newc2: chr [1:239] "Retransplant/Graft Failure" "-" "-" "-" ...
+    ##  $ wlc_hrvlv_allc2: chr [1:239] "Valvular Heart Disease" "-" "-" "-" ...
+    ##  $ wlc_hrvlv_newc2: chr [1:239] "Valvular Heart Disease" "-" "-" "-" ...
+    ##  $ wlc_infbp_allc2: chr [1:239] "Functional Bowel Problem" "-" "-" "-" ...
+    ##  $ wlc_infbp_newc2: chr [1:239] "Functional Bowel Problem" "-" "-" "-" ...
+    ##  $ wlc_inmis_allc2: chr [1:239] "Primary Disease Missing" "-" "-" "-" ...
+    ##  $ wlc_inmis_newc2: chr [1:239] "Primary Disease Missing" "-" "-" "-" ...
+    ##  $ wlc_inoth_allc2: chr [1:239] "Primary Disease Other" "-" "-" "-" ...
+    ##  $ wlc_inoth_newc2: chr [1:239] "Primary Disease Other" "-" "-" "-" ...
+    ##  $ wlc_inrtr_allc2: chr [1:239] "Retransplant/Graft Failure" "-" "-" "-" ...
+    ##  $ wlc_inrtr_newc2: chr [1:239] "Retransplant/Graft Failure" "-" "-" "-" ...
+    ##  $ wlc_insgs_allc2: chr [1:239] "Short Gut Syndrome" "-" "-" "-" ...
+    ##  $ wlc_insgs_newc2: chr [1:239] "Short Gut Syndrome" "-" "-" "-" ...
+    ##  $ wlc_kidia_allc2: chr [1:239] "Diabetes" "40.571428571" "36.183206107" "36.141304348" ...
+    ##  $ wlc_kidia_newc2: chr [1:239] "Diabetes" "40.10989011" "28.510638298" "31.775700935" ...
+    ##  $ wlc_kiglo_allc2: chr [1:239] "Glomerular Diseases" "19.428571429" "23.20610687" "19.836956522" ...
+    ##  $ wlc_kiglo_newc2: chr [1:239] "Glomerular Diseases" "18.681318681" "26.808510638" "21.495327103" ...
+    ##  $ wlc_kihyp_allc2: chr [1:239] "Hypertensive Nephrosclerosis" "18.571428571" "17.251908397" "20.923913043" ...
+    ##  $ wlc_kihyp_newc2: chr [1:239] "Hypertensive Nephrosclerosis" "20.879120879" "17.872340426" "18.691588785" ...
+    ##  $ wlc_kimis_allc2: chr [1:239] "Primary Disease Missing" "1.1428571429" "0.1526717557" "0.8152173913" ...
+    ##  $ wlc_kimis_newc2: chr [1:239] "Primary Disease Missing" "0" "0" "0.9345794393" ...
+    ##  $ wlc_kineo_allc2: chr [1:239] "Neoplasms" "0.5714285714" "0.7633587786" "0" ...
+    ##  $ wlc_kineo_newc2: chr [1:239] "Neoplasms" "0" "1.7021276596" "0" ...
+    ##  $ wlc_kioth_allc2: chr [1:239] "Primary Disease Other" "7.1428571429" "7.9389312977" "7.8804347826" ...
+    ##  $ wlc_kioth_newc2: chr [1:239] "Primary Disease Other" "7.6923076923" "7.6595744681" "10.280373832" ...
+    ##  $ wlc_kipol_allc2: chr [1:239] "Polycystic Kidneys" "8.8571428571" "6.8702290076" "8.6956521739" ...
+    ##  $ wlc_kipol_newc2: chr [1:239] "Polycystic Kidneys" "8.2417582418" "8.9361702128" "6.5420560748" ...
+    ##  $ wlc_kiren_allc2: chr [1:239] "Renovascular & Vascular Diseases" "0" "0.1526717557" "0.2717391304" ...
+    ##  $ wlc_kiren_newc2: chr [1:239] "Renovascular & Vascular Diseases" "0" "0" "0.9345794393" ...
+    ##  $ wlc_kirtr_allc2: chr [1:239] "Retransplant/Graft Failure" "0" "0" "0" ...
+    ##  $ wlc_kirtr_newc2: chr [1:239] "Retransplant/Graft Failure" "0" "0" "0" ...
+    ##  $ wlc_kitub_allc2: chr [1:239] "Tubular and Interstitial Diseases" "2.5714285714" "4.7328244275" "4.347826087" ...
+    ##  $ wlc_kitub_newc2: chr [1:239] "Tubular and Interstitial Diseases" "2.7472527473" "5.5319148936" "5.6074766355" ...
+    ##  $ wlc_liacu_allc2: chr [1:239] "Acute Hepatic Necrosis" "-" "-" "-" ...
+    ##  $ wlc_liacu_newc2: chr [1:239] "Acute Hepatic Necrosis" "-" "-" "-" ...
+    ##  $ wlc_libil_allc2: chr [1:239] "Biliary Atresia" "-" "-" "-" ...
+    ##  $ wlc_libil_newc2: chr [1:239] "Biliary Atresia" "-" "-" "-" ...
+    ##  $ wlc_licho_allc2: chr [1:239] "Cholestatic Liver Disease/Cirrhosis" "-" "-" "-" ...
+    ##  $ wlc_licho_newc2: chr [1:239] "Cholestatic Liver Disease/Cirrhosis" "-" "-" "-" ...
+    ##  $ wlc_limal_allc2: chr [1:239] "Malignant Neoplasms" "-" "-" "-" ...
+    ##  $ wlc_limal_newc2: chr [1:239] "Malignant Neoplasms" "-" "-" "-" ...
+    ##  $ wlc_limet_allc2: chr [1:239] "Metabolic Diseases" "-" "-" "-" ...
+    ##  $ wlc_limet_newc2: chr [1:239] "Metabolic Diseases" "-" "-" "-" ...
+    ##  $ wlc_limis_allc2: chr [1:239] "Primary Disease Missing" "-" "-" "-" ...
+    ##  $ wlc_limis_newc2: chr [1:239] "Primary Disease Missing" "-" "-" "-" ...
+    ##  $ wlc_linch_allc2: chr [1:239] "Non-Cholestatic Cirrhosis" "-" "-" "-" ...
+    ##  $ wlc_linch_newc2: chr [1:239] "Non-Cholestatic Cirrhosis" "-" "-" "-" ...
+    ##  $ wlc_lioth_allc2: chr [1:239] "Primary Disease Other" "-" "-" "-" ...
+    ##  $ wlc_lioth_newc2: chr [1:239] "Primary Disease Other" "-" "-" "-" ...
+    ##   [list output truncated]
+
+``` r
+#head(df_two)
+#tail(df_two)
+#view(df_two)
+colnames = colnames(df_two)
+print(colnames)
+```
+
+    ##   [1] "entire_name"     "ctr_cd"          "ctr_ty"          "release_date"   
+    ##   [5] "org"             "wlc_a10_allc2"   "wlc_a10_newc2"   "wlc_a17_allc2"  
+    ##   [9] "wlc_a17_newc2"   "wlc_a2_allc2"    "wlc_a2_newc2"    "wlc_a34_allc2"  
+    ##  [13] "wlc_a34_newc2"   "wlc_a49_allc2"   "wlc_a49_newc2"   "wlc_a64_allc2"  
+    ##  [17] "wlc_a64_newc2"   "wlc_a69_allc2"   "wlc_a69_newc2"   "wlc_a70p_allc2" 
+    ##  [21] "wlc_a70p_newc2"  "wlc_all_allc2"   "wlc_all_newc2"   "wlc_bab_allc2"  
+    ##  [25] "wlc_bab_newc2"   "wlc_ba_allc2"    "wlc_ba_newc2"    "wlc_bb_allc2"   
+    ##  [29] "wlc_bb_newc2"    "wlc_bo_allc2"    "wlc_bo_newc2"    "wlc_bu_allc2"   
+    ##  [33] "wlc_bu_newc2"    "wlc_gf_allc2"    "wlc_gf_newc2"    "wlc_gm_allc2"   
+    ##  [37] "wlc_gm_newc2"    "wlc_gu_allc2"    "wlc_gu_newc2"    "wlc_hrcar_allc2"
+    ##  [41] "wlc_hrcar_newc2" "wlc_hrcon_allc2" "wlc_hrcon_newc2" "wlc_hrcor_allc2"
+    ##  [45] "wlc_hrcor_newc2" "wlc_hrmis_allc2" "wlc_hrmis_newc2" "wlc_hroth_allc2"
+    ##  [49] "wlc_hroth_newc2" "wlc_hrrtr_allc2" "wlc_hrrtr_newc2" "wlc_hrvlv_allc2"
+    ##  [53] "wlc_hrvlv_newc2" "wlc_infbp_allc2" "wlc_infbp_newc2" "wlc_inmis_allc2"
+    ##  [57] "wlc_inmis_newc2" "wlc_inoth_allc2" "wlc_inoth_newc2" "wlc_inrtr_allc2"
+    ##  [61] "wlc_inrtr_newc2" "wlc_insgs_allc2" "wlc_insgs_newc2" "wlc_kidia_allc2"
+    ##  [65] "wlc_kidia_newc2" "wlc_kiglo_allc2" "wlc_kiglo_newc2" "wlc_kihyp_allc2"
+    ##  [69] "wlc_kihyp_newc2" "wlc_kimis_allc2" "wlc_kimis_newc2" "wlc_kineo_allc2"
+    ##  [73] "wlc_kineo_newc2" "wlc_kioth_allc2" "wlc_kioth_newc2" "wlc_kipol_allc2"
+    ##  [77] "wlc_kipol_newc2" "wlc_kiren_allc2" "wlc_kiren_newc2" "wlc_kirtr_allc2"
+    ##  [81] "wlc_kirtr_newc2" "wlc_kitub_allc2" "wlc_kitub_newc2" "wlc_liacu_allc2"
+    ##  [85] "wlc_liacu_newc2" "wlc_libil_allc2" "wlc_libil_newc2" "wlc_licho_allc2"
+    ##  [89] "wlc_licho_newc2" "wlc_limal_allc2" "wlc_limal_newc2" "wlc_limet_allc2"
+    ##  [93] "wlc_limet_newc2" "wlc_limis_allc2" "wlc_limis_newc2" "wlc_linch_allc2"
+    ##  [97] "wlc_linch_newc2" "wlc_lioth_allc2" "wlc_lioth_newc2" "wlc_lucon_allc2"
+    ## [101] "wlc_lucon_newc2" "wlc_lucys_allc2" "wlc_lucys_newc2" "wlc_luemp_allc2"
+    ## [105] "wlc_luemp_newc2" "wlc_luidi_allc2" "wlc_luidi_newc2" "wlc_lumis_allc2"
+    ## [109] "wlc_lumis_newc2" "wlc_luoth_allc2" "wlc_luoth_newc2" "wlc_lupri_allc2"
+    ## [113] "wlc_lupri_newc2" "wlc_luret_allc2" "wlc_luret_newc2" "wlc_me11_allc2" 
+    ## [117] "wlc_me11_newc2"  "wlc_me15_allc2"  "wlc_me15_newc2"  "wlc_me21_allc2" 
+    ## [121] "wlc_me21_newc2"  "wlc_me31_allc2"  "wlc_me31_newc2"  "wlc_me6_allc2"  
+    ## [125] "wlc_me6_newc2"   "wlc_n_allc2"     "wlc_n_newc2"     "wlc_pe11_allc2" 
+    ## [129] "wlc_pe11_newc2"  "wlc_pe15_allc2"  "wlc_pe15_newc2"  "wlc_pe21_allc2" 
+    ## [133] "wlc_pe21_newc2"  "wlc_pe31_allc2"  "wlc_pe31_newc2"  "wlc_pe6_allc2"  
+    ## [137] "wlc_pe6_newc2"   "wlc_pra79_allc2" "wlc_pra79_newc2" "wlc_pra80_allc2"
+    ## [141] "wlc_pra80_newc2" "wlc_pra9_allc2"  "wlc_pra9_newc2"  "wlc_prau_allc2" 
+    ## [145] "wlc_prau_newc2"  "wlc_ptxn_allc2"  "wlc_ptxn_newc2"  "wlc_ptxu_allc2" 
+    ## [149] "wlc_ptxu_newc2"  "wlc_ptxy_allc2"  "wlc_ptxy_newc2"  "wlc_q1_allc2"   
+    ## [153] "wlc_q1_newc2"    "wlc_q2_allc2"    "wlc_q2_newc2"    "wlc_q3_allc2"   
+    ## [157] "wlc_q3_newc2"    "wlc_q4_allc2"    "wlc_q4_newc2"    "wlc_qu_allc2"   
+    ## [161] "wlc_qu_newc2"    "wlc_ra_allc2"    "wlc_ra_newc2"    "wlc_rb_allc2"   
+    ## [165] "wlc_rb_newc2"    "wlc_rh_allc2"    "wlc_rh_newc2"    "wlc_ro_allc2"   
+    ## [169] "wlc_ro_newc2"    "wlc_ru_allc2"    "wlc_ru_newc2"    "wlc_rw_allc2"   
+    ## [173] "wlc_rw_newc2"    "wlc_st1a_allc2"  "wlc_st1a_newc2"  "wlc_st1b_allc2" 
+    ## [177] "wlc_st1b_newc2"  "wlc_st1_allc2"   "wlc_st1_newc2"   "wlc_st2a_allc2" 
+    ## [181] "wlc_st2a_newc2"  "wlc_st2b_allc2"  "wlc_st2b_newc2"  "wlc_st2_allc2"  
+    ## [185] "wlc_st2_newc2"   "wlc_st3_allc2"   "wlc_st3_newc2"   "wlc_sto_allc2"  
+    ## [189] "wlc_sto_newc2"   "wlc_kicon_allc2" "wlc_kicon_newc2"
+
+I will rename and clean the columns for the patient characteristics data
+set.
+
+``` r
+df_two_names = read_excel("../data/B2 names.xlsx")
+df_two_names = janitor::clean_names(df_two_names)
+df_two_names = df_two_names %>% mutate(c = paste(a,b))
+setnames = df_two_names %>% pull(c)
+df_two = setNames(df_two, setnames)
+df_two = janitor::clean_names(df_two)
+df_two_clean = df_two[-c(1), ]
+df_two_clean = df_two_clean %>% rename (entire_name= center_name_na , ctr_cd = center_code_na)
+view(df_two_clean)
+```
+
+I will make a dataframe of patient demographics and plot the
+distributions by zipcode.
+
+``` r
+df_two_select = df_two_clean %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
+df_social = merge(df_one_merge, df_two_select)
+df_demographics = df_social[, c(1,2,3, 68, 71:76)]
+#view(df_demographics)
+df_demographics_pivot =
+  pivot_longer(
+    df_demographics, 
+    asian_allc2:race_unknown_allc2,
+    names_to = "race_category", 
+    values_to = "race_category_percent") %>% mutate(race_category_percent = as.numeric(race_category_percent)) %>% mutate(race_category = as.factor(race_category))
+
+plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point()+ 
+  labs(
+    title = "Patient Demographics by Zipcode",subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "Race (Percent)", color = "Race"
+  ) + theme_minimal() + scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", "Other", "Unknown", "White"))
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-17-1.png)<!-- --> Now I
+will make an age dataframe and plot the age distributions by zipcode.
+
+``` r
+df_two_age = df_two_clean[, c(1,2,5,6,8,10,12,14,16,18,20,22)]
+df_age = merge(df_one_merge, df_two_age)
+view(df_age)
+df_age = df_age[, c(1,2,3,5, 68, 72:79)]
+view(df_age)
+df_age_pivot =
+  pivot_longer(
+    df_age, 
+    age_2_11_allc2:age_70_allc2,
+    names_to = "age_category", 
+    values_to = "age_category_percent") %>% mutate (age_category_percent = as.numeric(age_category_percent)) %>% mutate(age_category = factor(age_category, levels =c("age_2_allc2","age_2_11_allc2", "age_12_17_allc2", "age_18_34_allc2", "age_35_49_allc2", "age_50_64_allc2", "age_65_69_allc2", "age_70_allc2"))) %>% drop_na()
+#view(df_age_pivot)
+plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point() + 
+  labs(
+    title = "Patient Age Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "Age Group (Percent)", color = "Age Group"
+  ) + theme_minimal()  + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years"))
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-18-1.png)<!-- --> Now I
+will make a gender dataframe and plot the gender distributions by
+zipcode.
+
+``` r
+df_two_gender = df_two_clean[, c(1,2,34,36)]
+df_gender = merge(df_one_merge, df_two_gender)
+df_gender = df_gender[, c(1,2,3, 68, 71:72)]
+#view(df_gender)
+df_gender_pivot =
+  pivot_longer(
+    df_gender, 
+    female_allc2:male_allc2,
+    names_to = "gender_category", 
+    values_to = "gender_category_percent") %>% mutate (gender_category_percent = as.numeric(gender_category_percent)) %>% mutate(gender_category = as.factor(gender_category))
+#view(df_gender_pivot)
+plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()+ 
+  labs(
+    title = "Patient Gender Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "Gender Group (Percent)", , color = "Gender"
+  ) + theme_minimal() + scale_color_hue(labels = c("Female", "Male"))
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-19-1.png)<!-- --> Now I
+will make a comorbidities dataframe and plot the pra score distributions
+by zipcode.
+
+``` r
+df_two_comorbidities = df_two_clean[, c(1,2,64,66,68,70,72,74,76,78,80,82,126,128,130,132,138,140,142,144,146,148,150, 162, 164, 166, 168, 170, 172, 190)]
+df_comorbidities = merge(df_one_merge, df_two_comorbidities)
+df_comorbidities = df_comorbidities[, c(1,2,3, 68, 71:81, 87:98)]
+df_comorbidities = df_comorbidities[, c(1:14, 18:20, 27)]
+#view(df_comorbidities)
+df_comorbidities_pivot =
+  pivot_longer(
+    df_comorbidities, 
+    diabetes_allc2:congenital_familial_metabolic_allc2,
+    names_to = "comorbidity_category", 
+    values_to = "comorbidity_category_percent") %>% mutate (comorbidity_category_percent = as.numeric(comorbidity_category_percent)) %>% mutate(comorbidity_category = as.factor(comorbidity_category))
+#view(df_comorbidities_pivot)
+plot = df_comorbidities_pivot %>% ggplot(aes(x=zipcode, y =comorbidity_category_percent, color = comorbidity_category)) + geom_point()+ 
+  labs(
+    title = "Patient Comorbidity Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "Comorbidity Group (Percent)", color = "Comorbidity"
+  ) + theme_minimal() + scale_color_hue(labels = c("Congenital, Familial or Metabolic Disease", "Diabetes", "Golmerular Disease", "Hypertensive Nephrosclerosis", "Neoplasms", "Polycystic Kidneys", "No Prior Transplant", "Prior Transplant Unknown", "Prior Transplant", "Missing Primary Disease", "Other Primary Disease", "Renovascular or Vascular Disease", "Retransplant Graft Failure", "Tubular and Interstitial Diseases"))
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-20-1.png)<!-- --> Now, I
+will make a blood type dataframe and plot the blood type distributions
+by zipcode.
+
+``` r
+df_two_blood_type = df_two_clean[, c(1,2,24, 26, 28, 30, 32)]
+df_blood_type = merge(df_one_merge, df_two_blood_type)
+df_blood_type = df_blood_type[, c(1,2,3, 68, 71:75)]
+#view(df_blood_type)
+df_blood_type_pivot =
+  pivot_longer(
+    df_blood_type, 
+    blood_type_ab_allc2:blood_type_unknown_allc2,
+    names_to = "blood_type_category", 
+    values_to = "blood_type_category_percent") %>% mutate (blood_type_category_percent = as.numeric(blood_type_category_percent)) %>% mutate(blood_type_category = as.factor(blood_type_category))
+#view(df_blood_type_pivot)
+plot = df_blood_type_pivot %>% ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + geom_point()+ 
+  labs(
+    title = "Patient Blood Type Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "Blood Type Group (Percent)", color = "Blood Type"
+  ) + theme_minimal() + scale_color_hue(labels = c("A", "AB", "B", "O", "Unknown"))
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-21-1.png)<!-- --> Now, I
+will amke a PRA score dataframe and plot the PRA score distributions by
+zipcode.
+
+``` r
+#view(df_two_clean)
+df_two_pra = df_two_clean[, c(1,2, 138, 140, 142, 144)]
+#view(df_two_pra)
+df_pra = merge(df_one_merge, df_two_pra)
+df_pra = df_pra[, c(1,2,3, 68, 71:74)]
+#view(df_pra)
+df_pra_pivot =
+  pivot_longer(
+    df_pra, 
+    pra_10_79_allc2:pra_unknown_allc2,
+    names_to = "pra_category", 
+    values_to = "pra_category_percent") %>% mutate (pra_category_percent = as.numeric(pra_category_percent)) %>% mutate(pra_category = factor(pra_category, c("pra_0_9_allc2", "pra_10_79_allc2", "pra_80_allc2", "pra_unknown_allc2")))
+#view(df_pra_pivot)
+plot = df_pra_pivot %>% ggplot(aes(x=zipcode, y =pra_category_percent, color = pra_category)) + geom_point()+ 
+  labs(
+    title = "Patient PRA Score Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+    x = "Zipcode",
+    y = "PRA Score Group (Percent)", color = "PRA Score Group"
+  ) + theme_minimal() + scale_color_hue(labels = c("0 to 9", "10 to 79", "80 or Higher", "Unknown"))
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-22-1.png)<!-- --> Now I
+will merge the pra and comorbidities dataframes and make scatter plots
+to investigate for correlations.
+
+``` r
+df_pra_comorbid = merge(df_pra_pivot, df_comorbidities_pivot)
+#view(df_pra_comorbid)
+plot = df_pra_comorbid %>% ggplot(aes(x=comorbidity_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + labs(
+    title = "PRA Scores vs. Comorbidities", x ="Comorbidities (Percent)",subtitle = "SRTR Kidney Transplant Data, August 2020 Release", y = "PRA Score (Percent)", color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("0 to 9", "10 to 79", "80 or Higher", "Unknown")) + facet_wrap(~comorbidity_category)
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
+
+``` r
+#png('pra_comorbidity.png')
+```
+
+Overall, there is no strong correlation with pra score and
+comorbidities.
+
+Now I will merge the pra and age dataframes and and make scatter plots
+to investigate for correlations.
+
+``` r
+df_pra_age = merge(df_pra_pivot, df_age_pivot)
+#view(df_pra_age)
+plot = df_pra_age %>% ggplot(aes(x=age_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~age_category) + labs(
+    title = "PRA Scores vs. Age Groups", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",x ="Age Groups (Percent)", y = "PRA Score (Percent)", color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("0 to 9", "10 to 79", "80 or Higher", "Unknown"))
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
+
+``` r
+#png('pra_comorbidity.png')
+```
+
+Overall, there is no strong correlation with pra score and age.
+
+Now I will merge the pra and gender dataframes and make scatter plots to
+investigate for correlations.
+
+``` r
+df_pra_gender = merge(df_pra_pivot, df_gender_pivot)
+#view(df_pra_gender)
+plot = df_pra_gender %>% ggplot(aes(x=gender_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~gender_category) + labs(
+    title = "PRA Scores vs. Gender Groups", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x ="Gender Groups (Percent)", y = "PRA Score (Percent)" , color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("0 to 9", "10 to 79", "80 or Higher", "Unknown"))
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+
+``` r
+#png('pra_comorbidity.png')
+```
+
+Overall, there is no strong correlation with pra score and gender.
+
+Now I will merge the pra and demographics dataframes and make scatter
+plots to investigate for correlations.
+
+``` r
+df_pra_demographics = merge(df_pra_pivot, df_demographics_pivot)
+#view(df_pra_demographics)
+plot = df_pra_demographics %>% ggplot(aes(x=race_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~race_category) + labs(
+    title = "PRA Scores vs. Race", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x ="Race (Percent)", y = "PRA Score (Percent)" , color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("0 to 9", "10 to 79", "80 or Higher", "Unknown"))
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
+
+``` r
+#png('pra_comorbidity.png')
+```
+
+Overall, there is no strong correlation with pra score and race.
+
+Now I will merge the pra and blood type dataframes and make scatter
+plots to investigate for correlations.
+
+``` r
+df_pra_blood_type = merge(df_pra_pivot, df_blood_type_pivot)
+#view(df_pra_blood_type)
+plot = df_pra_blood_type %>% ggplot(aes(x=blood_type_category_percent, y =pra_category_percent, color =pra_category)) + geom_point() + facet_wrap(~blood_type_category)+ labs(
+    title = "PRA Scores vs. Blood Type", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x ="Blood Type (Percent)", y = "PRA Score (Percent)", color = "PRA Score Group") + theme_minimal() + scale_color_hue(labels = c("0 to 9", "10 to 79", "80 or Higher", "Unknown"))
+plot
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
+
+``` r
+#png('pra_comorbidity.png')
+```
+
+Overall, there is no strong correlation with pra score and blood type.
+
+Now I will make tables
+
+``` r
+#view(df_two_clean)
+#view(df_comorbidities)
+#view(df_one_merge)
+#view(df_gender)
+#view(df_two_gender)
+#view(df_social)
+#view(df_demographics)
+#view(df_age)
+#knitr::kable(df_demographics) %>% save_kable("draft_demographics.pdf")
+#knitr::kable(df_age) %>% save_kable("draft_age.pdf") 
+#knitr::kable(df_gender) %>% save_kable("draft_gender.pdf") 
+#knitr::kable(df_comorbidities) %>% save_kable("draft_comorbidities.pdf") 
+```
+
+\#Now I will make another leaflet plot of transplant centers in the
+United States
+
+``` r
+#library(leaflet)
+
+#leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
+#df = data.frame(Lat = 1:10, Long = rnorm(10))
+#leaflet(df) %>% addCircles()
+#view(df_one_merge)
+#m = df_one_merge %>% leaflet() %>% addTiles() %>% addCircleMarkers(lat = ~lat, lng = ~lng, color = ~newlistings_center_all)
+#m
+```

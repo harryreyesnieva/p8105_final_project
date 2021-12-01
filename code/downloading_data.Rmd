@@ -1,0 +1,86 @@
+---
+title: "downloading_data"
+output: github_document
+---
+
+```{r}
+library(readxl)
+library(rvest)
+library(stringr)
+library(tidyverse)
+```
+
+Creating list of date codes and URLs for the current data file and all archived files.
+
+Dates and URLs came from inspecting this website:
+https://www.srtr.org/reports/program-specific-reports/
+
+
+```{r}
+archive_dates = c("1207", "1301", "1307", "1401", "1406", "1412", "1506", "1512", "1606", "1701", "1707", "1711", "1808", "1811", "1905", "1911", "2006")
+
+current_file_date = "2105"
+
+current_file_url = "https://www.srtr.org/assets/media/PSRdownloads/csrs_tables/csrs_final_tables_2105_KI.xls"
+
+url_base = "https://www.srtr.org/assets/media/PSRdownloads/csrs_tables_all/csrs_final_tables_"
+
+vec_urls = str_c(url_base, archive_dates, "all.zip")
+
+vec_dates = list(
+  date = archive_dates,
+  url = vec_urls
+)
+```
+
+Downloading the most recent data:
+
+```{r}
+temp = tempfile()
+
+download.file(current_file_url, temp, mode = "wb")
+
+current_data = sapply(readxl::excel_sheets(temp), 
+                    simplify = F, USE.NAMES = T,
+            function(X) readxl::read_xls(temp, sheet = X))
+
+unlink(temp)
+```
+
+Function to download archived files:
+
+```{r}
+download_archived_data = function(url) {
+  temp = tempfile()
+  
+  download.file(url, temp, mode = "wb")
+  
+  ki_file = tibble(files = as.character(unzip(temp, list = TRUE)$Name)) %>% 
+    filter(str_detect(files, "KI\\.[xX][lL][sS]$"))
+  
+  ki_filepath = ki_file[[1]]
+
+  ki_data = sapply(readxl::excel_sheets(unzip(temp, ki_filepath)), 
+                    simplify = F, USE.NAMES = T,
+            function(X) readxl::read_xls(unzip(temp, ki_filepath), sheet = X))
+  
+  unlink(temp)
+  unlink(ki_filepath)
+  
+  return(ki_data)
+}
+```
+
+Compiling all data files (archived and current) into one nested list:
+
+```{r}
+data_all_yrs = map(.x = vec_dates$url, ~download_archived_data(url = .x))
+
+data_all_yrs = append(data_all_yrs, list(current_data))
+
+name_labels = vec_dates$date %>% 
+  append(current_file_date)
+
+names(data_all_yrs) = str_c("data_", name_labels)
+```
+
