@@ -71,7 +71,7 @@ print(plot)
 ```
 
 ![](SummaryPlotsMS_files/figure-gfm/unnamed-chunk-3-1.png)<!-- --> I
-will repeat for gender.
+will repeat the data import for gender.
 
 ``` r
 df_one_gender = read.csv("./data/csrs_final_tables_2006_HL_gender.csv") 
@@ -102,7 +102,7 @@ print(plot)
 
 ![](SummaryPlotsMS_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
-I will repeat for demographics.
+I will repeat the data import for demographics.
 
 ``` r
 df_one_demographics = read.csv("./data/csrs_final_tables_2006_HL_demographics.csv") 
