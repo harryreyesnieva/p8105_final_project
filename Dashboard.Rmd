@@ -116,9 +116,6 @@ renderPlotly({
   plot_ly(
     x = ~Zipcode, y = ~Age_Group, type = "scatter", mode = "markers",
     alpha = 0.9, color = ~age_category)})
-
-
-###"Less Than 2 Years","2 to 11 Years","12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "65 to 69 Years", More Than 70 Years
 ```
 
 ### Gender (Percent) by Zipcode
