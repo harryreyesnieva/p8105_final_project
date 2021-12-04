@@ -55,9 +55,9 @@ I will plot the gender dataframes.
 ```{r}
 plot = df_all_gender %>% mutate(org = str_replace(org, "HR", "Heart"), org = str_replace(org, "HL", "Heart-Lung"), org = str_replace(org, "IN", "Intestine"), org = str_replace(org, "KI", "Kidney"), org = str_replace(org, "KP", "Kidney-Pancreas"), org = str_replace(org, "LI", "Liver"), , org = str_replace(org, "LU", "Lung"), org = str_replace(org, "PA", "Pancreas")) %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()+ 
   labs(
-    title = "Patient Gender Groups by Zipcode", subtitle = phrase,
+    title = "Patient Gender by Zipcode", subtitle = phrase,
     x = "Zipcode",
-    y = "Gender Group (Percent)", color = "Gender"
+    y = "Gender (Percent)", color = "Gender"
   ) + theme_minimal() + theme(axis.text.x=element_text(angle=90,hjust=1)) + scale_color_hue(labels = c("Female", "Male")) + facet_wrap(~org)
 print(plot)
 

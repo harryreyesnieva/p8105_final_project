@@ -303,7 +303,8 @@ I will plot the first set of exposure variables
 
 ``` r
 x1 = df_one_merge[, c(6:20)]
-ggplot(gather(x1), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y")  +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part1", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x1), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y")  +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part1", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Number)", y = "Frequency") + theme_minimal()
+print(plot)
 ```
 
     ## Warning: Removed 30 rows containing non-finite values (stat_bin).
@@ -312,8 +313,9 @@ ggplot(gather(x1), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, s
 plot the second set of exposure variables
 
 ``` r
-  x2 = df_one_merge[, c(21:35)]
-ggplot(gather(x2), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 100)) + labs(title = "Exposure Frequency Part2", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+x2 = df_one_merge[, c(21:35)]
+plot = ggplot(gather(x2), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 100)) + labs(title = "Exposure Frequency Part2", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Number)", y = "Frequency") + theme_minimal()
+print(plot)
 ```
 
     ## Warning: Removed 30 rows containing non-finite values (stat_bin).
@@ -323,7 +325,8 @@ plot the third set of exposure variables
 
 ``` r
 x3 = df_one_merge[, c(36:43)]
-ggplot(gather(x3), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 500)) + labs(title = "Exposure Frequency Part3", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x3), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 500)) + labs(title = "Exposure Frequency Part3", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Number)", y = "Frequency") + theme_minimal()
+print(plot)
 ```
 
     ## Warning: Removed 16 rows containing non-finite values (stat_bin).
@@ -333,7 +336,8 @@ plot the fourth set of exposure variables
 
 ``` r
 x4 = df_one_merge[, c(44:51)]
-ggplot(gather(x4), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 200)) + labs(title = "Exposure Frequency Part4", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x4), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 200)) + labs(title = "Exposure Frequency Part4", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Number)", y = "Frequency") + theme_minimal()
+print(plot)
 ```
 
     ## Warning: Removed 16 rows containing non-finite values (stat_bin).
@@ -344,7 +348,8 @@ I will plot the fifth set of exposure variables
 
 ``` r
 x5 = df_one_merge[, c(52:60)]
-ggplot(gather(x5), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part5", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Percent)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x5), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 2000)) + labs(title = "Exposure Frequency Part5", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Number)", y = "Frequency") + theme_minimal()
+print(plot)
 ```
 
     ## Warning: Removed 18 rows containing non-finite values (stat_bin).
@@ -368,12 +373,7 @@ str(df_outcomes)
     ##  $ newlistings_percent_recovered     : num  0 0 0 0 0 ...
 
 ``` r
-ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
-```
-
-![](KidneyDataMS_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
-
-``` r
+plot = ggplot(gather(df_outcomes), aes(value)) + geom_histogram(bins = 30) + facet_wrap(~key, scales = "free_y") + coord_cartesian(xlim = c(0, 100)) + labs(title = "Outcome Frequency", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Outcome (Percent)", y = "Frequency") + theme_minimal()
 df_continuous = sapply(df_outcomes, as.numeric)
 str(df_continuous)
 ```
@@ -383,9 +383,14 @@ str(df_continuous)
     ##   ..$ : NULL
     ##   ..$ : chr [1:6] "newlistings_percent_mortality" "newlistings_percent_deteriorated" "newlistings_percent_transfer" "newlistings_percent_living_donor" ...
 
-The percent deteriorated is the clinical outcome with the most
-variability. The percentages of living and deceased donors have some
-variability as well.
+``` r
+print(plot)
+```
+
+![](KidneyDataMS_files/figure-gfm/unnamed-chunk-12-1.png)<!-- --> The
+percent deteriorated is the clinical outcome with the most variability.
+The percentages of living and deceased donors have some variability as
+well.
 
 Now I will plot the number of kidney transplant centers by zipcode.
 
@@ -767,7 +772,7 @@ plot
 ![](KidneyDataMS_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
 
 ``` r
-#png('pra_comorbidity.png')
+png('pra_comorbidity.png')
 ```
 
 Overall, there is no strong correlation with pra score and
