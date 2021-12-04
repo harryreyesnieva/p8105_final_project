@@ -212,9 +212,9 @@ df_gender_pivot =
 #view(df_gender_pivot)
 plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()+ 
   labs(
-    title = "Patient Gender Groups by Zipcode", subtitle = phrase,
+    title = "Patient Gender by Zipcode", subtitle = phrase,
     x = "Zipcode",
-    y = "Gender Group (Percent)", color = "Gender"
+    y = "Gender (Percent)", color = "Gender"
   ) + theme_minimal() + scale_color_hue(labels = c("Female", "Male"))
 print(plot)
 
@@ -310,9 +310,9 @@ df_blood_type_pivot =
 #view(df_blood_type_pivot)
 plot = df_blood_type_pivot %>% ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + geom_point()+ 
   labs(
-    title = "Patient Blood Type Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+    title = "Patient Blood Type  by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
-    y = "Blood Type Group (Percent)", color = "Blood Type"
+    y = "Blood Type (Percent)", color = "Blood Type"
   ) + theme_minimal() + scale_color_hue(labels = c("A", "AB", "B", "O", "Unknown"))
 print(plot)
 
