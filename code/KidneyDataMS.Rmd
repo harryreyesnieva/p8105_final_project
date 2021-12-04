@@ -81,7 +81,7 @@ print(plot)
 I will plot the second set of exposure variables
 ```{r}
 x2 = df_one_merge[, c(21:35)]
-plot = ggplot(gather(x2), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 100)) + labs(title = "Exposure Frequency Part2", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Number)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x2), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 100)) + labs(title = "Exposure Frequency Part2", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Number)", y = "Frequency") + theme_minimal()
 print(plot)
 ```
 I will plot the third set of exposure variables
@@ -93,7 +93,7 @@ print(plot)
 I will plot the fourth set of exposure variables
 ```{r}
 x4 = df_one_merge[, c(44:51)]
-plot = ggplot(gather(x4), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 200)) + labs(title = "Exposure Frequency Part4", subtitle = "STTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Number)", y = "Frequency") + theme_minimal()
+plot = ggplot(gather(x4), aes(value)) + geom_histogram(bins = 100) + facet_wrap(~key, scales = "free_y") +coord_cartesian(xlim = c(0, 200)) + labs(title = "Exposure Frequency Part4", subtitle = "SRTR Kidney Transplant Data, August 2020 Release", x = "Exposure (Number)", y = "Frequency") + theme_minimal()
 print(plot)
 ```
 
