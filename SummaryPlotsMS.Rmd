@@ -30,7 +30,7 @@ df_all_age = rbind(df_one_age, df_two_age, df_three_age, df_four_age, df_five_ag
 ```
 I will plot the age dataframes.
 ```{r}
-plot = df_all_age %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point() + 
+plot = df_all_age %>% mutate(org = str_replace(org, "HR", "Heart"), org = str_replace(org, "HL", "Heart-Lung"), org = str_replace(org, "IN", "Intestine"), org = str_replace(org, "KI", "Kidney"), org = str_replace(org, "KP", "Kidney-Pancreas"), org = str_replace(org, "LI", "Liver"), , org = str_replace(org, "LU", "Lung"), org = str_replace(org, "PA", "Pancreas")) %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point() + 
   labs(
     title = "Patient Age Groups by Zipcode", subtitle = phrase,
     x = "Zipcode",
@@ -53,7 +53,7 @@ df_all_gender = rbind(df_one_gender, df_two_gender, df_three_gender, df_four_gen
 ```
 I will plot the gender dataframes.
 ```{r}
-plot = df_all_gender %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()+ 
+plot = df_all_gender %>% mutate(org = str_replace(org, "HR", "Heart"), org = str_replace(org, "HL", "Heart-Lung"), org = str_replace(org, "IN", "Intestine"), org = str_replace(org, "KI", "Kidney"), org = str_replace(org, "KP", "Kidney-Pancreas"), org = str_replace(org, "LI", "Liver"), , org = str_replace(org, "LU", "Lung"), org = str_replace(org, "PA", "Pancreas")) %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()+ 
   labs(
     title = "Patient Gender Groups by Zipcode", subtitle = phrase,
     x = "Zipcode",
@@ -77,7 +77,7 @@ df_all_demographics = rbind(df_one_demographics, df_two_demographics, df_three_d
 ```
 I will plot the demographics dataframes.
 ```{r}
-plot = df_all_demographics %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point() + theme_minimal() + 
+plot = df_all_demographics %>% mutate(org = str_replace(org, "HR", "Heart"), org = str_replace(org, "HL", "Heart-Lung"), org = str_replace(org, "IN", "Intestine"), org = str_replace(org, "KI", "Kidney"), org = str_replace(org, "KP", "Kidney-Pancreas"), org = str_replace(org, "LI", "Liver"),  org = str_replace(org, "LU", "Lung"), org = str_replace(org, "PA", "Pancreas")) %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point() + theme_minimal() + 
   labs(
     title = "Patient Demographics by Zipcode", subtitle = phrase,
     x = "Zipcode",
@@ -103,13 +103,13 @@ df_all_blood_type = rbind(df_one_blood_type, df_two_blood_type, df_three_blood_t
 ```
 I will plot the demographics dataframes.
 ```{r}
-plot = df_all_blood_type %>% ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + geom_point()+ 
+plot = df_all_blood_type %>%  mutate(org = str_replace(org, "HR", "Heart"), org = str_replace(org, "HL", "Heart-Lung"), org = str_replace(org, "IN", "Intestine"), org = str_replace(org, "KI", "Kidney"), org = str_replace(org, "KP", "Kidney-Pancreas"), org = str_replace(org, "LI", "Liver"), org = str_replace(org, "LU", "Lung"), org = str_replace(org, "PA", "Pancreas")) %>% ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + geom_point()+ 
   labs(
-    title = "Patient Blood Type Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+    title = "Patient Blood Types by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
     x = "Zipcode",
-    y = "Blood Type Group (Percent)", color = "Blood Type"
+    y = "Blood Type (Percent)", color = "Blood Type"
   ) + theme_minimal() + scale_color_hue(labels = c("A", "AB", "B", "O", "Unknown")) + theme(axis.text.x=element_text(angle=90,hjust=1)) + facet_wrap(~org)
 print(plot)
 
-
+png('blood_type_summary.png')
 ```
