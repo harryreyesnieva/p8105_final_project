@@ -66,12 +66,12 @@ plot = df_all_age %>% mutate(org = str_replace(org, "HR", "Heart"), org = str_re
     title = "Patient Age Groups by Zipcode", subtitle = phrase,
     x = "Zipcode",
     y = "Age Group (Percent)",color = "Age Group"
-  ) + theme_minimal()  + theme(axis.text.x=element_text(angle=90,hjust=1)) + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years")) + facet_wrap(~org)
+  ) + theme_minimal()  + theme(axis.text.x=element_text(angle=90,hjust=1)) + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "65 to 69 Years", "More Than 70 Years")) + facet_wrap(~org)
 print(plot)
 ```
 
 ![](SummaryPlotsMS_files/figure-gfm/unnamed-chunk-3-1.png)<!-- --> I
-will repeat for gender.
+will repeat the data import for gender.
 
 ``` r
 df_one_gender = read.csv("./data/csrs_final_tables_2006_HL_gender.csv") 
@@ -102,7 +102,7 @@ print(plot)
 
 ![](SummaryPlotsMS_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
-I will repeat for demographics.
+I will repeat the data import for demographics.
 
 ``` r
 df_one_demographics = read.csv("./data/csrs_final_tables_2006_HL_demographics.csv") 
@@ -146,7 +146,7 @@ df_eight_blood_type = read.csv("./data/csrs_final_tables_2006_PA_blood_type.csv"
 df_all_blood_type = rbind(df_one_blood_type, df_two_blood_type, df_three_blood_type, df_four_blood_type, df_five_blood_type, df_six_blood_type, df_seven_blood_type, df_eight_blood_type)
 ```
 
-I will plot the demographics dataframes.
+I will plot the blood type dataframes.
 
 ``` r
 plot = df_all_blood_type %>%  mutate(org = str_replace(org, "HR", "Heart"), org = str_replace(org, "HL", "Heart-Lung"), org = str_replace(org, "IN", "Intestine"), org = str_replace(org, "KI", "Kidney"), org = str_replace(org, "KP", "Kidney-Pancreas"), org = str_replace(org, "LI", "Liver"), org = str_replace(org, "LU", "Lung"), org = str_replace(org, "PA", "Pancreas")) %>% ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + geom_point()+ 
