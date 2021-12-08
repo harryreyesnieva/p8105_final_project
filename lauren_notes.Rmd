@@ -1,0 +1,101 @@
+---
+title: "Untitled"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Question 1:
+
+How do centers vary by geography:
+- offer acceptance ratios
+- who gets added/death while on waitlist
+- association btwn willingness to accept high-risk pts (e.g., based on kidney donor risk index, donor creatinine, hep C status) and time to transplant?
+
+question 2:
+- Have centers changed their practices over time?
+
+Question 3:
+- What center-related features are associated with higher/riskier offer acceptance ratios?
+
+
+
+
+Show comparisons between different regions (have a slider for mile radius perhaps based on zipcode?)
+
+
+want a dashboard like this with multiple centers:
+https://www.srtr.org/transplant-centers/ny-presbyterian-hospitalcolumbia-univ-medical-center-nycp/?organ=kidney&recipientType=adult
+
+
+data needed for kidney transplants:
+- zip code of center
+- organ risk score
+- donor risk score
+- waiting list length
+- average duration of time on wait list
+- average age of transplant recipients who died
+- average age of transplant recipients who lived
+- most common comorbidity?
+- offer acceptance ratio over time
+
+
+A. Program Summary
+B. Waiting List Information 
+C. Transplant Information
+
+
+
+Understanding the Kidney tables:
+
+
+
+The Program Summary is a one-page summary highlighting characteristics of the program, including the 
+number of candidates on the waiting list, 
+the number of transplants performed at the program, 
+the number of patients being cared for by the program, 
+and patient outcomes, 
+  including outcomes while on the waiting list (the transplant rate and the death rate while on the waiting list) and 
+  outcomes after transplant (patient and graft survival probabilities). 
+  
+survival probabilities for adults and children (pediatrics) are provided separately. 
+
+For each of the outcomes measures presented, a comparison is provided showing what would be expected at this program if it were performing as similar programs around the country perform when treating similar patients. 
+
+More details regarding these outcome measures are provided in Sections B and C of the report.
+
+
+Levels of analysis
+- program
+- mi radius/city
+- region
+- national
+
+REGIONS FROM OPTN
+Region 1: Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, Eastern Vermont
+Region 2: Delaware, District of Columbia, Maryland, New Jersey, Pennsylvania, West Virginia, Northern Virginia
+Region 3: Alabama, Arkansas, Florida, Georgia, Louisiana, Mississippi, Puerto Rico
+Region 4: Oklahoma, Texas
+Region 5: Arizona, California, Nevada, New Mexico, Utah
+Region 6: Alaska, Hawaii, Idaho, Montana, Oregon, Washington
+Region 7: Illinois, Minnesota, North Dakota, South Dakota, Wisconsin
+Region 8: Colorado, Iowa, Kansas, Missouri, Nebraska, Wyoming
+Region 9: New York, Western Vermont
+Region 10: Indiana, Michigan, Ohio
+Region 11: Kentucky, North Carolina, South Carolina, Tennessee, Virginia
+
+```{r grab_data}
+# for file in data file aka year
+# read in csv spec sheets
+# mutate and make tidy, one var per column
+
+```
+
+Table combining the following:
+center info
+center zip code (from address)
+center region (from OPTN data)
+
