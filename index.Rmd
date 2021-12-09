@@ -2,26 +2,43 @@
 title: "SRTR Dashboard"
 output: 
   flexdashboard::flex_dashboard:
+    theme: yeti
+      # 
+      # bg: "#101010"
+      # fg: "#FDF7F7" 
+      # primary: "#ED79F9"
+      # navbar-bg: "#3ADAC6"
+      # base_font: 
+      #   google: Prompt
+      # heading_font:
+      #   google: Open Sans
+      # code_font:
+      #   google: 
+      #     # arguments to sass::font_google() 
+      #     family: JetBrains Mono
+      #     local: false
     orientation: columns
     vertical_layout: fill
-runtime: shiny
+    social: menu
+    source_code: https://github.com/harryreyesnieva/p8105_final_project
+    include:
+      after_body: footer.html
+      fig_caption: true
 ---
+
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
 library(tidyverse)
 library(viridis)
 library(purrr)
-## Loading required package: viridisLite
+library(DT)
 library(plotly)
-library(shiny)
-```
+library(magick)
+library(bslib)
+# library(shiny)
 
-Column {.sidebar}
------------------------------------------------------------------------
-
-```{r}
-suffix = list("age","gender","demographics")
+suffix = list("age","gender","demographics", "blood_type")
 
 for (i in suffix){
   data_path = "./data/"   # path to the data
@@ -44,38 +61,41 @@ for (i in suffix){
 organ_race = df_all_demographics %>% distinct(org) %>% pull()
 organ_age = df_all_age %>% distinct(org) %>% pull()
 organ_gender = df_all_gender %>% distinct(org) %>% pull()
-
-# selectInput widget
-selectInput(
-  "organ_race", 
-  label = h3("Select race of organ donor"),
-  choices = organ_race, selected = "Kidney")
-
-# selectInput widget
-selectInput(
-  "organ_age", 
-  label = h3("Select age of organ donor"),
-  choices = organ_gender, selected = "Kidney")
-
-# selectInput widget
-selectInput(
-  "organ_gender", 
-  label = h3("Select gender of organ donor"),
-  choices = organ_gender, selected = "Kidney")
+organ_blood_type = df_all_blood_type %>% distinct(org) %>% pull()
 ```
 
-Column {data-width=650}
+<!-- Column {.sidebar} -->
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- ```{r}
+# # selectInput widget
+# selectInput(
+#   "organ_race", 
+#   label = h3("Select race of organ donor"),
+#   choices = organ_race, selected = "Kidney")
+# 
+# # selectInput widget
+# selectInput(
+#   "organ_age", 
+#   label = h3("Select age of organ donor"),
+#   choices = organ_gender, selected = "Kidney")
+# 
+# # selectInput widget
+# selectInput(
+#   "organ_gender", 
+#   label = h3("Select gender of organ donor"),
+#   choices = organ_gender, selected = "Kidney")
+```-->
+Dashboard 
+=======================================================================
+
+Column 
 -----------------------------------------------------------------------
 
 ### Race (Percent) by Zipcode
 
 ```{r}
-
-# renderPrint({ 
-#   input[["organ_race"]]
-# })
-
-renderPlotly({
+# renderPlotly({
   df_all_demographics %>%
     rename(Race = race_category_percent, Zipcode = zipcode) %>%
     mutate(race_category =
@@ -88,14 +108,12 @@ renderPlotly({
              str_replace(race_category, "race_other_allc2", "Other"),
            race_category = str_replace(race_category, "race_unknown_allc2", "Unknown"),
            race_category = str_replace(race_category, "white_allc2", "White")) %>%
-    filter(organ_race == input$organ_race) %>%
+    # filter(organ_race == input$organ_race) %>%
     plot_ly(x = ~Zipcode, y = ~Race, 
             type = "scatter", mode = "markers",
-            alpha = 0.9, color = ~race_category)})
+            alpha = 0.9, color = ~race_category)
+# })
 ```
-
-Column {data-width=350}
------------------------------------------------------------------------
 
 ### Age Group (Percent) by Zipcode
 
@@ -103,7 +121,7 @@ Column {data-width=350}
 # renderPrint({ 
 #   input[["organ_age"]]
 # })
-renderPlotly({
+# renderPlotly({
   df_all_age  %>%
     mutate(
       age_category = str_replace(age_category, "age_2_allc2", "Less Than 2 Years"),
@@ -120,11 +138,15 @@ renderPlotly({
                                        "35 to 49 Years", "50 to 64 Years",
                                        "65 to 69 Years", "More Than 70 Years"))) %>%
     rename(Age_Group = age_category_percent, Zipcode = zipcode) %>%
-    filter(organ_age == input$organ_age) %>%
+    # filter(organ_age == input$organ_age) %>%
     plot_ly(x = ~Zipcode, y = ~Age_Group, 
             type = "scatter", mode = "markers",
-            alpha = 0.9, color = ~age_category)})
+            alpha = 0.9, color = ~age_category)
+# })
 ```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
 
 ### Gender (Percent) by Zipcode
 
@@ -133,14 +155,123 @@ renderPlotly({
 #   input[["organ_gender"]]
 # })
 
-renderPlotly({
+# renderPlotly({
   df_all_gender %>%
     rename(Gender = gender_category_percent, Zipcode = zipcode) %>%
     mutate(gender_category = str_replace(gender_category, "female_allc2", "Female"),
            gender_category = str_replace(gender_category, "male_allc2", "Male")) %>%
-    filter(
-    organ_gender == input$organ_gender) %>%
+    # filter(organ_gender == input$organ_gender) %>%
     plot_ly(x = ~Zipcode, y = ~Gender, 
             type = "scatter", mode = "markers",
-            alpha = 0.9, color = ~gender_category)})
+            alpha = 0.9, color = ~gender_category)
+# })
 ```
+
+### Blood type (Percent) by Zipcode
+
+```{r}
+# renderPrint({ 
+#   input[["organ_blood_type"]]
+# })
+
+# renderPlotly({
+  df_all_blood_type %>%
+    rename(`Blood Type` = blood_type_category_percent, Zipcode = zipcode) %>%
+    mutate(gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "A"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "B"),
+           gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "O"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "AB"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "Unknown")) %>%
+    # filter(organ_gender == input$organ_gender) %>%
+    plot_ly(x = ~Zipcode, y = ~`Blood Type`, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~blood_type_category)
+# })
+```
+
+## Transplant Outcomes
+
+
+
+Search the Data Repository
+=======================================================================
+
+```{r}
+# this is just a placeholder; we will replace this with another table
+DT:::DT2BSClass('display')
+DT:::DT2BSClass(c('compact', 'cell-border'))
+
+datatable(df_all_demographics %>%
+            rename(ID = `...1`,
+                   Site = entire_name,
+                   `Center Code` = ctr_cd,
+                   Organ = org,
+                   `Zip code` = zipcode,
+                   Race = race_category,
+                   `Race Category Percent` = race_category_percent) %>%
+            select(-ctr_ty, -ID)%>%
+            extensions = c('Buttons'),
+          options = list(scrollY = 650, scrollX = 500, deferRender = TRUE,
+            pageLength = 25,
+            # scroller = FALSE,
+            # paging = TRUE,
+            dom = 'Bfrtip',
+            buttons = list('copy', 'print', 
+                           list(extend = 'collection',
+                                buttons = c('csv', 'excel', 'pdf'),
+                                text = 'Download')
+                           )
+            ),
+            filter = 'top',
+            escape = FALSE) 
+
+```
+
+Additional Information
+=======================================================================
+
+Column
+-----------------------------------------------------------------------
+
+### Background
+
+**Motivation for this project:**    
+Kidney transplantation is the preferred treatment for End Stage Kidney Disease (ESKD). Nonetheless, due to a severe donor organ shortage, only 22,393 out of more than 785,000 patients with ESKD received kidney transplants in the United States (US) in 2018.^1^ Given the limited supply, kidney transplant centers can be very selective in who qualifies as a kidney transplant candidate. Transplant centers and surgeons often make subjective decisions regarding which deceased donor kidneys are acceptable for transplant in a given patient. This process can lack transparency and impact whether a patient receives a kidney transplant prior to dying or removal from the waiting list due to severity of illness. Accordingly, large practice variation is possible among the 200+ kidney transplant centers across the US. While center-level summary data on transplants and waitlist candidates are publicly available, this information is primarily presented as individualized snapshot reports that do not lend themselves to direct comparison across sites over time. Given that patients may choose where to waitlist, our aim is to analyze data comparing transplantation center practices and develop a dashboard to present these findings to the public.
+
+**Data sources:**   
+The Scientific Registry of Transplant Recipients (SRTR) takes national registry data on all organ donors, transplant candidates, and transplant recipients in the US to produce biannual [Program-Specific Reports](https://www.srtr.org/reports/program-specific-reports/) (PSR). Our project will utilize center-level data on waitlisted patients and patients in receipt of transplants, aggregated demographics, transplant outcomes, and organ offer acceptance practices. The PSR data is archived and publicly available for download in Excel format from the SRTR website with drop-down menus for organ and time period. These reports date back to July 2012 with offer acceptance data available starting July 2017. There are 238 rows of transplant center data in the most recent data file, organized across many different sheets by topic, each with tens to hundreds of columns.
+
+**References**   
+1. *United States Renal Data System. 2020 USRDS Annual Data Report: Epidemiology of kidney disease in the United States. National Institutes of Health, National Institute of Diabetes and Digestive and Kidney Diseases, Bethesda, MD, 2020.*
+
+Column
+-----------------------------------------------------------------------
+
+### How to use the site
+
+**Dashboard:**   
+[Details regarding elements of the dashboard]
+
+**Repository:**   
+[Details regarding elements of the repository]
+
+
+Column  {data-width=200}
+-----------------------------------------------------------------------
+
+### Study Team:
+
+Kristin King (kk3154)   
+![*Kristen King*](./img/King_Kristin.jpeg){width=75%}
+
+Harry Reyes (hr2479)   
+![*Harry Reyes*](./img/Reyes_Harry.png){width=75%}
+
+Lauren Richter (lr2854)   
+![*Lauren Richter*](./img/Richter_Lauren.jpeg){width=75%} 
+
+Matthew Spotnitz (mes2165)   
+![*Matthew Spotnitz*](./img/Spotnitz_Matthew.jpeg){width=75%} 
+
+
+

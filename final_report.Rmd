@@ -37,7 +37,7 @@ for (i in suffix){
   }
 ```
 
-# Geographic Variance in Solid Organ Transplant Patient Characteristics
+# Variation in kidney transplantation center practices and patient characteristics
 **Group members:** Kristen King (*kk3154*), Harry Reyes (*hr2479*), Lauren Richter (*lr2854*), Matthew Spotnitz (*mes2165*)
 
 ## Motivation
@@ -186,6 +186,7 @@ df_one_merge %>%
 ```
 
 #### Figure X: Representative histogram of exposure variables, Kidney Transplant Population.
+
 ```{r}
 x2 = df_one_merge[, c(21:35)]
 plot = ggplot(gather(x2), aes(value)) + 
