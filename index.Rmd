@@ -3,20 +3,6 @@ title: "SRTR Dashboard"
 output: 
   flexdashboard::flex_dashboard:
     theme: yeti
-      # 
-      # bg: "#101010"
-      # fg: "#FDF7F7" 
-      # primary: "#ED79F9"
-      # navbar-bg: "#3ADAC6"
-      # base_font: 
-      #   google: Prompt
-      # heading_font:
-      #   google: Open Sans
-      # code_font:
-      #   google: 
-      #     # arguments to sass::font_google() 
-      #     family: JetBrains Mono
-      #     local: false
     orientation: columns
     vertical_layout: fill
     social: menu
@@ -24,6 +10,7 @@ output:
     include:
       after_body: footer.html
       fig_caption: true
+    css: styles.css
 ---
 
 
@@ -89,10 +76,23 @@ organ_blood_type = df_all_blood_type %>% distinct(org) %>% pull()
 Dashboard 
 =======================================================================
 
-Column 
+Row  {data-width=250}
 -----------------------------------------------------------------------
 
-### Race (Percent) by Zipcode
+### Introduction
+
+Welcome to the Scientific Registry of Transplant Recipients (SRTR) Dashboard and Repository. Our site compiles and presents national registry data on all organ donors, transplant candidates, and transplant recipients in the US based on biannual [Program-Specific Reports](https://www.srtr.org/reports/program-specific-reports/) (PSR). Our site utilize center-level data on waitlisted patients and patients in receipt of transplants, aggregated demographics, transplant outcomes, and organ offer acceptance practices. 
+
+**Motivation**
+
+Kidney transplantation is the preferred treatment for End Stage Kidney Disease (ESKD). Nonetheless, due to a severe donor organ shortage, only 22,393 out of more than 785,000 patients with ESKD received kidney transplants in the United States (US) in 2018.^1^ Given the limited supply, kidney transplant centers can be very selective in who qualifies as a kidney transplant candidate. Transplant centers and surgeons often make subjective decisions regarding which deceased donor kidneys are acceptable for transplant in a given patient. This process can lack transparency and impact whether a patient receives a kidney transplant prior to dying or removal from the waiting list due to severity of illness. Accordingly, large practice variation is possible among the 200+ kidney transplant centers across the US. While center-level summary data on transplants and waitlist candidates are publicly available, this information is primarily presented as individualized snapshot reports that do not lend themselves to direct comparison across sites over time. Given that patients may choose where to waitlist, our aim is to analyze data comparing transplantation center practices and develop a dashboard to present these findings to the public.
+
+Column {.tabset}
+-----------------------------------------------------------------------
+
+### Patient Characteristics
+
+**Race (Percent) by Zipcode**   
 
 ```{r}
 # renderPlotly({
@@ -115,7 +115,7 @@ Column
 # })
 ```
 
-### Age Group (Percent) by Zipcode
+**Age Group (Percent) by Zipcode**   
 
 ```{r}
 # renderPrint({ 
@@ -145,10 +145,7 @@ Column
 # })
 ```
 
-Column {data-width=500}
------------------------------------------------------------------------
-
-### Gender (Percent) by Zipcode
+**Gender (Percent) by Zipcode**   
 
 ```{r}
 # renderPrint({ 
@@ -167,7 +164,7 @@ Column {data-width=500}
 # })
 ```
 
-### Blood type (Percent) by Zipcode
+**Blood type (Percent) by Zipcode**   
 
 ```{r}
 # renderPrint({ 
@@ -189,42 +186,137 @@ Column {data-width=500}
 # })
 ```
 
-## Transplant Outcomes
 
+### Transplant Outcomes
 
+**Race (Percent) by Zipcode**   
+
+```{r}
+# renderPlotly({
+  df_all_demographics %>%
+    rename(Race = race_category_percent, Zipcode = zipcode) %>%
+    mutate(race_category =
+             str_replace(race_category, "african_american_allc2", "African American"),
+           race_category =
+             str_replace(race_category, "asian_allc2", "Asian"),
+           race_category =
+             str_replace(race_category, "hispanic_latino_allc2", "Hispanic or Latino"),
+           race_category =
+             str_replace(race_category, "race_other_allc2", "Other"),
+           race_category = str_replace(race_category, "race_unknown_allc2", "Unknown"),
+           race_category = str_replace(race_category, "white_allc2", "White")) %>%
+    # filter(organ_race == input$organ_race) %>%
+    plot_ly(x = ~Zipcode, y = ~Race, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~race_category)
+# })
+```
+
+**Age Group (Percent) by Zipcode**   
+
+```{r}
+# renderPrint({ 
+#   input[["organ_age"]]
+# })
+# renderPlotly({
+  df_all_age  %>%
+    mutate(
+      age_category = str_replace(age_category, "age_2_allc2", "Less Than 2 Years"),
+      age_category = str_replace(age_category, "age_2_11_allc2", "2 to 11 Years"),
+      age_category = str_replace(age_category, "age_12_17_allc2", "12 to 17 Years"),
+      age_category = str_replace(age_category, "age_18_34_allc2", "18 to 34 Years"),
+      age_category = str_replace(age_category,"age_35_49_allc2", "35 to 49 Years"),
+      age_category = str_replace(age_category, "age_50_64_allc2", "50 to 64 Years"),
+      age_category = str_replace(age_category, "age_65_69_allc2", "65 to 69 Years"),
+      age_category = str_replace (age_category, "age_70_allc2", "More Than 70 Years"),
+      age_category = factor(age_category, 
+                            levels = c("Less Than 2 Years","2 to 11 Years",
+                                       "12 to 17 Years", "18 to 34 Years", 
+                                       "35 to 49 Years", "50 to 64 Years",
+                                       "65 to 69 Years", "More Than 70 Years"))) %>%
+    rename(Age_Group = age_category_percent, Zipcode = zipcode) %>%
+    # filter(organ_age == input$organ_age) %>%
+    plot_ly(x = ~Zipcode, y = ~Age_Group, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~age_category)
+# })
+```
+
+**Gender (Percent) by Zipcode**   
+
+```{r}
+# renderPrint({ 
+#   input[["organ_gender"]]
+# })
+
+# renderPlotly({
+  df_all_gender %>%
+    rename(Gender = gender_category_percent, Zipcode = zipcode) %>%
+    mutate(gender_category = str_replace(gender_category, "female_allc2", "Female"),
+           gender_category = str_replace(gender_category, "male_allc2", "Male")) %>%
+    # filter(organ_gender == input$organ_gender) %>%
+    plot_ly(x = ~Zipcode, y = ~Gender, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~gender_category)
+# })
+```
+
+**Blood type (Percent) by Zipcode**   
+
+```{r}
+# renderPrint({ 
+#   input[["organ_blood_type"]]
+# })
+
+# renderPlotly({
+  df_all_blood_type %>%
+    rename(`Blood Type` = blood_type_category_percent, Zipcode = zipcode) %>%
+    mutate(gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "A"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "B"),
+           gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "O"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "AB"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "Unknown")) %>%
+    # filter(organ_gender == input$organ_gender) %>%
+    plot_ly(x = ~Zipcode, y = ~`Blood Type`, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~blood_type_category)
+# })
+```
 
 Search the Data Repository
 =======================================================================
 
+The SRTR Data Repository provides users with the ability to search and copy, print, or download results for further study. Users may filter by a single column or search all columns simultaneously.
+          
 ```{r}
 # this is just a placeholder; we will replace this with another table
-DT:::DT2BSClass('display')
-DT:::DT2BSClass(c('compact', 'cell-border'))
-
 datatable(df_all_demographics %>%
-            rename(ID = `...1`,
-                   Site = entire_name,
+            select(-ctr_ty, -`...1`)%>%
+            rename(Site = entire_name,
                    `Center Code` = ctr_cd,
                    Organ = org,
                    `Zip code` = zipcode,
                    Race = race_category,
-                   `Race Category Percent` = race_category_percent) %>%
-            select(-ctr_ty, -ID)%>%
-            extensions = c('Buttons'),
-          options = list(scrollY = 650, scrollX = 500, deferRender = TRUE,
-            pageLength = 25,
-            # scroller = FALSE,
-            # paging = TRUE,
-            dom = 'Bfrtip',
-            buttons = list('copy', 'print', 
+                   `Race Category Percent` = race_category_percent),
+          extensions = c('Buttons'),
+          options = 
+            list(scrollY = 650, 
+                 scrollX = 500, 
+                 deferRender = TRUE,
+                 pageLength = 25,
+                 # scroller = FALSE,
+                 # paging = TRUE,
+                 dom = 'Bfrtip',
+                 buttons = list('copy', 'print', 
                            list(extend = 'collection',
                                 buttons = c('csv', 'excel', 'pdf'),
-                                text = 'Download')
-                           )
-            ),
-            filter = 'top',
-            escape = FALSE) 
-
+                                text = 'Download'))),
+          filter = 'top',
+          escape = FALSE)
+          # caption = 'The SRTR Data Repository provides users with the ability
+          # to search and copy, print, or download results for further study. 
+          # Users may filter by a single column or search all columns 
+          # simultaneously.')
 ```
 
 Additional Information
@@ -256,22 +348,27 @@ Column
 [Details regarding elements of the repository]
 
 
-Column  {data-width=200}
+Column  {data-width=150}
 -----------------------------------------------------------------------
 
 ### Study Team:
+<center>
 
-Kristin King (kk3154)   
+**Kristin King**   
+(kk3154)   
 ![*Kristen King*](./img/King_Kristin.jpeg){width=75%}
 
-Harry Reyes (hr2479)   
+**Harry Reyes**    
+(hr2479)   
 ![*Harry Reyes*](./img/Reyes_Harry.png){width=75%}
 
-Lauren Richter (lr2854)   
+**Lauren Richter**    
+(lr2854)   
 ![*Lauren Richter*](./img/Richter_Lauren.jpeg){width=75%} 
 
-Matthew Spotnitz (mes2165)   
+**Matthew Spotnitz**    
+(mes2165)   
 ![*Matthew Spotnitz*](./img/Spotnitz_Matthew.jpeg){width=75%} 
 
-
+</center>
 
