@@ -1,0 +1,612 @@
+---
+title: "Iteration"
+date: "11/24/2021"
+output: github_document
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(haven)
+library(ggplot2)
+library(zipcodeR)
+library(ggmap)
+library(leaflet)
+library(kableExtra)
+```
+
+I will define the iterators
+```{r}
+path = "../data/csrs_final_tables_2006_KI.xls"
+phrase = "SRTR Kidney Transplant Data, August 2020 Release"
+df_paths = tibble(
+  paths = c("../data/csrs_final_tables_2006_HL.xls", 
+            "../data/csrs_final_tables_2006_HR.xls", 
+            "../data/csrs_final_tables_2006_IN.xls", 
+            "../data/csrs_final_tables_2006_KI.xls", 
+            "../data/csrs_final_tables_2006_KP.xls", 
+            "../data/csrs_final_tables_2006_LI.xls", 
+            "../data/csrs_final_tables_2006_LU.xls", 
+            "../data/csrs_final_tables_2006_PA.xls"), 
+  phrases = c("SRTR Heart Lung Transplant Data, August 2020 Release", 
+              "SRTR Heart Transplant Data, August 2020", 
+              "SRTR Intestine Transplant Data, August 2020 Release", 
+              "SRTR Kidney Transplant Data, August 2020 Release", 
+              "SRTR Kidney Pancreas Transplant Data, August 2020 Release", 
+              "SRTR Liver Transplant Data, August 2020 Release", 
+              "SRTR Lung Transplant Data, August 2020", 
+              "SRTR Pancreas Transplant Data, August 2020 Release"))
+```
+
+Function to read csv file
+```{r}
+read_file = function(x){
+  x = read_excel(path, sheet = "Table B1")
+x = janitor::clean_names(x)
+str(x)
+return(x) 
+}
+```
+
+Function to clean dataframe
+```{r}
+clean_data_frame = function(x){
+  x = x %>% 
+    rename(
+            newlistings_center_time1 = wla_addcen_nc1, 
+            newlistings_center_time2 = wla_addcen_nc2, 
+            newlistings_center_all = wla_addcen_pcz,
+            newlistings_regional = wla_addcen_prz, 
+            newlistings_usa = wla_addcen_puz,
+            endlistings_center_time1 = wla_end_nc1, 
+            endlistings_center_time2 = wla_end_nc2, 
+            endlistings_center_all = wla_end_pcz, 
+            endlistings_regional = wla_end_prz, 
+            endlistings_usa = wla_end_puz,
+            deteriorated_center_time1 = wla_remdet_nc1, 
+            deteriorated_center_time2 = wla_remdet_nc2, 
+            deteriorated_center_all = wla_remdet_pcz, 
+            deteriorated_regional = wla_remdet_prz, 
+            deteriorated_usa = wla_remdet_puz,
+            died_center_time1 = wla_remdied_nc1, 
+            died_center_time2 = wla_remdied_nc2, 
+            died_center_all = wla_remdied_pcz, 
+            died_regional = wla_remdied_prz, 
+            died_usa = wla_remdied_puz,
+            other_center_time1 = wla_remoth_nc1, 
+            other_center_time2 = wla_remoth_nc2, 
+            other_center_all = wla_remoth_pcz, 
+            other_regional = wla_remoth_prz, 
+            other_usa = wla_remoth_puz,
+            recovered_center_time1 = wla_remrec_nc1, 
+            recovered_center_time2 = wla_remrec_nc2, 
+            recovered_center_all = wla_remrec_pcz, 
+            recovered_regional = wla_remrec_prz, 
+            recovered_usa = wla_remrec_puz,
+            transfer_center_time1 = wla_remtfer_nc1, 
+            transfer_center_time2 = wla_remtfer_nc2, 
+            transfer_center_all = wla_remtfer_pcz, 
+            transfer_regional = wla_remtfer_prz, 
+            transfer_usa = wla_remtfer_puz,
+            deceased_donor_center_time1 = wla_remtxc_nc1, 
+            deceased_donor_center_time2 = wla_remtxc_nc2, 
+            deceased_donor_center_all = wla_remtxc_pcz, 
+            deceased_donor_regional = wla_remtxc_prz, 
+            deceased_donor_usa = wla_remtxc_puz,
+            living_donor_center_time1 = wla_remtxl_nc1, 
+            living_donor_center_time2 = wla_remtxl_nc2, 
+            living_donor_center_all = wla_remtxl_pcz, 
+            living_donor_regional = wla_remtxl_prz, 
+            living_donor_usa = wla_remtxl_puz,
+            transplant_other_center_time1 = wla_remtxoc_nc1, 
+            transplant_other_center_time2 = wla_remtxoc_nc2, 
+            transplant_other_center_all = wla_remtxoc_pcz, 
+            transplant_other_regional = wla_remtxoc_prz, 
+            transplant_other_center_usa = wla_remtxoc_puz,
+            start_waitlist_center_time1 = wla_st_nc1, 
+            start_waitlist_center_time2 = wla_st_nc2, 
+            start_waitlist_center_all = wla_st_pcz, 
+            start_waitlist_regional = wla_st_prz, 
+            start_waitlist_usa = wla_st_puz)
+  
+x = x [-c(1), ]
+x[, c(4,6:60)] <- sapply(x[, c(4,6:60)], as.numeric)
+x = drop_na(x)
+str(x)
+return (x)
+}
+```
+
+Outcomes and zipcodes
+```{r}
+outcomes_and_zipcodes = function(x){
+  x = 
+    x %>% 
+    mutate(newlistings_percent_mortality = 100*died_center_all/newlistings_center_all,
+           newlistings_percent_deteriorated = 100*deteriorated_center_all/newlistings_center_all,
+           newlistings_percent_transfer = 100* transfer_center_all/newlistings_center_all,
+           newlistings_percent_living_donor = 100* living_donor_center_all/newlistings_center_all,
+           newlistings_percent_deceased_donor = 100*deceased_donor_center_all/newlistings_center_all,
+           newlistings_percent_recovered = 100* recovered_center_all/newlistings_center_all,
+           living_deceased_graft_ratio = living_donor_center_all/deceased_donor_center_all)
+  
+df_zipcodes = read_excel("../data/zipcodes.xlsx")
+df_zipcodes = df_zipcodes[-c(1), ]
+df_zipcodes[, c(2)] = sapply(df_zipcodes[, c(2)], as.numeric)
+df_zipcodes = janitor::clean_names(df_zipcodes)
+
+for (zipcode in df_zipcodes["zipcode"]){
+    df_zip_geo = tibble(geocode_zip(zipcode))
+}
+
+df_geo_merge = merge(df_zipcodes, df_zip_geo, all = TRUE)
+x = merge(x, df_geo_merge, all = TRUE)
+return(x)
+}
+```
+
+Exposures One
+```{r}
+plot_exposures_one = function(x){
+  x1 = x[, c(6:20)]
+plot = 
+  ggplot(gather(x1), aes(value)) + 
+  geom_histogram(bins = 100) + 
+  facet_wrap(~key, scales = "free_y") +
+  coord_cartesian(xlim = c(0, 2000)) + 
+  labs(title = "Exposure Frequency Part1", 
+       subtitle = phrase, 
+       x = "Exposure (Number)", y = "Frequency") + 
+  theme_minimal()
+print(plot)
+}
+```
+
+Exposures Part Two
+```{r}
+plot_exposures_two = function(x){
+  x2 = x[, c(21:35)]
+  plot = ggplot(gather(x2), aes(value)) + 
+    geom_histogram(bins = 100) + 
+    facet_wrap(~key, scales = "free_y") +
+    coord_cartesian(xlim = c(0, 100)) + 
+    labs(title = "Exposure Frequency Part2", 
+         subtitle = phrase, 
+         x = "Exposure (Number)", y = "Frequency") + 
+    theme_minimal()
+  
+print(plot)
+}
+```
+Exposures Part Three
+```{r}
+plot_exposures_three = 
+  function(x){
+    x3 = x[, c(36:43)]
+    plot = ggplot(gather(x3), aes(value)) + 
+      geom_histogram(bins = 100) + 
+      facet_wrap(~key, scales = "free_y") +
+      coord_cartesian(xlim = c(0, 500)) + 
+      labs(title = "Exposure Frequency Part3", 
+           subtitle = phrase, 
+           x = "Exposure (Number)", y = "Frequency") + 
+      theme_minimal()
+    
+print(plot)
+}
+```
+Exposures Part Four
+```{r}
+plot_exposures_four = 
+  function(x){
+    x4 = x[, c(44:51)]
+    plot = ggplot(gather(x4), aes(value)) + 
+      geom_histogram(bins = 100) + 
+      facet_wrap(~key, scales = "free_y") +
+      coord_cartesian(xlim = c(0, 200)) + 
+      labs(title = "Exposure Frequency Part4", 
+           subtitle = phrase, 
+           x = "Exposure (Number)", y = "Frequency") + 
+      theme_minimal()
+    
+print(plot)
+}
+```
+
+Exposures Part Five
+```{r}
+plot_exposures_five = function(x){
+x5 = x[, c(52:60)]
+plot = ggplot(gather(x5), aes(value)) + 
+  geom_histogram(bins = 100) + 
+  facet_wrap(~key, scales = "free_y") +
+  coord_cartesian(xlim = c(0, 2000)) + 
+  labs(title = "Exposure Frequency Part5", 
+       subtitle = phrase, 
+       x = "Exposure (Number)", y = "Frequency") + 
+  theme_minimal()
+print(plot)
+}
+```
+
+Outcomes and zipcodes
+```{r}
+plot_outcomes = function(x){
+  x = x[, c(61:66)] %>% 
+    filter(newlistings_percent_transfer <= 100)
+plot = ggplot(gather(x), aes(value)) + 
+  geom_histogram(bins = 30) + 
+  facet_wrap(~key, scales = "free_y") + 
+  coord_cartesian(xlim = c(0, 100)) + 
+  labs(title = "Outcome Frequency", 
+       subtitle = phrase, 
+       x = "Outcome (Percent)", y = "Frequency") + 
+  theme_minimal()
+print(plot)
+}
+```
+Zipcode Histogram
+```{r}
+zipcode_histogram = function(x){
+z = 
+  x %>% 
+  ggplot(aes(zipcode)) + 
+  geom_histogram(bins = 50) + 
+  labs(title = "Transplant Center Frequency by Zipcode", 
+       subtitle = phrase,
+       x = "Zipcode",
+       y = "Transplant Center Count") + 
+  theme_minimal()
+print(z)
+}
+```
+Make Second Dataframe
+```{r}
+second_data_frame = function(x){
+df_two = read_excel(x, sheet = "Tables B2-B3 Center")
+df_two = janitor::clean_names(df_two)
+str(df_two)
+#head(df_two)
+#tail(df_two)
+#view(df_two)
+colnames = colnames(df_two)
+
+df_two_names = read_excel("../data/B2 names.xlsx")
+df_two_names = janitor::clean_names(df_two_names)
+df_two_names = df_two_names %>% mutate(c = paste(a,b))
+setnames = df_two_names %>% pull(c)
+df_two = setNames(df_two, setnames)
+df_two = janitor::clean_names(df_two)
+df_two_clean = df_two[-c(1), ]
+df_two_clean = df_two_clean %>% rename (entire_name= center_name_na , ctr_cd = center_code_na)
+return (df_two_clean)
+}
+```
+Plot Demographics
+```{r}
+plot_demographics = function(x,y){
+
+df_two_select = 
+  y %>% 
+  select(entire_name, ctr_cd, asian_allc2, african_american_allc2, 
+         hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
+df_social = merge(x, df_two_select)
+df_demographics = df_social[, c(1,2,3, 68, 71:76)]
+#view(df_demographics)
+
+df_demographics_pivot =
+  pivot_longer(
+    df_demographics, 
+    asian_allc2:race_unknown_allc2,
+    names_to = "race_category", 
+    values_to = "race_category_percent") %>%
+  mutate(
+    race_category_percent = as.numeric(race_category_percent),
+    race_category = as.factor(race_category))
+
+plot = 
+  df_demographics_pivot %>% 
+  ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + 
+  geom_point() + 
+  labs(title = "Patient Demographics by Zipcode",
+       subtitle = phrase,
+       x = "Zipcode",
+       y = "Race (Percent)", color = "Race") + 
+  theme_minimal() + 
+  scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", 
+                             "Other", "Unknown", "White"))
+print(plot)
+}
+```
+Plot Age
+```{r}
+plot_age = function(x,y){
+
+df_two_age = y[, c(1,2,4,6,8,10,12,14,16,18,20,22)]
+df_age = merge(x, df_two_age)
+df_age = df_age[, c(1,2,3, 5,68, 72:79)]
+#view(df_age)
+df_age_pivot =
+  pivot_longer(
+    df_age, 
+    age_2_11_allc2:age_70_allc2,
+    names_to = "age_category", 
+    values_to = "age_category_percent") %>% 
+  mutate (age_category_percent = as.numeric(age_category_percent)) %>% 
+  mutate(age_category = factor(age_category, 
+                               levels =c("age_2_allc2","age_2_11_allc2", 
+                                         "age_12_17_allc2", "age_18_34_allc2", 
+                                         "age_35_49_allc2", "age_50_64_allc2", 
+                                         "age_65_69_allc2", "age_70_allc2"))) %>% 
+  drop_na()
+#view(df_age_pivot)
+
+plot = 
+  df_age_pivot %>% 
+  ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + 
+  geom_point() + 
+  labs(title = "Patient Age Groups by Zipcode",
+       subtitle = phrase,
+       x = "Zipcode",
+       y = "Age Group (Percent)",
+       color = "Age Group") + 
+  theme_minimal()  + 
+  scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", 
+                             "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", 
+                             "65 to 69 Years", "More Than 70 Years"))
+print(plot)
+}
+```
+
+Now I will make a gender dataframe and plot the gender distributions by zipcode.
+```{r}
+plot_gender = function(x,y){
+
+df_two_gender = y[, c(1,2,34,36)]
+df_gender = merge(x, df_two_gender)
+df_gender = df_gender[, c(1,2,3, 68, 71:72)]
+#view(df_gender)
+
+df_gender_pivot =
+  pivot_longer(
+    df_gender, 
+    female_allc2:male_allc2,
+    names_to = "gender_category", 
+    values_to = "gender_category_percent") %>% 
+  mutate (gender_category_percent = as.numeric(gender_category_percent),
+          gender_category = as.factor(gender_category))
+#view(df_gender_pivot)
+
+plot = 
+  df_gender_pivot %>% 
+  ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + 
+  geom_point()+ 
+  labs(title = "Patient Gender by Zipcode", 
+       subtitle = phrase,
+       x = "Zipcode",
+       y = "Gender (Percent)", 
+       color = "Gender") + 
+  theme_minimal() + 
+  scale_color_hue(labels = c("Female", "Male"))
+
+print(plot)
+}
+```
+
+Leaflet
+```{r, eval=FALSE}
+leaflet = function(x){
+library(leaflet)
+leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
+
+m = 
+  x %>% 
+  leaflet() %>% 
+  addTiles() %>% 
+  addCircleMarkers(lat = ~lat, lng = ~lng)
+print(m)
+
+}
+```
+
+Merge and Write Dataframe
+```{r}
+merge_and_write = function(x,y) {
+df = merge(x, y)
+path = sub('.xls', '_clean.csv', path)
+write.csv(df, path)
+}
+```
+
+Age Merge and Write Dataframe
+```{r}
+age_merge_and_write = function(x,y) {
+df_two_age = y[, c(1,2,5,6,8,10,12,14,16,18,20,22)]
+df_age = merge(x, df_two_age)
+df_age = df_age[, c(1,2,3,5, 68, 72:79)]
+#view(df_age)
+
+df_age_pivot =
+  pivot_longer(
+    df_age, 
+    age_2_11_allc2:age_70_allc2,
+    names_to = "age_category", 
+    values_to = "age_category_percent") %>% 
+  mutate (age_category_percent = as.numeric(age_category_percent),
+          age_category = factor(age_category,
+                                levels =c("age_2_allc2","age_2_11_allc2", 
+                                         "age_12_17_allc2", "age_18_34_allc2", 
+                                         "age_35_49_allc2", "age_50_64_allc2", 
+                                         "age_65_69_allc2", "age_70_allc2"))) %>% 
+  drop_na()
+
+path = sub('.xls', '_age.csv', path)
+write.csv(df_age_pivot, path)
+}
+```
+
+Demographics Merge and Write Dataframe
+```{r}
+
+demographics_merge_and_write = function(x,y) {
+df_two_select = 
+  y %>% 
+  select(entire_name, ctr_cd, organ_na, asian_allc2, african_american_allc2, 
+         hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
+df_social = merge(x, df_two_select)
+df_demographics = df_social[, c(1,2,3, 5, 68, 72:77)]
+#view(df_demographics)
+
+df_demographics_pivot =
+  pivot_longer(
+    df_demographics, 
+    asian_allc2:race_unknown_allc2,
+    names_to = "race_category", 
+    values_to = "race_category_percent") %>% 
+  mutate(race_category_percent = as.numeric(race_category_percent),
+         race_category = as.factor(race_category))
+path = sub('.xls', '_demographics.csv', path)
+write.csv(df_demographics_pivot, path)
+}
+```
+Gender Merge and Write Dataframe
+```{r}
+gender_merge_and_write = function(x,y) {
+df_two_gender = y[, c(1,2,5, 34,36)]
+df_gender = merge(x, df_two_gender)
+df_gender = df_gender[, c(1,2,3, 5, 68, 72:73)]
+#view(df_gender)
+
+df_gender_pivot =
+  pivot_longer(
+    df_gender, 
+    female_allc2:male_allc2,
+    names_to = "gender_category", 
+    values_to = "gender_category_percent") %>% 
+  mutate (gender_category_percent = as.numeric(gender_category_percent),
+          gender_category = as.factor(gender_category))
+
+path = sub('.xls', '_gender.csv', path)
+write.csv(df_gender_pivot, path)
+}
+```
+
+Plot Blood type
+```{r}
+plot_blood_type = function(x,y){
+df_two_blood_type = y[, c(1,2,5,24, 26, 28, 30, 32)]
+df_blood_type = merge(x, df_two_blood_type)
+df_blood_type = df_blood_type[, c(1,2,3,5, 68, 72:76)]
+#view(df_blood_type)
+
+df_blood_type_pivot =
+  pivot_longer(
+    df_blood_type, 
+    blood_type_ab_allc2:blood_type_unknown_allc2,
+    names_to = "blood_type_category", 
+    values_to = "blood_type_category_percent") %>% 
+  mutate (blood_type_category_percent = as.numeric(blood_type_category_percent),
+          blood_type_category = as.factor(blood_type_category))
+#view(df_blood_type_pivot)
+
+plot = 
+  df_blood_type_pivot %>% 
+  ggplot(aes(x=zipcode, y =blood_type_category_percent, color = blood_type_category)) + 
+  geom_point()+ 
+  labs(title = "Patient Blood Type  by Zipcode", 
+       subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+       x = "Zipcode",
+       y = "Blood Type (Percent)", 
+       color = "Blood Type") + 
+  theme_minimal() + 
+  scale_color_hue(labels = c("A", "AB", "B", "O", "Unknown"))
+
+print(plot)
+}
+```
+Write and Merge Blood Type
+```{r}
+write_blood_type = function(x,y){
+df_two_blood_type = y[, c(1,2,5,24, 26, 28, 30, 32)]
+df_blood_type = merge(x, df_two_blood_type)
+df_blood_type = df_blood_type[, c(1,2,3,5, 68, 72:76)]
+#view(df_blood_type)
+
+df_blood_type_pivot =
+  pivot_longer(
+    df_blood_type, 
+    blood_type_ab_allc2:blood_type_unknown_allc2,
+    names_to = "blood_type_category", 
+    values_to = "blood_type_category_percent") %>% 
+  mutate (blood_type_category_percent = as.numeric(blood_type_category_percent),
+          blood_type_category = as.factor(blood_type_category))
+#view(df_blood_type_pivot)
+
+path = sub('.xls', '_blood_type.csv', path)
+write.csv(df_blood_type_pivot, path)
+}
+```
+
+Master function
+```{r}
+automate_eda = function(x){
+df_one = read_file(x)
+df_one = clean_data_frame(df_one)
+df_one = outcomes_and_zipcodes(df_one)
+plot_exposures_one(df_one)
+plot_exposures_two(df_one)
+plot_exposures_three(df_one)
+plot_exposures_four(df_one)
+plot_exposures_five(df_one)
+plot_outcomes(df_one)
+zipcode_histogram(df_one)
+df_two_clean = second_data_frame(path) 
+plot_demographics(df_one, df_two_clean)
+plot_age(df_one, df_two_clean)
+plot_gender(df_one, df_two_clean)
+plot_blood_type(df_one, df_two_clean)
+merge_and_write(df_one, df_two_clean)
+age_merge_and_write(df_one, df_two_clean)
+gender_merge_and_write(df_one, df_two_clean)
+demographics_merge_and_write(df_one, df_two_clean)
+write_blood_type(df_one, df_two_clean)
+}
+```
+
+
+
+Test the functions
+```{r}
+df_one = read_file(path)
+df_one = clean_data_frame(df_one)
+df_one = outcomes_and_zipcodes(df_one)
+plot_exposures_one(df_one)
+plot_exposures_two(df_one)
+plot_exposures_three(df_one)
+plot_exposures_four(df_one)
+plot_exposures_five(df_one)
+plot_outcomes(df_one)
+zipcode_histogram(df_one)
+df_two_clean = second_data_frame(path) 
+plot_demographics(df_one, df_two_clean)
+plot_age(df_one, df_two_clean)
+plot_gender(df_one, df_two_clean)
+plot_blood_type(df_one, df_two_clean)
+
+leaflet(df_one)
+merge_and_write(df_one, df_two_clean)
+age_merge_and_write(df_one, df_two_clean)
+demographics_merge_and_write(df_one, df_two_clean)
+gender_merge_and_write(df_one, df_two_clean)
+write_blood_type(df_one, df_two_clean)
+
+```
+Test master function
+```{r}
+for(i in seq_len(nrow(df_paths))) {
+  path = toString(df_paths[i, 1])
+  phrase = toString(df_paths[i,2])
+  automate_eda(path)
+}
+```
+
