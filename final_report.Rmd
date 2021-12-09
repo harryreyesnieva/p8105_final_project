@@ -1,0 +1,338 @@
+---
+title: "Final Report"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(readxl)
+library(haven)
+library(ggplot2)
+library(zipcodeR)
+library(ggmap)
+library(leaflet)
+library(kableExtra)
+
+phrase = "SRTR Multiorgan Transplant Data, August 2020 Release"
+
+suffix = list("age","gender","demographics","blood_type")
+
+for (i in suffix){
+  data_path = "./data/"   # path to the data
+  files = dir(data_path, 
+              pattern = paste0("csrs_final_tables_2006_[A-Z][A-Z]_", i,".csv"))
+  assign(paste0("df_all_", i),
+         files %>%
+           map(~ read_csv(file.path(data_path, .))%>%
+                 mutate(org = str_replace(org, "HR", "Heart"),
+                        org = str_replace(org, "HL", "Heart-Lung"),
+                        org = str_replace(org, "IN", "Intestine"),
+                        org = str_replace(org, "KI", "Kidney"),
+                        org = str_replace(org, "KP", "Kidney-Pancreas"),
+                        org = str_replace(org, "LI", "Liver"),
+                        org = str_replace(org, "LU", "Lung"),
+                        org = str_replace(org, "PA", "Pancreas"))) %>%
+           reduce(rbind))
+  }
+```
+
+# Geographic Variance in Solid Organ Transplant Patient Characteristics
+**Group members:** Kristen King (*kk3154*), Harry Reyes (*hr2479*), Lauren Richter (*lr2854*), Matthew Spotnitz (*mes2165*)
+
+## Motivation
+*	The Scientific Registry of Transplant Recipients (SRTR) analyzes data on transplant patients that are collected from multiple sources.^1^  Its mission is to provide advanced statistical and epidemiological analyses related to solid organ allocation and transplantation in support of the Department of Health and Human Services and its agents in their oversight of the national organ transplantation system.^2^
+
+## Related Work
+*	Periodically, the SRTR produces annual reports on patients who are either recipients of a solid organ transplant or on a waitlist to receive one.^3^  However, those reports focus more on national statistics than variation by region. 
+
+## Initial questions
+*	To what extend do patient characteristics vary by zipcode?
+*	To what extent do patient outcomes vary by zipcode?
+
+## Data
+*	We downloaded the SRTR transplant data that was publicly available and current through August 2020, for multiple organs.^4,5^ We then did the appropriate data tidying and characterization.
+	
+## Exploratory Analyses
+*	Histogram of kidney transplant center frequency by zipcode.
+*	Leaflet plot of kidney transplant centers by zipcode.
+*	Histogram of kidney transplant waitlist patient outcomes by zipcode (i.e. mortality, transfer, etc.).
+*	Automated exploratory data analysis that was iterated over other organ types.
+
+## Additional Analyses
+*	Scatter plots of demographics, age, gender, blood type, and comorbidities for kidney transplant waitlist patients by zipcode.
+*	Scatter plots of PRA score with comorbidities yielded no major correlations.
+*	Scatter plots of patient characteristics with facet wrap by organ type.
+
+#### Figure X: Histogram of Kidney Transplant Center by Zipcode
+```{r}
+df_one_names = 
+  read_excel("./data/csrs_final_tables_2006_KI.xls", sheet = "Table B1") %>%
+  janitor::clean_names()%>%
+  rename(
+    newlistings_center_time1 = wla_addcen_nc1, 
+    newlistings_center_time2 = wla_addcen_nc2, 
+    newlistings_center_all = wla_addcen_pcz,
+    newlistings_regional = wla_addcen_prz, 
+    newlistings_usa = wla_addcen_puz,
+    endlistings_center_time1 = wla_end_nc1, 
+    endlistings_center_time2 = wla_end_nc2, 
+    endlistings_center_all = wla_end_pcz, 
+    endlistings_regional = wla_end_prz, 
+    endlistings_usa = wla_end_puz,
+    deteriorated_center_time1 = wla_remdet_nc1, 
+    deteriorated_center_time2 = wla_remdet_nc2, 
+    deteriorated_center_all = wla_remdet_pcz, 
+    deteriorated_regional = wla_remdet_prz, 
+    deteriorated_usa = wla_remdet_puz,
+    died_center_time1 = wla_remdied_nc1, 
+    died_center_time2 = wla_remdied_nc2, 
+    died_center_all = wla_remdied_pcz, 
+    died_regional = wla_remdied_prz, 
+    died_usa = wla_remdied_puz,
+    other_center_time1 = wla_remoth_nc1, 
+    other_center_time2 = wla_remoth_nc2, 
+    other_center_all = wla_remoth_pcz, 
+    other_regional = wla_remoth_prz, 
+    other_usa = wla_remoth_puz,
+    recovered_center_time1 = wla_remrec_nc1, 
+    recovered_center_time2 = wla_remrec_nc2, 
+    recovered_center_all = wla_remrec_pcz, 
+    recovered_regional = wla_remrec_prz, 
+    recovered_usa = wla_remrec_puz,
+    transfer_center_time1 = wla_remtfer_nc1, 
+    transfer_center_time2 = wla_remtfer_nc2, 
+    transfer_center_all = wla_remtfer_pcz, 
+    transfer_regional = wla_remtfer_prz, 
+    transfer_usa = wla_remtfer_puz,
+    deceased_donor_center_time1 = wla_remtxc_nc1, 
+    deceased_donor_center_time2 = wla_remtxc_nc2, 
+    deceased_donor_center_all = wla_remtxc_pcz, 
+    deceased_donor_regional = wla_remtxc_prz, 
+    deceased_donor_usa = wla_remtxc_puz,
+    living_donor_center_time1 = wla_remtxl_nc1, 
+    living_donor_center_time2 = wla_remtxl_nc2, 
+    living_donor_center_all = wla_remtxl_pcz, 
+    living_donor_regional = wla_remtxl_prz, 
+    living_donor_usa = wla_remtxl_puz,
+    transplant_other_center_time1 = wla_remtxoc_nc1, 
+    transplant_other_center_time2 = wla_remtxoc_nc2, 
+    transplant_other_center_all = wla_remtxoc_pcz, 
+    transplant_other_regional = wla_remtxoc_prz, 
+    transplant_other_center_usa = wla_remtxoc_puz,
+    start_waitlist_center_time1 = wla_st_nc1, 
+    start_waitlist_center_time2 = wla_st_nc2, 
+    start_waitlist_center_all = wla_st_pcz, 
+    start_waitlist_regional = wla_st_prz, 
+    start_waitlist_usa = wla_st_puz)
+
+# Tidy data
+# Here we delete an extraneous row, drop missing values, and 
+# convert the appropriate columns from character to numeric.
+
+df_one_names = 
+  df_one_names[-c(1), ]
+df_one_names[, c(4,6:60)] <- sapply(df_one_names[, c(4,6:60)], as.numeric)
+df_one_dropna = drop_na(df_one_names) #3 rows were dropped
+
+df_one_plot = 
+  df_one_dropna %>%  # Here we drop missing values and create derived values.
+  mutate(
+    newlistings_percent_mortality = 100*died_center_all/newlistings_center_all, 
+    newlistings_percent_deteriorated = 100*deteriorated_center_all/newlistings_center_all,
+    newlistings_percent_transfer = 100* transfer_center_all/newlistings_center_all,
+    newlistings_percent_living_donor = 100* living_donor_center_all/newlistings_center_all,
+    newlistings_percent_deceased_donor = 100*deceased_donor_center_all/newlistings_center_all,
+    newlistings_percent_recovered = 100* recovered_center_all/newlistings_center_all, 
+    living_deceased_graft_ratio = living_donor_center_all/deceased_donor_center_all)
+
+# Here we read in, tidy, and merge with the zipcode file.
+df_zipcodes = 
+  read_excel("./data/zipcodes.xlsx", col_types = c("text", "numeric"), skip = 1) %>%
+  janitor::clean_names()
+
+# Now we cross reference the coordinates that correspond with each zipcode. 
+for (zipcode in df_zipcodes["zipcode"]){
+    df_zip_geo = tibble(geocode_zip(zipcode))
+}
+
+df_one_merge = 
+  merge(df_zipcodes, df_zip_geo, all = TRUE) %>%
+  merge(., df_one_plot, all = TRUE)
+
+df_one_merge %>% 
+  ggplot(aes(zipcode)) + 
+  geom_histogram(bins = 50) + 
+  labs(title = "Transplant Center Frequency by Zipcode",
+       subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+       x = "Zipcode",
+       y = "Transplant Center Count") +
+  theme_minimal()
+
+#png('txp_frequency.png')
+```
+
+#### Figure X: Geographic distribution of kidney transplant centers across the United States.
+
+```{r}
+# leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
+df_one_merge %>%
+  leaflet() %>% 
+  addTiles() %>% 
+  addCircleMarkers(lat = ~lat, lng = ~lng)
+
+#df = data.frame(Lat = 1:10, Long = rnorm(10))
+#leaflet(df) %>% addCircles()
+```
+
+#### Figure X: Representative histogram of exposure variables, Kidney Transplant Population.
+```{r}
+x2 = df_one_merge[, c(21:35)]
+plot = ggplot(gather(x2), aes(value)) + 
+  geom_histogram(bins = 100) + 
+  facet_wrap(~key, scales = "free_y") +
+  coord_cartesian(xlim = c(0, 100)) + 
+  labs(title = "Exposure Frequency Part2", 
+       subtitle = "SRTR Kidney Transplant Data, August 2020 Release", 
+       x = "Exposure (Number)", y = "Frequency") + 
+  theme_minimal()
+
+plot
+```
+
+### Figure X: Representative histogram of patient outcome frequency variables.
+
+```{r}
+df_outcomes = 
+  df_one_merge %>%
+  select(newlistings_percent_mortality, 
+         newlistings_percent_deteriorated,
+         newlistings_percent_transfer,
+         start_waitlist_center_time2,
+         start_waitlist_center_all, 
+         start_waitlist_regional, 
+         start_waitlist_usa) %>%
+  filter(newlistings_percent_transfer <= 100)
+
+plot = 
+  ggplot(gather(df_outcomes), aes(value)) + 
+  geom_histogram(bins = 30) + 
+  facet_wrap(~key, scales = "free_y") + 
+  coord_cartesian(xlim = c(0, 100)) + 
+  labs(title = "Outcome Frequency", 
+       subtitle = "SRTR Kidney Transplant Data, August 2020 Release", 
+       x = "Outcome (Percent)", y = "Frequency") + 
+  theme_minimal()
+
+# df_continuous = sapply(df_outcomes, as.numeric)
+
+plot
+```
+
+#### Figure X: Scatter plots of age by zipcode, with a facet wrap by organ type.
+
+```{r age_by_zip, warning=FALSE}
+plot = 
+  df_all_age %>% 
+  ggplot(aes(x = zipcode, y = age_category_percent, color = age_category)) + 
+  geom_point() + 
+  labs(title = "Patient Age Groups by Zipcode",
+       subtitle = phrase,
+       x = "Zipcode",
+       y = "Age Group (Percent)",
+       color = "Age Group") + 
+  theme_minimal() + 
+  theme(axis.text.x=element_text(angle=90, hjust=1)) + 
+  scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", 
+                             "12 to 17 Years", "18 to 34 Years", 
+                             "35 to 49 Years", "50 to 64 Years", 
+                             "65 to 69 Years", "More Than 70 Years")) + 
+  facet_wrap(~org)
+
+plot
+```
+
+#### Figure X: Scatter plots of gender by zipcode, with a facet wrap by organ type.
+
+```{r gender_by_zip, warning=FALSE}
+plot = 
+  df_all_gender %>% 
+  ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + 
+  geom_point()+ 
+  labs(title = "Patient Gender by Zipcode", 
+       subtitle = phrase,
+       x = "Zipcode",
+       y = "Gender (Percent)", color = "Gender"
+  ) + 
+  theme_minimal() + 
+  theme(axis.text.x=element_text(angle=90, hjust=1)) + 
+  scale_color_hue(labels = c("Female", "Male")) + 
+  facet_wrap(~org)
+
+plot
+```
+
+#### Figure X: Scatter plots of race by zipcode, with a facet wrap by organ type.
+
+```{r race_by_zip, warning=FALSE}
+plot = 
+  df_all_demographics %>% 
+  ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + 
+  geom_point() + 
+  theme_minimal() + 
+  labs(
+    title = "Patient Demographics by Zipcode", subtitle = phrase,
+    x = "Zipcode",
+    y = "Race (Percent)", 
+    color = "Race") + 
+  scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", 
+                             "Other", "Unknown", "White")) + 
+  theme(axis.text.x=element_text(angle=90, hjust=1)) + 
+  facet_wrap(~org)
+
+plot
+```
+
+#### Figure X: Scatter plots of blood type by zipcode, with a facet wrap by organ type.
+
+```{r bloodtype_by_zip, warning=FALSE}
+plot = 
+  df_all_blood_type %>%
+  ggplot(aes(x = zipcode, y = blood_type_category_percent, color = blood_type_category)) + 
+  geom_point() + 
+  labs(title = "Patient Blood Types by Zipcode", 
+       subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+       x = "Zipcode",
+       y = "Blood Type (Percent)", color = "Blood Type") + 
+  theme_minimal() + 
+  scale_color_hue(labels = c("A", "AB", "B", "O", "Unknown")) + 
+  theme(axis.text.x=element_text(angle=90, hjust=1)) + 
+  facet_wrap(~org)
+
+plot
+```
+
+#### Figure X: Screenshot of interactive dashboard for patient characteristics by organ.
+
+![](./img/dashboard_screenshot.png)
+
+*	The proportion of Hispanic or Latino patients was greatest in the southwest zipcodes for all organ types
+*	Preponderance of men in waitlist population, especially for heart, kidney and liver transplants
+*	Kidney had the highest proportion of children under the age of 2.
+*	Kidney-pancreas and intestine had the lowest proportion of patients over the age of 50.
+
+*	Type O was the most common blood type for all kinds of organ transplants
+*	Dashboard of waitlist patient characteristics for different organ type.
+
+## Discussion
+*	Some variation in waitlist patient characteristics by zipcode, consistent with the demographics of the region.
+*	Minimal variance in waitlist patient outcomes by zipcode is reflective of a highly regulated practice.
+*	Variation in patient characteristics by organ is consistent with practice guidelines.
+	
+## References:
+1. Leppke S, Leighton T, Zaun D et. al. Scientific Registry of Transplant Recipients: Collecting, analyzing, and reporting data on transplantation in the United States. _Transplantation Reviews_, 27(2):50-56   
+2. https://www.srtr.org/about-the-data/the-srtr-database/   
+3. https://onlinelibrary.wiley.com/toc/16006143/2021/21/S2   
+4. https://www.srtr.org/transplant-centers/ny-presbyterian-hospitalcolumbia-univ-medical-center-nycp/?organ=kidney&recipientType=adult   
+5. https://www.srtr.org/reports/program-specific-reports/   
+

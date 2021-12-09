@@ -542,7 +542,7 @@ plot =
 plot
 ```
 
-![](SummaryPlots_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](summary_plots_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 Here we plot the gender dataframes.
 
@@ -566,7 +566,7 @@ plot
 
     ## Warning: Removed 42 rows containing missing values (geom_point).
 
-![](SummaryPlots_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](summary_plots_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 Here we plot the race dataframes.
 
@@ -591,7 +591,7 @@ plot
 
     ## Warning: Removed 126 rows containing missing values (geom_point).
 
-![](SummaryPlots_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](summary_plots_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 Here we plot the blood type dataframes.
 
@@ -607,7 +607,7 @@ plot =
   ) + 
   theme_minimal() + 
   scale_color_hue(labels = c("A", "AB", "B", "O", "Unknown")) + 
-  theme(axis.text.x=element_text(angle=90,hjust=1)) + 
+  theme(axis.text.x=element_text(angle=90, hjust=1)) + 
   facet_wrap(~org)
 
 plot
@@ -615,7 +615,7 @@ plot
 
     ## Warning: Removed 105 rows containing missing values (geom_point).
 
-![](SummaryPlots_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](summary_plots_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ``` r
 # png('blood_type_summary.png')

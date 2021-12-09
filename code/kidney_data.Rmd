@@ -1,5 +1,5 @@
 ---
-title: "KidneyData"
+title: "Kidney Data"
 date: "10/26/2021"
 output: github_document
 ---
@@ -137,11 +137,11 @@ Now I will cross reference the coordinates that correspond with each zipcode.
 for (zipcode in df_zipcodes["zipcode"]){
     df_zip_geo = tibble(geocode_zip(zipcode))
 }
-#view(df_zip_geo)
+
 df_geo_merge = merge(df_zipcodes, df_zip_geo, all = TRUE)
-#view(df_geo_merge)
+
 df_one_merge = merge(df_one_plot, df_geo_merge, all = TRUE)
-view(df_one_merge)
+
 ```
 
 Here we plot the first set of exposure variables
@@ -293,29 +293,43 @@ setnames = df_two_names %>% pull(c)
 df_two = setNames(df_two, setnames)
 df_two = janitor::clean_names(df_two)
 df_two_clean = df_two[-c(1), ]
-df_two_clean = df_two_clean %>% rename (entire_name= center_name_na , ctr_cd = center_code_na)
-view(df_two_clean)
+df_two_clean = 
+  df_two_clean %>%
+  rename (entire_name= center_name_na , ctr_cd = center_code_na)
 ```
 
 Here we make a dataframe of patient demographics and plot the distributions by zipcode.
 ```{r}
-df_two_select = df_two_clean %>% select(entire_name, ctr_cd, asian_allc2, african_american_allc2, hispanic_latino_allc2, white_allc2, race_other_allc2, race_unknown_allc2) 
+df_two_select = 
+  df_two_clean %>% 
+  select(entire_name, ctr_cd, asian_allc2, african_american_allc2, 
+         hispanic_latino_allc2, white_allc2, race_other_allc2, 
+         race_unknown_allc2) 
 df_social = merge(df_one_merge, df_two_select)
 df_demographics = df_social[, c(1,2,3, 68, 71:76)]
-#view(df_demographics)
+
 df_demographics_pivot =
   pivot_longer(
     df_demographics, 
     asian_allc2:race_unknown_allc2,
     names_to = "race_category", 
-    values_to = "race_category_percent") %>% mutate(race_category_percent = as.numeric(race_category_percent)) %>% mutate(race_category = as.factor(race_category))
+    values_to = "race_category_percent") %>% 
+  mutate(race_category_percent = as.numeric(race_category_percent),
+         race_category = as.factor(race_category))
 
-plot = df_demographics_pivot %>% ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + geom_point()+ 
-  labs(
-    title = "Patient Demographics by Zipcode",subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
-    x = "Zipcode",
-    y = "Race (Percent)", color = "Race"
-  ) + theme_minimal() + scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", "Other", "Unknown", "White"))
+plot = 
+  df_demographics_pivot %>% 
+  ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + 
+  geom_point() + 
+  labs(title = "Patient Demographics by Zipcode",
+       subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+       x = "Zipcode",
+       y = "Race (Percent)", 
+       color = "Race") + 
+  theme_minimal() + 
+  scale_color_hue(labels = c("African American", "Asian", "Hispanic or Latino", 
+                             "Other", "Unknown", "White"))
+
 plot
 
 ```
@@ -324,22 +338,38 @@ Here we make an age dataframe and plot the age distributions by zipcode.
 ```{r}
 df_two_age = df_two_clean[, c(1,2,5,6,8,10,12,14,16,18,20,22)]
 df_age = merge(df_one_merge, df_two_age)
-view(df_age)
 df_age = df_age[, c(1,2,3,5, 68, 72:79)]
-view(df_age)
+
 df_age_pivot =
   pivot_longer(
     df_age, 
     age_2_11_allc2:age_70_allc2,
     names_to = "age_category", 
-    values_to = "age_category_percent") %>% mutate (age_category_percent = as.numeric(age_category_percent)) %>% mutate(age_category = factor(age_category, levels =c("age_2_allc2","age_2_11_allc2", "age_12_17_allc2", "age_18_34_allc2", "age_35_49_allc2", "age_50_64_allc2", "age_65_69_allc2", "age_70_allc2"))) %>% drop_na()
-#view(df_age_pivot)
-plot = df_age_pivot %>% ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + geom_point() + 
-  labs(
-    title = "Patient Age Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
-    x = "Zipcode",
-    y = "Age Group (Percent)", color = "Age Group"
-  ) + theme_minimal()  + scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", "12 to 17 Years", "18 to 34 Years", "35 to 49 Years", "50 to 64 Years", "64 to 69 Years", "More Than 70 Years"))
+    values_to = "age_category_percent") %>% 
+  mutate (age_category_percent = 
+            as.numeric(age_category_percent),
+          age_category = factor(age_category, levels = 
+                                  c("age_2_allc2","age_2_11_allc2",
+                                    "age_12_17_allc2", "age_18_34_allc2",
+                                    "age_35_49_allc2", "age_50_64_allc2",
+                                    "age_65_69_allc2", "age_70_allc2"))) %>%
+  drop_na()
+
+plot = 
+  df_age_pivot %>% 
+  ggplot(aes(x=zipcode, y =age_category_percent, color = age_category)) + 
+  geom_point() + 
+  labs(title = "Patient Age Groups by Zipcode", 
+       subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+       x = "Zipcode",
+       y = "Age Group (Percent)", 
+       color = "Age Group") + 
+  theme_minimal() + 
+  scale_color_hue(labels = c("Less Than 2 Years", "2 to 11 Years", 
+                             "12 to 17 Years", "18 to 34 Years", 
+                             "35 to 49 Years", "50 to 64 Years", 
+                             "64 to 69 Years", "More Than 70 Years"))
+
 plot
 ```
 
@@ -348,20 +378,27 @@ Here we make a gender dataframe and plot the gender distributions by zipcode.
 df_two_gender = df_two_clean[, c(1,2,34,36)]
 df_gender = merge(df_one_merge, df_two_gender)
 df_gender = df_gender[, c(1,2,3, 68, 71:72)]
-#view(df_gender)
+
 df_gender_pivot =
   pivot_longer(
     df_gender, 
     female_allc2:male_allc2,
     names_to = "gender_category", 
-    values_to = "gender_category_percent") %>% mutate (gender_category_percent = as.numeric(gender_category_percent)) %>% mutate(gender_category = as.factor(gender_category))
-#view(df_gender_pivot)
-plot = df_gender_pivot %>% ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + geom_point()+ 
-  labs(
-    title = "Patient Gender Groups by Zipcode", subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
-    x = "Zipcode",
-    y = "Gender Group (Percent)", , color = "Gender"
-  ) + theme_minimal() + scale_color_hue(labels = c("Female", "Male"))
+    values_to = "gender_category_percent") %>% 
+  mutate (gender_category_percent = as.numeric(gender_category_percent),
+          gender_category = as.factor(gender_category))
+
+plot = 
+  df_gender_pivot %>% 
+  ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + 
+  geom_point() + 
+  labs(title = "Patient Gender Groups by Zipcode", 
+       subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
+       x = "Zipcode",
+       y = "Gender Group (Percent)",
+       color = "Gender") + 
+  theme_minimal() + 
+  scale_color_hue(labels = c("Female", "Male"))
 
 plot
 ```
@@ -374,15 +411,16 @@ df_two_comorbidities =
 df_comorbidities = merge(df_one_merge, df_two_comorbidities)
 df_comorbidities = df_comorbidities[, c(1,2,3, 68, 71:81, 87:98)]
 df_comorbidities = df_comorbidities[, c(1:14, 18:20, 27)]
-#view(df_comorbidities)
 
 df_comorbidities_pivot =
   pivot_longer(
     df_comorbidities, 
     diabetes_allc2:congenital_familial_metabolic_allc2,
     names_to = "comorbidity_category", 
-    values_to = "comorbidity_category_percent") %>% mutate (comorbidity_category_percent = as.numeric(comorbidity_category_percent)) %>% mutate(comorbidity_category = as.factor(comorbidity_category))
-#view(df_comorbidities_pivot)
+    values_to = "comorbidity_category_percent") %>% 
+  mutate (comorbidity_category_percent = as.numeric(comorbidity_category_percent),
+          comorbidity_category = as.factor(comorbidity_category))
+
 plot = 
   df_comorbidities_pivot %>% 
   ggplot(aes(x=zipcode, y =comorbidity_category_percent, color = comorbidity_category)) + 

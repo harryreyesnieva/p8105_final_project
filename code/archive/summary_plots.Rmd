@@ -1,8 +1,9 @@
 ---
-title: "SummaryPlots"
+title: "Summary Plots"
 date: "11/26/2021"
 output: github_document
 ---
+
 ```{r}
 library(tidyverse)
 library(readxl)
@@ -116,7 +117,7 @@ plot =
   ) + 
   theme_minimal() + 
   scale_color_hue(labels = c("A", "AB", "B", "O", "Unknown")) + 
-  theme(axis.text.x=element_text(angle=90,hjust=1)) + 
+  theme(axis.text.x=element_text(angle=90, hjust=1)) + 
   facet_wrap(~org)
 
 plot

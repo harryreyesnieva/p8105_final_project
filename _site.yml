@@ -1,0 +1,16 @@
+name: "HDMH Monitor"
+output_dir: "."
+navbar:
+  title: "Home"
+  left:
+    - text: "Dashboard"
+      href: dashboard.html
+    - text: "About"
+      href: about.html
+  right:
+    - icon: fa-envelope fa-lg
+      href: mailto:<harry.reyes@columbia.edu>
+    - icon: fa-github fa-lg
+      href: https://github.com/harryreyesnieva/p8105_final_project
+output:
+  html_document
