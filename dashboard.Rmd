@@ -1,0 +1,404 @@
+---
+title: "SRTR Dashboard"
+
+output: 
+  flexdashboard::flex_dashboard:
+    theme: yeti
+    orientation: columns
+    vertical_layout: fill
+    social: menu
+    source_code: https://github.com/harryreyesnieva/p8105_final_project
+    include:
+      after_body: footer.html
+      fig_caption: true
+---
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(viridis)
+library(purrr)
+library(DT)
+library(plotly)
+library(magick)
+library(bslib)
+library(patchwork)
+# library(shiny)
+
+suffix = list("age","gender","demographics", "blood_type")
+
+for (i in suffix){
+  data_path = "./data/"   # path to the data
+  files = dir(data_path, 
+              pattern = paste0("csrs_final_tables_2006_[A-Z][A-Z]_", i,".csv"))
+  assign(paste0("df_all_", i),
+         files %>%
+           map(~ read_csv(file.path(data_path, .))%>%
+                 mutate(org = str_replace(org, "HR", "Heart"),
+                        org = str_replace(org, "HL", "Heart-Lung"),
+                        org = str_replace(org, "IN", "Intestine"),
+                        org = str_replace(org, "KI", "Kidney"),
+                        org = str_replace(org, "KP", "Kidney-Pancreas"),
+                        org = str_replace(org, "LI", "Liver"),
+                        org = str_replace(org, "LU", "Lung"),
+                        org = str_replace(org, "PA", "Pancreas"))) %>%
+           reduce(rbind))
+  }
+
+organ_race = df_all_demographics %>% distinct(org) %>% pull()
+organ_age = df_all_age %>% distinct(org) %>% pull()
+organ_gender = df_all_gender %>% distinct(org) %>% pull()
+organ_blood_type = df_all_blood_type %>% distinct(org) %>% pull()
+```
+
+Dashboard 
+=======================================================================
+
+Row  {data-width=200}
+-----------------------------------------------------------------------
+
+### Introduction
+
+Welcome to the Scientific Registry of Transplant Recipients (SRTR) Dashboard and Repository. Our site compiles and presents national registry data on all organ donors, transplant candidates, and transplant recipients in the US based on biannual [Program-Specific Reports](https://www.srtr.org/reports/program-specific-reports/) (PSR). Our site utilize center-level data on waitlisted patients and patients in receipt of transplants, aggregated demographics, transplant outcomes, and organ offer acceptance practices. 
+
+**How to use SRTR**
+
+<!--```{r}
+
+# selectInput widget
+selectInput(
+  "organ_race",
+  label = h3("Select race of organ donor"),
+  choices = organ_race, selected = "Kidney")
+
+# selectInput widget
+selectInput(
+  "organ_age",
+  label = h3("Select age of organ donor"),
+  choices = organ_gender, selected = "Kidney")
+
+# selectInput widget
+selectInput(
+  "organ_gender",
+  label = h3("Select gender of organ donor"),
+  choices = organ_gender, selected = "Kidney")
+```--->
+
+Row {.tabset}
+-----------------------------------------------------------------------
+
+### Center Characteristics
+
+```{r }
+# renderPlotly({
+fig_a = df_all_demographics %>%
+    rename(Race = race_category_percent, Zipcode = zipcode) %>%
+    mutate(race_category =
+             str_replace(race_category, "african_american_allc2", "African American"),
+           race_category =
+             str_replace(race_category, "asian_allc2", "Asian"),
+           race_category =
+             str_replace(race_category, "hispanic_latino_allc2", "Hispanic or Latino"),
+           race_category =
+             str_replace(race_category, "race_other_allc2", "Other"),
+           race_category = str_replace(race_category, "race_unknown_allc2", "Unknown"),
+           race_category = str_replace(race_category, "white_allc2", "White")) %>%
+    # filter(organ_race == input$organ_race) %>%
+    plot_ly(x = ~Zipcode, y = ~Race, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~race_category, colors = "viridis")
+# })
+
+
+# renderPlotly({
+fig_b = df_all_age  %>%
+    mutate(
+      age_category = str_replace(age_category, "age_2_allc2", "Less Than 2 Years"),
+      age_category = str_replace(age_category, "age_2_11_allc2", "2 to 11 Years"),
+      age_category = str_replace(age_category, "age_12_17_allc2", "12 to 17 Years"),
+      age_category = str_replace(age_category, "age_18_34_allc2", "18 to 34 Years"),
+      age_category = str_replace(age_category,"age_35_49_allc2", "35 to 49 Years"),
+      age_category = str_replace(age_category, "age_50_64_allc2", "50 to 64 Years"),
+      age_category = str_replace(age_category, "age_65_69_allc2", "65 to 69 Years"),
+      age_category = str_replace (age_category, "age_70_allc2", "More Than 70 Years"),
+      age_category = factor(age_category, 
+                            levels = c("Less Than 2 Years","2 to 11 Years",
+                                       "12 to 17 Years", "18 to 34 Years", 
+                                       "35 to 49 Years", "50 to 64 Years",
+                                       "65 to 69 Years", "More Than 70 Years"))) %>%
+    rename(Age_Group = age_category_percent, Zipcode = zipcode) %>%
+    # filter(organ_age == input$organ_age) %>%
+    plot_ly(x = ~Zipcode, y = ~Age_Group, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~age_category, colors = "viridis")
+# })
+
+# renderPlotly({
+fig_c = df_all_gender %>%
+    rename(Gender = gender_category_percent, Zipcode = zipcode) %>%
+    mutate(gender_category = str_replace(gender_category, "female_allc2", "Female"),
+           gender_category = str_replace(gender_category, "male_allc2", "Male")) %>%
+    # filter(organ_gender == input$organ_gender) %>%
+    plot_ly(x = ~Zipcode, y = ~Gender, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~gender_category, colors = "viridis")
+# })
+
+# renderPlotly({
+fig_d = df_all_blood_type %>%
+    rename(`Blood Type` = blood_type_category_percent, Zipcode = zipcode) %>%
+    mutate(gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "A"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "B"),
+           gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "O"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "AB"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "Unknown")) %>%
+    # filter(organ_gender == input$organ_gender) %>%
+    plot_ly(x = ~Zipcode, y = ~`Blood Type`, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~blood_type_category, colors = "viridis")
+# })
+  
+fig = subplot(fig_a, fig_b, fig_c, fig_d, nrows = 2)
+fig  
+```
+
+### Patient Characteristics
+
+```{r }
+# renderPlotly({
+fig_a = df_all_demographics %>%
+    rename(Race = race_category_percent, Zipcode = zipcode) %>%
+    mutate(race_category =
+             str_replace(race_category, "african_american_allc2", "African American"),
+           race_category =
+             str_replace(race_category, "asian_allc2", "Asian"),
+           race_category =
+             str_replace(race_category, "hispanic_latino_allc2", "Hispanic or Latino"),
+           race_category =
+             str_replace(race_category, "race_other_allc2", "Other"),
+           race_category = str_replace(race_category, "race_unknown_allc2", "Unknown"),
+           race_category = str_replace(race_category, "white_allc2", "White")) %>%
+    # filter(organ_race == input$organ_race) %>%
+    plot_ly(x = ~Zipcode, y = ~Race, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~race_category, colors = "viridis")
+# })
+
+
+# renderPlotly({
+fig_b = df_all_age  %>%
+    mutate(
+      age_category = str_replace(age_category, "age_2_allc2", "Less Than 2 Years"),
+      age_category = str_replace(age_category, "age_2_11_allc2", "2 to 11 Years"),
+      age_category = str_replace(age_category, "age_12_17_allc2", "12 to 17 Years"),
+      age_category = str_replace(age_category, "age_18_34_allc2", "18 to 34 Years"),
+      age_category = str_replace(age_category,"age_35_49_allc2", "35 to 49 Years"),
+      age_category = str_replace(age_category, "age_50_64_allc2", "50 to 64 Years"),
+      age_category = str_replace(age_category, "age_65_69_allc2", "65 to 69 Years"),
+      age_category = str_replace (age_category, "age_70_allc2", "More Than 70 Years"),
+      age_category = factor(age_category, 
+                            levels = c("Less Than 2 Years","2 to 11 Years",
+                                       "12 to 17 Years", "18 to 34 Years", 
+                                       "35 to 49 Years", "50 to 64 Years",
+                                       "65 to 69 Years", "More Than 70 Years"))) %>%
+    rename(Age_Group = age_category_percent, Zipcode = zipcode) %>%
+    # filter(organ_age == input$organ_age) %>%
+    plot_ly(x = ~Zipcode, y = ~Age_Group, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~age_category, colors = "viridis")
+# })
+
+# renderPlotly({
+fig_c = df_all_gender %>%
+    rename(Gender = gender_category_percent, Zipcode = zipcode) %>%
+    mutate(gender_category = str_replace(gender_category, "female_allc2", "Female"),
+           gender_category = str_replace(gender_category, "male_allc2", "Male")) %>%
+    # filter(organ_gender == input$organ_gender) %>%
+    plot_ly(x = ~Zipcode, y = ~Gender, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~gender_category, colors = "viridis")
+# })
+
+# renderPlotly({
+fig_d = df_all_blood_type %>%
+    rename(`Blood Type` = blood_type_category_percent, Zipcode = zipcode) %>%
+    mutate(gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "A"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "B"),
+           gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "O"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "AB"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "Unknown")) %>%
+    # filter(organ_gender == input$organ_gender) %>%
+    plot_ly(x = ~Zipcode, y = ~`Blood Type`, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~blood_type_category, colors = "viridis")
+# })
+  
+fig = subplot(fig_a, fig_b, fig_c, fig_d, nrows = 2)
+fig  
+```
+
+### Transplant Outcomes
+
+```{r }
+# renderPlotly({
+fig_a = df_all_demographics %>%
+    rename(Race = race_category_percent, Zipcode = zipcode) %>%
+    mutate(race_category =
+             str_replace(race_category, "african_american_allc2", "African American"),
+           race_category =
+             str_replace(race_category, "asian_allc2", "Asian"),
+           race_category =
+             str_replace(race_category, "hispanic_latino_allc2", "Hispanic or Latino"),
+           race_category =
+             str_replace(race_category, "race_other_allc2", "Other"),
+           race_category = str_replace(race_category, "race_unknown_allc2", "Unknown"),
+           race_category = str_replace(race_category, "white_allc2", "White")) %>%
+    # filter(organ_race == input$organ_race) %>%
+    plot_ly(x = ~Zipcode, y = ~Race, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~race_category, colors = "viridis")
+# })
+
+
+# renderPlotly({
+fig_b = df_all_age  %>%
+    mutate(
+      age_category = str_replace(age_category, "age_2_allc2", "Less Than 2 Years"),
+      age_category = str_replace(age_category, "age_2_11_allc2", "2 to 11 Years"),
+      age_category = str_replace(age_category, "age_12_17_allc2", "12 to 17 Years"),
+      age_category = str_replace(age_category, "age_18_34_allc2", "18 to 34 Years"),
+      age_category = str_replace(age_category,"age_35_49_allc2", "35 to 49 Years"),
+      age_category = str_replace(age_category, "age_50_64_allc2", "50 to 64 Years"),
+      age_category = str_replace(age_category, "age_65_69_allc2", "65 to 69 Years"),
+      age_category = str_replace (age_category, "age_70_allc2", "More Than 70 Years"),
+      age_category = factor(age_category, 
+                            levels = c("Less Than 2 Years","2 to 11 Years",
+                                       "12 to 17 Years", "18 to 34 Years", 
+                                       "35 to 49 Years", "50 to 64 Years",
+                                       "65 to 69 Years", "More Than 70 Years"))) %>%
+    rename(Age_Group = age_category_percent, Zipcode = zipcode) %>%
+    # filter(organ_age == input$organ_age) %>%
+    plot_ly(x = ~Zipcode, y = ~Age_Group, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~age_category, colors = "viridis")
+# })
+
+# renderPlotly({
+fig_c = df_all_gender %>%
+    rename(Gender = gender_category_percent, Zipcode = zipcode) %>%
+    mutate(gender_category = str_replace(gender_category, "female_allc2", "Female"),
+           gender_category = str_replace(gender_category, "male_allc2", "Male")) %>%
+    # filter(organ_gender == input$organ_gender) %>%
+    plot_ly(x = ~Zipcode, y = ~Gender, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~gender_category, colors = "viridis")
+# })
+
+# renderPlotly({
+fig_d = df_all_blood_type %>%
+    rename(`Blood Type` = blood_type_category_percent, Zipcode = zipcode) %>%
+    mutate(gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "A"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "B"),
+           gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "O"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "AB"),
+           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "Unknown")) %>%
+    # filter(organ_gender == input$organ_gender) %>%
+    plot_ly(x = ~Zipcode, y = ~`Blood Type`, 
+            type = "scatter", mode = "markers",
+            alpha = 0.9, color = ~blood_type_category, colors = "viridis")
+# })
+  
+fig = subplot(fig_a, fig_b, fig_c, fig_d, nrows = 2)
+fig  
+```
+
+Search the Data Repository
+=======================================================================
+
+The **SRTR Data Repository** provides users with the ability to search and copy, print, or download results for further study. Users may filter by a single column or query all columns simultaneously using the search bar.
+          
+```{r}
+# this is just a placeholder; we will replace this with another table
+datatable(df_all_demographics %>%
+            select(-ctr_ty, -`...1`)%>%
+            rename(Site = entire_name,
+                   `Center Code` = ctr_cd,
+                   Organ = org,
+                   `Zip code` = zipcode,
+                   Race = race_category,
+                   `Race Category Percent` = race_category_percent),
+          extensions = c('Buttons'),
+          options = 
+            list(scrollY = 650, 
+                 scrollX = 500, 
+                 deferRender = TRUE,
+                 pageLength = 25,
+                 # scroller = FALSE,
+                 # paging = TRUE,
+                 dom = 'Bfrtip',
+                 buttons = list('copy', 'print', 
+                           list(extend = 'collection',
+                                buttons = c('csv', 'excel', 'pdf'),
+                                text = 'Download'))),
+          filter = 'top',
+          escape = FALSE)
+          # caption = 'The SRTR Data Repository provides users with the ability
+          # to search and copy, print, or download results for further study. 
+          # Users may filter by a single column or search all columns 
+          # simultaneously.')
+```
+
+Additional Information
+=======================================================================
+
+Column
+-----------------------------------------------------------------------
+
+### Background
+
+**Motivation for this project:**    
+Kidney transplantation is the preferred treatment for End Stage Kidney Disease (ESKD). Nonetheless, due to a severe donor organ shortage, only 22,393 out of more than 785,000 patients with ESKD received kidney transplants in the United States (US) in 2018.^1^ Given the limited supply, kidney transplant centers can be very selective in who qualifies as a kidney transplant candidate. Transplant centers and surgeons often make subjective decisions regarding which deceased donor kidneys are acceptable for transplant in a given patient. This process can lack transparency and impact whether a patient receives a kidney transplant prior to dying or removal from the waiting list due to severity of illness. Accordingly, large practice variation is possible among the 200+ kidney transplant centers across the US. While center-level summary data on transplants and waitlist candidates are publicly available, this information is primarily presented as individualized snapshot reports that do not lend themselves to direct comparison across sites over time. Given that patients may choose where to waitlist, our aim is to analyze data comparing transplantation center practices and develop a dashboard to present these findings to the public.
+
+**Data sources:**   
+The Scientific Registry of Transplant Recipients (SRTR) takes national registry data on all organ donors, transplant candidates, and transplant recipients in the US to produce biannual [Program-Specific Reports](https://www.srtr.org/reports/program-specific-reports/) (PSR). Our project will utilize center-level data on waitlisted patients and patients in receipt of transplants, aggregated demographics, transplant outcomes, and organ offer acceptance practices. The PSR data is archived and publicly available for download in Excel format from the SRTR website with drop-down menus for organ and time period. These reports date back to July 2012 with offer acceptance data available starting July 2017. There are 238 rows of transplant center data in the most recent data file, organized across many different sheets by topic, each with tens to hundreds of columns.
+
+**References**   
+1. *United States Renal Data System. 2020 USRDS Annual Data Report: Epidemiology of kidney disease in the United States. National Institutes of Health, National Institute of Diabetes and Digestive and Kidney Diseases, Bethesda, MD, 2020.*
+
+Column
+-----------------------------------------------------------------------
+
+### How to use the site
+
+**Dashboard:**   
+[Details regarding elements of the dashboard]
+
+**Repository:**   
+[Details regarding elements of the repository]
+
+
+Column  {data-width=150}
+-----------------------------------------------------------------------
+
+### Study Team:
+
+<center>
+
+**Kristin King**   
+(kk3154)   
+![*Kristen King*](./img/King_Kristin.jpeg){width=75%}
+
+**Harry Reyes**    
+(hr2479)   
+![*Harry Reyes*](./img/Reyes_Harry.png){width=75%}
+
+**Lauren Richter**    
+(lr2854)   
+![*Lauren Richter*](./img/Richter_Lauren.jpeg){width=75%} 
+
+**Matthew Spotnitz**    
+(mes2165)   
+![*Matthew Spotnitz*](./img/Spotnitz_Matthew.jpeg){width=75%} 
+
+</center>

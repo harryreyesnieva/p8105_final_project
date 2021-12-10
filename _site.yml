@@ -1,14 +1,20 @@
 name: "SRTR Dashboard"
 output_dir: "."
 navbar:
-  title: "Home"
-  left:
+  title: "Overview"
+  right:
     - text: "Dashboard"
       href: dashboard.html
-    - text: "About"
-      href: about.html
-  right:
+    - text: "Data Respository"
+      href: data_repository.html
+    - text: "Proposal"
+      href: proposal.html  
+    - text: "Project Report"
+      href: final_report.html
     - icon: fa-github fa-lg
       href: https://github.com/harryreyesnieva/p8105_final_project
+      target: _blank
 output:
-  html_document
+  html_document:
+    includes:
+      after_body: footer.html
