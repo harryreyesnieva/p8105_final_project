@@ -1,0 +1,51 @@
+"","entire_name","ctr_cd","ctr_ty","org","zipcode","blood_type_category","blood_type_category_percent"
+"1","Houston Methodist Hospital (TXMH)","TXMH","TX1","HL",77030,"blood_type_ab_allc2",0
+"2","Houston Methodist Hospital (TXMH)","TXMH","TX1","HL",77030,"blood_type_a_allc2",25
+"3","Houston Methodist Hospital (TXMH)","TXMH","TX1","HL",77030,"blood_type_b_allc2",0
+"4","Houston Methodist Hospital (TXMH)","TXMH","TX1","HL",77030,"blood_type_o_allc2",75
+"5","Houston Methodist Hospital (TXMH)","TXMH","TX1","HL",77030,"blood_type_unknown_allc2",0
+"6","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HL",33136,"blood_type_ab_allc2",0
+"7","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HL",33136,"blood_type_a_allc2",50
+"8","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HL",33136,"blood_type_b_allc2",0
+"9","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HL",33136,"blood_type_o_allc2",50
+"10","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HL",33136,"blood_type_unknown_allc2",0
+"11","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HL",55902,"blood_type_ab_allc2",0
+"12","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HL",55902,"blood_type_a_allc2",16.666666667
+"13","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HL",55902,"blood_type_b_allc2",50
+"14","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HL",55902,"blood_type_o_allc2",33.333333333
+"15","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HL",55902,"blood_type_unknown_allc2",0
+"16","Stanford Health Care (CASU)","CASU","TX1","HL",94305,"blood_type_ab_allc2",0
+"17","Stanford Health Care (CASU)","CASU","TX1","HL",94305,"blood_type_a_allc2",30
+"18","Stanford Health Care (CASU)","CASU","TX1","HL",94305,"blood_type_b_allc2",0
+"19","Stanford Health Care (CASU)","CASU","TX1","HL",94305,"blood_type_o_allc2",70
+"20","Stanford Health Care (CASU)","CASU","TX1","HL",94305,"blood_type_unknown_allc2",0
+"21","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HL",44195,"blood_type_ab_allc2",NA
+"22","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HL",44195,"blood_type_a_allc2",NA
+"23","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HL",44195,"blood_type_b_allc2",NA
+"24","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HL",44195,"blood_type_o_allc2",NA
+"25","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HL",44195,"blood_type_unknown_allc2",NA
+"26","University of Alabama Hospital (ALUA)","ALUA","TX1","HL",35233,"blood_type_ab_allc2",NA
+"27","University of Alabama Hospital (ALUA)","ALUA","TX1","HL",35233,"blood_type_a_allc2",NA
+"28","University of Alabama Hospital (ALUA)","ALUA","TX1","HL",35233,"blood_type_b_allc2",NA
+"29","University of Alabama Hospital (ALUA)","ALUA","TX1","HL",35233,"blood_type_o_allc2",NA
+"30","University of Alabama Hospital (ALUA)","ALUA","TX1","HL",35233,"blood_type_unknown_allc2",NA
+"31","University of California San Diego Medical Center (CASD)","CASD","TX1","HL",92037,"blood_type_ab_allc2",0
+"32","University of California San Diego Medical Center (CASD)","CASD","TX1","HL",92037,"blood_type_a_allc2",0
+"33","University of California San Diego Medical Center (CASD)","CASD","TX1","HL",92037,"blood_type_b_allc2",0
+"34","University of California San Diego Medical Center (CASD)","CASD","TX1","HL",92037,"blood_type_o_allc2",100
+"35","University of California San Diego Medical Center (CASD)","CASD","TX1","HL",92037,"blood_type_unknown_allc2",0
+"36","University of California San Francisco Medical Center (CASF)","CASF","TX1","HL",94118,"blood_type_ab_allc2",0
+"37","University of California San Francisco Medical Center (CASF)","CASF","TX1","HL",94118,"blood_type_a_allc2",0
+"38","University of California San Francisco Medical Center (CASF)","CASF","TX1","HL",94118,"blood_type_b_allc2",50
+"39","University of California San Francisco Medical Center (CASF)","CASF","TX1","HL",94118,"blood_type_o_allc2",50
+"40","University of California San Francisco Medical Center (CASF)","CASF","TX1","HL",94118,"blood_type_unknown_allc2",0
+"41","University of Maryland Medical System (MDUM)","MDUM","TX1","HL",21201,"blood_type_ab_allc2",NA
+"42","University of Maryland Medical System (MDUM)","MDUM","TX1","HL",21201,"blood_type_a_allc2",NA
+"43","University of Maryland Medical System (MDUM)","MDUM","TX1","HL",21201,"blood_type_b_allc2",NA
+"44","University of Maryland Medical System (MDUM)","MDUM","TX1","HL",21201,"blood_type_o_allc2",NA
+"45","University of Maryland Medical System (MDUM)","MDUM","TX1","HL",21201,"blood_type_unknown_allc2",NA
+"46","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HL",75390,"blood_type_ab_allc2",0
+"47","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HL",75390,"blood_type_a_allc2",0
+"48","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HL",75390,"blood_type_b_allc2",33.333333333
+"49","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HL",75390,"blood_type_o_allc2",66.666666667
+"50","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HL",75390,"blood_type_unknown_allc2",0

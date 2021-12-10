@@ -131,4 +131,3 @@ tx_out = map(data_all_yrs, t3_function)
 ctr_oar = map(data_all_yrs, t4_function)
 
 ```
-
