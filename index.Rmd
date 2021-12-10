@@ -13,9 +13,8 @@ output:
 <center>
 **[To be replaced by screencast]**
 
-
-![](./img/demographics_summary.png) 
-
+![](./img/OrganTracking_Kidney_1350.jpeg) *(Image Credit: Matt Chinworth for Kaiser Health News)*
+<!-- Image taken from https://khn.org/news/how-lifesaving-organs-for-transplant-go-missing-in-transit/ -->
 
 </center>
 

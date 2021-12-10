@@ -5,7 +5,7 @@ navbar:
   right:
     - text: "Dashboard"
       href: dashboard.html
-    - text: "Data Respository"
+    - text: "Data Repository"
       href: data_repository.html
     - text: "Proposal"
       href: proposal.html  

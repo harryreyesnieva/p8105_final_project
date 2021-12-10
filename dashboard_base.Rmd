@@ -23,6 +23,53 @@ library(bslib)
 library(patchwork)
 # library(shiny)
 
+# Multiple plot function
+#
+# ggplot objects can be passed in ..., or to plotlist (as a list of ggplot objects)
+# - cols:   Number of columns in layout
+# - layout: A matrix specifying the layout. If present, 'cols' is ignored.
+#
+# If the layout is something like matrix(c(1,2,3,3), nrow=2, byrow=TRUE),
+# then plot 1 will go in the upper left, 2 will go in the upper right, and
+# 3 will go all the way across the bottom.
+#
+multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+  library(grid)
+
+  # Make a list from the ... arguments and plotlist
+  plots <- c(list(...), plotlist)
+
+  numPlots = length(plots)
+
+  # If layout is NULL, then use 'cols' to determine layout
+  if (is.null(layout)) {
+    # Make the panel
+    # ncol: Number of columns of plots
+    # nrow: Number of rows needed, calculated from # of cols
+    layout <- matrix(seq(1, cols * ceiling(numPlots/cols)),
+                    ncol = cols, nrow = ceiling(numPlots/cols))
+  }
+
+ if (numPlots==1) {
+    print(plots[[1]])
+
+  } else {
+    # Set up the page
+    grid.newpage()
+    pushViewport(viewport(layout = grid.layout(nrow(layout), ncol(layout))))
+
+    # Make each plot, in the correct location
+    for (i in 1:numPlots) {
+      # Get the i,j matrix positions of the regions that contain this subplot
+      matchidx <- as.data.frame(which(layout == i, arr.ind = TRUE))
+
+      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
+                                      layout.pos.col = matchidx$col))
+    }
+  }
+}
+
+
 #------------------ Parameters ------------------
 # Set colors
 # https://www.w3.org/TR/css-color-3/#svg-color
@@ -129,9 +176,6 @@ avg_unknown_other = 100 - sum(avg_asian, avg_black, avg_latino, avg_white)
 <!-- ======================================================================= -->
 Column { data-width=175 }
 -----------------------------------------------------------------------
-<!-- ### Introduction -->
-
-<!-- Welcome to the [Scientific Registry of Transplant Recipients](https://www.srtr.org/) Dashboard and Data Repository. Our site utilizes center-level data on waitlisted patients and patients in receipt of transplants including aggregated demographics, transplant outcomes, and organ offer acceptance practices.  -->
 
 ### Transplant Centers {.value-box}
 ```{r}
@@ -214,10 +258,11 @@ Row {.tabset}
 -----------------------------------------------------------------------
 
 ### Patient Characteristics
-
-```{r }
-# renderPlotly({
-fig_a = df_all_demographics %>%
+<div style='display:flex; flex-direction:row; justify-content:space-evenly; align-items:center;'>
+<div>
+```{r}
+fig_a = 
+  df_all_demographics %>%
     rename(Race = race_category_percent, Zipcode = zipcode) %>%
     mutate(race_category =
              str_replace(race_category, "african_american_allc2", "African American"),
@@ -233,11 +278,18 @@ fig_a = df_all_demographics %>%
     plot_ly(x = ~Zipcode, y = ~Race, 
             type = "scatter", mode = "markers",
             alpha = 0.9, color = ~race_category, colors = "viridis")
-# })
+fig_a  %>% 
+  layout(autosize = F, width = 550, height = 400,
+         xaxis = list(title = 'Zip Code'),
+         yaxis = list(title = 'Race/Ethnicity'),
+         legend = list(title=list(text='<b> Race/Ethnicity </b>')))
 
-
-# renderPlotly({
-fig_b = df_all_age  %>%
+```
+</div>
+<div>
+```{r}
+fig_b = 
+  df_all_age  %>%
     mutate(
       age_category = str_replace(age_category, "age_2_allc2", "Less Than 2 Years"),
       age_category = str_replace(age_category, "age_2_11_allc2", "2 to 11 Years"),
@@ -257,10 +309,19 @@ fig_b = df_all_age  %>%
     plot_ly(x = ~Zipcode, y = ~Age_Group, 
             type = "scatter", mode = "markers",
             alpha = 0.9, color = ~age_category, colors = "viridis")
-# })
-
-# renderPlotly({
-fig_c = df_all_gender %>%
+fig_b %>%  
+  layout(autosize = F, width = 550, height = 400,
+         xaxis = list(title = 'Zip Code'),
+         yaxis = list(title = 'Age Group'),
+         legend = list(title=list(text='<b> Age Group </b>')))
+```
+</div>
+</div>
+<div style='display:flex; flex-direction:row; justify-content:space-evenly; align-items:center;'>
+<div>
+```{r}
+fig_c = 
+  df_all_gender %>%
     rename(Gender = gender_category_percent, Zipcode = zipcode) %>%
     mutate(gender_category = str_replace(gender_category, "female_allc2", "Female"),
            gender_category = str_replace(gender_category, "male_allc2", "Male")) %>%
@@ -268,31 +329,49 @@ fig_c = df_all_gender %>%
     plot_ly(x = ~Zipcode, y = ~Gender, 
             type = "scatter", mode = "markers",
             alpha = 0.9, color = ~gender_category, colors = "viridis")
-# })
-
-# renderPlotly({
-fig_d = df_all_blood_type %>%
-    rename(`Blood Type` = blood_type_category_percent, Zipcode = zipcode) %>%
-    mutate(gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "A"),
-           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "B"),
-           gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "O"),
-           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "AB"),
-           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "Unknown")) %>%
+fig_c %>%  
+  layout(autosize = F, width = 550, height = 400,
+         xaxis = list(title = 'Zip Code'),
+         yaxis = list(title = 'Gender'),
+         legend = list(title=list(text='<b> Gender </b>')))
+```
+</div>
+<div>
+```{r}
+fig_d = 
+  df_all_blood_type %>%
+    rename("Blood Type" = blood_type_category_percent, Zipcode = zipcode) %>%
+    mutate(blood_type_category = 
+             str_replace(blood_type_category, "blood_type_a_allc2", "A"),
+           blood_type_category = 
+             str_replace(blood_type_category, "blood_type_b_allc2", "B"),
+           blood_type_category = 
+             str_replace(blood_type_category, "blood_type_o_allc2", "O"),
+           blood_type_category = 
+             str_replace(blood_type_category, "blood_type_ab_allc2", "AB"),
+           blood_type_category = 
+             str_replace(blood_type_category, "blood_type_unknown_allc2", "Unknown"),
+           blood_type_category = 
+             factor(blood_type_category, levels = c("A","B","O", "AB","Unknown"))) %>%
     # filter(organ_gender == input$organ_gender) %>%
     plot_ly(x = ~Zipcode, y = ~`Blood Type`, 
             type = "scatter", mode = "markers",
             alpha = 0.9, color = ~blood_type_category, colors = "viridis")
-# })
-  
-fig = subplot(fig_a, fig_b, fig_c, fig_d, nrows = 2)
-fig  
+fig_d %>%  
+  layout(autosize = F, width = 550, height = 400,
+         xaxis = list(title = 'Zip Code'),
+         yaxis = list(title = 'Blood Type'),
+         legend = list(title=list(text='<b> Blood Type </b>')))
 ```
+</div>
+</div>
 
 ### Transplant Outcomes
-
-```{r }
-# renderPlotly({
-fig_a = df_all_demographics %>%
+<div style='display:flex; flex-direction:row; justify-content:space-evenly; align-items:center;'>
+<div>
+```{r}
+fig_a = 
+  df_all_demographics %>%
     rename(Race = race_category_percent, Zipcode = zipcode) %>%
     mutate(race_category =
              str_replace(race_category, "african_american_allc2", "African American"),
@@ -308,11 +387,18 @@ fig_a = df_all_demographics %>%
     plot_ly(x = ~Zipcode, y = ~Race, 
             type = "scatter", mode = "markers",
             alpha = 0.9, color = ~race_category, colors = "viridis")
-# })
+fig_a  %>% 
+  layout(autosize = F, width = 550, height = 400,
+         xaxis = list(title = 'Zip Code'),
+         yaxis = list(title = 'Race/Ethnicity'),
+         legend = list(title=list(text='<b> Race/Ethnicity </b>')))
 
-
-# renderPlotly({
-fig_b = df_all_age  %>%
+```
+</div>
+<div>
+```{r}
+fig_b = 
+  df_all_age  %>%
     mutate(
       age_category = str_replace(age_category, "age_2_allc2", "Less Than 2 Years"),
       age_category = str_replace(age_category, "age_2_11_allc2", "2 to 11 Years"),
@@ -332,10 +418,19 @@ fig_b = df_all_age  %>%
     plot_ly(x = ~Zipcode, y = ~Age_Group, 
             type = "scatter", mode = "markers",
             alpha = 0.9, color = ~age_category, colors = "viridis")
-# })
-
-# renderPlotly({
-fig_c = df_all_gender %>%
+fig_b %>%  
+  layout(autosize = F, width = 550, height = 400,
+         xaxis = list(title = 'Zip Code'),
+         yaxis = list(title = 'Age Group'),
+         legend = list(title=list(text='<b> Age Group </b>')))
+```
+</div>
+</div>
+<div style='display:flex; flex-direction:row; justify-content:space-evenly; align-items:center;'>
+<div>
+```{r}
+fig_c = 
+  df_all_gender %>%
     rename(Gender = gender_category_percent, Zipcode = zipcode) %>%
     mutate(gender_category = str_replace(gender_category, "female_allc2", "Female"),
            gender_category = str_replace(gender_category, "male_allc2", "Male")) %>%
@@ -343,31 +438,48 @@ fig_c = df_all_gender %>%
     plot_ly(x = ~Zipcode, y = ~Gender, 
             type = "scatter", mode = "markers",
             alpha = 0.9, color = ~gender_category, colors = "viridis")
-# })
-
-# renderPlotly({
-fig_d = df_all_blood_type %>%
-    rename(`Blood Type` = blood_type_category_percent, Zipcode = zipcode) %>%
-    mutate(gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "A"),
-           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "B"),
-           gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "O"),
-           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "AB"),
-           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "Unknown")) %>%
+fig_c %>%  
+  layout(autosize = F, width = 550, height = 400,
+         xaxis = list(title = 'Zip Code'),
+         yaxis = list(title = 'Gender'),
+         legend = list(title=list(text='<b> Gender </b>')))
+```
+</div>
+<div>
+```{r}
+fig_d = 
+  df_all_blood_type %>%
+    rename("Blood Type" = blood_type_category_percent, Zipcode = zipcode) %>%
+    mutate(blood_type_category = 
+             str_replace(blood_type_category, "blood_type_a_allc2", "A"),
+           blood_type_category = 
+             str_replace(blood_type_category, "blood_type_b_allc2", "B"),
+           blood_type_category = 
+             str_replace(blood_type_category, "blood_type_o_allc2", "O"),
+           blood_type_category = 
+             str_replace(blood_type_category, "blood_type_ab_allc2", "AB"),
+           blood_type_category = 
+             str_replace(blood_type_category, "blood_type_unknown_allc2", "Unknown"),
+           blood_type_category = 
+             factor(blood_type_category, levels = c("A","B","O", "AB","Unknown"))) %>%
     # filter(organ_gender == input$organ_gender) %>%
     plot_ly(x = ~Zipcode, y = ~`Blood Type`, 
             type = "scatter", mode = "markers",
             alpha = 0.9, color = ~blood_type_category, colors = "viridis")
-# })
-  
-fig = subplot(fig_a, fig_b, fig_c, fig_d, nrows = 2)
-fig  
+fig_d %>%  
+  layout(autosize = F, width = 550, height = 400,
+         xaxis = list(title = 'Zip Code'),
+         yaxis = list(title = 'Blood Type'),
+         legend = list(title=list(text='<b> Blood Type </b>')))
 ```
-
+</div>
+</div>
 ### Organ Offer Acceptance Practices
-
-```{r }
-# renderPlotly({
-fig_a = df_all_demographics %>%
+<div style='display:flex; flex-direction:row; justify-content:space-evenly; align-items:center;'>
+<div>
+```{r}
+fig_a = 
+  df_all_demographics %>%
     rename(Race = race_category_percent, Zipcode = zipcode) %>%
     mutate(race_category =
              str_replace(race_category, "african_american_allc2", "African American"),
@@ -383,11 +495,18 @@ fig_a = df_all_demographics %>%
     plot_ly(x = ~Zipcode, y = ~Race, 
             type = "scatter", mode = "markers",
             alpha = 0.9, color = ~race_category, colors = "viridis")
-# })
+fig_a  %>% 
+  layout(autosize = F, width = 550, height = 400,
+         xaxis = list(title = 'Zip Code'),
+         yaxis = list(title = 'Race/Ethnicity'),
+         legend = list(title=list(text='<b> Race/Ethnicity </b>')))
 
-
-# renderPlotly({
-fig_b = df_all_age  %>%
+```
+</div>
+<div>
+```{r}
+fig_b = 
+  df_all_age  %>%
     mutate(
       age_category = str_replace(age_category, "age_2_allc2", "Less Than 2 Years"),
       age_category = str_replace(age_category, "age_2_11_allc2", "2 to 11 Years"),
@@ -407,10 +526,19 @@ fig_b = df_all_age  %>%
     plot_ly(x = ~Zipcode, y = ~Age_Group, 
             type = "scatter", mode = "markers",
             alpha = 0.9, color = ~age_category, colors = "viridis")
-# })
-
-# renderPlotly({
-fig_c = df_all_gender %>%
+fig_b %>%  
+  layout(autosize = F, width = 550, height = 400,
+         xaxis = list(title = 'Zip Code'),
+         yaxis = list(title = 'Age Group'),
+         legend = list(title=list(text='<b> Age Group </b>')))
+```
+</div>
+</div>
+<div style='display:flex; flex-direction:row; justify-content:space-evenly; align-items:center;'>
+<div>
+```{r}
+fig_c = 
+  df_all_gender %>%
     rename(Gender = gender_category_percent, Zipcode = zipcode) %>%
     mutate(gender_category = str_replace(gender_category, "female_allc2", "Female"),
            gender_category = str_replace(gender_category, "male_allc2", "Male")) %>%
@@ -418,27 +546,42 @@ fig_c = df_all_gender %>%
     plot_ly(x = ~Zipcode, y = ~Gender, 
             type = "scatter", mode = "markers",
             alpha = 0.9, color = ~gender_category, colors = "viridis")
-# })
-
-# renderPlotly({
-fig_d = df_all_blood_type %>%
-    rename(`Blood Type` = blood_type_category_percent, Zipcode = zipcode) %>%
-    mutate(gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "A"),
-           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "B"),
-           gender_category = str_replace(blood_type_category, "blood_type_ab_allc2", "O"),
-           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "AB"),
-           gender_category = str_replace(blood_type_category, "blood_type_a_allc2", "Unknown")) %>%
+fig_c %>%  
+  layout(autosize = F, width = 550, height = 400,
+         xaxis = list(title = 'Zip Code'),
+         yaxis = list(title = 'Gender'),
+         legend = list(title=list(text='<b> Gender </b>')))
+```
+</div>
+<div>
+```{r}
+fig_d = 
+  df_all_blood_type %>%
+    rename("Blood Type" = blood_type_category_percent, Zipcode = zipcode) %>%
+    mutate(blood_type_category = 
+             str_replace(blood_type_category, "blood_type_a_allc2", "A"),
+           blood_type_category = 
+             str_replace(blood_type_category, "blood_type_b_allc2", "B"),
+           blood_type_category = 
+             str_replace(blood_type_category, "blood_type_o_allc2", "O"),
+           blood_type_category = 
+             str_replace(blood_type_category, "blood_type_ab_allc2", "AB"),
+           blood_type_category = 
+             str_replace(blood_type_category, "blood_type_unknown_allc2", "Unknown"),
+           blood_type_category = 
+             factor(blood_type_category, levels = c("A","B","O", "AB","Unknown"))) %>%
     # filter(organ_gender == input$organ_gender) %>%
     plot_ly(x = ~Zipcode, y = ~`Blood Type`, 
             type = "scatter", mode = "markers",
             alpha = 0.9, color = ~blood_type_category, colors = "viridis")
-# })
-  
-fig = subplot(fig_a, fig_b, fig_c, fig_d, nrows = 2)
-fig  
+fig_d %>%  
+  layout(autosize = F, width = 550, height = 400,
+         xaxis = list(title = 'Zip Code'),
+         yaxis = list(title = 'Blood Type'),
+         legend = list(title=list(text='<b> Blood Type </b>')))
 ```
-
-
+</div>
+</div>
 <!-- Search the Data Repository -->
 <!-- ======================================================================= -->
 
