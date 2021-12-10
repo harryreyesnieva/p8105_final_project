@@ -10,29 +10,69 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Question 1:
 
+what the data includes
+- comparison of one program to the region and to the country
+
+GAP IN INFO AVAILABLE:
+- does not show one program to another single program
+- does not show trends in data necessarily except in individual reports (PDF)
+
 How do centers vary by geography:
 - offer acceptance ratios
 - who gets added/death while on waitlist
 - association btwn willingness to accept high-risk pts (e.g., based on kidney donor risk index, donor creatinine, hep C status) and time to transplant?
 
-question 2:
-- Have centers changed their practices over time?
+Question 2:
+- Have centers changed their practices over time? Use years 11/2017 - present
 
 Question 3:
 - What center-related features are associated with higher/riskier offer acceptance ratios?
 
+Types of figures
+1. characteristics of waiting list candidates at center level
+2. characteristics of transplant recipients at center level
+3. scatterplot of high-risk offer acceptance ratios (? clarify a cut off for high risk) and transplant volume at multi-center level
+
+Forest plots of hazard ratios?
 
 
+Interactivity:
+- add centers into graph based on geographic proximity
+- add centers into graph based on ?? academic institution?
+
+Selectors
+- center(s)
+- zip code radius
+- ?organ
+- ?time span (years)
 
 Show comparisons between different regions (have a slider for mile radius perhaps based on zipcode?)
 
 
-want a dashboard like this with multiple centers:
+Want a dashboard like this with multiple centers:
 https://www.srtr.org/transplant-centers/ny-presbyterian-hospitalcolumbia-univ-medical-center-nycp/?organ=kidney&recipientType=adult
 
 
-data needed for kidney transplants:
-- zip code of center
+Consider including only this info for each center:
+
+Age
+Gender
+Race
+Blood type
+Primary disease
+Previous transplant
+Average time of wait list
+Deceased vs. living donor
+Number of people who die wait list
+Survival on wait list (Graft vs. whole human)
+HR for 1m, 1y, 3y (compared to national)
+adults vs. peds
+
+
+
+
+Data needed for kidney transplants:
+- zip code of center (Tiers sheet in each file or from Matt zipcodes.xlsx)
 - organ risk score
 - donor risk score
 - waiting list length
@@ -42,16 +82,16 @@ data needed for kidney transplants:
 - most common comorbidity?
 - offer acceptance ratio over time
 
+From PDF of a program:
 
 A. Program Summary
 B. Waiting List Information 
 C. Transplant Information
+Table D1 shows the rates of follow-up for living donors.
 
 
 
 Understanding the Kidney tables:
-
-
 
 The Program Summary is a one-page summary highlighting characteristics of the program, including the 
 number of candidates on the waiting list, 
@@ -66,6 +106,33 @@ survival probabilities for adults and children (pediatrics) are provided separat
 For each of the outcomes measures presented, a comparison is provided showing what would be expected at this program if it were performing as similar programs around the country perform when treating similar patients. 
 
 More details regarding these outcome measures are provided in Sections B and C of the report.
+
+The Waiting List Information section contains 
+- how many candidates are on the waiting list at the program, 
+-the types of candidates on the waiting list, 
+- how long candidates typically have to wait for a transplant at this program, 
+- how frequently candidates successfully receive a transplant, and 
+- how often candidates on the waiting list die before receiving a transplant.
+
+Table B1 shows the activity on this program's waiting list during two recent 1-year periods (NC1 and NC2) and provides comparisons to all programs within this program's OPTN region (see http://optn.transplant.hrsa.gov/members/regions.asp for information on OPTN regions) and the nation as a whole. 
+
+Tables B2 and B3 describe the candidates on the waiting list at this program, with comparisons to candidates waiting in the same donor service area (OPO/DSA) the OPTN region, and the nation as a whole.
+
+Table B4 shows how many candidates were removed from the waiting list because they received a transplant. 
+- The program's transplant rate is calculated as the number of candidates who received a transplant divided by the person-years observed at the program (person-years is a combination of how many candidates were on the waiting list along with how long each candidate was followed since some candidates are not on the waiting list for the entire year). 
+- The transplant rate and comparisons to what would be expected at this program are presented in Figures B1 and B2. 
+
+Figure B1 shows the transplant rate compared to what was expected at this program. The expected transplant rate is an estimate of what we would expect at this program if it were performing transplants at rates similar to other programs in the US with similar candidates on their waiting lists. The expected rate is only an estimate, and is made with a certain level of uncertainty. 
+
+This uncertainty is shown in Figure B2. Figure B2 displays the ratio of the observed to the expected transplant rate. (expected based on performing at rates similar to other programs in US with similar waiting list candidates)
+ - == 1, observed = expected
+ - < 1, observed < expected
+ - > 1, observed > expected  
+ 
+Table B4D excludes transplants from living donor (figures B1D-B3D)
+
+comarison of adult and pediatric rates in DSA (donor service area), OPTN region, nation
+
 
 
 Levels of analysis
@@ -90,12 +157,64 @@ Region 11: Kentucky, North Carolina, South Carolina, Tennessee, Virginia
 ```{r grab_data}
 # for file in data file aka year
 # read in csv spec sheets
+# pull in the zip code data
+# pull in the OPTN region data
 # mutate and make tidy, one var per column
 
 ```
 
 Table combining the following:
-center info
-center zip code (from address)
-center region (from OPTN data)
+Center info
+Center zip code (from Tiers)
+Center region (from OPTN data)
+Center rank (from Tiers)
 
+Sheets to include:
+- combine B1-B3
+
+- combine B4-B7
+
+- combine B8-B10
+
+Table B1: waiting list activity summary
+Table B2: demographic characteristics (new for year and all) (ethnicity, age, gender)
+Table B3: medical characteristics (new for year and all) (blood type, prev transplant, initical CPRA, primary disease)
+Table B4: transplant rates: count at start of year, person years, removal for transplant, divided into all, adult, and peds, observed vs. expected
+table B5: pre transplant mortality rates
+table B6: rates of patient mortality AFTER listing (exclude B6 - SFL for 2021)
+table B7: wait list status post listing
+B8: percent of candidates with decreased donor transplants, demographics (percent transplanted at a specific time since listing - 30d, 1y, 2y, 3y)
+B9: medical charactersitics of above
+B10: time to transplant for waiting list percentiles (months): 5th, 10th, 25th, 50th, 75th
+Table B11: OFFER ACCEPTANCE PRACTICES
+- overall (KDRI = kidney donor risk index)
+- low KDRI donors (KDRI <1.05)
+- medium 1.05 - 1.75
+- high >1.75
+- hard to place kidneys (over 100 offers)
+
+KDRI definition (https://optn.transplant.hrsa.gov/media/1512/guide_to_calculating_interpreting_kdpi.pdf): The Kidney Donor Profle Index (KDPI) is a numerical measure that combines ten donor factors, including clinical parameters and demographics, to summarize into a single number the quality of deceased donor kidneys relative to other recovered kidneys. The KDPI is derived by frst calculating the Kidney Donor Risk Index (KDRI) for a deceased donor.
+Kidneys from a donor with a KDPI of 90%, for example, have a KDRI (which indicates relative risk of graft failure) greater than 90% of recovered kidneys. The KDPI is simply a mapping of the KDRI from a relative risk scale to a cumulative percentage scale. The reference population used for this mapping is all deceased donors in the United States with a kidney recovered for the purpose of transplantation in the prior calendar year. Lower KDPI values are associated with increased donor quality and expected longevity.
+
+Table C1: transplant recipient demographics (ethnicity, age, gender)
+Table C2: transplant recipient medical characteristics (blood type, prev transplant, peak PRA/CPRA prior to transplant, BMI, primary disease)
+Table C3: donor characteristics (ethnicity, age, gender, blood type), cause of death for deceased
+Table C5: adult 1m GRAFT survival
+Table C6: adult 1y GRAFT survival
+Table C7: adult 3y GRAFT survival
+Table C8: pediatric 1m GRAFT survival
+Table C9: pediatric 1y GRAFT survival
+Table C10: pediatric 3y GRAFT survival
+Tables C11: adult 1m patient survival after FIRST transplant
+Tables C12: adult 1y patient survival after FIRST transplant
+Tables C13: adult 3y patient survival after FIRST transplant
+Tables C14: pediatric 1 month patient survival after FIRST transplant
+Tables C15: pediatric 1 yr patient survival after FIRST transplant
+Tables C16: pediatric 3y patient survival after FIRST transplant (D) deceased donor, (L) living donor
+
+
+Consider EXCLUDING:
+Table B6 - SFL (unique to 2021 data?)
+Table C4:  transplant characteristics (ischemic time, mismatch, relation)
+Tables C17-18: Multi-organ transplant graft survival / Multi-organ transplant patient survival
+Table D1: Living donor summary

@@ -1,0 +1,1001 @@
+"","entire_name","ctr_cd","ctr_ty","org","zipcode","age_category","age_category_percent"
+"1","Abbott Northwestern Hospital (MNAN)","MNAN","TX1","HR",55407,"age_2_11_allc2",0
+"2","Abbott Northwestern Hospital (MNAN)","MNAN","TX1","HR",55407,"age_12_17_allc2",0
+"3","Abbott Northwestern Hospital (MNAN)","MNAN","TX1","HR",55407,"age_2_allc2",0
+"4","Abbott Northwestern Hospital (MNAN)","MNAN","TX1","HR",55407,"age_18_34_allc2",0
+"5","Abbott Northwestern Hospital (MNAN)","MNAN","TX1","HR",55407,"age_35_49_allc2",25
+"6","Abbott Northwestern Hospital (MNAN)","MNAN","TX1","HR",55407,"age_50_64_allc2",37.5
+"7","Abbott Northwestern Hospital (MNAN)","MNAN","TX1","HR",55407,"age_65_69_allc2",37.5
+"8","Abbott Northwestern Hospital (MNAN)","MNAN","TX1","HR",55407,"age_70_allc2",0
+"9","Advocate Christ Medical Center (ILCH)","ILCH","TX1","HR",60453,"age_2_11_allc2",0
+"10","Advocate Christ Medical Center (ILCH)","ILCH","TX1","HR",60453,"age_12_17_allc2",0
+"11","Advocate Christ Medical Center (ILCH)","ILCH","TX1","HR",60453,"age_2_allc2",0
+"12","Advocate Christ Medical Center (ILCH)","ILCH","TX1","HR",60453,"age_18_34_allc2",9.2592592593
+"13","Advocate Christ Medical Center (ILCH)","ILCH","TX1","HR",60453,"age_35_49_allc2",24.074074074
+"14","Advocate Christ Medical Center (ILCH)","ILCH","TX1","HR",60453,"age_50_64_allc2",55.555555556
+"15","Advocate Christ Medical Center (ILCH)","ILCH","TX1","HR",60453,"age_65_69_allc2",11.111111111
+"16","Advocate Christ Medical Center (ILCH)","ILCH","TX1","HR",60453,"age_70_allc2",0
+"17","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1","HR",19803,"age_2_11_allc2",0
+"18","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1","HR",19803,"age_12_17_allc2",100
+"19","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1","HR",19803,"age_2_allc2",0
+"20","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1","HR",19803,"age_18_34_allc2",0
+"21","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1","HR",19803,"age_35_49_allc2",0
+"22","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1","HR",19803,"age_50_64_allc2",0
+"23","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1","HR",19803,"age_65_69_allc2",0
+"24","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1","HR",19803,"age_70_allc2",0
+"25","Allegheny General Hospital (PAAG)","PAAG","TX1","HR",15212,"age_2_11_allc2",0
+"26","Allegheny General Hospital (PAAG)","PAAG","TX1","HR",15212,"age_12_17_allc2",0
+"27","Allegheny General Hospital (PAAG)","PAAG","TX1","HR",15212,"age_2_allc2",0
+"28","Allegheny General Hospital (PAAG)","PAAG","TX1","HR",15212,"age_18_34_allc2",7.6923076923
+"29","Allegheny General Hospital (PAAG)","PAAG","TX1","HR",15212,"age_35_49_allc2",15.384615385
+"30","Allegheny General Hospital (PAAG)","PAAG","TX1","HR",15212,"age_50_64_allc2",53.846153846
+"31","Allegheny General Hospital (PAAG)","PAAG","TX1","HR",15212,"age_65_69_allc2",23.076923077
+"32","Allegheny General Hospital (PAAG)","PAAG","TX1","HR",15212,"age_70_allc2",0
+"33","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1","HR",60611,"age_2_11_allc2",46.875
+"34","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1","HR",60611,"age_12_17_allc2",9.375
+"35","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1","HR",60611,"age_2_allc2",31.25
+"36","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1","HR",60611,"age_18_34_allc2",12.5
+"37","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1","HR",60611,"age_35_49_allc2",0
+"38","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1","HR",60611,"age_50_64_allc2",0
+"39","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1","HR",60611,"age_65_69_allc2",0
+"40","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1","HR",60611,"age_70_allc2",0
+"41","Arkansas Children's Hospital (ARCH)","ARCH","TX1","HR",72202,"age_2_11_allc2",25
+"42","Arkansas Children's Hospital (ARCH)","ARCH","TX1","HR",72202,"age_12_17_allc2",50
+"43","Arkansas Children's Hospital (ARCH)","ARCH","TX1","HR",72202,"age_2_allc2",25
+"44","Arkansas Children's Hospital (ARCH)","ARCH","TX1","HR",72202,"age_18_34_allc2",0
+"45","Arkansas Children's Hospital (ARCH)","ARCH","TX1","HR",72202,"age_35_49_allc2",0
+"46","Arkansas Children's Hospital (ARCH)","ARCH","TX1","HR",72202,"age_50_64_allc2",0
+"47","Arkansas Children's Hospital (ARCH)","ARCH","TX1","HR",72202,"age_65_69_allc2",0
+"48","Arkansas Children's Hospital (ARCH)","ARCH","TX1","HR",72202,"age_70_allc2",0
+"49","Aurora St. Luke's Medical Center (WISL)","WISL","TX1","HR",53215,"age_2_11_allc2",0
+"50","Aurora St. Luke's Medical Center (WISL)","WISL","TX1","HR",53215,"age_12_17_allc2",0
+"51","Aurora St. Luke's Medical Center (WISL)","WISL","TX1","HR",53215,"age_2_allc2",0
+"52","Aurora St. Luke's Medical Center (WISL)","WISL","TX1","HR",53215,"age_18_34_allc2",11.363636364
+"53","Aurora St. Luke's Medical Center (WISL)","WISL","TX1","HR",53215,"age_35_49_allc2",15.909090909
+"54","Aurora St. Luke's Medical Center (WISL)","WISL","TX1","HR",53215,"age_50_64_allc2",54.545454545
+"55","Aurora St. Luke's Medical Center (WISL)","WISL","TX1","HR",53215,"age_65_69_allc2",18.181818182
+"56","Aurora St. Luke's Medical Center (WISL)","WISL","TX1","HR",53215,"age_70_allc2",0
+"57","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1","HR",85719,"age_2_11_allc2",0
+"58","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1","HR",85719,"age_12_17_allc2",0
+"59","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1","HR",85719,"age_2_allc2",0
+"60","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1","HR",85719,"age_18_34_allc2",0
+"61","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1","HR",85719,"age_35_49_allc2",16.666666667
+"62","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1","HR",85719,"age_50_64_allc2",83.333333333
+"63","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1","HR",85719,"age_65_69_allc2",0
+"64","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1","HR",85719,"age_70_allc2",0
+"65","Barnes-Jewish Hospital (MOBH)","MOBH","TX1","HR",63110,"age_2_11_allc2",0
+"66","Barnes-Jewish Hospital (MOBH)","MOBH","TX1","HR",63110,"age_12_17_allc2",0
+"67","Barnes-Jewish Hospital (MOBH)","MOBH","TX1","HR",63110,"age_2_allc2",0
+"68","Barnes-Jewish Hospital (MOBH)","MOBH","TX1","HR",63110,"age_18_34_allc2",8.3333333333
+"69","Barnes-Jewish Hospital (MOBH)","MOBH","TX1","HR",63110,"age_35_49_allc2",38.888888889
+"70","Barnes-Jewish Hospital (MOBH)","MOBH","TX1","HR",63110,"age_50_64_allc2",47.222222222
+"71","Barnes-Jewish Hospital (MOBH)","MOBH","TX1","HR",63110,"age_65_69_allc2",5.5555555556
+"72","Barnes-Jewish Hospital (MOBH)","MOBH","TX1","HR",63110,"age_70_allc2",0
+"73","Baylor University Medical Center (TXTX)","TXTX","TX1","HR",75246,"age_2_11_allc2",0
+"74","Baylor University Medical Center (TXTX)","TXTX","TX1","HR",75246,"age_12_17_allc2",0
+"75","Baylor University Medical Center (TXTX)","TXTX","TX1","HR",75246,"age_2_allc2",0
+"76","Baylor University Medical Center (TXTX)","TXTX","TX1","HR",75246,"age_18_34_allc2",13.513513514
+"77","Baylor University Medical Center (TXTX)","TXTX","TX1","HR",75246,"age_35_49_allc2",18.918918919
+"78","Baylor University Medical Center (TXTX)","TXTX","TX1","HR",75246,"age_50_64_allc2",51.351351351
+"79","Baylor University Medical Center (TXTX)","TXTX","TX1","HR",75246,"age_65_69_allc2",13.513513514
+"80","Baylor University Medical Center (TXTX)","TXTX","TX1","HR",75246,"age_70_allc2",2.7027027027
+"81","Boston Children's Hospital (MACH)","MACH","TX1","HR",2115,"age_2_11_allc2",29.411764706
+"82","Boston Children's Hospital (MACH)","MACH","TX1","HR",2115,"age_12_17_allc2",29.411764706
+"83","Boston Children's Hospital (MACH)","MACH","TX1","HR",2115,"age_2_allc2",23.529411765
+"84","Boston Children's Hospital (MACH)","MACH","TX1","HR",2115,"age_18_34_allc2",17.647058824
+"85","Boston Children's Hospital (MACH)","MACH","TX1","HR",2115,"age_35_49_allc2",0
+"86","Boston Children's Hospital (MACH)","MACH","TX1","HR",2115,"age_50_64_allc2",0
+"87","Boston Children's Hospital (MACH)","MACH","TX1","HR",2115,"age_65_69_allc2",0
+"88","Boston Children's Hospital (MACH)","MACH","TX1","HR",2115,"age_70_allc2",0
+"89","Brigham and Women's Hospital (MAPB)","MAPB","TX1","HR",2115,"age_2_11_allc2",0
+"90","Brigham and Women's Hospital (MAPB)","MAPB","TX1","HR",2115,"age_12_17_allc2",0
+"91","Brigham and Women's Hospital (MAPB)","MAPB","TX1","HR",2115,"age_2_allc2",0
+"92","Brigham and Women's Hospital (MAPB)","MAPB","TX1","HR",2115,"age_18_34_allc2",11.764705882
+"93","Brigham and Women's Hospital (MAPB)","MAPB","TX1","HR",2115,"age_35_49_allc2",35.294117647
+"94","Brigham and Women's Hospital (MAPB)","MAPB","TX1","HR",2115,"age_50_64_allc2",47.058823529
+"95","Brigham and Women's Hospital (MAPB)","MAPB","TX1","HR",2115,"age_65_69_allc2",5.8823529412
+"96","Brigham and Women's Hospital (MAPB)","MAPB","TX1","HR",2115,"age_70_allc2",0
+"97","California Pacific Medical Center (CAPM)","CAPM","TX1","HR",94114,"age_2_11_allc2",0
+"98","California Pacific Medical Center (CAPM)","CAPM","TX1","HR",94114,"age_12_17_allc2",0
+"99","California Pacific Medical Center (CAPM)","CAPM","TX1","HR",94114,"age_2_allc2",0
+"100","California Pacific Medical Center (CAPM)","CAPM","TX1","HR",94114,"age_18_34_allc2",15.384615385
+"101","California Pacific Medical Center (CAPM)","CAPM","TX1","HR",94114,"age_35_49_allc2",30.769230769
+"102","California Pacific Medical Center (CAPM)","CAPM","TX1","HR",94114,"age_50_64_allc2",38.461538462
+"103","California Pacific Medical Center (CAPM)","CAPM","TX1","HR",94114,"age_65_69_allc2",15.384615385
+"104","California Pacific Medical Center (CAPM)","CAPM","TX1","HR",94114,"age_70_allc2",0
+"105","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1","HR",63104,"age_2_11_allc2",50
+"106","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1","HR",63104,"age_12_17_allc2",0
+"107","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1","HR",63104,"age_2_allc2",50
+"108","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1","HR",63104,"age_18_34_allc2",0
+"109","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1","HR",63104,"age_35_49_allc2",0
+"110","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1","HR",63104,"age_50_64_allc2",0
+"111","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1","HR",63104,"age_65_69_allc2",0
+"112","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1","HR",63104,"age_70_allc2",0
+"113","Carolinas Medical Center (NCCM)","NCCM","TX1","HR",28203,"age_2_11_allc2",6.8965517241
+"114","Carolinas Medical Center (NCCM)","NCCM","TX1","HR",28203,"age_12_17_allc2",3.4482758621
+"115","Carolinas Medical Center (NCCM)","NCCM","TX1","HR",28203,"age_2_allc2",3.4482758621
+"116","Carolinas Medical Center (NCCM)","NCCM","TX1","HR",28203,"age_18_34_allc2",13.793103448
+"117","Carolinas Medical Center (NCCM)","NCCM","TX1","HR",28203,"age_35_49_allc2",27.586206897
+"118","Carolinas Medical Center (NCCM)","NCCM","TX1","HR",28203,"age_50_64_allc2",44.827586207
+"119","Carolinas Medical Center (NCCM)","NCCM","TX1","HR",28203,"age_65_69_allc2",0
+"120","Carolinas Medical Center (NCCM)","NCCM","TX1","HR",28203,"age_70_allc2",0
+"121","Cedars-Sinai Medical Center (CACS)","CACS","TX1","HR",90211,"age_2_11_allc2",0
+"122","Cedars-Sinai Medical Center (CACS)","CACS","TX1","HR",90211,"age_12_17_allc2",0
+"123","Cedars-Sinai Medical Center (CACS)","CACS","TX1","HR",90211,"age_2_allc2",0
+"124","Cedars-Sinai Medical Center (CACS)","CACS","TX1","HR",90211,"age_18_34_allc2",11.214953271
+"125","Cedars-Sinai Medical Center (CACS)","CACS","TX1","HR",90211,"age_35_49_allc2",29.906542056
+"126","Cedars-Sinai Medical Center (CACS)","CACS","TX1","HR",90211,"age_50_64_allc2",43.925233645
+"127","Cedars-Sinai Medical Center (CACS)","CACS","TX1","HR",90211,"age_65_69_allc2",11.214953271
+"128","Cedars-Sinai Medical Center (CACS)","CACS","TX1","HR",90211,"age_70_allc2",3.738317757
+"129","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1","HR",77030,"age_2_11_allc2",0
+"130","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1","HR",77030,"age_12_17_allc2",0
+"131","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1","HR",77030,"age_2_allc2",0
+"132","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1","HR",77030,"age_18_34_allc2",10.344827586
+"133","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1","HR",77030,"age_35_49_allc2",34.482758621
+"134","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1","HR",77030,"age_50_64_allc2",41.379310345
+"135","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1","HR",77030,"age_65_69_allc2",13.793103448
+"136","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1","HR",77030,"age_70_allc2",0
+"137","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1","HR",30322,"age_2_11_allc2",50
+"138","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1","HR",30322,"age_12_17_allc2",16.666666667
+"139","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1","HR",30322,"age_2_allc2",33.333333333
+"140","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1","HR",30322,"age_18_34_allc2",0
+"141","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1","HR",30322,"age_35_49_allc2",0
+"142","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1","HR",30322,"age_50_64_allc2",0
+"143","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1","HR",30322,"age_65_69_allc2",0
+"144","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1","HR",30322,"age_70_allc2",0
+"145","Children's Hospital Colorado (COCH)","COCH","TX1","HR",80045,"age_2_11_allc2",16.666666667
+"146","Children's Hospital Colorado (COCH)","COCH","TX1","HR",80045,"age_12_17_allc2",33.333333333
+"147","Children's Hospital Colorado (COCH)","COCH","TX1","HR",80045,"age_2_allc2",16.666666667
+"148","Children's Hospital Colorado (COCH)","COCH","TX1","HR",80045,"age_18_34_allc2",16.666666667
+"149","Children's Hospital Colorado (COCH)","COCH","TX1","HR",80045,"age_35_49_allc2",16.666666667
+"150","Children's Hospital Colorado (COCH)","COCH","TX1","HR",80045,"age_50_64_allc2",0
+"151","Children's Hospital Colorado (COCH)","COCH","TX1","HR",80045,"age_65_69_allc2",0
+"152","Children's Hospital Colorado (COCH)","COCH","TX1","HR",80045,"age_70_allc2",0
+"153","Children's Hospital Medical Center (OHCM)","OHCM","TX1","HR",45229,"age_2_11_allc2",25
+"154","Children's Hospital Medical Center (OHCM)","OHCM","TX1","HR",45229,"age_12_17_allc2",37.5
+"155","Children's Hospital Medical Center (OHCM)","OHCM","TX1","HR",45229,"age_2_allc2",25
+"156","Children's Hospital Medical Center (OHCM)","OHCM","TX1","HR",45229,"age_18_34_allc2",12.5
+"157","Children's Hospital Medical Center (OHCM)","OHCM","TX1","HR",45229,"age_35_49_allc2",0
+"158","Children's Hospital Medical Center (OHCM)","OHCM","TX1","HR",45229,"age_50_64_allc2",0
+"159","Children's Hospital Medical Center (OHCM)","OHCM","TX1","HR",45229,"age_65_69_allc2",0
+"160","Children's Hospital Medical Center (OHCM)","OHCM","TX1","HR",45229,"age_70_allc2",0
+"161","Children's Hospital of Michigan (MICH)","MICH","TX1","HR",48201,"age_2_11_allc2",0
+"162","Children's Hospital of Michigan (MICH)","MICH","TX1","HR",48201,"age_12_17_allc2",0
+"163","Children's Hospital of Michigan (MICH)","MICH","TX1","HR",48201,"age_2_allc2",100
+"164","Children's Hospital of Michigan (MICH)","MICH","TX1","HR",48201,"age_18_34_allc2",0
+"165","Children's Hospital of Michigan (MICH)","MICH","TX1","HR",48201,"age_35_49_allc2",0
+"166","Children's Hospital of Michigan (MICH)","MICH","TX1","HR",48201,"age_50_64_allc2",0
+"167","Children's Hospital of Michigan (MICH)","MICH","TX1","HR",48201,"age_65_69_allc2",0
+"168","Children's Hospital of Michigan (MICH)","MICH","TX1","HR",48201,"age_70_allc2",0
+"169","Children's Hospital of Philadelphia (PACP)","PACP","TX1","HR",19104,"age_2_11_allc2",30
+"170","Children's Hospital of Philadelphia (PACP)","PACP","TX1","HR",19104,"age_12_17_allc2",30
+"171","Children's Hospital of Philadelphia (PACP)","PACP","TX1","HR",19104,"age_2_allc2",40
+"172","Children's Hospital of Philadelphia (PACP)","PACP","TX1","HR",19104,"age_18_34_allc2",0
+"173","Children's Hospital of Philadelphia (PACP)","PACP","TX1","HR",19104,"age_35_49_allc2",0
+"174","Children's Hospital of Philadelphia (PACP)","PACP","TX1","HR",19104,"age_50_64_allc2",0
+"175","Children's Hospital of Philadelphia (PACP)","PACP","TX1","HR",19104,"age_65_69_allc2",0
+"176","Children's Hospital of Philadelphia (PACP)","PACP","TX1","HR",19104,"age_70_allc2",0
+"177","Children's Hospital of Wisconsin (WICH)","WICH","TX1","HR",53226,"age_2_11_allc2",25
+"178","Children's Hospital of Wisconsin (WICH)","WICH","TX1","HR",53226,"age_12_17_allc2",16.666666667
+"179","Children's Hospital of Wisconsin (WICH)","WICH","TX1","HR",53226,"age_2_allc2",50
+"180","Children's Hospital of Wisconsin (WICH)","WICH","TX1","HR",53226,"age_18_34_allc2",8.3333333333
+"181","Children's Hospital of Wisconsin (WICH)","WICH","TX1","HR",53226,"age_35_49_allc2",0
+"182","Children's Hospital of Wisconsin (WICH)","WICH","TX1","HR",53226,"age_50_64_allc2",0
+"183","Children's Hospital of Wisconsin (WICH)","WICH","TX1","HR",53226,"age_65_69_allc2",0
+"184","Children's Hospital of Wisconsin (WICH)","WICH","TX1","HR",53226,"age_70_allc2",0
+"185","Children's Medical Center of Dallas (TXCM)","TXCM","TX1","HR",75235,"age_2_11_allc2",50
+"186","Children's Medical Center of Dallas (TXCM)","TXCM","TX1","HR",75235,"age_12_17_allc2",35.714285714
+"187","Children's Medical Center of Dallas (TXCM)","TXCM","TX1","HR",75235,"age_2_allc2",14.285714286
+"188","Children's Medical Center of Dallas (TXCM)","TXCM","TX1","HR",75235,"age_18_34_allc2",0
+"189","Children's Medical Center of Dallas (TXCM)","TXCM","TX1","HR",75235,"age_35_49_allc2",0
+"190","Children's Medical Center of Dallas (TXCM)","TXCM","TX1","HR",75235,"age_50_64_allc2",0
+"191","Children's Medical Center of Dallas (TXCM)","TXCM","TX1","HR",75235,"age_65_69_allc2",0
+"192","Children's Medical Center of Dallas (TXCM)","TXCM","TX1","HR",75235,"age_70_allc2",0
+"193","Children's Mercy Hospital (MOCM)","MOCM","TX1","HR",64108,"age_2_11_allc2",42.857142857
+"194","Children's Mercy Hospital (MOCM)","MOCM","TX1","HR",64108,"age_12_17_allc2",42.857142857
+"195","Children's Mercy Hospital (MOCM)","MOCM","TX1","HR",64108,"age_2_allc2",14.285714286
+"196","Children's Mercy Hospital (MOCM)","MOCM","TX1","HR",64108,"age_18_34_allc2",0
+"197","Children's Mercy Hospital (MOCM)","MOCM","TX1","HR",64108,"age_35_49_allc2",0
+"198","Children's Mercy Hospital (MOCM)","MOCM","TX1","HR",64108,"age_50_64_allc2",0
+"199","Children's Mercy Hospital (MOCM)","MOCM","TX1","HR",64108,"age_65_69_allc2",0
+"200","Children's Mercy Hospital (MOCM)","MOCM","TX1","HR",64108,"age_70_allc2",0
+"201","Children's National Medical Center (DCCH)","DCCH","TX1","HR",20010,"age_2_11_allc2",25
+"202","Children's National Medical Center (DCCH)","DCCH","TX1","HR",20010,"age_12_17_allc2",25
+"203","Children's National Medical Center (DCCH)","DCCH","TX1","HR",20010,"age_2_allc2",50
+"204","Children's National Medical Center (DCCH)","DCCH","TX1","HR",20010,"age_18_34_allc2",0
+"205","Children's National Medical Center (DCCH)","DCCH","TX1","HR",20010,"age_35_49_allc2",0
+"206","Children's National Medical Center (DCCH)","DCCH","TX1","HR",20010,"age_50_64_allc2",0
+"207","Children's National Medical Center (DCCH)","DCCH","TX1","HR",20010,"age_65_69_allc2",0
+"208","Children's National Medical Center (DCCH)","DCCH","TX1","HR",20010,"age_70_allc2",0
+"209","Children's of Alabama (ALCH)","ALCH","TX1","HR",35233,"age_2_11_allc2",25
+"210","Children's of Alabama (ALCH)","ALCH","TX1","HR",35233,"age_12_17_allc2",25
+"211","Children's of Alabama (ALCH)","ALCH","TX1","HR",35233,"age_2_allc2",50
+"212","Children's of Alabama (ALCH)","ALCH","TX1","HR",35233,"age_18_34_allc2",0
+"213","Children's of Alabama (ALCH)","ALCH","TX1","HR",35233,"age_35_49_allc2",0
+"214","Children's of Alabama (ALCH)","ALCH","TX1","HR",35233,"age_50_64_allc2",0
+"215","Children's of Alabama (ALCH)","ALCH","TX1","HR",35233,"age_65_69_allc2",0
+"216","Children's of Alabama (ALCH)","ALCH","TX1","HR",35233,"age_70_allc2",0
+"217","Childrens Hospital Los Angeles (CACL)","CACL","TX1","HR",90027,"age_2_11_allc2",33.333333333
+"218","Childrens Hospital Los Angeles (CACL)","CACL","TX1","HR",90027,"age_12_17_allc2",16.666666667
+"219","Childrens Hospital Los Angeles (CACL)","CACL","TX1","HR",90027,"age_2_allc2",50
+"220","Childrens Hospital Los Angeles (CACL)","CACL","TX1","HR",90027,"age_18_34_allc2",0
+"221","Childrens Hospital Los Angeles (CACL)","CACL","TX1","HR",90027,"age_35_49_allc2",0
+"222","Childrens Hospital Los Angeles (CACL)","CACL","TX1","HR",90027,"age_50_64_allc2",0
+"223","Childrens Hospital Los Angeles (CACL)","CACL","TX1","HR",90027,"age_65_69_allc2",0
+"224","Childrens Hospital Los Angeles (CACL)","CACL","TX1","HR",90027,"age_70_allc2",0
+"225","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1","HR",33331,"age_2_11_allc2",0
+"226","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1","HR",33331,"age_12_17_allc2",0
+"227","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1","HR",33331,"age_2_allc2",0
+"228","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1","HR",33331,"age_18_34_allc2",6.6666666667
+"229","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1","HR",33331,"age_35_49_allc2",26.666666667
+"230","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1","HR",33331,"age_50_64_allc2",40
+"231","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1","HR",33331,"age_65_69_allc2",13.333333333
+"232","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1","HR",33331,"age_70_allc2",13.333333333
+"233","Duke University Hospital (NCDU)","NCDU","TX1","HR",27710,"age_2_11_allc2",8.1632653061
+"234","Duke University Hospital (NCDU)","NCDU","TX1","HR",27710,"age_12_17_allc2",0
+"235","Duke University Hospital (NCDU)","NCDU","TX1","HR",27710,"age_2_allc2",2.0408163265
+"236","Duke University Hospital (NCDU)","NCDU","TX1","HR",27710,"age_18_34_allc2",12.244897959
+"237","Duke University Hospital (NCDU)","NCDU","TX1","HR",27710,"age_35_49_allc2",26.530612245
+"238","Duke University Hospital (NCDU)","NCDU","TX1","HR",27710,"age_50_64_allc2",48.979591837
+"239","Duke University Hospital (NCDU)","NCDU","TX1","HR",27710,"age_65_69_allc2",2.0408163265
+"240","Duke University Hospital (NCDU)","NCDU","TX1","HR",27710,"age_70_allc2",0
+"241","Emory University Hospital (GAEM)","GAEM","TX1","HR",30322,"age_2_11_allc2",0
+"242","Emory University Hospital (GAEM)","GAEM","TX1","HR",30322,"age_12_17_allc2",0
+"243","Emory University Hospital (GAEM)","GAEM","TX1","HR",30322,"age_2_allc2",0
+"244","Emory University Hospital (GAEM)","GAEM","TX1","HR",30322,"age_18_34_allc2",18.181818182
+"245","Emory University Hospital (GAEM)","GAEM","TX1","HR",30322,"age_35_49_allc2",38.181818182
+"246","Emory University Hospital (GAEM)","GAEM","TX1","HR",30322,"age_50_64_allc2",40
+"247","Emory University Hospital (GAEM)","GAEM","TX1","HR",30322,"age_65_69_allc2",3.6363636364
+"248","Emory University Hospital (GAEM)","GAEM","TX1","HR",30322,"age_70_allc2",0
+"249","Florida Hospital Medical Center (FLFH)","FLFH","TX1","HR",32803,"age_2_11_allc2",0
+"250","Florida Hospital Medical Center (FLFH)","FLFH","TX1","HR",32803,"age_12_17_allc2",0
+"251","Florida Hospital Medical Center (FLFH)","FLFH","TX1","HR",32803,"age_2_allc2",0
+"252","Florida Hospital Medical Center (FLFH)","FLFH","TX1","HR",32803,"age_18_34_allc2",13.333333333
+"253","Florida Hospital Medical Center (FLFH)","FLFH","TX1","HR",32803,"age_35_49_allc2",33.333333333
+"254","Florida Hospital Medical Center (FLFH)","FLFH","TX1","HR",32803,"age_50_64_allc2",40
+"255","Florida Hospital Medical Center (FLFH)","FLFH","TX1","HR",32803,"age_65_69_allc2",13.333333333
+"256","Florida Hospital Medical Center (FLFH)","FLFH","TX1","HR",32803,"age_70_allc2",0
+"257","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1","HR",53226,"age_2_11_allc2",0
+"258","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1","HR",53226,"age_12_17_allc2",0
+"259","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1","HR",53226,"age_2_allc2",0
+"260","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1","HR",53226,"age_18_34_allc2",7.6923076923
+"261","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1","HR",53226,"age_35_49_allc2",26.923076923
+"262","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1","HR",53226,"age_50_64_allc2",53.846153846
+"263","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1","HR",53226,"age_65_69_allc2",11.538461538
+"264","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1","HR",53226,"age_70_allc2",0
+"265","Hartford Hospital (CTHH)","CTHH","TX1","HR",6102,"age_2_11_allc2",0
+"266","Hartford Hospital (CTHH)","CTHH","TX1","HR",6102,"age_12_17_allc2",0
+"267","Hartford Hospital (CTHH)","CTHH","TX1","HR",6102,"age_2_allc2",0
+"268","Hartford Hospital (CTHH)","CTHH","TX1","HR",6102,"age_18_34_allc2",8.6956521739
+"269","Hartford Hospital (CTHH)","CTHH","TX1","HR",6102,"age_35_49_allc2",21.739130435
+"270","Hartford Hospital (CTHH)","CTHH","TX1","HR",6102,"age_50_64_allc2",60.869565217
+"271","Hartford Hospital (CTHH)","CTHH","TX1","HR",6102,"age_65_69_allc2",8.6956521739
+"272","Hartford Hospital (CTHH)","CTHH","TX1","HR",6102,"age_70_allc2",0
+"273","Henry Ford Hospital (MIHF)","MIHF","TX1","HR",48202,"age_2_11_allc2",0
+"274","Henry Ford Hospital (MIHF)","MIHF","TX1","HR",48202,"age_12_17_allc2",0
+"275","Henry Ford Hospital (MIHF)","MIHF","TX1","HR",48202,"age_2_allc2",0
+"276","Henry Ford Hospital (MIHF)","MIHF","TX1","HR",48202,"age_18_34_allc2",6.8965517241
+"277","Henry Ford Hospital (MIHF)","MIHF","TX1","HR",48202,"age_35_49_allc2",17.24137931
+"278","Henry Ford Hospital (MIHF)","MIHF","TX1","HR",48202,"age_50_64_allc2",51.724137931
+"279","Henry Ford Hospital (MIHF)","MIHF","TX1","HR",48202,"age_65_69_allc2",24.137931034
+"280","Henry Ford Hospital (MIHF)","MIHF","TX1","HR",48202,"age_70_allc2",0
+"281","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1","HR",19104,"age_2_11_allc2",0
+"282","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1","HR",19104,"age_12_17_allc2",0
+"283","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1","HR",19104,"age_2_allc2",0
+"284","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1","HR",19104,"age_18_34_allc2",22.388059701
+"285","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1","HR",19104,"age_35_49_allc2",25.373134328
+"286","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1","HR",19104,"age_50_64_allc2",40.298507463
+"287","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1","HR",19104,"age_65_69_allc2",11.940298507
+"288","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1","HR",19104,"age_70_allc2",0
+"289","Houston Methodist Hospital (TXMH)","TXMH","TX1","HR",77030,"age_2_11_allc2",0
+"290","Houston Methodist Hospital (TXMH)","TXMH","TX1","HR",77030,"age_12_17_allc2",0
+"291","Houston Methodist Hospital (TXMH)","TXMH","TX1","HR",77030,"age_2_allc2",0
+"292","Houston Methodist Hospital (TXMH)","TXMH","TX1","HR",77030,"age_18_34_allc2",10.294117647
+"293","Houston Methodist Hospital (TXMH)","TXMH","TX1","HR",77030,"age_35_49_allc2",29.411764706
+"294","Houston Methodist Hospital (TXMH)","TXMH","TX1","HR",77030,"age_50_64_allc2",51.470588235
+"295","Houston Methodist Hospital (TXMH)","TXMH","TX1","HR",77030,"age_65_69_allc2",8.8235294118
+"296","Houston Methodist Hospital (TXMH)","TXMH","TX1","HR",77030,"age_70_allc2",0
+"297","Indiana University Health (INIM)","INIM","TX1","HR",46202,"age_2_11_allc2",11.538461538
+"298","Indiana University Health (INIM)","INIM","TX1","HR",46202,"age_12_17_allc2",3.8461538462
+"299","Indiana University Health (INIM)","INIM","TX1","HR",46202,"age_2_allc2",3.8461538462
+"300","Indiana University Health (INIM)","INIM","TX1","HR",46202,"age_18_34_allc2",7.6923076923
+"301","Indiana University Health (INIM)","INIM","TX1","HR",46202,"age_35_49_allc2",19.230769231
+"302","Indiana University Health (INIM)","INIM","TX1","HR",46202,"age_50_64_allc2",30.769230769
+"303","Indiana University Health (INIM)","INIM","TX1","HR",46202,"age_65_69_allc2",23.076923077
+"304","Indiana University Health (INIM)","INIM","TX1","HR",46202,"age_70_allc2",0
+"305","Inova Fairfax Hospital (VAFH)","VAFH","TX1","HR",22042,"age_2_11_allc2",0
+"306","Inova Fairfax Hospital (VAFH)","VAFH","TX1","HR",22042,"age_12_17_allc2",0
+"307","Inova Fairfax Hospital (VAFH)","VAFH","TX1","HR",22042,"age_2_allc2",0
+"308","Inova Fairfax Hospital (VAFH)","VAFH","TX1","HR",22042,"age_18_34_allc2",14.634146341
+"309","Inova Fairfax Hospital (VAFH)","VAFH","TX1","HR",22042,"age_35_49_allc2",29.268292683
+"310","Inova Fairfax Hospital (VAFH)","VAFH","TX1","HR",22042,"age_50_64_allc2",46.341463415
+"311","Inova Fairfax Hospital (VAFH)","VAFH","TX1","HR",22042,"age_65_69_allc2",9.756097561
+"312","Inova Fairfax Hospital (VAFH)","VAFH","TX1","HR",22042,"age_70_allc2",0
+"313","Integris Baptist Medical Center (OKBC)","OKBC","TX1","HR",73112,"age_2_11_allc2",0
+"314","Integris Baptist Medical Center (OKBC)","OKBC","TX1","HR",73112,"age_12_17_allc2",0
+"315","Integris Baptist Medical Center (OKBC)","OKBC","TX1","HR",73112,"age_2_allc2",0
+"316","Integris Baptist Medical Center (OKBC)","OKBC","TX1","HR",73112,"age_18_34_allc2",9.0909090909
+"317","Integris Baptist Medical Center (OKBC)","OKBC","TX1","HR",73112,"age_35_49_allc2",13.636363636
+"318","Integris Baptist Medical Center (OKBC)","OKBC","TX1","HR",73112,"age_50_64_allc2",63.636363636
+"319","Integris Baptist Medical Center (OKBC)","OKBC","TX1","HR",73112,"age_65_69_allc2",13.636363636
+"320","Integris Baptist Medical Center (OKBC)","OKBC","TX1","HR",73112,"age_70_allc2",0
+"321","Intermountain Medical Center (UTLD)","UTLD","TX1","HR",84107,"age_2_11_allc2",0
+"322","Intermountain Medical Center (UTLD)","UTLD","TX1","HR",84107,"age_12_17_allc2",0
+"323","Intermountain Medical Center (UTLD)","UTLD","TX1","HR",84107,"age_2_allc2",0
+"324","Intermountain Medical Center (UTLD)","UTLD","TX1","HR",84107,"age_18_34_allc2",35.294117647
+"325","Intermountain Medical Center (UTLD)","UTLD","TX1","HR",84107,"age_35_49_allc2",35.294117647
+"326","Intermountain Medical Center (UTLD)","UTLD","TX1","HR",84107,"age_50_64_allc2",23.529411765
+"327","Intermountain Medical Center (UTLD)","UTLD","TX1","HR",84107,"age_65_69_allc2",5.8823529412
+"328","Intermountain Medical Center (UTLD)","UTLD","TX1","HR",84107,"age_70_allc2",0
+"329","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HR",33136,"age_2_11_allc2",2.7027027027
+"330","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HR",33136,"age_12_17_allc2",2.7027027027
+"331","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HR",33136,"age_2_allc2",0
+"332","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HR",33136,"age_18_34_allc2",8.1081081081
+"333","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HR",33136,"age_35_49_allc2",21.621621622
+"334","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HR",33136,"age_50_64_allc2",62.162162162
+"335","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HR",33136,"age_65_69_allc2",2.7027027027
+"336","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HR",33136,"age_70_allc2",0
+"337","Jewish Hospital (KYJH)","KYJH","TX1","HR",40202,"age_2_11_allc2",0
+"338","Jewish Hospital (KYJH)","KYJH","TX1","HR",40202,"age_12_17_allc2",0
+"339","Jewish Hospital (KYJH)","KYJH","TX1","HR",40202,"age_2_allc2",0
+"340","Jewish Hospital (KYJH)","KYJH","TX1","HR",40202,"age_18_34_allc2",0
+"341","Jewish Hospital (KYJH)","KYJH","TX1","HR",40202,"age_35_49_allc2",25
+"342","Jewish Hospital (KYJH)","KYJH","TX1","HR",40202,"age_50_64_allc2",68.75
+"343","Jewish Hospital (KYJH)","KYJH","TX1","HR",40202,"age_65_69_allc2",6.25
+"344","Jewish Hospital (KYJH)","KYJH","TX1","HR",40202,"age_70_allc2",0
+"345","Johns Hopkins Hospital (MDJH)","MDJH","TX1","HR",21287,"age_2_11_allc2",5.1282051282
+"346","Johns Hopkins Hospital (MDJH)","MDJH","TX1","HR",21287,"age_12_17_allc2",7.6923076923
+"347","Johns Hopkins Hospital (MDJH)","MDJH","TX1","HR",21287,"age_2_allc2",2.5641025641
+"348","Johns Hopkins Hospital (MDJH)","MDJH","TX1","HR",21287,"age_18_34_allc2",5.1282051282
+"349","Johns Hopkins Hospital (MDJH)","MDJH","TX1","HR",21287,"age_35_49_allc2",28.205128205
+"350","Johns Hopkins Hospital (MDJH)","MDJH","TX1","HR",21287,"age_50_64_allc2",48.717948718
+"351","Johns Hopkins Hospital (MDJH)","MDJH","TX1","HR",21287,"age_65_69_allc2",2.5641025641
+"352","Johns Hopkins Hospital (MDJH)","MDJH","TX1","HR",21287,"age_70_allc2",0
+"353","Keck Hospital of USC (CAUH)","CAUH","TX1","HR",90033,"age_2_11_allc2",0
+"354","Keck Hospital of USC (CAUH)","CAUH","TX1","HR",90033,"age_12_17_allc2",0
+"355","Keck Hospital of USC (CAUH)","CAUH","TX1","HR",90033,"age_2_allc2",0
+"356","Keck Hospital of USC (CAUH)","CAUH","TX1","HR",90033,"age_18_34_allc2",0
+"357","Keck Hospital of USC (CAUH)","CAUH","TX1","HR",90033,"age_35_49_allc2",16.666666667
+"358","Keck Hospital of USC (CAUH)","CAUH","TX1","HR",90033,"age_50_64_allc2",58.333333333
+"359","Keck Hospital of USC (CAUH)","CAUH","TX1","HR",90033,"age_65_69_allc2",25
+"360","Keck Hospital of USC (CAUH)","CAUH","TX1","HR",90033,"age_70_allc2",0
+"361","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1","HR",38103,"age_2_11_allc2",60
+"362","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1","HR",38103,"age_12_17_allc2",0
+"363","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1","HR",38103,"age_2_allc2",40
+"364","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1","HR",38103,"age_18_34_allc2",0
+"365","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1","HR",38103,"age_35_49_allc2",0
+"366","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1","HR",38103,"age_50_64_allc2",0
+"367","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1","HR",38103,"age_65_69_allc2",0
+"368","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1","HR",38103,"age_70_allc2",0
+"369","Loma Linda University Medical Center (CALL)","CALL","TX1","HR",92354,"age_2_11_allc2",7.1428571429
+"370","Loma Linda University Medical Center (CALL)","CALL","TX1","HR",92354,"age_12_17_allc2",7.1428571429
+"371","Loma Linda University Medical Center (CALL)","CALL","TX1","HR",92354,"age_2_allc2",42.857142857
+"372","Loma Linda University Medical Center (CALL)","CALL","TX1","HR",92354,"age_18_34_allc2",28.571428571
+"373","Loma Linda University Medical Center (CALL)","CALL","TX1","HR",92354,"age_35_49_allc2",0
+"374","Loma Linda University Medical Center (CALL)","CALL","TX1","HR",92354,"age_50_64_allc2",14.285714286
+"375","Loma Linda University Medical Center (CALL)","CALL","TX1","HR",92354,"age_65_69_allc2",0
+"376","Loma Linda University Medical Center (CALL)","CALL","TX1","HR",92354,"age_70_allc2",0
+"377","Loyola University Medical Center (ILLU)","ILLU","TX1","HR",60153,"age_2_11_allc2",0
+"378","Loyola University Medical Center (ILLU)","ILLU","TX1","HR",60153,"age_12_17_allc2",0
+"379","Loyola University Medical Center (ILLU)","ILLU","TX1","HR",60153,"age_2_allc2",0
+"380","Loyola University Medical Center (ILLU)","ILLU","TX1","HR",60153,"age_18_34_allc2",22.222222222
+"381","Loyola University Medical Center (ILLU)","ILLU","TX1","HR",60153,"age_35_49_allc2",29.62962963
+"382","Loyola University Medical Center (ILLU)","ILLU","TX1","HR",60153,"age_50_64_allc2",40.740740741
+"383","Loyola University Medical Center (ILLU)","ILLU","TX1","HR",60153,"age_65_69_allc2",7.4074074074
+"384","Loyola University Medical Center (ILLU)","ILLU","TX1","HR",60153,"age_70_allc2",0
+"385","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1","HR",94304,"age_2_11_allc2",28.571428571
+"386","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1","HR",94304,"age_12_17_allc2",38.095238095
+"387","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1","HR",94304,"age_2_allc2",9.5238095238
+"388","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1","HR",94304,"age_18_34_allc2",23.80952381
+"389","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1","HR",94304,"age_35_49_allc2",0
+"390","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1","HR",94304,"age_50_64_allc2",0
+"391","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1","HR",94304,"age_65_69_allc2",0
+"392","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1","HR",94304,"age_70_allc2",0
+"393","Massachusetts General Hospital (MAMG)","MAMG","TX1","HR",2114,"age_2_11_allc2",0
+"394","Massachusetts General Hospital (MAMG)","MAMG","TX1","HR",2114,"age_12_17_allc2",0
+"395","Massachusetts General Hospital (MAMG)","MAMG","TX1","HR",2114,"age_2_allc2",0
+"396","Massachusetts General Hospital (MAMG)","MAMG","TX1","HR",2114,"age_18_34_allc2",3.7037037037
+"397","Massachusetts General Hospital (MAMG)","MAMG","TX1","HR",2114,"age_35_49_allc2",22.222222222
+"398","Massachusetts General Hospital (MAMG)","MAMG","TX1","HR",2114,"age_50_64_allc2",66.666666667
+"399","Massachusetts General Hospital (MAMG)","MAMG","TX1","HR",2114,"age_65_69_allc2",3.7037037037
+"400","Massachusetts General Hospital (MAMG)","MAMG","TX1","HR",2114,"age_70_allc2",3.7037037037
+"401","Mayo Clinic Florida (FLSL)","FLSL","TX1","HR",32224,"age_2_11_allc2",0
+"402","Mayo Clinic Florida (FLSL)","FLSL","TX1","HR",32224,"age_12_17_allc2",0
+"403","Mayo Clinic Florida (FLSL)","FLSL","TX1","HR",32224,"age_2_allc2",0
+"404","Mayo Clinic Florida (FLSL)","FLSL","TX1","HR",32224,"age_18_34_allc2",13.513513514
+"405","Mayo Clinic Florida (FLSL)","FLSL","TX1","HR",32224,"age_35_49_allc2",18.918918919
+"406","Mayo Clinic Florida (FLSL)","FLSL","TX1","HR",32224,"age_50_64_allc2",62.162162162
+"407","Mayo Clinic Florida (FLSL)","FLSL","TX1","HR",32224,"age_65_69_allc2",5.4054054054
+"408","Mayo Clinic Florida (FLSL)","FLSL","TX1","HR",32224,"age_70_allc2",0
+"409","Mayo Clinic Hospital (AZMC)","AZMC","TX1","HR",85054,"age_2_11_allc2",0
+"410","Mayo Clinic Hospital (AZMC)","AZMC","TX1","HR",85054,"age_12_17_allc2",0
+"411","Mayo Clinic Hospital (AZMC)","AZMC","TX1","HR",85054,"age_2_allc2",0
+"412","Mayo Clinic Hospital (AZMC)","AZMC","TX1","HR",85054,"age_18_34_allc2",21.739130435
+"413","Mayo Clinic Hospital (AZMC)","AZMC","TX1","HR",85054,"age_35_49_allc2",21.739130435
+"414","Mayo Clinic Hospital (AZMC)","AZMC","TX1","HR",85054,"age_50_64_allc2",52.173913043
+"415","Mayo Clinic Hospital (AZMC)","AZMC","TX1","HR",85054,"age_65_69_allc2",4.347826087
+"416","Mayo Clinic Hospital (AZMC)","AZMC","TX1","HR",85054,"age_70_allc2",0
+"417","Medical City Dallas Hospital (TXHD)","TXHD","TX1","HR",75230,"age_2_11_allc2",0
+"418","Medical City Dallas Hospital (TXHD)","TXHD","TX1","HR",75230,"age_12_17_allc2",0
+"419","Medical City Dallas Hospital (TXHD)","TXHD","TX1","HR",75230,"age_2_allc2",0
+"420","Medical City Dallas Hospital (TXHD)","TXHD","TX1","HR",75230,"age_18_34_allc2",0
+"421","Medical City Dallas Hospital (TXHD)","TXHD","TX1","HR",75230,"age_35_49_allc2",25
+"422","Medical City Dallas Hospital (TXHD)","TXHD","TX1","HR",75230,"age_50_64_allc2",68.75
+"423","Medical City Dallas Hospital (TXHD)","TXHD","TX1","HR",75230,"age_65_69_allc2",6.25
+"424","Medical City Dallas Hospital (TXHD)","TXHD","TX1","HR",75230,"age_70_allc2",0
+"425","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1","HR",23219,"age_2_11_allc2",0
+"426","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1","HR",23219,"age_12_17_allc2",0
+"427","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1","HR",23219,"age_2_allc2",0
+"428","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1","HR",23219,"age_18_34_allc2",7.1428571429
+"429","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1","HR",23219,"age_35_49_allc2",42.857142857
+"430","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1","HR",23219,"age_50_64_allc2",40.476190476
+"431","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1","HR",23219,"age_65_69_allc2",9.5238095238
+"432","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1","HR",23219,"age_70_allc2",0
+"433","Medical University of South Carolina (SCMU)","SCMU","TX1","HR",29425,"age_2_11_allc2",0
+"434","Medical University of South Carolina (SCMU)","SCMU","TX1","HR",29425,"age_12_17_allc2",0
+"435","Medical University of South Carolina (SCMU)","SCMU","TX1","HR",29425,"age_2_allc2",0
+"436","Medical University of South Carolina (SCMU)","SCMU","TX1","HR",29425,"age_18_34_allc2",8.3333333333
+"437","Medical University of South Carolina (SCMU)","SCMU","TX1","HR",29425,"age_35_49_allc2",27.777777778
+"438","Medical University of South Carolina (SCMU)","SCMU","TX1","HR",29425,"age_50_64_allc2",52.777777778
+"439","Medical University of South Carolina (SCMU)","SCMU","TX1","HR",29425,"age_65_69_allc2",11.111111111
+"440","Medical University of South Carolina (SCMU)","SCMU","TX1","HR",29425,"age_70_allc2",0
+"441","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1","HR",77030,"age_2_11_allc2",0
+"442","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1","HR",77030,"age_12_17_allc2",0
+"443","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1","HR",77030,"age_2_allc2",0
+"444","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1","HR",77030,"age_18_34_allc2",14.035087719
+"445","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1","HR",77030,"age_35_49_allc2",19.298245614
+"446","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1","HR",77030,"age_50_64_allc2",50.877192982
+"447","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1","HR",77030,"age_65_69_allc2",10.526315789
+"448","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1","HR",77030,"age_70_allc2",5.2631578947
+"449","Memorial Regional Hospital (FLMR)","FLMR","TX1","HR",33021,"age_2_11_allc2",0
+"450","Memorial Regional Hospital (FLMR)","FLMR","TX1","HR",33021,"age_12_17_allc2",0
+"451","Memorial Regional Hospital (FLMR)","FLMR","TX1","HR",33021,"age_2_allc2",0
+"452","Memorial Regional Hospital (FLMR)","FLMR","TX1","HR",33021,"age_18_34_allc2",5.8823529412
+"453","Memorial Regional Hospital (FLMR)","FLMR","TX1","HR",33021,"age_35_49_allc2",23.529411765
+"454","Memorial Regional Hospital (FLMR)","FLMR","TX1","HR",33021,"age_50_64_allc2",52.941176471
+"455","Memorial Regional Hospital (FLMR)","FLMR","TX1","HR",33021,"age_65_69_allc2",17.647058824
+"456","Memorial Regional Hospital (FLMR)","FLMR","TX1","HR",33021,"age_70_allc2",0
+"457","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1","HR",78229,"age_2_11_allc2",0
+"458","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1","HR",78229,"age_12_17_allc2",0
+"459","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1","HR",78229,"age_2_allc2",0
+"460","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1","HR",78229,"age_18_34_allc2",17.391304348
+"461","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1","HR",78229,"age_35_49_allc2",13.043478261
+"462","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1","HR",78229,"age_50_64_allc2",52.173913043
+"463","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1","HR",78229,"age_65_69_allc2",13.043478261
+"464","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1","HR",78229,"age_70_allc2",4.347826087
+"465","Montefiore Medical Center (NYMA)","NYMA","TX1","HR",10467,"age_2_11_allc2",0
+"466","Montefiore Medical Center (NYMA)","NYMA","TX1","HR",10467,"age_12_17_allc2",0
+"467","Montefiore Medical Center (NYMA)","NYMA","TX1","HR",10467,"age_2_allc2",0
+"468","Montefiore Medical Center (NYMA)","NYMA","TX1","HR",10467,"age_18_34_allc2",9.8039215686
+"469","Montefiore Medical Center (NYMA)","NYMA","TX1","HR",10467,"age_35_49_allc2",25.490196078
+"470","Montefiore Medical Center (NYMA)","NYMA","TX1","HR",10467,"age_50_64_allc2",43.137254902
+"471","Montefiore Medical Center (NYMA)","NYMA","TX1","HR",10467,"age_65_69_allc2",17.647058824
+"472","Montefiore Medical Center (NYMA)","NYMA","TX1","HR",10467,"age_70_allc2",3.9215686275
+"473","Mount Sinai Medical Center (NYMS)","NYMS","TX1","HR",10029,"age_2_11_allc2",0
+"474","Mount Sinai Medical Center (NYMS)","NYMS","TX1","HR",10029,"age_12_17_allc2",1.1235955056
+"475","Mount Sinai Medical Center (NYMS)","NYMS","TX1","HR",10029,"age_2_allc2",5.6179775281
+"476","Mount Sinai Medical Center (NYMS)","NYMS","TX1","HR",10029,"age_18_34_allc2",11.235955056
+"477","Mount Sinai Medical Center (NYMS)","NYMS","TX1","HR",10029,"age_35_49_allc2",22.471910112
+"478","Mount Sinai Medical Center (NYMS)","NYMS","TX1","HR",10029,"age_50_64_allc2",43.820224719
+"479","Mount Sinai Medical Center (NYMS)","NYMS","TX1","HR",10029,"age_65_69_allc2",13.483146067
+"480","Mount Sinai Medical Center (NYMS)","NYMS","TX1","HR",10029,"age_70_allc2",2.2471910112
+"481","Nationwide Children's Hospital (OHCH)","OHCH","TX1","HR",43205,"age_2_11_allc2",16.666666667
+"482","Nationwide Children's Hospital (OHCH)","OHCH","TX1","HR",43205,"age_12_17_allc2",16.666666667
+"483","Nationwide Children's Hospital (OHCH)","OHCH","TX1","HR",43205,"age_2_allc2",33.333333333
+"484","Nationwide Children's Hospital (OHCH)","OHCH","TX1","HR",43205,"age_18_34_allc2",33.333333333
+"485","Nationwide Children's Hospital (OHCH)","OHCH","TX1","HR",43205,"age_35_49_allc2",0
+"486","Nationwide Children's Hospital (OHCH)","OHCH","TX1","HR",43205,"age_50_64_allc2",0
+"487","Nationwide Children's Hospital (OHCH)","OHCH","TX1","HR",43205,"age_65_69_allc2",0
+"488","Nationwide Children's Hospital (OHCH)","OHCH","TX1","HR",43205,"age_70_allc2",0
+"489","New York University Medical Center (NYUC)","NYUC","TX1","HR",10016,"age_2_11_allc2",0
+"490","New York University Medical Center (NYUC)","NYUC","TX1","HR",10016,"age_12_17_allc2",0
+"491","New York University Medical Center (NYUC)","NYUC","TX1","HR",10016,"age_2_allc2",0
+"492","New York University Medical Center (NYUC)","NYUC","TX1","HR",10016,"age_18_34_allc2",4.1666666667
+"493","New York University Medical Center (NYUC)","NYUC","TX1","HR",10016,"age_35_49_allc2",50
+"494","New York University Medical Center (NYUC)","NYUC","TX1","HR",10016,"age_50_64_allc2",41.666666667
+"495","New York University Medical Center (NYUC)","NYUC","TX1","HR",10016,"age_65_69_allc2",4.1666666667
+"496","New York University Medical Center (NYUC)","NYUC","TX1","HR",10016,"age_70_allc2",0
+"497","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1","HR",7112,"age_2_11_allc2",0
+"498","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1","HR",7112,"age_12_17_allc2",0
+"499","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1","HR",7112,"age_2_allc2",0
+"500","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1","HR",7112,"age_18_34_allc2",0
+"501","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1","HR",7112,"age_35_49_allc2",27.777777778
+"502","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1","HR",7112,"age_50_64_allc2",50
+"503","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1","HR",7112,"age_65_69_allc2",22.222222222
+"504","Newark Beth Israel Medical Center (NJBI)","NJBI","TX1","HR",7112,"age_70_allc2",0
+"505","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1","HR",11030,"age_2_11_allc2",0
+"506","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1","HR",11030,"age_12_17_allc2",0
+"507","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1","HR",11030,"age_2_allc2",0
+"508","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1","HR",11030,"age_18_34_allc2",12.5
+"509","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1","HR",11030,"age_35_49_allc2",25
+"510","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1","HR",11030,"age_50_64_allc2",50
+"511","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1","HR",11030,"age_65_69_allc2",6.25
+"512","North Shore University Hospital/Northwell Health (NYNS)","NYNS","TX1","HR",11030,"age_70_allc2",6.25
+"513","Northwestern Memorial Hospital (ILNM)","ILNM","TX1","HR",60611,"age_2_11_allc2",0
+"514","Northwestern Memorial Hospital (ILNM)","ILNM","TX1","HR",60611,"age_12_17_allc2",0
+"515","Northwestern Memorial Hospital (ILNM)","ILNM","TX1","HR",60611,"age_2_allc2",0
+"516","Northwestern Memorial Hospital (ILNM)","ILNM","TX1","HR",60611,"age_18_34_allc2",13.461538462
+"517","Northwestern Memorial Hospital (ILNM)","ILNM","TX1","HR",60611,"age_35_49_allc2",38.461538462
+"518","Northwestern Memorial Hospital (ILNM)","ILNM","TX1","HR",60611,"age_50_64_allc2",42.307692308
+"519","Northwestern Memorial Hospital (ILNM)","ILNM","TX1","HR",60611,"age_65_69_allc2",5.7692307692
+"520","Northwestern Memorial Hospital (ILNM)","ILNM","TX1","HR",60611,"age_70_allc2",0
+"521","Norton Children's Hospital (KYKC)","KYKC","TX1","HR",40202,"age_2_11_allc2",60
+"522","Norton Children's Hospital (KYKC)","KYKC","TX1","HR",40202,"age_12_17_allc2",20
+"523","Norton Children's Hospital (KYKC)","KYKC","TX1","HR",40202,"age_2_allc2",20
+"524","Norton Children's Hospital (KYKC)","KYKC","TX1","HR",40202,"age_18_34_allc2",0
+"525","Norton Children's Hospital (KYKC)","KYKC","TX1","HR",40202,"age_35_49_allc2",0
+"526","Norton Children's Hospital (KYKC)","KYKC","TX1","HR",40202,"age_50_64_allc2",0
+"527","Norton Children's Hospital (KYKC)","KYKC","TX1","HR",40202,"age_65_69_allc2",0
+"528","Norton Children's Hospital (KYKC)","KYKC","TX1","HR",40202,"age_70_allc2",0
+"529","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1","HR",10032,"age_2_11_allc2",3.0612244898
+"530","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1","HR",10032,"age_12_17_allc2",1.0204081633
+"531","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1","HR",10032,"age_2_allc2",2.0408163265
+"532","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1","HR",10032,"age_18_34_allc2",14.285714286
+"533","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1","HR",10032,"age_35_49_allc2",27.551020408
+"534","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1","HR",10032,"age_50_64_allc2",44.897959184
+"535","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1","HR",10032,"age_65_69_allc2",6.1224489796
+"536","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1","HR",10032,"age_70_allc2",1.0204081633
+"537","Ochsner Foundation Hospital (LAOF)","LAOF","TX1","HR",70121,"age_2_11_allc2",0
+"538","Ochsner Foundation Hospital (LAOF)","LAOF","TX1","HR",70121,"age_12_17_allc2",0
+"539","Ochsner Foundation Hospital (LAOF)","LAOF","TX1","HR",70121,"age_2_allc2",1.6393442623
+"540","Ochsner Foundation Hospital (LAOF)","LAOF","TX1","HR",70121,"age_18_34_allc2",9.8360655738
+"541","Ochsner Foundation Hospital (LAOF)","LAOF","TX1","HR",70121,"age_35_49_allc2",26.229508197
+"542","Ochsner Foundation Hospital (LAOF)","LAOF","TX1","HR",70121,"age_50_64_allc2",59.016393443
+"543","Ochsner Foundation Hospital (LAOF)","LAOF","TX1","HR",70121,"age_65_69_allc2",3.2786885246
+"544","Ochsner Foundation Hospital (LAOF)","LAOF","TX1","HR",70121,"age_70_allc2",0
+"545","Ohio State University Medical Center (OHOU)","OHOU","TX1","HR",43210,"age_2_11_allc2",0
+"546","Ohio State University Medical Center (OHOU)","OHOU","TX1","HR",43210,"age_12_17_allc2",0
+"547","Ohio State University Medical Center (OHOU)","OHOU","TX1","HR",43210,"age_2_allc2",0
+"548","Ohio State University Medical Center (OHOU)","OHOU","TX1","HR",43210,"age_18_34_allc2",33.333333333
+"549","Ohio State University Medical Center (OHOU)","OHOU","TX1","HR",43210,"age_35_49_allc2",33.333333333
+"550","Ohio State University Medical Center (OHOU)","OHOU","TX1","HR",43210,"age_50_64_allc2",25
+"551","Ohio State University Medical Center (OHOU)","OHOU","TX1","HR",43210,"age_65_69_allc2",0
+"552","Ohio State University Medical Center (OHOU)","OHOU","TX1","HR",43210,"age_70_allc2",8.3333333333
+"553","Oregon Health & Science University (ORUO)","ORUO","TX1","HR",97239,"age_2_11_allc2",0
+"554","Oregon Health & Science University (ORUO)","ORUO","TX1","HR",97239,"age_12_17_allc2",0
+"555","Oregon Health & Science University (ORUO)","ORUO","TX1","HR",97239,"age_2_allc2",0
+"556","Oregon Health & Science University (ORUO)","ORUO","TX1","HR",97239,"age_18_34_allc2",0
+"557","Oregon Health & Science University (ORUO)","ORUO","TX1","HR",97239,"age_35_49_allc2",100
+"558","Oregon Health & Science University (ORUO)","ORUO","TX1","HR",97239,"age_50_64_allc2",0
+"559","Oregon Health & Science University (ORUO)","ORUO","TX1","HR",97239,"age_65_69_allc2",0
+"560","Oregon Health & Science University (ORUO)","ORUO","TX1","HR",97239,"age_70_allc2",0
+"561","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1","HR",17033,"age_2_11_allc2",0
+"562","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1","HR",17033,"age_12_17_allc2",0
+"563","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1","HR",17033,"age_2_allc2",0
+"564","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1","HR",17033,"age_18_34_allc2",0
+"565","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1","HR",17033,"age_35_49_allc2",11.111111111
+"566","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1","HR",17033,"age_50_64_allc2",66.666666667
+"567","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1","HR",17033,"age_65_69_allc2",22.222222222
+"568","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1","HR",17033,"age_70_allc2",0
+"569","Phoenix Children's Hospital (AZCH)","AZCH","TX1","HR",85016,"age_2_11_allc2",60
+"570","Phoenix Children's Hospital (AZCH)","AZCH","TX1","HR",85016,"age_12_17_allc2",20
+"571","Phoenix Children's Hospital (AZCH)","AZCH","TX1","HR",85016,"age_2_allc2",20
+"572","Phoenix Children's Hospital (AZCH)","AZCH","TX1","HR",85016,"age_18_34_allc2",0
+"573","Phoenix Children's Hospital (AZCH)","AZCH","TX1","HR",85016,"age_35_49_allc2",0
+"574","Phoenix Children's Hospital (AZCH)","AZCH","TX1","HR",85016,"age_50_64_allc2",0
+"575","Phoenix Children's Hospital (AZCH)","AZCH","TX1","HR",85016,"age_65_69_allc2",0
+"576","Phoenix Children's Hospital (AZCH)","AZCH","TX1","HR",85016,"age_70_allc2",0
+"577","Piedmont Hospital (GAPH)","GAPH","TX1","HR",30309,"age_2_11_allc2",0
+"578","Piedmont Hospital (GAPH)","GAPH","TX1","HR",30309,"age_12_17_allc2",0
+"579","Piedmont Hospital (GAPH)","GAPH","TX1","HR",30309,"age_2_allc2",0
+"580","Piedmont Hospital (GAPH)","GAPH","TX1","HR",30309,"age_18_34_allc2",5
+"581","Piedmont Hospital (GAPH)","GAPH","TX1","HR",30309,"age_35_49_allc2",40
+"582","Piedmont Hospital (GAPH)","GAPH","TX1","HR",30309,"age_50_64_allc2",55
+"583","Piedmont Hospital (GAPH)","GAPH","TX1","HR",30309,"age_65_69_allc2",0
+"584","Piedmont Hospital (GAPH)","GAPH","TX1","HR",30309,"age_70_allc2",0
+"585","Primary Children's Hospital (UTPC)","UTPC","TX1","HR",84113,"age_2_11_allc2",33.333333333
+"586","Primary Children's Hospital (UTPC)","UTPC","TX1","HR",84113,"age_12_17_allc2",55.555555556
+"587","Primary Children's Hospital (UTPC)","UTPC","TX1","HR",84113,"age_2_allc2",11.111111111
+"588","Primary Children's Hospital (UTPC)","UTPC","TX1","HR",84113,"age_18_34_allc2",0
+"589","Primary Children's Hospital (UTPC)","UTPC","TX1","HR",84113,"age_35_49_allc2",0
+"590","Primary Children's Hospital (UTPC)","UTPC","TX1","HR",84113,"age_50_64_allc2",0
+"591","Primary Children's Hospital (UTPC)","UTPC","TX1","HR",84113,"age_65_69_allc2",0
+"592","Primary Children's Hospital (UTPC)","UTPC","TX1","HR",84113,"age_70_allc2",0
+"593","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1","HR",99204,"age_2_11_allc2",0
+"594","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1","HR",99204,"age_12_17_allc2",0
+"595","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1","HR",99204,"age_2_allc2",0
+"596","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1","HR",99204,"age_18_34_allc2",18.181818182
+"597","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1","HR",99204,"age_35_49_allc2",4.5454545455
+"598","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1","HR",99204,"age_50_64_allc2",59.090909091
+"599","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1","HR",99204,"age_65_69_allc2",18.181818182
+"600","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","WASH","TX1","HR",99204,"age_70_allc2",0
+"601","Rady Children's Hospital and Health Center (CACH)","CACH","TX1","HR",92024,"age_2_11_allc2",0
+"602","Rady Children's Hospital and Health Center (CACH)","CACH","TX1","HR",92024,"age_12_17_allc2",0
+"603","Rady Children's Hospital and Health Center (CACH)","CACH","TX1","HR",92024,"age_2_allc2",0
+"604","Rady Children's Hospital and Health Center (CACH)","CACH","TX1","HR",92024,"age_18_34_allc2",100
+"605","Rady Children's Hospital and Health Center (CACH)","CACH","TX1","HR",92024,"age_35_49_allc2",0
+"606","Rady Children's Hospital and Health Center (CACH)","CACH","TX1","HR",92024,"age_50_64_allc2",0
+"607","Rady Children's Hospital and Health Center (CACH)","CACH","TX1","HR",92024,"age_65_69_allc2",0
+"608","Rady Children's Hospital and Health Center (CACH)","CACH","TX1","HR",92024,"age_70_allc2",0
+"609","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1","HR",8901,"age_2_11_allc2",0
+"610","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1","HR",8901,"age_12_17_allc2",0
+"611","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1","HR",8901,"age_2_allc2",0
+"612","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1","HR",8901,"age_18_34_allc2",28.571428571
+"613","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1","HR",8901,"age_35_49_allc2",28.571428571
+"614","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1","HR",8901,"age_50_64_allc2",28.571428571
+"615","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1","HR",8901,"age_65_69_allc2",14.285714286
+"616","Robert Wood Johnson University Hospital (NJRW)","NJRW","TX1","HR",8901,"age_70_allc2",0
+"617","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HR",55902,"age_2_11_allc2",2.380952381
+"618","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HR",55902,"age_12_17_allc2",5.9523809524
+"619","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HR",55902,"age_2_allc2",3.5714285714
+"620","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HR",55902,"age_18_34_allc2",9.5238095238
+"621","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HR",55902,"age_35_49_allc2",29.761904762
+"622","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HR",55902,"age_50_64_allc2",46.428571429
+"623","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HR",55902,"age_65_69_allc2",2.380952381
+"624","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HR",55902,"age_70_allc2",0
+"625","Saint Thomas Hospital (TNST)","TNST","TX1","HR",37205,"age_2_11_allc2",0
+"626","Saint Thomas Hospital (TNST)","TNST","TX1","HR",37205,"age_12_17_allc2",0
+"627","Saint Thomas Hospital (TNST)","TNST","TX1","HR",37205,"age_2_allc2",0
+"628","Saint Thomas Hospital (TNST)","TNST","TX1","HR",37205,"age_18_34_allc2",0
+"629","Saint Thomas Hospital (TNST)","TNST","TX1","HR",37205,"age_35_49_allc2",40
+"630","Saint Thomas Hospital (TNST)","TNST","TX1","HR",37205,"age_50_64_allc2",40
+"631","Saint Thomas Hospital (TNST)","TNST","TX1","HR",37205,"age_65_69_allc2",20
+"632","Saint Thomas Hospital (TNST)","TNST","TX1","HR",37205,"age_70_allc2",0
+"633","Scott and White Memorial Hospital (TXSW)","TXSW","TX1","HR",76508,"age_2_11_allc2",0
+"634","Scott and White Memorial Hospital (TXSW)","TXSW","TX1","HR",76508,"age_12_17_allc2",0
+"635","Scott and White Memorial Hospital (TXSW)","TXSW","TX1","HR",76508,"age_2_allc2",0
+"636","Scott and White Memorial Hospital (TXSW)","TXSW","TX1","HR",76508,"age_18_34_allc2",22.222222222
+"637","Scott and White Memorial Hospital (TXSW)","TXSW","TX1","HR",76508,"age_35_49_allc2",11.111111111
+"638","Scott and White Memorial Hospital (TXSW)","TXSW","TX1","HR",76508,"age_50_64_allc2",66.666666667
+"639","Scott and White Memorial Hospital (TXSW)","TXSW","TX1","HR",76508,"age_65_69_allc2",0
+"640","Scott and White Memorial Hospital (TXSW)","TXSW","TX1","HR",76508,"age_70_allc2",0
+"641","Seattle Children's Hospital (WACH)","WACH","TX1","HR",98105,"age_2_11_allc2",28.571428571
+"642","Seattle Children's Hospital (WACH)","WACH","TX1","HR",98105,"age_12_17_allc2",57.142857143
+"643","Seattle Children's Hospital (WACH)","WACH","TX1","HR",98105,"age_2_allc2",14.285714286
+"644","Seattle Children's Hospital (WACH)","WACH","TX1","HR",98105,"age_18_34_allc2",0
+"645","Seattle Children's Hospital (WACH)","WACH","TX1","HR",98105,"age_35_49_allc2",0
+"646","Seattle Children's Hospital (WACH)","WACH","TX1","HR",98105,"age_50_64_allc2",0
+"647","Seattle Children's Hospital (WACH)","WACH","TX1","HR",98105,"age_65_69_allc2",0
+"648","Seattle Children's Hospital (WACH)","WACH","TX1","HR",98105,"age_70_allc2",0
+"649","Sentara Norfolk General Hospital (VANG)","VANG","TX1","HR",23507,"age_2_11_allc2",0
+"650","Sentara Norfolk General Hospital (VANG)","VANG","TX1","HR",23507,"age_12_17_allc2",0
+"651","Sentara Norfolk General Hospital (VANG)","VANG","TX1","HR",23507,"age_2_allc2",0
+"652","Sentara Norfolk General Hospital (VANG)","VANG","TX1","HR",23507,"age_18_34_allc2",2.380952381
+"653","Sentara Norfolk General Hospital (VANG)","VANG","TX1","HR",23507,"age_35_49_allc2",23.80952381
+"654","Sentara Norfolk General Hospital (VANG)","VANG","TX1","HR",23507,"age_50_64_allc2",66.666666667
+"655","Sentara Norfolk General Hospital (VANG)","VANG","TX1","HR",23507,"age_65_69_allc2",7.1428571429
+"656","Sentara Norfolk General Hospital (VANG)","VANG","TX1","HR",23507,"age_70_allc2",0
+"657","Sharp Memorial Hospital (CASH)","CASH","TX1","HR",92123,"age_2_11_allc2",0
+"658","Sharp Memorial Hospital (CASH)","CASH","TX1","HR",92123,"age_12_17_allc2",0
+"659","Sharp Memorial Hospital (CASH)","CASH","TX1","HR",92123,"age_2_allc2",0
+"660","Sharp Memorial Hospital (CASH)","CASH","TX1","HR",92123,"age_18_34_allc2",16.666666667
+"661","Sharp Memorial Hospital (CASH)","CASH","TX1","HR",92123,"age_35_49_allc2",0
+"662","Sharp Memorial Hospital (CASH)","CASH","TX1","HR",92123,"age_50_64_allc2",83.333333333
+"663","Sharp Memorial Hospital (CASH)","CASH","TX1","HR",92123,"age_65_69_allc2",0
+"664","Sharp Memorial Hospital (CASH)","CASH","TX1","HR",92123,"age_70_allc2",0
+"665","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1","HR",64111,"age_2_11_allc2",0
+"666","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1","HR",64111,"age_12_17_allc2",0
+"667","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1","HR",64111,"age_2_allc2",0
+"668","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1","HR",64111,"age_18_34_allc2",20
+"669","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1","HR",64111,"age_35_49_allc2",20
+"670","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1","HR",64111,"age_50_64_allc2",60
+"671","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1","HR",64111,"age_65_69_allc2",0
+"672","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1","HR",64111,"age_70_allc2",0
+"673","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1","HR",46260,"age_2_11_allc2",0
+"674","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1","HR",46260,"age_12_17_allc2",0
+"675","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1","HR",46260,"age_2_allc2",0
+"676","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1","HR",46260,"age_18_34_allc2",8.6206896552
+"677","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1","HR",46260,"age_35_49_allc2",18.965517241
+"678","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1","HR",46260,"age_50_64_allc2",50
+"679","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1","HR",46260,"age_65_69_allc2",17.24137931
+"680","St Vincent Hospital and Health Care Center (INSV)","INSV","TX1","HR",46260,"age_70_allc2",5.1724137931
+"681","St. Louis Children's Hospital (MOCH)","MOCH","TX1","HR",63110,"age_2_11_allc2",10
+"682","St. Louis Children's Hospital (MOCH)","MOCH","TX1","HR",63110,"age_12_17_allc2",10
+"683","St. Louis Children's Hospital (MOCH)","MOCH","TX1","HR",63110,"age_2_allc2",60
+"684","St. Louis Children's Hospital (MOCH)","MOCH","TX1","HR",63110,"age_18_34_allc2",20
+"685","St. Louis Children's Hospital (MOCH)","MOCH","TX1","HR",63110,"age_35_49_allc2",0
+"686","St. Louis Children's Hospital (MOCH)","MOCH","TX1","HR",63110,"age_50_64_allc2",0
+"687","St. Louis Children's Hospital (MOCH)","MOCH","TX1","HR",63110,"age_65_69_allc2",0
+"688","St. Louis Children's Hospital (MOCH)","MOCH","TX1","HR",63110,"age_70_allc2",0
+"689","Stanford Health Care (CASU)","CASU","TX1","HR",94305,"age_2_11_allc2",0
+"690","Stanford Health Care (CASU)","CASU","TX1","HR",94305,"age_12_17_allc2",0
+"691","Stanford Health Care (CASU)","CASU","TX1","HR",94305,"age_2_allc2",0
+"692","Stanford Health Care (CASU)","CASU","TX1","HR",94305,"age_18_34_allc2",22.857142857
+"693","Stanford Health Care (CASU)","CASU","TX1","HR",94305,"age_35_49_allc2",20
+"694","Stanford Health Care (CASU)","CASU","TX1","HR",94305,"age_50_64_allc2",57.142857143
+"695","Stanford Health Care (CASU)","CASU","TX1","HR",94305,"age_65_69_allc2",0
+"696","Stanford Health Care (CASU)","CASU","TX1","HR",94305,"age_70_allc2",0
+"697","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1","HR",14642,"age_2_11_allc2",0
+"698","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1","HR",14642,"age_12_17_allc2",0
+"699","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1","HR",14642,"age_2_allc2",0
+"700","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1","HR",14642,"age_18_34_allc2",10
+"701","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1","HR",14642,"age_35_49_allc2",27.5
+"702","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1","HR",14642,"age_50_64_allc2",52.5
+"703","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1","HR",14642,"age_65_69_allc2",10
+"704","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1","HR",14642,"age_70_allc2",0
+"705","Tampa General Hospital (FLTG)","FLTG","TX1","HR",33606,"age_2_11_allc2",0
+"706","Tampa General Hospital (FLTG)","FLTG","TX1","HR",33606,"age_12_17_allc2",0
+"707","Tampa General Hospital (FLTG)","FLTG","TX1","HR",33606,"age_2_allc2",0
+"708","Tampa General Hospital (FLTG)","FLTG","TX1","HR",33606,"age_18_34_allc2",0
+"709","Tampa General Hospital (FLTG)","FLTG","TX1","HR",33606,"age_35_49_allc2",17.647058824
+"710","Tampa General Hospital (FLTG)","FLTG","TX1","HR",33606,"age_50_64_allc2",47.058823529
+"711","Tampa General Hospital (FLTG)","FLTG","TX1","HR",33606,"age_65_69_allc2",35.294117647
+"712","Tampa General Hospital (FLTG)","FLTG","TX1","HR",33606,"age_70_allc2",0
+"713","Temple University Hospital (PATU)","PATU","TX1","HR",19140,"age_2_11_allc2",0
+"714","Temple University Hospital (PATU)","PATU","TX1","HR",19140,"age_12_17_allc2",0
+"715","Temple University Hospital (PATU)","PATU","TX1","HR",19140,"age_2_allc2",0
+"716","Temple University Hospital (PATU)","PATU","TX1","HR",19140,"age_18_34_allc2",14.285714286
+"717","Temple University Hospital (PATU)","PATU","TX1","HR",19140,"age_35_49_allc2",14.285714286
+"718","Temple University Hospital (PATU)","PATU","TX1","HR",19140,"age_50_64_allc2",57.142857143
+"719","Temple University Hospital (PATU)","PATU","TX1","HR",19140,"age_65_69_allc2",14.285714286
+"720","Temple University Hospital (PATU)","PATU","TX1","HR",19140,"age_70_allc2",0
+"721","Texas Children's Hospital (TXTC)","TXTC","TX1","HR",77030,"age_2_11_allc2",50
+"722","Texas Children's Hospital (TXTC)","TXTC","TX1","HR",77030,"age_12_17_allc2",15.909090909
+"723","Texas Children's Hospital (TXTC)","TXTC","TX1","HR",77030,"age_2_allc2",34.090909091
+"724","Texas Children's Hospital (TXTC)","TXTC","TX1","HR",77030,"age_18_34_allc2",0
+"725","Texas Children's Hospital (TXTC)","TXTC","TX1","HR",77030,"age_35_49_allc2",0
+"726","Texas Children's Hospital (TXTC)","TXTC","TX1","HR",77030,"age_50_64_allc2",0
+"727","Texas Children's Hospital (TXTC)","TXTC","TX1","HR",77030,"age_65_69_allc2",0
+"728","Texas Children's Hospital (TXTC)","TXTC","TX1","HR",77030,"age_70_allc2",0
+"729","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HR",44195,"age_2_11_allc2",0.8771929825
+"730","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HR",44195,"age_12_17_allc2",0
+"731","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HR",44195,"age_2_allc2",0
+"732","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HR",44195,"age_18_34_allc2",10.526315789
+"733","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HR",44195,"age_35_49_allc2",20.175438596
+"734","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HR",44195,"age_50_64_allc2",52.631578947
+"735","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HR",44195,"age_65_69_allc2",12.280701754
+"736","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HR",44195,"age_70_allc2",3.5087719298
+"737","The Nebraska Medical Center (NEUN)","NEUN","TX1","HR",68198,"age_2_11_allc2",0
+"738","The Nebraska Medical Center (NEUN)","NEUN","TX1","HR",68198,"age_12_17_allc2",0
+"739","The Nebraska Medical Center (NEUN)","NEUN","TX1","HR",68198,"age_2_allc2",0
+"740","The Nebraska Medical Center (NEUN)","NEUN","TX1","HR",68198,"age_18_34_allc2",15.517241379
+"741","The Nebraska Medical Center (NEUN)","NEUN","TX1","HR",68198,"age_35_49_allc2",25.862068966
+"742","The Nebraska Medical Center (NEUN)","NEUN","TX1","HR",68198,"age_50_64_allc2",55.172413793
+"743","The Nebraska Medical Center (NEUN)","NEUN","TX1","HR",68198,"age_65_69_allc2",3.4482758621
+"744","The Nebraska Medical Center (NEUN)","NEUN","TX1","HR",68198,"age_70_allc2",0
+"745","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1","HR",19107,"age_2_11_allc2",0
+"746","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1","HR",19107,"age_12_17_allc2",0
+"747","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1","HR",19107,"age_2_allc2",0
+"748","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1","HR",19107,"age_18_34_allc2",11.111111111
+"749","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1","HR",19107,"age_35_49_allc2",0
+"750","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1","HR",19107,"age_50_64_allc2",55.555555556
+"751","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1","HR",19107,"age_65_69_allc2",33.333333333
+"752","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1","HR",19107,"age_70_allc2",0
+"753","Tufts Medical Center (MANM)","MANM","TX1","HR",2111,"age_2_11_allc2",0
+"754","Tufts Medical Center (MANM)","MANM","TX1","HR",2111,"age_12_17_allc2",0
+"755","Tufts Medical Center (MANM)","MANM","TX1","HR",2111,"age_2_allc2",0
+"756","Tufts Medical Center (MANM)","MANM","TX1","HR",2111,"age_18_34_allc2",15.217391304
+"757","Tufts Medical Center (MANM)","MANM","TX1","HR",2111,"age_35_49_allc2",23.913043478
+"758","Tufts Medical Center (MANM)","MANM","TX1","HR",2111,"age_50_64_allc2",47.826086957
+"759","Tufts Medical Center (MANM)","MANM","TX1","HR",2111,"age_65_69_allc2",13.043478261
+"760","Tufts Medical Center (MANM)","MANM","TX1","HR",2111,"age_70_allc2",0
+"761","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1","HR",94158,"age_2_11_allc2",0
+"762","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1","HR",94158,"age_12_17_allc2",50
+"763","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1","HR",94158,"age_2_allc2",50
+"764","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1","HR",94158,"age_18_34_allc2",0
+"765","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1","HR",94158,"age_35_49_allc2",0
+"766","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1","HR",94158,"age_50_64_allc2",0
+"767","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1","HR",94158,"age_65_69_allc2",0
+"768","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1","HR",94158,"age_70_allc2",0
+"769","UF Health Shands Hospital (FLUF)","FLUF","TX1","HR",32608,"age_2_11_allc2",12.727272727
+"770","UF Health Shands Hospital (FLUF)","FLUF","TX1","HR",32608,"age_12_17_allc2",10.909090909
+"771","UF Health Shands Hospital (FLUF)","FLUF","TX1","HR",32608,"age_2_allc2",14.545454545
+"772","UF Health Shands Hospital (FLUF)","FLUF","TX1","HR",32608,"age_18_34_allc2",10.909090909
+"773","UF Health Shands Hospital (FLUF)","FLUF","TX1","HR",32608,"age_35_49_allc2",27.272727273
+"774","UF Health Shands Hospital (FLUF)","FLUF","TX1","HR",32608,"age_50_64_allc2",20
+"775","UF Health Shands Hospital (FLUF)","FLUF","TX1","HR",32608,"age_65_69_allc2",3.6363636364
+"776","UF Health Shands Hospital (FLUF)","FLUF","TX1","HR",32608,"age_70_allc2",0
+"777","University Hospitals of Cleveland (OHUH)","OHUH","TX1","HR",44106,"age_2_11_allc2",0
+"778","University Hospitals of Cleveland (OHUH)","OHUH","TX1","HR",44106,"age_12_17_allc2",0
+"779","University Hospitals of Cleveland (OHUH)","OHUH","TX1","HR",44106,"age_2_allc2",0
+"780","University Hospitals of Cleveland (OHUH)","OHUH","TX1","HR",44106,"age_18_34_allc2",10
+"781","University Hospitals of Cleveland (OHUH)","OHUH","TX1","HR",44106,"age_35_49_allc2",30
+"782","University Hospitals of Cleveland (OHUH)","OHUH","TX1","HR",44106,"age_50_64_allc2",50
+"783","University Hospitals of Cleveland (OHUH)","OHUH","TX1","HR",44106,"age_65_69_allc2",10
+"784","University Hospitals of Cleveland (OHUH)","OHUH","TX1","HR",44106,"age_70_allc2",0
+"785","University of Alabama Hospital (ALUA)","ALUA","TX1","HR",35233,"age_2_11_allc2",0
+"786","University of Alabama Hospital (ALUA)","ALUA","TX1","HR",35233,"age_12_17_allc2",0
+"787","University of Alabama Hospital (ALUA)","ALUA","TX1","HR",35233,"age_2_allc2",0
+"788","University of Alabama Hospital (ALUA)","ALUA","TX1","HR",35233,"age_18_34_allc2",16.666666667
+"789","University of Alabama Hospital (ALUA)","ALUA","TX1","HR",35233,"age_35_49_allc2",37.5
+"790","University of Alabama Hospital (ALUA)","ALUA","TX1","HR",35233,"age_50_64_allc2",41.666666667
+"791","University of Alabama Hospital (ALUA)","ALUA","TX1","HR",35233,"age_65_69_allc2",4.1666666667
+"792","University of Alabama Hospital (ALUA)","ALUA","TX1","HR",35233,"age_70_allc2",0
+"793","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1","HR",90095,"age_2_11_allc2",10.526315789
+"794","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1","HR",90095,"age_12_17_allc2",10.526315789
+"795","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1","HR",90095,"age_2_allc2",0
+"796","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1","HR",90095,"age_18_34_allc2",15.789473684
+"797","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1","HR",90095,"age_35_49_allc2",26.315789474
+"798","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1","HR",90095,"age_50_64_allc2",28.947368421
+"799","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1","HR",90095,"age_65_69_allc2",7.8947368421
+"800","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1","HR",90095,"age_70_allc2",0
+"801","University of California San Diego Medical Center (CASD)","CASD","TX1","HR",92037,"age_2_11_allc2",0
+"802","University of California San Diego Medical Center (CASD)","CASD","TX1","HR",92037,"age_12_17_allc2",0
+"803","University of California San Diego Medical Center (CASD)","CASD","TX1","HR",92037,"age_2_allc2",0
+"804","University of California San Diego Medical Center (CASD)","CASD","TX1","HR",92037,"age_18_34_allc2",21.875
+"805","University of California San Diego Medical Center (CASD)","CASD","TX1","HR",92037,"age_35_49_allc2",28.125
+"806","University of California San Diego Medical Center (CASD)","CASD","TX1","HR",92037,"age_50_64_allc2",43.75
+"807","University of California San Diego Medical Center (CASD)","CASD","TX1","HR",92037,"age_65_69_allc2",6.25
+"808","University of California San Diego Medical Center (CASD)","CASD","TX1","HR",92037,"age_70_allc2",0
+"809","University of California San Francisco Medical Center (CASF)","CASF","TX1","HR",94118,"age_2_11_allc2",0
+"810","University of California San Francisco Medical Center (CASF)","CASF","TX1","HR",94118,"age_12_17_allc2",0
+"811","University of California San Francisco Medical Center (CASF)","CASF","TX1","HR",94118,"age_2_allc2",0
+"812","University of California San Francisco Medical Center (CASF)","CASF","TX1","HR",94118,"age_18_34_allc2",4.7619047619
+"813","University of California San Francisco Medical Center (CASF)","CASF","TX1","HR",94118,"age_35_49_allc2",38.095238095
+"814","University of California San Francisco Medical Center (CASF)","CASF","TX1","HR",94118,"age_50_64_allc2",38.095238095
+"815","University of California San Francisco Medical Center (CASF)","CASF","TX1","HR",94118,"age_65_69_allc2",19.047619048
+"816","University of California San Francisco Medical Center (CASF)","CASF","TX1","HR",94118,"age_70_allc2",0
+"817","University of Chicago Medical Center (ILUC)","ILUC","TX1","HR",60637,"age_2_11_allc2",0
+"818","University of Chicago Medical Center (ILUC)","ILUC","TX1","HR",60637,"age_12_17_allc2",9.5238095238
+"819","University of Chicago Medical Center (ILUC)","ILUC","TX1","HR",60637,"age_2_allc2",0
+"820","University of Chicago Medical Center (ILUC)","ILUC","TX1","HR",60637,"age_18_34_allc2",9.5238095238
+"821","University of Chicago Medical Center (ILUC)","ILUC","TX1","HR",60637,"age_35_49_allc2",28.571428571
+"822","University of Chicago Medical Center (ILUC)","ILUC","TX1","HR",60637,"age_50_64_allc2",33.333333333
+"823","University of Chicago Medical Center (ILUC)","ILUC","TX1","HR",60637,"age_65_69_allc2",19.047619048
+"824","University of Chicago Medical Center (ILUC)","ILUC","TX1","HR",60637,"age_70_allc2",0
+"825","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1","HR",45229,"age_2_11_allc2",0
+"826","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1","HR",45229,"age_12_17_allc2",0
+"827","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1","HR",45229,"age_2_allc2",0
+"828","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1","HR",45229,"age_18_34_allc2",0
+"829","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1","HR",45229,"age_35_49_allc2",35.714285714
+"830","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1","HR",45229,"age_50_64_allc2",50
+"831","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1","HR",45229,"age_65_69_allc2",14.285714286
+"832","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1","HR",45229,"age_70_allc2",0
+"833","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1","HR",80045,"age_2_11_allc2",0
+"834","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1","HR",80045,"age_12_17_allc2",0
+"835","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1","HR",80045,"age_2_allc2",0
+"836","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1","HR",80045,"age_18_34_allc2",7.3170731707
+"837","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1","HR",80045,"age_35_49_allc2",14.634146341
+"838","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1","HR",80045,"age_50_64_allc2",63.414634146
+"839","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1","HR",80045,"age_65_69_allc2",12.195121951
+"840","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1","HR",80045,"age_70_allc2",2.4390243902
+"841","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1","HR",52242,"age_2_11_allc2",10.344827586
+"842","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1","HR",52242,"age_12_17_allc2",6.8965517241
+"843","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1","HR",52242,"age_2_allc2",3.4482758621
+"844","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1","HR",52242,"age_18_34_allc2",0
+"845","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1","HR",52242,"age_35_49_allc2",20.689655172
+"846","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1","HR",52242,"age_50_64_allc2",48.275862069
+"847","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1","HR",52242,"age_65_69_allc2",10.344827586
+"848","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1","HR",52242,"age_70_allc2",0
+"849","University of Kansas Hospital (KSUK)","KSUK","TX1","HR",66103,"age_2_11_allc2",0
+"850","University of Kansas Hospital (KSUK)","KSUK","TX1","HR",66103,"age_12_17_allc2",0
+"851","University of Kansas Hospital (KSUK)","KSUK","TX1","HR",66103,"age_2_allc2",0
+"852","University of Kansas Hospital (KSUK)","KSUK","TX1","HR",66103,"age_18_34_allc2",4.347826087
+"853","University of Kansas Hospital (KSUK)","KSUK","TX1","HR",66103,"age_35_49_allc2",47.826086957
+"854","University of Kansas Hospital (KSUK)","KSUK","TX1","HR",66103,"age_50_64_allc2",30.434782609
+"855","University of Kansas Hospital (KSUK)","KSUK","TX1","HR",66103,"age_65_69_allc2",17.391304348
+"856","University of Kansas Hospital (KSUK)","KSUK","TX1","HR",66103,"age_70_allc2",0
+"857","University of Kentucky Medical Center (KYUK)","KYUK","TX1","HR",40536,"age_2_11_allc2",0
+"858","University of Kentucky Medical Center (KYUK)","KYUK","TX1","HR",40536,"age_12_17_allc2",0
+"859","University of Kentucky Medical Center (KYUK)","KYUK","TX1","HR",40536,"age_2_allc2",0
+"860","University of Kentucky Medical Center (KYUK)","KYUK","TX1","HR",40536,"age_18_34_allc2",13.793103448
+"861","University of Kentucky Medical Center (KYUK)","KYUK","TX1","HR",40536,"age_35_49_allc2",13.793103448
+"862","University of Kentucky Medical Center (KYUK)","KYUK","TX1","HR",40536,"age_50_64_allc2",55.172413793
+"863","University of Kentucky Medical Center (KYUK)","KYUK","TX1","HR",40536,"age_65_69_allc2",17.24137931
+"864","University of Kentucky Medical Center (KYUK)","KYUK","TX1","HR",40536,"age_70_allc2",0
+"865","University of Maryland Medical System (MDUM)","MDUM","TX1","HR",21201,"age_2_11_allc2",2.1739130435
+"866","University of Maryland Medical System (MDUM)","MDUM","TX1","HR",21201,"age_12_17_allc2",0
+"867","University of Maryland Medical System (MDUM)","MDUM","TX1","HR",21201,"age_2_allc2",2.1739130435
+"868","University of Maryland Medical System (MDUM)","MDUM","TX1","HR",21201,"age_18_34_allc2",6.5217391304
+"869","University of Maryland Medical System (MDUM)","MDUM","TX1","HR",21201,"age_35_49_allc2",23.913043478
+"870","University of Maryland Medical System (MDUM)","MDUM","TX1","HR",21201,"age_50_64_allc2",47.826086957
+"871","University of Maryland Medical System (MDUM)","MDUM","TX1","HR",21201,"age_65_69_allc2",13.043478261
+"872","University of Maryland Medical System (MDUM)","MDUM","TX1","HR",21201,"age_70_allc2",4.347826087
+"873","University of Michigan Medical Center (MIUM)","MIUM","TX1","HR",48109,"age_2_11_allc2",4.5454545455
+"874","University of Michigan Medical Center (MIUM)","MIUM","TX1","HR",48109,"age_12_17_allc2",5.6818181818
+"875","University of Michigan Medical Center (MIUM)","MIUM","TX1","HR",48109,"age_2_allc2",6.8181818182
+"876","University of Michigan Medical Center (MIUM)","MIUM","TX1","HR",48109,"age_18_34_allc2",22.727272727
+"877","University of Michigan Medical Center (MIUM)","MIUM","TX1","HR",48109,"age_35_49_allc2",28.409090909
+"878","University of Michigan Medical Center (MIUM)","MIUM","TX1","HR",48109,"age_50_64_allc2",28.409090909
+"879","University of Michigan Medical Center (MIUM)","MIUM","TX1","HR",48109,"age_65_69_allc2",3.4090909091
+"880","University of Michigan Medical Center (MIUM)","MIUM","TX1","HR",48109,"age_70_allc2",0
+"881","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1","HR",55454,"age_2_11_allc2",4.4444444444
+"882","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1","HR",55454,"age_12_17_allc2",4.4444444444
+"883","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1","HR",55454,"age_2_allc2",6.6666666667
+"884","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1","HR",55454,"age_18_34_allc2",8.8888888889
+"885","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1","HR",55454,"age_35_49_allc2",15.555555556
+"886","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1","HR",55454,"age_50_64_allc2",53.333333333
+"887","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1","HR",55454,"age_65_69_allc2",6.6666666667
+"888","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1","HR",55454,"age_70_allc2",0
+"889","University of Mississippi Medical Center (MSUM)","MSUM","TX1","HR",39216,"age_2_11_allc2",0
+"890","University of Mississippi Medical Center (MSUM)","MSUM","TX1","HR",39216,"age_12_17_allc2",5.2631578947
+"891","University of Mississippi Medical Center (MSUM)","MSUM","TX1","HR",39216,"age_2_allc2",5.2631578947
+"892","University of Mississippi Medical Center (MSUM)","MSUM","TX1","HR",39216,"age_18_34_allc2",15.789473684
+"893","University of Mississippi Medical Center (MSUM)","MSUM","TX1","HR",39216,"age_35_49_allc2",10.526315789
+"894","University of Mississippi Medical Center (MSUM)","MSUM","TX1","HR",39216,"age_50_64_allc2",52.631578947
+"895","University of Mississippi Medical Center (MSUM)","MSUM","TX1","HR",39216,"age_65_69_allc2",10.526315789
+"896","University of Mississippi Medical Center (MSUM)","MSUM","TX1","HR",39216,"age_70_allc2",0
+"897","University of North Carolina Hospitals (NCMH)","NCMH","TX1","HR",27514,"age_2_11_allc2",4.7619047619
+"898","University of North Carolina Hospitals (NCMH)","NCMH","TX1","HR",27514,"age_12_17_allc2",0
+"899","University of North Carolina Hospitals (NCMH)","NCMH","TX1","HR",27514,"age_2_allc2",0
+"900","University of North Carolina Hospitals (NCMH)","NCMH","TX1","HR",27514,"age_18_34_allc2",14.285714286
+"901","University of North Carolina Hospitals (NCMH)","NCMH","TX1","HR",27514,"age_35_49_allc2",14.285714286
+"902","University of North Carolina Hospitals (NCMH)","NCMH","TX1","HR",27514,"age_50_64_allc2",42.857142857
+"903","University of North Carolina Hospitals (NCMH)","NCMH","TX1","HR",27514,"age_65_69_allc2",23.80952381
+"904","University of North Carolina Hospitals (NCMH)","NCMH","TX1","HR",27514,"age_70_allc2",0
+"905","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1","HR",15213,"age_2_11_allc2",0
+"906","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1","HR",15213,"age_12_17_allc2",0
+"907","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1","HR",15213,"age_2_allc2",0
+"908","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1","HR",15213,"age_18_34_allc2",9.5238095238
+"909","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1","HR",15213,"age_35_49_allc2",33.333333333
+"910","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1","HR",15213,"age_50_64_allc2",47.619047619
+"911","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1","HR",15213,"age_65_69_allc2",9.5238095238
+"912","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1","HR",15213,"age_70_allc2",0
+"913","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1","HR",77555,"age_2_11_allc2",0
+"914","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1","HR",77555,"age_12_17_allc2",0
+"915","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1","HR",77555,"age_2_allc2",0
+"916","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1","HR",77555,"age_18_34_allc2",8.3333333333
+"917","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1","HR",77555,"age_35_49_allc2",33.333333333
+"918","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1","HR",77555,"age_50_64_allc2",33.333333333
+"919","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1","HR",77555,"age_65_69_allc2",16.666666667
+"920","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1","HR",77555,"age_70_allc2",8.3333333333
+"921","University of Utah Medical Center (UTMC)","UTMC","TX1","HR",84132,"age_2_11_allc2",0
+"922","University of Utah Medical Center (UTMC)","UTMC","TX1","HR",84132,"age_12_17_allc2",0
+"923","University of Utah Medical Center (UTMC)","UTMC","TX1","HR",84132,"age_2_allc2",0
+"924","University of Utah Medical Center (UTMC)","UTMC","TX1","HR",84132,"age_18_34_allc2",25.641025641
+"925","University of Utah Medical Center (UTMC)","UTMC","TX1","HR",84132,"age_35_49_allc2",15.384615385
+"926","University of Utah Medical Center (UTMC)","UTMC","TX1","HR",84132,"age_50_64_allc2",51.282051282
+"927","University of Utah Medical Center (UTMC)","UTMC","TX1","HR",84132,"age_65_69_allc2",7.6923076923
+"928","University of Utah Medical Center (UTMC)","UTMC","TX1","HR",84132,"age_70_allc2",0
+"929","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1","HR",22908,"age_2_11_allc2",9.0909090909
+"930","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1","HR",22908,"age_12_17_allc2",6.8181818182
+"931","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1","HR",22908,"age_2_allc2",9.0909090909
+"932","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1","HR",22908,"age_18_34_allc2",11.363636364
+"933","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1","HR",22908,"age_35_49_allc2",25
+"934","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1","HR",22908,"age_50_64_allc2",22.727272727
+"935","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1","HR",22908,"age_65_69_allc2",15.909090909
+"936","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1","HR",22908,"age_70_allc2",0
+"937","University of Washington Medical Center (WAUW)","WAUW","TX1","HR",98195,"age_2_11_allc2",0
+"938","University of Washington Medical Center (WAUW)","WAUW","TX1","HR",98195,"age_12_17_allc2",0
+"939","University of Washington Medical Center (WAUW)","WAUW","TX1","HR",98195,"age_2_allc2",0
+"940","University of Washington Medical Center (WAUW)","WAUW","TX1","HR",98195,"age_18_34_allc2",10
+"941","University of Washington Medical Center (WAUW)","WAUW","TX1","HR",98195,"age_35_49_allc2",32.5
+"942","University of Washington Medical Center (WAUW)","WAUW","TX1","HR",98195,"age_50_64_allc2",50
+"943","University of Washington Medical Center (WAUW)","WAUW","TX1","HR",98195,"age_65_69_allc2",7.5
+"944","University of Washington Medical Center (WAUW)","WAUW","TX1","HR",98195,"age_70_allc2",0
+"945","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1","HR",53792,"age_2_11_allc2",0
+"946","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1","HR",53792,"age_12_17_allc2",0
+"947","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1","HR",53792,"age_2_allc2",0
+"948","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1","HR",53792,"age_18_34_allc2",0
+"949","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1","HR",53792,"age_35_49_allc2",0
+"950","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1","HR",53792,"age_50_64_allc2",66.666666667
+"951","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1","HR",53792,"age_65_69_allc2",16.666666667
+"952","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1","HR",53792,"age_70_allc2",16.666666667
+"953","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1","HR",15224,"age_2_11_allc2",71.428571429
+"954","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1","HR",15224,"age_12_17_allc2",28.571428571
+"955","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1","HR",15224,"age_2_allc2",0
+"956","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1","HR",15224,"age_18_34_allc2",0
+"957","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1","HR",15224,"age_35_49_allc2",0
+"958","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1","HR",15224,"age_50_64_allc2",0
+"959","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1","HR",15224,"age_65_69_allc2",0
+"960","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1","HR",15224,"age_70_allc2",0
+"961","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HR",75390,"age_2_11_allc2",0
+"962","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HR",75390,"age_12_17_allc2",0
+"963","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HR",75390,"age_2_allc2",0
+"964","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HR",75390,"age_18_34_allc2",15.555555556
+"965","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HR",75390,"age_35_49_allc2",13.333333333
+"966","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HR",75390,"age_50_64_allc2",40
+"967","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HR",75390,"age_65_69_allc2",26.666666667
+"968","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HR",75390,"age_70_allc2",4.4444444444
+"969","Vanderbilt University Medical Center (TNVU)","TNVU","TX1","HR",37232,"age_2_11_allc2",7.0422535211
+"970","Vanderbilt University Medical Center (TNVU)","TNVU","TX1","HR",37232,"age_12_17_allc2",0
+"971","Vanderbilt University Medical Center (TNVU)","TNVU","TX1","HR",37232,"age_2_allc2",7.0422535211
+"972","Vanderbilt University Medical Center (TNVU)","TNVU","TX1","HR",37232,"age_18_34_allc2",11.267605634
+"973","Vanderbilt University Medical Center (TNVU)","TNVU","TX1","HR",37232,"age_35_49_allc2",15.492957746
+"974","Vanderbilt University Medical Center (TNVU)","TNVU","TX1","HR",37232,"age_50_64_allc2",43.661971831
+"975","Vanderbilt University Medical Center (TNVU)","TNVU","TX1","HR",37232,"age_65_69_allc2",14.084507042
+"976","Vanderbilt University Medical Center (TNVU)","TNVU","TX1","HR",37232,"age_70_allc2",1.4084507042
+"977","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1","HR",27157,"age_2_11_allc2",0
+"978","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1","HR",27157,"age_12_17_allc2",0
+"979","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1","HR",27157,"age_2_allc2",0
+"980","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1","HR",27157,"age_18_34_allc2",0
+"981","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1","HR",27157,"age_35_49_allc2",30.769230769
+"982","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1","HR",27157,"age_50_64_allc2",61.538461538
+"983","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1","HR",27157,"age_65_69_allc2",7.6923076923
+"984","Wake Forest Baptist Medical Center (NCBG)","NCBG","TX1","HR",27157,"age_70_allc2",0
+"985","Westchester Medical Center (NYWC)","NYWC","TX1","HR",10595,"age_2_11_allc2",0
+"986","Westchester Medical Center (NYWC)","NYWC","TX1","HR",10595,"age_12_17_allc2",0
+"987","Westchester Medical Center (NYWC)","NYWC","TX1","HR",10595,"age_2_allc2",0
+"988","Westchester Medical Center (NYWC)","NYWC","TX1","HR",10595,"age_18_34_allc2",0
+"989","Westchester Medical Center (NYWC)","NYWC","TX1","HR",10595,"age_35_49_allc2",36.842105263
+"990","Westchester Medical Center (NYWC)","NYWC","TX1","HR",10595,"age_50_64_allc2",47.368421053
+"991","Westchester Medical Center (NYWC)","NYWC","TX1","HR",10595,"age_65_69_allc2",5.2631578947
+"992","Westchester Medical Center (NYWC)","NYWC","TX1","HR",10595,"age_70_allc2",10.526315789
+"993","Yale New Haven Hospital (CTYN)","CTYN","TX1","HR",6510,"age_2_11_allc2",0
+"994","Yale New Haven Hospital (CTYN)","CTYN","TX1","HR",6510,"age_12_17_allc2",0
+"995","Yale New Haven Hospital (CTYN)","CTYN","TX1","HR",6510,"age_2_allc2",0
+"996","Yale New Haven Hospital (CTYN)","CTYN","TX1","HR",6510,"age_18_34_allc2",9.5238095238
+"997","Yale New Haven Hospital (CTYN)","CTYN","TX1","HR",6510,"age_35_49_allc2",23.80952381
+"998","Yale New Haven Hospital (CTYN)","CTYN","TX1","HR",6510,"age_50_64_allc2",47.619047619
+"999","Yale New Haven Hospital (CTYN)","CTYN","TX1","HR",6510,"age_65_69_allc2",19.047619048
+"1000","Yale New Haven Hospital (CTYN)","CTYN","TX1","HR",6510,"age_70_allc2",0
