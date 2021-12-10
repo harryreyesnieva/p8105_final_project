@@ -8,6 +8,7 @@ library(readxl)
 library(rvest)
 library(stringr)
 library(tidyverse)
+library(filesstrings)
 ```
 
 Creating list of date codes and URLs for the current data file and all archived files.
@@ -16,8 +17,16 @@ Dates and URLs came from inspecting this website:
 https://www.srtr.org/reports/program-specific-reports/
 
 
-```{r}
-archive_dates = c("1207", "1301", "1307", "1401", "1406", "1412", "1506", "1512", "1606", "1701", "1707", "1711", "1808", "1811", "1905", "1911", "2006")
+```{r get_dates}
+
+# archive date format is YYMM, two reports per year
+# current year is available with kidney only data, but other years are in .zip
+
+# there was a change in how regions were assigned in 2017
+
+archive_dates_17 = c("1711", "1808", "1811", "1905", "1911", "2006")
+
+# archive_dates = c("1207", "1301", "1307", "1401", "1406", "1412", "1506", "1512", "1606", "1701", "1707", "1711", "1808", "1811", "1905", "1911", "2006")
 
 current_file_date = "2105"
 
@@ -25,32 +34,43 @@ current_file_url = "https://www.srtr.org/assets/media/PSRdownloads/csrs_tables/c
 
 url_base = "https://www.srtr.org/assets/media/PSRdownloads/csrs_tables_all/csrs_final_tables_"
 
-vec_urls = str_c(url_base, archive_dates, "all.zip")
+# replace with archive_dates to get all years
+vec_urls = str_c(url_base, archive_dates_17, "all.zip")
 
 vec_dates = list(
-  date = archive_dates,
+  date = archive_dates_17,
   url = vec_urls
 )
 ```
 
-Downloading the most recent data:
+Download the most recent data and save it to /data folder:
 
-```{r}
-temp = tempfile()
+```{r download_data}
 
-download.file(current_file_url, temp, mode = "wb")
+current_file_path = "../data/csrs_final_tables_2105_KI.xls"
 
-current_data = sapply(readxl::excel_sheets(temp), 
-                    simplify = F, USE.NAMES = T,
-            function(X) readxl::read_xls(temp, sheet = X))
+download.file(current_file_url, current_file_path, mode = "wb")
 
-unlink(temp)
+# Table B6 - SFL (survival from listing) is a unique table for the recent data
+# Removed from analysis because it cannot readily be compared over time
+
+current_data = sapply(readxl::excel_sheets(current_file_path), 
+                      simplify = F, 
+                      USE.NAMES = T, 
+                      function(X) readxl::read_xls(current_file_path, sheet = X)
+                      ) %>%
+  within(rm("Table B6 - SFL"))
+
+
 ```
 
 Function to download archived files:
 
-```{r}
+```{r download_archives}
+
 download_archived_data = function(url) {
+  
+  # to save to temp folder instead of download, use temp
   temp = tempfile()
   
   download.file(url, temp, mode = "wb")
@@ -59,13 +79,13 @@ download_archived_data = function(url) {
     filter(str_detect(files, "KI\\.[xX][lL][sS]$"))
   
   ki_filepath = ki_file[[1]]
-
+  
   ki_data = sapply(readxl::excel_sheets(unzip(temp, ki_filepath)), 
                     simplify = F, USE.NAMES = T,
             function(X) readxl::read_xls(unzip(temp, ki_filepath), sheet = X))
   
   unlink(temp)
-  unlink(ki_filepath)
+  move_files(ki_filepath, "../data/")
   
   return(ki_data)
 }
@@ -73,7 +93,8 @@ download_archived_data = function(url) {
 
 Compiling all data files (archived and current) into one nested list:
 
-```{r}
+```{r combine_data}
+
 data_all_yrs = map(.x = vec_dates$url, ~download_archived_data(url = .x))
 
 data_all_yrs = append(data_all_yrs, list(current_data))
@@ -82,5 +103,125 @@ name_labels = vec_dates$date %>%
   append(current_file_date)
 
 names(data_all_yrs) = str_c("data_", name_labels)
+
 ```
 
+
+Now check to see if the column names are the same across sheets and years
+
+```{r}
+
+# for each sheet in each file
+# need to first remove the 1st row after the titles
+# check the first column name
+# if center -> change name to CTR_CD and CTR_TY
+
+
+for (i in 1:length(data_all_yrs)) {
+  
+  data_all_yrs[[i]][["Tiers"]]
+  
+  add_id_cols = c("Tbls B4-B5 & Fig B1-B6 - All", 
+                  "Tbls B4-B5 & Fig B1-B6 - Adult", 
+                  "Tbls B4-B5 & Fig B1-B6 - Peds" )
+  
+  for (sheet_name in add_id_cols) {
+    
+    data_all_yrs[[i]][[sheet_name]] = data_all_yrs[[i]][[sheet_name]] %>%
+       mutate(
+         "CTR_CD"= str_split(string = center,
+                                        pattern = "[A-Z]{4}",
+                                        n =2)[1],
+         "CTR_TY" = str_split(string = center,
+                                        pattern = "[A-Z]{4}",
+                                        n =2)[2])
+    }
+
+  #data_all_yrs[[i]][["Tiers"]])
+  
+  # if str_match(name, "^Tbl") %>%
+  #   mutate(
+  #     CTR_CD = str_split(string = center, pattern = "[A-Z]{4}", n = 2)
+  #   )
+  # print(names(data_all_yrs[[i]]))
+    
+}
+
+
+data_all_yrs[[i]][["Tbls B4-B5 & Fig B1-B6 - All"]]$CTR_CD
+
+  print(names(data_all_yrs[[i]]))
+  # sheet_names_list[[i]] = as_tibble(data_all_yrs[[i]] %>% names) %>%
+  #   rename_with(~ paste("sheet_name")) %>%
+  #   mutate("sheet_num" = 1:n()) %>%
+  #   pivot_wider(
+  #     names_from = sheet_num, 
+  #     names_prefix = "sheet_", 
+  #     values_from = sheet_name)
+  # names(sheet_names_list) = names(data_all_yrs)
+
+}
+```
+
+```{r check_cols_match}
+
+# combine the wait list info (Sheet Table 1 or B1) across years
+# first make sure the columns match - sheet names changed in 2014 and 11/2017
+
+col_names_list = list()
+sheet_names_list = list()
+
+for (i in 1:length(data_all_yrs)) {
+  
+  sheet_names_list[[i]] = as_tibble(data_all_yrs[[i]] %>% names) %>%
+    rename_with(~ paste("sheet_name")) %>%
+    mutate("sheet_num" = 1:n()) %>%
+    pivot_wider(
+      names_from = sheet_num, 
+      names_prefix = "sheet_", 
+      values_from = sheet_name)
+  names(sheet_names_list) = names(data_all_yrs)
+  
+  # make sure that the sheets contain the same columns
+  for (sheet_i in 1:length(data_all_yrs[[i]])) {
+    col_names_list[[i]] = as_tibble(data_all_yrs[[i]][[sheet_i]] %>% names) %>%
+    rename_with(~ paste("value_name")) %>%
+    mutate(
+      # name the first column for the old files to match the recent ones
+      value_name = str_replace(value_name, pattern = "...1", replacement = "ENTIRE_NAME"), 
+      "col_num" = 1:n()) %>%
+    pivot_wider(names_from = col_num, 
+                names_prefix = "col_", 
+                values_from = value_name))
+    
+    names(col_names_list) = (as.character(sheet_i)data_all_yrs[[i]] %>% names)
+    
+    if (sheet_i == length(data_all_yrs[[i]])) {
+      col_names_df = bind_rows(col_names_list)
+    }
+    
+  }
+  
+  if (i == length(data_all_yrs)) {
+    sheet_names_df = bind_rows(sheet_names_list)
+    col_names_df = bind_rows(col_names_list)
+  }
+}
+
+if ((col_names_df %>% unique() %>% nrow() != 1) | (sheet_names_df %>% unique() %>% nrow() != 1)) {
+  stop("Column names and sheet names are not the same across sheets, check data again")
+}
+
+# make a quick dictionary of column names for table1/B1
+col_def_list = as.list(slice(data_all_yrs[[1]][[1]], n = 1))
+names(col_def_list) = (as.character(col_names_df[1,]))
+
+# bind the rows together
+#map(.x = data_all_yrs, grab_sheet_1)
+
+col_names_df
+sheet_names_df
+
+
+as_tibble(t(sapply(data_all_yrs, c))[1,])
+```
