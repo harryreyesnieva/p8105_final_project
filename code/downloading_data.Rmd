@@ -142,6 +142,7 @@ subset_test
 ```
 Now check to see if the column names are the same across sheets and years
 
+<<<<<<< HEAD
 ```{r}
 
 # for each sheet in each file
@@ -257,4 +258,51 @@ sheet_names_df
 
 
 as_tibble(t(sapply(data_all_yrs, c))[1,])
+```
+
+Selecting only data of interest
+
+```{r}
+
+t1_function = function(df) {
+  tbl1 = as_tibble(df[[1]]) %>% 
+    select(1, CTR_CD, WLA_ADDCEN_NC2, WLA_ST_NC2, WLA_END_NC2, WLA_REMTXC_NC2, WLA_REMTXL_NC2, WLA_REMTXC_PCZ, WLA_REMTXL_PCZ, WLA_REMDIED_PCZ, WLA_REMDET_PCZ)
+  tbl1
+}
+
+t2_function = function(df) {
+  tbl2 = as_tibble(df[[2]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, 
+           WLC_A2_ALLC2, WLC_A10_ALLC2, WLC_A17_ALLC2, WLC_A34_ALLC2, WLC_A49_ALLC2, WLC_A64_ALLC2, WLC_GM_ALLC2, WLC_GF_ALLC2, WLC_RA_ALLC2, WLC_RB_ALLC2, WLC_RH_ALLC2, WLC_RO_ALLC2, WLC_RU_ALLC2, WLC_RW_ALLC2, WLC_PRA80_ALLC2, WLC_PTXY_ALLC2, WLC_KIDIA_ALLC2, WLC_KIGLO_ALLC2, WLC_KIHYP_ALLC2, WLC_KIMIS_ALLC2, WLC_KINEO_ALLC2, WLC_KIOTH_ALLC2, WLC_KIPOL_ALLC2, WLC_KIREN_ALLC2, WLC_KIRTR_ALLC2, WLC_KITUB_ALLC2, WLC_KICON_ALLC2)
+  tbl2
+}
+
+t3_function = function(df) {
+  if (length(df) <= 30) {tbl3 = as_tibble(df[[22]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, TOC_SHR_C, TOC_WKDIALY_C)}
+  else if (length(df) == 32) {tbl3 = as_tibble(df[[23]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, TOC_SHR_C, TOC_WKDIALY_C)}
+  else if (length(df) == 33) {tbl3 = as_tibble(df[[25]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, TOC_SHR_C, TOC_WKDIALY_C)}
+  else if (length(df) == 34) {tbl3 = as_tibble(df[[26]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, TOC_SHR_C, TOC_WKDIALY_C)}
+  tbl3
+}
+
+t4_function = function(df) {
+  if (length(df) < 32) {tbl4 = as_tibble("")}
+  if (length(df) == 32) {tbl4 = as_tibble(df[[16]]) %>% 
+    select(1, CTR_CD, OA_OVERALL_HR_MN_CENTER, OA_LOWRISK_HR_MN_CENTER, OA_MEDIUMRISK_HR_MN_CENTER, OA_HIGHRISK_HR_MN_CENTER)}
+  else if (length(df) == 33) {tbl4 = as_tibble(df[[18]]) %>% 
+    select(1, CTR_CD, OA_OVERALL_HR_MN_CENTER, OA_LOWRISK_HR_MN_CENTER, OA_MEDIUMRISK_HR_MN_CENTER, OA_HIGHRISK_HR_MN_CENTER)}
+  else if (length(df) == 34) {tbl4 = as_tibble(df[[19]]) %>% 
+    select(1, CTR_CD, OA_OVERALL_HR_MN_CENTER, OA_LOWRISK_HR_MN_CENTER, OA_MEDIUMRISK_HR_MN_CENTER, OA_HIGHRISK_HR_MN_CENTER)}  
+  tbl4 %>% mutate(RELEASE_DATE = df[[1]][[1, 4]])
+  tbl4
+}
+
+wl_tx_counts = map(data_all_yrs, t1_function)
+wl_demo = map(data_all_yrs, t2_function)
+tx_out = map(data_all_yrs, t3_function)
+ctr_oar = map(data_all_yrs, t4_function)
 ```

@@ -1,0 +1,72 @@
+---
+title: "Data Repository"
+output: 
+  html_document:
+    toc: false
+    toc_float: false
+    theme: yeti
+    include:
+      after_body: footer.html
+---
+
+```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(purrr)
+library(DT)
+
+suffix = list("age","gender","demographics", "blood_type")
+
+for (i in suffix){
+  data_path = "./data/"   # path to the data
+  files = dir(data_path, 
+              pattern = paste0("csrs_final_tables_2006_[A-Z][A-Z]_", i,".csv"))
+  assign(paste0("df_all_", i),
+         files %>%
+           map(~ read_csv(file.path(data_path, .))%>%
+                 mutate(org = str_replace(org, "HR", "Heart"),
+                        org = str_replace(org, "HL", "Heart-Lung"),
+                        org = str_replace(org, "IN", "Intestine"),
+                        org = str_replace(org, "KI", "Kidney"),
+                        org = str_replace(org, "KP", "Kidney-Pancreas"),
+                        org = str_replace(org, "LI", "Liver"),
+                        org = str_replace(org, "LU", "Lung"),
+                        org = str_replace(org, "PA", "Pancreas"))) %>%
+           reduce(rbind))
+  }
+
+organ_race = df_all_demographics %>% distinct(org) %>% pull()
+organ_age = df_all_age %>% distinct(org) %>% pull()
+organ_gender = df_all_gender %>% distinct(org) %>% pull()
+organ_blood_type = df_all_blood_type %>% distinct(org) %>% pull()
+```
+
+The **SRTR Data Repository** compiles and presents national registry data on all organ donors, transplant candidates, and transplant recipients in the United States based on biannual [Program-Specific Reports](https://www.srtr.org/reports/program-specific-reports/) from the [Scientific Registry of Transplant Recipients](https://www.srtr.org/) (SRTR). 
+
+The data repository utilizes center-level data on waitlisted patients and patients in receipt of transplants, aggregated demographics, transplant outcomes, and organ offer acceptance practices. Functionality include the ability to search and copy, print, or download results for further study. Users may filter by a single column or query all columns simultaneously using the search bar.
+          
+```{r echo=FALSE}
+# this is just a placeholder; we will replace this with another table
+datatable(df_all_demographics %>%
+            select(-ctr_ty, -`...1`)%>%
+            rename(Site = entire_name,
+                   `Center Code` = ctr_cd,
+                   Organ = org,
+                   `Zip code` = zipcode,
+                   Race = race_category,
+                   `Race Category Percent` = race_category_percent),
+          extensions = c('Buttons'),
+          options = 
+            list(scrollY = 650, 
+                 scrollX = 500, 
+                 deferRender = TRUE,
+                 pageLength = 25,
+                 # scroller = FALSE,
+                 # paging = TRUE,
+                 dom = 'Bfrtip',
+                 buttons = list('copy', 'print', 
+                           list(extend = 'collection',
+                                buttons = c('csv', 'excel', 'pdf'),
+                                text = 'Download'))),
+          filter = 'top',
+          escape = FALSE)
+```
