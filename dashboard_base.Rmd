@@ -145,7 +145,7 @@ valueBox(value = paste(format(no_transplant_centers, big.mark = ","), "", sep = 
 ```{r}
 valueBox(value = paste(format(avg_unknown, big.mark = ","), "", sep = " "), 
          caption = "Number of transplant recipients", 
-         icon = "fas fa-procedures", 
+         icon = "fas fa-users", 
          color = color2)
 ```
 
