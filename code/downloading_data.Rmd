@@ -54,13 +54,32 @@ download.file(current_file_url, current_file_path, mode = "wb")
 # Table B6 - SFL (survival from listing) is a unique table for the recent data
 # Removed from analysis because it cannot readily be compared over time
 
+# remove the second unnecessary descriptor line from each excel file
+
+clean_sheets = function(fpath, x) {
+  clean_sheet = readxl::read_xls(fpath, sheet = x)[-1,] %>%
+    janitor::clean_names() %>%
+    
+    mutate(ctr_id = ifelse(
+      "ctr_cd" %in% colnames(.), ctr_cd, center)) %>%
+      #paste(CTR_CD, CTR_TY, sep = ""), 
+      #center)) %>%
+    select(ctr_id, everything())
+  
+  
+  extract(d1, date_created, c('month', 'day', 'year'),
+              '([^-]+)-([^-]+)-([^-]+)', remove=FALSE)
+  
+  return(clean_sheet)
+}
+
 current_data = sapply(readxl::excel_sheets(current_file_path), 
                       simplify = F, 
                       USE.NAMES = T, 
-                      function(X) readxl::read_xls(current_file_path, sheet = X)
-                      ) %>%
+                      function (X) clean_sheets(current_file_path, X)) %>%
   within(rm("Table B6 - SFL"))
 
+current_data[[1]]
 
 ```
 
@@ -82,7 +101,8 @@ download_archived_data = function(url) {
   
   ki_data = sapply(readxl::excel_sheets(unzip(temp, ki_filepath)), 
                     simplify = F, USE.NAMES = T,
-            function(X) readxl::read_xls(unzip(temp, ki_filepath), sheet = X))
+            function(X) clean_sheets(unzip(temp, ki_filepath), X))
+  
   
   unlink(temp)
   move_files(ki_filepath, "../data/")
@@ -106,7 +126,20 @@ names(data_all_yrs) = str_c("data_", name_labels)
 
 ```
 
+``` {r}
 
+subset_test = current_data[c(1,4,5,length(current_data))]
+
+#map(.x = subset_test[everything])
+
+new_df = last(subset_test)
+
+for (i in length(subset_test)) {
+   merge(new_df, subset_test[[i]], all = TRUE, suffixes = paste("sheet_",i), suffixes = paste("sheet",i))
+}
+
+subset_test
+```
 Now check to see if the column names are the same across sheets and years
 
 ```{r}
