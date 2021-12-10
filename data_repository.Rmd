@@ -40,7 +40,9 @@ organ_gender = df_all_gender %>% distinct(org) %>% pull()
 organ_blood_type = df_all_blood_type %>% distinct(org) %>% pull()
 ```
 
-The **SRTR Data Repository** provides users with the ability to search and copy, print, or download results for further study. Users may filter by a single column or query all columns simultaneously using the search bar.
+The **SRTR Data Repository** compiles and presents national registry data on all organ donors, transplant candidates, and transplant recipients in the United States based on biannual [Program-Specific Reports](https://www.srtr.org/reports/program-specific-reports/) from the [Scientific Registry of Transplant Recipients](https://www.srtr.org/) (SRTR). 
+
+The data repository utilizes center-level data on waitlisted patients and patients in receipt of transplants, aggregated demographics, transplant outcomes, and organ offer acceptance practices. Functionality include the ability to search and copy, print, or download results for further study. Users may filter by a single column or query all columns simultaneously using the search bar.
           
 ```{r echo=FALSE}
 # this is just a placeholder; we will replace this with another table
