@@ -44,8 +44,10 @@ for (i in suffix){
   }
 ```
 
-# Variation in kidney transplantation center practices and patient characteristics
-**Group members:** Kristen King (*kk3154*), Harry Reyes (*hr2479*), Lauren Richter (*lr2854*), Matthew Spotnitz (*mes2165*)
+## Variation in kidney transplantation center practices and patient characteristics
+
+## Group members:  
+Kristen King (*kk3154*), Harry Reyes (*hr2479*), Lauren Richter (*lr2854*), Matthew Spotnitz (*mes2165*)
 
 ## Motivation
 *	The Scientific Registry of Transplant Recipients (SRTR) analyzes data on transplant patients that are collected from multiple sources.^1^  Its mission is to provide advanced statistical and epidemiological analyses related to solid organ allocation and transplantation in support of the Department of Health and Human Services and its agents in their oversight of the national organ transplantation system.^2^
