@@ -87,7 +87,6 @@ names(data_all_yrs) = str_c("data_", name_labels)
 Selecting only data of interest
 
 ```{r}
-
 t1_function = function(df) {
   tbl1 = as_tibble(df[[1]]) %>% 
     select(1, CTR_CD, WLA_ADDCEN_NC2, WLA_ST_NC2, WLA_END_NC2, WLA_REMTXC_NC2, WLA_REMTXL_NC2, WLA_REMTXC_PCZ, WLA_REMTXL_PCZ, WLA_REMDIED_PCZ, WLA_REMDET_PCZ)
@@ -174,5 +173,4 @@ ttt = map(data_all_yrs, t5_function)
 ddtx_demo = map(data_all_yrs, t6_function)
 ldtx_demo = map(data_all_yrs, t7_function)
 wl_out = map(data_all_yrs, t8_function)
-
 ```
