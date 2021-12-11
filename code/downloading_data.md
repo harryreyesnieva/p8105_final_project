@@ -42,6 +42,10 @@ library(lubridate)
     ## 
     ##     date, intersect, setdiff, union
 
+``` r
+library(ZipRadius)
+```
+
 # Next steps:
 
 -   decide whether to join each grouping together in one df or keep
@@ -50,6 +54,9 @@ library(lubridate)
 -   finish creating data dictionary for var names — one method: slice
     top two rows for each sheet of each file, make first row the list
     names and the second row (descriptions) the list values
+-   maintenance:
+-   drop columns with all NA values (if they even exist)
+-   drop columns with all the same values
 
 **if you want to extract more columns from a particular file/tab, you
 can add the column name to the list at the bottom of this page**
@@ -384,4 +391,36 @@ ttt = map(data_all_yrs, t5_function)
 ddtx_demo = map(data_all_yrs, t6_function)
 ldtx_demo = map(data_all_yrs, t7_function)
 wl_out = map(data_all_yrs, t8_function)
+```
+
+Get a list of the transplant centers within a specific radius. Per lit
+review, max generally accepted radius is 250 miles.
+
+Shiny dashboard or interactivity component can set the `radius_mi`
+argument to a positive numeric value (int or dbl) to specify how far
+away they want to look for a given center.
+
+``` r
+# get a list of the transplant centers within a set radius of a zip code
+
+ctr_location = current_data[["Tiers"]] %>%
+  select(CTR_ID, ENTIRE_NAME, PRIMARY_CITY, PRIMARY_STATE, PRIMARY_ZIP)
+
+get_radii = function (zip_code = "10108", radius_mi = 250) {
+  max_radius = 250
+  zip_code = str_sub(zip_code, 1, 5)
+  
+  within_radius = zipRadius(zip_code, max_radius) %>%
+    janitor::clean_names() %>%
+    select(zip, distance) %>%
+    filter(distance <= radius_mi,
+           zip %in% ctr_location$PRIMARY_ZIP) %>%
+    rename(PRIMARY_ZIP = zip) %>%
+    left_join(ctr_location) %>%
+    as_tibble()
+  return(within_radius)
+}
+
+ctr_location = ctr_location %>%
+  mutate(WITHIN_RADIUS = map(PRIMARY_ZIP, get_radii))
 ```
