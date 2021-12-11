@@ -280,6 +280,7 @@ as_tibble(t(sapply(data_all_yrs, c))[1,])
 Selecting only data of interest
 
 ```{r}
+<<<<<<< HEAD
 
 id_cols = c("CTR_ID", "CTR_CD", "RELEASE_DATE")
 
@@ -288,6 +289,8 @@ waitlist_cols = c("WLA_ADDCEN_NC2", "WLA_ST_NC2", "WLA_END_NC2", "WLA_REMTXC_NC2
 # CTR_CD, WLA_ADDCEN_NC2, WLA_ST_NC2, WLA_END_NC2, WLA_REMTXC_NC2, WLA_REMTXL_NC2, WLA_REMTXC_PCZ, WLA_REMTXL_PCZ, WLA_REMDIED_PCZ, WLA_REMDET_PCZ
 
 
+=======
+>>>>>>> kk3154
 t1_function = function(df) {
   tbl1 = as_tibble(df[[1]]) %>% 
     select(1, any_of(id_cols), all_of(waitlist_cols))
@@ -321,10 +324,10 @@ t4_function = function(df) {
     select(1, CTR_CD, OA_OVERALL_HR_MN_CENTER, OA_LOWRISK_HR_MN_CENTER, OA_MEDIUMRISK_HR_MN_CENTER, OA_HIGHRISK_HR_MN_CENTER)}
   else if (length(df) == 34) {tbl4 = as_tibble(df[[19]]) %>% 
     select(1, CTR_CD, OA_OVERALL_HR_MN_CENTER, OA_LOWRISK_HR_MN_CENTER, OA_MEDIUMRISK_HR_MN_CENTER, OA_HIGHRISK_HR_MN_CENTER)}  
-  tbl4 %>% mutate(RELEASE_DATE = df[[1]][[1, 4]])
   tbl4
 }
 
+<<<<<<< HEAD
 
 
 wl_tx_counts = map(subset_test2, t1_function)
@@ -335,4 +338,56 @@ wl_tx_counts = map(subset_test2, t1_function)
 wl_demo = map(data_all_yrs, t2_function)
 tx_out = map(data_all_yrs, t3_function)
 ctr_oar = map(data_all_yrs, t4_function)
+=======
+t5_function = function(df) {
+  if (length(df) < 33) {tbl5 = as_tibble(df[[15]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, TTT_25_C, TTT_50_C, TTT_75_C)}
+  if(length(df) == 33) {tbl5 = as_tibble(df[[17]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, TTT_25_C, TTT_50_C, TTT_75_C)}
+  if(length(df) == 34) {tbl5 = as_tibble(df[[18]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, TTT_25_C, TTT_50_C, TTT_75_C)}
+  tbl5
+}
+
+t6_function = function(df) {
+  if (length(df) < 32) {tbl6 = as_tibble(df[[16]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, RCC_A2_C, RCC_A10_C, RCC_A17_C, RCC_A34_C, RCC_A49_C, RCC_A64_C, RCC_GM_C, RCC_GF_C, RCC_BAB_C, RCC_BA_C, RCC_BB_C, RCC_BO_C, RCC_BMI20_C, RCC_BMI25_C, RCC_BMI30_C, RCC_DIA_C, RCC_GLO_C, RCC_HYP_C, RCC_MIS_C, RCC_NEO_C, RCC_OTK_C, RCC_POL_C, RCC_VAS_C, RCC_RET_C, RCC_TUB_C, RCC_CON_C, RCC_PRA80_C, RCC_PTXY_C)}
+  else if (length(df) == 32) {tbl6 = as_tibble(df[[17]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, RCC_A2_C, RCC_A10_C, RCC_A17_C, RCC_A34_C, RCC_A49_C, RCC_A64_C, RCC_GM_C, RCC_GF_C, RCC_BAB_C, RCC_BA_C, RCC_BB_C, RCC_BO_C, RCC_BMI20_C, RCC_BMI25_C, RCC_BMI30_C, RCC_DIA_C, RCC_GLO_C, RCC_HYP_C, RCC_MIS_C, RCC_NEO_C, RCC_OTK_C, RCC_POL_C, RCC_VAS_C, RCC_RET_C, RCC_TUB_C, RCC_CON_C, RCC_PRA80_C, RCC_PTXY_C)}
+  else if (length(df) == 33) {tbl6 = as_tibble(df[[19]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, RCC_A2_C, RCC_A10_C, RCC_A17_C, RCC_A34_C, RCC_A49_C, RCC_A64_C, RCC_GM_C, RCC_GF_C, RCC_BAB_C, RCC_BA_C, RCC_BB_C, RCC_BO_C, RCC_BMI20_C, RCC_BMI25_C, RCC_BMI30_C, RCC_DIA_C, RCC_GLO_C, RCC_HYP_C, RCC_MIS_C, RCC_NEO_C, RCC_OTK_C, RCC_POL_C, RCC_VAS_C, RCC_RET_C, RCC_TUB_C, RCC_CON_C, RCC_PRA80_C, RCC_PTXY_C)}
+  else if (length(df) == 34) {tbl6 = as_tibble(df[[20]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, RCC_A2_C, RCC_A10_C, RCC_A17_C, RCC_A34_C, RCC_A49_C, RCC_A64_C, RCC_GM_C, RCC_GF_C, RCC_BAB_C, RCC_BA_C, RCC_BB_C, RCC_BO_C, RCC_BMI20_C, RCC_BMI25_C, RCC_BMI30_C, RCC_DIA_C, RCC_GLO_C, RCC_HYP_C, RCC_MIS_C, RCC_NEO_C, RCC_OTK_C, RCC_POL_C, RCC_VAS_C, RCC_RET_C, RCC_TUB_C, RCC_CON_C, RCC_PRA80_C, RCC_PTXY_C)}
+  tbl6
+}
+
+t7_function = function(df) {
+  if (length(df) < 32) {tbl7 = as_tibble(df[[18]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, RCL_A2_C, RCL_A10_C, RCL_A17_C, RCL_A34_C, RCL_A49_C, RCL_A64_C, RCL_GM_C, RCL_GF_C, RCL_BAB_C, RCL_BA_C, RCL_BB_C, RCL_BO_C, RCL_BMI20_C, RCL_BMI25_C, RCL_BMI30_C, RCL_DIA_C, RCL_GLO_C, RCL_HYP_C, RCL_MIS_C, RCL_NEO_C, RCL_OTK_C, RCL_POL_C, RCL_VAS_C, RCL_KIRET_C, RCL_TUB_C, RCL_CON_C, RCL_PRA80_C, RCL_PTXY_C)}
+  else if (length(df) == 32) {tbl7 = as_tibble(df[[19]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, RCL_A2_C, RCL_A10_C, RCL_A17_C, RCL_A34_C, RCL_A49_C, RCL_A64_C, RCL_GM_C, RCL_GF_C, RCL_BAB_C, RCL_BA_C, RCL_BB_C, RCL_BO_C, RCL_BMI20_C, RCL_BMI25_C, RCL_BMI30_C, RCL_DIA_C, RCL_GLO_C, RCL_HYP_C, RCL_MIS_C, RCL_NEO_C, RCL_OTK_C, RCL_POL_C, RCL_VAS_C, RCL_KIRET_C, RCL_TUB_C, RCL_CON_C, RCL_PRA80_C, RCL_PTXY_C)}
+  else if (length(df) == 33) {tbl7 = as_tibble(df[[21]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, RCL_A2_C, RCL_A10_C, RCL_A17_C, RCL_A34_C, RCL_A49_C, RCL_A64_C, RCL_GM_C, RCL_GF_C, RCL_BAB_C, RCL_BA_C, RCL_BB_C, RCL_BO_C, RCL_BMI20_C, RCL_BMI25_C, RCL_BMI30_C, RCL_DIA_C, RCL_GLO_C, RCL_HYP_C, RCL_MIS_C, RCL_NEO_C, RCL_OTK_C, RCL_POL_C, RCL_VAS_C, RCL_KIRET_C, RCL_TUB_C, RCL_CON_C, RCL_PRA80_C, RCL_PTXY_C)}
+  else if (length(df) == 34) {tbl7 = as_tibble(df[[22]]) %>% 
+    select(1, CTR_CD, RELEASE_DATE, RCL_A2_C, RCL_A10_C, RCL_A17_C, RCL_A34_C, RCL_A49_C, RCL_A64_C, RCL_GM_C, RCL_GF_C, RCL_BAB_C, RCL_BA_C, RCL_BB_C, RCL_BO_C, RCL_BMI20_C, RCL_BMI25_C, RCL_BMI30_C, RCL_DIA_C, RCL_GLO_C, RCL_HYP_C, RCL_MIS_C, RCL_NEO_C, RCL_OTK_C, RCL_POL_C, RCL_VAS_C, RCL_KIRET_C, RCL_TUB_C, RCL_CON_C, RCL_PRA80_C, RCL_PTXY_C)}
+  tbl7
+}
+
+t8_function = function(df) {
+  if (length(df) < 33) {tbl8 = as_tibble(df[[5]]) %>% 
+    select(CTR_CD, RELEASE_DATE, TMR_TXR_C2, TMR_TXRATIO_C2, TMR_CADTXR_C2, TMR_CADTXRATIO_C2, TMR_DTHR_C2, TMR_DTHRATIO_C2)}
+  else if (length(df) >= 33) {tbl8 = as_tibble(df[[5]]) %>% 
+    select(CTR_CD = substr(df$center, 1, 4), RELEASE_DATE, TMR_TxR_c, TMR_TxRatio_c, TMR_CadTxR_c, TMR_CadTxRatio_c, TMR_DthR_c, TMR_DthRatio_c)}
+  tbl8
+}
+
+wl_tx_counts = map(data_all_yrs, t1_function)
+wl_demo = map(data_all_yrs, t2_function)
+tx_out = map(data_all_yrs, t3_function)
+ctr_oar = map(data_all_yrs, t4_function)
+ttt = map(data_all_yrs, t5_function)
+ddtx_demo = map(data_all_yrs, t6_function)
+ldtx_demo = map(data_all_yrs, t7_function)
+wl_out = map(data_all_yrs, t8_function)
+>>>>>>> kk3154
 ```
