@@ -44,6 +44,7 @@ library(lubridate)
 
 ``` r
 library(ZipRadius)
+library(httr)
 ```
 
 # Next steps:
@@ -143,10 +144,6 @@ clean_sheets = function(fpath, x) {
       paste(CTR_CD, CTR_TY, sep = ""), 
       ifelse("CENTER" %in% colnames(.), CENTER, NA))) %>%
     select(CTR_ID, everything())
-  
-  
-  # extract(d1, date_created, c('month', 'day', 'year'),
-  #             '([^-]+)-([^-]+)-([^-]+)', remove=FALSE)
 
   return(clean_sheet)
 }
@@ -181,7 +178,7 @@ download_archived_data = function(url) {
     ki_file = tibble(files = as.character(unzip(temp, list = TRUE)$Name)) %>% filter(str_detect(files, ki_file_pattern))[[1]]
 
     ki_file_name = unzip(temp, ki_file)
-    
+    move_files(ki_file_name, "../data/", overwrite = FALSE)
     unlink(temp)
   }
   
@@ -189,7 +186,6 @@ download_archived_data = function(url) {
                    simplify = F, USE.NAMES = T,
                    function(X) clean_sheets(ki_file_name, X))
   
-  move_files(ki_file_name, "../data/", overwrite = FALSE)
   return(ki_data)
 }
 ```
@@ -262,7 +258,7 @@ coded.
 ``` r
 select_and_clean = function(df, select_cols) {
   df = df %>%
-    select(1, all_of(id_cols), all_of(select_cols)) %>%
+    select(1, all_of(id_cols), any_of(select_cols)) %>%
     mutate(RELEASE_DATE = ymd_hms(RELEASE_DATE, truncated = 3),
            across(.cols = select_cols, ~ as.numeric(as.character(.))))
   return(df)
@@ -402,9 +398,25 @@ away they want to look for a given center.
 
 ``` r
 # get a list of the transplant centers within a set radius of a zip code
+# the OPTN regions divide some states like VA and VT into two parts, which is not handled here
 
+optn_regions = read_html("https://optn.transplant.hrsa.gov/about/search-membership/?memberType=Transplant%20Centers&organType=%27AL%27&state=0&region=0") %>%
+  html_elements(".listTable") %>%
+  html_table() %>% 
+  reduce(.f = ~ .) %>%
+  as_tibble() %>%
+  janitor::clean_names("all_caps") %>%
+  filter(str_detect(PROGRAMS, "Kidney") == TRUE) %>%
+  select(NAME, REGION) %>%
+  mutate(NAME = paste(substr(NAME, 1, 4), "TX1", sep = ""),
+         REGION = as.factor(REGION),
+         REGION = addNA(REGION)) %>%
+  rename(CTR_ID = NAME) %>%
+  as_tibble()
+  
 ctr_location = current_data[["Tiers"]] %>%
-  select(CTR_ID, ENTIRE_NAME, PRIMARY_CITY, PRIMARY_STATE, PRIMARY_ZIP)
+  select(CTR_ID, ENTIRE_NAME, PRIMARY_CITY, PRIMARY_STATE, PRIMARY_ZIP) %>%
+  left_join(., optn_regions, by = "CTR_ID", keep = FALSE)
 
 get_radii = function (zip_code = "10108", radius_mi = 250) {
   max_radius = 250
@@ -423,4 +435,27 @@ get_radii = function (zip_code = "10108", radius_mi = 250) {
 
 ctr_location = ctr_location %>%
   mutate(WITHIN_RADIUS = map(PRIMARY_ZIP, get_radii))
+```
+
+Build the final dataframe to store as an excel file or csv
+
+``` r
+# group by the center name/center code
+# 
+# 
+# 
+# for (data_year in names(wl_tx_counts)) {
+#   wl_tx_counts[[data_year]] = as_tibble(wl_tx_counts[[data_year]])
+# }
+# 
+# for (data_year in names(ddtx_demo)) {
+#   ddtx_demo[[data_year]] = as_tibble(ddtx_demo[[data_year]]) 
+# }
+# 
+# #
+# # wl_tx_counts %>%
+# #   class()
+# # 
+# # #ctr_location %>%
+# #   mutate(WL_TX_CT = as_tibble(wl_tx_counts %>% bind_rows()))
 ```
