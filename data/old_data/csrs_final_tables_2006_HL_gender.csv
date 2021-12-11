@@ -1,0 +1,21 @@
+"","entire_name","ctr_cd","ctr_ty","org","zipcode","gender_category","gender_category_percent"
+"1","Houston Methodist Hospital (TXMH)","TXMH","TX1","HL",77030,"female_allc2",75
+"2","Houston Methodist Hospital (TXMH)","TXMH","TX1","HL",77030,"male_allc2",25
+"3","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HL",33136,"female_allc2",50
+"4","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","HL",33136,"male_allc2",50
+"5","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HL",55902,"female_allc2",83.333333333
+"6","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","HL",55902,"male_allc2",16.666666667
+"7","Stanford Health Care (CASU)","CASU","TX1","HL",94305,"female_allc2",70
+"8","Stanford Health Care (CASU)","CASU","TX1","HL",94305,"male_allc2",30
+"9","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HL",44195,"female_allc2",NA
+"10","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","HL",44195,"male_allc2",NA
+"11","University of Alabama Hospital (ALUA)","ALUA","TX1","HL",35233,"female_allc2",NA
+"12","University of Alabama Hospital (ALUA)","ALUA","TX1","HL",35233,"male_allc2",NA
+"13","University of California San Diego Medical Center (CASD)","CASD","TX1","HL",92037,"female_allc2",33.333333333
+"14","University of California San Diego Medical Center (CASD)","CASD","TX1","HL",92037,"male_allc2",66.666666667
+"15","University of California San Francisco Medical Center (CASF)","CASF","TX1","HL",94118,"female_allc2",50
+"16","University of California San Francisco Medical Center (CASF)","CASF","TX1","HL",94118,"male_allc2",50
+"17","University of Maryland Medical System (MDUM)","MDUM","TX1","HL",21201,"female_allc2",NA
+"18","University of Maryland Medical System (MDUM)","MDUM","TX1","HL",21201,"male_allc2",NA
+"19","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HL",75390,"female_allc2",66.666666667
+"20","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","HL",75390,"male_allc2",33.333333333
