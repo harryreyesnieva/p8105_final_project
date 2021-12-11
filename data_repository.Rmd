@@ -2,6 +2,7 @@
 title: "Data Repository"
 output: 
   html_document:
+    code_folding: hide
     toc: false
     toc_float: false
     theme: yeti
@@ -9,7 +10,7 @@ output:
       after_body: footer.html
 ---
 
-```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+```{r setup, warning=FALSE, message=FALSE}
 library(tidyverse)
 library(purrr)
 library(DT)
@@ -17,7 +18,7 @@ library(DT)
 suffix = list("age","gender","demographics", "blood_type")
 
 for (i in suffix){
-  data_path = "./data/"   # path to the data
+  data_path = "./data/old_data"   # path to the data
   files = dir(data_path, 
               pattern = paste0("csrs_final_tables_2006_[A-Z][A-Z]_", i,".csv"))
   assign(paste0("df_all_", i),

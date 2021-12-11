@@ -2,6 +2,7 @@
 title: "Final Report"
 output: 
   html_document:
+    code_folding: hide
     toc: true
     toc_float: true
     theme: yeti
@@ -25,7 +26,7 @@ phrase = "SRTR Multiorgan Transplant Data, August 2020 Release"
 suffix = list("age","gender","demographics","blood_type")
 
 for (i in suffix){
-  data_path = "./data/"   # path to the data
+  data_path = "./data/old_data/"   # path to the data
   files = dir(data_path, 
               pattern = paste0("csrs_final_tables_2006_[A-Z][A-Z]_", i,".csv"))
   assign(paste0("df_all_", i),
@@ -156,7 +157,7 @@ df_one_plot =
 
 # Here we read in, tidy, and merge with the zipcode file.
 df_zipcodes = 
-  read_excel("./data/zipcodes.xlsx", col_types = c("text", "numeric"), skip = 1) %>%
+  read_excel("./data/old_data/zipcodes.xlsx", col_types = c("text", "numeric"), skip = 1) %>%
   janitor::clean_names()
 
 # Now we cross reference the coordinates that correspond with each zipcode. 
