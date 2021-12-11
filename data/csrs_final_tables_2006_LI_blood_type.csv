@@ -1,0 +1,701 @@
+"","entire_name","ctr_cd","ctr_ty","org","zipcode","blood_type_category","blood_type_category_percent"
+"1","Albert Einstein Medical Center (PAAE)","PAAE","TX1","LI",19141,"blood_type_ab_allc2",0
+"2","Albert Einstein Medical Center (PAAE)","PAAE","TX1","LI",19141,"blood_type_a_allc2",40.540540541
+"3","Albert Einstein Medical Center (PAAE)","PAAE","TX1","LI",19141,"blood_type_b_allc2",13.513513514
+"4","Albert Einstein Medical Center (PAAE)","PAAE","TX1","LI",19141,"blood_type_o_allc2",45.945945946
+"5","Albert Einstein Medical Center (PAAE)","PAAE","TX1","LI",19141,"blood_type_unknown_allc2",0
+"6","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1","LI",19803,"blood_type_ab_allc2",0
+"7","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1","LI",19803,"blood_type_a_allc2",28.571428571
+"8","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1","LI",19803,"blood_type_b_allc2",0
+"9","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1","LI",19803,"blood_type_o_allc2",71.428571429
+"10","Alfred I DuPont Hospital for Children (DEAI)","DEAI","TX1","LI",19803,"blood_type_unknown_allc2",0
+"11","Allegheny General Hospital (PAAG)","PAAG","TX1","LI",15212,"blood_type_ab_allc2",2.7027027027
+"12","Allegheny General Hospital (PAAG)","PAAG","TX1","LI",15212,"blood_type_a_allc2",43.243243243
+"13","Allegheny General Hospital (PAAG)","PAAG","TX1","LI",15212,"blood_type_b_allc2",8.1081081081
+"14","Allegheny General Hospital (PAAG)","PAAG","TX1","LI",15212,"blood_type_o_allc2",45.945945946
+"15","Allegheny General Hospital (PAAG)","PAAG","TX1","LI",15212,"blood_type_unknown_allc2",0
+"16","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1","LI",60611,"blood_type_ab_allc2",0
+"17","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1","LI",60611,"blood_type_a_allc2",33.333333333
+"18","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1","LI",60611,"blood_type_b_allc2",66.666666667
+"19","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1","LI",60611,"blood_type_o_allc2",0
+"20","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","ILCM","TX1","LI",60611,"blood_type_unknown_allc2",0
+"21","Aurora St. Luke's Medical Center (WISL)","WISL","TX1","LI",53215,"blood_type_ab_allc2",1.8867924528
+"22","Aurora St. Luke's Medical Center (WISL)","WISL","TX1","LI",53215,"blood_type_a_allc2",43.396226415
+"23","Aurora St. Luke's Medical Center (WISL)","WISL","TX1","LI",53215,"blood_type_b_allc2",11.320754717
+"24","Aurora St. Luke's Medical Center (WISL)","WISL","TX1","LI",53215,"blood_type_o_allc2",43.396226415
+"25","Aurora St. Luke's Medical Center (WISL)","WISL","TX1","LI",53215,"blood_type_unknown_allc2",0
+"26","Auxilio Mutuo Hospital (PRSJ)","PRSJ","TX1","LI",919,"blood_type_ab_allc2",0
+"27","Auxilio Mutuo Hospital (PRSJ)","PRSJ","TX1","LI",919,"blood_type_a_allc2",52.941176471
+"28","Auxilio Mutuo Hospital (PRSJ)","PRSJ","TX1","LI",919,"blood_type_b_allc2",5.8823529412
+"29","Auxilio Mutuo Hospital (PRSJ)","PRSJ","TX1","LI",919,"blood_type_o_allc2",41.176470588
+"30","Auxilio Mutuo Hospital (PRSJ)","PRSJ","TX1","LI",919,"blood_type_unknown_allc2",0
+"31","Avera McKennan Hospital (SDMK)","SDMK","TX1","LI",57105,"blood_type_ab_allc2",0
+"32","Avera McKennan Hospital (SDMK)","SDMK","TX1","LI",57105,"blood_type_a_allc2",47.619047619
+"33","Avera McKennan Hospital (SDMK)","SDMK","TX1","LI",57105,"blood_type_b_allc2",4.7619047619
+"34","Avera McKennan Hospital (SDMK)","SDMK","TX1","LI",57105,"blood_type_o_allc2",47.619047619
+"35","Avera McKennan Hospital (SDMK)","SDMK","TX1","LI",57105,"blood_type_unknown_allc2",0
+"36","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1","LI",85719,"blood_type_ab_allc2",9.0909090909
+"37","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1","LI",85719,"blood_type_a_allc2",45.454545455
+"38","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1","LI",85719,"blood_type_b_allc2",9.0909090909
+"39","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1","LI",85719,"blood_type_o_allc2",36.363636364
+"40","Banner University Medical Center-Tucson (AZUA)","AZUA","TX1","LI",85719,"blood_type_unknown_allc2",0
+"41","Banner-University Medical Center Phoenix (AZGS)","AZGS","TX1","LI",85006,"blood_type_ab_allc2",0
+"42","Banner-University Medical Center Phoenix (AZGS)","AZGS","TX1","LI",85006,"blood_type_a_allc2",20.689655172
+"43","Banner-University Medical Center Phoenix (AZGS)","AZGS","TX1","LI",85006,"blood_type_b_allc2",10.344827586
+"44","Banner-University Medical Center Phoenix (AZGS)","AZGS","TX1","LI",85006,"blood_type_o_allc2",68.965517241
+"45","Banner-University Medical Center Phoenix (AZGS)","AZGS","TX1","LI",85006,"blood_type_unknown_allc2",0
+"46","Barnes-Jewish Hospital (MOBH)","MOBH","TX1","LI",63110,"blood_type_ab_allc2",0
+"47","Barnes-Jewish Hospital (MOBH)","MOBH","TX1","LI",63110,"blood_type_a_allc2",47.826086957
+"48","Barnes-Jewish Hospital (MOBH)","MOBH","TX1","LI",63110,"blood_type_b_allc2",15.217391304
+"49","Barnes-Jewish Hospital (MOBH)","MOBH","TX1","LI",63110,"blood_type_o_allc2",36.956521739
+"50","Barnes-Jewish Hospital (MOBH)","MOBH","TX1","LI",63110,"blood_type_unknown_allc2",0
+"51","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","TXAS","TX1","LI",76104,"blood_type_ab_allc2",0
+"52","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","TXAS","TX1","LI",76104,"blood_type_a_allc2",33.333333333
+"53","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","TXAS","TX1","LI",76104,"blood_type_b_allc2",12.280701754
+"54","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","TXAS","TX1","LI",76104,"blood_type_o_allc2",54.385964912
+"55","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","TXAS","TX1","LI",76104,"blood_type_unknown_allc2",0
+"56","Baylor University Medical Center (TXTX)","TXTX","TX1","LI",75246,"blood_type_ab_allc2",0
+"57","Baylor University Medical Center (TXTX)","TXTX","TX1","LI",75246,"blood_type_a_allc2",37.037037037
+"58","Baylor University Medical Center (TXTX)","TXTX","TX1","LI",75246,"blood_type_b_allc2",7.4074074074
+"59","Baylor University Medical Center (TXTX)","TXTX","TX1","LI",75246,"blood_type_o_allc2",55.555555556
+"60","Baylor University Medical Center (TXTX)","TXTX","TX1","LI",75246,"blood_type_unknown_allc2",0
+"61","Beth Israel Deaconess Medical Center (MABI)","MABI","TX1","LI",2215,"blood_type_ab_allc2",2.4590163934
+"62","Beth Israel Deaconess Medical Center (MABI)","MABI","TX1","LI",2215,"blood_type_a_allc2",27.049180328
+"63","Beth Israel Deaconess Medical Center (MABI)","MABI","TX1","LI",2215,"blood_type_b_allc2",11.475409836
+"64","Beth Israel Deaconess Medical Center (MABI)","MABI","TX1","LI",2215,"blood_type_o_allc2",59.016393443
+"65","Beth Israel Deaconess Medical Center (MABI)","MABI","TX1","LI",2215,"blood_type_unknown_allc2",0
+"66","Boston Children's Hospital (MACH)","MACH","TX1","LI",2115,"blood_type_ab_allc2",0
+"67","Boston Children's Hospital (MACH)","MACH","TX1","LI",2115,"blood_type_a_allc2",22.222222222
+"68","Boston Children's Hospital (MACH)","MACH","TX1","LI",2115,"blood_type_b_allc2",0
+"69","Boston Children's Hospital (MACH)","MACH","TX1","LI",2115,"blood_type_o_allc2",77.777777778
+"70","Boston Children's Hospital (MACH)","MACH","TX1","LI",2115,"blood_type_unknown_allc2",0
+"71","Broward Health Medical Center (FLBC)","FLBC","TX1","LI",NA,"blood_type_ab_allc2",4.7619047619
+"72","Broward Health Medical Center (FLBC)","FLBC","TX1","LI",NA,"blood_type_a_allc2",47.619047619
+"73","Broward Health Medical Center (FLBC)","FLBC","TX1","LI",NA,"blood_type_b_allc2",9.5238095238
+"74","Broward Health Medical Center (FLBC)","FLBC","TX1","LI",NA,"blood_type_o_allc2",38.095238095
+"75","Broward Health Medical Center (FLBC)","FLBC","TX1","LI",NA,"blood_type_unknown_allc2",0
+"76","California Pacific Medical Center (CAPM)","CAPM","TX1","LI",94114,"blood_type_ab_allc2",4.4642857143
+"77","California Pacific Medical Center (CAPM)","CAPM","TX1","LI",94114,"blood_type_a_allc2",34.375
+"78","California Pacific Medical Center (CAPM)","CAPM","TX1","LI",94114,"blood_type_b_allc2",8.9285714286
+"79","California Pacific Medical Center (CAPM)","CAPM","TX1","LI",94114,"blood_type_o_allc2",52.232142857
+"80","California Pacific Medical Center (CAPM)","CAPM","TX1","LI",94114,"blood_type_unknown_allc2",0
+"81","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1","LI",63104,"blood_type_ab_allc2",0
+"82","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1","LI",63104,"blood_type_a_allc2",66.666666667
+"83","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1","LI",63104,"blood_type_b_allc2",33.333333333
+"84","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1","LI",63104,"blood_type_o_allc2",0
+"85","Cardinal Glennon Children's Hospital (MOCG)","MOCG","TX1","LI",63104,"blood_type_unknown_allc2",0
+"86","Carolinas Medical Center (NCCM)","NCCM","TX1","LI",28203,"blood_type_ab_allc2",4.7619047619
+"87","Carolinas Medical Center (NCCM)","NCCM","TX1","LI",28203,"blood_type_a_allc2",43.80952381
+"88","Carolinas Medical Center (NCCM)","NCCM","TX1","LI",28203,"blood_type_b_allc2",7.619047619
+"89","Carolinas Medical Center (NCCM)","NCCM","TX1","LI",28203,"blood_type_o_allc2",43.80952381
+"90","Carolinas Medical Center (NCCM)","NCCM","TX1","LI",28203,"blood_type_unknown_allc2",0
+"91","Cedars-Sinai Medical Center (CACS)","CACS","TX1","LI",90211,"blood_type_ab_allc2",5.737704918
+"92","Cedars-Sinai Medical Center (CACS)","CACS","TX1","LI",90211,"blood_type_a_allc2",30.327868852
+"93","Cedars-Sinai Medical Center (CACS)","CACS","TX1","LI",90211,"blood_type_b_allc2",12.295081967
+"94","Cedars-Sinai Medical Center (CACS)","CACS","TX1","LI",90211,"blood_type_o_allc2",51.639344262
+"95","Cedars-Sinai Medical Center (CACS)","CACS","TX1","LI",90211,"blood_type_unknown_allc2",0
+"96","Centura Porter Adventist Hospital (COPM)","COPM","TX1","LI",80210,"blood_type_ab_allc2",0
+"97","Centura Porter Adventist Hospital (COPM)","COPM","TX1","LI",80210,"blood_type_a_allc2",46.153846154
+"98","Centura Porter Adventist Hospital (COPM)","COPM","TX1","LI",80210,"blood_type_b_allc2",0
+"99","Centura Porter Adventist Hospital (COPM)","COPM","TX1","LI",80210,"blood_type_o_allc2",53.846153846
+"100","Centura Porter Adventist Hospital (COPM)","COPM","TX1","LI",80210,"blood_type_unknown_allc2",0
+"101","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1","LI",77030,"blood_type_ab_allc2",0.4347826087
+"102","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1","LI",77030,"blood_type_a_allc2",40.434782609
+"103","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1","LI",77030,"blood_type_b_allc2",8.6956521739
+"104","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1","LI",77030,"blood_type_o_allc2",50.434782609
+"105","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","TXHI","TX1","LI",77030,"blood_type_unknown_allc2",0
+"106","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1","LI",30322,"blood_type_ab_allc2",0
+"107","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1","LI",30322,"blood_type_a_allc2",28.571428571
+"108","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1","LI",30322,"blood_type_b_allc2",7.1428571429
+"109","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1","LI",30322,"blood_type_o_allc2",64.285714286
+"110","Children's Healthcare of Atlanta at Egleston (GAEH)","GAEH","TX1","LI",30322,"blood_type_unknown_allc2",0
+"111","Children's Hospital Colorado (COCH)","COCH","TX1","LI",80045,"blood_type_ab_allc2",0
+"112","Children's Hospital Colorado (COCH)","COCH","TX1","LI",80045,"blood_type_a_allc2",100
+"113","Children's Hospital Colorado (COCH)","COCH","TX1","LI",80045,"blood_type_b_allc2",0
+"114","Children's Hospital Colorado (COCH)","COCH","TX1","LI",80045,"blood_type_o_allc2",0
+"115","Children's Hospital Colorado (COCH)","COCH","TX1","LI",80045,"blood_type_unknown_allc2",0
+"116","Children's Hospital Medical Center (OHCM)","OHCM","TX1","LI",45229,"blood_type_ab_allc2",3.4482758621
+"117","Children's Hospital Medical Center (OHCM)","OHCM","TX1","LI",45229,"blood_type_a_allc2",41.379310345
+"118","Children's Hospital Medical Center (OHCM)","OHCM","TX1","LI",45229,"blood_type_b_allc2",6.8965517241
+"119","Children's Hospital Medical Center (OHCM)","OHCM","TX1","LI",45229,"blood_type_o_allc2",48.275862069
+"120","Children's Hospital Medical Center (OHCM)","OHCM","TX1","LI",45229,"blood_type_unknown_allc2",0
+"121","Children's Hospital of Philadelphia (PACP)","PACP","TX1","LI",19104,"blood_type_ab_allc2",0
+"122","Children's Hospital of Philadelphia (PACP)","PACP","TX1","LI",19104,"blood_type_a_allc2",50
+"123","Children's Hospital of Philadelphia (PACP)","PACP","TX1","LI",19104,"blood_type_b_allc2",25
+"124","Children's Hospital of Philadelphia (PACP)","PACP","TX1","LI",19104,"blood_type_o_allc2",25
+"125","Children's Hospital of Philadelphia (PACP)","PACP","TX1","LI",19104,"blood_type_unknown_allc2",0
+"126","Children's Hospital of Wisconsin (WICH)","WICH","TX1","LI",53226,"blood_type_ab_allc2",5.8823529412
+"127","Children's Hospital of Wisconsin (WICH)","WICH","TX1","LI",53226,"blood_type_a_allc2",23.529411765
+"128","Children's Hospital of Wisconsin (WICH)","WICH","TX1","LI",53226,"blood_type_b_allc2",5.8823529412
+"129","Children's Hospital of Wisconsin (WICH)","WICH","TX1","LI",53226,"blood_type_o_allc2",64.705882353
+"130","Children's Hospital of Wisconsin (WICH)","WICH","TX1","LI",53226,"blood_type_unknown_allc2",0
+"131","Children's Medical Center of Dallas (TXCM)","TXCM","TX1","LI",75235,"blood_type_ab_allc2",0
+"132","Children's Medical Center of Dallas (TXCM)","TXCM","TX1","LI",75235,"blood_type_a_allc2",20.689655172
+"133","Children's Medical Center of Dallas (TXCM)","TXCM","TX1","LI",75235,"blood_type_b_allc2",17.24137931
+"134","Children's Medical Center of Dallas (TXCM)","TXCM","TX1","LI",75235,"blood_type_o_allc2",62.068965517
+"135","Children's Medical Center of Dallas (TXCM)","TXCM","TX1","LI",75235,"blood_type_unknown_allc2",0
+"136","Children's Mercy Hospital (MOCM)","MOCM","TX1","LI",64108,"blood_type_ab_allc2",0
+"137","Children's Mercy Hospital (MOCM)","MOCM","TX1","LI",64108,"blood_type_a_allc2",100
+"138","Children's Mercy Hospital (MOCM)","MOCM","TX1","LI",64108,"blood_type_b_allc2",0
+"139","Children's Mercy Hospital (MOCM)","MOCM","TX1","LI",64108,"blood_type_o_allc2",0
+"140","Children's Mercy Hospital (MOCM)","MOCM","TX1","LI",64108,"blood_type_unknown_allc2",0
+"141","Children's of Alabama (ALCH)","ALCH","TX1","LI",35233,"blood_type_ab_allc2",0
+"142","Children's of Alabama (ALCH)","ALCH","TX1","LI",35233,"blood_type_a_allc2",75
+"143","Children's of Alabama (ALCH)","ALCH","TX1","LI",35233,"blood_type_b_allc2",0
+"144","Children's of Alabama (ALCH)","ALCH","TX1","LI",35233,"blood_type_o_allc2",25
+"145","Children's of Alabama (ALCH)","ALCH","TX1","LI",35233,"blood_type_unknown_allc2",0
+"146","Childrens Hospital Los Angeles (CACL)","CACL","TX1","LI",90027,"blood_type_ab_allc2",0
+"147","Childrens Hospital Los Angeles (CACL)","CACL","TX1","LI",90027,"blood_type_a_allc2",10.526315789
+"148","Childrens Hospital Los Angeles (CACL)","CACL","TX1","LI",90027,"blood_type_b_allc2",15.789473684
+"149","Childrens Hospital Los Angeles (CACL)","CACL","TX1","LI",90027,"blood_type_o_allc2",73.684210526
+"150","Childrens Hospital Los Angeles (CACL)","CACL","TX1","LI",90027,"blood_type_unknown_allc2",0
+"151","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1","LI",33331,"blood_type_ab_allc2",0
+"152","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1","LI",33331,"blood_type_a_allc2",58.333333333
+"153","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1","LI",33331,"blood_type_b_allc2",0
+"154","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1","LI",33331,"blood_type_o_allc2",41.666666667
+"155","Cleveland Clinic Florida Weston (FLCC)","FLCC","TX1","LI",33331,"blood_type_unknown_allc2",0
+"156","Duke University Hospital (NCDU)","NCDU","TX1","LI",27710,"blood_type_ab_allc2",4.1666666667
+"157","Duke University Hospital (NCDU)","NCDU","TX1","LI",27710,"blood_type_a_allc2",39.583333333
+"158","Duke University Hospital (NCDU)","NCDU","TX1","LI",27710,"blood_type_b_allc2",4.1666666667
+"159","Duke University Hospital (NCDU)","NCDU","TX1","LI",27710,"blood_type_o_allc2",52.083333333
+"160","Duke University Hospital (NCDU)","NCDU","TX1","LI",27710,"blood_type_unknown_allc2",0
+"161","Emory University Hospital (GAEM)","GAEM","TX1","LI",30322,"blood_type_ab_allc2",1.3888888889
+"162","Emory University Hospital (GAEM)","GAEM","TX1","LI",30322,"blood_type_a_allc2",39.583333333
+"163","Emory University Hospital (GAEM)","GAEM","TX1","LI",30322,"blood_type_b_allc2",3.4722222222
+"164","Emory University Hospital (GAEM)","GAEM","TX1","LI",30322,"blood_type_o_allc2",55.555555556
+"165","Emory University Hospital (GAEM)","GAEM","TX1","LI",30322,"blood_type_unknown_allc2",0
+"166","Florida Hospital Medical Center (FLFH)","FLFH","TX1","LI",32803,"blood_type_ab_allc2",0
+"167","Florida Hospital Medical Center (FLFH)","FLFH","TX1","LI",32803,"blood_type_a_allc2",23.684210526
+"168","Florida Hospital Medical Center (FLFH)","FLFH","TX1","LI",32803,"blood_type_b_allc2",21.052631579
+"169","Florida Hospital Medical Center (FLFH)","FLFH","TX1","LI",32803,"blood_type_o_allc2",55.263157895
+"170","Florida Hospital Medical Center (FLFH)","FLFH","TX1","LI",32803,"blood_type_unknown_allc2",0
+"171","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1","LI",53226,"blood_type_ab_allc2",3.8461538462
+"172","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1","LI",53226,"blood_type_a_allc2",43.269230769
+"173","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1","LI",53226,"blood_type_b_allc2",10.576923077
+"174","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1","LI",53226,"blood_type_o_allc2",42.307692308
+"175","Froedtert Memorial Lutheran Hospital (WISE)","WISE","TX1","LI",53226,"blood_type_unknown_allc2",0
+"176","Geisinger Medical Center (PAGM)","PAGM","TX1","LI",17822,"blood_type_ab_allc2",0
+"177","Geisinger Medical Center (PAGM)","PAGM","TX1","LI",17822,"blood_type_a_allc2",33.333333333
+"178","Geisinger Medical Center (PAGM)","PAGM","TX1","LI",17822,"blood_type_b_allc2",8.3333333333
+"179","Geisinger Medical Center (PAGM)","PAGM","TX1","LI",17822,"blood_type_o_allc2",58.333333333
+"180","Geisinger Medical Center (PAGM)","PAGM","TX1","LI",17822,"blood_type_unknown_allc2",0
+"181","Georgetown University Medical Center (DCGU)","DCGU","TX1","LI",20007,"blood_type_ab_allc2",2.380952381
+"182","Georgetown University Medical Center (DCGU)","DCGU","TX1","LI",20007,"blood_type_a_allc2",29.761904762
+"183","Georgetown University Medical Center (DCGU)","DCGU","TX1","LI",20007,"blood_type_b_allc2",11.904761905
+"184","Georgetown University Medical Center (DCGU)","DCGU","TX1","LI",20007,"blood_type_o_allc2",55.952380952
+"185","Georgetown University Medical Center (DCGU)","DCGU","TX1","LI",20007,"blood_type_unknown_allc2",0
+"186","Hahnemann University Hospital (PAHM)","PAHM","TX1","LI",19102,"blood_type_ab_allc2",14.285714286
+"187","Hahnemann University Hospital (PAHM)","PAHM","TX1","LI",19102,"blood_type_a_allc2",57.142857143
+"188","Hahnemann University Hospital (PAHM)","PAHM","TX1","LI",19102,"blood_type_b_allc2",0
+"189","Hahnemann University Hospital (PAHM)","PAHM","TX1","LI",19102,"blood_type_o_allc2",28.571428571
+"190","Hahnemann University Hospital (PAHM)","PAHM","TX1","LI",19102,"blood_type_unknown_allc2",0
+"191","Hartford Hospital (CTHH)","CTHH","TX1","LI",6102,"blood_type_ab_allc2",0
+"192","Hartford Hospital (CTHH)","CTHH","TX1","LI",6102,"blood_type_a_allc2",60.526315789
+"193","Hartford Hospital (CTHH)","CTHH","TX1","LI",6102,"blood_type_b_allc2",15.789473684
+"194","Hartford Hospital (CTHH)","CTHH","TX1","LI",6102,"blood_type_o_allc2",23.684210526
+"195","Hartford Hospital (CTHH)","CTHH","TX1","LI",6102,"blood_type_unknown_allc2",0
+"196","Henry Ford Hospital (MIHF)","MIHF","TX1","LI",48202,"blood_type_ab_allc2",0
+"197","Henry Ford Hospital (MIHF)","MIHF","TX1","LI",48202,"blood_type_a_allc2",45.517241379
+"198","Henry Ford Hospital (MIHF)","MIHF","TX1","LI",48202,"blood_type_b_allc2",8.275862069
+"199","Henry Ford Hospital (MIHF)","MIHF","TX1","LI",48202,"blood_type_o_allc2",46.206896552
+"200","Henry Ford Hospital (MIHF)","MIHF","TX1","LI",48202,"blood_type_unknown_allc2",0
+"201","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1","LI",19104,"blood_type_ab_allc2",2.6785714286
+"202","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1","LI",19104,"blood_type_a_allc2",37.5
+"203","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1","LI",19104,"blood_type_b_allc2",16.071428571
+"204","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1","LI",19104,"blood_type_o_allc2",43.75
+"205","Hospital of the University of Pennsylvania (PAUP)","PAUP","TX1","LI",19104,"blood_type_unknown_allc2",0
+"206","Houston Methodist Hospital (TXMH)","TXMH","TX1","LI",77030,"blood_type_ab_allc2",1.7964071856
+"207","Houston Methodist Hospital (TXMH)","TXMH","TX1","LI",77030,"blood_type_a_allc2",38.023952096
+"208","Houston Methodist Hospital (TXMH)","TXMH","TX1","LI",77030,"blood_type_b_allc2",10.479041916
+"209","Houston Methodist Hospital (TXMH)","TXMH","TX1","LI",77030,"blood_type_o_allc2",49.700598802
+"210","Houston Methodist Hospital (TXMH)","TXMH","TX1","LI",77030,"blood_type_unknown_allc2",0
+"211","Indiana University Health (INIM)","INIM","TX1","LI",46202,"blood_type_ab_allc2",0
+"212","Indiana University Health (INIM)","INIM","TX1","LI",46202,"blood_type_a_allc2",42.222222222
+"213","Indiana University Health (INIM)","INIM","TX1","LI",46202,"blood_type_b_allc2",6.6666666667
+"214","Indiana University Health (INIM)","INIM","TX1","LI",46202,"blood_type_o_allc2",51.111111111
+"215","Indiana University Health (INIM)","INIM","TX1","LI",46202,"blood_type_unknown_allc2",0
+"216","Integris Baptist Medical Center (OKBC)","OKBC","TX1","LI",73112,"blood_type_ab_allc2",0
+"217","Integris Baptist Medical Center (OKBC)","OKBC","TX1","LI",73112,"blood_type_a_allc2",42.990654206
+"218","Integris Baptist Medical Center (OKBC)","OKBC","TX1","LI",73112,"blood_type_b_allc2",2.8037383178
+"219","Integris Baptist Medical Center (OKBC)","OKBC","TX1","LI",73112,"blood_type_o_allc2",54.205607477
+"220","Integris Baptist Medical Center (OKBC)","OKBC","TX1","LI",73112,"blood_type_unknown_allc2",0
+"221","Intermountain Medical Center (UTLD)","UTLD","TX1","LI",84107,"blood_type_ab_allc2",1.4084507042
+"222","Intermountain Medical Center (UTLD)","UTLD","TX1","LI",84107,"blood_type_a_allc2",40.845070423
+"223","Intermountain Medical Center (UTLD)","UTLD","TX1","LI",84107,"blood_type_b_allc2",7.0422535211
+"224","Intermountain Medical Center (UTLD)","UTLD","TX1","LI",84107,"blood_type_o_allc2",50.704225352
+"225","Intermountain Medical Center (UTLD)","UTLD","TX1","LI",84107,"blood_type_unknown_allc2",0
+"226","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","LI",33136,"blood_type_ab_allc2",0
+"227","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","LI",33136,"blood_type_a_allc2",40
+"228","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","LI",33136,"blood_type_b_allc2",5.2173913043
+"229","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","LI",33136,"blood_type_o_allc2",54.782608696
+"230","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","FLJM","TX1","LI",33136,"blood_type_unknown_allc2",0
+"231","Jewish Hospital (KYJH)","KYJH","TX1","LI",40202,"blood_type_ab_allc2",0
+"232","Jewish Hospital (KYJH)","KYJH","TX1","LI",40202,"blood_type_a_allc2",44.117647059
+"233","Jewish Hospital (KYJH)","KYJH","TX1","LI",40202,"blood_type_b_allc2",5.8823529412
+"234","Jewish Hospital (KYJH)","KYJH","TX1","LI",40202,"blood_type_o_allc2",50
+"235","Jewish Hospital (KYJH)","KYJH","TX1","LI",40202,"blood_type_unknown_allc2",0
+"236","Johns Hopkins Hospital (MDJH)","MDJH","TX1","LI",21287,"blood_type_ab_allc2",2.2598870056
+"237","Johns Hopkins Hospital (MDJH)","MDJH","TX1","LI",21287,"blood_type_a_allc2",40.960451977
+"238","Johns Hopkins Hospital (MDJH)","MDJH","TX1","LI",21287,"blood_type_b_allc2",14.124293785
+"239","Johns Hopkins Hospital (MDJH)","MDJH","TX1","LI",21287,"blood_type_o_allc2",42.655367232
+"240","Johns Hopkins Hospital (MDJH)","MDJH","TX1","LI",21287,"blood_type_unknown_allc2",0
+"241","Keck Hospital of USC (CAUH)","CAUH","TX1","LI",90033,"blood_type_ab_allc2",1.976284585
+"242","Keck Hospital of USC (CAUH)","CAUH","TX1","LI",90033,"blood_type_a_allc2",32.015810277
+"243","Keck Hospital of USC (CAUH)","CAUH","TX1","LI",90033,"blood_type_b_allc2",11.85770751
+"244","Keck Hospital of USC (CAUH)","CAUH","TX1","LI",90033,"blood_type_o_allc2",54.150197628
+"245","Keck Hospital of USC (CAUH)","CAUH","TX1","LI",90033,"blood_type_unknown_allc2",0
+"246","Lahey Clinic Medical Center (MALC)","MALC","TX1","LI",1805,"blood_type_ab_allc2",0.9523809524
+"247","Lahey Clinic Medical Center (MALC)","MALC","TX1","LI",1805,"blood_type_a_allc2",44.761904762
+"248","Lahey Clinic Medical Center (MALC)","MALC","TX1","LI",1805,"blood_type_b_allc2",5.7142857143
+"249","Lahey Clinic Medical Center (MALC)","MALC","TX1","LI",1805,"blood_type_o_allc2",48.571428571
+"250","Lahey Clinic Medical Center (MALC)","MALC","TX1","LI",1805,"blood_type_unknown_allc2",0
+"251","Largo Medical Center (FLLM)","FLLM","TX1","LI",33770,"blood_type_ab_allc2",0
+"252","Largo Medical Center (FLLM)","FLLM","TX1","LI",33770,"blood_type_a_allc2",52.941176471
+"253","Largo Medical Center (FLLM)","FLLM","TX1","LI",33770,"blood_type_b_allc2",0
+"254","Largo Medical Center (FLLM)","FLLM","TX1","LI",33770,"blood_type_o_allc2",47.058823529
+"255","Largo Medical Center (FLLM)","FLLM","TX1","LI",33770,"blood_type_unknown_allc2",0
+"256","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1","LI",38103,"blood_type_ab_allc2",0
+"257","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1","LI",38103,"blood_type_a_allc2",0
+"258","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1","LI",38103,"blood_type_b_allc2",0
+"259","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1","LI",38103,"blood_type_o_allc2",100
+"260","Le Bonheur Children's Medical Center (TNLB)","TNLB","TX1","LI",38103,"blood_type_unknown_allc2",0
+"261","Loma Linda University Medical Center (CALL)","CALL","TX1","LI",92354,"blood_type_ab_allc2",0
+"262","Loma Linda University Medical Center (CALL)","CALL","TX1","LI",92354,"blood_type_a_allc2",30.909090909
+"263","Loma Linda University Medical Center (CALL)","CALL","TX1","LI",92354,"blood_type_b_allc2",11.818181818
+"264","Loma Linda University Medical Center (CALL)","CALL","TX1","LI",92354,"blood_type_o_allc2",57.272727273
+"265","Loma Linda University Medical Center (CALL)","CALL","TX1","LI",92354,"blood_type_unknown_allc2",0
+"266","Loyola University Medical Center (ILLU)","ILLU","TX1","LI",60153,"blood_type_ab_allc2",1.0204081633
+"267","Loyola University Medical Center (ILLU)","ILLU","TX1","LI",60153,"blood_type_a_allc2",42.857142857
+"268","Loyola University Medical Center (ILLU)","ILLU","TX1","LI",60153,"blood_type_b_allc2",8.1632653061
+"269","Loyola University Medical Center (ILLU)","ILLU","TX1","LI",60153,"blood_type_o_allc2",47.959183673
+"270","Loyola University Medical Center (ILLU)","ILLU","TX1","LI",60153,"blood_type_unknown_allc2",0
+"271","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1","LI",94304,"blood_type_ab_allc2",0
+"272","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1","LI",94304,"blood_type_a_allc2",27.777777778
+"273","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1","LI",94304,"blood_type_b_allc2",5.5555555556
+"274","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1","LI",94304,"blood_type_o_allc2",66.666666667
+"275","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","CAPC","TX1","LI",94304,"blood_type_unknown_allc2",0
+"276","Massachusetts General Hospital (MAMG)","MAMG","TX1","LI",2114,"blood_type_ab_allc2",2.523659306
+"277","Massachusetts General Hospital (MAMG)","MAMG","TX1","LI",2114,"blood_type_a_allc2",42.586750789
+"278","Massachusetts General Hospital (MAMG)","MAMG","TX1","LI",2114,"blood_type_b_allc2",11.67192429
+"279","Massachusetts General Hospital (MAMG)","MAMG","TX1","LI",2114,"blood_type_o_allc2",43.217665615
+"280","Massachusetts General Hospital (MAMG)","MAMG","TX1","LI",2114,"blood_type_unknown_allc2",0
+"281","Mayo Clinic Florida (FLSL)","FLSL","TX1","LI",32224,"blood_type_ab_allc2",0
+"282","Mayo Clinic Florida (FLSL)","FLSL","TX1","LI",32224,"blood_type_a_allc2",44.186046512
+"283","Mayo Clinic Florida (FLSL)","FLSL","TX1","LI",32224,"blood_type_b_allc2",5.8139534884
+"284","Mayo Clinic Florida (FLSL)","FLSL","TX1","LI",32224,"blood_type_o_allc2",50
+"285","Mayo Clinic Florida (FLSL)","FLSL","TX1","LI",32224,"blood_type_unknown_allc2",0
+"286","Mayo Clinic Hospital (AZMC)","AZMC","TX1","LI",85054,"blood_type_ab_allc2",2.479338843
+"287","Mayo Clinic Hospital (AZMC)","AZMC","TX1","LI",85054,"blood_type_a_allc2",25.619834711
+"288","Mayo Clinic Hospital (AZMC)","AZMC","TX1","LI",85054,"blood_type_b_allc2",9.9173553719
+"289","Mayo Clinic Hospital (AZMC)","AZMC","TX1","LI",85054,"blood_type_o_allc2",61.983471074
+"290","Mayo Clinic Hospital (AZMC)","AZMC","TX1","LI",85054,"blood_type_unknown_allc2",0
+"291","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1","LI",23219,"blood_type_ab_allc2",1.1904761905
+"292","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1","LI",23219,"blood_type_a_allc2",36.904761905
+"293","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1","LI",23219,"blood_type_b_allc2",10.714285714
+"294","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1","LI",23219,"blood_type_o_allc2",51.19047619
+"295","Medical College of Virginia Hospitals (VAMC)","VAMC","TX1","LI",23219,"blood_type_unknown_allc2",0
+"296","Medical University of South Carolina (SCMU)","SCMU","TX1","LI",29425,"blood_type_ab_allc2",2.0408163265
+"297","Medical University of South Carolina (SCMU)","SCMU","TX1","LI",29425,"blood_type_a_allc2",44.897959184
+"298","Medical University of South Carolina (SCMU)","SCMU","TX1","LI",29425,"blood_type_b_allc2",24.489795918
+"299","Medical University of South Carolina (SCMU)","SCMU","TX1","LI",29425,"blood_type_o_allc2",28.571428571
+"300","Medical University of South Carolina (SCMU)","SCMU","TX1","LI",29425,"blood_type_unknown_allc2",0
+"301","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1","LI",77030,"blood_type_ab_allc2",0
+"302","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1","LI",77030,"blood_type_a_allc2",33.333333333
+"303","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1","LI",77030,"blood_type_b_allc2",18.181818182
+"304","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1","LI",77030,"blood_type_o_allc2",48.484848485
+"305","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","TXHH","TX1","LI",77030,"blood_type_unknown_allc2",0
+"306","Methodist Dallas Medical Center (TXMC)","TXMC","TX1","LI",75203,"blood_type_ab_allc2",1.3698630137
+"307","Methodist Dallas Medical Center (TXMC)","TXMC","TX1","LI",75203,"blood_type_a_allc2",41.095890411
+"308","Methodist Dallas Medical Center (TXMC)","TXMC","TX1","LI",75203,"blood_type_b_allc2",12.328767123
+"309","Methodist Dallas Medical Center (TXMC)","TXMC","TX1","LI",75203,"blood_type_o_allc2",45.205479452
+"310","Methodist Dallas Medical Center (TXMC)","TXMC","TX1","LI",75203,"blood_type_unknown_allc2",0
+"311","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1","LI",78229,"blood_type_ab_allc2",1.2121212121
+"312","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1","LI",78229,"blood_type_a_allc2",32.727272727
+"313","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1","LI",78229,"blood_type_b_allc2",9.0909090909
+"314","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1","LI",78229,"blood_type_o_allc2",56.96969697
+"315","Methodist Specialty and Transplant Hospital (TXHS)","TXHS","TX1","LI",78229,"blood_type_unknown_allc2",0
+"316","Methodist University Hospital (TNMH)","TNMH","TX1","LI",38104,"blood_type_ab_allc2",3.5714285714
+"317","Methodist University Hospital (TNMH)","TNMH","TX1","LI",38104,"blood_type_a_allc2",26.785714286
+"318","Methodist University Hospital (TNMH)","TNMH","TX1","LI",38104,"blood_type_b_allc2",12.5
+"319","Methodist University Hospital (TNMH)","TNMH","TX1","LI",38104,"blood_type_o_allc2",57.142857143
+"320","Methodist University Hospital (TNMH)","TNMH","TX1","LI",38104,"blood_type_unknown_allc2",0
+"321","Michael E. DeBakey VA Medical Center (TXVA)","TXVA","TX1","LI",77030,"blood_type_ab_allc2",0
+"322","Michael E. DeBakey VA Medical Center (TXVA)","TXVA","TX1","LI",77030,"blood_type_a_allc2",37.254901961
+"323","Michael E. DeBakey VA Medical Center (TXVA)","TXVA","TX1","LI",77030,"blood_type_b_allc2",5.8823529412
+"324","Michael E. DeBakey VA Medical Center (TXVA)","TXVA","TX1","LI",77030,"blood_type_o_allc2",56.862745098
+"325","Michael E. DeBakey VA Medical Center (TXVA)","TXVA","TX1","LI",77030,"blood_type_unknown_allc2",0
+"326","Montefiore Medical Center (NYMA)","NYMA","TX1","LI",10467,"blood_type_ab_allc2",1.6949152542
+"327","Montefiore Medical Center (NYMA)","NYMA","TX1","LI",10467,"blood_type_a_allc2",30.508474576
+"328","Montefiore Medical Center (NYMA)","NYMA","TX1","LI",10467,"blood_type_b_allc2",10.169491525
+"329","Montefiore Medical Center (NYMA)","NYMA","TX1","LI",10467,"blood_type_o_allc2",57.627118644
+"330","Montefiore Medical Center (NYMA)","NYMA","TX1","LI",10467,"blood_type_unknown_allc2",0
+"331","Mount Sinai Medical Center (NYMS)","NYMS","TX1","LI",10029,"blood_type_ab_allc2",4.4334975369
+"332","Mount Sinai Medical Center (NYMS)","NYMS","TX1","LI",10029,"blood_type_a_allc2",26.84729064
+"333","Mount Sinai Medical Center (NYMS)","NYMS","TX1","LI",10029,"blood_type_b_allc2",16.995073892
+"334","Mount Sinai Medical Center (NYMS)","NYMS","TX1","LI",10029,"blood_type_o_allc2",51.724137931
+"335","Mount Sinai Medical Center (NYMS)","NYMS","TX1","LI",10029,"blood_type_unknown_allc2",0
+"336","Nationwide Children's Hospital (OHCH)","OHCH","TX1","LI",43205,"blood_type_ab_allc2",0
+"337","Nationwide Children's Hospital (OHCH)","OHCH","TX1","LI",43205,"blood_type_a_allc2",50
+"338","Nationwide Children's Hospital (OHCH)","OHCH","TX1","LI",43205,"blood_type_b_allc2",0
+"339","Nationwide Children's Hospital (OHCH)","OHCH","TX1","LI",43205,"blood_type_o_allc2",50
+"340","Nationwide Children's Hospital (OHCH)","OHCH","TX1","LI",43205,"blood_type_unknown_allc2",0
+"341","New York University Medical Center (NYUC)","NYUC","TX1","LI",10016,"blood_type_ab_allc2",2.2304832714
+"342","New York University Medical Center (NYUC)","NYUC","TX1","LI",10016,"blood_type_a_allc2",36.431226766
+"343","New York University Medical Center (NYUC)","NYUC","TX1","LI",10016,"blood_type_b_allc2",12.639405204
+"344","New York University Medical Center (NYUC)","NYUC","TX1","LI",10016,"blood_type_o_allc2",48.698884758
+"345","New York University Medical Center (NYUC)","NYUC","TX1","LI",10016,"blood_type_unknown_allc2",0
+"346","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","NYNY","TX1","LI",10065,"blood_type_ab_allc2",3.4482758621
+"347","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","NYNY","TX1","LI",10065,"blood_type_a_allc2",28.735632184
+"348","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","NYNY","TX1","LI",10065,"blood_type_b_allc2",16.091954023
+"349","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","NYNY","TX1","LI",10065,"blood_type_o_allc2",51.724137931
+"350","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","NYNY","TX1","LI",10065,"blood_type_unknown_allc2",0
+"351","Northwestern Memorial Hospital (ILNM)","ILNM","TX1","LI",60611,"blood_type_ab_allc2",0
+"352","Northwestern Memorial Hospital (ILNM)","ILNM","TX1","LI",60611,"blood_type_a_allc2",44.927536232
+"353","Northwestern Memorial Hospital (ILNM)","ILNM","TX1","LI",60611,"blood_type_b_allc2",10.144927536
+"354","Northwestern Memorial Hospital (ILNM)","ILNM","TX1","LI",60611,"blood_type_o_allc2",44.927536232
+"355","Northwestern Memorial Hospital (ILNM)","ILNM","TX1","LI",60611,"blood_type_unknown_allc2",0
+"356","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1","LI",10032,"blood_type_ab_allc2",2.5477707006
+"357","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1","LI",10032,"blood_type_a_allc2",35.031847134
+"358","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1","LI",10032,"blood_type_b_allc2",14.012738854
+"359","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1","LI",10032,"blood_type_o_allc2",48.407643312
+"360","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","NYCP","TX1","LI",10032,"blood_type_unknown_allc2",0
+"361","Ochsner Foundation Hospital (LAOF)","LAOF","TX1","LI",70121,"blood_type_ab_allc2",4.2105263158
+"362","Ochsner Foundation Hospital (LAOF)","LAOF","TX1","LI",70121,"blood_type_a_allc2",42.105263158
+"363","Ochsner Foundation Hospital (LAOF)","LAOF","TX1","LI",70121,"blood_type_b_allc2",9.4736842105
+"364","Ochsner Foundation Hospital (LAOF)","LAOF","TX1","LI",70121,"blood_type_o_allc2",44.210526316
+"365","Ochsner Foundation Hospital (LAOF)","LAOF","TX1","LI",70121,"blood_type_unknown_allc2",0
+"366","Ohio State University Medical Center (OHOU)","OHOU","TX1","LI",43210,"blood_type_ab_allc2",0.78125
+"367","Ohio State University Medical Center (OHOU)","OHOU","TX1","LI",43210,"blood_type_a_allc2",43.75
+"368","Ohio State University Medical Center (OHOU)","OHOU","TX1","LI",43210,"blood_type_b_allc2",7.03125
+"369","Ohio State University Medical Center (OHOU)","OHOU","TX1","LI",43210,"blood_type_o_allc2",48.4375
+"370","Ohio State University Medical Center (OHOU)","OHOU","TX1","LI",43210,"blood_type_unknown_allc2",0
+"371","Oregon Health & Science University (ORUO)","ORUO","TX1","LI",97239,"blood_type_ab_allc2",1.0752688172
+"372","Oregon Health & Science University (ORUO)","ORUO","TX1","LI",97239,"blood_type_a_allc2",43.010752688
+"373","Oregon Health & Science University (ORUO)","ORUO","TX1","LI",97239,"blood_type_b_allc2",8.6021505376
+"374","Oregon Health & Science University (ORUO)","ORUO","TX1","LI",97239,"blood_type_o_allc2",47.311827957
+"375","Oregon Health & Science University (ORUO)","ORUO","TX1","LI",97239,"blood_type_unknown_allc2",0
+"376","OU Medical Center (OKMD)","OKMD","TX1","LI",73104,"blood_type_ab_allc2",0
+"377","OU Medical Center (OKMD)","OKMD","TX1","LI",73104,"blood_type_a_allc2",16.666666667
+"378","OU Medical Center (OKMD)","OKMD","TX1","LI",73104,"blood_type_b_allc2",0
+"379","OU Medical Center (OKMD)","OKMD","TX1","LI",73104,"blood_type_o_allc2",83.333333333
+"380","OU Medical Center (OKMD)","OKMD","TX1","LI",73104,"blood_type_unknown_allc2",0
+"381","Our Lady of Lourdes Medical Center (NJLL)","NJLL","TX1","LI",8103,"blood_type_ab_allc2",1.7543859649
+"382","Our Lady of Lourdes Medical Center (NJLL)","NJLL","TX1","LI",8103,"blood_type_a_allc2",33.333333333
+"383","Our Lady of Lourdes Medical Center (NJLL)","NJLL","TX1","LI",8103,"blood_type_b_allc2",10.526315789
+"384","Our Lady of Lourdes Medical Center (NJLL)","NJLL","TX1","LI",8103,"blood_type_o_allc2",54.385964912
+"385","Our Lady of Lourdes Medical Center (NJLL)","NJLL","TX1","LI",8103,"blood_type_unknown_allc2",0
+"386","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1","LI",17033,"blood_type_ab_allc2",4.2857142857
+"387","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1","LI",17033,"blood_type_a_allc2",54.285714286
+"388","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1","LI",17033,"blood_type_b_allc2",1.4285714286
+"389","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1","LI",17033,"blood_type_o_allc2",40
+"390","Penn State Milton S Hershey Medical Center (PAHE)","PAHE","TX1","LI",17033,"blood_type_unknown_allc2",0
+"391","Phoenix Children's Hospital (AZCH)","AZCH","TX1","LI",85016,"blood_type_ab_allc2",0
+"392","Phoenix Children's Hospital (AZCH)","AZCH","TX1","LI",85016,"blood_type_a_allc2",58.333333333
+"393","Phoenix Children's Hospital (AZCH)","AZCH","TX1","LI",85016,"blood_type_b_allc2",8.3333333333
+"394","Phoenix Children's Hospital (AZCH)","AZCH","TX1","LI",85016,"blood_type_o_allc2",33.333333333
+"395","Phoenix Children's Hospital (AZCH)","AZCH","TX1","LI",85016,"blood_type_unknown_allc2",0
+"396","Piedmont Hospital (GAPH)","GAPH","TX1","LI",30309,"blood_type_ab_allc2",2.4154589372
+"397","Piedmont Hospital (GAPH)","GAPH","TX1","LI",30309,"blood_type_a_allc2",48.309178744
+"398","Piedmont Hospital (GAPH)","GAPH","TX1","LI",30309,"blood_type_b_allc2",4.347826087
+"399","Piedmont Hospital (GAPH)","GAPH","TX1","LI",30309,"blood_type_o_allc2",44.927536232
+"400","Piedmont Hospital (GAPH)","GAPH","TX1","LI",30309,"blood_type_unknown_allc2",0
+"401","Presbyterian/St Luke's Medical Center (COSL)","COSL","TX1","LI",80218,"blood_type_ab_allc2",1.1904761905
+"402","Presbyterian/St Luke's Medical Center (COSL)","COSL","TX1","LI",80218,"blood_type_a_allc2",38.095238095
+"403","Presbyterian/St Luke's Medical Center (COSL)","COSL","TX1","LI",80218,"blood_type_b_allc2",7.1428571429
+"404","Presbyterian/St Luke's Medical Center (COSL)","COSL","TX1","LI",80218,"blood_type_o_allc2",53.571428571
+"405","Presbyterian/St Luke's Medical Center (COSL)","COSL","TX1","LI",80218,"blood_type_unknown_allc2",0
+"406","Primary Children's Hospital (UTPC)","UTPC","TX1","LI",84113,"blood_type_ab_allc2",0
+"407","Primary Children's Hospital (UTPC)","UTPC","TX1","LI",84113,"blood_type_a_allc2",50
+"408","Primary Children's Hospital (UTPC)","UTPC","TX1","LI",84113,"blood_type_b_allc2",10
+"409","Primary Children's Hospital (UTPC)","UTPC","TX1","LI",84113,"blood_type_o_allc2",40
+"410","Primary Children's Hospital (UTPC)","UTPC","TX1","LI",84113,"blood_type_unknown_allc2",0
+"411","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","LI",55902,"blood_type_ab_allc2",2.3622047244
+"412","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","LI",55902,"blood_type_a_allc2",42.519685039
+"413","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","LI",55902,"blood_type_b_allc2",12.598425197
+"414","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","LI",55902,"blood_type_o_allc2",42.519685039
+"415","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","MNMC","TX1","LI",55902,"blood_type_unknown_allc2",0
+"416","Rush University Medical Center (ILPL)","ILPL","TX1","LI",60612,"blood_type_ab_allc2",0
+"417","Rush University Medical Center (ILPL)","ILPL","TX1","LI",60612,"blood_type_a_allc2",37.931034483
+"418","Rush University Medical Center (ILPL)","ILPL","TX1","LI",60612,"blood_type_b_allc2",17.24137931
+"419","Rush University Medical Center (ILPL)","ILPL","TX1","LI",60612,"blood_type_o_allc2",44.827586207
+"420","Rush University Medical Center (ILPL)","ILPL","TX1","LI",60612,"blood_type_unknown_allc2",0
+"421","Scripps Green Hospital (CAGH)","CAGH","TX1","LI",92037,"blood_type_ab_allc2",4.5454545455
+"422","Scripps Green Hospital (CAGH)","CAGH","TX1","LI",92037,"blood_type_a_allc2",30.303030303
+"423","Scripps Green Hospital (CAGH)","CAGH","TX1","LI",92037,"blood_type_b_allc2",15.151515152
+"424","Scripps Green Hospital (CAGH)","CAGH","TX1","LI",92037,"blood_type_o_allc2",50
+"425","Scripps Green Hospital (CAGH)","CAGH","TX1","LI",92037,"blood_type_unknown_allc2",0
+"426","Seattle Children's Hospital (WACH)","WACH","TX1","LI",98105,"blood_type_ab_allc2",0
+"427","Seattle Children's Hospital (WACH)","WACH","TX1","LI",98105,"blood_type_a_allc2",28.571428571
+"428","Seattle Children's Hospital (WACH)","WACH","TX1","LI",98105,"blood_type_b_allc2",14.285714286
+"429","Seattle Children's Hospital (WACH)","WACH","TX1","LI",98105,"blood_type_o_allc2",57.142857143
+"430","Seattle Children's Hospital (WACH)","WACH","TX1","LI",98105,"blood_type_unknown_allc2",0
+"431","SSM Health Saint Louis University Hospital (MOSL)","MOSL","TX1","LI",63104,"blood_type_ab_allc2",0
+"432","SSM Health Saint Louis University Hospital (MOSL)","MOSL","TX1","LI",63104,"blood_type_a_allc2",50
+"433","SSM Health Saint Louis University Hospital (MOSL)","MOSL","TX1","LI",63104,"blood_type_b_allc2",16.666666667
+"434","SSM Health Saint Louis University Hospital (MOSL)","MOSL","TX1","LI",63104,"blood_type_o_allc2",33.333333333
+"435","SSM Health Saint Louis University Hospital (MOSL)","MOSL","TX1","LI",63104,"blood_type_unknown_allc2",0
+"436","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1","LI",64111,"blood_type_ab_allc2",0
+"437","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1","LI",64111,"blood_type_a_allc2",47.826086957
+"438","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1","LI",64111,"blood_type_b_allc2",0
+"439","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1","LI",64111,"blood_type_o_allc2",52.173913043
+"440","St Luke's Hospital of Kansas City (MOLH)","MOLH","TX1","LI",64111,"blood_type_unknown_allc2",0
+"441","St. Joseph's Hospital and Medical Center (AZSJ)","AZSJ","TX1","LI",85013,"blood_type_ab_allc2",0
+"442","St. Joseph's Hospital and Medical Center (AZSJ)","AZSJ","TX1","LI",85013,"blood_type_a_allc2",36
+"443","St. Joseph's Hospital and Medical Center (AZSJ)","AZSJ","TX1","LI",85013,"blood_type_b_allc2",12
+"444","St. Joseph's Hospital and Medical Center (AZSJ)","AZSJ","TX1","LI",85013,"blood_type_o_allc2",52
+"445","St. Joseph's Hospital and Medical Center (AZSJ)","AZSJ","TX1","LI",85013,"blood_type_unknown_allc2",0
+"446","St. Louis Children's Hospital (MOCH)","MOCH","TX1","LI",63110,"blood_type_ab_allc2",16.666666667
+"447","St. Louis Children's Hospital (MOCH)","MOCH","TX1","LI",63110,"blood_type_a_allc2",33.333333333
+"448","St. Louis Children's Hospital (MOCH)","MOCH","TX1","LI",63110,"blood_type_b_allc2",16.666666667
+"449","St. Louis Children's Hospital (MOCH)","MOCH","TX1","LI",63110,"blood_type_o_allc2",33.333333333
+"450","St. Louis Children's Hospital (MOCH)","MOCH","TX1","LI",63110,"blood_type_unknown_allc2",0
+"451","Stanford Health Care (CASU)","CASU","TX1","LI",94305,"blood_type_ab_allc2",3.8961038961
+"452","Stanford Health Care (CASU)","CASU","TX1","LI",94305,"blood_type_a_allc2",30.303030303
+"453","Stanford Health Care (CASU)","CASU","TX1","LI",94305,"blood_type_b_allc2",12.554112554
+"454","Stanford Health Care (CASU)","CASU","TX1","LI",94305,"blood_type_o_allc2",53.246753247
+"455","Stanford Health Care (CASU)","CASU","TX1","LI",94305,"blood_type_unknown_allc2",0
+"456","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1","LI",14642,"blood_type_ab_allc2",0
+"457","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1","LI",14642,"blood_type_a_allc2",28.571428571
+"458","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1","LI",14642,"blood_type_b_allc2",14.285714286
+"459","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1","LI",14642,"blood_type_o_allc2",57.142857143
+"460","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","NYFL","TX1","LI",14642,"blood_type_unknown_allc2",0
+"461","Swedish Medical Center (WASM)","WASM","TX1","LI",98122,"blood_type_ab_allc2",3.5087719298
+"462","Swedish Medical Center (WASM)","WASM","TX1","LI",98122,"blood_type_a_allc2",33.333333333
+"463","Swedish Medical Center (WASM)","WASM","TX1","LI",98122,"blood_type_b_allc2",8.7719298246
+"464","Swedish Medical Center (WASM)","WASM","TX1","LI",98122,"blood_type_o_allc2",54.385964912
+"465","Swedish Medical Center (WASM)","WASM","TX1","LI",98122,"blood_type_unknown_allc2",0
+"466","Tampa General Hospital (FLTG)","FLTG","TX1","LI",33606,"blood_type_ab_allc2",0.7352941176
+"467","Tampa General Hospital (FLTG)","FLTG","TX1","LI",33606,"blood_type_a_allc2",42.647058824
+"468","Tampa General Hospital (FLTG)","FLTG","TX1","LI",33606,"blood_type_b_allc2",9.5588235294
+"469","Tampa General Hospital (FLTG)","FLTG","TX1","LI",33606,"blood_type_o_allc2",47.058823529
+"470","Tampa General Hospital (FLTG)","FLTG","TX1","LI",33606,"blood_type_unknown_allc2",0
+"471","Temple University Hospital (PATU)","PATU","TX1","LI",19140,"blood_type_ab_allc2",0
+"472","Temple University Hospital (PATU)","PATU","TX1","LI",19140,"blood_type_a_allc2",18.181818182
+"473","Temple University Hospital (PATU)","PATU","TX1","LI",19140,"blood_type_b_allc2",13.636363636
+"474","Temple University Hospital (PATU)","PATU","TX1","LI",19140,"blood_type_o_allc2",68.181818182
+"475","Temple University Hospital (PATU)","PATU","TX1","LI",19140,"blood_type_unknown_allc2",0
+"476","Texas Children's Hospital (TXTC)","TXTC","TX1","LI",77030,"blood_type_ab_allc2",0
+"477","Texas Children's Hospital (TXTC)","TXTC","TX1","LI",77030,"blood_type_a_allc2",31.25
+"478","Texas Children's Hospital (TXTC)","TXTC","TX1","LI",77030,"blood_type_b_allc2",12.5
+"479","Texas Children's Hospital (TXTC)","TXTC","TX1","LI",77030,"blood_type_o_allc2",56.25
+"480","Texas Children's Hospital (TXTC)","TXTC","TX1","LI",77030,"blood_type_unknown_allc2",0
+"481","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","LI",44195,"blood_type_ab_allc2",1.8099547511
+"482","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","LI",44195,"blood_type_a_allc2",44.343891403
+"483","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","LI",44195,"blood_type_b_allc2",7.6923076923
+"484","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","LI",44195,"blood_type_o_allc2",46.153846154
+"485","The Cleveland Clinic Foundation (OHCC)","OHCC","TX1","LI",44195,"blood_type_unknown_allc2",0
+"486","The Nebraska Medical Center (NEUN)","NEUN","TX1","LI",68198,"blood_type_ab_allc2",2.6548672566
+"487","The Nebraska Medical Center (NEUN)","NEUN","TX1","LI",68198,"blood_type_a_allc2",44.247787611
+"488","The Nebraska Medical Center (NEUN)","NEUN","TX1","LI",68198,"blood_type_b_allc2",5.3097345133
+"489","The Nebraska Medical Center (NEUN)","NEUN","TX1","LI",68198,"blood_type_o_allc2",47.787610619
+"490","The Nebraska Medical Center (NEUN)","NEUN","TX1","LI",68198,"blood_type_unknown_allc2",0
+"491","The Queen's Medical Center (HIQM)","HIQM","TX1","LI",96813,"blood_type_ab_allc2",4.5454545455
+"492","The Queen's Medical Center (HIQM)","HIQM","TX1","LI",96813,"blood_type_a_allc2",27.272727273
+"493","The Queen's Medical Center (HIQM)","HIQM","TX1","LI",96813,"blood_type_b_allc2",27.272727273
+"494","The Queen's Medical Center (HIQM)","HIQM","TX1","LI",96813,"blood_type_o_allc2",40.909090909
+"495","The Queen's Medical Center (HIQM)","HIQM","TX1","LI",96813,"blood_type_unknown_allc2",0
+"496","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1","LI",19107,"blood_type_ab_allc2",0.7692307692
+"497","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1","LI",19107,"blood_type_a_allc2",45.384615385
+"498","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1","LI",19107,"blood_type_b_allc2",8.4615384615
+"499","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1","LI",19107,"blood_type_o_allc2",45.384615385
+"500","Thomas Jefferson University Hospital (PATJ)","PATJ","TX1","LI",19107,"blood_type_unknown_allc2",0
+"501","Tulane Medical Center (LATU)","LATU","TX1","LI",70112,"blood_type_ab_allc2",0
+"502","Tulane Medical Center (LATU)","LATU","TX1","LI",70112,"blood_type_a_allc2",46.153846154
+"503","Tulane Medical Center (LATU)","LATU","TX1","LI",70112,"blood_type_b_allc2",15.384615385
+"504","Tulane Medical Center (LATU)","LATU","TX1","LI",70112,"blood_type_o_allc2",38.461538462
+"505","Tulane Medical Center (LATU)","LATU","TX1","LI",70112,"blood_type_unknown_allc2",0
+"506","UAMS Medical Center (ARUA)","ARUA","TX1","LI",72205,"blood_type_ab_allc2",2.3255813953
+"507","UAMS Medical Center (ARUA)","ARUA","TX1","LI",72205,"blood_type_a_allc2",27.906976744
+"508","UAMS Medical Center (ARUA)","ARUA","TX1","LI",72205,"blood_type_b_allc2",2.3255813953
+"509","UAMS Medical Center (ARUA)","ARUA","TX1","LI",72205,"blood_type_o_allc2",67.441860465
+"510","UAMS Medical Center (ARUA)","ARUA","TX1","LI",72205,"blood_type_unknown_allc2",0
+"511","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1","LI",94158,"blood_type_ab_allc2",0
+"512","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1","LI",94158,"blood_type_a_allc2",42.857142857
+"513","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1","LI",94158,"blood_type_b_allc2",14.285714286
+"514","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1","LI",94158,"blood_type_o_allc2",42.857142857
+"515","UCSF Medical Center at Mission Bay (CAMB)","CAMB","TX1","LI",94158,"blood_type_unknown_allc2",0
+"516","UF Health Shands Hospital (FLUF)","FLUF","TX1","LI",32608,"blood_type_ab_allc2",0
+"517","UF Health Shands Hospital (FLUF)","FLUF","TX1","LI",32608,"blood_type_a_allc2",62.5
+"518","UF Health Shands Hospital (FLUF)","FLUF","TX1","LI",32608,"blood_type_b_allc2",5.3571428571
+"519","UF Health Shands Hospital (FLUF)","FLUF","TX1","LI",32608,"blood_type_o_allc2",32.142857143
+"520","UF Health Shands Hospital (FLUF)","FLUF","TX1","LI",32608,"blood_type_unknown_allc2",0
+"521","UMass Memorial Medical Center (MAUM)","MAUM","TX1","LI",1655,"blood_type_ab_allc2",2.0348837209
+"522","UMass Memorial Medical Center (MAUM)","MAUM","TX1","LI",1655,"blood_type_a_allc2",38.662790698
+"523","UMass Memorial Medical Center (MAUM)","MAUM","TX1","LI",1655,"blood_type_b_allc2",11.337209302
+"524","UMass Memorial Medical Center (MAUM)","MAUM","TX1","LI",1655,"blood_type_o_allc2",47.965116279
+"525","UMass Memorial Medical Center (MAUM)","MAUM","TX1","LI",1655,"blood_type_unknown_allc2",0
+"526","University Childrens Health (TXUC","TXUC","TX1","LI",78229,"blood_type_ab_allc2",16.666666667
+"527","University Childrens Health (TXUC","TXUC","TX1","LI",78229,"blood_type_a_allc2",16.666666667
+"528","University Childrens Health (TXUC","TXUC","TX1","LI",78229,"blood_type_b_allc2",0
+"529","University Childrens Health (TXUC","TXUC","TX1","LI",78229,"blood_type_o_allc2",66.666666667
+"530","University Childrens Health (TXUC","TXUC","TX1","LI",78229,"blood_type_unknown_allc2",0
+"531","University Hospital (NJUH)","NJUH","TX1","LI",NA,"blood_type_ab_allc2",3.6585365854
+"532","University Hospital (NJUH)","NJUH","TX1","LI",NA,"blood_type_a_allc2",39.024390244
+"533","University Hospital (NJUH)","NJUH","TX1","LI",NA,"blood_type_b_allc2",12.195121951
+"534","University Hospital (NJUH)","NJUH","TX1","LI",NA,"blood_type_o_allc2",45.12195122
+"535","University Hospital (NJUH)","NJUH","TX1","LI",NA,"blood_type_unknown_allc2",0
+"536","University Hospital, University of Texas Health Science Center (TXBC)","TXBC","TX1","LI",78229,"blood_type_ab_allc2",1.3986013986
+"537","University Hospital, University of Texas Health Science Center (TXBC)","TXBC","TX1","LI",78229,"blood_type_a_allc2",30.769230769
+"538","University Hospital, University of Texas Health Science Center (TXBC)","TXBC","TX1","LI",78229,"blood_type_b_allc2",6.2937062937
+"539","University Hospital, University of Texas Health Science Center (TXBC)","TXBC","TX1","LI",78229,"blood_type_o_allc2",61.538461538
+"540","University Hospital, University of Texas Health Science Center (TXBC)","TXBC","TX1","LI",78229,"blood_type_unknown_allc2",0
+"541","University Hospitals of Cleveland (OHUH)","OHUH","TX1","LI",44106,"blood_type_ab_allc2",1.1111111111
+"542","University Hospitals of Cleveland (OHUH)","OHUH","TX1","LI",44106,"blood_type_a_allc2",52.222222222
+"543","University Hospitals of Cleveland (OHUH)","OHUH","TX1","LI",44106,"blood_type_b_allc2",8.8888888889
+"544","University Hospitals of Cleveland (OHUH)","OHUH","TX1","LI",44106,"blood_type_o_allc2",37.777777778
+"545","University Hospitals of Cleveland (OHUH)","OHUH","TX1","LI",44106,"blood_type_unknown_allc2",0
+"546","University of Alabama Hospital (ALUA)","ALUA","TX1","LI",35233,"blood_type_ab_allc2",0
+"547","University of Alabama Hospital (ALUA)","ALUA","TX1","LI",35233,"blood_type_a_allc2",41.379310345
+"548","University of Alabama Hospital (ALUA)","ALUA","TX1","LI",35233,"blood_type_b_allc2",5.5172413793
+"549","University of Alabama Hospital (ALUA)","ALUA","TX1","LI",35233,"blood_type_o_allc2",53.103448276
+"550","University of Alabama Hospital (ALUA)","ALUA","TX1","LI",35233,"blood_type_unknown_allc2",0
+"551","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1","LI",90095,"blood_type_ab_allc2",3.1512605042
+"552","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1","LI",90095,"blood_type_a_allc2",35.294117647
+"553","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1","LI",90095,"blood_type_b_allc2",12.18487395
+"554","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1","LI",90095,"blood_type_o_allc2",49.369747899
+"555","University of California at Los Angeles Medical Center (CAUC)","CAUC","TX1","LI",90095,"blood_type_unknown_allc2",0
+"556","University of California San Diego Medical Center (CASD)","CASD","TX1","LI",92037,"blood_type_ab_allc2",0.7936507937
+"557","University of California San Diego Medical Center (CASD)","CASD","TX1","LI",92037,"blood_type_a_allc2",38.888888889
+"558","University of California San Diego Medical Center (CASD)","CASD","TX1","LI",92037,"blood_type_b_allc2",8.7301587302
+"559","University of California San Diego Medical Center (CASD)","CASD","TX1","LI",92037,"blood_type_o_allc2",51.587301587
+"560","University of California San Diego Medical Center (CASD)","CASD","TX1","LI",92037,"blood_type_unknown_allc2",0
+"561","University of California San Francisco Medical Center (CASF)","CASF","TX1","LI",94118,"blood_type_ab_allc2",3.0837004405
+"562","University of California San Francisco Medical Center (CASF)","CASF","TX1","LI",94118,"blood_type_a_allc2",35.682819383
+"563","University of California San Francisco Medical Center (CASF)","CASF","TX1","LI",94118,"blood_type_b_allc2",12.187958884
+"564","University of California San Francisco Medical Center (CASF)","CASF","TX1","LI",94118,"blood_type_o_allc2",49.045521292
+"565","University of California San Francisco Medical Center (CASF)","CASF","TX1","LI",94118,"blood_type_unknown_allc2",0
+"566","University of Chicago Medical Center (ILUC)","ILUC","TX1","LI",60637,"blood_type_ab_allc2",0
+"567","University of Chicago Medical Center (ILUC)","ILUC","TX1","LI",60637,"blood_type_a_allc2",60
+"568","University of Chicago Medical Center (ILUC)","ILUC","TX1","LI",60637,"blood_type_b_allc2",8.5714285714
+"569","University of Chicago Medical Center (ILUC)","ILUC","TX1","LI",60637,"blood_type_o_allc2",31.428571429
+"570","University of Chicago Medical Center (ILUC)","ILUC","TX1","LI",60637,"blood_type_unknown_allc2",0
+"571","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1","LI",45229,"blood_type_ab_allc2",3.4013605442
+"572","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1","LI",45229,"blood_type_a_allc2",40.816326531
+"573","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1","LI",45229,"blood_type_b_allc2",9.5238095238
+"574","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1","LI",45229,"blood_type_o_allc2",46.258503401
+"575","University of Cincinnati  Medical Center (OHUC)","OHUC","TX1","LI",45229,"blood_type_unknown_allc2",0
+"576","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1","LI",80045,"blood_type_ab_allc2",2.7972027972
+"577","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1","LI",80045,"blood_type_a_allc2",30.769230769
+"578","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1","LI",80045,"blood_type_b_allc2",9.7902097902
+"579","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1","LI",80045,"blood_type_o_allc2",56.643356643
+"580","University of Colorado Hospital/Health Science Center (COUC)","COUC","TX1","LI",80045,"blood_type_unknown_allc2",0
+"581","University of Illinois Medical Center (ILUI)","ILUI","TX1","LI",60612,"blood_type_ab_allc2",2.5974025974
+"582","University of Illinois Medical Center (ILUI)","ILUI","TX1","LI",60612,"blood_type_a_allc2",41.558441558
+"583","University of Illinois Medical Center (ILUI)","ILUI","TX1","LI",60612,"blood_type_b_allc2",6.4935064935
+"584","University of Illinois Medical Center (ILUI)","ILUI","TX1","LI",60612,"blood_type_o_allc2",49.350649351
+"585","University of Illinois Medical Center (ILUI)","ILUI","TX1","LI",60612,"blood_type_unknown_allc2",0
+"586","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1","LI",52242,"blood_type_ab_allc2",0
+"587","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1","LI",52242,"blood_type_a_allc2",41.176470588
+"588","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1","LI",52242,"blood_type_b_allc2",17.647058824
+"589","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1","LI",52242,"blood_type_o_allc2",41.176470588
+"590","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","IAIV","TX1","LI",52242,"blood_type_unknown_allc2",0
+"591","University of Kansas Hospital (KSUK)","KSUK","TX1","LI",66103,"blood_type_ab_allc2",0.9900990099
+"592","University of Kansas Hospital (KSUK)","KSUK","TX1","LI",66103,"blood_type_a_allc2",55.445544554
+"593","University of Kansas Hospital (KSUK)","KSUK","TX1","LI",66103,"blood_type_b_allc2",8.9108910891
+"594","University of Kansas Hospital (KSUK)","KSUK","TX1","LI",66103,"blood_type_o_allc2",34.653465347
+"595","University of Kansas Hospital (KSUK)","KSUK","TX1","LI",66103,"blood_type_unknown_allc2",0
+"596","University of Kentucky Medical Center (KYUK)","KYUK","TX1","LI",40536,"blood_type_ab_allc2",1.6666666667
+"597","University of Kentucky Medical Center (KYUK)","KYUK","TX1","LI",40536,"blood_type_a_allc2",47.5
+"598","University of Kentucky Medical Center (KYUK)","KYUK","TX1","LI",40536,"blood_type_b_allc2",5.8333333333
+"599","University of Kentucky Medical Center (KYUK)","KYUK","TX1","LI",40536,"blood_type_o_allc2",45
+"600","University of Kentucky Medical Center (KYUK)","KYUK","TX1","LI",40536,"blood_type_unknown_allc2",0
+"601","University of Maryland Medical System (MDUM)","MDUM","TX1","LI",21201,"blood_type_ab_allc2",2.9569892473
+"602","University of Maryland Medical System (MDUM)","MDUM","TX1","LI",21201,"blood_type_a_allc2",35.752688172
+"603","University of Maryland Medical System (MDUM)","MDUM","TX1","LI",21201,"blood_type_b_allc2",15.591397849
+"604","University of Maryland Medical System (MDUM)","MDUM","TX1","LI",21201,"blood_type_o_allc2",45.698924731
+"605","University of Maryland Medical System (MDUM)","MDUM","TX1","LI",21201,"blood_type_unknown_allc2",0
+"606","University of Michigan Medical Center (MIUM)","MIUM","TX1","LI",48109,"blood_type_ab_allc2",0.8403361345
+"607","University of Michigan Medical Center (MIUM)","MIUM","TX1","LI",48109,"blood_type_a_allc2",45.378151261
+"608","University of Michigan Medical Center (MIUM)","MIUM","TX1","LI",48109,"blood_type_b_allc2",6.7226890756
+"609","University of Michigan Medical Center (MIUM)","MIUM","TX1","LI",48109,"blood_type_o_allc2",47.058823529
+"610","University of Michigan Medical Center (MIUM)","MIUM","TX1","LI",48109,"blood_type_unknown_allc2",0
+"611","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1","LI",55454,"blood_type_ab_allc2",1.0752688172
+"612","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1","LI",55454,"blood_type_a_allc2",46.23655914
+"613","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1","LI",55454,"blood_type_b_allc2",10.752688172
+"614","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1","LI",55454,"blood_type_o_allc2",41.935483871
+"615","University of Minnesota Medical Center, Fairview (MNUM)","MNUM","TX1","LI",55454,"blood_type_unknown_allc2",0
+"616","University of Mississippi Medical Center (MSUM)","MSUM","TX1","LI",39216,"blood_type_ab_allc2",0
+"617","University of Mississippi Medical Center (MSUM)","MSUM","TX1","LI",39216,"blood_type_a_allc2",33.333333333
+"618","University of Mississippi Medical Center (MSUM)","MSUM","TX1","LI",39216,"blood_type_b_allc2",4.1666666667
+"619","University of Mississippi Medical Center (MSUM)","MSUM","TX1","LI",39216,"blood_type_o_allc2",62.5
+"620","University of Mississippi Medical Center (MSUM)","MSUM","TX1","LI",39216,"blood_type_unknown_allc2",0
+"621","University of North Carolina Hospitals (NCMH)","NCMH","TX1","LI",27514,"blood_type_ab_allc2",6.0606060606
+"622","University of North Carolina Hospitals (NCMH)","NCMH","TX1","LI",27514,"blood_type_a_allc2",48.484848485
+"623","University of North Carolina Hospitals (NCMH)","NCMH","TX1","LI",27514,"blood_type_b_allc2",3.0303030303
+"624","University of North Carolina Hospitals (NCMH)","NCMH","TX1","LI",27514,"blood_type_o_allc2",42.424242424
+"625","University of North Carolina Hospitals (NCMH)","NCMH","TX1","LI",27514,"blood_type_unknown_allc2",0
+"626","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1","LI",15213,"blood_type_ab_allc2",0.7936507937
+"627","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1","LI",15213,"blood_type_a_allc2",35.714285714
+"628","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1","LI",15213,"blood_type_b_allc2",8.7301587302
+"629","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1","LI",15213,"blood_type_o_allc2",54.761904762
+"630","University of Pittsburgh Medical Center (PAPT)","PAPT","TX1","LI",15213,"blood_type_unknown_allc2",0
+"631","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1","LI",77555,"blood_type_ab_allc2",5.1724137931
+"632","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1","LI",77555,"blood_type_a_allc2",34.482758621
+"633","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1","LI",77555,"blood_type_b_allc2",10.344827586
+"634","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1","LI",77555,"blood_type_o_allc2",50
+"635","University of Texas Medical Branch at Galveston (TXJS)","TXJS","TX1","LI",77555,"blood_type_unknown_allc2",0
+"636","University of Utah Medical Center (UTMC)","UTMC","TX1","LI",84132,"blood_type_ab_allc2",0
+"637","University of Utah Medical Center (UTMC)","UTMC","TX1","LI",84132,"blood_type_a_allc2",43.75
+"638","University of Utah Medical Center (UTMC)","UTMC","TX1","LI",84132,"blood_type_b_allc2",6.25
+"639","University of Utah Medical Center (UTMC)","UTMC","TX1","LI",84132,"blood_type_o_allc2",50
+"640","University of Utah Medical Center (UTMC)","UTMC","TX1","LI",84132,"blood_type_unknown_allc2",0
+"641","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1","LI",22908,"blood_type_ab_allc2",2.5
+"642","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1","LI",22908,"blood_type_a_allc2",36.25
+"643","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1","LI",22908,"blood_type_b_allc2",2.5
+"644","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1","LI",22908,"blood_type_o_allc2",58.75
+"645","University of Virginia Health Sciences Center (VAUV)","VAUV","TX1","LI",22908,"blood_type_unknown_allc2",0
+"646","University of Washington Medical Center (WAUW)","WAUW","TX1","LI",98195,"blood_type_ab_allc2",1.5625
+"647","University of Washington Medical Center (WAUW)","WAUW","TX1","LI",98195,"blood_type_a_allc2",39.0625
+"648","University of Washington Medical Center (WAUW)","WAUW","TX1","LI",98195,"blood_type_b_allc2",7.8125
+"649","University of Washington Medical Center (WAUW)","WAUW","TX1","LI",98195,"blood_type_o_allc2",51.5625
+"650","University of Washington Medical Center (WAUW)","WAUW","TX1","LI",98195,"blood_type_unknown_allc2",0
+"651","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1","LI",53792,"blood_type_ab_allc2",2.7272727273
+"652","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1","LI",53792,"blood_type_a_allc2",47.272727273
+"653","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1","LI",53792,"blood_type_b_allc2",10
+"654","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1","LI",53792,"blood_type_o_allc2",40
+"655","University of Wisconsin Hospital and Clinics (WIUW)","WIUW","TX1","LI",53792,"blood_type_unknown_allc2",0
+"656","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1","LI",15224,"blood_type_ab_allc2",5.8823529412
+"657","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1","LI",15224,"blood_type_a_allc2",23.529411765
+"658","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1","LI",15224,"blood_type_b_allc2",8.8235294118
+"659","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1","LI",15224,"blood_type_o_allc2",61.764705882
+"660","UPMC Children's Hospital of Pittsburgh (PACH)","PACH","TX1","LI",15224,"blood_type_unknown_allc2",0
+"661","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","LI",75390,"blood_type_ab_allc2",0.7936507937
+"662","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","LI",75390,"blood_type_a_allc2",37.301587302
+"663","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","LI",75390,"blood_type_b_allc2",8.7301587302
+"664","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","LI",75390,"blood_type_o_allc2",53.174603175
+"665","UT Southwestern Medical Center/ (TXSP)","TXSP","TX1","LI",75390,"blood_type_unknown_allc2",0
+"666","VA Pittsburgh Healthcare System (PAVA)","PAVA","TX1","LI",15240,"blood_type_ab_allc2",1.6393442623
+"667","VA Pittsburgh Healthcare System (PAVA)","PAVA","TX1","LI",15240,"blood_type_a_allc2",42.62295082
+"668","VA Pittsburgh Healthcare System (PAVA)","PAVA","TX1","LI",15240,"blood_type_b_allc2",14.754098361
+"669","VA Pittsburgh Healthcare System (PAVA)","PAVA","TX1","LI",15240,"blood_type_o_allc2",40.983606557
+"670","VA Pittsburgh Healthcare System (PAVA)","PAVA","TX1","LI",15240,"blood_type_unknown_allc2",0
+"671","VA Portland Health Care System (ORVA)","ORVA","TX1","LI",97239,"blood_type_ab_allc2",3.3333333333
+"672","VA Portland Health Care System (ORVA)","ORVA","TX1","LI",97239,"blood_type_a_allc2",53.333333333
+"673","VA Portland Health Care System (ORVA)","ORVA","TX1","LI",97239,"blood_type_b_allc2",0
+"674","VA Portland Health Care System (ORVA)","ORVA","TX1","LI",97239,"blood_type_o_allc2",43.333333333
+"675","VA Portland Health Care System (ORVA)","ORVA","TX1","LI",97239,"blood_type_unknown_allc2",0
+"676","Vanderbilt University Medical Center (TNVU)","TNVU","TX1","LI",37232,"blood_type_ab_allc2",0
+"677","Vanderbilt University Medical Center (TNVU)","TNVU","TX1","LI",37232,"blood_type_a_allc2",44.50867052
+"678","Vanderbilt University Medical Center (TNVU)","TNVU","TX1","LI",37232,"blood_type_b_allc2",5.7803468208
+"679","Vanderbilt University Medical Center (TNVU)","TNVU","TX1","LI",37232,"blood_type_o_allc2",49.710982659
+"680","Vanderbilt University Medical Center (TNVU)","TNVU","TX1","LI",37232,"blood_type_unknown_allc2",0
+"681","Westchester Medical Center (NYWC)","NYWC","TX1","LI",10595,"blood_type_ab_allc2",0.9615384615
+"682","Westchester Medical Center (NYWC)","NYWC","TX1","LI",10595,"blood_type_a_allc2",37.5
+"683","Westchester Medical Center (NYWC)","NYWC","TX1","LI",10595,"blood_type_b_allc2",15.384615385
+"684","Westchester Medical Center (NYWC)","NYWC","TX1","LI",10595,"blood_type_o_allc2",46.153846154
+"685","Westchester Medical Center (NYWC)","NYWC","TX1","LI",10595,"blood_type_unknown_allc2",0
+"686","William Beaumont Hospital (MIBH)","MIBH","TX1","LI",48073,"blood_type_ab_allc2",0
+"687","William Beaumont Hospital (MIBH)","MIBH","TX1","LI",48073,"blood_type_a_allc2",40
+"688","William Beaumont Hospital (MIBH)","MIBH","TX1","LI",48073,"blood_type_b_allc2",2.5
+"689","William Beaumont Hospital (MIBH)","MIBH","TX1","LI",48073,"blood_type_o_allc2",57.5
+"690","William Beaumont Hospital (MIBH)","MIBH","TX1","LI",48073,"blood_type_unknown_allc2",0
+"691","Willis-Knighton Medical Center (LAWK)","LAWK","TX1","LI",71103,"blood_type_ab_allc2",1.6949152542
+"692","Willis-Knighton Medical Center (LAWK)","LAWK","TX1","LI",71103,"blood_type_a_allc2",45.762711864
+"693","Willis-Knighton Medical Center (LAWK)","LAWK","TX1","LI",71103,"blood_type_b_allc2",6.7796610169
+"694","Willis-Knighton Medical Center (LAWK)","LAWK","TX1","LI",71103,"blood_type_o_allc2",45.762711864
+"695","Willis-Knighton Medical Center (LAWK)","LAWK","TX1","LI",71103,"blood_type_unknown_allc2",0
+"696","Yale New Haven Hospital (CTYN)","CTYN","TX1","LI",6510,"blood_type_ab_allc2",0.78125
+"697","Yale New Haven Hospital (CTYN)","CTYN","TX1","LI",6510,"blood_type_a_allc2",42.96875
+"698","Yale New Haven Hospital (CTYN)","CTYN","TX1","LI",6510,"blood_type_b_allc2",10.15625
+"699","Yale New Haven Hospital (CTYN)","CTYN","TX1","LI",6510,"blood_type_o_allc2",46.09375
+"700","Yale New Haven Hospital (CTYN)","CTYN","TX1","LI",6510,"blood_type_unknown_allc2",0

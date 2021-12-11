@@ -176,4 +176,3 @@ ldtx_demo = map(data_all_yrs, t7_function)
 wl_out = map(data_all_yrs, t8_function)
 
 ```
-
