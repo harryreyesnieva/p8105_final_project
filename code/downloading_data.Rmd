@@ -23,10 +23,9 @@ https://www.srtr.org/reports/program-specific-reports/
 # current year is available with kidney only data, but other years are in .zip
 
 # there was a change in how regions were assigned in 2017
+# archive_dates_17 = c("1711", "1808", "1811", "1905", "1911", "2006")
 
-archive_dates_17 = c("1711", "1808", "1811", "1905", "1911", "2006")
-
-# archive_dates = c("1207", "1301", "1307", "1401", "1406", "1412", "1506", "1512", "1606", "1701", "1707", "1711", "1808", "1811", "1905", "1911", "2006")
+archive_dates = c("1207", "1301", "1307", "1401", "1406", "1412", "1506", "1512", "1606", "1701", "1707", "1711", "1808", "1811", "1905", "1911", "2006")
 
 current_file_date = "2105"
 
@@ -35,10 +34,10 @@ current_file_url = "https://www.srtr.org/assets/media/PSRdownloads/csrs_tables/c
 url_base = "https://www.srtr.org/assets/media/PSRdownloads/csrs_tables_all/csrs_final_tables_"
 
 # replace with archive_dates to get all years
-vec_urls = str_c(url_base, archive_dates_17, "all.zip")
+vec_urls = str_c(url_base, archive_dates, "all.zip")
 
 vec_dates = list(
-  date = archive_dates_17,
+  date = archive_dates,
   url = vec_urls
 )
 ```
@@ -49,7 +48,10 @@ Download the most recent data and save it to /data folder:
 
 current_file_path = "../data/csrs_final_tables_2105_KI.xls"
 
-download.file(current_file_url, current_file_path, mode = "wb")
+if (!file.exists(current_file_path)) {
+  download.file(current_file_url, current_file_path, mode = "wb")
+}
+
 
 # Table B6 - SFL (survival from listing) is a unique table for the recent data
 # Removed from analysis because it cannot readily be compared over time
@@ -57,29 +59,32 @@ download.file(current_file_url, current_file_path, mode = "wb")
 # remove the second unnecessary descriptor line from each excel file
 
 clean_sheets = function(fpath, x) {
-  clean_sheet = readxl::read_xls(fpath, sheet = x)[-1,] %>%
-    janitor::clean_names() %>%
-    
+  clean_cols = array(readxl::read_xls(fpath, sheet = x, n_max = 1, col_names = FALSE))
+  
+  clean_sheet = readxl::read_xls(fpath, sheet = x, skip = 2, col_names = FALSE)
+  colnames(clean_sheet) = clean_cols
+  
+  clean_sheet %>%
+    janitor::clean_names("all_caps") %>%
+    rowwise() %>%
     mutate(ctr_id = ifelse(
-      "ctr_cd" %in% colnames(.), ctr_cd, center)) %>%
-      #paste(CTR_CD, CTR_TY, sep = ""), 
-      #center)) %>%
+      "ctr_cd" %in% colnames(.), 
+      paste(ctr_cd, ctr_ty, sep = ""), 
+      ifelse("center" %in% colnames(.), center, NA))) %>%
     select(ctr_id, everything())
   
   
-  extract(d1, date_created, c('month', 'day', 'year'),
-              '([^-]+)-([^-]+)-([^-]+)', remove=FALSE)
-  
+  # extract(d1, date_created, c('month', 'day', 'year'),
+  #             '([^-]+)-([^-]+)-([^-]+)', remove=FALSE)
+
   return(clean_sheet)
 }
 
 current_data = sapply(readxl::excel_sheets(current_file_path), 
                       simplify = F, 
                       USE.NAMES = T, 
-                      function (X) clean_sheets(current_file_path, X)) %>%
-  within(rm("Table B6 - SFL"))
-
-current_data[[1]]
+                      function (X) clean_sheets(current_file_path, X)) #%>%
+  #within(rm("Table B6 - SFL"))
 
 ```
 
@@ -88,6 +93,17 @@ Function to download archived files:
 ```{r download_archives}
 
 download_archived_data = function(url) {
+  
+  data_path = "../data/"
+  ki_file_pattern = "csrs_final_tables[_1-9]*KI\.[xX][lL][sS]"
+  
+  grepl(paste(file.path(data_path, ki_file_pattern)))
+  
+  if (!file.exists(current_file_path)) {
+    download.file(current_file_url, current_file_path, mode = "wb")
+  }
+#Search for pattern in directories:
+grepl(paste(file.path(path_root, variable), collapse = "|"), list.dirs(path_root, full.names = TRUE, recursive = FALSE))
   
   # to save to temp folder instead of download, use temp
   temp = tempfile()
@@ -105,7 +121,7 @@ download_archived_data = function(url) {
   
   
   unlink(temp)
-  move_files(ki_filepath, "../data/")
+  move_files(ki_filepath, "../data/", overwrite = TRUE)
   
   return(ki_data)
 }
@@ -128,6 +144,8 @@ names(data_all_yrs) = str_c("data_", name_labels)
 
 ``` {r}
 
+subset_test2 = data_all_yrs[c(1,4,10,length(data_all_yrs))]
+
 subset_test = current_data[c(1,4,5,length(current_data))]
 
 #map(.x = subset_test[everything])
@@ -142,7 +160,6 @@ subset_test
 ```
 Now check to see if the column names are the same across sheets and years
 
-<<<<<<< HEAD
 ```{r}
 
 # for each sheet in each file
@@ -264,9 +281,16 @@ Selecting only data of interest
 
 ```{r}
 
+id_cols = c("CTR_ID", "CTR_CD", "RELEASE_DATE")
+
+waitlist_cols = c("WLA_ADDCEN_NC2", "WLA_ST_NC2", "WLA_END_NC2", "WLA_REMTXC_NC2", "WLA_REMTXL_NC2", "WLA_REMTXC_PCZ", "WLA_REMTXL_PCZ", "WLA_REMDIED_PCZ", "WLA_REMDET_PCZ")
+
+# CTR_CD, WLA_ADDCEN_NC2, WLA_ST_NC2, WLA_END_NC2, WLA_REMTXC_NC2, WLA_REMTXL_NC2, WLA_REMTXC_PCZ, WLA_REMTXL_PCZ, WLA_REMDIED_PCZ, WLA_REMDET_PCZ
+
+
 t1_function = function(df) {
   tbl1 = as_tibble(df[[1]]) %>% 
-    select(1, CTR_CD, WLA_ADDCEN_NC2, WLA_ST_NC2, WLA_END_NC2, WLA_REMTXC_NC2, WLA_REMTXL_NC2, WLA_REMTXC_PCZ, WLA_REMTXL_PCZ, WLA_REMDIED_PCZ, WLA_REMDET_PCZ)
+    select(1, any_of(id_cols), all_of(waitlist_cols))
   tbl1
 }
 
@@ -301,7 +325,13 @@ t4_function = function(df) {
   tbl4
 }
 
-wl_tx_counts = map(data_all_yrs, t1_function)
+
+
+wl_tx_counts = map(subset_test2, t1_function)
+
+  
+
+
 wl_demo = map(data_all_yrs, t2_function)
 tx_out = map(data_all_yrs, t3_function)
 ctr_oar = map(data_all_yrs, t4_function)
