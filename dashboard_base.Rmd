@@ -481,9 +481,7 @@ valueBox(value = paste(format(avg_white, big.mark = ","), "%", sep = " "),
 Column {.tabset}
 -------------------------------------
 
-### Age Group by Zip Code and Organ Type
-
-Scatter plots of age by zipcode, with a facet wrap by organ type.
+### Age group by zip code and organ type
 
 ```{r age_by_zip, warning=FALSE}
 phrase = "SRTR Multiorgan Transplant Data, August 2020 Release"
@@ -493,8 +491,8 @@ plot =
   ggplot(aes(x = zipcode, y = age_category_percent, color = age_category)) + 
   geom_point() + 
   labs(
-      # title = "Patient Age Groups by Zipcode",
-      #  subtitle = phrase,
+    # title = "Patient Age Groups by Zipcode",
+    #    subtitle = phrase,
        x = "Zipcode",
        y = "Age Group (Percent)",
        color = "Age Group") + 
@@ -506,16 +504,13 @@ plot =
                              "65 to 69 Years", "More Than 70 Years")) + 
   facet_wrap(~org)
 
-fig <- ggplotly(plot) %>% layout(legend = list(orientation = 'h'))
+fig <- ggplotly(plot) 
 fig
 ```
 
-### Gender by Zip Code and Organ Type
-
-Scatter plots of gender by zipcode, with a facet wrap by organ type.
+### Gender by zip code and organ type
 
 ```{r gender_by_zip, warning=FALSE}
-
 plot = 
   df_all_gender %>% 
   ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + 
@@ -531,13 +526,11 @@ plot =
   scale_color_hue(labels = c("Female", "Male")) + 
   facet_wrap(~org)
 
-fig <- ggplotly(plot) %>% layout(legend = list(orientation = 'h'))
+fig <- ggplotly(plot) 
 fig
 ```
 
-### Race/Ethnicity by Zip Code and Organ Type
-
-Scatter plots of race by zipcode, with a facet wrap by organ type.
+### Race/ethnicity by zip code and organ type
 
 ```{r race_by_zip, warning=FALSE}
 plot = 
@@ -556,14 +549,11 @@ plot =
   theme(axis.text.x=element_text(angle=90, hjust=1)) + 
   facet_wrap(~org)
 
-
-fig <- ggplotly(plot) %>% layout(legend = list(orientation = 'h'))
+fig <- ggplotly(plot) 
 fig
 ```
 
-### Blood Type by Zip Code and Organ Type
-
-Scatter plots of blood type by zipcode, with a facet wrap by organ type.
+### Blood type by zip code and organ type
 
 ```{r bloodtype_by_zip, warning=FALSE}
 plot = 
@@ -580,7 +570,7 @@ plot =
   theme(axis.text.x=element_text(angle=90, hjust=1)) + 
   facet_wrap(~org)
 
-fig <- ggplotly(plot) %>% layout(legend = list(orientation = 'h'))
+fig <- ggplotly(plot) 
 fig
 ```
 
@@ -591,13 +581,13 @@ Organ Offer Acceptance Practices {data-icon="ion-medkit"}
 Column {.tabset}
 -------------------------------------
 
-### Offer acceptance over time, by region
+### Offer acceptance over time by region
 
 <!-- We plotted offer/acceptance ratios (O/A) over time at all centers, organized by the 11 OPTN regions. This data was not available prior to 2017. The offer/acceptance ratio is calculated based on offer/acceptance ratios for all centers in the country. A value > 1 indicates that a center is more likely to accept an organ compared to other centers in the country. -->
 
 <!-- Transplant centers missing O/A information were excluded from the plots below. Generally speaking, O/A ratios have remained stable over time across regions, although the large amount of data makes it difficult to compare in this context. -->
 
-Change in offer acceptance hazard ratios over time, by region
+<!-- Change in offer acceptance hazard ratios over time, by region -->
 
 ```{r OA_over_time, warning = FALSE}
 oa_v_time = all_data %>%
@@ -611,14 +601,13 @@ oa_v_time = all_data %>%
   facet_wrap(~REGION,) + 
   labs(y = "Offer Acceptance Ratios \n(compared to National O/A)", 
        x = "Year",
-       title = "Offer Acceptance Ratios over Time, by OPTN Region")
+       title = "Offer Acceptance Ratios over Time by OPTN Region")
 
-
-fig <- ggplotly(oa_v_time) %>% layout(legend = list(orientation = 'h'))
+fig <- ggplotly(oa_v_time) 
 fig
 ```
 
-### Offer acceptance over time, by state
+### Offer acceptance over time by state
 
 <!-- For NY specific transplant centers, we can see that only 4 transplant centers had O/As < 1. NYU Medical Center (NYUCTX1) had a large increase in its O/A in the last year, while SUNY Upstate (NYUMTX1) has had a gradual decline in its O/A since 2017.  -->
 
@@ -632,10 +621,10 @@ ny_oa_v_time =
   geom_path() + 
   labs(y = "Offer Acceptance Ratios \n(compared to National O/A)", 
        x = "Year",
-       title = "Offer Acceptance Ratios over Time, in NY State",
+       title = "Offer Acceptance Ratios over Time in NY State",
        colors = "Center ID")
 
-fig <- ggplotly(ny_oa_v_time) %>% layout(legend = list(orientation = 'h'))
+fig <- ggplotly(ny_oa_v_time) 
 fig
 ```
 
@@ -647,9 +636,10 @@ Time to Transplant {data-icon="ion-ios-timer"}
 Column  {.tabset}
 -------------------------------------
 
-### Median Time to Transplant 
+### Median time to transplant (months) in NY state
 
 ``` {r ttt_v_time}
+
 ttt_cols = c("TTT_25_C", "TTT_50_C", "TTT_75_C")
 ttt_v_time = all_data %>%
   filter(!is.na(TTT_50_C) & !is.na(OA_OVERALL_HR_MN_CENTER) & PRIMARY_STATE == "NY") %>%
@@ -660,13 +650,13 @@ ttt_v_time = all_data %>%
   geom_line() + 
   labs(y = "Median Time to Transplant (months)", 
        x = "Year",
-       title = "Median Time to Transplant (months) in NY State",
+       # title = "Median Time to Transplant (months) in NY State",
        colors = "Center ID") +
   theme(legend.position = "right") + 
   guides(color = guide_legend(ncol = 1))
   #facet_wrap( ~ as.Date(REPORT_DATE), scales = 'free')
 
-fig <- ggplotly(ttt_v_time) %>% layout(legend = list(orientation = 'h'))
+fig <- ggplotly(ttt_v_time) 
 fig
 ```
 
@@ -676,7 +666,7 @@ Transplant Rate vs. O/A Ratios over Time {data-icon="ion-stats-bars"}
 Column  {.tabset}
 -------------------------------------
 
-### Transplant Rate vs. O/A Ratios Over Time by State 
+### Transplant rate vs. O/A ratios over time by state 
 
 <!-- When looked at as a whole over time, we might infer that since 2019, the transplant rate has increased with decreasing O/As over time, indicated by the relatively increasing slope of a best-fit line across centers. However, this inference is not well supported-- this method is very sensitive to outliers given the small sample size. -->
 
@@ -695,7 +685,7 @@ txrate_v_oa_v_time = all_data %>%
     colors = "Center ID"
   )
 
-fig <- ggplotly(txrate_v_oa_v_time) %>% layout(legend = list(orientation = 'h'))
+fig <- ggplotly(txrate_v_oa_v_time)
 fig
 ```
 
