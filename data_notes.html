@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Data Notes</title>
+
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Overview</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="dashboard.html">Dashboard</a>
+</li>
+<li>
+  <a href="data_repository.html">Data Repository</a>
+</li>
+<li>
+  <a href="proposal.html">Proposal</a>
+</li>
+<li>
+  <a href="final_report.html">Project Report</a>
+</li>
+<li>
+  <a href="https://github.com/harryreyesnieva/p8105_final_project">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Data Notes</h1>
+
+</div>
+
+
+<div id="variables-for-viz" class="section level1">
+<h1>Variables for viz</h1>
+<p><em>unique identifiers</em>:</p>
+<p>CTR_ID, REPORT_DATE</p>
+<p><em>Offer/acceptance hazard ratio</em> (center compared to center, &gt;1 is more offers than acceptances compared to ALL centers in the country for that year)</p>
+<p>OA_OVERALL_HR_MN_CENTER</p>
+<p><em>For stratified KDRIs:</em> OA_LOWRISK_HR_MN_CENTER OA_MEDIUMRISK_HR_MN_CENTER OA_HIGHRISK_HR_MN_CENTER OA_HARDTOPLACE100_HR_MN_CENTER</p>
+<p><em>For map:</em> TMR_TXR_C2 | transplant rate sum(WLA_REMTXC_NC2 + WLA_REMTXL_NC2) | Total number of transplants in 1y(deceased and living donor, respectively) PRIMARY_ZIP | center zip code</p>
+<p><em>if you need to add more info like lat/long, use the zipRadius package, input the zip code, extract the lat/long</em></p>
+</div>
+<div id="question-1" class="section level1">
+<h1>Question 1:</h1>
+<div id="what-the-data-includes" class="section level2">
+<h2>What the data includes</h2>
+<ul>
+<li>comparison of one program to the region and to the country</li>
+</ul>
+</div>
+<div id="gap-in-info-available" class="section level2">
+<h2>GAP IN INFO AVAILABLE:</h2>
+<ul>
+<li>does not show one program to another single program</li>
+<li>does not show trends in data necessarily except in individual reports (PDF)</li>
+</ul>
+</div>
+<div id="how-do-centers-vary-by-geography" class="section level2">
+<h2>How do centers vary by geography:</h2>
+<ul>
+<li>offer acceptance ratios</li>
+<li>who gets added/death while on waitlist</li>
+<li>association btwn willingness to accept high-risk pts (e.g., based on kidney donor risk index, donor creatinine, hep C status) and time to transplant?</li>
+</ul>
+</div>
+</div>
+<div id="question-2" class="section level1">
+<h1>Question 2:</h1>
+<ul>
+<li>Have centers changed their practices over time? Use years 11/2017 - present</li>
+</ul>
+</div>
+<div id="question-3" class="section level1">
+<h1>Question 3:</h1>
+<ul>
+<li>What center-related features are associated with higher/riskier offer acceptance ratios?</li>
+</ul>
+</div>
+<div id="potential-visualizations" class="section level1">
+<h1>Potential Visualizations</h1>
+<div id="plots" class="section level2">
+<h2>Plots</h2>
+<ol style="list-style-type: decimal">
+<li>characteristics of waiting list candidates at center level</li>
+<li>characteristics of transplant recipients at center level</li>
+<li>scatterplot of high-risk offer acceptance ratios (? clarify a cut off for high risk) and transplant volume at multi-center level</li>
+<li>Forest plots of hazard ratios?</li>
+</ol>
+</div>
+<div id="interactivity" class="section level2">
+<h2>Interactivity:</h2>
+<ul>
+<li>add centers into graph based on geographic proximity</li>
+<li>add centers into graph based on ?? academic institution?</li>
+</ul>
+</div>
+<div id="selectors" class="section level2">
+<h2>Selectors</h2>
+<ul>
+<li>center(s)</li>
+<li>zip code radius</li>
+<li>?organ</li>
+<li>?time span (years)</li>
+</ul>
+</div>
+<div id="comparisons" class="section level2">
+<h2>Comparisons</h2>
+<p>Show comparisons between different regions (have a slider for mile radius perhaps based on zipcode?) - use ZipRadius package <a href="https://cran.r-project.org/web/packages/ZipRadius/vignettes/ZipRadius.html" class="uri">https://cran.r-project.org/web/packages/ZipRadius/vignettes/ZipRadius.html</a></p>
+</div>
+<div id="dashboard-layout" class="section level2">
+<h2>Dashboard Layout</h2>
+<p>? Dashboard like this with multiple centers: <a href="https://www.srtr.org/transplant-centers/ny-presbyterian-hospitalcolumbia-univ-medical-center-nycp/?organ=kidney&amp;recipientType=adult" class="uri">https://www.srtr.org/transplant-centers/ny-presbyterian-hospitalcolumbia-univ-medical-center-nycp/?organ=kidney&amp;recipientType=adult</a></p>
+</div>
+</div>
+<div id="data-inclusion" class="section level1">
+<h1>Data inclusion</h1>
+<div id="center-level-details" class="section level2">
+<h2>Center Level Details</h2>
+<p>Consider including only this info for each center:</p>
+<ul>
+<li>number of additions/period</li>
+<li>Number of adults vs. peds</li>
+<li>Ages %</li>
+<li>Genders %</li>
+<li>Race/Ethnicity %</li>
+<li>Blood types %</li>
+<li>Primary disease %</li>
+<li>Previous transplant %</li>
+<li>Average time of wait list</li>
+<li>Deceased vs. living donor %</li>
+<li>Number of people who die wait list %</li>
+<li>Survival on wait list (Graft vs. whole human)</li>
+<li>HR for 1m, 1y, 3y (compared to national)</li>
+</ul>
+</div>
+</div>
+<div id="potential-data-needed" class="section level1">
+<h1>Potential data needed?:</h1>
+<ul>
+<li>zip code of center (Tiers sheet in each file or from Matt zipcodes.xlsx)</li>
+<li>organ risk scores (KDRI)</li>
+<li>donor risk score</li>
+<li>waiting list length</li>
+<li>average duration of time on wait list</li>
+<li>average age of transplant recipients who died</li>
+<li>average age of transplant recipients who lived</li>
+<li>most common comorbidity?</li>
+<li>offer acceptance ratio over time</li>
+</ul>
+</div>
+<div id="explanations-of-data-avaialable-via-download" class="section level1">
+<h1>Explanations of data avaialable via download</h1>
+<p>Tables B* are waiting list info Tables C* are transplant info Table D1 is follow-up rates for living DONORS</p>
+<p>Suffixes: - L == living - D == deceased</p>
+<div id="proposed-levels-of-analysis" class="section level2">
+<h2>Proposed levels of analysis</h2>
+<ul>
+<li>program</li>
+<li>miles radius/city</li>
+<li>region</li>
+<li>national</li>
+</ul>
+</div>
+<div id="regions-from-optn" class="section level2">
+<h2>REGIONS FROM OPTN</h2>
+<div class="figure">
+<img src="data/regions_OPTN.png" alt="" />
+<p class="caption">OPTN regions</p>
+</div>
+<p>Region 1: Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, Eastern Vermont</p>
+<p>Region 2: Delaware, District of Columbia, Maryland, New Jersey, Pennsylvania, West Virginia, Northern Virginia</p>
+<p>Region 3: Alabama, Arkansas, Florida, Georgia, Louisiana, Mississippi, Puerto Rico</p>
+<p>Region 4: Oklahoma, Texas</p>
+<p>Region 5: Arizona, California, Nevada, New Mexico, Utah</p>
+<p>Region 6: Alaska, Hawaii, Idaho, Montana, Oregon, Washington</p>
+<p>Region 7: Illinois, Minnesota, North Dakota, South Dakota, Wisconsin</p>
+<p>Region 8: Colorado, Iowa, Kansas, Missouri, Nebraska, Wyoming</p>
+<p>Region 9: New York, Western Vermont</p>
+<p>Region 10: Indiana, Michigan, Ohio</p>
+<p>Region 11: Kentucky, North Carolina, South Carolina, Tennessee, Virginia</p>
+</div>
+<div id="plan-to-grab-data" class="section level2">
+<h2>Plan to grab data</h2>
+<pre class="r"><code># for file in data file aka year
+# read in csv spec sheets
+# pull in the zip code data
+# pull in the OPTN region data
+# mutate and make tidy, one var per column</code></pre>
+<p>Table combining the following: - Center info - Center zip code (from Tiers) - Center region (from OPTN data) - Center rank (from Tiers)</p>
+<div id="sheets-to-combine" class="section level3">
+<h3>Sheets to combine?</h3>
+<ul>
+<li>combine B1-B3</li>
+<li>combine B4-B7</li>
+<li>combine B8-B10</li>
+</ul>
+</div>
+<div id="consider-including-some-of-the-following" class="section level3">
+<h3>Consider including some of the following:</h3>
+<ul>
+<li><p>Table B1: waiting list activity summary</p></li>
+<li><p>Table B2: demographic characteristics (new for year and all) (ethnicity, age, gender)</p></li>
+<li><p>Table B3: medical characteristics (new for year and all) (blood type, prev transplant, initical CPRA, primary disease)</p></li>
+<li><p>Table B4: transplant rates: count at start of year, person years, removal for transplant, divided into all, adult, and peds, observed vs. expected</p></li>
+<li><p>Table B5: pre transplant mortality rates</p></li>
+<li><p>Table B6: rates of patient mortality AFTER listing (exclude B6 - SFL for 2021)</p></li>
+<li><p>Table B7: wait list status post listing</p></li>
+<li><p>Table B8: percent of candidates with decreased donor transplants, demographics (percent transplanted at a specific time since listing - 30d, 1y, 2y, 3y)</p></li>
+<li><p>Table B9: medical charactersitics of above</p></li>
+<li><p>Table B10: time to transplant for waiting list percentiles (months): 5th, 10th, 25th, 50th, 75th</p></li>
+<li><p>Table B11: OFFER ACCEPTANCE PRACTICES – overall (KDRI = kidney donor risk index) – low KDRI donors (KDRI &lt;1.05) – medium 1.05 - 1.75 – high &gt;1.75 – hard to place kidneys (over 100 offers)</p></li>
+<li><p>Table C1: transplant recipient demographics (ethnicity, age, gender)</p></li>
+<li><p>Table C2: transplant recipient medical characteristics (blood type, prev transplant, peak PRA/CPRA prior to transplant, BMI, primary disease)</p></li>
+<li><p>Table C3: donor characteristics (ethnicity, age, gender, blood type), cause of death for deceased</p></li>
+<li><p>Table C5: adult 1m GRAFT survival</p></li>
+<li><p>Table C6: adult 1y GRAFT survival</p></li>
+<li><p>Table C7: adult 3y GRAFT survival</p></li>
+<li><p>Table C8: pediatric 1m GRAFT survival</p></li>
+<li><p>Table C9: pediatric 1y GRAFT survival</p></li>
+<li><p>Table C10: pediatric 3y GRAFT survival</p></li>
+<li><p>Tables C11: adult 1m patient survival after FIRST transplant</p></li>
+<li><p>Tables C12: adult 1y patient survival after FIRST transplant</p></li>
+<li><p>Tables C13: adult 3y patient survival after FIRST transplant</p></li>
+<li><p>Tables C14: pediatric 1 month patient survival after FIRST transplant</p></li>
+<li><p>Tables C15: pediatric 1 yr patient survival after FIRST transplant</p></li>
+<li><p>Tables C16: pediatric 3y patient survival after FIRST transplant (D) deceased donor, (L) living donor</p></li>
+</ul>
+<p><strong>KDRI definition</strong> (<a href="https://optn.transplant.hrsa.gov/media/1512/guide_to_calculating_interpreting_kdpi.pdf" class="uri">https://optn.transplant.hrsa.gov/media/1512/guide_to_calculating_interpreting_kdpi.pdf</a>): The Kidney Donor Profle Index (KDPI) is a numerical measure that combines ten donor factors, including clinical parameters and demographics, to summarize into a single number the quality of deceased donor kidneys relative to other recovered kidneys. The KDPI is derived by frst calculating the Kidney Donor Risk Index (KDRI) for a deceased donor. Kidneys from a donor with a KDPI of 90%, for example, have a KDRI (which indicates relative risk of graft failure) greater than 90% of recovered kidneys. The KDPI is simply a mapping of the KDRI from a relative risk scale to a cumulative percentage scale. The reference population used for this mapping is all deceased donors in the United States with a kidney recovered for the purpose of transplantation in the prior calendar year. Lower KDPI values are associated with increased donor quality and expected longevity.</p>
+</div>
+<div id="consider-excluding" class="section level3">
+<h3>Consider EXCLUDING:</h3>
+<ul>
+<li>Table B6 - SFL (unique to 2021 data?)</li>
+<li>Table C4: transplant characteristics (ischemic time, mismatch, relation)</li>
+<li>Tables C17-18: Multi-organ transplant graft survival / Multi-organ transplant patient survival</li>
+<li>Table D1: Living donor summary</li>
+</ul>
+</div>
+</div>
+</div>
+
+<br><br>
+<footer>
+<p class="copyright text-muted" align="center">2021 Copyright &copy;</br>
+Columbia University Irving Medical Center</br>
+        Department of Biomedical Informatics</br>
+        622 West 168th Street, PH20</br>
+        New York, NY 10032</p>
+        
+<script type="text/javascript" src="links.js"></script>
+</footer>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

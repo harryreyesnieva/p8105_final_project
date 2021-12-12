@@ -418,7 +418,7 @@ for (var_group in names(var_groups)) {
 
 all_data_df %>%
   unnest(WITHIN_RADIUS) %>%
-  write_excel_csv(file = "../data/all_KI_data.xls")
+  write_excel_csv(file = "../data/all_KI_data.csv")
   
 ```
 
