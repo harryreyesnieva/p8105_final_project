@@ -389,7 +389,7 @@ names(dz_grps) = dz_pats
 demographic_props = all_data %>%
   filter(year(REPORT_DATE) == 2021) %>%
   select(CTR_ID, REGION, REPORT_DATE, PRIMARY_STATE, any_of(demo_cols)) %>%
-  pivot_longer(cols = demo_cols, names_to = c("CATEGORY"), values_to = c("CATEGORY_PROP")) %>%
+  pivot_longer(cols = all_of(demo_cols), names_to = c("CATEGORY"), values_to = c("CATEGORY_PROP")) %>%
   mutate(ORG_TYPE = 
            as.factor(ifelse(str_sub(CATEGORY,1,3) == "WLC", "waitlist", 
                             ifelse(substr(CATEGORY, 3,3) == "L", "living", "deceased"))),
