@@ -1,5 +1,5 @@
 ---
-title: "SRTR Dashboard"
+title: "KTC Comparison Dashboard"
 
 output: 
   flexdashboard::flex_dashboard:

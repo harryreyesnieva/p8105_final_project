@@ -20,19 +20,19 @@ Our team comprises several members of the [Department of Biomedical Informatics]
 
 #### Kristen King   
 <img src="./img/King_Kristin.jpeg" alt="Avatar" class="avatar">   
-Kristen is a 2nd-year MA student in the Department of Biomedical Informatics and Data Analyst in the Division of Nephrology.
+Kristen is a 2nd-year MA student in the Department of Biomedical Informatics and Data Analyst in the Division of Nephrology at Columbia University.
 
 #### Harry Reyes  
 <img src="./img/Reyes_Harry.png" alt="Avatar" class="avatar">    
-Harry is a PhD student in the Department of Biomedical Informatics.
+Harry is a PhD student in the Department of Biomedical Informatics at Columbia University and a visiting postgraduate research fellow at Harvard Medical School.
 
 #### Lauren Richter
 <img src="./img/Richter_Lauren.jpeg" alt="Avatar" class="avatar">   
-Lauren is a post-doctoral research fellow in the Department of Biomedical Informatics. 
+Lauren is a physician and post-doctoral research fellow in the Department of Biomedical Informatics at Columbia University. 
 
 #### Matthew Spotnitz
 <img src="./img/Spotnitz_Matthew.jpeg" alt="Avatar" class="avatar">   
-Matt is a post-doctoral research fellow in the Department of Biomedical Informatics. 
+Matt is a physician and post-doctoral research fellow in the Department of Biomedical Informatics at Columbia University. 
 
 ### Data Sources   
 The Scientific Registry of Transplant Recipients (SRTR) takes national registry data on all organ donors, transplant candidates, and transplant recipients in the US to produce biannual [Program-Specific Reports](https://www.srtr.org/reports/program-specific-reports/) (PSR). Our project will utilize center-level data on waitlisted patients and patients in receipt of transplants, aggregated demographics, transplant outcomes, and organ offer acceptance practices. The PSR data is archived and publicly available for download in Excel format from the SRTR website with drop-down menus for organ and time period. These reports date back to July 2012 with offer acceptance data available starting July 2017. There are 238 rows of transplant center data in the most recent data file, organized across many different sheets by topic, each with tens to hundreds of columns.
