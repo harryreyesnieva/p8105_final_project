@@ -33,57 +33,111 @@ year_qualifier can be removed, its all of the characters after the 2nd _ (ex in 
 
 ``` {r stacked_bars}
 
-waitlist_demo_cols = c("WLC_A2_ALLC2", "WLC_A10_ALLC2", "WLC_A17_ALLC2", "WLC_A34_ALLC2", "WLC_A49_ALLC2", "WLC_A64_ALLC2", 
-                       "WLC_GM_ALLC2", "WLC_GF_ALLC2", 
-                       "WLC_RA_ALLC2", "WLC_RB_ALLC2", "WLC_RH_ALLC2", "WLC_RO_ALLC2", "WLC_RU_ALLC2", "WLC_RW_ALLC2", 
-                       "WLC_BAB_ALLC2", "WLC_BA_ALLC2", "WLC_BB_ALLC2", "WLC_BO_ALLC2", "WLC_BU_ALLC2",
-                       "WLC_PRA80_ALLC2", 
-                       "WLC_PTXY_ALLC2",
-                       "WLC_KIDIA_ALLC2", "WLC_KIGLO_ALLC2", "WLC_KIHYP_ALLC2", "WLC_KIMIS_ALLC2", "WLC_KINEO_ALLC2", "WLC_KIOTH_ALLC2", "WLC_KIPOL_ALLC2", "WLC_KIREN_ALLC2", "WLC_KIRTR_ALLC2", "WLC_KITUB_ALLC2", "WLC_KICON_ALLC2")
 
-ddtx_demo_cols = c("RCC_A2_C", "RCC_A10_C", "RCC_A17_C", "RCC_A34_C", "RCC_A49_C", "RCC_A64_C", "RCC_GM_C", "RCC_GF_C", "RCC_RA_C", "RCC_RB_C", "RCC_RH_C", "RCC_RO_C", "RCC_RU_C", "RCC_RW_C", "RCC_BAB_C", "RCC_BA_C", "RCC_BB_C", "RCC_BO_C", "RCC_BMI20_C", "RCC_BMI25_C", "RCC_BMI30_C", "RCC_DIA_C", "RCC_GLO_C", "RCC_HYP_C", "RCC_MIS_C", "RCC_NEO_C", "RCC_OTK_C", "RCC_POL_C", "RCC_VAS_C", "RCC_RET_C", "RCC_TUB_C", "RCC_CON_C", "RCC_PRA80_C", "RCC_PTXY_C")
+# regex functions for later
+
+# get_col_cats = function(pattern, desc, df = all_data) {
+#   cat_cols = df %>%
+#     select(matches(pattern)) %>%
+#     names()
+#   
+#   return(cat_cols)
+# }
+# 
+# get_cat_type = function(category, col_cats) {
+#   for (col_cat %in% col_cats){
+#     if (category %in% col_cat)
+#   }
+#   
+# 
+# age_cols = map("[A-Z]{3}_A[1-9]", ~ get_col_cats(pattern = .x))
+# gender_cols = map("^WLC_G[FM]|^RC[CL]_G[FM]", ~ get_col_cats(pattern = .x))
+# race_cols = map("^WLC_R[A-Z]_|^RC[CL]_R[A-Z]_", ~ get_col_cats(pattern = .x))
+
+
+waitlist_demo_cols = c("WLC_A2_ALLC2", "WLC_A10_ALLC2", "WLC_A17_ALLC2", "WLC_A34_ALLC2", "WLC_A49_ALLC2", "WLC_A64_ALLC2", "WLC_A65P_ALLC2", "WLC_A69_ALLC2", "WLC_A70P_ALLC2", "WLC_GM_ALLC2", "WLC_GF_ALLC2", "WLC_RA_ALLC2", "WLC_RB_ALLC2", "WLC_RH_ALLC2", "WLC_RO_ALLC2", "WLC_RU_ALLC2", "WLC_RW_ALLC2", "WLC_BAB_ALLC2", "WLC_BA_ALLC2", "WLC_BB_ALLC2", "WLC_BO_ALLC2", "WLC_BU_ALLC2","WLC_PRA80_ALLC2", "WLC_PTXY_ALLC2", "WLC_KIDIA_ALLC2", "WLC_KIGLO_ALLC2", "WLC_KIHYP_ALLC2", "WLC_KIMIS_ALLC2", "WLC_KINEO_ALLC2", "WLC_KIOTH_ALLC2", "WLC_KIPOL_ALLC2", "WLC_KIREN_ALLC2", "WLC_KIRTR_ALLC2", "WLC_KITUB_ALLC2", "WLC_KICON_ALLC2")
+
+ddtx_demo_cols = c("RCC_A2_C", "RCC_A10_C", "RCC_A17_C", "RCC_A34_C", "RCC_A49_C", "RCC_A64_C", "RCC_A65P_C", "RCC_A69_C", "RCC_A70P_C", "RCC_GM_C", "RCC_GF_C", "RCC_RA_C", "RCC_RB_C", "RCC_RH_C", "RCC_RO_C", "RCC_RU_C", "RCC_RW_C", "RCC_BAB_C", "RCC_BA_C", "RCC_BB_C", "RCC_BO_C", "RCC_DIA_C", "RCC_GLO_C", "RCC_HYP_C", "RCC_MIS_C", "RCC_NEO_C", "RCC_OTK_C", "RCC_POL_C", "RCC_VAS_C", "RCC_RET_C", "RCC_TUB_C", "RCC_CON_C", "RCC_PRA80_C", "RCC_PTXY_C")
 
 ldtx_demo_cols = str_replace(ddtx_demo_cols, "^RCC", "RCL")
 ldtx_demo_cols = str_replace(ldtx_demo_cols, "_RET_", "_KIRET_")
 
 demo_cols = c(waitlist_demo_cols, ddtx_demo_cols, ldtx_demo_cols)
-demo_cols
+
+as_tibble(demo_cols) %>%
+  filter(str_detect(value, pattern = age_pats)) %>%
+  mutate(new_val = str_sub(value, 5,-1)) %>%
+  mutate(new_val = str_replace(new_val, "_[AC].*$", ""),
+         age_grp = unlist(lapply(new_val, function(x) age_grps[x])))
+
+str_replace(str_sub("WLC_A2_ALLC2", 5, -1), "_[AC].*$", "")
+  
+  
+age_pats = c("A2", "A10", "A17", "A34", "A49", "A64", "A65P", "A69", "A70P")
+age_grps = c("<2", "2-11", "12-17", "18-34", "35-49", "50-64", ">65", "65-69", ">70" )
+names(age_grps) = age_pats
+
+race_pats = c("RA", "RB", "RH", "RO", "RU", "RW")
+race_grps = c("Asian", "Black", "Hispanic", "Other", "Unknown", "White")
+names(race_grps) = race_pats
 
 
-
+dz_pats = c("DIA", "GLO", "HYP", "MIS", "NEO", "OTK", "POL", "VAS", "RET", "TUB", "CON")
+dz_pats = c(dz_pats, c(paste("KI",dz_pats, sep = "")))
+dz_grps = c("Diabetes", "Glomerular", "Hypertension", "Missing", "Neoplasms", "Other", "Polycystic", "Vascular", "Retransplant", "Tubular/Interstial", "Congenital/Familial/Metabolic")
+dz_grps = c(dz_grps, dz_grps)
+names(dz_grps) = dz_pats
 
 demographic_props = all_data %>%
+  filter(year(REPORT_DATE) == 2021) %>%
   select(CTR_ID, REGION, REPORT_DATE, any_of(demo_cols)) %>%
   pivot_longer(cols = demo_cols, names_to = c("CATEGORY"), values_to = c("CATEGORY_PROP")) %>%
   mutate(ORG_TYPE = 
            as.factor(ifelse(str_sub(CATEGORY,1,3) == "WLC", "waitlist", 
                             ifelse(substr(CATEGORY, 3,3) == "L", "living", "deceased"))),
-         CAT_TYPE = ifelse(str_detect(CATEGORY, "^WLC_A[1-9]|^RC[CL]_A[1-9]"), "Age Group", 
-                           ifelse(str_detect(CATEGORY, "^WLC_G[FM]|^RC[CL]_G[FM]"), "Gender", 
-                                  ifelse(str_detect(CATEGORY, "^WLC_R[A-Z]_|^RC[CL]_R[A-Z]_"), "Race",
-                                         ifelse(str_detect(CATEGORY, "^WLC_B[ABOU]|^RC[CL]_B[ABOU]"), "Blood Type",
-                                                if_else(str_detect(CATEGORY, "^WLC_KI|^RC[CL]_.{3}_|^RC[CL]_KI"), "Primary Disease", ifelse(str_detect(CATEGORY, "[A-Z]{3}_P[RT][AX]"), "High Ab Risk",
-                                                                                                                                            if_else(str_detect(CATEGORY, "RC[CL]_BMI"), "BMI", "")))))))) %>%
+         CAT_TYPE = "",
+         CAT_TYPE = ifelse(str_detect(CATEGORY, "^WLC_A[1-9]|^RC[CL]_A[1-9]"), "Age Group", CAT_TYPE),
+         CAT_TYPE = ifelse(str_detect(CATEGORY, "^WLC_G[FM]|^RC[CL]_G[FM]"), "Gender", CAT_TYPE),
+         CAT_TYPE = ifelse(str_detect(CATEGORY, "^WLC_R[A-Z]_|^RC[CL]_R[A-Z]_"), "Race", CAT_TYPE),
+         CAT_TYPE = ifelse(str_detect(CATEGORY, "^WLC_B[ABOU]|^RC[CL]_B[ABOU]"), "Blood Type", CAT_TYPE),
+         CAT_TYPE = if_else(str_detect(CATEGORY, "[A-Z]{3}_P[RT][AX]"), "High Ab Risk", CAT_TYPE), 
+         CAT_TYPE = if_else((CAT_TYPE == "") & (str_detect(CATEGORY, "^WLC_KI|^RC[CL]_.{3}_|^RC[CL]_KI")), "Primary Disease", CAT_TYPE)) %>%
+  mutate(
+    CATEGORY = if_else(CAT_TYPE == "Age Group", 
+    unlist(lapply(str_replace(str_sub(CATEGORY, 5, -1), "_[AC].*$", ""), function(x) age_grps[x])), CATEGORY),
+    CATEGORY = if_else(CAT_TYPE == "Gender", if_else(str_sub(CATEGORY,6,6) == "M", "Male", "Female"), CATEGORY),
+    CATEGORY = if_else(CAT_TYPE == "Race", 
+    unlist(lapply(str_replace(str_sub(CATEGORY, 5, -1), "_[AC].*$", ""), function(x) race_grps[x])), CATEGORY),
+    CATEGORY = ifelse(CAT_TYPE == "Blood Type", str_replace(str_sub(CATEGORY, 6, -1), "_[AC].*$", ""), CATEGORY),
+    CATEGORY = ifelse(CAT_TYPE == "High Ab Risk", if_else(CATEGORY == "RCC_PRA80_C", "Peak PRA >= 80%", "Retransplant"), CATEGORY),
+    CATEGORY = if_else(CAT_TYPE == "Primary Disease", 
+    unlist(lapply(str_replace(str_sub(CATEGORY, 5, -1), "_[AC].*$", ""), function(x) dz_grps[x])), CATEGORY),
+    )
+                           
+                           
+                           
+demographic_props                           
+                           
+                           )) %>%
+  mutate(CAT_TYPE = as.factor(CAT_TYPE),
+         CATEGORY = as.factor(CATEGORY)) %>%
+  group_by(CTR_ID, ORG_TYPE, CAT_TYPE, CATEGORY) %>%
   filter(!is.na(CATEGORY_PROP))
-  group_by(CTR_ID, ORG_TYPE, CAT_TYPE)
-  
+
+category_ = demographic_props %>%
+  group_by(CAT_TYPE, CATEGORY)
+
+category_
+
 demographic_props %>%
-  summarize()
-  
-  
-  
-  
-  
-  ggplot(aes(fill = CATEGORY, y = CATEGORY_PROP, x = ORG_TYPE)) +
-    geom_bar(position = "stack", stat = "identity", show.legend = FALSE) +
-  scale_y_continuous(labels = scales::percent_format())
+  filter(CTR_ID == "NYCPTX1") %>%
+  group_by(ORG_TYPE, CAT_TYPE, CATEGORY) %>%
+  ggplot(aes(fill = factor(CATEGORY), y = CATEGORY_PROP, x = ORG_TYPE)) +
+  geom_bar(position = "stack", stat = "identity", show.legend = FALSE) +
+    #geom_bar(position = "stack", stat = "identity", show.legend = FALSE) +
+  scale_y_continuous() +
+  facet_grid(~CAT_TYPE)
 
-#   ggplot(aes(x = REPORT_DATE, y = OA_OVERALL_HR_MN_CENTER, color = factor(CTR_COLOR_TYPE))) +
-#   geom_point(show.legend = FALSE) +
-#   geom_path(show.legend = FALSE) +
-#   facet_wrap(~REGION)
-
-demographic_props
 
 ```
 
