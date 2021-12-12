@@ -382,11 +382,12 @@ ldtx_demo_cols = str_replace(ldtx_demo_cols, "_RET_", "_KIRET_")
 demo_cols = c(waitlist_demo_cols, ddtx_demo_cols, ldtx_demo_cols)
   
 age_pats = c("A2", "A10", "A17", "A34", "A49", "A64", "A65P", "A69", "A70P")
-age_grps = c("Age <2", "Age 2-11", "Age 12-17", "Age 18-34", "Age 35-49", "Age 50-64", "Age >65", "Age 65-69", "Age >70" )
+age_grps = c("Age: <2", "Age: 2-11", "Age: 12-17", "Age: 18-34", "Age: 35-49", "Age: 50-64", "Age: >65", 
+             "Age: 65-69", "Age: >70" )
 names(age_grps) = age_pats
 
 race_pats = c("RA", "RB", "RH", "RO", "RU", "RW")
-race_grps = c("Race Asian", "Race Black", "Ethnicity Hispanic", "Race Other", "Race Unknown", "Race White")
+race_grps = c("Race: Asian", "Race: Black", "Ethnicity: Hispanic", "Race: Other", "Race: Unknown", "Race: White")
 names(race_grps) = race_pats
 
 
@@ -523,7 +524,7 @@ txrate_v_oa_v_time
 
 #### Screenshot of dashboard
 
-![](./img/screenshot_dashboard.png)
+![](./img/screenshot_dashboard.png) 
 
 
 ## Discussion

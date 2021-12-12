@@ -209,26 +209,61 @@ avg_unknown_other = 100 - sum(avg_asian, avg_black, avg_latino, avg_white)
   # mean(na.rm = TRUE) %>%
   # round(.,1)
 
-waitlist_demo_cols = 
-  c("WLC_A2_ALLC2", "WLC_A10_ALLC2", "WLC_A17_ALLC2", "WLC_A34_ALLC2", "WLC_A49_ALLC2", "WLC_A64_ALLC2",
-    "WLC_GM_ALLC2", "WLC_GF_ALLC2", "WLC_RA_ALLC2", "WLC_RB_ALLC2", "WLC_RH_ALLC2", "WLC_RO_ALLC2",
-    "WLC_RU_ALLC2", "WLC_RW_ALLC2", "WLC_BAB_ALLC2", "WLC_BA_ALLC2", "WLC_BB_ALLC2", "WLC_BO_ALLC2",
-    "WLC_BU_ALLC2","WLC_PRA80_ALLC2", "WLC_PTXY_ALLC2","WLC_KIDIA_ALLC2", "WLC_KIGLO_ALLC2", 
-    "WLC_KIHYP_ALLC2", "WLC_KIMIS_ALLC2", "WLC_KINEO_ALLC2", "WLC_KIOTH_ALLC2", "WLC_KIPOL_ALLC2",
-    "WLC_KIREN_ALLC2", "WLC_KIRTR_ALLC2", "WLC_KITUB_ALLC2", "WLC_KICON_ALLC2")
+waitlist_demo_cols = c("WLC_A2_ALLC2", "WLC_A10_ALLC2", "WLC_A17_ALLC2", "WLC_A34_ALLC2", "WLC_A49_ALLC2", "WLC_A64_ALLC2", "WLC_A65P_ALLC2", "WLC_A69_ALLC2", "WLC_A70P_ALLC2", "WLC_GM_ALLC2", "WLC_GF_ALLC2", "WLC_RA_ALLC2", "WLC_RB_ALLC2", "WLC_RH_ALLC2", "WLC_RO_ALLC2", "WLC_RU_ALLC2", "WLC_RW_ALLC2", "WLC_BAB_ALLC2", "WLC_BA_ALLC2", "WLC_BB_ALLC2", "WLC_BO_ALLC2", "WLC_BU_ALLC2","WLC_PRA80_ALLC2", "WLC_PTXY_ALLC2", "WLC_KIDIA_ALLC2", "WLC_KIGLO_ALLC2", "WLC_KIHYP_ALLC2", "WLC_KIMIS_ALLC2", "WLC_KINEO_ALLC2", "WLC_KIOTH_ALLC2", "WLC_KIPOL_ALLC2", "WLC_KIREN_ALLC2", "WLC_KIRTR_ALLC2", "WLC_KITUB_ALLC2", "WLC_KICON_ALLC2")
 
-ddtx_demo_cols = 
-    c("RCC_A2_C", "RCC_A10_C", "RCC_A17_C", "RCC_A34_C", "RCC_A49_C", "RCC_A64_C", "RCC_GM_C", "RCC_GF_C", 
-      "RCC_RA_C", "RCC_RB_C", "RCC_RH_C", "RCC_RO_C", "RCC_RU_C", "RCC_RW_C", "RCC_BAB_C", "RCC_BA_C", 
-      "RCC_BB_C", "RCC_BO_C", "RCC_BMI20_C", "RCC_BMI25_C", "RCC_BMI30_C", "RCC_DIA_C", "RCC_GLO_C", "RCC_HYP_C",
-      "RCC_MIS_C", "RCC_NEO_C", "RCC_OTK_C", "RCC_POL_C", "RCC_VAS_C", "RCC_RET_C", "RCC_TUB_C", "RCC_CON_C",
-      "RCC_PRA80_C", "RCC_PTXY_C")
+ddtx_demo_cols = c("RCC_A2_C", "RCC_A10_C", "RCC_A17_C", "RCC_A34_C", "RCC_A49_C", "RCC_A64_C", "RCC_A65P_C", "RCC_A69_C", "RCC_A70P_C", "RCC_GM_C", "RCC_GF_C", "RCC_RA_C", "RCC_RB_C", "RCC_RH_C", "RCC_RO_C", "RCC_RU_C", "RCC_RW_C", "RCC_BAB_C", "RCC_BA_C", "RCC_BB_C", "RCC_BO_C", "RCC_DIA_C", "RCC_GLO_C", "RCC_HYP_C", "RCC_MIS_C", "RCC_NEO_C", "RCC_OTK_C", "RCC_POL_C", "RCC_VAS_C", "RCC_RET_C", "RCC_TUB_C", "RCC_CON_C", "RCC_PRA80_C", "RCC_PTXY_C")
 
 ldtx_demo_cols = str_replace(ddtx_demo_cols, "^RCC", "RCL")
 ldtx_demo_cols = str_replace(ldtx_demo_cols, "_RET_", "_KIRET_")
 
 demo_cols = c(waitlist_demo_cols, ddtx_demo_cols, ldtx_demo_cols)
-demo_cols
+  
+age_pats = c("A2", "A10", "A17", "A34", "A49", "A64", "A65P", "A69", "A70P")
+age_grps = c("Age: <2", "Age: 2-11", "Age: 12-17", "Age: 18-34", "Age: 35-49", "Age: 50-64", "Age: >65", "Age: 65-69", "Age: >70" )
+names(age_grps) = age_pats
+
+race_pats = c("RA", "RB", "RH", "RO", "RU", "RW")
+race_grps = c("Race: Asian", "Race: Black", "Ethnicity: Hispanic", "Race: Other", "Race: Unknown", "Race: White")
+names(race_grps) = race_pats
+
+dz_pats = c("DIA", "GLO", "HYP", "MIS", "NEO", "OTK", "POL", "VAS", "RET", "TUB", "CON")
+dz_pats = c(dz_pats, c(paste("KI",dz_pats, sep = "")))
+dz_grps = c("Dz: Diabetes", "Dz: Glomerular", "Dz: Hypertension", "Dz: Missing", "Dz: Neoplasms", "Dz: Other", "Dz: Polycystic", "Dz: Vascular", "Dz: Retransplant", "Dz: Tubular/Interstial", "Dz: Congenital/Familial")
+dz_grps = c(dz_grps, dz_grps)
+names(dz_grps) = dz_pats
+
+demographic_props = all_data %>%
+  filter(year(REPORT_DATE) == 2021) %>%
+  select(CTR_ID, REGION, REPORT_DATE, PRIMARY_STATE, any_of(demo_cols)) %>%
+  pivot_longer(cols = all_of(demo_cols), names_to = c("CATEGORY"), values_to = c("CATEGORY_PROP")) %>%
+  mutate(ORG_TYPE = 
+           as.factor(ifelse(str_sub(CATEGORY,1,3) == "WLC", "waitlist", 
+                            ifelse(substr(CATEGORY, 3,3) == "L", "living", "deceased"))),
+         CAT_TYPE = "",
+         CAT_TYPE = ifelse(str_detect(CATEGORY, "^WLC_A[1-9]|^RC[CL]_A[1-9]"), "Age Group", CAT_TYPE),
+         CAT_TYPE = ifelse(str_detect(CATEGORY, "^WLC_G[FM]|^RC[CL]_G[FM]"), "Gender", CAT_TYPE),
+         CAT_TYPE = ifelse(str_detect(CATEGORY, "^WLC_R[A-Z]_|^RC[CL]_R[A-Z]_"), "Race", CAT_TYPE),
+         CAT_TYPE = ifelse(str_detect(CATEGORY, "^WLC_B[ABOU]|^RC[CL]_B[ABOU]"), "Blood Type", CAT_TYPE),
+         CAT_TYPE = if_else(str_detect(CATEGORY, "[A-Z]{3}_P[RT][AX]"), "High Ab Risk", CAT_TYPE), 
+         CAT_TYPE = if_else((CAT_TYPE == "") & (str_detect(CATEGORY, "^WLC_KI|^RC[CL]_.{3}_|^RC[CL]_KI")), 
+                            "Primary Disease", CAT_TYPE)) %>%
+  mutate(
+    CATEGORY = if_else(CAT_TYPE == "Age Group", 
+    unlist(lapply(str_replace(str_sub(CATEGORY, 5, -1), "_[AC].*$", ""), function(x) age_grps[x])), CATEGORY),
+    CATEGORY = if_else(CAT_TYPE == "Gender", if_else(str_sub(CATEGORY,6,6) == "M", "Gender: Male", 
+                                                     "Gender: Female"), CATEGORY),
+    CATEGORY = if_else(CAT_TYPE == "Race", 
+    unlist(lapply(str_replace(str_sub(CATEGORY, 5, -1), "_[AC].*$", ""), function(x) race_grps[x])), CATEGORY),
+    CATEGORY = ifelse(CAT_TYPE == "Blood Type", 
+                      paste("Blood Type", str_replace(str_sub(CATEGORY, 6, -1), "_[AC].*$", "")), CATEGORY),
+    CATEGORY = ifelse(CAT_TYPE == "High Ab Risk", if_else(CATEGORY == "RCC_PRA80_C", "Ab Risk: Peak PRA >= 80%", 
+                                                          "Ab Risk: Retransplant"), CATEGORY),
+    CATEGORY = if_else(CAT_TYPE == "Primary Disease", 
+    unlist(lapply(str_replace(str_sub(CATEGORY, 5, -1), "_[AC].*$", ""), function(x) dz_grps[x])), CATEGORY)) %>%
+  mutate(CAT_TYPE = as.factor(CAT_TYPE),
+         CATEGORY = as.factor(CATEGORY)) %>%
+  group_by(CTR_ID, ORG_TYPE, CAT_TYPE, CATEGORY) %>%
+  filter(!is.na(CATEGORY_PROP))
 ```
 
 Interactive Map {data-icon="ion-map"}
@@ -630,15 +665,78 @@ fig
 Time to Transplant {data-icon="ion-ios-timer"}
 =====================================  
 
-The median time to transplant for patients on NY transplant center kidney wait lists has generally decreased since 2017, although this is not consistent across all centers.
-
 Column  {.tabset}
 -------------------------------------
+*Demographics of 2021 Waitlist Patients and Transplant Recipients in NY.* Some key demographics differed between patient populations in NY. Below are proportions of patients stratified by age groups, primary disease causing end-stage renal disease, and gender, race & ethnicity. Living donor recipients tended to be younger, more likely to be white, and less likely to have diabetes as the cause of their ESRD compared to people on the waitlist or deceased donor recipients. Excluding children's hospitals, the majority of primary disease leading to end-stage renal disease was diabetes. In NY, the majority of transplant recipients and patients on the waitlist were male. 
+
+### Age group proportions across NY centers, 2021
+
+``` {r stacked_bars}
+age_grp_plot = demographic_props %>%
+  filter(PRIMARY_STATE == "NY" & CAT_TYPE == "Age Group") %>%
+  group_by(CTR_ID, ORG_TYPE, CATEGORY) %>%
+  ggplot(aes(fill = CATEGORY, y = CATEGORY_PROP, x = ORG_TYPE)) +
+  geom_bar(position = "stack", stat = "identity", show.legend = TRUE) +
+    #geom_bar(position = "stack", stat = "identity", show.legend = FALSE) +
+  scale_y_continuous() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) +
+  labs(x = "Center ID",
+       y = "Proportion (%)",
+       # title = "Age Group Proportions Across NY Centers in 2021",
+       colors = "Age Group") +
+  facet_wrap(~CTR_ID, nrow = 3)
+
+fig <- ggplotly(age_grp_plot) 
+fig
+```
+
+### Primary disease proportions across NY centers, 2021
+
+```{r}
+dz_plot = demographic_props %>%
+  filter(PRIMARY_STATE == "NY" & CAT_TYPE == "Primary Disease") %>%
+  group_by(CTR_ID, ORG_TYPE, CATEGORY) %>%
+  ggplot(aes(fill = CATEGORY, y = CATEGORY_PROP, x = ORG_TYPE)) +
+  geom_bar(position = "stack", stat = "identity", show.legend = TRUE) +
+    #geom_bar(position = "stack", stat = "identity", show.legend = FALSE) +
+  scale_y_continuous() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) +
+  labs(x = "Center ID",
+       y = "Proportion (%)",
+       # title = "Primary Disease Proportions Across NY Centers in 2021",
+       colors = "Primary Disease") +
+  facet_wrap(~CTR_ID, nrow = 3)
+
+fig <- ggplotly(dz_plot) 
+fig
+```
+
+### Gender and race/ethnicity proportions across NY centers, 2021
+
+```{r}
+race_gender_plot = demographic_props %>%
+  filter(PRIMARY_STATE == "NY" & (CAT_TYPE == "Race" | CAT_TYPE == "Gender")) %>%
+  group_by(CTR_ID, ORG_TYPE, CATEGORY) %>%
+  ggplot(aes(fill = CATEGORY, y = CATEGORY_PROP, x = CTR_ID)) +
+  geom_bar(position = "stack", stat = "identity", show.legend = TRUE) +
+    #geom_bar(position = "stack", stat = "identity", show.legend = FALSE) +
+  scale_y_continuous() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1)) +
+  labs(x = "Center ID",
+       y = "Proportion (%)",
+       # title = "Gender, Race, and Ethnicity Proportions Across NY Centers in 2021",
+       colors = "Race/Ethnicity") +
+  facet_grid(CAT_TYPE ~ ORG_TYPE)
+
+fig <- ggplotly(race_gender_plot) 
+fig
+```
 
 ### Median time to transplant (months) in NY state
 
-``` {r ttt_v_time}
+The median time to transplant for patients on NY transplant center kidney wait lists has generally decreased since 2017, although this is not consistent across all centers.
 
+``` {r ttt_v_time}
 ttt_cols = c("TTT_25_C", "TTT_50_C", "TTT_75_C")
 ttt_v_time = all_data %>%
   filter(!is.na(TTT_50_C) & !is.na(OA_OVERALL_HR_MN_CENTER) & PRIMARY_STATE == "NY") %>%
