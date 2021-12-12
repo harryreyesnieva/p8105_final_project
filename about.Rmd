@@ -20,7 +20,7 @@ Our team comprises several members of the [Department of Biomedical Informatics]
 
 #### Kristen King   
 <img src="./img/King_Kristin.jpeg" alt="Avatar" class="avatar">   
-Kristin is a 2nd-year MA student in the Department of Biomedical Informatics.
+Kristen is a 2nd-year MA student in the Department of Biomedical Informatics and Data Analyst in the Division of Nephrology.
 
 #### Harry Reyes  
 <img src="./img/Reyes_Harry.png" alt="Avatar" class="avatar">    
