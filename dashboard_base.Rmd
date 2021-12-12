@@ -155,7 +155,7 @@ no_transplant_centers =
 
 avg_asian = 
   df_all_demographics %>% 
-  filter(race_category == 'asian_allc2') %>% 
+  filter(race_category == 'Asian or Pacific Islander') %>% 
   select(race_category_percent)%>% 
   pull() %>%
   mean(na.rm = TRUE) %>%
@@ -163,7 +163,7 @@ avg_asian =
 
 avg_black = 
   df_all_demographics %>% 
-  filter(race_category == 'african_american_allc2') %>% 
+  filter(race_category == 'Black or African American') %>% 
   select(race_category_percent)%>% 
   pull() %>%
   mean(na.rm = TRUE) %>%
@@ -171,7 +171,7 @@ avg_black =
 
 avg_latino = 
   df_all_demographics %>% 
-  filter(race_category == 'hispanic_latino_allc2') %>% 
+  filter(race_category == 'Hispanic or Latinx') %>% 
   select(race_category_percent)%>% 
   pull() %>%
   mean(na.rm = TRUE) %>%
@@ -179,7 +179,7 @@ avg_latino =
 
 avg_white = 
   df_all_demographics %>% 
-  filter(race_category == 'white_allc2') %>% 
+  filter(race_category == 'White or Caucasian') %>% 
   select(race_category_percent)%>% 
   pull() %>%
   mean(na.rm = TRUE) %>%
@@ -187,7 +187,7 @@ avg_white =
 
 avg_other = 
   df_all_demographics %>% 
-  filter(race_category == 'race_other_allc2') %>% 
+  filter(race_category == 'Other') %>% 
   select(race_category_percent)%>% 
   pull() %>%
   mean(na.rm = TRUE) %>%
@@ -195,7 +195,7 @@ avg_other =
 
 avg_unknown = 
   df_all_demographics %>% 
-  filter(race_category == 'race_unknown_allc2') %>% 
+  filter(race_category == 'Unknown') %>% 
   select(race_category_percent)%>% 
   pull() %>%
   mean(na.rm = TRUE) %>%
