@@ -23,21 +23,6 @@ subset_test = tail(all_data, 20)
 ```
 
 
-``` {r OA_over_time}
-oa_v_time = all_data %>%
-  filter(!is.na(OA_OVERALL_HR_MN_CENTER)) %>%
-  select(CTR_ID, REGION, REPORT_DATE, OA_OVERALL_HR_MN_CENTER)  %>%
-  group_by(REGION) %>%
-  mutate(CTR_COLOR_TYPE = dense_rank(x = CTR_ID)) %>%
-  ggplot(aes(x = REPORT_DATE, y = OA_OVERALL_HR_MN_CENTER, color = factor(CTR_COLOR_TYPE))) +
-  geom_point(show.legend = FALSE) +
-  geom_path(show.legend = FALSE) +
-  facet_wrap(~REGION) + 
-  labs(y = "Offer Acceptance Hazard Ratio \n(compared to National O/A)", x = "Year")
-
-oa_v_time
-```
-
 ## Need to separate out the age group, race, and blood type variables
 ## naming patern is [stat_type]_[info_type][var_val]_[year_qualifier]
 
@@ -47,6 +32,7 @@ var_val = the actual information, for example A2 is age <2, A10 is age 2-11, etc
 year_qualifier can be removed, its all of the characters after the 2nd _ (ex in WLC_A2_ALLC2, the qualifier is ALLC2)
 
 ``` {r stacked_bars}
+
 waitlist_demo_cols = c("WLC_A2_ALLC2", "WLC_A10_ALLC2", "WLC_A17_ALLC2", "WLC_A34_ALLC2", "WLC_A49_ALLC2", "WLC_A64_ALLC2", 
                        "WLC_GM_ALLC2", "WLC_GF_ALLC2", 
                        "WLC_RA_ALLC2", "WLC_RB_ALLC2", "WLC_RH_ALLC2", "WLC_RO_ALLC2", "WLC_RU_ALLC2", "WLC_RW_ALLC2", 
@@ -63,14 +49,30 @@ ldtx_demo_cols = str_replace(ldtx_demo_cols, "_RET_", "_KIRET_")
 demo_cols = c(waitlist_demo_cols, ddtx_demo_cols, ldtx_demo_cols)
 demo_cols
 
+
+
+
 demographic_props = all_data %>%
   select(CTR_ID, REGION, REPORT_DATE, any_of(demo_cols)) %>%
   pivot_longer(cols = demo_cols, names_to = c("CATEGORY"), values_to = c("CATEGORY_PROP")) %>%
   mutate(ORG_TYPE = 
            as.factor(ifelse(str_sub(CATEGORY,1,3) == "WLC", "waitlist", 
-                            ifelse(substr(CATEGORY, 3,3) == "L", "living", "deceased")))) %>%
-  filter(!is.na(CATEGORY_PROP)) %>%
-  group_by(CTR_ID, ORG_TYPE) %>%
+                            ifelse(substr(CATEGORY, 3,3) == "L", "living", "deceased"))),
+         CAT_TYPE = ifelse(str_detect(CATEGORY, "^WLC_A[1-9]|^RC[CL]_A[1-9]"), "Age Group", 
+                           ifelse(str_detect(CATEGORY, "^WLC_G[FM]|^RC[CL]_G[FM]"), "Gender", 
+                                  ifelse(str_detect(CATEGORY, "^WLC_R[A-Z]_|^RC[CL]_R[A-Z]_"), "Race",
+                                         ifelse(str_detect(CATEGORY, "^WLC_B[ABOU]|^RC[CL]_B[ABOU]"), "Blood Type",
+                                                if_else(str_detect(CATEGORY, "^WLC_KI|^RC[CL]_.{3}_|^RC[CL]_KI"), "Primary Disease", ifelse(str_detect(CATEGORY, "[A-Z]{3}_P[RT][AX]"), "High Ab Risk",
+                                                                                                                                            if_else(str_detect(CATEGORY, "RC[CL]_BMI"), "BMI", "")))))))) %>%
+  filter(!is.na(CATEGORY_PROP))
+  group_by(CTR_ID, ORG_TYPE, CAT_TYPE)
+  
+demographic_props %>%
+  summarize()
+  
+  
+  
+  
   
   ggplot(aes(fill = CATEGORY, y = CATEGORY_PROP, x = ORG_TYPE)) +
     geom_bar(position = "stack", stat = "identity", show.legend = FALSE) +
