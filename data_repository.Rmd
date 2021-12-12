@@ -10,51 +10,159 @@ output:
       after_body: footer.html
 ---
 
-```{r setup, warning=FALSE, message=FALSE}
-library(tidyverse)
-library(purrr)
-library(DT)
-
-suffix = list("age","gender","demographics", "blood_type")
-
-for (i in suffix){
-  data_path = "./data/old_data"   # path to the data
-  files = dir(data_path, 
-              pattern = paste0("csrs_final_tables_2006_[A-Z][A-Z]_", i,".csv"))
-  assign(paste0("df_all_", i),
-         files %>%
-           map(~ read_csv(file.path(data_path, .))%>%
-                 mutate(org = str_replace(org, "HR", "Heart"),
-                        org = str_replace(org, "HL", "Heart-Lung"),
-                        org = str_replace(org, "IN", "Intestine"),
-                        org = str_replace(org, "KI", "Kidney"),
-                        org = str_replace(org, "KP", "Kidney-Pancreas"),
-                        org = str_replace(org, "LI", "Liver"),
-                        org = str_replace(org, "LU", "Lung"),
-                        org = str_replace(org, "PA", "Pancreas"))) %>%
-           reduce(rbind))
-  }
-
-organ_race = df_all_demographics %>% distinct(org) %>% pull()
-organ_age = df_all_age %>% distinct(org) %>% pull()
-organ_gender = df_all_gender %>% distinct(org) %>% pull()
-organ_blood_type = df_all_blood_type %>% distinct(org) %>% pull()
-```
-
 The **PSR Data Repository** compiles and presents national registry data on all organ donors, transplant candidates, and transplant recipients in the United States based on biannual [Program-Specific Reports](https://www.srtr.org/reports/program-specific-reports/) from the [Scientific Registry of Transplant Recipients](https://www.srtr.org/) (SRTR). 
 
 The data repository utilizes center-level data on waitlisted patients and patients in receipt of transplants, aggregated demographics, transplant outcomes, and organ offer acceptance practices. Functionality include the ability to search and copy, print, or download results for further study. Users may filter by a single column or query all columns simultaneously using the search bar.
           
-```{r echo=FALSE}
-# this is just a placeholder; we will replace this with another table
-datatable(df_all_demographics %>%
-            select(-ctr_ty, -`...1`)%>%
-            rename(Site = entire_name,
-                   `Center Code` = ctr_cd,
-                   Organ = org,
-                   `Zip code` = zipcode,
-                   Race = race_category,
-                   `Race Category Percent` = race_category_percent),
+```{r datatable, message= FALSE, warning=FALSE}
+library(tidyverse)
+library(purrr)
+library(DT)
+
+all_data = read_csv("data/all_KI_data.csv", col_names = TRUE) %>%
+  janitor::clean_names() %>%
+  select(report_date, entire_name, everything()) %>%
+  select(-c(ctr_id_wr, entire_name_wr, primary_city_wr, primary_state_wr, 
+            region_wr, primary_zip_wr, distance_wr))%>%
+  filter(report_date >= as.Date("2021/01/01"))%>%
+  rename(
+    `Additions to the waiting list (annual count)` = wla_addcen_nc2,
+`Prevalent waitlist count (at beginning of year)` = wla_st_nc2,
+`Prevalent waitlist count (at end of year)` = wla_end_nc2,
+`Annual count of deceased donor transplants` = wla_remtxc_nc2,
+`Annual count of living donor transplants` = wla_remtxl_nc2,
+# `Annual count of waitlist removals - deteriorated` = wla_remdet_nc2,
+# `Annual count of waitlist removals - death` = wla_remdied_nc2,
+`% of prevalent WL that received deceased donor transplant` = wla_remtxc_pcz,
+`% of prevalent WL that received living donor transplant` = wla_remtxl_pcz,
+`% of prevalent WL removed upon death` = wla_remdied_pcz,
+`% of prevalent WL removed for deteriorating condition` = wla_remdet_pcz,
+`Offer Acceptance Ratio - Overall` = oa_overall_hr_mn_center,
+`Offer Acceptance Ratio - Low Risk Kidneys (KDRI < 1.05)` = oa_lowrisk_hr_mn_center,
+`Offer Acceptance Ratio - Medium Risk Kidneys (1.05 < KDRI < 1.75)` = oa_mediumrisk_hr_mn_center,
+`Offer Acceptance Ratio - High Risk Kidneys (KDRI > 1.75)` = oa_highrisk_hr_mn_center,
+`Offer Acceptance Ratio - Hard-to-Place Kidneys (>100 offers)` = oa_hardtoplace100_hr_mn_center,
+# `Offer Acceptance Ratio - Hard-to-Place Kidneys (>100 offers)` = oa_hardtoplace_hr_mn_center,
+`Percent of deceased donor transplants from imported kidneys` = toc_shr_c,
+`Delayed Graft Function (dialysis in first week post-transplant)` = toc_wkdialy_c,
+`% of Prevalent WL: Age <2` = wlc_a2_allc2,
+`% of Prevalent WL: Age 2-11` = wlc_a10_allc2,
+`% of Prevalent WL: Age 12-17` = wlc_a17_allc2,
+`% of Prevalent WL: Age 18-34` = wlc_a34_allc2,
+`% of Prevalent WL: Age 35-49` = wlc_a49_allc2,
+`% of Prevalent WL: Age 50-64` = wlc_a64_allc2,
+# `% of Prevalent WL: Age 65+` = wlc_a65p_allc2,
+# `% of Prevalent WL: Age 65-69` = wlc_a69_allc2,
+# `% of Prevalent WL: Age 70+` = wlc_a70p_allc2,
+`% of Prevalent WL: Male` = wlc_gm_allc2,
+`% of Prevalent WL: Female` = wlc_gf_allc2,
+`% of Prevalent WL: Asian Race` = wlc_ra_allc2,
+`% of Prevalent WL: African American Race` = wlc_rb_allc2,
+`% of Prevalent WL: Hispanic/Latino Race` = wlc_rh_allc2,
+`% of Prevalent WL: Other Race` = wlc_ro_allc2,
+`% of Prevalent WL: Unknown Race` = wlc_ru_allc2,
+`% of Prevalent WL: White Race` = wlc_rw_allc2,
+`% of Prevalent WL: PRA >= 80%` = wlc_pra80_allc2,
+`% of Prevalent WL: Previous Transplant = Yes` = wlc_ptxy_allc2,
+`% of Prevalent WL: ESKD cause = Diabetes` = wlc_kidia_allc2,
+`% of Prevalent WL: ESKD cause = glomerular disease` = wlc_kiglo_allc2,
+`% of Prevalent WL: ESKD cause = hypertensive nephrosclerosis` = wlc_kihyp_allc2,
+`% of Prevalent WL: ESKD cause = missing` = wlc_kimis_allc2,
+`% of Prevalent WL: ESKD cause = neoplasms` = wlc_kineo_allc2,
+`% of Prevalent WL: ESKD cause = other` = wlc_kioth_allc2,
+`% of Prevalent WL: ESKD cause = polycystic kidneys` = wlc_kipol_allc2,
+`% of Prevalent WL: ESKD cause = renovascular and vascular diseases` = wlc_kiren_allc2,
+`% of Prevalent WL: ESKD cause = retransplant/graft failure` = wlc_kirtr_allc2,
+`% of Prevalent WL: ESKD cause = tubular and interstitial diseases` = wlc_kitub_allc2,
+`% of Prevalent WL: ESKD cause = congenital, familial, metabolic` = wlc_kicon_allc2,
+`Median time to transplant` = ttt_50_c,
+`25th percentile time to transplant` = ttt_25_c,
+`75th percentile time to transplant` = ttt_75_c,
+`Overall transplant rate (all candidates)` = tmr_txr_c2,
+# `Overall transplant rate (all candidates)` = tmr_txr_c,
+`Overall transplant rate ratio (all candidates)` = tmr_txratio_c2,
+# `Overall transplant rate ratio (all candidates)` = tmr_txratio_c,
+`Deceased donor transplant rate (all candidates)` = tmr_cadtxr_c2,
+# `Deceased donor transplant rate (all candidates)` = tmr_cadtx_r_c,
+`Deceased donor transplant rate ratio (all candidates)` = tmr_cadtxratio_c2,
+# `Deceased donor transplant rate ratio (all candidates)` = tmr_cadtx_ratio_c,
+`WL mortality rate (all candidates)` = tmr_dthr_c2,
+`WL mortality rate ratio (all candidates)` = tmr_dthratio_c2,
+# `WL mortality rate (all candidates)` = tmr_dthr_c,
+# `WL mortality rate ratio (all candidates)` = tmr_dthratio_c,
+`% DD TX recipients: Age < 2` = rcc_a2_c,
+`% DD TX recipients: Age 2-11` = rcc_a10_c,
+`% DD TX recipients: Age 12-17` = rcc_a17_c,
+`% DD TX recipients: Age 18-34` = rcc_a34_c,
+`% DD TX recipients: Age 35-49` = rcc_a49_c,
+`% DD TX recipients: Age 50-64` = rcc_a64_c,
+# `% DD TX recipients: Age 65+` = rcc_a65p_c,
+# `% DD TX recipients: Age 65-69` = rcc_a69_c,
+# `% DD TX recipients: Age 70+` = rcc_a70p_c,
+`% DD TX recipients: Male` = rcc_gm_c,
+`% DD TX recipients: Female` = rcc_gf_c,
+`% DD TX recipients: Blood Type AB` = rcc_bab_c,
+`% DD TX recipients: Blood Type A` = rcc_ba_c,
+`% DD TX recipients: Blood Type B` = rcc_bb_c,
+`% DD TX recipients: Blood Type O` = rcc_bo_c,
+`% DD TX recipients: BMI 0-20` = rcc_bmi20_c,
+`% DD TX recipients: BMI 21-25` = rcc_bmi25_c,
+`% DD TX recipients: BMI 26-30` = rcc_bmi30_c,
+# `% DD TX recipients: BMI 31+` = rcc_bmi31p_c,
+# `% DD TX recipients: BMI 31-35` = rcc_bmi35_c,
+# `% DD TX recipients: BMI 36-40` = rcc_bmi40_c,
+# `% DD TX recipients: BMI 41+` = rcc_bmi41p_c,
+`% of DD TX recipients: ESKD cause = Diabetes` = rcc_dia_c,
+`% of DD TX recipients: glomerular disease` = rcc_glo_c,
+`% of DD TX recipients: hypertensive nephrosclerosis` = rcc_hyp_c,
+`% of DD TX recipients: missing` = rcc_mis_c,
+`% of DD TX recipients: neoplasms` = rcc_neo_c,
+`% of DD TX recipients: other` = rcc_otk_c,
+`% of DD TX recipients: polycystic` = rcc_pol_c,
+`% of DD TX recipients: renovascular and vascular diseases` = rcc_vas_c,
+# `% of DD TX recipients: retransplant/graft failure` = rcc_kiret_c,
+`% of DD TX recipients: tubular and interstitial diseases` = rcc_tub_c,
+`% of DD TX recipients: congenital, familial, metabolic` = rcc_con_c,
+`% of DD TX recipients: PRA >= 80%` = rcc_pra80_c,
+`% of DD TX recipients: Previous TX = Yes` = rcc_ptxy_c,
+`% LD TX recipients: Age < 2` = rcl_a2_c,
+`% LD TX recipients: Age 2-11` = rcl_a10_c,
+`% LD TX recipients: Age 12-17` = rcl_a17_c,
+`% LD TX recipients: Age 18-34` = rcl_a34_c,
+`% LD TX recipients: Age 35-49` = rcl_a49_c,
+`% LD TX recipients: Age 50-64` = rcl_a64_c,
+# `% LD TX recipients: Age 65+` = rcl_a65p_c,
+# `% LD TX recipients: Age 65-69` = rcl_a69_c,
+# `% LD TX recipients: Age 70+` = rcl_a70p_c,
+`% LD TX recipients: Male` = rcl_gm_c,
+`% LD TX recipients: Female` = rcl_gf_c,
+`% LD TX recipients: Blood Type AB` = rcl_bab_c,
+`% LD TX recipients: Blood Type A` = rcl_ba_c,
+`% LD TX recipients: Blood Type B` = rcl_bb_c,
+`% LD TX recipients: Blood Type O` = rcl_bo_c,
+`% LD TX recipients: BMI 0-20` = rcl_bmi20_c,
+`% LD TX recipients: BMI 21-25` = rcl_bmi25_c,
+`% LD TX recipients: BMI 26-30` = rcl_bmi30_c,
+# `% LD TX recipients: BMI 31+` = rcl_bmi31p_c,
+# `% LD TX recipients: BMI 31-35` = rcl_bmi35_c,
+# `% LD TX recipients: BMI 36-40` = rcl_bmi40_c,
+# `% LD TX recipients: BMI 41+` = rcl_bmi41p_c,
+`% of LD TX recipients: ESKD cause = Diabetes` = rcl_dia_c,
+`% of LD TX recipients: glomerular disease` = rcl_glo_c,
+`% of LD TX recipients: hypertensive nephrosclerosis` = rcl_hyp_c,
+`% of LD TX recipients: missing` = rcl_mis_c,
+`% of LD TX recipients: neoplasms` = rcl_neo_c,
+`% of LD TX recipients: other` = rcl_otk_c,
+`% of LD TX recipients: polycystic` = rcl_pol_c,
+`% of LD TX recipients: renovascular and vascular diseases` = rcl_vas_c,
+# `% of LD TX recipients: retransplant/graft failure` = rcl_ret_c,
+`% of LD TX recipients: tubular and interstitial diseases` = rcl_tub_c,
+`% of LD TX recipients: congenital, familial, metabolic` = rcl_con_c,
+`% of LD TX recipients: PRA >= 80%` = rcl_pra80_c,
+`% of LD TX recipients: Previous TX = Yes` = rcl_ptxy_c,)%>%
+  distinct()
+
+datatable(all_data,
           extensions = c('Buttons'),
           options = 
             list(scrollY = 650, 
@@ -69,5 +177,40 @@ datatable(df_all_demographics %>%
                                 buttons = c('csv', 'excel', 'pdf'),
                                 text = 'Download'))),
           filter = 'top',
+          colnames = c(
+                "Report Date" = "report_date",
+                "Center ID" = "ctr_id",
+                "Center Name" = "entire_name",
+                "Region" = "region",
+                "Primary City" = "primary_city",
+                "Primary State" = "primary_state",
+                "Primary Zip Code" = "primary_zip",
+                "Region" = "region"),
+          
           escape = FALSE)
 ```
+
+
+<!-- ```{r setup, warning=FALSE, message=FALSE} -->
+
+
+<!-- # suffix = list("age","gender","demographics", "blood_type") -->
+<!-- #  -->
+<!-- # for (i in suffix){ -->
+<!-- #   data_path = "./data/old_data"   # path to the data -->
+<!-- #   files = dir(data_path,  -->
+<!-- #               pattern = paste0("csrs_final_tables_2006_[A-Z][A-Z]_", i,".csv")) -->
+<!-- #   assign(paste0("df_all_", i), -->
+<!-- #          files %>% -->
+<!-- #            map(~ read_csv(file.path(data_path, .))%>% -->
+<!-- #                  mutate(org = str_replace(org, "HR", "Heart"), -->
+<!-- #                         org = str_replace(org, "HL", "Heart-Lung"), -->
+<!-- #                         org = str_replace(org, "IN", "Intestine"), -->
+<!-- #                         org = str_replace(org, "KI", "Kidney"), -->
+<!-- #                         org = str_replace(org, "KP", "Kidney-Pancreas"), -->
+<!-- #                         org = str_replace(org, "LI", "Liver"), -->
+<!-- #                         org = str_replace(org, "LU", "Lung"), -->
+<!-- #                         org = str_replace(org, "PA", "Pancreas"))) %>% -->
+<!-- #            reduce(rbind)) -->
+<!-- #   } -->
+<!-- ``` -->
