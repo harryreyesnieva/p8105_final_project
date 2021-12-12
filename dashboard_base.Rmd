@@ -581,11 +581,9 @@ Organ Offer Acceptance Practices {data-icon="ion-medkit"}
 Column {.tabset}
 -------------------------------------
 
-### Offer acceptance over time by region
+### Offer acceptance ratios over time by region
 
-<!-- We plotted offer/acceptance ratios (O/A) over time at all centers, organized by the 11 OPTN regions. This data was not available prior to 2017. The offer/acceptance ratio is calculated based on offer/acceptance ratios for all centers in the country. A value > 1 indicates that a center is more likely to accept an organ compared to other centers in the country. -->
-
-<!-- Transplant centers missing O/A information were excluded from the plots below. Generally speaking, O/A ratios have remained stable over time across regions, although the large amount of data makes it difficult to compare in this context. -->
+We plotted offer/acceptance ratios (O/A) over time at all centers, organized by the 11 OPTN regions. This data was not available prior to 2017. The offer/acceptance ratio is calculated based on offer/acceptance ratios for all centers in the country. A value > 1 indicates that a center is more likely to accept an organ compared to other centers in the country. Transplant centers missing O/A information were excluded from the plots below. Generally speaking, O/A ratios have remained stable over time across regions, although the large amount of data makes it difficult to compare in this context.
 
 <!-- Change in offer acceptance hazard ratios over time, by region -->
 
@@ -601,15 +599,16 @@ oa_v_time = all_data %>%
   facet_wrap(~REGION,) + 
   labs(y = "Offer Acceptance Ratios \n(compared to National O/A)", 
        x = "Year",
-       title = "Offer Acceptance Ratios over Time by OPTN Region")
+       # title = "Offer Acceptance Ratios over Time by OPTN Region"
+       )
 
 fig <- ggplotly(oa_v_time) 
 fig
 ```
 
-### Offer acceptance over time by state
+### Offer acceptance ratios over time in NY state
 
-<!-- For NY specific transplant centers, we can see that only 4 transplant centers had O/As < 1. NYU Medical Center (NYUCTX1) had a large increase in its O/A in the last year, while SUNY Upstate (NYUMTX1) has had a gradual decline in its O/A since 2017.  -->
+For NY specific transplant centers, we can see that only 4 transplant centers had O/As < 1. NYU Medical Center (NYUCTX1) had a large increase in its O/A in the last year, while SUNY Upstate (NYUMTX1) has had a gradual decline in its O/A since 2017.
 
 ```{r NY_OA_over_time, warning = FALSE}
 ny_oa_v_time = 
@@ -621,7 +620,7 @@ ny_oa_v_time =
   geom_path() + 
   labs(y = "Offer Acceptance Ratios \n(compared to National O/A)", 
        x = "Year",
-       title = "Offer Acceptance Ratios over Time in NY State",
+       # title = "Offer Acceptance Ratios over Time in NY State",
        colors = "Center ID")
 
 fig <- ggplotly(ny_oa_v_time) 
@@ -631,7 +630,7 @@ fig
 Time to Transplant {data-icon="ion-ios-timer"}
 =====================================  
 
-<!-- The median time to transplant for patients on NY transplant center kidney wait lists has generally decreased since 2017, although this is not consistent across all centers. -->
+The median time to transplant for patients on NY transplant center kidney wait lists has generally decreased since 2017, although this is not consistent across all centers.
 
 Column  {.tabset}
 -------------------------------------
@@ -668,7 +667,7 @@ Column  {.tabset}
 
 ### Transplant rate vs. O/A ratios over time by state 
 
-<!-- When looked at as a whole over time, we might infer that since 2019, the transplant rate has increased with decreasing O/As over time, indicated by the relatively increasing slope of a best-fit line across centers. However, this inference is not well supported-- this method is very sensitive to outliers given the small sample size. -->
+When looked at as a whole over time, we might infer that since 2019, the transplant rate has increased with decreasing O/As over time, indicated by the relatively increasing slope of a best-fit line across centers. However, this inference is not well supported-- this method is very sensitive to outliers given the small sample size.
 
 ``` {r txrate_v_oa_v_time}
 txrate_v_oa_v_time = all_data %>%
