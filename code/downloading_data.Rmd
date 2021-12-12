@@ -14,15 +14,6 @@ library(ZipRadius)
 library(httr)
 ```
 
-# Next steps:
-- decide whether to join each grouping together in one df or keep separated
-- include HR 95% CIs for offer-acceptance ratios?
-- finish creating data dictionary for var names
---- one method: slice top two rows for each sheet of each file, make first row the list names and the second row (descriptions) the list values
-- maintenance:
-- drop columns with all NA values (if they even exist)
-- drop columns with all the same values
-
 **if you want to extract more columns from a particular file/tab, you can add the column name to the list at the bottom of this page**
 
 ### Current data groupings:
