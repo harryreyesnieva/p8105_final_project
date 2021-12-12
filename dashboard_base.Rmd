@@ -25,6 +25,7 @@ library(ggmap)
 library(leaflet)
 library(kableExtra)
 library(crosstalk)
+library(lubridate)
 library(gtsummary)
 # reset_gtsummary_theme()
 # theme_gtsummary_journal(journal="jama")
@@ -437,29 +438,25 @@ fig_d %>%
 <div style='display:flex; flex-direction:row; justify-content:space-evenly; align-items:center;'>
 <div>
 ```{r}
-fig_a = 
-  df_all_demographics %>%
-    rename(Race = race_category_percent, Zipcode = zipcode) %>%
-    mutate(race_category =
-             str_replace(race_category, "african_american_allc2", "African American"),
-           race_category =
-             str_replace(race_category, "asian_allc2", "Asian"),
-           race_category =
-             str_replace(race_category, "hispanic_latino_allc2", "Hispanic or Latino"),
-           race_category =
-             str_replace(race_category, "race_other_allc2", "Other"),
-           race_category = str_replace(race_category, "race_unknown_allc2", "Unknown"),
-           race_category = str_replace(race_category, "white_allc2", "White")) %>%
-    # filter(organ_race == input$organ_race) %>%
-    plot_ly(x = ~Zipcode, y = ~Race, 
-            type = "scatter", mode = "markers",
-            alpha = 0.9, color = ~race_category, colors = "viridis")
-fig_a  %>% 
-  layout(autosize = F, width = 550, height = 400,
-         xaxis = list(title = 'Zip Code'),
-         yaxis = list(title = 'Race/Ethnicity'),
-         legend = list(title=list(text='<b> Race/Ethnicity </b>')))
 
+all_data = read_csv("data/all_KI_data.csv", col_names = TRUE) %>%
+  nest(WITHIN_RADIUS = matches("_WR$")) %>%
+  mutate(REPORT_DATE = ymd_hms(REPORT_DATE, truncated = 3),
+         REGION = as.factor(REGION),
+         REGION = addNA(REGION))
+
+p = all_data %>%
+      filter(!is.na(OA_OVERALL_HR_MN_CENTER)) %>%
+      select(CTR_ID, REGION, REPORT_DATE, OA_OVERALL_HR_MN_CENTER)  %>%
+      group_by(REGION) %>%
+      mutate(CTR_COLOR_TYPE = dense_rank(x = CTR_ID)) %>%
+      ggplot(aes(x = REPORT_DATE, y = OA_OVERALL_HR_MN_CENTER, color = factor(CTR_COLOR_TYPE))) +
+      geom_point(show.legend = FALSE) +
+      geom_path(show.legend = FALSE) +
+      facet_wrap(~REGION)
+
+fig <- ggplotly(p)
+fig
 ```
 </div>
 <div>
@@ -985,14 +982,25 @@ Interactive Map {data-icon="ion-stats-bars"}
 =====================================  
 
 ```{r include=FALSE}
-df =
-  df_one_merge %>%
-  select(zipcode, center_name, lng, lat) %>%
-  drop_na() %>%
-  distinct
+
+all_data = read_csv("data/all_KI_data.csv", col_names = TRUE) %>%
+  janitor::clean_names() %>%
+  select(ctr_id, entire_name, primary_city, primary_state, primary_zip, region) %>%
+  mutate(primary_zip = substr(primary_zip, 1, 5)) %>%
+  distinct() %>%
+  drop_na()
+
+for (zipcode in all_data["primary_zip"]){
+  df_zip_geo = tibble(geocode_zip(zipcode))
+}
+
+df_all_data = 
+  all_data %>%
+  rename(zipcode = primary_zip) %>%
+  left_join(., df_zip_geo, by = "zipcode")
 
 # Wrap data frame in SharedData
-sd <- SharedData$new(df)
+sd <- SharedData$new(df_all_data)
 
 ```
 
@@ -1040,20 +1048,20 @@ sd %>%
       "",
       ""
     ),  # end popup()
-    icon = awesomeIcons(
-      library = "ion",
-      icon = ifelse(
-        test = str_detect(df$center_name, "NY"),
-        yes = "ion-android-star-outline",
-        no = "ion-android-radio-button-off"
-      ),
-      iconColor = "white",
-      markerColor = ifelse(
-        test = df$lng == "-74", 
-        yes = "red",
-        no = "blue"
-      )
-    )
+    # icon = awesomeIcons(
+    #   library = "ion",
+    #   icon = ifelse(
+    #     test = str_detect(df$center_name, "NY"),
+    #     yes = "ion-android-star-outline",
+    #     no = "ion-android-radio-button-off"
+    #   ),
+    #   iconColor = "white",
+    #   markerColor = ifelse(
+    #     test = df$lng == "-74", 
+    #     yes = "red",
+    #     no = "blue"
+    #   )
+    # )
   ) %>%   # end addAwesomeMarkers()
   leaflet::addMeasure()
 ```
@@ -1063,11 +1071,13 @@ Column  { data-width=500 }
 ### Filters
 
 ```{r filters}
+
+
 filter_select(
   id = "center",
   label = "Center Name",
   sharedData = sd,
-  group = ~center_name
+  group = ~entire_name
   )
 
 filter_select(
@@ -1081,23 +1091,19 @@ filter_slider(
     id = "zipradius",
     label = "Radius",
     sharedData = sd,
-    column = ~zipcode,
+    column = ~region,
     step = 1,
     round = TRUE,
     sep = "",
     ticks = FALSE,
-    width = "30%")
-    
-filter_slider(
-    id = "numx",
-    label = "Number of X",
+    width = "50%")
+
+filter_checkbox(
+    id = "region",
+    label = "Region",
+    columns = 3,
     sharedData = sd,
-    column = ~zipcode,
-    step = 1,
-    round = TRUE,
-    sep = "",
-    ticks = FALSE,
-    width = "30%"
+    group = ~region
   )
 ```
 
@@ -1137,7 +1143,11 @@ sd %>%
       )
     ),
     colnames = c(
-      "Center Name" = "center_name",
+      "Center ID" = "ctr_id",
+      "Center Name" = "entire_name",
+      "Region" = "region",
+      "Primary City" = "primary_city",
+      "Primary State" = "primary_state",
       "Zip Code" = "zipcode",
       "Longitude" = "lng",
       "Latitude" = "lat"
