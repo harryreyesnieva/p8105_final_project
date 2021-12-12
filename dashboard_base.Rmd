@@ -253,7 +253,7 @@ Interactive Map {data-icon="ion-map"}
 #   left_join(., df_zip_geo, by = "zipcode")
 # 
 # write.csv(df_all_data, file = "./data/df_all_data.csv")
-df_all_data = read_csv("./data/df_all_data.csv") %>% select(-`...1`)
+df_all_data = read_csv("./data/df_all_data.csv") %>% select(-`...1`) %>% drop_na()
 
 # Wrap data frame in SharedData
 sd <- SharedData$new(df_all_data)
@@ -349,6 +349,7 @@ filter_checkbox(
 
 ```{r datatable}
 
+
 sd %>%
   datatable(
     filter = "top",  # allows filtering on each column
@@ -356,6 +357,7 @@ sd %>%
       "Buttons",  # add download buttons, etc
       "Scroller"  # for scrolling down the rows rather than pagination
     ),
+    callback = JS("$(document).ready(function() { $.fn.dataTableExt.sErrMode = 'throw'; $('#register').dataTable({ 'order': [] }); });"),
     rownames = FALSE,  # remove rownames
     style = "bootstrap",
     class = "compact",
@@ -367,8 +369,7 @@ sd %>%
       scroller = TRUE,
       columnDefs = list(
         list(
-          visible = FALSE,
-          targets = c(2, 3, 5:15)
+          visible = FALSE
         )
       ),
       buttons = list(

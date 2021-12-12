@@ -3,19 +3,19 @@ title: "Final Report"
 output: 
   html_document:
     code_folding: hide
-    toc: true
-    toc_float: true
+    toc: false
+    toc_float: false
     theme: yeti
     include:
       after_body: footer.html
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r setup, message= FALSE, warning=FALSE}
 library(tidyverse)
 library(readxl)
 library(haven)
 library(ggplot2)
+library(plotly)
 library(zipcodeR)
 library(ggmap)
 library(leaflet)
@@ -90,7 +90,7 @@ Prior research by one team member involved working with Offer Acceptance Ratio d
 
 ![](./img/screenshot_repository.png)
 
-```{r load_data}
+```{r load_data, message= FALSE, warning=FALSE}
 
 all_data = read_csv("data/all_KI_data.csv", col_names = TRUE) %>%
   nest(WITHIN_RADIUS = matches("_WR$")) %>%
@@ -107,7 +107,7 @@ Our initial exploratory analyses began using data from one recent report (August
 
 ### Geographic distribution of transplant centers across the United States.
 
-```{r, warning = FALSE}
+```{r, message= FALSE, warning=FALSE}
 df_one_names = 
   read_excel("./data/csrs_final_tables_2006_KI.xls", sheet = "Table B1") %>%
   janitor::clean_names()%>%
@@ -217,7 +217,7 @@ Next, we wanted to look at the distribution of key demographic characteristics o
 
 ### Scatter plots of age by zipcode, with a facet wrap by organ type.
 
-```{r age_by_zip, warning=FALSE}
+```{r age_by_zip, message= FALSE, warning=FALSE}
 plot = 
   df_all_age %>% 
   ggplot(aes(x = zipcode, y = age_category_percent, color = age_category)) + 
@@ -235,13 +235,13 @@ plot =
                              "65 to 69 Years", "More Than 70 Years")) + 
   facet_wrap(~org)
 
-fig <- ggplotly(plot) %>% layout(legend = list(orientation = 'h'))
+fig <- ggplotly(plot) 
 fig
 ```
 
 ### Scatter plots of gender by zipcode, with a facet wrap by organ type.
 
-```{r gender_by_zip, warning=FALSE}
+```{r gender_by_zip, message= FALSE, warning=FALSE}
 plot = 
   df_all_gender %>% 
   ggplot(aes(x=zipcode, y =gender_category_percent, color = gender_category)) + 
@@ -261,7 +261,7 @@ plot
 
 ### Scatter plots of race by zipcode, with a facet wrap by organ type.
 
-```{r race_by_zip, warning=FALSE}
+```{r race_by_zip, message= FALSE, warning=FALSE}
 plot = 
   df_all_demographics %>% 
   ggplot(aes(x=zipcode, y =race_category_percent, color = race_category)) + 
@@ -282,7 +282,7 @@ plot
 
 ### Scatter plots of blood type by zipcode, with a facet wrap by organ type.
 
-```{r bloodtype_by_zip, warning=FALSE}
+```{r bloodtype_by_zip, message= FALSE, warning=FALSE}
 plot = 
   df_all_blood_type %>%
   ggplot(aes(x = zipcode, y = blood_type_category_percent, color = blood_type_category)) + 
@@ -304,7 +304,15 @@ plot
 After our exploratory analysis to better understand where transplant centers were located and how much demographic variability to expect, we were ready to create plots comparing different transplant centers. 
 
 For further analyses, we focused on NY transplant centers for visualizations. Their center abbreviations and names are below:
-```{r NY_ctrs}
+```{r NY_ctrs, message= FALSE, warning=FALSE}
+all_data = read_csv("data/all_KI_data.csv", col_names = TRUE) %>%
+  nest(WITHIN_RADIUS = matches("_WR$")) %>%
+  mutate(REPORT_DATE = ymd_hms(REPORT_DATE, truncated = 3),
+         REGION = as.factor(REGION),
+         REGION = addNA(REGION))
+
+name_pairs = with(all_data, setNames(ENTIRE_NAME, CTR_ID))
+
 NY_ctrs = c(all_data %>% filter(PRIMARY_STATE == "NY") %>% select(CTR_ID) %>% distinct())
 knitr::kable(map(NY_ctrs, ~ name_pairs[.]), col.names = c("Name"))
 ```
@@ -317,7 +325,7 @@ Transplant centers missing O/A information were excluded from the plots below. G
 
 #### Change in offer acceptance hazard ratios over time, by region
 
-```{r OA_over_time, warning = FALSE}
+```{r OA_over_time, message= FALSE, warning=FALSE}
 
 oa_v_time = all_data %>%
   filter(!is.na(OA_OVERALL_HR_MN_CENTER)) %>%
@@ -330,14 +338,14 @@ oa_v_time = all_data %>%
   facet_wrap(~REGION,) + 
   labs(y = "Offer Acceptance Ratios \n(compared to National O/A)", 
        x = "Year",
-       title = "Offer Acceptance Ratios over Time, by OPTN Region")
+       title = "Offer Acceptance Ratios over Time by OPTN Region")
 
 oa_v_time
 ```
 
 For NY specific transplant centers, we can see that only 4 transplant centers had O/As < 1. NYU Medical Center (NYUCTX1) had a large increase in its O/A in the last year, while SUNY Upstate (NYUMTX1) has had a gradual decline in its O/A since 2017. 
 
-```{r NY_OA_over_time, warning = FALSE}
+```{r NY_OA_over_time, message= FALSE, warning=FALSE}
 
 ny_oa_v_time = 
   all_data %>%
@@ -348,7 +356,7 @@ ny_oa_v_time =
   geom_path() + 
   labs(y = "Offer Acceptance Ratios \n(compared to National O/A)", 
        x = "Year",
-       title = "Offer Acceptance Ratios over Time, in NY State",
+       title = "Offer Acceptance Ratios over Time in NY State",
        colors = "Center ID")
 
 ny_oa_v_time
@@ -364,7 +372,7 @@ ny_oa_v_time
 
 The median time to transplant for patients on NY transplant center kidney wait lists has generally decreased since 2017, although this is not consistent across all centers.
 
-``` {r ttt_v_time}
+``` {r ttt_v_time, message= FALSE, warning=FALSE}
 
 ttt_cols = c("TTT_25_C", "TTT_50_C", "TTT_75_C")
 ttt_v_time = all_data %>%
@@ -391,7 +399,7 @@ ttt_v_time
 When looked at as a whole over time, we might infer that since 2019, the transplant rate has increased with decreasing O/As over time, indicated by the relatively increasing slope of a best-fit line across centers. However, this inference is not well supported-- this method is very sensitive to outliers given the small sample size.
 
 
-``` {r txrate_v_oa_v_time}
+``` {r txrate_v_oa_v_time, message= FALSE, warning=FALSE}
 txrate_v_oa_v_time = all_data %>%
   filter(!is.na(OA_OVERALL_HR_MN_CENTER) & PRIMARY_STATE == "NY") %>%
   select(CTR_ID, REPORT_DATE, OA_OVERALL_HR_MN_CENTER, TMR_TXR_C2) %>%
