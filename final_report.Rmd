@@ -51,48 +51,50 @@ Kristen King (*kk3154*), Harry Reyes (*hr2479*), Lauren Richter (*lr2854*), Matt
 
 ## Motivation
 
-  The Scientific Registry of Transplant Recipients (SRTR) analyzes data on transplant centers, candidates, and recipients from multiple sources.^1^ Its mission is to provide advanced statistical and epidemiological analyses related to solid organ allocation and transplantation in support of the Department of Health and Human Services and its agents in their oversight of the national organ transplantation system.^2^ The SRTR produces annual summary reports on patients who are either recipients of a solid organ transplant or on a waitlist to receive one across all transplant centers in the United States.^3^ They also produce biannual center-level reports that focus on benchmarking individual center performance relative to other centers within administrative boundaries or nationwide. The administrative boundaries used for grouping centers divide the country into 57 different Donation Service Areas (DSAs), which are then aggregated into 11 regions.
+  The Scientific Registry of Transplant Recipients [(SRTR)](https://www.srtr.org/) analyzes data on transplant centers, candidates, and recipients from multiple sources.^1^ Its [mission](https://www.srtr.org/about-srtr/mission-vision-and-values/) is "to provide advanced statistical and epidemiological analyses related to solid organ allocation and transplantation in support of the Department of Health and Human Services and its agents in their oversight of the national organ transplantation system."^2^ The SRTR produces [annual summary reports](https://onlinelibrary.wiley.com/toc/16006143/2021/21/S2) on patients who are either recipients of a solid organ transplant or on a waitlist to receive one across all transplant centers in the United States.^3^ They also produce biannual center-level reports that focus on benchmarking individual center performance relative to other centers within administrative boundaries or nationwide. The administrative boundaries used for grouping centers divide the country into 57 different Donation Service Areas (DSAs), which are then aggregated into 11 regions.
 
-  With over 200 different kidney transplant centers across the United States, most patients live within driving distance of at least 2 centers and have some choice in where to seek waitlisting for transplantation.^4,5^ Patients can even be listed simultaneously at multiple centers. The current reports produced by the SRTR compare data from one given center to aggregate data within one DSA and one region; however, these administrative boundaries don’t always represent which centers are geographically proximal to each other. For example, individual transplant centers within New York City are compared to summary data from a group of NYC centers, but not other nearby centers in New Jersey or Connecticut, as they belong to three separate DSAs and three separate regions.
+  With over 200 different kidney transplant centers across the United States, most patients live within driving distance of at least 2 centers and have some choice in where to seek waitlisting for transplantation.^4,5^ Patients can even be listed simultaneously at multiple centers. The current [reports](https://www.srtr.org/document/pdf?fileName=\062021_release\pdfPSR\NYCPTX1KI202105PNEW.pdf) produced by the SRTR compare data from one given center to aggregate data within one DSA and one region; however, these administrative boundaries don’t always represent which centers are geographically proximal to each other. For example, individual transplant centers within New York City are compared to summary data from a group of NYC centers, but not other nearby centers in New Jersey or Connecticut, as they belong to three separate DSAs and three separate regions.
 
   There is a dramatic shortage of organs for transplant relative to end-stage kidney disease patients in need,^3^ and transplant centers are selective in who to accept onto their waitlist as a candidate for a transplant in order to maximize the benefits from donated organs and ensure patients will not be put at risk from major surgery and lifelong immunosuppression medications if the risks outweigh the potential benefits of receiving a transplant. There is also large variation between centers in which donor organs they will accept for transplant that can influence patients’ likelihood of receiving a transplant, and how quickly.^6,7^ Patients may be interested in comparing demographic and outcomes data at all of the centers geographically closest to them to understand where they might have the best chance at receiving a successful transplant, regardless of the administrative boundaries currently used.
 
-  From a research perspective, there is also great value in being able to look at data across all centers nationwide and over time in order to explore differences in practice patterns across centers and how it may correlate to patient outcomes. The extensive data that is compiled by the SRTR to produce their reports is all publicly available on their website, but not in a particularly user-friendly format. The full reports can be downloaded in PDF format for one center and time period at a time, and limited pieces of the most current information are displayed within web pages, one center at a time. The underlying data can also be downloaded in very large excel files with rows for all centers, for one organ and one given time period at a time, across many different sheets of data. The aims of this project were to (1) automate the retrieval and compilation of the archived data across all time periods to create a repository that could be used for future research, (2) explore the data available to select and clean the most relevant data elements, and (3) create a dashboard with data visualizations that may be of interest to patients looking to compare transplant centers based on geographical proximity rather than arbitrary administrative boundaries. 
+  From a research perspective, there is also great value in being able to look at data across all centers nationwide and over time in order to explore differences in practice patterns across centers and how it may correlate to patient outcomes. The extensive data that is compiled by the SRTR to produce their reports is all publicly available on their website, but not in a particularly user-friendly format. The full reports can be downloaded in PDF format for one center and time period at a time, and limited pieces of the most current information are displayed within web pages, one center at a time. The underlying data can also be downloaded in very large excel files with rows for all centers, for one organ and one given time period at a time, across many different sheets of data. The aims of this project were to (1) automate the retrieval and compilation of the archived data across all time periods to create a repository that could be used for future research, (2) explore the data available to select and tidy the most relevant data elements, and (3) create a dashboard with some exploratory data visualizations of these key data elements that may be of interest to patients looking to compare between different transplant centers and across time rather than looking at one center's report at a time.
 
 
 ## Related Work
 
-  The SRTR website currently has a search function that allows a user to type in a zip code and see a list of transplant centers within a given number of miles, and to rank them by distance, number of transplants performed, or a 5-level rating of likelihood of getting a transplant faster or 1-year kidney survival.^8^ While these are important high-level summary data, the user must click to download and scroll through multiple long PDF files in order to perform any other more detailed comparisons between centers. Additionally, while there has historically been intense regulatory scrutiny on 1-year post-transplant outcomes, prior work has shown that patients are actually more interested in waitlist outcomes.^9,10^
+  The SRTR website currently has a [search function](https://www.srtr.org/transplant-centers/?organ=kidney&recipientType=adult&query=10032) that allows a user to type in a zip code and see a list of transplant centers within a given number of miles, and to rank them by distance, number of transplants performed, or a 5-level rating of likelihood of getting a transplant faster or 1-year kidney survival.^8^ While these are important high-level summary data, the user must click to download and scroll through multiple long PDF files in order to perform any other more detailed comparisons between centers. Additionally, while there has historically been intense regulatory scrutiny on 1-year post-transplant outcomes, prior work has shown that patients are actually more interested in waitlist outcomes.^9,10^
+  
 Prior research by one team member involved working with Offer Acceptance Ratio data from the SRTR reports and was limited to data from one time period only due to the logistical difficulty in downloading and wrangling these data. While geographic variation in access to transplantation has historically been attributed to variability in local organ supply relative to waitlist demand,^11,12^ this work found that there is significant variation in the probability of transplantation across centers within a DSA, which share a local organ supply. Offer Acceptance Ratios, which measure how frequently transplant centers accept the organ offers they receive relative to other centers nationwide, stratified by donor risk level, were found to be correlated with the likelihood of transplantation.^13^ Prior work also demonstrates that many patients die on the waitlist after having multiple organ offers that were declined on their behalf, with organ quality the most frequent reason for decline rather than a patient-specific reason.^14^ Together, these findings suggest that centers’ organ offer acceptance behavior, especially for higher-risk kidneys which frequently end up discarded after too many declines, has important impact on patient outcomes and need to be studied further. Understanding variability in practice between centers may help identify opportunities to share best practices and ultimately improve access to transplantation for patients.
  
 
 ## Initial questions
 
-  We first wanted to use the SRTR report data to understand how patient demographics varied at centers across the country, for both waitlisted candidates and transplant recipients. We wanted to present distributions of demographic characteristics for both candidates and recipients side-by-side to allow for visual comparison. Variables considered in initial analyses included age, race, sex, and blood type. We later expanded our analysis dataset to include additional clinical characteristics such as underlying cause of kidney disease (diabetes, hypertension, glomerulonephritis, polycystic kidney disease, or other/unknown), Body Mass Index (BMI), high Panel Reactive Antibodies (PRA) sensitization, and history of prior transplant. We compared across numeric zip codes as an initial consideration of geographic proximity. While we started with all solid organ transplants (kidney, liver, heart, lung, intestine, and pancreas, plus combinations of multi-organ transplants), we ultimately narrowed the scope of our project to only kidney, which is the most frequently transplanted organ in the United States. 
+  We first wanted to use the SRTR report data to understand how patient demographics varied at centers across the country, for both waitlisted candidates and transplant recipients. Variables considered in initial analyses included age, race, sex, and blood type. We later expanded our analysis dataset to include additional clinical characteristics such as underlying cause of kidney disease (diabetes, hypertension, glomerulonephritis, polycystic kidney disease, or other/unknown), Body Mass Index (BMI), high Panel Reactive Antibodies (PRA) sensitization, and history of prior transplant for use in future studies. We compared across numeric zip codes as an initial consideration of geographic proximity. While we started with all solid organ transplants (kidney, liver, heart, lung, intestine, and pancreas, plus combinations of multi-organ transplants), we later narrowed the scope of our project to only kidney, which is the most frequently transplanted organ in the United States. 
 
   We next aimed to assess variation in waitlist outcomes (transplant from a living donor, transplant from a deceased donor, death, or waitlist removal for deteriorating condition) across centers. We also visually examined differences between transplant centers in offer acceptance ratios, across different donor risk levels (low-risk, medium-risk, high-risk, and hard-to-place kidneys that required >100 offers before acceptance). We were also interested in exploring trends over time in centers’ offer acceptance ratios.
 
 
 ## Data
 
-  While the SRTR Program-Specific Reports (PSR) are designed to be accessed primarily as center-specific snapshot PDF files, the data that were used to create these reports are also publicly available from the SRTR website.^15,16^ Data for each biannual reporting period can be downloaded as zip files of excel workbooks for each organ type. Within each organ-specific excel workbook, there is one row for each transplant center, with 28-34 sheets of data corresponding to the various tables and figures in the PDF reports, and tens to hundreds of columns of data within each sheet. Data from 18 reporting time periods were available for download, dated from July 2012 through May 2021. 
+  While the SRTR Program-Specific Reports (PSR) are designed to be accessed primarily as center-specific snapshot [PDF](https://www.srtr.org/document/pdf?fileName=\062021_release\pdfPSR\NYCPTX1KI202105PNEW.pdf) files, the data that were used to create these reports are also publicly available from the SRTR [website](https://www.srtr.org/reports/program-specific-reports/).^15,16^ Data for each biannual reporting period can be downloaded as zip files of excel workbooks for each organ type. Within each organ-specific excel workbook, there is one row for each transplant center, with 28-34 sheets of data corresponding to the various tables and figures in the PDF reports, and tens to hundreds of columns of data within each sheet. Data from 18 reporting time periods were available for download, dated from July 2012 through May 2021. 
 
-  We developed an automated pipeline to download, unzip, filter, compile, and tidy all of the archived data from the URLs, as found in the downloading_data.Rmd file. We inspected the SRTR webpage where the data can be downloaded to file names/dates and URLs that are associated with the drop-down menu options and ‘download’ buttons. We then wrote a function to download both the current data files (accessed as a separate URL format) and each of the archived data releases, unzip the folders of all organs, select only the kidney files, and compile all years of data into one nested list with list columns. We wrote additional functions to select only the variables of interest for analysis from the various sheets to reduce the working file size. The number of sheets of data, the sheet names, and the variable names changed over time and required extensive tidying and reconciling for merging. For example, data on age group changed from using a “65+” category to further breaking it down to “65-69” and “70+”, and the name of the sheet where these data were found changed from “Table 1” to “Table B1” over time. 
+  We developed an automated pipeline to download, unzip, filter, compile, and tidy all of the archived data from the URLs, as found in the [downloading_data.Rmd file](https://github.com/harryreyesnieva/p8105_final_project/blob/main/code/downloading_data.md). 
+  
+  To access this data, we inspected the [SRTR webpage](https://www.srtr.org/reports/program-specific-reports/) where the data can be downloaded to file names/dates and URLs that are associated with the drop-down menu options and ‘download’ buttons. We then wrote a function to download both the current data files (accessed as a separate URL format) and each of the archived data releases, unzip the folders of all organs, select only the kidney files, and compile all years of data into one nested list with list columns. We wrote additional functions to select only the variables of interest for analysis from the various sheets to reduce the working file size. The number of sheets of data, the sheet names, and the variable names changed over time and required extensive tidying and reconciling for merging. For example, data on age group changed from using a “65+” category to further breaking it down to “65-69” and “70+”, and the name of the sheet where these data were found changed from “Table 1” to “Table B1” over time. 
+  
+  The compiled data is available in our [PSR Data Repository](http://www.harryreyesnieva.com/p8105_final_project/data_repository.html), where it can be searched, filtered, copied, and downloaded.
 
-	
+#### Screenshot of Data Repository
+
+![](./img/data_repository_screenshot.png)
+
 ## Exploratory Analyses
-*	Histogram of kidney transplant center frequency by zipcode.
-*	Leaflet plot of kidney transplant centers by zipcode.
-*	Histogram of kidney transplant waitlist patient outcomes by zipcode (i.e. mortality, transfer, etc.).
-*	Automated exploratory data analysis that was iterated over other organ types.
 
-## Additional Analyses
-*	Scatter plots of demographics, age, gender, blood type, and comorbidities for kidney transplant waitlist patients by zipcode.
-*	Scatter plots of PRA score with comorbidities yielded no major correlations.
-*	Scatter plots of patient characteristics with facet wrap by organ type.
+Our initial exploratory analyses began using data from one recent report (August 2020 release). First, we mapped the distribution of transplant centers across the United States.
 
-#### Figure X: Histogram of Kidney Transplant Center by Zipcode
-```{r}
+#### Geographic distribution of transplant centers across the United States.
+
+```{r, warning = FALSE}
 df_one_names = 
   read_excel("./data/csrs_final_tables_2006_KI.xls", sheet = "Table B1") %>%
   janitor::clean_names()%>%
@@ -187,77 +189,20 @@ df_one_merge =
   merge(df_zipcodes, df_zip_geo, all = TRUE) %>%
   merge(., df_one_plot, all = TRUE)
 
-df_one_merge %>% 
-  ggplot(aes(zipcode)) + 
-  geom_histogram(bins = 50) + 
-  labs(title = "Transplant Center Frequency by Zipcode",
-       subtitle = "SRTR Kidney Transplant Data, August 2020 Release",
-       x = "Zipcode",
-       y = "Transplant Center Count") +
-  theme_minimal()
-
-#png('txp_frequency.png')
-```
-
-#### Figure X: Geographic distribution of kidney transplant centers across the United States.
-
-```{r}
 # leaflet(options = leafletOptions(minZoom = 0, maxZoom = 18))
 df_one_merge %>%
+  distinct(center_name, lat, lng) %>% 
   leaflet() %>% 
   addTiles() %>% 
-  addCircleMarkers(lat = ~lat, lng = ~lng)
+  addCircleMarkers(lat = ~lat, lng = ~lng, fillOpacity = 0.5, clusterOptions = markerClusterOptions(), popup = ~center_name)
 
 #df = data.frame(Lat = 1:10, Long = rnorm(10))
 #leaflet(df) %>% addCircles()
 ```
 
-#### Figure X: Representative histogram of exposure variables, Kidney Transplant Population.
+Next, we wanted to look at the distribution of key demographic characteristics of patients on the waiting list, organized by zip code, to get an idea of the demographic variability of transplant patients across the country. We used recent data on patients waiting for a transplant from any solid organ. Initial characteristics of interest included age group, sex, race, and blood type.
 
-```{r}
-x2 = df_one_merge[, c(21:35)]
-plot = ggplot(gather(x2), aes(value)) + 
-  geom_histogram(bins = 100) + 
-  facet_wrap(~key, scales = "free_y") +
-  coord_cartesian(xlim = c(0, 100)) + 
-  labs(title = "Exposure Frequency Part2", 
-       subtitle = "SRTR Kidney Transplant Data, August 2020 Release", 
-       x = "Exposure (Number)", y = "Frequency") + 
-  theme_minimal()
-
-plot
-```
-
-### Figure X: Representative histogram of patient outcome frequency variables.
-
-```{r}
-df_outcomes = 
-  df_one_merge %>%
-  select(newlistings_percent_mortality, 
-         newlistings_percent_deteriorated,
-         newlistings_percent_transfer,
-         start_waitlist_center_time2,
-         start_waitlist_center_all, 
-         start_waitlist_regional, 
-         start_waitlist_usa) %>%
-  filter(newlistings_percent_transfer <= 100)
-
-plot = 
-  ggplot(gather(df_outcomes), aes(value)) + 
-  geom_histogram(bins = 30) + 
-  facet_wrap(~key, scales = "free_y") + 
-  coord_cartesian(xlim = c(0, 100)) + 
-  labs(title = "Outcome Frequency", 
-       subtitle = "SRTR Kidney Transplant Data, August 2020 Release", 
-       x = "Outcome (Percent)", y = "Frequency") + 
-  theme_minimal()
-
-# df_continuous = sapply(df_outcomes, as.numeric)
-
-plot
-```
-
-#### Figure X: Scatter plots of age by zipcode, with a facet wrap by organ type.
+#### Scatter plots of age by zipcode, with a facet wrap by organ type.
 
 ```{r age_by_zip, warning=FALSE}
 plot = 
@@ -280,7 +225,7 @@ plot =
 plot
 ```
 
-#### Figure X: Scatter plots of gender by zipcode, with a facet wrap by organ type.
+#### Scatter plots of gender by zipcode, with a facet wrap by organ type.
 
 ```{r gender_by_zip, warning=FALSE}
 plot = 
@@ -300,7 +245,7 @@ plot =
 plot
 ```
 
-#### Figure X: Scatter plots of race by zipcode, with a facet wrap by organ type.
+#### Scatter plots of race by zipcode, with a facet wrap by organ type.
 
 ```{r race_by_zip, warning=FALSE}
 plot = 
@@ -321,7 +266,7 @@ plot =
 plot
 ```
 
-#### Figure X: Scatter plots of blood type by zipcode, with a facet wrap by organ type.
+#### Scatter plots of blood type by zipcode, with a facet wrap by organ type.
 
 ```{r bloodtype_by_zip, warning=FALSE}
 plot = 
@@ -340,22 +285,31 @@ plot =
 plot
 ```
 
-#### Figure X: Screenshot of interactive dashboard for patient characteristics by organ.
+## Additional Analyses
+
+After our exploratory analysis to better understand where transplant centers were located and how much demographic variability to expect, we were ready to create plots comparing different transplant centers. 
+
+### Offer Acceptance Ratios Over Time
+
+We plotted offer acceptance ratios over time at all centers, organized by the 11 OPTN regions. 
+
+### Waitlist Demographics
+
+### Transplant Recipient Demographics
+
+
+
+#### Screenshot of dashboard
 
 ![](./img/dashboard_screenshot.png)
 
-*	The proportion of Hispanic or Latino patients was greatest in the southwest zipcodes for all organ types
-*	Preponderance of men in waitlist population, especially for heart, kidney and liver transplants
-*	Kidney had the highest proportion of children under the age of 2.
-*	Kidney-pancreas and intestine had the lowest proportion of patients over the age of 50.
-
-*	Type O was the most common blood type for all kinds of organ transplants
-*	Dashboard of waitlist patient characteristics for different organ type.
 
 ## Discussion
-*	Some variation in waitlist patient characteristics by zipcode, consistent with the demographics of the region.
-*	Minimal variance in waitlist patient outcomes by zipcode is reflective of a highly regulated practice.
-*	Variation in patient characteristics by organ is consistent with practice guidelines.
+
+  In our initial exploratory analyses across all organs, we observed variation in waitlist patient characteristics by zipcode, consistent with expected variations in demographics across US regions. The proportion of Hispanic or Latino patients was greatest in the southwest zipcodes for all organ types. Within nearly all zip codes, there were more men than women on the waitlist, and blood type O was the most common across all organs. For the kidney transplant waiting list, there were notably a few centers with much higher proportions of their candidates aged 65-69 years or 70+.
+
+  The compilation of the important SRTR PSR data elements for all centers, across all archived dates will be a valuable resource for future research in kidney transplantation. With an automated data download and cleaning pipeline, adding new data from subsequent report releases will be possible by modifying only a few lines of code. Although there is a wealth of data already collected and publicly reported by the SRTR, having an easy way to compare data between transplant centers directly and to look at trends over time will enable future research into the impact of variation in center practice on patient outcomes, especially for waitlist outcomes of interest to patients. 
+  
 	
 ## References:
 1.	Leppke S, Leighton T, Zaun D et al. Scientific Registry of Transplant Recipients: Collecting, analyzing, and reporting data on transplantation in the United States. Transplantation Reviews, (2013) 27(2):50-56
