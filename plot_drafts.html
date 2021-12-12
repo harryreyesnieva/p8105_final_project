@@ -293,9 +293,8 @@ $(document).ready(function () {
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-subset_test = tail(all_data, 20)
-
-all_data %&gt;%
+subset_test = tail(all_data, 20)</code></pre>
+<pre class="r"><code>oa_v_time = all_data %&gt;%
   filter(!is.na(OA_OVERALL_HR_MN_CENTER)) %&gt;%
   select(CTR_ID, REGION, REPORT_DATE, OA_OVERALL_HR_MN_CENTER)  %&gt;%
   group_by(REGION) %&gt;%
@@ -303,8 +302,90 @@ all_data %&gt;%
   ggplot(aes(x = REPORT_DATE, y = OA_OVERALL_HR_MN_CENTER, color = factor(CTR_COLOR_TYPE))) +
   geom_point(show.legend = FALSE) +
   geom_path(show.legend = FALSE) +
-  facet_wrap(~REGION)</code></pre>
-<p><img src="plot_drafts_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+  facet_wrap(~REGION)
+
+oa_v_time</code></pre>
+<p><img src="plot_drafts_files/figure-html/OA_over_time-1.png" width="672" /></p>
+<div id="need-to-separate-out-the-age-group-race-and-blood-type-variables" class="section level2">
+<h2>Need to separate out the age group, race, and blood type variables</h2>
+</div>
+<div id="naming-patern-is-stat_typeinfo_typevar_valyear_qualifier" class="section level2">
+<h2>naming patern is [stat_type]<em>[info_type][var_val]</em>[year_qualifier]</h2>
+<p>stat_type = WLC for waitlist, RLC for living donor tranpslant recipients, RCC for deceased donor recipients info_type = A for age group, B for blood type, R for race, G for gender, KI for primary disease (only on waitlist), or a 3 letter code for primary disease for tx recipients var_val = the actual information, for example A2 is age &lt;2, A10 is age 2-11, etc, RB is Black, GF is female, BAB is blood type AB year_qualifier can be removed, its all of the characters after the 2nd _ (ex in WLC_A2_ALLC2, the qualifier is ALLC2)</p>
+<pre class="r"><code>waitlist_demo_cols = c(&quot;WLC_A2_ALLC2&quot;, &quot;WLC_A10_ALLC2&quot;, &quot;WLC_A17_ALLC2&quot;, &quot;WLC_A34_ALLC2&quot;, &quot;WLC_A49_ALLC2&quot;, &quot;WLC_A64_ALLC2&quot;, 
+                       &quot;WLC_GM_ALLC2&quot;, &quot;WLC_GF_ALLC2&quot;, 
+                       &quot;WLC_RA_ALLC2&quot;, &quot;WLC_RB_ALLC2&quot;, &quot;WLC_RH_ALLC2&quot;, &quot;WLC_RO_ALLC2&quot;, &quot;WLC_RU_ALLC2&quot;, &quot;WLC_RW_ALLC2&quot;, 
+                       &quot;WLC_BAB_ALLC2&quot;, &quot;WLC_BA_ALLC2&quot;, &quot;WLC_BB_ALLC2&quot;, &quot;WLC_BO_ALLC2&quot;, &quot;WLC_BU_ALLC2&quot;,
+                       &quot;WLC_PRA80_ALLC2&quot;, 
+                       &quot;WLC_PTXY_ALLC2&quot;,
+                       &quot;WLC_KIDIA_ALLC2&quot;, &quot;WLC_KIGLO_ALLC2&quot;, &quot;WLC_KIHYP_ALLC2&quot;, &quot;WLC_KIMIS_ALLC2&quot;, &quot;WLC_KINEO_ALLC2&quot;, &quot;WLC_KIOTH_ALLC2&quot;, &quot;WLC_KIPOL_ALLC2&quot;, &quot;WLC_KIREN_ALLC2&quot;, &quot;WLC_KIRTR_ALLC2&quot;, &quot;WLC_KITUB_ALLC2&quot;, &quot;WLC_KICON_ALLC2&quot;)
+
+ddtx_demo_cols = c(&quot;RCC_A2_C&quot;, &quot;RCC_A10_C&quot;, &quot;RCC_A17_C&quot;, &quot;RCC_A34_C&quot;, &quot;RCC_A49_C&quot;, &quot;RCC_A64_C&quot;, &quot;RCC_GM_C&quot;, &quot;RCC_GF_C&quot;, &quot;RCC_RA_C&quot;, &quot;RCC_RB_C&quot;, &quot;RCC_RH_C&quot;, &quot;RCC_RO_C&quot;, &quot;RCC_RU_C&quot;, &quot;RCC_RW_C&quot;, &quot;RCC_BAB_C&quot;, &quot;RCC_BA_C&quot;, &quot;RCC_BB_C&quot;, &quot;RCC_BO_C&quot;, &quot;RCC_BMI20_C&quot;, &quot;RCC_BMI25_C&quot;, &quot;RCC_BMI30_C&quot;, &quot;RCC_DIA_C&quot;, &quot;RCC_GLO_C&quot;, &quot;RCC_HYP_C&quot;, &quot;RCC_MIS_C&quot;, &quot;RCC_NEO_C&quot;, &quot;RCC_OTK_C&quot;, &quot;RCC_POL_C&quot;, &quot;RCC_VAS_C&quot;, &quot;RCC_RET_C&quot;, &quot;RCC_TUB_C&quot;, &quot;RCC_CON_C&quot;, &quot;RCC_PRA80_C&quot;, &quot;RCC_PTXY_C&quot;)
+
+ldtx_demo_cols = str_replace(ddtx_demo_cols, &quot;^RCC&quot;, &quot;RCL&quot;)
+ldtx_demo_cols = str_replace(ldtx_demo_cols, &quot;_RET_&quot;, &quot;_KIRET_&quot;)
+
+demo_cols = c(waitlist_demo_cols, ddtx_demo_cols, ldtx_demo_cols)
+demo_cols
+##   [1] &quot;WLC_A2_ALLC2&quot;    &quot;WLC_A10_ALLC2&quot;   &quot;WLC_A17_ALLC2&quot;   &quot;WLC_A34_ALLC2&quot;  
+##   [5] &quot;WLC_A49_ALLC2&quot;   &quot;WLC_A64_ALLC2&quot;   &quot;WLC_GM_ALLC2&quot;    &quot;WLC_GF_ALLC2&quot;   
+##   [9] &quot;WLC_RA_ALLC2&quot;    &quot;WLC_RB_ALLC2&quot;    &quot;WLC_RH_ALLC2&quot;    &quot;WLC_RO_ALLC2&quot;   
+##  [13] &quot;WLC_RU_ALLC2&quot;    &quot;WLC_RW_ALLC2&quot;    &quot;WLC_BAB_ALLC2&quot;   &quot;WLC_BA_ALLC2&quot;   
+##  [17] &quot;WLC_BB_ALLC2&quot;    &quot;WLC_BO_ALLC2&quot;    &quot;WLC_BU_ALLC2&quot;    &quot;WLC_PRA80_ALLC2&quot;
+##  [21] &quot;WLC_PTXY_ALLC2&quot;  &quot;WLC_KIDIA_ALLC2&quot; &quot;WLC_KIGLO_ALLC2&quot; &quot;WLC_KIHYP_ALLC2&quot;
+##  [25] &quot;WLC_KIMIS_ALLC2&quot; &quot;WLC_KINEO_ALLC2&quot; &quot;WLC_KIOTH_ALLC2&quot; &quot;WLC_KIPOL_ALLC2&quot;
+##  [29] &quot;WLC_KIREN_ALLC2&quot; &quot;WLC_KIRTR_ALLC2&quot; &quot;WLC_KITUB_ALLC2&quot; &quot;WLC_KICON_ALLC2&quot;
+##  [33] &quot;RCC_A2_C&quot;        &quot;RCC_A10_C&quot;       &quot;RCC_A17_C&quot;       &quot;RCC_A34_C&quot;      
+##  [37] &quot;RCC_A49_C&quot;       &quot;RCC_A64_C&quot;       &quot;RCC_GM_C&quot;        &quot;RCC_GF_C&quot;       
+##  [41] &quot;RCC_RA_C&quot;        &quot;RCC_RB_C&quot;        &quot;RCC_RH_C&quot;        &quot;RCC_RO_C&quot;       
+##  [45] &quot;RCC_RU_C&quot;        &quot;RCC_RW_C&quot;        &quot;RCC_BAB_C&quot;       &quot;RCC_BA_C&quot;       
+##  [49] &quot;RCC_BB_C&quot;        &quot;RCC_BO_C&quot;        &quot;RCC_BMI20_C&quot;     &quot;RCC_BMI25_C&quot;    
+##  [53] &quot;RCC_BMI30_C&quot;     &quot;RCC_DIA_C&quot;       &quot;RCC_GLO_C&quot;       &quot;RCC_HYP_C&quot;      
+##  [57] &quot;RCC_MIS_C&quot;       &quot;RCC_NEO_C&quot;       &quot;RCC_OTK_C&quot;       &quot;RCC_POL_C&quot;      
+##  [61] &quot;RCC_VAS_C&quot;       &quot;RCC_RET_C&quot;       &quot;RCC_TUB_C&quot;       &quot;RCC_CON_C&quot;      
+##  [65] &quot;RCC_PRA80_C&quot;     &quot;RCC_PTXY_C&quot;      &quot;RCL_A2_C&quot;        &quot;RCL_A10_C&quot;      
+##  [69] &quot;RCL_A17_C&quot;       &quot;RCL_A34_C&quot;       &quot;RCL_A49_C&quot;       &quot;RCL_A64_C&quot;      
+##  [73] &quot;RCL_GM_C&quot;        &quot;RCL_GF_C&quot;        &quot;RCL_RA_C&quot;        &quot;RCL_RB_C&quot;       
+##  [77] &quot;RCL_RH_C&quot;        &quot;RCL_RO_C&quot;        &quot;RCL_RU_C&quot;        &quot;RCL_RW_C&quot;       
+##  [81] &quot;RCL_BAB_C&quot;       &quot;RCL_BA_C&quot;        &quot;RCL_BB_C&quot;        &quot;RCL_BO_C&quot;       
+##  [85] &quot;RCL_BMI20_C&quot;     &quot;RCL_BMI25_C&quot;     &quot;RCL_BMI30_C&quot;     &quot;RCL_DIA_C&quot;      
+##  [89] &quot;RCL_GLO_C&quot;       &quot;RCL_HYP_C&quot;       &quot;RCL_MIS_C&quot;       &quot;RCL_NEO_C&quot;      
+##  [93] &quot;RCL_OTK_C&quot;       &quot;RCL_POL_C&quot;       &quot;RCL_VAS_C&quot;       &quot;RCL_KIRET_C&quot;    
+##  [97] &quot;RCL_TUB_C&quot;       &quot;RCL_CON_C&quot;       &quot;RCL_PRA80_C&quot;     &quot;RCL_PTXY_C&quot;
+demographic_props = all_data %&gt;%
+  select(CTR_ID, REGION, REPORT_DATE, any_of(demo_cols)) %&gt;%
+  pivot_longer(cols = demo_cols, names_to = c(&quot;CATEGORY&quot;), values_to = c(&quot;CATEGORY_PROP&quot;)) %&gt;%
+  mutate(ORG_TYPE = 
+           as.factor(ifelse(str_sub(CATEGORY,1,3) == &quot;WLC&quot;, &quot;waitlist&quot;, 
+                            ifelse(substr(CATEGORY, 3,3) == &quot;L&quot;, &quot;living&quot;, &quot;deceased&quot;)))) %&gt;%
+  filter(!is.na(CATEGORY_PROP)) %&gt;%
+  group_by(CTR_ID, ORG_TYPE) %&gt;%
+  
+  ggplot(aes(fill = CATEGORY, y = CATEGORY_PROP, x = ORG_TYPE)) +
+    geom_bar(position = &quot;stack&quot;, stat = &quot;identity&quot;, show.legend = FALSE) +
+  scale_y_continuous(labels = scales::percent_format())
+## Note: Using an external vector in selections is ambiguous.
+## ℹ Use `all_of(demo_cols)` instead of `demo_cols` to silence this message.
+## ℹ See &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.
+## This message is displayed once per session.
+#   ggplot(aes(x = REPORT_DATE, y = OA_OVERALL_HR_MN_CENTER, color = factor(CTR_COLOR_TYPE))) +
+#   geom_point(show.legend = FALSE) +
+#   geom_path(show.legend = FALSE) +
+#   facet_wrap(~REGION)
+
+demographic_props</code></pre>
+<p><img src="plot_drafts_files/figure-html/stacked_bars-1.png" width="672" /></p>
+<pre class="r"><code>ttt_cols = c(&quot;TTT_25_C&quot;, &quot;TTT_50_C&quot;, &quot;TTT_75_C&quot;)
+all_data %&gt;%
+  filter(!is.na(TTT_50_C) &amp; !is.na(OA_OVERALL_HR_MN_CENTER) &amp; PRIMARY_STATE == &quot;NY&quot;) %&gt;%
+  select(CTR_ID, REGION, REPORT_DATE, OA_OVERALL_HR_MN_CENTER, TTT_50_C)%&gt;%
+  group_by(REPORT_DATE) %&gt;%
+  ggplot(aes(x = REPORT_DATE, y = TTT_50_C, color = CTR_ID)) +
+  geom_point() +
+  geom_line()</code></pre>
+<p><img src="plot_drafts_files/figure-html/ttt_v_time-1.png" width="672" /></p>
+<pre class="r"><code>  #facet_wrap( ~ as.Date(REPORT_DATE), scales = &#39;free&#39;)</code></pre>
+</div>
 <div id="variables-for-viz" class="section level1">
 <h1>Variables for viz</h1>
 <p><em>unique identifiers</em>:</p>
