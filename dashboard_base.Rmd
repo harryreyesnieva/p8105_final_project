@@ -235,10 +235,9 @@ Interactive Map {data-icon="ion-map"}
 =====================================  
 
 ```{r include=FALSE}
-
 # all_data = read_csv("data/all_KI_data.csv", col_names = TRUE) %>%
 #   janitor::clean_names() %>%
-#   select(ctr_id, entire_name, primary_city, primary_state, primary_zip, region) %>%
+#   select(ctr_id, entire_name, primary_city, primary_state, primary_zip, region, distance_wr) %>%
 #   mutate(primary_zip = substr(primary_zip, 1, 5)) %>%
 #   distinct() %>%
 #   drop_na()
@@ -247,20 +246,71 @@ Interactive Map {data-icon="ion-map"}
 #   df_zip_geo = tibble(geocode_zip(zipcode))
 # }
 # 
-# df_all_data = 
+# df_all_data =
 #   all_data %>%
 #   rename(zipcode = primary_zip) %>%
 #   left_join(., df_zip_geo, by = "zipcode")
-# 
+# # 
 # write.csv(df_all_data, file = "./data/df_all_data.csv")
-df_all_data = read_csv("./data/df_all_data.csv") %>% select(-`...1`) %>% drop_na()
+df_all_data = 
+  read_csv("./data/df_all_data.csv") %>% 
+  select(-`...1`) %>% 
+  drop_na() %>%
+  group_by(entire_name) %>% 
+  filter(distance_wr>0) %>%
+  top_n(1, distance_wr)
 
 # Wrap data frame in SharedData
 sd <- SharedData$new(df_all_data)
 
 ```
 
-Column { data-width=500 }
+
+Column {.sidebar data-width=300 }
+-------------------------------------
+### Filters
+
+```{r filters}
+
+filter_select(
+  id = "center",
+  label = "Center Name",
+  sharedData = sd,
+  group = ~entire_name
+  )
+
+filter_select(
+  id = "zipcode",
+  label = "Zip Code",
+  sharedData = sd,
+  group = ~zipcode
+  )
+
+filter_slider(
+    id = "distance",
+    label = "Distance to nearest transplant center (radius in miles)",
+    sharedData = sd,
+    column = ~distance_wr,
+    step = 1,
+    round = TRUE,
+    sep = "",
+    ticks = FALSE,
+    width = "80%")
+
+filter_checkbox(
+    id = "region",
+    label = 'Region',
+    columns = 4,
+    inline = TRUE,
+    sharedData = sd,
+    group = ~region)
+
+```
+
+<!-- ### Optun -->
+<!-- ![](img/regions_OPTN.png) -->
+
+Row { data-height=700 }
 -------------------------------------
 
 ### Interactive map
@@ -305,46 +355,8 @@ sd %>%
   leaflet::addMeasure()
 ```
 
-Column  { data-width=500 }
+Row {data-height=300}
 -------------------------------------
-### Filters
-
-```{r filters}
-
-filter_select(
-  id = "center",
-  label = "Center Name",
-  sharedData = sd,
-  group = ~entire_name
-  )
-
-filter_select(
-  id = "zipcode",
-  label = "Zip Code",
-  sharedData = sd,
-  group = ~zipcode
-  )
-
-filter_slider(
-    id = "zipradius",
-    label = "Radius",
-    sharedData = sd,
-    column = ~region,
-    step = 1,
-    round = TRUE,
-    sep = "",
-    ticks = FALSE,
-    width = "50%")
-
-filter_checkbox(
-    id = "region",
-    label = "Region",
-    columns = 3,
-    sharedData = sd,
-    group = ~region
-  )
-```
-
 ### Datatable
 
 ```{r datatable}
@@ -362,10 +374,11 @@ sd %>%
     style = "bootstrap",
     class = "compact",
     width = "100%",
+    height = "100%",
     options = list(
       dom = "Blrtip",  # specify content (search box, etc)
       deferRender = TRUE,
-      scrollY = 300,
+      scrollY = 800,
       scroller = TRUE,
       columnDefs = list(
         list(
@@ -389,7 +402,8 @@ sd %>%
       "Primary State" = "primary_state",
       "Zip Code" = "zipcode",
       "Longitude" = "lng",
-      "Latitude" = "lat"
+      "Latitude" = "lat",
+      "Distance to nearest center" = "distance_wr"
     )
   )
 ```
