@@ -64,14 +64,6 @@ ldtx_demo_cols = str_replace(ldtx_demo_cols, "_RET_", "_KIRET_")
 
 demo_cols = c(waitlist_demo_cols, ddtx_demo_cols, ldtx_demo_cols)
 
-as_tibble(demo_cols) %>%
-  filter(str_detect(value, pattern = age_pats)) %>%
-  mutate(new_val = str_sub(value, 5,-1)) %>%
-  mutate(new_val = str_replace(new_val, "_[AC].*$", ""),
-         age_grp = unlist(lapply(new_val, function(x) age_grps[x])))
-
-str_replace(str_sub("WLC_A2_ALLC2", 5, -1), "_[AC].*$", "")
-  
   
 age_pats = c("A2", "A10", "A17", "A34", "A49", "A64", "A65P", "A69", "A70P")
 age_grps = c("Age <2", "Age 2-11", "Age 12-17", "Age 18-34", "Age 35-49", "Age 50-64", "Age >65", "Age 65-69", "Age 70+" )
@@ -161,18 +153,6 @@ all_data %>%
 
 ```
 
-``` {r ttt_v_time}
-ttt_cols = c("TTT_25_C", "TTT_50_C", "TTT_75_C")
-all_data %>%
-  filter(!is.na(TTT_50_C) & !is.na(OA_OVERALL_HR_MN_CENTER) & PRIMARY_STATE == "NY") %>%
-  select(CTR_ID, REGION, REPORT_DATE, OA_OVERALL_HR_MN_CENTER, TTT_50_C)%>%
-  group_by(REPORT_DATE) %>%
-  ggplot(aes(x = REPORT_DATE, y = TTT_50_C, color = CTR_ID)) +
-  geom_point() +
-  geom_line()
-  #facet_wrap( ~ as.Date(REPORT_DATE), scales = 'free')
-
-```
 
 ``` {r txrate_v_oa_v_time}
 txrate_v_oa_v_time = all_data %>%
@@ -185,6 +165,37 @@ txrate_v_oa_v_time = all_data %>%
 
 txrate_v_oa_v_time
 ```
+
+``` {r oa_v_ttt}
+
+all_data %>%
+  filter(!is.na(TTT_50_C) & !is.na(OA_OVERALL_HR_MN_CENTER) & PRIMARY_STATE == "NY") %>%
+  select(CTR_ID, REGION, REPORT_DATE, OA_OVERALL_HR_MN_CENTER, TTT_50_C) %>%
+  filter(CTR_ID == "NYUCTX1" | CTR_ID == "NYUMTX1") %>%
+  group_by(REPORT_DATE) %>%
+  ggplot(aes(x = REPORT_DATE, y = TTT_50_C, color = CTR_ID)) +
+  geom_point() +
+  geom_line() + 
+  geom_line(aes(y = OA_OVERALL_HR_MN_CENTER*10), size = 0.5, linetype = "dashed") +
+  labs(y = "Median Time to Transplant (months)", 
+       x = "Year",
+       title = "Median Time to Transplant (months) in NY State",
+       colors = "Center ID") +
+  theme(legend.position = "right") + 
+  guides(color = guide_legend(ncol = 1)) +
+
+# Custom the Y scales:
+  scale_y_continuous(
+    
+    # Features of the first axis
+    name = "Median Time to Transplant (months)",
+    
+    # Add a second axis and specify its features
+    sec.axis = sec_axis(trans=~./10, name="Offer/Acceptance Ratio")
+  )
+
+```
+
 # Variables for viz
 
 *unique identifiers*:
