@@ -1,0 +1,229 @@
+"","ctr_id","entire_name","primary_city","primary_state","zipcode","region","lat","lng"
+"1","ALCHTX1","Children's of Alabama (ALCH)","Birmingham","AL","35233",3,33.51,-86.8
+"2","ALUATX1","University of Alabama Hospital (ALUA)","Birmingham","AL","35233",3,33.51,-86.8
+"3","ALVATX1","Birmingham VA Medical Center (ALVA)","Birmingham","AL","35233",3,33.51,-86.8
+"4","ARCHTX1","Arkansas Children's Hospital (ARCH)","Little Rock","AR","72202",3,34.76,-92.29
+"5","ARUATX1","UAMS Medical Center (ARUA)","Little Rock","AR","72205",3,34.74,-92.35
+"6","AZCHTX1","Phoenix Children's Hospital (AZCH)","Phoenix","AZ","85016",5,33.51,-112.03
+"7","AZGSTX1","Banner-University Medical Center Phoenix (AZGS)","Phoenix","AZ","85006",5,33.47,-112.05
+"8","AZMCTX1","Mayo Clinic Hospital (AZMC)","Phoenix","AZ","85054",5,33.69,-111.95
+"9","AZSJTX1","St. Joseph's Hospital and Medical Center (AZSJ)","Phoenix","AZ","85013",5,33.51,-112.08
+"10","AZUATX1","Banner University Medical Center-Tucson (AZUA)","Tucson","AZ","85724",5,32.22,-110.97
+"11","CACHTX1","Rady Children's Hospital and Health Center (CACH)","San Diego","CA","92123",5,32.81,-117.14
+"12","CACLTX1","Childrens Hospital Los Angeles (CACL)","Los Angeles","CA","90027",5,34.13,-118.29
+"13","CACSTX1","Cedars-Sinai Medical Center (CACS)","Los Angeles","CA","90048",5,34.07,-118.38
+"14","CAGHTX1","Scripps Green Hospital (CAGH)","La Jolla","CA","92037",5,32.8,-117.2
+"15","CAIMTX1","University of California Irvine Medical Center (CAIM)","Orange","CA","92868",5,33.79,-117.88
+"16","CALATX1","Harbor UCLA Medical Center (CALA)","Torrance","CA","90502",5,33.83,-118.29
+"17","CALLTX1","Loma Linda University Medical Center (CALL)","Loma Linda","CA","92354",5,34.05,-117.25
+"18","CAMBTX1","UCSF Medical Center at Mission Bay (CAMB)","San Francisco","CA","94158",5,37.77,-122.391
+"19","CAPCTX1","Lucile Salter Packard Children's Hospital at Stanford (CAPC)","Palo Alto","CA","94304",5,37.42,-122.16
+"20","CAPMTX1","California Pacific Medical Center (CAPM)","San Francisco","CA","94109",5,37.79,-122.42
+"21","CARCTX1","Riverside Community Hospital (CARC)","Riverside","CA","92501",5,33.99,-117.37
+"22","CASDTX1","University of California San Diego Medical Center (CASD)","La Jolla","CA","92037",5,32.8,-117.2
+"23","CASFTX1","University of California San Francisco Medical Center (CASF)","San Francisco","CA","94143",5,NA,NA
+"24","CASHTX1","Sharp Memorial Hospital (CASH)","San Diego","CA","92123",5,32.81,-117.14
+"25","CASJTX1","Saint Joseph Hospital (CASJ)","Orange","CA","92868",5,33.79,-117.88
+"26","CASMTX1","University of California Davis Medical Center (CASM)","Sacramento","CA","95817",5,38.55,-121.45
+"27","CASUTX1","Stanford Health Care (CASU)","Stanford","CA","94305",5,37.42,-122.17
+"28","CAUCTX1","University of California at Los Angeles Medical Center (CAUC)","Los Angeles","CA","90095",5,34.071,-118.443
+"29","CAUHTX1","Keck Hospital of USC (CAUH)","Los Angeles","CA","90033",5,34.05,-118.21
+"30","COCHTX1","Children's Hospital Colorado (COCH)","Aurora","CO","80045",8,39.75,-104.84
+"31","COPMTX1","Centura Porter Adventist Hospital (COPM)","Denver","CO","80210",8,39.68,-104.96
+"32","COSLTX1","Presbyterian/St Luke's Medical Center (COSL)","Denver","CO","80218",8,39.73,-104.97
+"33","COUCTX1","University of Colorado Hospital/Health Science Center (COUC)","Aurora","CO","80045",8,39.75,-104.84
+"34","CTHHTX1","Hartford Hospital (CTHH)","Hartford","CT","06102",1,NA,NA
+"35","CTYNTX1","Yale New Haven Hospital (CTYN)","New Haven","CT","06510",1,41.308,-72.926
+"36","DCCHTX1","Children's National Medical Center (DCCH)","Washington","DC","20010",2,38.93,-77.03
+"37","DCGUTX1","Georgetown University Medical Center (DCGU)","Washington","DC","20007",2,38.92,-77.08
+"38","DCGWTX1","George Washington University Hospital (DCGW)","Washington","DC","20037",2,38.89,-77.05
+"39","DCWRTX1","Walter Reed National Military Medical Center at Bethesda (DCWR)","Bethesda","MD","20889",2,NA,NA
+"40","DEAITX1","Alfred I DuPont Hospital for Children (DEAI)","Wilmington","DE","19803",2,39.8,-75.53
+"41","DECCTX1","Christiana Care Health Services (DECC)","Newark","DE","19713",2,39.67,-75.7
+"42","FLCCTX1","Cleveland Clinic Florida Weston (FLCC)","Weston","FL","33331",3,26.06,-80.37
+"43","FLFHTX1","Florida Hospital Medical Center (FLFH)","Orlando","FL","32803",3,28.55,-81.35
+"44","FLHMTX1","Halifax Medical Center (FLHM)","Daytona Beach","FL","32114",3,29.19,-81.05
+"45","FLJMTX1","Jackson Memorial Hospital University of Miami School of Medicine (FLJM)","Miami","FL","33136",3,25.79,-80.21
+"46","FLLMTX1","Largo Medical Center (FLLM)","Largo","FL","33770",3,27.92,-82.8
+"47","FLMRTX1","Memorial Regional Hospital (FLMR)","Hollywood","FL","33021",3,26.02,-80.19
+"48","FLSHTX1","Sacred Heart Hospital Pensacola (FLSH)","Pensacola","FL","32504",3,30.48,-87.2
+"49","FLSLTX1","Mayo Clinic Florida (FLSL)","Jacksonville","FL","32224",3,30.29,-81.47
+"50","FLTGTX1","Tampa General Hospital (FLTG)","Tampa","FL","33606",3,27.93,-82.46
+"51","FLUFTX1","UF Health Shands Hospital (FLUF)","Gainesville","FL","32610",3,NA,NA
+"52","GAEHTX1","Children's Healthcare of Atlanta at Egleston (GAEH)","Atlanta","GA","30322",3,33.792,-84.323
+"53","GAEMTX1","Emory University Hospital (GAEM)","Atlanta","GA","30322",3,33.792,-84.323
+"54","GAMCTX1","AU Medical Center, Inc. (GAMC)","Augusta","GA","30912",3,33.469,-81.989
+"55","GAPHTX1","Piedmont Hospital (GAPH)","Atlanta","GA","30309",3,33.8,-84.39
+"56","HIQMTX1","The Queen's Medical Center (HIQM)","Honolulu","HI","96813",6,21.31,-157.85
+"57","IAIMTX1","Iowa Methodist Medical Center (IAIM)","Des Moines","IA","50309",8,41.58,-93.62
+"58","IAIVTX1","University of Iowa Hospitals and Clinics Transplant Programs (IAIV)","Iowa City","IA","52242",8,41.66,-91.55
+"59","IAVATX1","The Iowa City VA Health Care System (IAVA)","Iowa City","IA","52246",8,41.64,-91.6
+"60","ILCHTX1","Advocate Christ Medical Center (ILCH)","Oak Lawn","IL","60453",7,41.71,-87.76
+"61","ILCMTX1","Ann & Robert H. Lurie Children's Hospital of Chicago (ILCM)","Chicago","IL","60611",7,41.91,-87.61
+"62","ILLUTX1","Loyola University Medical Center (ILLU)","Maywood","IL","60153",7,41.88,-87.84
+"63","ILMMTX1","Memorial Medical Center (ILMM)","Springfield","IL","62781",7,NA,NA
+"64","ILNMTX1","Northwestern Memorial Hospital (ILNM)","Chicago","IL","60611",7,41.91,-87.61
+"65","ILPLTX1","Rush University Medical Center (ILPL)","Chicago","IL","60612",7,41.88,-87.69
+"66","ILSFTX1","OSF Saint Francis Medical Center (ILSF)","Peoria","IL","61637",7,NA,NA
+"67","ILUCTX1","University of Chicago Medical Center (ILUC)","Chicago","IL","60637",7,41.78,-87.6
+"68","ILUITX1","University of Illinois Medical Center (ILUI)","Chicago","IL","60612",7,41.88,-87.69
+"69","INIMTX1","Indiana University Health (INIM)","Indianapolis","IN","46202",10,39.79,-86.15
+"70","INSVTX1","St Vincent Hospital and Health Care Center (INSV)","Indianapolis","IN","46260",10,39.9,-86.18
+"71","KSUKTX1","University of Kansas Hospital (KSUK)","Kansas City","KS","66103",8,39.07,-94.63
+"72","KYJHTX1","Jewish Hospital (KYJH)","Louisville","KY","40202",11,38.25,-85.75
+"73","KYKCTX1","Norton Children's Hospital (KYKC)","Louisville","KY","40202",11,38.25,-85.75
+"74","KYUKTX1","University of Kentucky Medical Center (KYUK)","Lexington","KY","40536",11,NA,NA
+"75","LACHTX1","Children's Hospital (LACH)","New Orleans","LA","70118",3,29.95,-90.12
+"76","LAOFTX1","Ochsner Foundation Hospital (LAOF)","New Orleans","LA","70121",3,29.96,-90.16
+"77","LATUTX1","Tulane Medical Center (LATU)","New Orleans","LA","70112",3,29.96,-90.08
+"78","LAWKTX1","Willis-Knighton Medical Center (LAWK)","Shreveport","LA","71103",3,32.49,-93.78
+"79","MABITX1","Beth Israel Deaconess Medical Center (MABI)","Boston","MA","02215",1,42.34,-71.1
+"80","MABSTX1","Baystate Medical Center (MABS)","Springfield","MA","01199",1,42.103,-72.591
+"81","MABUTX1","Boston Medical Center (MABU)","Boston","MA","02118",1,42.34,-71.07
+"82","MACHTX1","Boston Children's Hospital (MACH)","Boston","MA","02115",1,42.34,-71.1
+"83","MALCTX1","Lahey Clinic Medical Center (MALC)","Burlington","MA","01805",1,NA,NA
+"84","MAMGTX1","Massachusetts General Hospital (MAMG)","Boston","MA","02114",1,42.363,-71.066
+"85","MANMTX1","Tufts Medical Center (MANM)","Boston","MA","02111",1,42.351,-71.061
+"86","MAPBTX1","Brigham and Women's Hospital (MAPB)","Boston","MA","02115",1,42.34,-71.1
+"87","MAUMTX1","UMass Memorial Medical Center (MAUM)","Worcester","MA","01655",1,NA,NA
+"88","MDJHTX1","Johns Hopkins Hospital (MDJH)","Baltimore","MD","21287",2,NA,NA
+"89","MDUMTX1","University of Maryland Medical System (MDUM)","Baltimore","MD","21201",2,39.29,-76.62
+"90","MEMCTX1","Maine Medical Center (MEMC)","Portland","ME","04102",1,43.66,-70.3
+"91","MIBHTX1","William Beaumont Hospital (MIBH)","Royal Oak","MI","48073",10,42.52,-83.16
+"92","MICHTX1","Children's Hospital of Michigan (MICH)","Detroit","MI","48201",10,42.35,-83.06
+"93","MIDVTX1","Helen DeVos Children's Hospital (MIDV)","Grand Rapids","MI","49503",10,42.95,-85.67
+"94","MIHFTX1","Henry Ford Hospital (MIHF)","Detroit","MI","48202",10,42.38,-83.08
+"95","MISJTX1","St John Hospital and Medical Center (MISJ)","Detroit","MI","48236",10,42.42,-82.9
+"96","MISMTX1","Mercy Health Saint Mary?s (MISM)","Grand Rapids","MI","49503",10,42.95,-85.67
+"97","MIUMTX1","University of Michigan Medical Center (MIUM)","Ann Arbor","MI","48109",10,42.28,-83.72
+"98","MNANTX1","Abbott Northwestern Hospital (MNAN)","Minneapolis","MN","55407",7,44.94,-93.25
+"99","MNHCTX1","Hennepin County Medical Center (MNHC)","Minneapolis","MN","55415",7,44.97,-93.26
+"100","MNMCTX1","Rochester Methodist Hospital (Mayo Clinic) (MNMC)","Rochester","MN","55902",7,43.96,-92.52
+"101","MNUMTX1","University of Minnesota Medical Center, Fairview (MNUM)","Minneapolis","MN","55454",7,44.97,-93.24
+"102","MOBHTX1","Barnes-Jewish Hospital (MOBH)","St. Louis","MO","63110",8,38.63,-90.27
+"103","MOCGTX1","Cardinal Glennon Children's Hospital (MOCG)","St. Louis","MO","63104",8,38.61,-90.22
+"104","MOCHTX1","St. Louis Children's Hospital (MOCH)","St. Louis","MO","63110",8,38.63,-90.27
+"105","MOCMTX1","Children's Mercy Hospital (MOCM)","Kansas City","MO","64108",8,39.08,-94.58
+"106","MOLHTX1","St Luke's Hospital of Kansas City (MOLH)","Kansas City","MO","64111",8,39.06,-94.59
+"107","MORHTX1","Research Medical Center (MORH)","Kansas City","MO","64132",8,38.98,-94.55
+"108","MOSLTX1","SSM Health Saint Louis University Hospital (MOSL)","St. Louis","MO","63104",8,38.61,-90.22
+"109","MOUMTX1","University of Missouri Hospital and Clinics (MOUM)","Columbia","MO","65201",8,38.9,-92.2
+"110","MSUMTX1","University of Mississippi Medical Center (MSUM)","Jackson","MS","39216",3,32.33,-90.16
+"111","NCBGTX1","Wake Forest Baptist Medical Center (NCBG)","Winston-Salem","NC","27157",11,NA,NA
+"112","NCCMTX1","Carolinas Medical Center (NCCM)","Charlotte","NC","28203",11,35.21,-80.86
+"113","NCDUTX1","Duke University Hospital (NCDU)","Durham","NC","27710",11,NA,NA
+"114","NCECTX1","Vidant Medical Center (NCEC)","Greenville","NC","27834",11,35.7,-77.4
+"115","NCMHTX1","University of North Carolina Hospitals (NCMH)","Chapel Hill","NC","27514",11,35.97,-79.04
+"116","NDMCTX1","Sanford Bismarck Medical Center (NDMC)","Bismarck","ND","58501",7,46.8,-100.7
+"117","NDSLTX1","Sanford Medical Center Fargo (NDSL)","Fargo","ND","58122",7,NA,NA
+"118","NEUNTX1","The Nebraska Medical Center (NEUN)","Omaha","NE","68198",8,NA,NA
+"119","NHDHTX1","Mary Hitchcock Memorial Hospital (NHDH)","Lebanon","NH","03756",1,NA,NA
+"120","NJBITX1","Newark Beth Israel Medical Center (NJBI)","Newark","NJ","07112",2,40.71,-74.21
+"121","NJHKTX1","Hackensack University Medical Center (NJHK)","Hackensack","NJ","07601",2,40.89,-74.05
+"122","NJLLTX1","Our Lady of Lourdes Medical Center (NJLL)","Camden","NJ","08103",2,39.93,-75.11
+"123","NJRWTX1","Robert Wood Johnson University Hospital (NJRW)","New Brunswick","NJ","08901",2,40.48,-74.44
+"124","NJSBTX1","Saint Barnabas Medical Center (NJSB)","Livingston","NJ","07039",2,40.79,-74.33
+"125","NMAQTX1","University Hospital, University of New Mexico Health Sciences Center (NMAQ)","Albuquerque","NM","87106",5,35.06,-106.6
+"126","NMPHTX1","Presbyterian Hospital (NMPH)","Albuquerque","NM","87106",5,35.06,-106.6
+"127","NVUMTX1","University Medical Center of Southern Nevada (NVUM)","Las Vegas","NV","89102",5,36.14,-115.18
+"128","NYAMTX1","Albany Medical Center Hospital (NYAM)","Albany","NY","12208",9,42.65,-73.81
+"129","NYCCTX1","Long Island Jewish Medical Center-Cohen Children's Medical Center (NYCC)","Queens","NY","11040",9,40.74,-73.68
+"130","NYCPTX1","NY Presbyterian Hospital/Columbia Univ. Medical Center (NYCP)","New York","NY","10032",9,40.84,-73.94
+"131","NYDSTX1","State University of New York, Downstate Medical Center (NYDS)","Brooklyn","NY","11203",9,40.65,-73.93
+"132","NYECTX1","Erie County Medical Center (NYEC)","Buffalo","NY","14215",9,42.93,-78.81
+"133","NYFLTX1","Strong Memorial Hospital, University of Rochester Medical Center (NYFL)","Rochester","NY","14642",9,NA,NA
+"134","NYMATX1","Montefiore Medical Center (NYMA)","Bronx","NY","10467",9,40.88,-73.87
+"135","NYMSTX1","Mount Sinai Medical Center (NYMS)","New York","NY","10029",9,40.79,-73.95
+"136","NYNSTX1","North Shore University Hospital/Northwell Health (NYNS)","Manhasset","NY","11030",9,40.79,-73.69
+"137","NYNYTX1","New York-Presbyterian Hospital/Weill Cornell Medical Center (NYNY)","New York","NY","10065",9,40.765,-73.965
+"138","NYSBTX1","University Hospital of State University of New York at Stony Brook (NYSB)","Stony Brook","NY","11794",9,40.91,-73.12
+"139","NYUCTX1","New York University Medical Center (NYUC)","New York","NY","10016",9,40.74,-73.97
+"140","NYUMTX1","State University of New York Upstate Medical University (NYUM)","Syracuse","NY","13210",9,43.03,-76.13
+"141","NYVATX1","James J. Peters VA Medical Center (NYVA)","Bronx","NY","10468",9,40.87,-73.9
+"142","NYWCTX1","Westchester Medical Center (NYWC)","Valhalla","NY","10595",9,41.09,-73.77
+"143","OHCCTX1","The Cleveland Clinic Foundation (OHCC)","Cleveland","OH","44195",10,NA,NA
+"144","OHCHTX1","Nationwide Children's Hospital (OHCH)","Columbus","OH","43205",10,39.96,-82.96
+"145","OHCMTX1","Children's Hospital Medical Center (OHCM)","Cincinnati","OH","45229",10,39.15,-84.49
+"146","OHCOTX1","University of Toledo Medical Center (OHCO)","Toledo","OH","43614",10,41.6,-83.67
+"147","OHOUTX1","Ohio State University Medical Center (OHOU)","Columbus","OH","43210",10,40.01,-83.02
+"148","OHTCTX1","The Christ Hospital (OHTC)","Cincinnati","OH","45219",10,39.13,-84.51
+"149","OHUCTX1","University of Cincinnati  Medical Center (OHUC)","Cincinnati","OH","45267",10,NA,NA
+"150","OHUHTX1","University Hospitals of Cleveland (OHUH)","Cleveland","OH","44106",10,41.51,-81.6
+"151","OKBCTX1","Integris Baptist Medical Center (OKBC)","Oklahoma City","OK","73112",4,35.52,-97.57
+"152","OKMDTX1","OU Medical Center (OKMD)","Oklahoma City","OK","73104",4,35.48,-97.5
+"153","OKSJTX1","St John Medical Center (OKSJ)","Tulsa","OK","74104",4,36.15,-95.96
+"154","ORGSTX1","Legacy Good Samaritan Hospital and Medical Center (ORGS)","Portland","OR","97210",6,45.55,-122.73
+"155","ORUOTX1","Oregon Health & Science University (ORUO)","Portland","OR","97239",6,45.49,-122.69
+"156","ORVATX1","VA Portland Health Care System (ORVA)","Portland","OR","97239",6,45.49,-122.69
+"157","PAAETX1","Albert Einstein Medical Center (PAAE)","Philadelphia","PA","19141",2,40.04,-75.15
+"158","PAAGTX1","Allegheny General Hospital (PAAG)","Pittsburgh","PA","15212",2,40.47,-80.01
+"159","PACCTX1","Crozer-Chester Medical Center (PACC)","Upland","PA","19013",2,39.85,-75.38
+"160","PACHTX1","UPMC Children's Hospital of Pittsburgh (PACH)","Pittsburgh","PA","15224",2,40.46,-79.95
+"161","PACPTX1","Children's Hospital of Philadelphia (PACP)","Philadelphia","PA","19104",2,39.97,-75.2
+"162","PAGMTX1","Geisinger Medical Center (PAGM)","Danville","PA","17822",2,41,-76.7
+"163","PAHETX1","Penn State Milton S Hershey Medical Center (PAHE)","Hershey","PA","17033",2,40.27,-76.6
+"164","PAHHTX1","Pinnacle Health System at Harrisburg Hospital (PAHH)","Harrisburg","PA","17101",2,40.26,-76.89
+"165","PALHTX1","The Lankenau Hospital (PALH)","Wynnewood","PA","19096",2,40,-75.27
+"166","PALVTX1","Lehigh Valley Hospital (PALV)","Allentown","PA","18105",2,40.61,-75.47
+"167","PAPHTX1","UPMC Hamot (PAPH)","Erie","PA","16550",2,NA,NA
+"168","PAPTTX1","University of Pittsburgh Medical Center (PAPT)","Pittsburgh","PA","15213",2,40.44,-79.96
+"169","PASCTX1","St. Christopher's Hospital for Children (PASC)","Philadelphia","PA","19134",2,39.99,-75.11
+"170","PATJTX1","Thomas Jefferson University Hospital (PATJ)","Philadelphia","PA","19107",2,39.95,-75.16
+"171","PATUTX1","Temple University Hospital (PATU)","Philadelphia","PA","19140",2,40.01,-75.15
+"172","PAUPTX1","Hospital of the University of Pennsylvania (PAUP)","Philadelphia","PA","19104",2,39.97,-75.2
+"173","PAVATX1","VA Pittsburgh Healthcare System (PAVA)","Pittsburgh","PA","15240",2,NA,NA
+"174","RIRHTX1","Rhode Island Hospital (RIRH)","Providence","RI","02903",1,41.82,-71.41
+"175","SCMUTX1","Medical University of South Carolina (SCMU)","Charleston","SC","29425",11,NA,NA
+"176","SDMKTX1","Avera McKennan Hospital (SDMK)","Sioux Falls","SD","57105",7,43.52,-96.73
+"177","SDSVTX1","Sanford Health/USD Medical Center (SDSV)","Sioux Falls","SD","57117",7,43.6,-96.7
+"178","TNEMTX1","Erlanger Medical Center (TNEM)","Chattanooga","TN","37403",11,35.05,-85.29
+"179","TNLBTX1","Le Bonheur Children's Medical Center (TNLB)","Memphis","TN","38103",11,35.17,-90.07
+"180","TNMHTX1","Methodist University Hospital (TNMH)","Memphis","TN","38104",11,35.14,-90
+"181","TNSTTX1","Saint Thomas Hospital (TNST)","Nashville","TN","37205",11,36.11,-86.87
+"182","TNUKTX1","University of Tennessee Medical Center at Knoxville (TNUK)","Knoxville","TN","37920",11,35.9,-83.8
+"183","TNVUTX1","Vanderbilt University Medical Center (TNVU)","Nashville","TN","37232",11,NA,NA
+"184","TXASTX1","Baylor  Scott and White All Saints Medical Center-Fort Worth (TXAS)","Fort Worth","TX","76104",4,32.73,-97.32
+"185","TXBCTX1","University Hospital, University of Texas Health Science Center (TXBC)","San Antonio","TX","78229",4,29.51,-98.57
+"186","TXCFTX1","Cook Children's Medical Center (TXCF)","Fort Worth","TX","76104",4,32.73,-97.32
+"187","TXCMTX1","Children's Medical Center of Dallas (TXCM)","Dallas","TX","75235",4,32.83,-96.85
+"188","TXDCTX1","Driscoll Children's Hospital (TXDC)","Corpus Christi","TX","78411",4,27.73,-97.39
+"189","TXDMTX1","North Austin Medical Center (TXDM)","Austin","TX","78758",4,30.38,-97.71
+"190","TXDRTX1","Doctor's Hospital at Renaissance (TXDR)","Edinburg","TX","78539",4,26.28,-98.18
+"191","TXFWTX1","Texas Health Harris Methodist Fort Worth Hospital (TXFW)","Fort Worth","TX","76104",4,32.73,-97.32
+"192","TXHDTX1","Medical City Dallas Hospital (TXHD)","Dallas","TX","75230",4,32.9,-96.79
+"193","TXHHTX1","Memorial Hermann Hospital, University of Texas at Houston (TXHH)","Houston","TX","77030",4,29.71,-95.41
+"194","TXHITX1","CHI St. Luke's Health Baylor College of Medicine Medical Center (TXHI)","Houston","TX","77030",4,29.71,-95.41
+"195","TXHSTX1","Methodist Specialty and Transplant Hospital (TXHS)","San Antonio","TX","78229",4,29.51,-98.57
+"196","TXJSTX1","University of Texas Medical Branch at Galveston (TXJS)","Galveston","TX","77555",4,NA,NA
+"197","TXLPTX1","Las Palmas Medical Center (TXLP)","El Paso","TX","79902",4,31.78,-106.5
+"198","TXMCTX1","Methodist Dallas Medical Center (TXMC)","Dallas","TX","75203",4,32.74,-96.79
+"199","TXMHTX1","Houston Methodist Hospital (TXMH)","Houston","TX","77030",4,29.71,-95.41
+"200","TXPLTX1","Medical City Fort Worth (TXPL)","Fort Worth","TX","76104",4,32.73,-97.32
+"201","TXPMTX1","Parkland Health and Hospital System (TXPM)","Dallas","TX","75235",4,32.83,-96.85
+"202","TXSPTX1","UT Southwestern Medical Center/ (TXSP)","Dallas","TX","75390",4,32.79,-96.8
+"203","TXSWTX1","Scott and White Memorial Hospital (TXSW)","Temple","TX","76508",4,31.1,-97.2
+"204","TXTCTX1","Texas Children's Hospital (TXTC)","Houston","TX","77030",4,29.71,-95.41
+"205","TXTXTX1","Baylor University Medical Center (TXTX)","Dallas","TX","75246",4,32.793,-96.773
+"206","TXUCTX1","University Children?s Health (TXUC)","San Antonio","TX","78229",4,29.51,-98.57
+"207","TXVATX1","Michael E. DeBakey VA Medical Center (TXVA)","Houston","TX","77030",4,29.71,-95.41
+"208","UTLDTX1","Intermountain Medical Center (UTLD)","Murray","UT","84107",5,40.66,-111.88
+"209","UTMCTX1","University of Utah Medical Center (UTMC)","Salt Lake City","UT","84132",5,NA,NA
+"210","UTPCTX1","Primary Children's Hospital (UTPC)","Salt Lake City","UT","84113",5,40.763,-111.833
+"211","VACHTX1","Children's Hospital of the King's Daughters (VACH)","Norfolk","VA","23507",11,36.87,-76.31
+"212","VAFHTX1","Inova Fairfax Hospital (VAFH)","Falls Church","VA","22042",2,38.87,-77.19
+"213","VAHDTX1","Henrico Doctors' Hospital (VAHD)","Richmond","VA","23229",11,37.59,-77.57
+"214","VAMCTX1","Medical College of Virginia Hospitals (VAMC)","Richmond","VA","23298",11,NA,NA
+"215","VANGTX1","Sentara Norfolk General Hospital (VANG)","Norfolk","VA","23507",11,36.87,-76.31
+"216","VAUVTX1","University of Virginia Health Sciences Center (VAUV)","Charlottesville","VA","22908",11,NA,NA
+"217","VTMCTX1","The University of Vermont Medical Center (VTMC)","Burlington","VT","05401",9,44.48,-73.2
+"218","WACHTX1","Seattle Children's Hospital (WACH)","Seattle","WA","98105",6,47.66,-122.3
+"219","WASHTX1","Providence Sacred Heart Medical Center & Children's Hospital (WASH)","Spokane","WA","99204",6,47.65,-117.43
+"220","WASMTX1","Swedish Medical Center (WASM)","Seattle","WA","98122",6,47.61,-122.3
+"221","WAUWTX1","University of Washington Medical Center (WAUW)","Seattle","WA","98195",6,47.65,-122.3
+"222","WAVMTX1","Virginia Mason Medical Center (WAVM)","Seattle","WA","98111",6,NA,NA
+"223","WICHTX1","Children's Hospital of Wisconsin (WICH)","Milwaukee","WI","53226",7,43.05,-88.04
+"224","WISETX1","Froedtert Memorial Lutheran Hospital (WISE)","Milwaukee","WI","53226",7,43.05,-88.04
+"225","WISLTX1","Aurora St. Luke's Medical Center (WISL)","Milwaukee","WI","53215",7,43.01,-87.94
+"226","WIUWTX1","University of Wisconsin Hospital and Clinics (WIUW)","Madison","WI","53792",7,43.07,-89.38
+"227","WVCATX1","Charleston Area Medical Center (WVCA)","Charleston","WV","25325",2,NA,NA
+"228","WVWUTX1","West Virginia University Hospital (WVWU)","Morgantown","WV","26505",2,39.65,-79.95

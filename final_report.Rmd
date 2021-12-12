@@ -20,7 +20,7 @@ library(zipcodeR)
 library(ggmap)
 library(leaflet)
 library(lubridate)
-#library(kableExtra)
+library(kableExtra)
 
 phrase = "SRTR Multiorgan Transplant Data, August 2020 Release"
 
@@ -86,9 +86,9 @@ Prior research by one team member involved working with Offer Acceptance Ratio d
   
   The compiled data is available in our [PSR Data Repository](http://www.harryreyesnieva.com/p8105_final_project/data_repository.html), where it can be searched, filtered, copied, and downloaded.
 
-#### Screenshot of Data Repository
+### Screenshot of Data Repository
 
-![](./img/data_repository_screenshot.png)
+![](./img/screenshot_repository.png)
 
 ```{r load_data}
 
@@ -105,7 +105,7 @@ name_pairs = with(all_data, setNames(ENTIRE_NAME, CTR_ID))
 
 Our initial exploratory analyses began using data from one recent report (August 2020 release). First, we mapped the distribution of transplant centers across the United States along with the volume of kidney transplants they had performed in the last year.
 
-#### Geographic distribution of transplant centers across the United States.
+### Geographic distribution of transplant centers across the United States.
 
 ```{r, warning = FALSE}
 df_one_names = 
@@ -215,7 +215,7 @@ df_one_merge %>%
 
 Next, we wanted to look at the distribution of key demographic characteristics of patients on the waiting list, organized by zip code, to get an idea of the demographic variability of transplant patients across the country. We used recent data on patients waiting for a transplant from any solid organ. Initial characteristics of interest included age group, sex, race, and blood type.
 
-#### Scatter plots of age by zipcode, with a facet wrap by organ type.
+### Scatter plots of age by zipcode, with a facet wrap by organ type.
 
 ```{r age_by_zip, warning=FALSE}
 plot = 
@@ -235,10 +235,11 @@ plot =
                              "65 to 69 Years", "More Than 70 Years")) + 
   facet_wrap(~org)
 
-plot
+fig <- ggplotly(plot) %>% layout(legend = list(orientation = 'h'))
+fig
 ```
 
-#### Scatter plots of gender by zipcode, with a facet wrap by organ type.
+### Scatter plots of gender by zipcode, with a facet wrap by organ type.
 
 ```{r gender_by_zip, warning=FALSE}
 plot = 
@@ -258,7 +259,7 @@ plot =
 plot
 ```
 
-#### Scatter plots of race by zipcode, with a facet wrap by organ type.
+### Scatter plots of race by zipcode, with a facet wrap by organ type.
 
 ```{r race_by_zip, warning=FALSE}
 plot = 
@@ -279,7 +280,7 @@ plot =
 plot
 ```
 
-#### Scatter plots of blood type by zipcode, with a facet wrap by organ type.
+### Scatter plots of blood type by zipcode, with a facet wrap by organ type.
 
 ```{r bloodtype_by_zip, warning=FALSE}
 plot = 
@@ -338,7 +339,8 @@ For NY specific transplant centers, we can see that only 4 transplant centers ha
 
 ```{r NY_OA_over_time, warning = FALSE}
 
-ny_oa_v_time = all_data %>%
+ny_oa_v_time = 
+  all_data %>%
   filter(!is.na(OA_OVERALL_HR_MN_CENTER) & PRIMARY_STATE == "NY") %>%
   select(CTR_ID, REGION, REPORT_DATE, OA_OVERALL_HR_MN_CENTER)  %>%
   ggplot(aes(x = REPORT_DATE, y = OA_OVERALL_HR_MN_CENTER, color = CTR_ID)) +
@@ -346,7 +348,7 @@ ny_oa_v_time = all_data %>%
   geom_path() + 
   labs(y = "Offer Acceptance Ratios \n(compared to National O/A)", 
        x = "Year",
-       title = "Offer Acceptance Ratios over Time, by OPTN Region",
+       title = "Offer Acceptance Ratios over Time, in NY State",
        colors = "Center ID")
 
 ny_oa_v_time
@@ -409,7 +411,7 @@ txrate_v_oa_v_time
 
 #### Screenshot of dashboard
 
-![](./img/dashboard_screenshot.png)
+![](./img/screenshot_dashboard.png)
 
 
 ## Discussion
