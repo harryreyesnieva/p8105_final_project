@@ -84,7 +84,16 @@ demographic_props
 
 ```
 
-``` {r}
+``` {r ttt_v_time}
+ttt_cols = c("TTT_25_C", "TTT_50_C", "TTT_75_C")
+all_data %>%
+  filter(!is.na(TTT_50_C) & !is.na(OA_OVERALL_HR_MN_CENTER) & PRIMARY_STATE == "NY") %>%
+  select(CTR_ID, REGION, REPORT_DATE, OA_OVERALL_HR_MN_CENTER, TTT_50_C)%>%
+  group_by(REPORT_DATE) %>%
+  ggplot(aes(x = REPORT_DATE, y = TTT_50_C, color = CTR_ID)) +
+  geom_point() +
+  geom_line()
+  #facet_wrap( ~ as.Date(REPORT_DATE), scales = 'free')
 
 ```
 # Variables for viz
