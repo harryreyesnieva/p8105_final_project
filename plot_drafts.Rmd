@@ -1,0 +1,67 @@
+---
+title: "Plot  Drafts"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = TRUE, collapse = TRUE)
+library(tidyverse)
+library(lubridate)
+```
+
+First plot is offer acceptance ratios by center... will need to reduce number included in plot
+
+```{r}
+
+all_data = read_csv("data/all_KI_data.csv", col_names = TRUE) %>%
+  nest(WITHIN_RADIUS = matches("_WR$")) %>%
+  mutate(REPORT_DATE = ymd_hms(REPORT_DATE, truncated = 3),
+         REGION = as.factor(REGION),
+         REGION = addNA(REGION))
+
+subset_test = tail(all_data, 20)
+
+all_data %>%
+  filter(!is.na(OA_OVERALL_HR_MN_CENTER)) %>%
+  select(CTR_ID, REGION, REPORT_DATE, OA_OVERALL_HR_MN_CENTER)  %>%
+  group_by(REGION) %>%
+  mutate(CTR_COLOR_TYPE = dense_rank(x = CTR_ID)) %>%
+  ggplot(aes(x = REPORT_DATE, y = OA_OVERALL_HR_MN_CENTER, color = factor(CTR_COLOR_TYPE))) +
+  geom_point(show.legend = FALSE) +
+  geom_path(show.legend = FALSE) +
+  facet_wrap(~REGION)
+```
+
+
+
+# Variables for viz
+
+*unique identifiers*:
+
+CTR_ID, REPORT_DATE
+
+*Offer/acceptance hazard ratio* (center compared to center, >1 is more offers than acceptances compared to ALL centers in the country for that year)
+
+OA_OVERALL_HR_MN_CENTER
+
+*For stratified KDRIs:*
+OA_LOWRISK_HR_MN_CENTER
+
+OA_MEDIUMRISK_HR_MN_CENTER
+
+OA_HIGHRISK_HR_MN_CENTER
+
+OA_HARDTOPLACE100_HR_MN_CENTER
+
+
+*For map:*
+transplant rate
+TMR_TXR_C2
+
+Total number of transplants in 1y(deceased and living donor, respectively)
+sum(WLA_REMTXC_NC2 + WLA_REMTXL_NC2)
+
+
+PRIMARY_ZIP | center zip code
+
+*if you need to add more info like lat/long, use the zipRadius package, input the zip code, extract the lat/long*

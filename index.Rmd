@@ -11,16 +11,15 @@ output:
 
 
 <center>
-**[To be replaced by screencast]**
 
 ![](./img/OrganTracking_Kidney_1350.jpeg) *(Image Credit: Matt Chinworth for Kaiser Health News)*
 <!-- Image taken from https://khn.org/news/how-lifesaving-organs-for-transplant-go-missing-in-transit/ -->
 
 </center>
 
-Welcome to the Comparing Kidney Transplant Centers Dashboard and Repository. Our site compiles and presents data on all organ donors, transplant candidates, and transplant recipients in the United States based on biannual [Program-Specific Reports](https://www.srtr.org/reports/program-specific-reports/) from the [Scientific Registry of Transplant Recipients](https://www.srtr.org/) (SRTR). Our site utilizes center-level data on waitlisted patients and patients in receipt of transplants, aggregated demographics, transplant outcomes, and organ offer acceptance practices.
+Welcome to the Kidney Transplant Center (KTC) Comparison Dashboard and Repository. Our site compiles and presents data on all organ donors, transplant candidates, and transplant recipients in the United States based on biannual [Program-Specific Reports](https://www.srtr.org/reports/program-specific-reports/) from the [Scientific Registry of Transplant Recipients](https://www.srtr.org/) (SRTR). Our site utilizes center-level data on waitlisted patients and patients in receipt of transplants, aggregated demographics, transplant outcomes, and organ offer acceptance practices.
 
-The [**Comparing Centers Dashboard**](dashboard.html) presents data visualizations comparing kidney transplantation centers and examining organ offer practices over time. Typically this data is only presented at the site level in PSR. We combined reports for each site and present them in an aggregated format to allow for direct comparison.   
+The [**KTC Comparison Dashboard**](dashboard.html) presents data visualizations comparing kidney transplantation centers and examining organ offer practices over time. Typically this data is only presented at the site level in PSR. We combined reports for each site and present them in an aggregated format to allow for direct comparison.   
 
 The [**PSR Data Repository**](data_repository.html) provides users with the ability to search and copy, print, or download raw SRTR PSR data for further study. Users may filter by a single column or query all columns simultaneously using the search bar.
 
