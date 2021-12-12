@@ -32,7 +32,8 @@ oa_v_time = all_data %>%
   ggplot(aes(x = REPORT_DATE, y = OA_OVERALL_HR_MN_CENTER, color = factor(CTR_COLOR_TYPE))) +
   geom_point(show.legend = FALSE) +
   geom_path(show.legend = FALSE) +
-  facet_wrap(~REGION)
+  facet_wrap(~REGION) + 
+  labs(y = "Offer Acceptance Hazard Ratio \n(compared to National O/A)", x = "Year")
 
 oa_v_time
 ```
@@ -92,7 +93,8 @@ all_data %>%
   group_by(REPORT_DATE) %>%
   ggplot(aes(x = REPORT_DATE, y = TTT_50_C, color = CTR_ID)) +
   geom_point() +
-  geom_line()
+  geom_line() + 
+  labs(y = "Median Time to Transplant (months)", x = "Year")
   #facet_wrap( ~ as.Date(REPORT_DATE), scales = 'free')
 
 ```
