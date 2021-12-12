@@ -44,19 +44,8 @@ library(lubridate)
 
 ``` r
 library(ZipRadius)
+library(httr)
 ```
-
-# Next steps:
-
--   decide whether to join each grouping together in one df or keep
-    separated
--   include HR 95% CIs for offer-acceptance ratios?
--   finish creating data dictionary for var names — one method: slice
-    top two rows for each sheet of each file, make first row the list
-    names and the second row (descriptions) the list values
--   maintenance:
--   drop columns with all NA values (if they even exist)
--   drop columns with all the same values
 
 **if you want to extract more columns from a particular file/tab, you
 can add the column name to the list at the bottom of this page**
@@ -119,14 +108,14 @@ Download the most recent data and save it to `/data` folder:
 current_file_path = "../data/csrs_final_tables_2105_KI.xls"
 
 if (!file.exists(current_file_path)) {
-  download.file(current_file_url, current_file_path, mode = "wb")
-}
+  download.file(current_file_url, current_file_path, mode = "wb")}
 
-
-# Table B6 - SFL (survival from listing) is a unique table for the recent data
-# Removed from analysis because it cannot readily be compared over time
-
+# clean the incoming sheets from each file
 # remove the second unnecessary descriptor line from each excel file
+# add a column with the report date
+# parse dates
+# clean names
+# add an ID code since CTR_CD does not appear consistently across sheets
 
 clean_sheets = function(fpath, x) {
   
@@ -135,27 +124,25 @@ clean_sheets = function(fpath, x) {
   clean_sheet = readxl::read_xls(fpath, sheet = x, skip = 2, col_names = FALSE)
   colnames(clean_sheet) = clean_cols
   
+  report_date = reduce(map(.x = fpath, ~str_extract(.x, "\\d{4}")), ~ .) %>%
+    parse_date_time(orders = c("%y%m"), truncated = 3, exact = TRUE)
+  
   clean_sheet = clean_sheet %>%
     janitor::clean_names("all_caps") %>%
+    mutate(REPORT_DATE = report_date) %>%
     rowwise() %>%
     mutate(CTR_ID = ifelse(
       "CTR_CD" %in% colnames(.), 
       paste(CTR_CD, CTR_TY, sep = ""), 
       ifelse("CENTER" %in% colnames(.), CENTER, NA))) %>%
-    select(CTR_ID, everything())
-  
-  
-  # extract(d1, date_created, c('month', 'day', 'year'),
-  #             '([^-]+)-([^-]+)-([^-]+)', remove=FALSE)
-
+    select(CTR_ID, REPORT_DATE, everything()) %>%
   return(clean_sheet)
 }
 
-
-current_data = sapply(readxl::excel_sheets(current_file_path), 
+current_data = suppressMessages(sapply(readxl::excel_sheets(current_file_path), 
                       simplify = F, 
                       USE.NAMES = T, 
-                      function (X) clean_sheets(current_file_path, X))
+                      function (X) clean_sheets(current_file_path, X)))
 ```
 
 Function to download archived files:
@@ -181,15 +168,14 @@ download_archived_data = function(url) {
     ki_file = tibble(files = as.character(unzip(temp, list = TRUE)$Name)) %>% filter(str_detect(files, ki_file_pattern))[[1]]
 
     ki_file_name = unzip(temp, ki_file)
-    
+    move_files(ki_file_name, "../data/", overwrite = FALSE)
     unlink(temp)
   }
   
-  ki_data = sapply(readxl::excel_sheets(ki_file_name), 
+  ki_data = suppressMessages(sapply(readxl::excel_sheets(ki_file_name), 
                    simplify = F, USE.NAMES = T,
-                   function(X) clean_sheets(ki_file_name, X))
+                   function(X) clean_sheets(ki_file_name, X)))
   
-  move_files(ki_file_name, "../data/", overwrite = FALSE)
   return(ki_data)
 }
 ```
@@ -214,7 +200,7 @@ and sheet via functions
 # each xls file has a number of tabs representing different data types
 # will use these columns for future merge/joins
 
-id_cols = c("CTR_ID", "CTR_CD", "RELEASE_DATE")
+id_cols = c("CTR_ID", "REPORT_DATE")
 
 # columns relating to numbers on waitlist, number added for 2 distinct years, number of total pts on the waitlist at the end of 2 years, number removed due to transplant(C = decased, L = living), number removed due to death and deterioration
 
@@ -262,9 +248,8 @@ coded.
 ``` r
 select_and_clean = function(df, select_cols) {
   df = df %>%
-    select(1, all_of(id_cols), all_of(select_cols)) %>%
-    mutate(RELEASE_DATE = ymd_hms(RELEASE_DATE, truncated = 3),
-           across(.cols = select_cols, ~ as.numeric(as.character(.))))
+    select(1, all_of(id_cols), any_of(select_cols)) %>%
+    mutate(across(.cols = any_of(select_cols), ~ as.numeric(as.character(.))))
   return(df)
 }
 
@@ -298,22 +283,20 @@ t3_function = function(df) {
 
 t4_function = function(df) {
   
-  rlse_date = ymd_hms(pull(.data = df[[1]], var = RELEASE_DATE)[[1]], truncated = 3)
-  
   if (length(df) < 32) {
     tbl4 = as_tibble("")}
   else {
     if (length(df) == 32) {
-      tbl4 = as_tibble(df[[16]])}
+      tbl4 = as_tibble(df[[16]]) %>%
+        rename( OA_HARDTOPLACE100_HR_MN_CENTER = OA_HARDTOPLACE_HR_MN_CENTER)}
     else if (length(df) == 33) {
       tbl4 = as_tibble(df[[18]])}
     else if (length(df) == 34) {
       tbl4 = as_tibble(df[[19]])}
+    tbl4 = tbl4 %>% 
+      select_and_clean(., ctr_oar_cols)
     
-    tbl4 = tbl4 %>%
-      select(1, any_of(id_cols), any_of(ctr_oar_cols)) %>%
-      mutate(RELEASE_DATE = ymd_hms(rlse_date, truncated = 3)) %>%
-      select(1, all_of(id_cols), any_of(ctr_oar_cols))
+  
   }
   tbl4  
 }
@@ -371,9 +354,8 @@ t8_function = function(df) {
   else if (length(df) >= 33) {
     tbl8 = as_tibble(df[[5]]) %>% 
       janitor::clean_names("all_caps") %>%
-      select(1, any_of(id_cols), all_of(wl_out_cols2)) %>%
-      rename(wl_out_cols = all_of(wl_out_cols2)) %>%
-      mutate(RELEASE_DATE = ymd_hms(RELEASE_DATE, truncated = 3))
+      select_and_clean(., wl_out_cols2) %>%
+      rename_with(~ wl_out_cols[which(wl_out_cols2 == .x)], .cols = wl_out_cols2)
     }
   tbl8
 }
@@ -391,6 +373,9 @@ ttt = map(data_all_yrs, t5_function)
 ddtx_demo = map(data_all_yrs, t6_function)
 ldtx_demo = map(data_all_yrs, t7_function)
 wl_out = map(data_all_yrs, t8_function)
+
+var_groups = list(wl_tx_counts, wl_demo, tx_out, ctr_oar, ttt, ddtx_demo, ldtx_demo, wl_out)
+names(var_groups) = c("wl_tx_counts", "wl_demo", "tx_out", "ctr_oar", "ttt", "ddtx_demo", "ldtx_demo", "wl_out")
 ```
 
 Get a list of the transplant centers within a specific radius. Per lit
@@ -402,25 +387,75 @@ away they want to look for a given center.
 
 ``` r
 # get a list of the transplant centers within a set radius of a zip code
+# the OPTN regions divide some states like VA and VT into two parts, which is not handled here
 
+optn_regions = read_html("https://optn.transplant.hrsa.gov/about/search-membership/?memberType=Transplant%20Centers&organType=%27AL%27&state=0&region=0") %>%
+  html_elements(".listTable") %>%
+  html_table() %>% 
+  reduce(.f = ~ .) %>%
+  as_tibble() %>%
+  janitor::clean_names("all_caps") %>%
+  filter(str_detect(PROGRAMS, "Kidney") == TRUE) %>%
+  select(NAME, REGION) %>%
+  mutate(NAME = paste(substr(NAME, 1, 4), "TX1", sep = ""),
+         REGION = as.factor(REGION),
+         REGION = addNA(REGION)) %>%
+  rename(CTR_ID = NAME) %>%
+  as_tibble()
+  
 ctr_location = current_data[["Tiers"]] %>%
-  select(CTR_ID, ENTIRE_NAME, PRIMARY_CITY, PRIMARY_STATE, PRIMARY_ZIP)
+  select(CTR_ID, ENTIRE_NAME, PRIMARY_CITY, PRIMARY_STATE, PRIMARY_ZIP) %>%
+  left_join(., optn_regions, by = "CTR_ID", keep = FALSE)
 
 get_radii = function (zip_code = "10108", radius_mi = 250) {
   max_radius = 250
   zip_code = str_sub(zip_code, 1, 5)
   
-  within_radius = zipRadius(zip_code, max_radius) %>%
+  within_radius = suppressMessages(zipRadius(zip_code, max_radius) %>%
     janitor::clean_names() %>%
     select(zip, distance) %>%
     filter(distance <= radius_mi,
            zip %in% ctr_location$PRIMARY_ZIP) %>%
-    rename(PRIMARY_ZIP = zip) %>%
+    rename(PRIMARY_ZIP = zip,
+           DISTANCE = distance) %>%
     left_join(ctr_location) %>%
-    as_tibble()
+    as_tibble() %>%
+    rename_with(~ paste(.,"_WR", sep = "")))
   return(within_radius)
 }
 
 ctr_location = ctr_location %>%
   mutate(WITHIN_RADIUS = map(PRIMARY_ZIP, get_radii))
+```
+
+Build the final dataframe to store as a CSV/XLS file
+
+``` r
+# group by the center name/center code
+# 
+all_data_df = ctr_location %>% ungroup()
+
+for (var_group in names(var_groups)) {
+ 
+  new_df = unchop(var_groups[[var_group]]) %>% bind_rows()
+
+  if (match(var_group,c(names(var_groups))) == 1) {
+    all_data_df = full_join(all_data_df, new_df, by = c("CTR_ID"))}
+  else {
+    all_data_df = full_join(all_data_df,new_df)}
+}
+```
+
+    ## Joining, by = c("CTR_ID", "REPORT_DATE")
+    ## Joining, by = c("CTR_ID", "REPORT_DATE")
+    ## Joining, by = c("CTR_ID", "REPORT_DATE")
+    ## Joining, by = c("CTR_ID", "REPORT_DATE")
+    ## Joining, by = c("CTR_ID", "REPORT_DATE")
+    ## Joining, by = c("CTR_ID", "REPORT_DATE")
+    ## Joining, by = c("CTR_ID", "REPORT_DATE")
+
+``` r
+all_data_df %>%
+  unnest(WITHIN_RADIUS) %>%
+  write_excel_csv(file = "../data/all_KI_data.xls")
 ```

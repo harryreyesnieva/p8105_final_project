@@ -8,6 +8,40 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+# Variables for viz
+
+*unique identifiers*:
+
+CTR_ID, REPORT_DATE
+
+*Offer/acceptance hazard ratio* (center compared to center, >1 is more offers than acceptances compared to ALL centers in the country for that year)
+
+OA_OVERALL_HR_MN_CENTER
+
+*For stratified KDRIs:*
+OA_LOWRISK_HR_MN_CENTER
+
+OA_MEDIUMRISK_HR_MN_CENTER
+
+OA_HIGHRISK_HR_MN_CENTER
+
+OA_HARDTOPLACE100_HR_MN_CENTER
+
+
+*For map:*
+transplant rate
+TMR_TXR_C2
+
+Total number of transplants in 1y(deceased and living donor, respectively)
+sum(WLA_REMTXC_NC2 + WLA_REMTXL_NC2)
+
+
+PRIMARY_ZIP | center zip code
+
+*if you need to add more info like lat/long, use the zipRadius package, input the zip code, extract the lat/long*
+
+
+
 # Question 1:
 
 ## What the data includes
@@ -195,3 +229,5 @@ Kidneys from a donor with a KDPI of 90%, for example, have a KDRI (which indicat
 - Table C4:  transplant characteristics (ischemic time, mismatch, relation)
 - Tables C17-18: Multi-organ transplant graft survival / Multi-organ transplant patient survival
 - Table D1: Living donor summary
+
+
