@@ -247,6 +247,9 @@ $(document).ready(function () {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
+  <a href="about.html">About</a>
+</li>
+<li>
   <a href="dashboard.html">Dashboard</a>
 </li>
 <li>
@@ -284,97 +287,125 @@ $(document).ready(function () {
   mutate(REPORT_DATE = ymd_hms(REPORT_DATE, truncated = 3),
          REGION = as.factor(REGION),
          REGION = addNA(REGION))
-## Rows: 78940 Columns: 141
+## Rows: 78940 Columns: 156
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr  (11): CTR_ID, ENTIRE_NAME, PRIMARY_CITY, PRIMARY_STATE, PRIMARY_ZIP, PR...
-## dbl (128): REGION, DISTANCE_WR, REGION_WR, WLA_ADDCEN_NC2, WLA_ST_NC2, WLA_E...
+## dbl (143): REGION, DISTANCE_WR, REGION_WR, WLA_ADDCEN_NC2, WLA_ST_NC2, WLA_E...
 ## lgl   (2): value, RCC_RET_C
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 subset_test = tail(all_data, 20)</code></pre>
-<pre class="r"><code>oa_v_time = all_data %&gt;%
-  filter(!is.na(OA_OVERALL_HR_MN_CENTER)) %&gt;%
-  select(CTR_ID, REGION, REPORT_DATE, OA_OVERALL_HR_MN_CENTER)  %&gt;%
-  group_by(REGION) %&gt;%
-  mutate(CTR_COLOR_TYPE = dense_rank(x = CTR_ID)) %&gt;%
-  ggplot(aes(x = REPORT_DATE, y = OA_OVERALL_HR_MN_CENTER, color = factor(CTR_COLOR_TYPE))) +
-  geom_point(show.legend = FALSE) +
-  geom_path(show.legend = FALSE) +
-  facet_wrap(~REGION)
-
-oa_v_time</code></pre>
-<p><img src="plot_drafts_files/figure-html/OA_over_time-1.png" width="672" /></p>
 <div id="need-to-separate-out-the-age-group-race-and-blood-type-variables" class="section level2">
 <h2>Need to separate out the age group, race, and blood type variables</h2>
 </div>
 <div id="naming-patern-is-stat_typeinfo_typevar_valyear_qualifier" class="section level2">
 <h2>naming patern is [stat_type]<em>[info_type][var_val]</em>[year_qualifier]</h2>
 <p>stat_type = WLC for waitlist, RLC for living donor tranpslant recipients, RCC for deceased donor recipients info_type = A for age group, B for blood type, R for race, G for gender, KI for primary disease (only on waitlist), or a 3 letter code for primary disease for tx recipients var_val = the actual information, for example A2 is age &lt;2, A10 is age 2-11, etc, RB is Black, GF is female, BAB is blood type AB year_qualifier can be removed, its all of the characters after the 2nd _ (ex in WLC_A2_ALLC2, the qualifier is ALLC2)</p>
-<pre class="r"><code>waitlist_demo_cols = c(&quot;WLC_A2_ALLC2&quot;, &quot;WLC_A10_ALLC2&quot;, &quot;WLC_A17_ALLC2&quot;, &quot;WLC_A34_ALLC2&quot;, &quot;WLC_A49_ALLC2&quot;, &quot;WLC_A64_ALLC2&quot;, 
-                       &quot;WLC_GM_ALLC2&quot;, &quot;WLC_GF_ALLC2&quot;, 
-                       &quot;WLC_RA_ALLC2&quot;, &quot;WLC_RB_ALLC2&quot;, &quot;WLC_RH_ALLC2&quot;, &quot;WLC_RO_ALLC2&quot;, &quot;WLC_RU_ALLC2&quot;, &quot;WLC_RW_ALLC2&quot;, 
-                       &quot;WLC_BAB_ALLC2&quot;, &quot;WLC_BA_ALLC2&quot;, &quot;WLC_BB_ALLC2&quot;, &quot;WLC_BO_ALLC2&quot;, &quot;WLC_BU_ALLC2&quot;,
-                       &quot;WLC_PRA80_ALLC2&quot;, 
-                       &quot;WLC_PTXY_ALLC2&quot;,
-                       &quot;WLC_KIDIA_ALLC2&quot;, &quot;WLC_KIGLO_ALLC2&quot;, &quot;WLC_KIHYP_ALLC2&quot;, &quot;WLC_KIMIS_ALLC2&quot;, &quot;WLC_KINEO_ALLC2&quot;, &quot;WLC_KIOTH_ALLC2&quot;, &quot;WLC_KIPOL_ALLC2&quot;, &quot;WLC_KIREN_ALLC2&quot;, &quot;WLC_KIRTR_ALLC2&quot;, &quot;WLC_KITUB_ALLC2&quot;, &quot;WLC_KICON_ALLC2&quot;)
+<pre class="r"><code># regex functions for later
 
-ddtx_demo_cols = c(&quot;RCC_A2_C&quot;, &quot;RCC_A10_C&quot;, &quot;RCC_A17_C&quot;, &quot;RCC_A34_C&quot;, &quot;RCC_A49_C&quot;, &quot;RCC_A64_C&quot;, &quot;RCC_GM_C&quot;, &quot;RCC_GF_C&quot;, &quot;RCC_RA_C&quot;, &quot;RCC_RB_C&quot;, &quot;RCC_RH_C&quot;, &quot;RCC_RO_C&quot;, &quot;RCC_RU_C&quot;, &quot;RCC_RW_C&quot;, &quot;RCC_BAB_C&quot;, &quot;RCC_BA_C&quot;, &quot;RCC_BB_C&quot;, &quot;RCC_BO_C&quot;, &quot;RCC_BMI20_C&quot;, &quot;RCC_BMI25_C&quot;, &quot;RCC_BMI30_C&quot;, &quot;RCC_DIA_C&quot;, &quot;RCC_GLO_C&quot;, &quot;RCC_HYP_C&quot;, &quot;RCC_MIS_C&quot;, &quot;RCC_NEO_C&quot;, &quot;RCC_OTK_C&quot;, &quot;RCC_POL_C&quot;, &quot;RCC_VAS_C&quot;, &quot;RCC_RET_C&quot;, &quot;RCC_TUB_C&quot;, &quot;RCC_CON_C&quot;, &quot;RCC_PRA80_C&quot;, &quot;RCC_PTXY_C&quot;)
+# get_col_cats = function(pattern, desc, df = all_data) {
+#   cat_cols = df %&gt;%
+#     select(matches(pattern)) %&gt;%
+#     names()
+#   
+#   return(cat_cols)
+# }
+# 
+# get_cat_type = function(category, col_cats) {
+#   for (col_cat %in% col_cats){
+#     if (category %in% col_cat)
+#   }
+#   
+# 
+# age_cols = map(&quot;[A-Z]{3}_A[1-9]&quot;, ~ get_col_cats(pattern = .x))
+# gender_cols = map(&quot;^WLC_G[FM]|^RC[CL]_G[FM]&quot;, ~ get_col_cats(pattern = .x))
+# race_cols = map(&quot;^WLC_R[A-Z]_|^RC[CL]_R[A-Z]_&quot;, ~ get_col_cats(pattern = .x))
+
+
+waitlist_demo_cols = c(&quot;WLC_A2_ALLC2&quot;, &quot;WLC_A10_ALLC2&quot;, &quot;WLC_A17_ALLC2&quot;, &quot;WLC_A34_ALLC2&quot;, &quot;WLC_A49_ALLC2&quot;, &quot;WLC_A64_ALLC2&quot;, &quot;WLC_A65P_ALLC2&quot;, &quot;WLC_A69_ALLC2&quot;, &quot;WLC_A70P_ALLC2&quot;, &quot;WLC_GM_ALLC2&quot;, &quot;WLC_GF_ALLC2&quot;, &quot;WLC_RA_ALLC2&quot;, &quot;WLC_RB_ALLC2&quot;, &quot;WLC_RH_ALLC2&quot;, &quot;WLC_RO_ALLC2&quot;, &quot;WLC_RU_ALLC2&quot;, &quot;WLC_RW_ALLC2&quot;, &quot;WLC_BAB_ALLC2&quot;, &quot;WLC_BA_ALLC2&quot;, &quot;WLC_BB_ALLC2&quot;, &quot;WLC_BO_ALLC2&quot;, &quot;WLC_BU_ALLC2&quot;,&quot;WLC_PRA80_ALLC2&quot;, &quot;WLC_PTXY_ALLC2&quot;, &quot;WLC_KIDIA_ALLC2&quot;, &quot;WLC_KIGLO_ALLC2&quot;, &quot;WLC_KIHYP_ALLC2&quot;, &quot;WLC_KIMIS_ALLC2&quot;, &quot;WLC_KINEO_ALLC2&quot;, &quot;WLC_KIOTH_ALLC2&quot;, &quot;WLC_KIPOL_ALLC2&quot;, &quot;WLC_KIREN_ALLC2&quot;, &quot;WLC_KIRTR_ALLC2&quot;, &quot;WLC_KITUB_ALLC2&quot;, &quot;WLC_KICON_ALLC2&quot;)
+
+ddtx_demo_cols = c(&quot;RCC_A2_C&quot;, &quot;RCC_A10_C&quot;, &quot;RCC_A17_C&quot;, &quot;RCC_A34_C&quot;, &quot;RCC_A49_C&quot;, &quot;RCC_A64_C&quot;, &quot;RCC_A65P_C&quot;, &quot;RCC_A69_C&quot;, &quot;RCC_A70P_C&quot;, &quot;RCC_GM_C&quot;, &quot;RCC_GF_C&quot;, &quot;RCC_RA_C&quot;, &quot;RCC_RB_C&quot;, &quot;RCC_RH_C&quot;, &quot;RCC_RO_C&quot;, &quot;RCC_RU_C&quot;, &quot;RCC_RW_C&quot;, &quot;RCC_BAB_C&quot;, &quot;RCC_BA_C&quot;, &quot;RCC_BB_C&quot;, &quot;RCC_BO_C&quot;, &quot;RCC_DIA_C&quot;, &quot;RCC_GLO_C&quot;, &quot;RCC_HYP_C&quot;, &quot;RCC_MIS_C&quot;, &quot;RCC_NEO_C&quot;, &quot;RCC_OTK_C&quot;, &quot;RCC_POL_C&quot;, &quot;RCC_VAS_C&quot;, &quot;RCC_RET_C&quot;, &quot;RCC_TUB_C&quot;, &quot;RCC_CON_C&quot;, &quot;RCC_PRA80_C&quot;, &quot;RCC_PTXY_C&quot;)
 
 ldtx_demo_cols = str_replace(ddtx_demo_cols, &quot;^RCC&quot;, &quot;RCL&quot;)
 ldtx_demo_cols = str_replace(ldtx_demo_cols, &quot;_RET_&quot;, &quot;_KIRET_&quot;)
 
 demo_cols = c(waitlist_demo_cols, ddtx_demo_cols, ldtx_demo_cols)
-demo_cols
-##   [1] &quot;WLC_A2_ALLC2&quot;    &quot;WLC_A10_ALLC2&quot;   &quot;WLC_A17_ALLC2&quot;   &quot;WLC_A34_ALLC2&quot;  
-##   [5] &quot;WLC_A49_ALLC2&quot;   &quot;WLC_A64_ALLC2&quot;   &quot;WLC_GM_ALLC2&quot;    &quot;WLC_GF_ALLC2&quot;   
-##   [9] &quot;WLC_RA_ALLC2&quot;    &quot;WLC_RB_ALLC2&quot;    &quot;WLC_RH_ALLC2&quot;    &quot;WLC_RO_ALLC2&quot;   
-##  [13] &quot;WLC_RU_ALLC2&quot;    &quot;WLC_RW_ALLC2&quot;    &quot;WLC_BAB_ALLC2&quot;   &quot;WLC_BA_ALLC2&quot;   
-##  [17] &quot;WLC_BB_ALLC2&quot;    &quot;WLC_BO_ALLC2&quot;    &quot;WLC_BU_ALLC2&quot;    &quot;WLC_PRA80_ALLC2&quot;
-##  [21] &quot;WLC_PTXY_ALLC2&quot;  &quot;WLC_KIDIA_ALLC2&quot; &quot;WLC_KIGLO_ALLC2&quot; &quot;WLC_KIHYP_ALLC2&quot;
-##  [25] &quot;WLC_KIMIS_ALLC2&quot; &quot;WLC_KINEO_ALLC2&quot; &quot;WLC_KIOTH_ALLC2&quot; &quot;WLC_KIPOL_ALLC2&quot;
-##  [29] &quot;WLC_KIREN_ALLC2&quot; &quot;WLC_KIRTR_ALLC2&quot; &quot;WLC_KITUB_ALLC2&quot; &quot;WLC_KICON_ALLC2&quot;
-##  [33] &quot;RCC_A2_C&quot;        &quot;RCC_A10_C&quot;       &quot;RCC_A17_C&quot;       &quot;RCC_A34_C&quot;      
-##  [37] &quot;RCC_A49_C&quot;       &quot;RCC_A64_C&quot;       &quot;RCC_GM_C&quot;        &quot;RCC_GF_C&quot;       
-##  [41] &quot;RCC_RA_C&quot;        &quot;RCC_RB_C&quot;        &quot;RCC_RH_C&quot;        &quot;RCC_RO_C&quot;       
-##  [45] &quot;RCC_RU_C&quot;        &quot;RCC_RW_C&quot;        &quot;RCC_BAB_C&quot;       &quot;RCC_BA_C&quot;       
-##  [49] &quot;RCC_BB_C&quot;        &quot;RCC_BO_C&quot;        &quot;RCC_BMI20_C&quot;     &quot;RCC_BMI25_C&quot;    
-##  [53] &quot;RCC_BMI30_C&quot;     &quot;RCC_DIA_C&quot;       &quot;RCC_GLO_C&quot;       &quot;RCC_HYP_C&quot;      
-##  [57] &quot;RCC_MIS_C&quot;       &quot;RCC_NEO_C&quot;       &quot;RCC_OTK_C&quot;       &quot;RCC_POL_C&quot;      
-##  [61] &quot;RCC_VAS_C&quot;       &quot;RCC_RET_C&quot;       &quot;RCC_TUB_C&quot;       &quot;RCC_CON_C&quot;      
-##  [65] &quot;RCC_PRA80_C&quot;     &quot;RCC_PTXY_C&quot;      &quot;RCL_A2_C&quot;        &quot;RCL_A10_C&quot;      
-##  [69] &quot;RCL_A17_C&quot;       &quot;RCL_A34_C&quot;       &quot;RCL_A49_C&quot;       &quot;RCL_A64_C&quot;      
-##  [73] &quot;RCL_GM_C&quot;        &quot;RCL_GF_C&quot;        &quot;RCL_RA_C&quot;        &quot;RCL_RB_C&quot;       
-##  [77] &quot;RCL_RH_C&quot;        &quot;RCL_RO_C&quot;        &quot;RCL_RU_C&quot;        &quot;RCL_RW_C&quot;       
-##  [81] &quot;RCL_BAB_C&quot;       &quot;RCL_BA_C&quot;        &quot;RCL_BB_C&quot;        &quot;RCL_BO_C&quot;       
-##  [85] &quot;RCL_BMI20_C&quot;     &quot;RCL_BMI25_C&quot;     &quot;RCL_BMI30_C&quot;     &quot;RCL_DIA_C&quot;      
-##  [89] &quot;RCL_GLO_C&quot;       &quot;RCL_HYP_C&quot;       &quot;RCL_MIS_C&quot;       &quot;RCL_NEO_C&quot;      
-##  [93] &quot;RCL_OTK_C&quot;       &quot;RCL_POL_C&quot;       &quot;RCL_VAS_C&quot;       &quot;RCL_KIRET_C&quot;    
-##  [97] &quot;RCL_TUB_C&quot;       &quot;RCL_CON_C&quot;       &quot;RCL_PRA80_C&quot;     &quot;RCL_PTXY_C&quot;
+
+  
+age_pats = c(&quot;A2&quot;, &quot;A10&quot;, &quot;A17&quot;, &quot;A34&quot;, &quot;A49&quot;, &quot;A64&quot;, &quot;A65P&quot;, &quot;A69&quot;, &quot;A70P&quot;)
+age_grps = c(&quot;Age &lt;2&quot;, &quot;Age 2-11&quot;, &quot;Age 12-17&quot;, &quot;Age 18-34&quot;, &quot;Age 35-49&quot;, &quot;Age 50-64&quot;, &quot;Age &gt;65&quot;, &quot;Age 65-69&quot;, &quot;Age 70+&quot; )
+names(age_grps) = age_pats
+
+race_pats = c(&quot;RA&quot;, &quot;RB&quot;, &quot;RH&quot;, &quot;RO&quot;, &quot;RU&quot;, &quot;RW&quot;)
+race_grps = c(&quot;Race Asian&quot;, &quot;Race Black&quot;, &quot;Ethnicity Hispanic&quot;, &quot;Race Other&quot;, &quot;Race Unknown&quot;, &quot;Race White&quot;)
+names(race_grps) = race_pats
+
+
+dz_pats = c(&quot;DIA&quot;, &quot;GLO&quot;, &quot;HYP&quot;, &quot;MIS&quot;, &quot;NEO&quot;, &quot;OTK&quot;, &quot;POL&quot;, &quot;VAS&quot;, &quot;RET&quot;, &quot;TUB&quot;, &quot;CON&quot;)
+dz_pats = c(dz_pats, c(paste(&quot;KI&quot;,dz_pats, sep = &quot;&quot;)))
+dz_grps = c(&quot;Dz: Diabetes&quot;, &quot;Dz: Glomerular&quot;, &quot;Dz: Hypertension&quot;, &quot;Dz: Missing&quot;, &quot;Dz: Neoplasms&quot;, &quot;Dz: Other&quot;, &quot;Dz: Polycystic&quot;, &quot;Dz: Vascular&quot;, &quot;Dz: Retransplant&quot;, &quot;Dz: Tubular/Interstial&quot;, &quot;Dz: Genetic&quot;)
+dz_grps = c(dz_grps, dz_grps)
+names(dz_grps) = dz_pats
+
 demographic_props = all_data %&gt;%
-  select(CTR_ID, REGION, REPORT_DATE, any_of(demo_cols)) %&gt;%
+  filter(year(REPORT_DATE) == 2021) %&gt;%
+  select(CTR_ID, REGION, REPORT_DATE, PRIMARY_STATE, any_of(demo_cols)) %&gt;%
   pivot_longer(cols = demo_cols, names_to = c(&quot;CATEGORY&quot;), values_to = c(&quot;CATEGORY_PROP&quot;)) %&gt;%
   mutate(ORG_TYPE = 
            as.factor(ifelse(str_sub(CATEGORY,1,3) == &quot;WLC&quot;, &quot;waitlist&quot;, 
-                            ifelse(substr(CATEGORY, 3,3) == &quot;L&quot;, &quot;living&quot;, &quot;deceased&quot;)))) %&gt;%
-  filter(!is.na(CATEGORY_PROP)) %&gt;%
-  group_by(CTR_ID, ORG_TYPE) %&gt;%
-  
-  ggplot(aes(fill = CATEGORY, y = CATEGORY_PROP, x = ORG_TYPE)) +
-    geom_bar(position = &quot;stack&quot;, stat = &quot;identity&quot;, show.legend = FALSE) +
-  scale_y_continuous(labels = scales::percent_format())
+                            ifelse(substr(CATEGORY, 3,3) == &quot;L&quot;, &quot;living&quot;, &quot;deceased&quot;))),
+         CAT_TYPE = &quot;&quot;,
+         CAT_TYPE = ifelse(str_detect(CATEGORY, &quot;^WLC_A[1-9]|^RC[CL]_A[1-9]&quot;), &quot;Age Group&quot;, CAT_TYPE),
+         CAT_TYPE = ifelse(str_detect(CATEGORY, &quot;^WLC_G[FM]|^RC[CL]_G[FM]&quot;), &quot;Gender&quot;, CAT_TYPE),
+         CAT_TYPE = ifelse(str_detect(CATEGORY, &quot;^WLC_R[A-Z]_|^RC[CL]_R[A-Z]_&quot;), &quot;Race&quot;, CAT_TYPE),
+         CAT_TYPE = ifelse(str_detect(CATEGORY, &quot;^WLC_B[ABOU]|^RC[CL]_B[ABOU]&quot;), &quot;Blood Type&quot;, CAT_TYPE),
+         CAT_TYPE = if_else(str_detect(CATEGORY, &quot;[A-Z]{3}_P[RT][AX]&quot;), &quot;High Ab Risk&quot;, CAT_TYPE), 
+         CAT_TYPE = if_else((CAT_TYPE == &quot;&quot;) &amp; (str_detect(CATEGORY, &quot;^WLC_KI|^RC[CL]_.{3}_|^RC[CL]_KI&quot;)), &quot;Primary Disease&quot;, CAT_TYPE)) %&gt;%
+  mutate(
+    CATEGORY = if_else(CAT_TYPE == &quot;Age Group&quot;, 
+    unlist(lapply(str_replace(str_sub(CATEGORY, 5, -1), &quot;_[AC].*$&quot;, &quot;&quot;), function(x) age_grps[x])), CATEGORY),
+    CATEGORY = if_else(CAT_TYPE == &quot;Gender&quot;, if_else(str_sub(CATEGORY,6,6) == &quot;M&quot;, &quot;Gender: Male&quot;, &quot;Gender: Female&quot;), CATEGORY),
+    CATEGORY = if_else(CAT_TYPE == &quot;Race&quot;, 
+    unlist(lapply(str_replace(str_sub(CATEGORY, 5, -1), &quot;_[AC].*$&quot;, &quot;&quot;), function(x) race_grps[x])), CATEGORY),
+    CATEGORY = ifelse(CAT_TYPE == &quot;Blood Type&quot;, paste(&quot;Blood Type&quot;, str_replace(str_sub(CATEGORY, 6, -1), &quot;_[AC].*$&quot;, &quot;&quot;)), CATEGORY),
+    CATEGORY = ifelse(CAT_TYPE == &quot;High Ab Risk&quot;, if_else(CATEGORY == &quot;RCC_PRA80_C&quot;, &quot;Ab Risk: Peak PRA &gt;= 80%&quot;, &quot;Ab Risk: Retransplant&quot;), CATEGORY),
+    CATEGORY = if_else(CAT_TYPE == &quot;Primary Disease&quot;, 
+    unlist(lapply(str_replace(str_sub(CATEGORY, 5, -1), &quot;_[AC].*$&quot;, &quot;&quot;), function(x) dz_grps[x])), CATEGORY)) %&gt;%
+  mutate(CAT_TYPE = as.factor(CAT_TYPE),
+         CATEGORY = as.factor(CATEGORY)) %&gt;%
+  group_by(CTR_ID, ORG_TYPE, CAT_TYPE, CATEGORY) %&gt;%
+  filter(!is.na(CATEGORY_PROP))
 ## Note: Using an external vector in selections is ambiguous.
 ## ℹ Use `all_of(demo_cols)` instead of `demo_cols` to silence this message.
 ## ℹ See &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.
 ## This message is displayed once per session.
-#   ggplot(aes(x = REPORT_DATE, y = OA_OVERALL_HR_MN_CENTER, color = factor(CTR_COLOR_TYPE))) +
-#   geom_point(show.legend = FALSE) +
-#   geom_path(show.legend = FALSE) +
-#   facet_wrap(~REGION)
-
-demographic_props</code></pre>
+demographic_props %&gt;%
+  filter(PRIMARY_STATE == &quot;NY&quot; &amp; CAT_TYPE == &quot;Age Group&quot;) %&gt;%
+  group_by(CTR_ID, ORG_TYPE, CATEGORY) %&gt;%
+  ggplot(aes(fill = CATEGORY, y = CATEGORY_PROP, x = ORG_TYPE)) +
+  geom_bar(position = &quot;stack&quot;, stat = &quot;identity&quot;, show.legend = TRUE) +
+    #geom_bar(position = &quot;stack&quot;, stat = &quot;identity&quot;, show.legend = FALSE) +
+  scale_y_continuous() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) +
+  labs(x = &quot;Center ID&quot;,
+       y = &quot;Proportion (%)&quot;,
+       colors = &quot;Age Group&quot;) +
+  facet_wrap(~CTR_ID, nrow = 3)</code></pre>
 <p><img src="plot_drafts_files/figure-html/stacked_bars-1.png" width="672" /></p>
+<pre class="r"><code># in one plot with facets, not great colors
+# demographic_props %&gt;%
+#   filter(CTR_ID == &quot;NYCPTX1&quot;) %&gt;%
+#   group_by(ORG_TYPE, CAT_TYPE) %&gt;%
+#   ggplot(aes(fill = factor(CATEGORY), y = CATEGORY_PROP, x = ORG_TYPE)) +
+#   geom_bar(position = &quot;stack&quot;, stat = &quot;identity&quot;, show.legend = TRUE) +
+#     #geom_bar(position = &quot;stack&quot;, stat = &quot;identity&quot;, show.legend = FALSE) +
+#   scale_y_continuous() +
+#   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)) +
+#   labs(x = &quot;Waitlist or Organ Type&quot;,
+#        y = &quot;Proportion (%)&quot;) +
+#   facet_wrap(~CAT_TYPE, nrow = 2)</code></pre>
 <pre class="r"><code>ttt_cols = c(&quot;TTT_25_C&quot;, &quot;TTT_50_C&quot;, &quot;TTT_75_C&quot;)
 all_data %&gt;%
   filter(!is.na(TTT_50_C) &amp; !is.na(OA_OVERALL_HR_MN_CENTER) &amp; PRIMARY_STATE == &quot;NY&quot;) %&gt;%
@@ -382,9 +413,46 @@ all_data %&gt;%
   group_by(REPORT_DATE) %&gt;%
   ggplot(aes(x = REPORT_DATE, y = TTT_50_C, color = CTR_ID)) +
   geom_point() +
-  geom_line()</code></pre>
+  geom_line() + 
+  labs(y = &quot;Median Time to Transplant (months)&quot;, x = &quot;Year&quot;)</code></pre>
 <p><img src="plot_drafts_files/figure-html/ttt_v_time-1.png" width="672" /></p>
 <pre class="r"><code>  #facet_wrap( ~ as.Date(REPORT_DATE), scales = &#39;free&#39;)</code></pre>
+<pre class="r"><code>txrate_v_oa_v_time = all_data %&gt;%
+  filter(!is.na(OA_OVERALL_HR_MN_CENTER) &amp; PRIMARY_STATE == &quot;NY&quot;) %&gt;%
+  select(CTR_ID, REPORT_DATE, OA_OVERALL_HR_MN_CENTER, TMR_TXR_C2) %&gt;%
+  arrange(REPORT_DATE) %&gt;%
+  ggplot(aes(x = OA_OVERALL_HR_MN_CENTER, y = TMR_TXR_C2, color = CTR_ID)) +
+  geom_point() +
+  facet_wrap( ~ as.Date(REPORT_DATE), scales = &#39;free&#39;)
+
+txrate_v_oa_v_time</code></pre>
+<p><img src="plot_drafts_files/figure-html/txrate_v_oa_v_time-1.png" width="672" /></p>
+<pre class="r"><code>all_data %&gt;%
+  filter(!is.na(TTT_50_C) &amp; !is.na(OA_OVERALL_HR_MN_CENTER) &amp; PRIMARY_STATE == &quot;NY&quot;) %&gt;%
+  select(CTR_ID, REGION, REPORT_DATE, OA_OVERALL_HR_MN_CENTER, TTT_50_C) %&gt;%
+  filter(CTR_ID == &quot;NYUCTX1&quot; | CTR_ID == &quot;NYUMTX1&quot;) %&gt;%
+  group_by(REPORT_DATE) %&gt;%
+  ggplot(aes(x = REPORT_DATE, y = TTT_50_C, color = CTR_ID)) +
+  geom_point() +
+  geom_line() + 
+  geom_line(aes(y = OA_OVERALL_HR_MN_CENTER*10), size = 0.5, linetype = &quot;dashed&quot;) +
+  labs(y = &quot;Median Time to Transplant (months)&quot;, 
+       x = &quot;Year&quot;,
+       title = &quot;Median Time to Transplant (months) in NY State&quot;,
+       colors = &quot;Center ID&quot;) +
+  theme(legend.position = &quot;right&quot;) + 
+  guides(color = guide_legend(ncol = 1)) +
+
+# Custom the Y scales:
+  scale_y_continuous(
+    
+    # Features of the first axis
+    name = &quot;Median Time to Transplant (months)&quot;,
+    
+    # Add a second axis and specify its features
+    sec.axis = sec_axis(trans=~./10, name=&quot;Offer/Acceptance Ratio&quot;)
+  )</code></pre>
+<p><img src="plot_drafts_files/figure-html/oa_v_ttt-1.png" width="672" /></p>
 </div>
 <div id="variables-for-viz" class="section level1">
 <h1>Variables for viz</h1>

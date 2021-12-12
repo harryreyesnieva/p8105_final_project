@@ -202,13 +202,15 @@ and sheet via functions
 
 id_cols = c("CTR_ID", "REPORT_DATE")
 
+# could probably do regex for these but save that for another day...
+
 # columns relating to numbers on waitlist, number added for 2 distinct years, number of total pts on the waitlist at the end of 2 years, number removed due to transplant(C = decased, L = living), number removed due to death and deterioration
 
 waitlist_cols = c("WLA_ADDCEN_NC2", "WLA_ST_NC2", "WLA_END_NC2", "WLA_REMTXC_NC2", "WLA_REMTXL_NC2", "WLA_REMTXC_PCZ", "WLA_REMTXL_PCZ", "WLA_REMDIED_PCZ", "WLA_REMDET_PCZ")
 
 # columns relating to waitlist demographics - age groups, gender, race/ethnicity, blood type, peak PRA >=80%, previous transplant, primary dx
 
-waitlist_demo_cols = c("WLC_A2_ALLC2", "WLC_A10_ALLC2", "WLC_A17_ALLC2", "WLC_A34_ALLC2", "WLC_A49_ALLC2", "WLC_A64_ALLC2", "WLC_GM_ALLC2", "WLC_GF_ALLC2", "WLC_RA_ALLC2", "WLC_RB_ALLC2", "WLC_RH_ALLC2", "WLC_RO_ALLC2", "WLC_RU_ALLC2", "WLC_RW_ALLC2", "WLC_BAB_ALLC2", "WLC_BA_ALLC2", "WLC_BB_ALLC2", "WLC_BO_ALLC2", "WLC_BU_ALLC2","WLC_PRA80_ALLC2", "WLC_PTXY_ALLC2", "WLC_KIDIA_ALLC2", "WLC_KIGLO_ALLC2", "WLC_KIHYP_ALLC2", "WLC_KIMIS_ALLC2", "WLC_KINEO_ALLC2", "WLC_KIOTH_ALLC2", "WLC_KIPOL_ALLC2", "WLC_KIREN_ALLC2", "WLC_KIRTR_ALLC2", "WLC_KITUB_ALLC2", "WLC_KICON_ALLC2")
+waitlist_demo_cols = c("WLC_A2_ALLC2", "WLC_A10_ALLC2", "WLC_A17_ALLC2", "WLC_A34_ALLC2", "WLC_A49_ALLC2", "WLC_A64_ALLC2", "WLC_A65P_ALLC2", "WLC_A69_ALLC2", "WLC_A70P_ALLC2", "WLC_GM_ALLC2", "WLC_GF_ALLC2", "WLC_RA_ALLC2", "WLC_RB_ALLC2", "WLC_RH_ALLC2", "WLC_RO_ALLC2", "WLC_RU_ALLC2", "WLC_RW_ALLC2", "WLC_BAB_ALLC2", "WLC_BA_ALLC2", "WLC_BB_ALLC2", "WLC_BO_ALLC2", "WLC_BU_ALLC2","WLC_PRA80_ALLC2", "WLC_PTXY_ALLC2", "WLC_KIDIA_ALLC2", "WLC_KIGLO_ALLC2", "WLC_KIHYP_ALLC2", "WLC_KIMIS_ALLC2", "WLC_KINEO_ALLC2", "WLC_KIOTH_ALLC2", "WLC_KIPOL_ALLC2", "WLC_KIREN_ALLC2", "WLC_KIRTR_ALLC2", "WLC_KITUB_ALLC2", "WLC_KICON_ALLC2")
 
 # columns relating to delayed organ function, % of kidneys that were "imported" and % of pts on dialysis at 1 week
 tx_out_cols = c("TOC_SHR_C", "TOC_WKDIALY_C")
@@ -224,7 +226,8 @@ ttt_cols = c("TTT_25_C", "TTT_50_C", "TTT_75_C")
 
 # deceased donor transplant recipients demographics
 
-ddtx_demo_cols = c("RCC_A2_C", "RCC_A10_C", "RCC_A17_C", "RCC_A34_C", "RCC_A49_C", "RCC_A64_C", "RCC_GM_C", "RCC_GF_C", "RCC_RA_C", "RCC_RB_C", "RCC_RH_C", "RCC_RO_C", "RCC_RU_C", "RCC_RW_C", "RCC_BAB_C", "RCC_BA_C", "RCC_BB_C", "RCC_BO_C", "RCC_BMI20_C", "RCC_BMI25_C", "RCC_BMI30_C", "RCC_DIA_C", "RCC_GLO_C", "RCC_HYP_C", "RCC_MIS_C", "RCC_NEO_C", "RCC_OTK_C", "RCC_POL_C", "RCC_VAS_C", "RCC_RET_C", "RCC_TUB_C", "RCC_CON_C", "RCC_PRA80_C", "RCC_PTXY_C")
+ddtx_demo_cols = c("RCC_A2_C", "RCC_A10_C", "RCC_A17_C", "RCC_A34_C", "RCC_A49_C", "RCC_A64_C", "RCC_A65P_C",
+"RCC_A69_C","RCC_A70P_C","RCC_GM_C", "RCC_GF_C", "RCC_RA_C", "RCC_RB_C", "RCC_RH_C", "RCC_RO_C", "RCC_RU_C", "RCC_RW_C", "RCC_BAB_C", "RCC_BA_C", "RCC_BB_C", "RCC_BO_C", "RCC_BMI20_C", "RCC_BMI25_C", "RCC_BMI30_C", "RCC_BMI_31P_C","RCC_BMI35_C","RCC_BMI40_C", "RCC_BMI41P_C", "RCC_DIA_C", "RCC_GLO_C", "RCC_HYP_C", "RCC_MIS_C", "RCC_NEO_C", "RCC_OTK_C", "RCC_POL_C", "RCC_VAS_C", "RCC_RET_C", "RCC_TUB_C", "RCC_CON_C", "RCC_PRA80_C", "RCC_PTXY_C")
 
 # living donor recipient demographics
 # # can probably turn this into a regex expression for demographic categories for waitlist, and DD and LD recipients "RC[CL]_[+/-KIvariables of interest]_C"
@@ -457,5 +460,5 @@ for (var_group in names(var_groups)) {
 ``` r
 all_data_df %>%
   unnest(WITHIN_RADIUS) %>%
-  write_excel_csv(file = "../data/all_KI_data.xls")
+  write_excel_csv(file = "../data/all_KI_data.csv")
 ```
