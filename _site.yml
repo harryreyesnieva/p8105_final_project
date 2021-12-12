@@ -3,6 +3,8 @@ output_dir: "."
 navbar:
   title: "Overview"
   right:
+    - text: "About"
+      href: about.html
     - text: "Dashboard"
       href: dashboard.html
     - text: "Data Repository"
@@ -13,7 +15,6 @@ navbar:
       href: final_report.html
     - icon: fa-github fa-lg
       href: https://github.com/harryreyesnieva/p8105_final_project
-      target: _blank
 output:
   html_document:
     includes:
